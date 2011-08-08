@@ -1,0 +1,22 @@
+﻿<Window x:Class="MVVMSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MVVMSample"
+        Title="MainWindow" Height="200" Width="300">
+    
+    <!-- The datacontext for the window is an instance of our viewmodel. -->
+    <Window.DataContext>
+        <local:MainViewModel x:Name="viewModel" />
+    </Window.DataContext>
+    
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="First Name" />
+            <TextBox Margin="4" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Second Name" />
+            <TextBox Margin="4" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Margin="4" Width="80" Content="Build Name" Command="{Binding BuildNameCommand}" />
+            <TextBox Margin="4" Text="{Binding FullName}" />
+        </StackPanel>
+    </Grid>
+</Window>
