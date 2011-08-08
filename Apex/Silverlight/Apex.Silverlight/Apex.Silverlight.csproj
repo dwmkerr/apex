@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B58F68A9-FD12-4F08-B294-95480C737540}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Apex.Silverlight</RootNamespace>
+    <AssemblyName>Apex.Silverlight</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WPF\Apex\Adorners\Adorner.cs">
+      <Link>Adorners\Adorner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Adorners\AdornerLayer.xaml.cs">
+      <Link>Adorners\AdornerLayer.xaml.cs</Link>
+      <DependentUpon>AdornerLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Adorners\VisualAdorner.cs">
+      <Link>Adorners\VisualAdorner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\HitTest.cs">
+      <Link>Consistency\HitTest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\SystemParameters.cs">
+      <Link>Consistency\SystemParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
+      <Link>Controls\ApexGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Design\DesignTime.cs">
+      <Link>Design\DesignTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\DragAndDrop\DragAndDrop.cs">
+      <Link>DragAndDrop\DragAndDrop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\DragAndDrop\DragAndDropHost.cs">
+      <Link>DragAndDrop\DragAndDropHost.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\DependencyObjectExtensions.cs">
+      <Link>Extensions\DependencyObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\FrameworkElementExtensions.cs">
+      <Link>Extensions\FrameworkElementExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\MVVM\NotifyingProperty.cs">
+      <Link>MVVM\NotifyingProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\MVVM\ViewModel.cs">
+      <Link>MVVM\ViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\MVVM\ViewModelCommand.cs">
+      <Link>MVVM\ViewModelCommand.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\..\WPF\Apex\Adorners\AdornerLayer.xaml">
+      <Link>Adorners\AdornerLayer.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

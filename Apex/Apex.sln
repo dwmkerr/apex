@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropSample", "Silver
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
+		SccNumberOfProjects = 12
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -57,6 +57,34 @@ Global
 		SccProjectTopLevelParentUniqueName4 = Apex.sln
 		SccProjectName4 = WPF/Samples/MVVMSample
 		SccLocalPath4 = WPF\\Samples\\MVVMSample
+		SccProjectUniqueName5 = WP7\\Apex.WP7\\Apex.WP7.csproj
+		SccProjectTopLevelParentUniqueName5 = Apex.sln
+		SccProjectName5 = WP7/Apex.WP7
+		SccLocalPath5 = WP7\\Apex.WP7
+		SccProjectUniqueName6 = WP7\\Samples\\MVVMSample\\MVVMSample.csproj
+		SccProjectTopLevelParentUniqueName6 = Apex.sln
+		SccProjectName6 = WP7/Samples/MVVMSample
+		SccLocalPath6 = WP7\\Samples\\MVVMSample
+		SccProjectUniqueName7 = WP7\\Samples\\ControlsSample\\ControlsSample.csproj
+		SccProjectTopLevelParentUniqueName7 = Apex.sln
+		SccProjectName7 = WP7/Samples/ControlsSample
+		SccLocalPath7 = WP7\\Samples\\ControlsSample
+		SccProjectUniqueName8 = Silverlight\\Apex.Silverlight\\Apex.Silverlight.csproj
+		SccProjectTopLevelParentUniqueName8 = Apex.sln
+		SccProjectName8 = Silverlight/Apex.Silverlight
+		SccLocalPath8 = Silverlight\\Apex.Silverlight
+		SccProjectUniqueName9 = Silverlight\\Samples\\MVVMSample\\MVVMSample.csproj
+		SccProjectTopLevelParentUniqueName9 = Apex.sln
+		SccProjectName9 = Silverlight/Samples/MVVMSample
+		SccLocalPath9 = Silverlight\\Samples\\MVVMSample
+		SccProjectUniqueName10 = Silverlight\\Samples\\ControlsSample\\ControlsSample.csproj
+		SccProjectTopLevelParentUniqueName10 = Apex.sln
+		SccProjectName10 = Silverlight/Samples/ControlsSample
+		SccLocalPath10 = Silverlight\\Samples\\ControlsSample
+		SccProjectUniqueName11 = Silverlight\\Samples\\DragAndDropSample\\DragAndDropSample.csproj
+		SccProjectTopLevelParentUniqueName11 = Apex.sln
+		SccProjectName11 = Silverlight/Samples/DragAndDropSample
+		SccLocalPath11 = Silverlight\\Samples\\DragAndDropSample
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
