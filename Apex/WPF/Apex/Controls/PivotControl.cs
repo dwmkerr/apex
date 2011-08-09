@@ -93,6 +93,7 @@ namespace Apex.Controls
           frameworkElement.Height = pivotScrollViewer.ActualHeight;
         }
       }
+      UpdatePositioning(true);
     }
 
     public void SelectPivotItem(object pivotItem)
@@ -146,39 +147,36 @@ namespace Apex.Controls
         return;
 
       me.PivotControl_SizeChanged(me, null);
+      me.UpdatePositioning(e.OldValue == null ? true : false);
+    }
 
-      //  Get the pivot content.
-      FrameworkElement pivotContent = ((FrameworkElement)item.Content);
+    private void UpdatePositioning(bool immediate)
+    {
+        if (SelectedPivotItem == null || SelectedPivotItem.Content is FrameworkElement == false)
+            return;
 
-      //  Get the real position of the item.
-      try
-      {
-        me.itemsControl.UpdateLayout();
-        Point relativePoint = pivotContent.TransformToAncestor(me).Transform(new Point(0, 0));
-        
+        //  Get the pivot content.
+        FrameworkElement pivotContent = ((FrameworkElement)SelectedPivotItem.Content);
+
+        itemsControl.UpdateLayout();
+        Point relativePoint = pivotContent.TransformToAncestor(this).Transform(new Point(0, 0));
+
         //  We'll actually move the item to the centre of the screen.
-        relativePoint.X += (pivotContent.ActualWidth / 2) - (me.ActualWidth / 2);
+        relativePoint.X += (pivotContent.ActualWidth / 2) - (ActualWidth / 2);
 
         DoubleAnimation horzAnim = new DoubleAnimation();
-        horzAnim.From = me.pivotScrollViewer.HorizontalOffset;
-        horzAnim.To = me.pivotScrollViewer.HorizontalOffset + relativePoint.X;
+        horzAnim.From = pivotScrollViewer.HorizontalOffset;
+        horzAnim.To = pivotScrollViewer.HorizontalOffset + relativePoint.X;
         horzAnim.DecelerationRatio = .8;
-
-        //  If the previous item was null, this is the first pivot item selected - it appears immediately, no animation.
-        //  Without this check, loading the form always flys the first item in from the right.
-        horzAnim.Duration = new Duration(TimeSpan.FromMilliseconds(e.OldValue == null ? 0 : 300));
+        horzAnim.Duration = new Duration(TimeSpan.FromMilliseconds(immediate ? 0 : 300));
 
         Storyboard sb = new Storyboard();
         sb.Children.Add(horzAnim);
 
-        Storyboard.SetTarget(horzAnim, me.pivotScrollViewer);
+        Storyboard.SetTarget(horzAnim, pivotScrollViewer);
         Storyboard.SetTargetProperty(horzAnim, new PropertyPath(AnimatedScrollViewer.CurrentHorizontalOffsetProperty));
 
         sb.Begin();
-      }
-      catch
-      {
-      }
     }
 
 
