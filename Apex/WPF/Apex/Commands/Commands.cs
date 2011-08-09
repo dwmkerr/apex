@@ -195,7 +195,7 @@ namespace Apex.Commands
         
         public static readonly DependencyProperty LeftDoubleClickCommandProperty =
           DependencyProperty.RegisterAttached("LeftDoubleClickCommand", typeof(ICommand),
-          typeof(ExtendedCommands), new PropertyMetadata(default(ICommand));
+          typeof(ExtendedCommands), new PropertyMetadata(default(ICommand)));
 
         public static ICommand GetLeftDoubleClickCommand(FrameworkElement element)
         {
@@ -215,7 +215,8 @@ namespace Apex.Commands
         
                    public static readonly DependencyProperty LeftDoubleClickCommandParameterProperty = 
                      DependencyProperty.RegisterAttached("LeftDoubleClickCommandParameter", typeof(object), 
-                     typeof(ExtendedCommands), new PropertyMetadata(default(object));
+                     typeof(ExtendedCommands), new PropertyMetadata(default(object))
+                     );
                   
                    public static object GetLeftDoubleClickCommandParameter(FrameworkElement element)
                    {
