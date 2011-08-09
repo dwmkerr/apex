@@ -150,6 +150,12 @@ namespace Apex.DragAndDrop
                     adornerLayer.RemoveAdorner(dragAdorner);
                DoDragAndDropEnd(dropTarget);
             }
+
+            dragData = null;
+            dragSource = null;
+            dragElement = null;
+            dropTarget = null;
+            dragAdorner = null;
         }
 
         private void DoDragAndDropStart(FrameworkElement dragSource, FrameworkElement dragElement,
@@ -204,9 +210,7 @@ namespace Apex.DragAndDrop
 
         private void DoDragAndDropEnd(FrameworkElement dropTarget)
         {
-            //  We can only do anything useful if we have a drag and drop end function.
-            if (dropTarget != null)
-            {
+          
                 //  Get the event handler.
                 DragAndDropDelegate dragAndDropEnd = DragAndDropEnd;
 
@@ -223,7 +227,6 @@ namespace Apex.DragAndDrop
                     };
                     dragAndDropEnd(this, args);
                 }
-            }
 
             //  We're done.
             dragging = false;
