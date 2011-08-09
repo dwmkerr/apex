@@ -119,6 +119,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Snippets\.vscontent" />
+    <None Include="Snippets\InsertAttachedProperty.snippet" />
+    <None Include="Snippets\InsertDependencyProperty.snippet" />
+    <None Include="Snippets\InsertNotifyingProperty.snippet" />
+    <None Include="Snippets\InsertViewModelCommand.snippet" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Adorners\AdornerLayer.xaml">

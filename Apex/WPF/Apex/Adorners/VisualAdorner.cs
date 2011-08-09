@@ -5,6 +5,7 @@ using System.Windows.Documents;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Apex.Extensions;
 
 namespace Apex.Adorners 
 {
@@ -14,10 +15,14 @@ namespace Apex.Adorners
         {
             //  Create a brush that draws the visual.
 #if !SILVERLIGHT
-            VisualBrush _brush = new VisualBrush(visual);
+            //VisualBrush _brush = new VisualBrush(visual);
+
+            ImageBrush _brush = new ImageBrush(visual.RenderBitmap());
 #else
             SolidColorBrush _brush = new SolidColorBrush(Colors.Red);
 #endif
+
+            
 
             //  Create a rectangle that will be painted with the visual.
             Rectangle r = new Rectangle();
@@ -26,7 +31,7 @@ namespace Apex.Adorners
             r.Width = visual.ActualWidth;
             r.Height = visual.ActualHeight;
             r.Fill = _brush;
-            r.Opacity = 0.5;
+            r.Opacity = 1;
             r.IsHitTestVisible = false;
             this.UIElement = r;
         }
