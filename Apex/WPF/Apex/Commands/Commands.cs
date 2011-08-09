@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
+
 namespace Apex.Commands
 {
   public static class ExtendedCommands
@@ -130,7 +131,7 @@ namespace Apex.Commands
           var parameter = GetClickCommandParameter(element);
           if (command != null && command.CanExecute(parameter))
           {
-            e.Handled = true;
+            e.Handled = false;
             command.Execute(parameter);
           }
         }
