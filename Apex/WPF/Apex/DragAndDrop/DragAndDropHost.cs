@@ -44,7 +44,7 @@ namespace Apex.DragAndDrop
                 throw new Exception("Unable to access the internal elements of the Drag and Drop host.");
             }
             
-            host.MouseLeftButtonDown += new MouseButtonEventHandler(host_MouseDown);
+            host.PreviewMouseLeftButtonDown += new MouseButtonEventHandler(host_MouseDown);
             host.MouseMove += new MouseEventHandler(host_MouseMove);
             host.MouseLeftButtonUp += new MouseButtonEventHandler(host_MouseUp);
         }

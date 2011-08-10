@@ -33,9 +33,9 @@
                                         <TextBlock 
                                             x:Name="tbPivotTitle" Margin="6,0,6,0" FontSize="32" Text="{Binding Title}" Opacity="0.9" Foreground="#FF797979" 
                                                     
-                                            apexCommands:ExtendedCommands.ClickCommand="{Binding SelectPivotItemCommand, RelativeSource={RelativeSource FindAncestor, 
+                                            apexCommands:ExtendedCommands.LeftClickCommand="{Binding SelectPivotItemCommand, RelativeSource={RelativeSource FindAncestor, 
                                              AncestorType={x:Type apexControls:PivotControl}}}" 
-                                                    apexCommands:ExtendedCommands.ClickCommandParameter="{Binding}">
+                                                    apexCommands:ExtendedCommands.LeftClickCommandParameter="{Binding}">
                                         </TextBlock>
 
                                         <DataTemplate.Resources>
