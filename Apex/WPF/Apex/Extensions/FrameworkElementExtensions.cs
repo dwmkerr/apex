@@ -38,40 +38,48 @@ namespace Apex.Extensions
       return null;
     }
 
-    public static RenderTargetBitmap RenderBitmap(this FrameworkElement element)
+    public static BitmapSource RenderBitmap(this FrameworkElement element)
     {
+#if SILVERLIGHT
+
+      //  We'll use the writable bitmap.
+      WriteableBitmap wb = new WriteableBitmap((int)element.ActualWidth, (int)element.ActualHeight);
+      wb.Render(element, new TranslateTransform());
+      wb.Invalidate();
+      return wb;
+
+#else
+
+      //  We're in WPF, so use the render bitmap.
 
 
-        double topLeft = 0;
-
-        double topRight = 0;
-
-        int width = (int)element.ActualWidth;
-
-        int height = (int)element.ActualHeight;
-
-        double dpiX = 96; // this is the magic number
-
-        double dpiY = 96; // this is the magic number
-
-        PixelFormat pixelFormat = PixelFormats.Default;
-
+      
+      //  Create a visual brush from the element.
         VisualBrush elementBrush = new VisualBrush(element);
 
+      //  Create a visual.
         DrawingVisual visual = new DrawingVisual();
 
+      //  Open the visual to get a drawing context.
         DrawingContext dc = visual.RenderOpen();
 
-        dc.DrawRectangle(elementBrush, null, new Rect(topLeft, topRight, width, height));
+      //  Draw the element in the appropriately sized rectangle.
+        dc.DrawRectangle(elementBrush, null, new Rect(0, 0, element.ActualWidth, element.ActualHeight));
 
+      //  Close the drawing context.
         dc.Close();
+      
+      //  WPF uses 96 DPI - this is defined in System.Windows.SystemParameters.DPI
+      //  but it is internal, so we must use a magic number.
+      double systemDPI = 96;
+      
+      //  Create the bitmap and render it.
+      RenderTargetBitmap bitmap = new RenderTargetBitmap((int)element.ActualWidth, (int)element.ActualHeight, systemDPI, systemDPI, PixelFormats.Default);
+      bitmap.Render(visual);
 
-        RenderTargetBitmap bitmap = new RenderTargetBitmap(width, height, dpiX, dpiY, pixelFormat);
-
-        bitmap.Render(visual);
-
+      //  Return the bitmap.
         return bitmap;
-
+#endif
     }
   }
 }

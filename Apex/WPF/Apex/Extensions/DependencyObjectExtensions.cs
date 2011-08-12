@@ -13,27 +13,28 @@ using System.Windows.Markup.Primitives;
 
 namespace Apex.Extensions
 {
+  /// <summary>
+  /// A set of useful extensions for the DependencyObject class.
+  /// </summary>
   public static class DependencyObjectExtensions
   {
+    /// <summary>
+    /// Gets the first parent found of a specific type.
+    /// </summary>
+    /// <typeparam name="T">The type of parent to find.</typeparam>
+    /// <param name="child">The child.</param>
+    /// <returns>The first parent found of type 'T' or null if no parent of type 'T' is found.</returns>
     public static T GetParent<T>(this DependencyObject child) where T : DependencyObject
     {
+      //  Get the visual parent.
       DependencyObject dependencyObject = VisualTreeHelper.GetParent(child);
+
+      //  If we've got the parent, return it if it is the correct type - otherwise
+      //  continue up the tree.
       if (dependencyObject != null)
-      {
-        T parent = dependencyObject as T;
-        if (parent != null)
-        {
-          return parent;
-        }
-        else
-        {
-          return GetParent<T>(dependencyObject);
-        }
-      }
+        return dependencyObject is T ? dependencyObject as T : GetParent<T>(dependencyObject);
       else
-      {
         return null;
-      }
     }
 
     public static DependencyObject GetTopLevelParent(this DependencyObject child)

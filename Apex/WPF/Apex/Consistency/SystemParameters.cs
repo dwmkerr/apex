@@ -5,6 +5,10 @@ using System.Text;
 
 namespace Apex.Consistency
 {
+  /// <summary>
+  /// Provides a Silverlight/WPF independent way to get system parameters
+  /// not in both platforms.
+  /// </summary>
     public static class SystemParameters
     {
         public static double MinimumHorizontalDragDistance

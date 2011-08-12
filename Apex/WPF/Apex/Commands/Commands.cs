@@ -10,32 +10,57 @@ namespace Apex.Commands
 {
     public static class ExtendedCommands
     {
-      
+
+      /// <summary>
+      /// The ContextMenuDataContext dependency property.
+      /// </summary>
         public static readonly DependencyProperty ContextMenuDataContextProperty =
             DependencyProperty.RegisterAttached("ContextMenuDataContext",
             typeof(object), typeof(ExtendedCommands),
             new UIPropertyMetadata(OnContextMenuDataContextChanged));
 
+        /// <summary>
+        /// Gets the context menu data context.
+        /// </summary>
+        /// <param name="obj">The obj.</param>
+        /// <returns></returns>
         public static object GetContextMenuDataContext(FrameworkElement obj)
         {
             return obj.GetValue(ContextMenuDataContextProperty);
         }
 
+        /// <summary>
+        /// Sets the context menu data context.
+        /// </summary>
+        /// <param name="obj">The obj.</param>
+        /// <param name="value">The value.</param>
         public static void SetContextMenuDataContext(FrameworkElement obj, object value)
         {
             obj.SetValue(ContextMenuDataContextProperty, value);
         }
 
+        /// <summary>
+        /// Called when the context menu data context changed.
+        /// </summary>
+        /// <param name="d">The dependency object.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnContextMenuDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+          //  Cast the data.
             FrameworkElement frameworkElement = d as FrameworkElement;
             if (frameworkElement == null)
                 return;
 
+          //  Set the data context of the context menu.
             if (frameworkElement.ContextMenu != null)
                 frameworkElement.ContextMenu.DataContext = GetContextMenuDataContext(frameworkElement);
         }
 
+        /// <summary>
+        /// Handles the LeftClickMouseDown event of the Control object.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         private static void Control_LeftClickMouseDown(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
@@ -51,6 +76,11 @@ namespace Apex.Commands
             }
         }
 
+        /// <summary>
+        /// Handles the RightClickMouseDown event of the Control object.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         private static void Control_RightClickMouseDown(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
@@ -66,6 +96,11 @@ namespace Apex.Commands
             }
         }
 
+        /// <summary>
+        /// Handles the LeftDoubleClickMouseDown event of the Control object.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         private static void Control_LeftDoubleClickMouseDown(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
@@ -81,6 +116,11 @@ namespace Apex.Commands
             }
         }
 
+        /// <summary>
+        /// Handles the RightDoubleClickMouseDown event of the Control object.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         private static void Control_RightDoubleClickMouseDown(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
@@ -96,22 +136,40 @@ namespace Apex.Commands
             }
         }
 
-        
+
+        /// <summary>
+        /// The LeftClickCommand dependency property.
+        /// </summary>
         public static readonly DependencyProperty LeftClickCommandProperty =
           DependencyProperty.RegisterAttached("LeftClickCommand", typeof(ICommand),
           typeof(ExtendedCommands), new PropertyMetadata(default(ICommand),
           OnLeftClickCommandChanged));
 
+        /// <summary>
+        /// Gets the left click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public static ICommand GetLeftClickCommand(FrameworkElement element)
         {
             return (ICommand)element.GetValue(LeftClickCommandProperty);
         }
 
+        /// <summary>
+        /// Sets the left click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
         public static void SetLeftClickCommand(FrameworkElement element, ICommand value)
         {
             element.SetValue(LeftClickCommandProperty, value);
         }
 
+        /// <summary>
+        /// Called when the left click command changes.
+        /// </summary>
+        /// <param name="d">The dependency object.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnLeftClickCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var element = d as UIElement;
@@ -123,37 +181,66 @@ namespace Apex.Commands
                     element.MouseDown -= new MouseButtonEventHandler(Control_LeftClickMouseDown);
             }
         }
-
-        
+      
+        /// <summary>
+        /// The LeftClickCommandParameter dependency property.
+        /// </summary>
         public static readonly DependencyProperty LeftClickCommandParameterProperty =
           DependencyProperty.RegisterAttached("LeftClickCommandParameter", typeof(object),
           typeof(ExtendedCommands), new PropertyMetadata(default(object)));
 
+        /// <summary>
+        /// Gets the left click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public static object GetLeftClickCommandParameter(FrameworkElement element)
         {
             return (object)element.GetValue(LeftClickCommandParameterProperty);
         }
 
+        /// <summary>
+        /// Sets the left click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
         public static void SetLeftClickCommandParameter(FrameworkElement element, object value)
         {
             element.SetValue(LeftClickCommandParameterProperty, value);
         }
-
-        
+      
+        /// <summary>
+        /// The LeftDoubleClickCommand dependency property.
+        /// </summary>
         public static readonly DependencyProperty LeftDoubleClickCommandProperty =
           DependencyProperty.RegisterAttached("LeftDoubleClickCommand", typeof(ICommand),
           typeof(ExtendedCommands), new PropertyMetadata(default(ICommand)));
 
+        /// <summary>
+        /// Gets the left double click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public static ICommand GetLeftDoubleClickCommand(FrameworkElement element)
         {
             return (ICommand)element.GetValue(LeftDoubleClickCommandProperty);
         }
 
+        /// <summary>
+        /// Sets the left double click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
         public static void SetLeftDoubleClickCommand(FrameworkElement element, ICommand value)
         {
             element.SetValue(LeftDoubleClickCommandProperty, value);
         }
 
+        /// <summary>
+        /// Called when the left double click command changes.
+        /// </summary>
+        /// <param name="d">The dependency object.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnLeftDoubleClickCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var element = d as UIElement;
@@ -165,43 +252,79 @@ namespace Apex.Commands
                     element.MouseDown -= new MouseButtonEventHandler(Control_LeftDoubleClickMouseDown);
             }
         }
-                     
-        
-                   public static readonly DependencyProperty LeftDoubleClickCommandParameterProperty = 
-                     DependencyProperty.RegisterAttached("LeftDoubleClickCommandParameter", typeof(object), 
-                     typeof(ExtendedCommands), new PropertyMetadata(default(object))
-                     );
-                  
-                   public static object GetLeftDoubleClickCommandParameter(FrameworkElement element)
-                   {
-                      return (object)element.GetValue(LeftDoubleClickCommandParameterProperty);
-                   }
 
-                   public static void SetLeftDoubleClickCommandParameter(FrameworkElement element, object value)
-                   {
-                      element.SetValue(LeftDoubleClickCommandParameterProperty, value);
-                   }
- 
-                   private static void OnLeftDoubleClickCommandParameterChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-                    {
-                      FrameworkElement me = d as FrameworkElement;
-                    }
-                
+
+        /// <summary>
+        /// The LeftDoubleClickCommandParameter property.
+        /// </summary>
+        public static readonly DependencyProperty LeftDoubleClickCommandParameterProperty = 
+          DependencyProperty.RegisterAttached("LeftDoubleClickCommandParameter", typeof(object), 
+          typeof(ExtendedCommands), new PropertyMetadata(default(object))
+          );
+
+        /// <summary>
+        /// Gets the left double click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
+        public static object GetLeftDoubleClickCommandParameter(FrameworkElement element)
+        {
+           return (object)element.GetValue(LeftDoubleClickCommandParameterProperty);
+        }
+
+        /// <summary>
+        /// Sets the left double click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
+        public static void SetLeftDoubleClickCommandParameter(FrameworkElement element, object value)
+        {
+           element.SetValue(LeftDoubleClickCommandParameterProperty, value);
+        }
+
+        /// <summary>
+        /// Called when the left double click command parameter changes.
+        /// </summary>
+        /// <param name="d">The dependency object.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private static void OnLeftDoubleClickCommandParameterChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+         {
+           FrameworkElement me = d as FrameworkElement;
+         }
+
+        /// <summary>
+        /// The RightClickCommand dependency property.
+        /// </summary>
         public static readonly DependencyProperty RightClickCommandProperty =
           DependencyProperty.RegisterAttached("RightClickCommand", typeof(ICommand),
           typeof(ExtendedCommands), new PropertyMetadata(default(ICommand),
           OnRightClickCommandChanged));
 
+        /// <summary>
+        /// Gets the right click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public static ICommand GetRightClickCommand(FrameworkElement element)
         {
             return (ICommand)element.GetValue(RightClickCommandProperty);
         }
 
+        /// <summary>
+        /// Sets the right click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
         public static void SetRightClickCommand(FrameworkElement element, ICommand value)
         {
             element.SetValue(RightClickCommandProperty, value);
         }
 
+        /// <summary>
+        /// Called when the right click command changes.
+        /// </summary>
+        /// <param name="d">The dependency object.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnRightClickCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var element = d as UIElement;
@@ -214,36 +337,66 @@ namespace Apex.Commands
             }
         }
 
-        
+        /// <summary>
+        /// The RightClickCommandParameter dependency property.
+        /// </summary>
         public static readonly DependencyProperty RightClickCommandParameterProperty =
           DependencyProperty.RegisterAttached("RightClickCommandParameter", typeof(object),
           typeof(ExtendedCommands), new PropertyMetadata(default(object)));
 
+        /// <summary>
+        /// Gets the right click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public static object GetRightClickCommandParameter(FrameworkElement element)
         {
             return (object)element.GetValue(RightClickCommandParameterProperty);
         }
 
+        /// <summary>
+        /// Sets the right click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
         public static void SetRightClickCommandParameter(FrameworkElement element, object value)
         {
             element.SetValue(RightClickCommandParameterProperty, value);
         }
-        
+
+        /// <summary>
+        /// The RightDoubleClickCommand dependency property.
+        /// </summary>
         public static readonly DependencyProperty RightDoubleClickCommandProperty =
           DependencyProperty.RegisterAttached("RightDoubleClickCommand", typeof(ICommand),
           typeof(ExtendedCommands), new PropertyMetadata(default(ICommand),
           OnRightDoubleClickCommandChanged));
 
+        /// <summary>
+        /// Gets the right double click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public static ICommand GetRightDoubleClickCommand(FrameworkElement element)
         {
             return (ICommand)element.GetValue(RightDoubleClickCommandProperty);
         }
 
+        /// <summary>
+        /// Sets the right double click command.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
         public static void SetRightDoubleClickCommand(FrameworkElement element, ICommand value)
         {
             element.SetValue(RightDoubleClickCommandProperty, value);
         }
 
+        /// <summary>
+        /// Called when the right double click command changes.
+        /// </summary>
+        /// <param name="d">The dependency object.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnRightDoubleClickCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var element = d as UIElement;
@@ -256,16 +409,29 @@ namespace Apex.Commands
             }
         }
 
-        
+
+        /// <summary>
+        /// The RightDoubleClickCommandParameter dependency property.
+        /// </summary>
         public static readonly DependencyProperty RightDoubleClickCommandParameterProperty =
           DependencyProperty.RegisterAttached("RightDoubleClickCommandParameter", typeof(object),
           typeof(ExtendedCommands), new PropertyMetadata(default(object)));
 
+        /// <summary>
+        /// Gets the right double click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public static object GetRightDoubleClickCommandParameter(FrameworkElement element)
         {
             return (object)element.GetValue(RightDoubleClickCommandParameterProperty);
         }
 
+        /// <summary>
+        /// Sets the right double click command parameter.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="value">The value.</param>
         public static void SetRightDoubleClickCommandParameter(FrameworkElement element, object value)
         {
             element.SetValue(RightDoubleClickCommandParameterProperty, value);

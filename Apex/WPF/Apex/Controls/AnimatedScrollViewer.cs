@@ -18,10 +18,6 @@ namespace Apex.Controls
     {
       double dX = e.PreviousSize.Width - e.NewSize.Width;
       double dY = e.PreviousSize.Height - e.NewSize.Height;
-
-      //CurrentHorizontalOffset += dX;// / 2;
-  //    ScrollToHorizontalOffset(CurrentHorizontalOffset + dX);
-   //   CurrentVerticalOffset += dY; /// 2;
      }
 
     public static DependencyProperty CurrentVerticalOffsetProperty = DependencyProperty.Register("CurrentVerticalOffset", typeof(double), typeof(AnimatedScrollViewer), new PropertyMetadata(new PropertyChangedCallback(OnVerticalChanged)));
