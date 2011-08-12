@@ -10,7 +10,6 @@ namespace Apex.Controls
     /// </summary>
     public class ApexGrid : Grid
     {
-
         /// <summary>
         /// Called when the rows property is changed.
         /// </summary>

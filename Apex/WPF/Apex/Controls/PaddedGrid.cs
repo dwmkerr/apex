@@ -44,49 +44,17 @@ namespace Apex.Controls
             {
                 //  Get the child.
                 DependencyObject child = VisualTreeHelper.GetChild(this, i);
+              
+                //  Create the binding.
+                Binding binding = new Binding();
+                binding.Source = this;
+                binding.Path = new PropertyPath("Padding");
 
-                //  Try and get the margin property.
-                DependencyProperty marginProperty = GetMarginProperty(child);
-
-                //  If we have a margin property, bind it to the padding.
-                if (marginProperty != null)
-                {
-                    //  Create the binding.
-                    Binding binding = new Binding();
-                    binding.Source = this;
-                    binding.Path = new PropertyPath("Padding");
-
-                    //  Bind the child's margin to the grid's padding.
-                    BindingOperations.SetBinding(child, marginProperty, binding);
-                }
+                //  Bind the child's margin to the grid's padding.
+                BindingOperations.SetBinding(child, FrameworkElement.MarginProperty, binding);
             }
         }
-
-        /// <summary>
-        /// Gets the margin property of a dependency object (if it has one).
-        /// </summary>
-        /// <param name="dependencyObject">The dependency object.</param>
-        /// <returns>The margin property of the dependency object, or null if one doesn't exist.</returns>
-        protected static DependencyProperty GetMarginProperty(DependencyObject dependencyObject)
-        {
-            //  Go through each property for the object.
-            foreach (PropertyDescriptor propertyDescriptor in TypeDescriptor.GetProperties(dependencyObject))
-            {
-                //  Get the dependency property descriptor.
-                DependencyPropertyDescriptor dpd = DependencyPropertyDescriptor.FromProperty(propertyDescriptor);
-
-                //  Have we found the margin?
-                if (dpd != null && dpd.Name == "Margin")
-                {
-                    //  We've found the margin property, return it.
-                    return dpd.DependencyProperty;
-                }
-            }
-
-            //  Failed to find the margin, return null.
-            return null;
-        }
-
+      
         /// <summary>
         /// Called when the padding changes.
         /// </summary>
