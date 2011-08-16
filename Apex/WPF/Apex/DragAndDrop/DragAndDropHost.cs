@@ -19,6 +19,11 @@ namespace Apex.DragAndDrop
     [TemplatePart(Name = "PART_AdornerLayer", Type = typeof(AdornerLayer))]
     public class DragAndDropHost : ContentControl
     {
+        public DragAndDropHost()
+        {
+            MinimumHorizontalDragDistance = Apex.Consistency.SystemParameters.MinimumHorizontalDragDistance;
+            MinimumVerticalDragDistance = Apex.Consistency.SystemParameters.MinimumVerticalDragDistance;
+        }
 #if !SILVERLIGHT
         static DragAndDropHost()
         {
@@ -94,10 +99,10 @@ namespace Apex.DragAndDrop
                 //  Apex.Consistency.SystemParamters returns drag distances
                 //  as SystemParameters doesn't have it in silverlight.
                 if (
-                    (Math.Abs(initialMousePosition.X - currentMousePosition.X) >
-                Apex.Consistency.SystemParameters.MinimumHorizontalDragDistance) &&
-                    (Math.Abs(initialMousePosition.Y - currentMousePosition.Y) >
-                Apex.Consistency.SystemParameters.MinimumHorizontalDragDistance))
+                    (Math.Abs(initialMousePosition.X - currentMousePosition.X) >=
+                MinimumHorizontalDragDistance) &&
+                    (Math.Abs(initialMousePosition.Y - currentMousePosition.Y) >=
+                MinimumHorizontalDragDistance))
                 {
                     //  We'll try starting a drag and drop.
                     DoDragAndDropStart(dragSource, dragElement, dragData);
@@ -178,7 +183,16 @@ namespace Apex.DragAndDrop
                 };
                 dragAndDropStart(this, args);
                 if (args.Allow == false)
+                {
+                    //  todo extrapolate to function
+                    dragging = false;
+                    dragData = null;
+                    dragElement = null;
+                    dragSource = null;
+                    dropTarget = null;
+                    dragAdorner = null;
                     return;
+                }
                 if (args.DragAdorner != null)
                 {
                     dragAdorner = args.DragAdorner;
@@ -315,6 +329,28 @@ namespace Apex.DragAndDrop
         public event DragAndDropDelegate DragAndDropStart;
         public event DragAndDropDelegate DragAndDropContinue;
         public event DragAndDropDelegate DragAndDropEnd;
+
+        
+        private static readonly DependencyProperty MinimumHorizontalDragDistanceProperty =
+          DependencyProperty.Register("MinimumHorizontalDragDistance", typeof(double), typeof(DragAndDropHost),
+          new PropertyMetadata(4.0));
+
+        public double MinimumHorizontalDragDistance
+        {
+            get { return (double)GetValue(MinimumHorizontalDragDistanceProperty); }
+            set { SetValue(MinimumHorizontalDragDistanceProperty, value); }
+        }
+
+        
+        private static readonly DependencyProperty MinimumVerticalDragDistanceProperty =
+          DependencyProperty.Register("MinimumVerticalDragDistance", typeof(double), typeof(DragAndDropHost),
+          new PropertyMetadata(4.0));
+
+        public double MinimumVerticalDragDistance
+        {
+            get { return (double)GetValue(MinimumVerticalDragDistanceProperty); }
+            set { SetValue(MinimumVerticalDragDistanceProperty, value); }
+        }       
     }
 
     public delegate void DragAndDropDelegate(object sender, DragAndDropEventArgs args);
