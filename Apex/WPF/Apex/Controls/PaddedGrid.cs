@@ -62,17 +62,14 @@ namespace Apex.Controls
         /// <param name="args">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnPaddingChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
         {
-          try
+          //  Get the padded grid that has had its padding changed.
+          PaddedGrid me = dependencyObject as PaddedGrid;
+          if (me != null)
           {
-            //  Get the padded grid that has had its padding changed.
-            PaddedGrid paddedGrid = dependencyObject as PaddedGrid;
-
-            //  Force the layout to be updated.
-            paddedGrid.UpdateLayout();
-          }
-          catch
-          {
-          }
+            //  Use an explicit 'InvalidateArrange', rather than the AffectsMeasure FrameworkPropertyMetadataOptions flag
+            //  as these flags aren't available in Silverlight - this method will work in SL and WPF.
+            me.InvalidateArrange();
+          } 
         }
 
         /// <summary>
@@ -80,8 +77,7 @@ namespace Apex.Controls
         /// </summary>
         private static readonly DependencyProperty PaddingProperty =
           DependencyProperty.Register("Padding", typeof(Thickness), typeof(PaddedGrid),
-          new FrameworkPropertyMetadata(new Thickness(0.0), FrameworkPropertyMetadataOptions.AffectsArrange,
-              new PropertyChangedCallback(OnPaddingChanged)));
+          new PropertyMetadata(new Thickness(0.0), new PropertyChangedCallback(OnPaddingChanged)));
         
         /// <summary>
         /// Gets or sets the padding.

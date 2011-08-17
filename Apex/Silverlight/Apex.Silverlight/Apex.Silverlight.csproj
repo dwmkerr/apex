@@ -66,6 +66,9 @@
       <Link>Adorners\AdornerLayer.xaml.cs</Link>
       <DependentUpon>AdornerLayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Adorners\UIElementAdorner.cs">
+      <Link>Adorners\UIElementAdorner.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Adorners\VisualAdorner.cs">
       <Link>Adorners\VisualAdorner.cs</Link>
     </Compile>
@@ -78,6 +81,27 @@
     <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\BooleanToVisibilityConverter.cs">
+      <Link>Converters\BooleanToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\DateTimeToSensibleStringConverter.cs">
+      <Link>Converters\DateTimeToSensibleStringConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\DivideByTwoConverter.cs">
+      <Link>Converters\DivideByTwoConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\EnumToBooleanConverter.cs">
+      <Link>Converters\EnumToBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\NullToVisibilityConverter.cs">
+      <Link>Converters\NullToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\StringCaseConverter.cs">
+      <Link>Converters\StringCaseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
+      <Link>Converters\StringNullOrEmptyToVisibilityConverter.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Design\DesignTime.cs">
       <Link>Design\DesignTime.cs</Link>
     </Compile>
@@ -87,11 +111,20 @@
     <Compile Include="..\..\WPF\Apex\DragAndDrop\DragAndDropHost.cs">
       <Link>DragAndDrop\DragAndDropHost.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\DateTimeExtensions.cs">
+      <Link>Extensions\DateTimeExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Extensions\DependencyObjectExtensions.cs">
       <Link>Extensions\DependencyObjectExtensions.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Extensions\FrameworkElementExtensions.cs">
       <Link>Extensions\FrameworkElementExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\ListExtensions.cs">
+      <Link>Extensions\ListExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
@@ -111,6 +144,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
