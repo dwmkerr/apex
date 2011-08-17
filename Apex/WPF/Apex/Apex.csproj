@@ -72,19 +72,17 @@
     <Compile Include="Consistency\SystemParameters.cs" />
     <Compile Include="Controls\AnimatedScrollViewer.cs" />
     <Compile Include="Controls\ApexGrid.cs" />
+    <Compile Include="Controls\CrossButton.cs" />
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converters\ByteArrayToImageSourceConverter.cs" />
     <Compile Include="Converters\DateTimeToSensibleStringConverter.cs" />
     <Compile Include="Converters\DivideByTwoConverter.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
-    <Compile Include="Converters\NotNullToTrueConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\StringNullOrEmptyToVisibilityConverter.cs" />
-    <Compile Include="Converters\StringToLowerCaseConverter.cs" />
-    <Compile Include="Converters\StringToUpperCaseConverter.cs" />
+    <Compile Include="Converters\StringCaseConverter.cs" />
     <Compile Include="Design\DesignTime.cs" />
     <Compile Include="DragAndDrop\DragAndDropHost.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
@@ -130,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionaries\CrossButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

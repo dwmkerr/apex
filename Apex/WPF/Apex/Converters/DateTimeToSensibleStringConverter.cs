@@ -7,7 +7,6 @@ using System.Windows;
 
 namespace Apex.Converters
 {
-    [ValueConversion(typeof(bool), typeof(string))]
     public class DateTimeToSensibleStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

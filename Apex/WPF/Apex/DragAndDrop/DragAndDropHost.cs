@@ -19,11 +19,6 @@ namespace Apex.DragAndDrop
     [TemplatePart(Name = "PART_AdornerLayer", Type = typeof(AdornerLayer))]
     public class DragAndDropHost : ContentControl
     {
-        public DragAndDropHost()
-        {
-            MinimumHorizontalDragDistance = Apex.Consistency.SystemParameters.MinimumHorizontalDragDistance;
-            MinimumVerticalDragDistance = Apex.Consistency.SystemParameters.MinimumVerticalDragDistance;
-        }
 #if !SILVERLIGHT
         static DragAndDropHost()
         {
@@ -333,7 +328,7 @@ namespace Apex.DragAndDrop
         
         private static readonly DependencyProperty MinimumHorizontalDragDistanceProperty =
           DependencyProperty.Register("MinimumHorizontalDragDistance", typeof(double), typeof(DragAndDropHost),
-          new PropertyMetadata(4.0));
+          new PropertyMetadata(Apex.Consistency.SystemParameters.MinimumHorizontalDragDistance));
 
         public double MinimumHorizontalDragDistance
         {
@@ -344,7 +339,7 @@ namespace Apex.DragAndDrop
         
         private static readonly DependencyProperty MinimumVerticalDragDistanceProperty =
           DependencyProperty.Register("MinimumVerticalDragDistance", typeof(double), typeof(DragAndDropHost),
-          new PropertyMetadata(4.0));
+          new PropertyMetadata(Apex.Consistency.SystemParameters.MinimumVerticalDragDistance));
 
         public double MinimumVerticalDragDistance
         {
