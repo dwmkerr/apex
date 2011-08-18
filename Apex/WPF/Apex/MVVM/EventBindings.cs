@@ -34,15 +34,12 @@ namespace Apex.MVVM
             //  If we have a new value, keep track of changes.
             if (newEventBindings != null)
             {
-                newEventBindings.CollectionChanged += new NotifyCollectionChangedEventHandler(newEventBindings_CollectionChanged);
                 foreach (var binding in newEventBindings)
                 {
                     binding.DataContext = o is FrameworkElement ? ((FrameworkElement)o).DataContext : null;
                     binding.Bind(o);
                 }
             }
-            else if (oldEventBindings != null)
-                oldEventBindings.CollectionChanged -= new NotifyCollectionChangedEventHandler(newEventBindings_CollectionChanged);
         }
 
         static void newEventBindings_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
