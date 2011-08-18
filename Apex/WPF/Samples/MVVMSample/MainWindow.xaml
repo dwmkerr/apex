@@ -20,7 +20,7 @@
             <TextBox Margin="4" Text="{Binding FullName}">
                 <apexMVVM:EventBindings.EventBindings>
                     <apexMVVM:EventBindingCollection>
-                        <apexMVVM:EventBinding EventName="MouseLeftButtonUp" Command="{Binding BuildNameCommand}" CommandParameter="Parameter" />
+                        <apexMVVM:EventBinding EventName="PreviewMouseLeftButtonUp" Command="{Binding BuildNameCommand}" CommandParameter="{Binding FullName}" />
                     </apexMVVM:EventBindingCollection>
                 </apexMVVM:EventBindings.EventBindings>
             </TextBox>
