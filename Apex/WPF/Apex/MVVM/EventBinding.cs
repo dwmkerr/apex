@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace Apex.MVVM
 {
-    public class EventBinding : DependencyObject
+    public class EventBinding : FrameworkElement
     {        
         private static readonly DependencyProperty EventNameProperty =
           DependencyProperty.Register("EventName", typeof(string), typeof(EventBinding),
@@ -42,14 +42,25 @@ namespace Apex.MVVM
 
         public void Bind(object o)
         {
-            //  Get the event info from the event name.
-            EventInfo eventInfo = o.GetType().GetEvent(EventName);
+            try
+            {
 
-            //  Create a delegate for the event to the event proxy.
-            Delegate del = Delegate.CreateDelegate(eventInfo.EventHandlerType, this, this.GetType().GetMethod("EventProxy"));
+                //  Get the event info from the event name.
+                EventInfo eventInfo = o.GetType().GetEvent(EventName);
 
-            //  Add the event handler.
-            eventInfo.AddEventHandler(o, del);
+                //  Get the method info for the event proxy.
+                MethodInfo methodInfo = GetType().GetMethod("EventProxy", BindingFlags.NonPublic | BindingFlags.Instance);
+
+                //  Create a delegate for the event to the event proxy.
+                Delegate del = Delegate.CreateDelegate(eventInfo.EventHandlerType, this, methodInfo);
+
+                //  Add the event handler.
+                eventInfo.AddEventHandler(o, del);
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+            }
         }
 
         private void EventProxy(object o, EventArgs e)
