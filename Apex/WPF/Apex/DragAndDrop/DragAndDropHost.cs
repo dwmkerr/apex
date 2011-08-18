@@ -73,6 +73,7 @@ namespace Apex.DragAndDrop
                     dragSource = foundDragSource;
                     initialMousePosition = e.GetPosition(host);
                     initialElementOffset = e.GetPosition(dragElement);
+
                     break;
                 }
             }
