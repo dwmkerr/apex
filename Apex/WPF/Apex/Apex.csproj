@@ -96,6 +96,7 @@
     <Compile Include="MVVM\EventBinding.cs" />
     <Compile Include="MVVM\EventBindingCollection.cs" />
     <Compile Include="MVVM\EventBindings.cs" />
+    <Compile Include="MVVM\FrameworkElementCollection.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="MVVM\ViewModelCommand.cs" />
