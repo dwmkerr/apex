@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace Apex.MVVM
 {
-    public class EventBindingCollection : ObservableCollection<EventBinding>
+  public class EventBindingCollection : FrameworkElementCollection<EventBinding>
     {
     }
 }
