@@ -8,9 +8,9 @@ using System.Collections.Specialized;
 
 namespace Apex.Commands
 {
+
     public static class EventBindings
     {
-
         private static readonly DependencyProperty EventBindingsProperty =
           DependencyProperty.RegisterAttached("EventBindings", typeof(EventBindingCollection), typeof(EventBindings),
           new PropertyMetadata(null, new PropertyChangedCallback(OnEventBindingsChanged)));
@@ -31,22 +31,12 @@ namespace Apex.Commands
             EventBindingCollection oldEventBindings = args.OldValue as EventBindingCollection;
             EventBindingCollection newEventBindings = args.NewValue as EventBindingCollection;
 
-            //  If we have a new value, keep track of changes.
+            //  If we have new set of event bindings, bind each one.
             if (newEventBindings != null)
             {
                 foreach (EventBinding binding in newEventBindings)
-                {
-                  
-                  FrameworkElement e = new FrameworkElement();
-                  
-                    //binding.DataContext = o is FrameworkElement ? ((FrameworkElement)o).DataContext : null;
                     binding.Bind(o);
-                }
             }
-        }
-
-        static void newEventBindings_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
         }
     }
 }
