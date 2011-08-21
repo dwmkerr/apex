@@ -6,7 +6,7 @@ using System.Windows;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace Apex.MVVM
+namespace Apex.Commands
 {
     public static class EventBindings
     {

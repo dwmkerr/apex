@@ -7,7 +7,7 @@ using System.Windows.Markup;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Apex.MVVM
+namespace Apex.Commands
 {
 
   public class EventBindingCollection : FreezableCollection<EventBinding>// FrameworkElementCollection<EventBinding>

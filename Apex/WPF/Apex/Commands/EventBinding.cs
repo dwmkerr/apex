@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Reflection;
 
-namespace Apex.MVVM
+namespace Apex.Commands
 {
     public class EventBinding : Freezable
     {
