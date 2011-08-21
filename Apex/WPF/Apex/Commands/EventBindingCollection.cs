@@ -9,30 +9,7 @@ using System.Windows.Controls;
 
 namespace Apex.Commands
 {
-
-  public class EventBindingCollection : FreezableCollection<EventBinding>// FrameworkElementCollection<EventBinding>
+    public class EventBindingCollection : FreezableCollection<EventBinding>
     {
-    public EventBindingCollection()
-    {
-      //Loaded += new RoutedEventHandler(EventBindingCollection_Loaded);
-    }
-    /*
-    void EventBindingCollection_Loaded(object sender, RoutedEventArgs e)
-    {
-      foreach (var child in this)
-      {
-        AddLogicalChild(child);
-        child.Bind(Parent);
-      }
-    }
-    public override void OnApplyTemplate()
-    {
-      base.OnApplyTemplate();
-      foreach (var child in this)
-      {
-        AddLogicalChild(child);
-        child.Bind(Parent);
-      }
-    }*/
     }
 }
