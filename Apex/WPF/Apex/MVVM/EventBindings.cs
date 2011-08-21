@@ -34,8 +34,11 @@ namespace Apex.MVVM
             //  If we have a new value, keep track of changes.
             if (newEventBindings != null)
             {
-                foreach (var binding in newEventBindings.Children)
+                foreach (EventBinding binding in newEventBindings)
                 {
+                  
+                  FrameworkElement e = new FrameworkElement();
+                  
                     //binding.DataContext = o is FrameworkElement ? ((FrameworkElement)o).DataContext : null;
                     binding.Bind(o);
                 }

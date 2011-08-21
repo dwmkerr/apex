@@ -8,8 +8,13 @@ using System.Reflection;
 
 namespace Apex.MVVM
 {
-    public class EventBinding : FrameworkElement
-    {        
+    public class EventBinding : Freezable
+    {
+      protected override Freezable CreateInstanceCore()
+      {
+        return new EventBinding();
+      }
+ 
         private static readonly DependencyProperty EventNameProperty =
           DependencyProperty.Register("EventName", typeof(string), typeof(EventBinding),
           new PropertyMetadata(null));
