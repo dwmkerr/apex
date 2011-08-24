@@ -55,6 +55,7 @@ namespace Apex.DragAndDrop
 
         void host_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
             //  Perform a hist test.
             HitTest hitTest = new HitTest();
             hitTest.DoHitTest(host, e.GetPosition(host));
@@ -102,6 +103,8 @@ namespace Apex.DragAndDrop
                 {
                     //  We'll try starting a drag and drop.
                     DoDragAndDropStart(dragSource, dragElement, dragData);
+                    if(dragging)
+                        host.CaptureMouse();
                 }
             }
 
@@ -149,8 +152,10 @@ namespace Apex.DragAndDrop
 
         void host_MouseUp(object sender, MouseButtonEventArgs e)
         {
+
             if (dragging)
             {
+                host.ReleaseMouseCapture();
                 if (dragAdorner != null)
                     adornerLayer.RemoveAdorner(dragAdorner);
                DoDragAndDropEnd(dropTarget);
@@ -189,6 +194,7 @@ namespace Apex.DragAndDrop
                     dragAdorner = null;
                     return;
                 }
+
                 if (args.DragAdorner != null)
                 {
                     dragAdorner = args.DragAdorner;
@@ -224,7 +230,7 @@ namespace Apex.DragAndDrop
 
         private void DoDragAndDropEnd(FrameworkElement dropTarget)
         {
-          
+
                 //  Get the event handler.
                 DragAndDropDelegate dragAndDropEnd = DragAndDropEnd;
 
