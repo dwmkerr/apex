@@ -72,21 +72,6 @@
     <Compile Include="..\..\WPF\Apex\Adorners\VisualAdorner.cs">
       <Link>Adorners\VisualAdorner.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\CommandReference.cs">
-      <Link>Commands\CommandReference.cs</Link>
-    </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\Commands.cs">
-      <Link>Commands\Commands.cs</Link>
-    </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\EventBinding.cs">
-      <Link>Commands\EventBinding.cs</Link>
-    </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\EventBindingCollection.cs">
-      <Link>Commands\EventBindingCollection.cs</Link>
-    </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\EventBindings.cs">
-      <Link>Commands\EventBindings.cs</Link>
-    </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\HitTest.cs">
       <Link>Consistency\HitTest.cs</Link>
     </Compile>
@@ -159,7 +144,9 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
