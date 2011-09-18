@@ -81,6 +81,9 @@
     <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Controls\PaddedGrid.cs">
+      <Link>Controls\PaddedGrid.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
@@ -143,9 +146,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
+    <Folder Include="Themes\ResourceDictionaries\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

@@ -55,6 +55,24 @@
     <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Controls\PaddedGrid.cs">
+      <Link>Controls\PaddedGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\DateTimeExtensions.cs">
+      <Link>Extensions\DateTimeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\DependencyObjectExtensions.cs">
+      <Link>Extensions\DependencyObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\FrameworkElementExtensions.cs">
+      <Link>Extensions\FrameworkElementExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\ListExtensions.cs">
+      <Link>Extensions\ListExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
