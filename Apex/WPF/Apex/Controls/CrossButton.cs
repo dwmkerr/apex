@@ -20,13 +20,23 @@ namespace Apex.Controls
   /// </summary>
     public class CrossButton : Button
     {
-      /// <summary>
-      /// Initializes the <see cref="CrossButton"/> class.
-      /// </summary>
+#if !SILVERLIGHT
+        /// <summary>
+        /// Initializes the <see cref="CrossButton"/> class.
+        /// </summary>
         static CrossButton()
         {
           //  Set the style key, so that our control template is used.
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CrossButton), new FrameworkPropertyMetadata(typeof(CrossButton)));
         }
+#else        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CrossButton"/> class.
+        /// </summary>
+        public CrossButton()
+        {
+            this.DefaultStyleKey = typeof(CrossButton);
+        }
+#endif
     }
 }
