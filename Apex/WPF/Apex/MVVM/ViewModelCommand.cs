@@ -37,32 +37,47 @@ namespace Apex.MVVM
         /// <param name="param">The param.</param>
         public virtual void DoExecute(object param)
         {
-            //  Get copies of the two event handlers we'll be using.
-            //  We get them here to protect against the event timing anti-pattern.
-            CancelCommandEventHandler executing = Executing;
-            CommandEventHandler executed = Executed;
+            //  Invoke the executing command, allowing the command to be cancelled.
+            CancelCommandEventArgs args = new CancelCommandEventArgs() { Parameter = param, Cancel = false };
+            InvokeExecuting(args);
 
-            //  Do we have an 'executing' event?
-            if (executing != null)
-            {
-                //  Call the event.
-                CancelCommandEventArgs args = new CancelCommandEventArgs() { Parameter = param };
-                executing(this, args);
-
-                //  If the event has been cancelled, bail now.
-                if (args.Cancel)
-                    return;
-            }
+            //  If the event has been cancelled, bail now.
+            if (args.Cancel)
+                return;
 
             //  Call the action or the parameterized action, whichever has been set.
-            if (action != null)
-                action();
-            else if (parameterizedAction != null)
-                parameterizedAction(param);
+            InvokeAction(param);
+
+            //  Call the executed function.
+            InvokeExecuted(new CommandEventArgs() { Parameter = param });
+        }
+
+        protected void InvokeAction(object param)
+        {
+            Action theAction = action;
+            Action<object> theParameterizedAction = parameterizedAction;
+             if (theAction != null)
+                theAction();
+            else if (theParameterizedAction != null)
+                theParameterizedAction(param);
+        }
+
+        protected void InvokeExecuted(CommandEventArgs args)
+        {
+            CommandEventHandler executed = Executed;
 
             //  Call the executed event.
             if (executed != null)
-                executed(this, new CommandEventArgs() { Parameter = param });
+                executed(this, args);
+        }
+
+        protected void InvokeExecuting(CancelCommandEventArgs args)
+        {
+            CancelCommandEventHandler executing = Executing;
+
+            //  Call the executed event.
+            if (executing != null)
+                executing(this, args);
         }
 
 

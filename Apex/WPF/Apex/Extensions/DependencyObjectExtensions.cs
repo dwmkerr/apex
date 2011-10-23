@@ -83,6 +83,34 @@ namespace Apex.Extensions
       return null;
     }
 
+#if !SILVERLIGHT
+
+    public static IEnumerable<T> GetChildren<T>(this DependencyObject parent) where T : DependencyObject
+    {
+      if (parent == null) yield break;
+
+      if (parent is ContentElement || parent is FrameworkElement)
+      {
+        //use the logical tree for content / framework elements
+        foreach (object obj in LogicalTreeHelper.GetChildren(parent))
+        {
+          var depObj = obj as DependencyObject;
+          if (depObj != null) yield return (T)obj;
+        }
+      }
+      else
+      {
+        //use the visual tree per default
+        int count = VisualTreeHelper.GetChildrenCount(parent);
+        for (int i = 0; i < count; i++)
+        {
+          yield return (T)VisualTreeHelper.GetChild(parent, i);
+        }
+      }
+    }
+
+#endif
+
     public static T FindChild<T>(this DependencyObject me, string childName) where T : DependencyObject
     {
       // Confirm parent and childName are valid. 
