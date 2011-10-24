@@ -53,7 +53,7 @@ namespace Apex.Controls
           {
               throw new Exception("Unable to access the internal elements of the Pivot control.");
           }
-          selectPivotItemCommand = new ViewModelCommand(SelectPivotItem, true);
+          selectPivotItemCommand = new Command(SelectPivotItem, true);
 
           SizeChanged += new SizeChangedEventHandler(PivotControl_SizeChanged);
 
@@ -115,7 +115,7 @@ namespace Apex.Controls
     public static readonly DependencyProperty SelectedPivotItemProperty = DependencyProperty.Register("SelectedPivotItem",
       typeof(PivotItem), typeof(PivotControl), new PropertyMetadata(null, new PropertyChangedCallback(OnSelectedPivotItemChanged)));
 
-    private ViewModelCommand selectPivotItemCommand = null;
+    private Command selectPivotItemCommand = null;
 
 
     public ObservableCollection<PivotItem> PivotItems

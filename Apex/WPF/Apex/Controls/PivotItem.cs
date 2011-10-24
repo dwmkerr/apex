@@ -31,7 +31,7 @@ namespace Apex.Controls
     public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register("IsSelected", typeof(bool), typeof(PivotItem), 
       new PropertyMetadata(false));
   
-    public ViewModelCommand selectedCommand;
+    public Command selectedCommand;
 
     public string Title
     {
