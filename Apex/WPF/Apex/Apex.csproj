@@ -76,6 +76,7 @@
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
+    <Compile Include="Controls\VariableGrid.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\DateTimeToSensibleStringConverter.cs" />
     <Compile Include="Converters\DivideByTwoConverter.cs" />
@@ -94,9 +95,10 @@
     <Compile Include="Commands\EventBinding.cs" />
     <Compile Include="Commands\EventBindingCollection.cs" />
     <Compile Include="Commands\EventBindings.cs" />
+    <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
-    <Compile Include="MVVM\ViewModelCommand.cs" />
+    <Compile Include="MVVM\Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -9,7 +9,7 @@ namespace MVVMSample
         public MainViewModel()
         {
             //  Create the build name command.
-            buildNameCommand = new ViewModelCommand(BuildName, false);
+            buildNameCommand = new Command(BuildName, false);
         }
 
         private void BuildName()
@@ -77,13 +77,13 @@ namespace MVVMSample
         /// <summary>
         /// The build name command.
         /// </summary>
-        private ViewModelCommand buildNameCommand;
+        private Command buildNameCommand;
 
         /// <summary>
         /// Gets the build name command.
         /// </summary>
         /// <value>The build name command.</value>
-        public ViewModelCommand BuildNameCommand
+        public Command BuildNameCommand
         {
             get { return buildNameCommand; }
         }

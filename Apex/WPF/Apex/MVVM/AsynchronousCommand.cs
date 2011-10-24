@@ -1,9 +1,10 @@
 ﻿using System.Windows.Input;
 using System;
 using System.Windows.Threading;
+using System.ComponentModel;
 namespace Apex.MVVM
 {
-    public class AsynchronousCommand : ViewModelCommand
+    public class AsynchronousCommand : Command, INotifyPropertyChanged
     {
         public AsynchronousCommand(Action action, bool canExecute) : base(action, canExecute) {}
 
@@ -35,19 +36,41 @@ namespace Apex.MVVM
             del.BeginInvoke(param,
                 (asyncResult) =>
                 {
+                  //  End the asynchronous call.
                     del.EndInvoke(asyncResult);
 
+                  //  Invoke the executed event on the calling thread.
                     callingDispatcher.BeginInvoke(
                         ((Action)(() =>
                             {
                                 InvokeExecuted(new CommandEventArgs() { Parameter = param });
                             })));
 
+                  //  We are no longer executing.
                     IsExecuting = false;
                 }
             , null);
         }
 
+        /// <summary>
+        /// Raises the property changed event.
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
+        private void NotifyPropertyChanged(string propertyName)
+        {
+          //  Store the event handler - in case it changes between
+          //  the line to check it and the line to fire it.
+          PropertyChangedEventHandler propertyChanged = PropertyChanged;
+
+          //  If the event has been subscribed to, fire it.
+          if (propertyChanged != null)
+            propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Reports progress on the thread which invoked the command.
+        /// </summary>
+        /// <param name="action">The action.</param>
         public void ReportProgress(Action action)
         {
             if (IsExecuting)
@@ -56,10 +79,37 @@ namespace Apex.MVVM
 
         protected Dispatcher callingDispatcher;
 
+      /// <summary>
+      /// Flag indicating that the command is executing.
+      /// </summary>
+      private bool isExecuting = false;
+
+        /// <summary>
+        /// The property changed event.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is executing.
+        /// </summary>
+        /// <value>
+        /// 	<c>true</c> if this instance is executing; otherwise, <c>false</c>.
+        /// </value>
         public bool IsExecuting
         {
-            get;
-            set;
+          get 
+          { 
+            return isExecuting; 
+          }
+          set
+          {
+            if (isExecuting != value)
+            {
+              isExecuting = value;
+              NotifyPropertyChanged("IsExecuting");
+            }
+          }
         }
+      
     }
 }

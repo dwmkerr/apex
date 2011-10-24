@@ -129,14 +129,14 @@
     <Compile Include="..\..\WPF\Apex\Extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\MVVM\Command.cs">
+      <Link>MVVM\Command.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\..\WPF\Apex\MVVM\ViewModelCommand.cs">
-      <Link>MVVM\ViewModelCommand.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

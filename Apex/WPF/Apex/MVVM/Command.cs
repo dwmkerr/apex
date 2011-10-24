@@ -5,14 +5,14 @@ namespace Apex.MVVM
     /// <summary>
     /// The ViewModelCommand class - an ICommand that can fire a function.
     /// </summary>
-    public class ViewModelCommand : ICommand
+    public class Command : ICommand
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ViewModelCommand"/> class.
+        /// Initializes a new instance of the <see cref="Command"/> class.
         /// </summary>
         /// <param name="action">The action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-        public ViewModelCommand(Action action, bool canExecute)
+        public Command(Action action, bool canExecute)
         {
             //  Set the action.
             this.action = action;
@@ -20,11 +20,11 @@ namespace Apex.MVVM
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ViewModelCommand"/> class.
+        /// Initializes a new instance of the <see cref="Command"/> class.
         /// </summary>
         /// <param name="parameterizedAction">The parameterized action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-        public ViewModelCommand(Action<object> parameterizedAction, bool canExecute)
+        public Command(Action<object> parameterizedAction, bool canExecute)
         {
             //  Set the action.
             this.parameterizedAction = parameterizedAction;

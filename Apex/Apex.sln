@@ -35,9 +35,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropSample", "WPF\Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropSample", "Silverlight\Samples\DragAndDropSample\DragAndDropSample.csproj", "{12704CED-DA46-418B-BF4C-81D6FC14BDCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandingExample", "CommandingExample\CommandingExample.csproj", "{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 12
+		SccNumberOfProjects = 13
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -85,6 +87,10 @@ Global
 		SccProjectTopLevelParentUniqueName11 = Apex.sln
 		SccProjectName11 = Silverlight/Samples/DragAndDropSample
 		SccLocalPath11 = Silverlight\\Samples\\DragAndDropSample
+		SccProjectUniqueName12 = CommandingExample\\CommandingExample.csproj
+		SccProjectTopLevelParentUniqueName12 = Apex.sln
+		SccProjectName12 = CommandingExample
+		SccLocalPath12 = CommandingExample
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -213,6 +219,16 @@ Global
 		{12704CED-DA46-418B-BF4C-81D6FC14BDCA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{12704CED-DA46-418B-BF4C-81D6FC14BDCA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{12704CED-DA46-418B-BF4C-81D6FC14BDCA}.Release|x86.ActiveCfg = Release|Any CPU
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Debug|x86.ActiveCfg = Debug|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Debug|x86.Build.0 = Debug|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Release|Any CPU.ActiveCfg = Release|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Release|x86.ActiveCfg = Release|x86
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -227,6 +243,7 @@ Global
 		{479D5D9F-394D-4635-953D-DA0078211320} = {92E46CAC-42EF-4F9D-9E3D-037CA3187EB2}
 		{A6533E15-A64B-44E9-87B4-7B1372302FF9} = {92E46CAC-42EF-4F9D-9E3D-037CA3187EB2}
 		{EB143A15-9C0F-43CA-9419-BEC75C6D3A4D} = {92E46CAC-42EF-4F9D-9E3D-037CA3187EB2}
+		{A26B8CED-AA72-4C70-96BC-4A068FE55FB5} = {92E46CAC-42EF-4F9D-9E3D-037CA3187EB2}
 		{E94096B6-36C3-49EA-B580-06DB182C9F7D} = {19B4056B-BFD6-4467-A047-35F6C4D8A8A3}
 		{8550269A-AC03-4D05-91F3-043973FA56DE} = {19B4056B-BFD6-4467-A047-35F6C4D8A8A3}
 		{F5A06B77-A59B-4449-862C-907A1085B59D} = {5D667BCA-10C9-4C42-B42E-DD273B3EC042}
