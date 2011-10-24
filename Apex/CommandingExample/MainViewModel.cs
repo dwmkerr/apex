@@ -7,62 +7,113 @@ using System.Collections.ObjectModel;
 
 namespace CommandingExample
 {
-  public class MainViewModel : ViewModel
-  {
-    public MainViewModel()
+    public class MainViewModel : ViewModel
     {
-      //  Create the simple command - calls DoSimpleCommand.
-      simpleCommand = new Command(DoSimpleCommand, true);
-
-      //  Create the lambda command, no extra function necessary.
-      lambaCommand = new Command(
-        () =>
+        public MainViewModel()
         {
-          Messages.Add("Calling the Lamba Command - no explicit function necessary.");
-        }
-        , true);
+            //  Create the simple command - calls DoSimpleCommand.
+            simpleCommand = new Command(DoSimpleCommand, true);
 
-      //  Create the cancellable command.
-      cancellableCommand = new Command(
-        () =>
+            //  Create the lambda command, no extra function necessary.
+            lambdaCommand = new Command(
+              () =>
+              {
+                  Messages.Add("Calling the Lamba Command - no explicit function necessary.");
+              }
+              , true);
+
+            //  Create the parameterized command.
+            parameterizedCommand = new Command(DoParameterisedCommand, true);
+
+            //  Create the enable/disable command.
+            enableDisableCommand = new Command(
+                () =>
+                {
+                    Messages.Add("Enable/Disable command called.");
+                }
+            , true);
+
+            //  Create the events command.
+            eventsCommand = new Command(
+                () =>
+                {
+                    Messages.Add("Calling the Events Command.");
+                }
+            , true);
+
+            //  Create the async command.
+            asyncCommand = new AsynchronousCommand(
+                () =>
+                {
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        //  Report progress.
+                        asyncCommand.ReportProgress(() => { Messages.Add(i.ToString()); });
+
+                        System.Threading.Thread.Sleep(200);
+                    }
+                }
+            , true);
+        }
+
+        private void DoSimpleCommand()
         {
-          Messages.Add("Successfully called the cancellable command.");
+            //  Add a message.
+            Messages.Add("Calling 'DoSimpleCommand'.");
         }
-        , true);
+
+        private void DoParameterisedCommand(object parameter)
+        {
+            Messages.Add("Calling a Parameterised Command - the Parameter is '" + parameter.ToString() + "'.");
+        }
+
+        private Command simpleCommand;
+
+        public Command SimpleCommand
+        {
+            get { return simpleCommand; }
+        }
+
+        private Command lambdaCommand;
+
+        public Command LambdaCommand
+        {
+            get { return lambdaCommand; }
+        }
+
+        private Command parameterizedCommand;
+
+        public Command ParameterisedCommand
+        {
+            get { return parameterizedCommand; }
+        }
+
+        private Command enableDisableCommand;
+
+        public Command EnableDisableCommand
+        {
+            get { return enableDisableCommand; }
+        }
+
+        private Command eventsCommand;
+
+        public Command EventsCommand
+        {
+            get { return eventsCommand; }
+        }
+
+        private AsynchronousCommand asyncCommand;
+
+        public AsynchronousCommand AsyncCommand
+        {
+            get { return asyncCommand; }
+        }
+
+        private ObservableCollection<string> messages = new ObservableCollection<string>();
+
+        public ObservableCollection<string> Messages
+        {
+            get { return messages; }
+        }
     }
-
-    private void DoSimpleCommand()
-    {
-      //  Add a message.
-      Messages.Add("Calling 'DoSimpleCommand'.");
-    }
-
-    private Command simpleCommand;
-
-    public Command SimpleCommand
-    {
-      get { return simpleCommand; }
-    }
-
-    private Command lambaCommand;
-
-    public Command LambaCommand
-    {
-      get { return lambaCommand; }
-    }
-
-    private Command cancellableCommand;
-
-    public Command CancellableCommand
-    {
-      get { return cancellableCommand; }
-    }
-
-    private ObservableCollection<string> messages = new ObservableCollection<string>();
-
-    public ObservableCollection<string> Messages
-    {
-      get { return messages; }
-    }
-  }
 }
