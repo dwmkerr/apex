@@ -54,6 +54,9 @@ namespace CommandingExample
                     }
                 }
             , true);
+
+            //  Create the event binding command.
+            eventBindingCommand = new Command(DoEventBindingCommand, true);
         }
 
         private void DoSimpleCommand()
@@ -65,6 +68,11 @@ namespace CommandingExample
         private void DoParameterisedCommand(object parameter)
         {
             Messages.Add("Calling a Parameterised Command - the Parameter is '" + parameter.ToString() + "'.");
+        }
+
+        private void DoEventBindingCommand()
+        {
+            Messages.Add("Called a command via an event.");
         }
 
         private Command simpleCommand;
@@ -107,6 +115,13 @@ namespace CommandingExample
         public AsynchronousCommand AsyncCommand
         {
             get { return asyncCommand; }
+        }
+
+        private Command eventBindingCommand;
+
+        public Command EventBindingCommand
+        {
+            get { return eventBindingCommand; }
         }
 
         private ObservableCollection<string> messages = new ObservableCollection<string>();

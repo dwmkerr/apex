@@ -59,7 +59,8 @@ namespace Apex.Commands
                 //  Create a delegate for the event to the event proxy.
                 Delegate del = Delegate.CreateDelegate(eventInfo.EventHandlerType, this, methodInfo);
 
-                //  Add the event handler.
+                //  Add the event handler. (Removing it first if it already exists!)
+                eventInfo.RemoveEventHandler(o, del);
                 eventInfo.AddEventHandler(o, del);
             }
             catch (Exception e)

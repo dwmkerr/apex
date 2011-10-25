@@ -16,6 +16,10 @@ namespace Apex.MVVM
         /// <param name="param">The param.</param>
         public override void DoExecute(object param)
         {
+            //  If we are already executing, do not continue.
+            if (IsExecuting)
+                return;
+
             //  Invoke the executing command, allowing the command to be cancelled.
             CancelCommandEventArgs args = new CancelCommandEventArgs() { Parameter = param, Cancel = false };
             InvokeExecuting(args);
