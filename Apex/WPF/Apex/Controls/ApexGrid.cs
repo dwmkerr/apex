@@ -62,56 +62,13 @@ namespace Apex.Controls
 
             //  Split the string by comma.
             string[] theLengths = lengths.Split(',');
+            
+            //  Use a consistency grid length converter.
+            Consistency.GridLengthConverter gridLengthConverter = new Consistency.GridLengthConverter();
 
-            //  If we're NOT in silverlight, we have a gridlength converter
-            //  we can use.
-#if !SILVERLIGHT
-
-            //  Create a grid length converter.
-            GridLengthConverter gridLengthConverter = new GridLengthConverter();
-
-            //  Use the grid length converter to set each length.
-            foreach (var length in theLengths)
-                gridLengths.Add((GridLength)gridLengthConverter.ConvertFromString(length));
-
-#else
-
-      //  We are in silverlight and do not have a grid length converter.
-      //  We can do the conversion by hand.
-      foreach(var length in theLengths)
-      {
-        //  Auto is easy.
-        if(length == "Auto")
-        {
-          gridLengths.Add(new GridLength(1, GridUnitType.Auto));
-        }
-        else if (length.Contains("*"))
-        {
-          //  It's a starred value, remove the star and get the coefficient as a double.
-          double coefficient = 1;
-          string starVal = length.Replace("*", "");
-
-          //  If there is a coefficient, try and convert it.
-          //  If we fail, throw an exception.
-          if (starVal.Length > 0 && double.TryParse(starVal, out coefficient) == false)
-            throw new Exception("'" + length + "' is not a valid value."); 
-
-          //  We've handled the star value.
-          gridLengths.Add(new GridLength(coefficient, GridUnitType.Star));
-        }
-        else
-        {
-          //  It's not auto or star, so unless it's a plain old pixel 
-          //  value we must throw an exception.
-          double pixelVal = 0;
-          if(double.TryParse(length, out pixelVal) == false)
-            throw new Exception("'" + length + "' is not a valid value.");
-          
-          //  We've handled the star value.
-          gridLengths.Add(new GridLength(pixelVal, GridUnitType.Pixel));
-        }
-      }
-#endif
+            //  Convert the lengths.
+            foreach(var length in theLengths)
+                gridLengths.Add(gridLengthConverter.ConvertFromString(length));
 
             //  Return the grid lengths.
             return gridLengths;

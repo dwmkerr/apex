@@ -68,10 +68,14 @@
     <Compile Include="Adorners\VisualAdorner.cs" />
     <Compile Include="Commands\CommandReference.cs" />
     <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Consistency\GridLengthConverter.cs" />
     <Compile Include="Consistency\HitTest.cs" />
     <Compile Include="Consistency\SystemParameters.cs" />
     <Compile Include="Controls\AnimatedScrollViewer.cs" />
     <Compile Include="Controls\ApexGrid.cs" />
+    <Compile Include="Controls\CircularProgressBar.xaml.cs">
+      <DependentUpon>CircularProgressBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CrossButton.cs" />
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
@@ -131,6 +135,10 @@
     <Page Include="Adorners\AdornerLayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CircularProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>

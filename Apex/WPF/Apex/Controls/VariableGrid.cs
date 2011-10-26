@@ -32,15 +32,15 @@ namespace Apex.Controls
           return;
 
         //  Create a grid length converter.
-        GridLengthConverter gridLengthConverter = new GridLengthConverter();
+        Consistency.GridLengthConverter gridLengthConverter = new Consistency.GridLengthConverter();
 
         //  Add each row.
         for (int i = 0; i < me.Rows; i++)
-          me.RowDefinitions.Add(new RowDefinition() { Height = (GridLength)gridLengthConverter.ConvertFromString(me.RowHeight) });
+          me.RowDefinitions.Add(new RowDefinition() { Height = gridLengthConverter.ConvertFromString(me.RowHeight) });
 
         //  Add each column.
         for (int i = 0; i < me.Columns; i++)
-          me.ColumnDefinitions.Add(new ColumnDefinition() { Width = (GridLength)gridLengthConverter.ConvertFromString(me.ColumnWidth) });
+          me.ColumnDefinitions.Add(new ColumnDefinition() { Width = gridLengthConverter.ConvertFromString(me.ColumnWidth) });
       }
 
       /// <summary>
@@ -62,14 +62,14 @@ namespace Apex.Controls
       /// </summary>
       private static readonly DependencyProperty rowHeightProperty =
           DependencyProperty.Register("RowHeight", typeof(string), typeof(VariableGrid),
-          new FrameworkPropertyMetadata("Auto", FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnGridPropertyChanged)));
+          new PropertyMetadata("Auto", new PropertyChangedCallback(OnGridPropertyChanged)));
 
       /// <summary>
       /// The columns dependency property.
       /// </summary>
       private static readonly DependencyProperty columnsWidthProperty =
           DependencyProperty.Register("ColumnWidth", typeof(string), typeof(VariableGrid),
-          new FrameworkPropertyMetadata("Auto", FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnGridPropertyChanged)));
+          new PropertyMetadata("Auto", new PropertyChangedCallback(OnGridPropertyChanged)));
 
       /// <summary>
       /// Gets or sets the rows.
