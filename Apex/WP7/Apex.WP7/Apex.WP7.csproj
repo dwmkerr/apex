@@ -52,11 +52,17 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\WPF\Apex\Consistency\GridLengthConverter.cs">
+      <Link>Consistency\GridLengthConverter.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Controls\VariableGrid.cs">
+      <Link>Controls\VariableGrid.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Extensions\DateTimeExtensions.cs">
       <Link>Extensions\DateTimeExtensions.cs</Link>
@@ -73,14 +79,17 @@
     <Compile Include="..\..\WPF\Apex\Extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\MVVM\AsynchronousCommand.cs">
+      <Link>MVVM\AsynchronousCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\MVVM\Command.cs">
+      <Link>MVVM\Command.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\..\WPF\Apex\MVVM\ViewModelCommand.cs">
-      <Link>MVVM\ViewModelCommand.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

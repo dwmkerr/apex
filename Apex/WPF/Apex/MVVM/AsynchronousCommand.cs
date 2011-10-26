@@ -32,7 +32,11 @@ namespace Apex.MVVM
             IsExecuting = true;
 
             //  Store the calling dispatcher.
+#if !SILVERLIGHT
             callingDispatcher = Dispatcher.CurrentDispatcher;
+#else
+            callingDispatcher = System.Windows.Application.Current.RootVisual.Dispatcher;
+#endif
 
             //  Call the action or the parameterized action, whichever has been set.
             //  However, invoke this on a new thread.
