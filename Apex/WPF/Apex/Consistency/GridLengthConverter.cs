@@ -19,8 +19,8 @@ namespace Apex.Consistency
             //  we can use.
 #if !SILVERLIGHT
 
-            //  Create a grid length converter.
-            GridLengthConverter gridLengthConverter = new GridLengthConverter();
+            //  Create the standard windows grid length converter.
+            System.Windows.GridLengthConverter gridLengthConverter = new System.Windows.GridLengthConverter();
 
             //  Return the converted grid length.
             return (GridLength)gridLengthConverter.ConvertFromString(gridLength);
