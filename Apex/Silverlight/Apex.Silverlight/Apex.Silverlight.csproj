@@ -72,11 +72,32 @@
     <Compile Include="..\..\WPF\Apex\Adorners\VisualAdorner.cs">
       <Link>Adorners\VisualAdorner.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\CommandReference.cs">
+      <Link>Commands\CommandReference.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\Commands.cs">
+      <Link>Commands\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\EventBinding.cs">
+      <Link>Commands\EventBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\EventBindingCollection.cs">
+      <Link>Commands\EventBindingCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\EventBindings.cs">
+      <Link>Commands\EventBindings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\Freezable.cs">
+      <Link>Consistency\Freezable.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\GridLengthConverter.cs">
       <Link>Consistency\GridLengthConverter.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\HitTest.cs">
       <Link>Consistency\HitTest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\MouseClickDetector.cs">
+      <Link>Consistency\MouseClickDetector.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\SystemParameters.cs">
       <Link>Consistency\SystemParameters.cs</Link>
@@ -161,7 +182,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\" />
     <Folder Include="Themes\ResourceDictionaries\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

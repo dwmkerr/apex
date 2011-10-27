@@ -5,16 +5,17 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Reflection;
+using Apex.Consistency;
 
 namespace Apex.Commands
 {
     public class EventBinding : Freezable
     {
-      protected override Freezable CreateInstanceCore()
-      {
-        return new EventBinding();
-      }
- 
+        protected override Freezable CreateInstanceCore()
+        {
+            return new EventBinding();
+        }
+
         private static readonly DependencyProperty EventNameProperty =
           DependencyProperty.Register("EventName", typeof(string), typeof(EventBinding),
           new PropertyMetadata(null));
@@ -34,7 +35,7 @@ namespace Apex.Commands
             get { return (ICommand)GetValue(CommandProperty); }
             set { SetValue(CommandProperty, value); }
         }
-        
+
         private static readonly DependencyProperty CommandParameterProperty =
           DependencyProperty.Register("CommandParameter", typeof(object), typeof(EventBinding),
           new PropertyMetadata(null));

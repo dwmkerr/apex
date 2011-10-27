@@ -38,23 +38,34 @@ namespace Apex.MVVM
             callingDispatcher = System.Windows.Application.Current.RootVisual.Dispatcher;
 #endif
 
+
+            //  TODO TODO TODO this is where silverlight excepts.
+
             //  Call the action or the parameterized action, whichever has been set.
             //  However, invoke this on a new thread.
             Action<object> del = InvokeAction;
             del.BeginInvoke(param,
                 (asyncResult) =>
                 {
-                  //  End the asynchronous call.
+                    //  End the asynchronous call.
                     del.EndInvoke(asyncResult);
 
-                  //  Invoke the executed event on the calling thread.
-                    callingDispatcher.BeginInvoke(
-                        ((Action)(() =>
-                            {
-                                InvokeExecuted(new CommandEventArgs() { Parameter = param });
-                            })));
+                    //  Are we on the calling dispatcher?
+                    if (callingDispatcher.CheckAccess())
+                    {
+                        InvokeExecuted(new CommandEventArgs() { Parameter = param });
+                    }
+                    else
+                    {
+                        //  Invoke the executed event on the calling thread.
+                        callingDispatcher.BeginInvoke(
+                            ((Action)(() =>
+                                {
+                                    InvokeExecuted(new CommandEventArgs() { Parameter = param });
+                                })));
+                    }
 
-                  //  We are no longer executing.
+                    //  We are no longer executing.
                     IsExecuting = false;
                 }
             , null);

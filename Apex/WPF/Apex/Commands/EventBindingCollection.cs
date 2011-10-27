@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Markup;
 using System.Windows;
 using System.Windows.Controls;
+using Apex.Consistency;
 
 namespace Apex.Commands
 {

@@ -20,52 +20,60 @@
         <!-- Left hand column, the messages. -->
         <apexControls:ApexGrid Grid.Column="0" Margin="4" Rows="Auto,*">
 
-            <TextBlock Grid.Row="0" Text="Output" />
-            <ListBox Grid.Row="1" ItemsSource="{Binding Messages}" />
+            <TextBlock Grid.Row="0" Text="Output" FontSize="24" />
+            <ScrollViewer Grid.Row="1">
+                <ItemsControl ItemsSource="{Binding Messages}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
             
         </apexControls:ApexGrid>
 
         <!-- Right hand column, the commands. -->
         <apexControls:ApexGrid Grid.Column="1" Margin="4" Rows="Auto,*">
 
-            <TextBlock Grid.Row="0" Text="Command Examples" />
+            <TextBlock Grid.Row="0" Text="Command Examples" FontSize="24"  />
 
             <ScrollViewer Grid.Row="1" >
                 
                 <StackPanel Orientation="Vertical">
                 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="A simple command example." />
                         <Button Width="160" Content="Simple Command" Command="{Binding SimpleCommand}" />
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="A lamba command example." />
                         <Button Width="160" Content="Lambda Command" Command="{Binding LambdaCommand}" />
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="A parameterised command example." />
                         <Button Width="160" Content="Parameterised Command" Command="{Binding ParameterisedCommand}" CommandParameter="Apples" />
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="Enabling and disabling a command example." />
                         <CheckBox IsChecked="{Binding EnableDisableCommand.CanExecute, Mode=TwoWay}" Content="Enabled" />
                         <Button Width="160" Content="Enable/Disable Command" Command="{Binding EnableDisableCommand}" />
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="A command with events." />
                         <Button Width="160" Content="Events Command" Command="{Binding EventsCommand}" />
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="An asynchronous command." />
                         <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand}" />
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="Another asynchronous command." />
                         <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand}" 
                                 Visibility="{Binding AsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
@@ -75,15 +83,15 @@
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="Binding a command to an event example." />
                         <Border Margin="20" Background="Red">
                             <apexCommands:EventBindings.EventBindings>
                                 <apexCommands:EventBindingCollection>
-                                    <apexCommands:EventBinding EventName="MouseRightButtonDown" Command="{Binding EventBindingCommand}" />
+                                    <apexCommands:EventBinding EventName="MouseLeftButtonDown" Command="{Binding EventBindingCommand}" />
                                 </apexCommands:EventBindingCollection>
                             </apexCommands:EventBindings.EventBindings>
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Right Click on Me" FontSize="16" Foreground="White" />
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Left Click on Me" FontSize="16" Foreground="White" />
                         </Border>
                     </StackPanel>
                 </StackPanel>
