@@ -98,7 +98,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WPF\Apex\Apex.csproj">
+    <ProjectReference Include="..\..\Apex\Apex.csproj">
       <Project>{67D54A68-A287-4797-9667-ACCBF9683119}</Project>
       <Name>Apex</Name>
     </ProjectReference>
