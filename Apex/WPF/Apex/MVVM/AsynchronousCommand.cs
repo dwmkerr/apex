@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Threading;
 using System.ComponentModel;
+using System.Threading;
 namespace Apex.MVVM
 {
     public class AsynchronousCommand : Command, INotifyPropertyChanged
@@ -39,36 +40,23 @@ namespace Apex.MVVM
 #endif
 
 
-            //  TODO TODO TODO this is where silverlight excepts.
+          // Run the action on a new thread from the thread pool (this will therefore work in SL and WP7 as well).
+            ThreadPool.QueueUserWorkItem(
+              (state) =>
+              {
+                //  Invoke the action.
+                InvokeAction(param);
 
-            //  Call the action or the parameterized action, whichever has been set.
-            //  However, invoke this on a new thread.
-            Action<object> del = InvokeAction;
-            del.BeginInvoke(param,
-                (asyncResult) =>
-                {
-                    //  End the asynchronous call.
-                    del.EndInvoke(asyncResult);
-
-                    //  Are we on the calling dispatcher?
-                    if (callingDispatcher.CheckAccess())
-                    {
-                        InvokeExecuted(new CommandEventArgs() { Parameter = param });
-                    }
-                    else
-                    {
-                        //  Invoke the executed event on the calling thread.
-                        callingDispatcher.BeginInvoke(
-                            ((Action)(() =>
-                                {
-                                    InvokeExecuted(new CommandEventArgs() { Parameter = param });
-                                })));
-                    }
-
-                    //  We are no longer executing.
+                //  Fire the executed event and set the executing state.
+                ReportProgress(
+                  () =>
+                  {
+                    InvokeExecuted(new CommandEventArgs() { Parameter = param });
                     IsExecuting = false;
-                }
-            , null);
+                  }
+                );
+              }
+            );
         }
 
         /// <summary>
@@ -92,8 +80,13 @@ namespace Apex.MVVM
         /// <param name="action">The action.</param>
         public void ReportProgress(Action action)
         {
-            if (IsExecuting)
-                callingDispatcher.BeginInvoke(((Action)(() => { action(); })));
+          if (IsExecuting)
+          {
+            if (callingDispatcher.CheckAccess())
+              action();
+            else
+              callingDispatcher.BeginInvoke(((Action)(() => { action(); })));
+          }
         }
 
         protected Dispatcher callingDispatcher;
