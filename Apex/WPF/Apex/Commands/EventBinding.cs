@@ -9,6 +9,9 @@ using Apex.Consistency;
 
 namespace Apex.Commands
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class EventBinding : Freezable
     {
         protected override Freezable CreateInstanceCore()
@@ -26,7 +29,7 @@ namespace Apex.Commands
             set { SetValue(EventNameProperty, value); }
         }
 
-        private static readonly DependencyProperty CommandProperty =
+        public static readonly DependencyProperty CommandProperty =
           DependencyProperty.Register("Command", typeof(ICommand), typeof(EventBinding),
           new PropertyMetadata(null));
 
@@ -36,7 +39,7 @@ namespace Apex.Commands
             set { SetValue(CommandProperty, value); }
         }
 
-        private static readonly DependencyProperty CommandParameterProperty =
+        public static readonly DependencyProperty CommandParameterProperty =
           DependencyProperty.Register("CommandParameter", typeof(object), typeof(EventBinding),
           new PropertyMetadata(null));
 
@@ -71,9 +74,41 @@ namespace Apex.Commands
         }
 
         private void EventProxy(object o, EventArgs e)
-        {
+        {   
+#if SILVERLIGHT
+
+            //  If we're in Silverlight, we have NOT inherited the data context
+            //  because the EventBindingCollection is not a framework element and
+            //  therefore out of the logical tree. However, we can set it here 
+            //  and update the bindings - and it will all work.
+            DataContext = ParentElement != null ? ParentElement.DataContext : null;
+            var bindingExpression = GetBindingExpression(EventBinding.CommandProperty);
+            if(bindingExpression != null)
+                bindingExpression.UpdateSource();
+            bindingExpression = GetBindingExpression(EventBinding.CommandParameterProperty);
+            if (bindingExpression != null)
+                bindingExpression.UpdateSource();
+
+#endif
+
             if (Command != null)
                 Command.Execute(CommandParameter);
         }
+
+#if SILVERLIGHT
+        
+        /// <summary>
+        /// Gets or sets the parent element. Only needed as a helper property in Silverlight.
+        /// </summary>
+        /// <value>
+        /// The parent element.
+        /// </value>
+        public FrameworkElement ParentElement
+        {
+            get;
+            set;
+        }
+
+#endif
     }
 }

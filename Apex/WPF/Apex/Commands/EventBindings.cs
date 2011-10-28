@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using Apex.Extensions;
+using Apex.Consistency;
 
 namespace Apex.Commands
 {
@@ -35,7 +37,14 @@ namespace Apex.Commands
             if (newEventBindings != null)
             {
                 foreach (EventBinding binding in newEventBindings)
+                {
                     binding.Bind(o);
+#if SILVERLIGHT
+                    //  If we're in Silverlight we don't inherit the
+                    //  data context so we must set this helper variable.
+                    binding.ParentElement = o as FrameworkElement;
+#endif
+                }
             }
         }
     }

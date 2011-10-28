@@ -7,7 +7,7 @@ namespace Apex.Consistency
 {
 #if SILVERLIGHT
 
-    public class Freezable : System.Windows.DependencyObject
+    public class Freezable : System.Windows.FrameworkElement
     {
         protected virtual Freezable CreateInstanceCore()
         {
