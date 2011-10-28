@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropSample", "WPF\Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropSample", "Silverlight\Samples\DragAndDropSample\DragAndDropSample.csproj", "{12704CED-DA46-418B-BF4C-81D6FC14BDCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandingExample", "WPF\Samples\CommandingExample\CommandingExample.csproj", "{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandingSample", "WPF\Samples\CommandingExample\CommandingSample.csproj", "{A26B8CED-AA72-4C70-96BC-4A068FE55FB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandingSample", "Silverlight\Samples\CommandingSample\CommandingSample.csproj", "{521E3997-5583-4848-80FB-F0095B27E288}"
 EndProject
@@ -89,14 +89,14 @@ Global
 		SccProjectTopLevelParentUniqueName11 = Apex.sln
 		SccProjectName11 = Silverlight/Samples/DragAndDropSample
 		SccLocalPath11 = Silverlight\\Samples\\DragAndDropSample
-		SccProjectUniqueName12 = WPF\\Samples\\CommandingExample\\CommandingExample.csproj
+		SccProjectUniqueName12 = Silverlight\\Samples\\CommandingSample\\CommandingSample.csproj
 		SccProjectTopLevelParentUniqueName12 = Apex.sln
-		SccProjectName12 = WPF/Samples/CommandingExample
-		SccLocalPath12 = WPF\\Samples\\CommandingExample
-		SccProjectUniqueName13 = Silverlight\\Samples\\CommandingSample\\CommandingSample.csproj
+		SccProjectName12 = Silverlight/Samples/CommandingSample
+		SccLocalPath12 = Silverlight\\Samples\\CommandingSample
+		SccProjectUniqueName13 = WPF\\Samples\\CommandingExample\\CommandingSample.csproj
 		SccProjectTopLevelParentUniqueName13 = Apex.sln
-		SccProjectName13 = Silverlight/Samples/CommandingSample
-		SccLocalPath13 = Silverlight\\Samples\\CommandingSample
+		SccProjectName13 = WPF/Samples/CommandingExample
+		SccLocalPath13 = WPF\\Samples\\CommandingExample
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
