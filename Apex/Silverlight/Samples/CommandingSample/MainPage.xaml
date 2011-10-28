@@ -73,14 +73,14 @@
 
                     <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="An asynchronous command." />
-                        <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand}" />
+                        <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand1}" />
                     </StackPanel>
 
                     <StackPanel Margin="10">
                         <TextBlock TextWrapping="Wrap" Text="Another asynchronous command." />
-                        <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand}" 
-                                Visibility="{Binding AsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
-                        <StackPanel Visibility="{Binding AsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand2}" 
+                                Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
+                        <StackPanel Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Text="The command is running!" />
                             <ProgressBar Height="20" Width="120" IsIndeterminate="True" />
                         </StackPanel>

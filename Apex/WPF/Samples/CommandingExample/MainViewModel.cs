@@ -42,16 +42,30 @@ namespace CommandingExample
             , true);
 
             //  Create the async command.
-            asyncCommand = new AsynchronousCommand(
+            asyncCommand1 = new AsynchronousCommand(
                 () =>
                 {
                     for (int i = 1; i <= 10; i++)
                     {
                         //  Report progress.
-                        asyncCommand.ReportProgress(() => { Messages.Add(i.ToString()); });
+                        asyncCommand1.ReportProgress(() => { Messages.Add(i.ToString()); });
 
                         System.Threading.Thread.Sleep(200);
                     }
+                }
+            , true);
+
+            //  Create the async command.
+            asyncCommand2 = new AsynchronousCommand(
+                () =>
+                {
+                  for (char c = 'A'; c <= 'Z'; c++)
+                  {
+                    //  Report progress.
+                    asyncCommand2.ReportProgress(() => { Messages.Add(c.ToString()); });
+
+                    System.Threading.Thread.Sleep(100);
+                  }
                 }
             , true);
 
@@ -110,11 +124,18 @@ namespace CommandingExample
             get { return eventsCommand; }
         }
 
-        private AsynchronousCommand asyncCommand;
+        private AsynchronousCommand asyncCommand1;
 
-        public AsynchronousCommand AsyncCommand
+        public AsynchronousCommand AsyncCommand1
         {
-            get { return asyncCommand; }
+            get { return asyncCommand1; }
+        }
+
+        private AsynchronousCommand asyncCommand2;
+
+        public AsynchronousCommand AsyncCommand2
+        {
+          get { return asyncCommand2; }
         }
 
         private Command eventBindingCommand;
