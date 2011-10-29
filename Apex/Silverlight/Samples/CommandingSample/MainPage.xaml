@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:CommandingExample"
+    xmlns:local="clr-namespace:CommandingSample"
     xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex.Silverlight"
     xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex.Silverlight"
     xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex.Silverlight"
@@ -83,6 +83,17 @@
                         <StackPanel Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Text="The command is running!" />
                             <ProgressBar Height="20" Width="120" IsIndeterminate="True" />
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock TextWrapping="Wrap" Text="Cancellable Asynchronous Command." />
+                        <Button Width="160" Content="Cancellable Async Command" Command="{Binding CancellableAsyncCommand}" 
+                                Visibility="{Binding CancellableAsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
+                        <StackPanel Visibility="{Binding CancellableAsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Margin="4" Text="The command is running!" />
+                            <ProgressBar Margin="4" Height="20" Width="120" IsIndeterminate="True" />
+                            <Button Margin="4" Width="100" Content="Cancel" Command="{Binding CancellableAsyncCommand.CancelCommand}" />
                         </StackPanel>
                     </StackPanel>
 

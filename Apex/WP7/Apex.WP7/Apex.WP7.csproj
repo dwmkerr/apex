@@ -52,8 +52,35 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\WPF\Apex\Commands\CommandReference.cs">
+      <Link>Commands\CommandReference.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\Commands.cs">
+      <Link>Commands\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\EventBinding.cs">
+      <Link>Commands\EventBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\EventBindingCollection.cs">
+      <Link>Commands\EventBindingCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Commands\EventBindings.cs">
+      <Link>Commands\EventBindings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\Freezable.cs">
+      <Link>Consistency\Freezable.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\GridLengthConverter.cs">
       <Link>Consistency\GridLengthConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\HitTest.cs">
+      <Link>Consistency\HitTest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\MouseClickDetector.cs">
+      <Link>Consistency\MouseClickDetector.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\SystemParameters.cs">
+      <Link>Consistency\SystemParameters.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
@@ -63,6 +90,27 @@
     </Compile>
     <Compile Include="..\..\WPF\Apex\Controls\VariableGrid.cs">
       <Link>Controls\VariableGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\BooleanToVisibilityConverter.cs">
+      <Link>Converters\BooleanToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\DateTimeToSensibleStringConverter.cs">
+      <Link>Converters\DateTimeToSensibleStringConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\DivideByTwoConverter.cs">
+      <Link>Converters\DivideByTwoConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\EnumToBooleanConverter.cs">
+      <Link>Converters\EnumToBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\NullToVisibilityConverter.cs">
+      <Link>Converters\NullToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\StringCaseConverter.cs">
+      <Link>Converters\StringCaseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
+      <Link>Converters\StringNullOrEmptyToVisibilityConverter.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Extensions\DateTimeExtensions.cs">
       <Link>Extensions\DateTimeExtensions.cs</Link>
@@ -91,6 +139,7 @@
     <Compile Include="..\..\WPF\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
     </Compile>
+    <Compile Include="Controls\CommandButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CommandingExample
+namespace CommandingSample
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,6 +25,25 @@ namespace CommandingExample
 
             viewModel.EventsCommand.Executing += new Apex.MVVM.CancelCommandEventHandler(EventsCommand_Executing);
             viewModel.EventsCommand.Executed += new Apex.MVVM.CommandEventHandler(EventsCommand_Executed);
+
+            viewModel.CancellableAsyncCommand.Executing += new Apex.MVVM.CancelCommandEventHandler(CancellableAsyncCommand_Executing);
+            viewModel.CancellableAsyncCommand.Executed += new Apex.MVVM.CommandEventHandler(CancellableAsyncCommand_Executed);
+            viewModel.CancellableAsyncCommand.Cancelled += new Apex.MVVM.CommandEventHandler(CancellableAsyncCommand_Cancelled);
+        }
+
+        void CancellableAsyncCommand_Cancelled(object sender, Apex.MVVM.CommandEventArgs args)
+        {
+          viewModel.Messages.Add("View: Cancellable Async Command Cancelled.");
+        }
+
+        void CancellableAsyncCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)
+        {
+          viewModel.Messages.Add("View: Cancellable Async Command Executed.");
+        }
+
+        void CancellableAsyncCommand_Executing(object sender, Apex.MVVM.CancelCommandEventArgs args)
+        {
+          viewModel.Messages.Add("View: Cancellable Async Command Executing.");
         }
 
         void EventsCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)

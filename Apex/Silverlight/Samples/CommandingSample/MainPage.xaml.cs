@@ -9,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using CommandingExample;
 
 namespace CommandingSample
 {
@@ -21,6 +20,25 @@ namespace CommandingSample
 
             ViewModel.EventsCommand.Executing += new Apex.MVVM.CancelCommandEventHandler(EventsCommand_Executing);
             ViewModel.EventsCommand.Executed += new Apex.MVVM.CommandEventHandler(EventsCommand_Executed);
+
+            ViewModel.CancellableAsyncCommand.Executing += new Apex.MVVM.CancelCommandEventHandler(CancellableAsyncCommand_Executing);
+            ViewModel.CancellableAsyncCommand.Executed += new Apex.MVVM.CommandEventHandler(CancellableAsyncCommand_Executed);
+            ViewModel.CancellableAsyncCommand.Cancelled += new Apex.MVVM.CommandEventHandler(CancellableAsyncCommand_Cancelled);
+        }
+
+        void CancellableAsyncCommand_Cancelled(object sender, Apex.MVVM.CommandEventArgs args)
+        {
+          ViewModel.Messages.Add("View: Cancellable Async Command Cancelled.");
+        }
+
+        void CancellableAsyncCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)
+        {
+          ViewModel.Messages.Add("View: Cancellable Async Command Executed.");
+        }
+
+        void CancellableAsyncCommand_Executing(object sender, Apex.MVVM.CancelCommandEventArgs args)
+        {
+          ViewModel.Messages.Add("View: Cancellable Async Command Executing.");
         }
 
         public MainViewModel ViewModel

@@ -12,7 +12,7 @@ namespace Apex.MVVM
         /// </summary>
         /// <param name="action">The action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-        public Command(Action action, bool canExecute)
+      public Command(Action action, bool canExecute = true)
         {
             //  Set the action.
             this.action = action;
@@ -24,7 +24,7 @@ namespace Apex.MVVM
         /// </summary>
         /// <param name="parameterizedAction">The parameterized action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-        public Command(Action<object> parameterizedAction, bool canExecute)
+      public Command(Action<object> parameterizedAction, bool canExecute = true)
         {
             //  Set the action.
             this.parameterizedAction = parameterizedAction;
