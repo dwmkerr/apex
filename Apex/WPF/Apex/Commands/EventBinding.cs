@@ -73,6 +73,11 @@ namespace Apex.Commands
             }
         }
 
+        /// <summary>
+        /// Proxy to actually fire the event.
+        /// </summary>
+        /// <param name="o">The object.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void EventProxy(object o, EventArgs e)
         {   
 #if SILVERLIGHT
