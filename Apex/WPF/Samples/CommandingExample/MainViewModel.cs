@@ -5,41 +5,38 @@ using System.Text;
 using Apex.MVVM;
 using System.Collections.ObjectModel;
 
-namespace CommandingExample
+namespace CommandingSample
 {
     public class MainViewModel : ViewModel
     {
         public MainViewModel()
         {
             //  Create the simple command - calls DoSimpleCommand.
-            simpleCommand = new Command(DoSimpleCommand, true);
+            simpleCommand = new Command(DoSimpleCommand);
 
             //  Create the lambda command, no extra function necessary.
             lambdaCommand = new Command(
               () =>
               {
                   Messages.Add("Calling the Lamba Command - no explicit function necessary.");
-              }
-              , true);
+              });
 
             //  Create the parameterized command.
             parameterizedCommand = new Command(DoParameterisedCommand, true);
 
-            //  Create the enable/disable command.
+            //  Create the enable/disable command, initially disabled.
             enableDisableCommand = new Command(
                 () =>
                 {
                     Messages.Add("Enable/Disable command called.");
-                }
-            , true);
+                }, false);
 
             //  Create the events command.
             eventsCommand = new Command(
                 () =>
                 {
                     Messages.Add("Calling the Events Command.");
-                }
-            , true);
+                });
 
             //  Create the async command.
             asyncCommand1 = new AsynchronousCommand(
@@ -52,8 +49,7 @@ namespace CommandingExample
 
                         System.Threading.Thread.Sleep(200);
                     }
-                }
-            , true);
+                });
 
             //  Create the async command.
             asyncCommand2 = new AsynchronousCommand(
@@ -66,8 +62,24 @@ namespace CommandingExample
 
                     System.Threading.Thread.Sleep(100);
                   }
+                });
+
+          //  Create the cancellable async command.
+          cancellableAsyncCommand = new AsynchronousCommand(
+            () => 
+              {
+                for(int i = 1; i <= 100; i++)
+                {
+                  //  Do we need to cancel?
+                  if(cancellableAsyncCommand.CancelIfRequested())
+                    return;
+
+                  //  Report progress.
+                  cancellableAsyncCommand.ReportProgress( () => { Messages.Add(i.ToString()); } );
+
+                  System.Threading.Thread.Sleep(100);
                 }
-            , true);
+              });
 
             //  Create the event binding command.
             eventBindingCommand = new Command(DoEventBindingCommand, true);
@@ -136,6 +148,13 @@ namespace CommandingExample
         public AsynchronousCommand AsyncCommand2
         {
           get { return asyncCommand2; }
+        }
+
+        private AsynchronousCommand cancellableAsyncCommand;
+
+        public AsynchronousCommand CancellableAsyncCommand
+        {
+          get { return cancellableAsyncCommand; }
         }
 
         private Command eventBindingCommand;
