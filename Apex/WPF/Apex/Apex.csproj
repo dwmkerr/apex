@@ -101,6 +101,7 @@
     <Compile Include="Commands\EventBinding.cs" />
     <Compile Include="Commands\EventBindingCollection.cs" />
     <Compile Include="Commands\EventBindings.cs" />
+    <Compile Include="Helpers\DispatcherHelper.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
