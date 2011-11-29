@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VSContent xmlns="http://schemas.microsoft.com/developer/vscontent/2005" >
+  <Content>
+    <FileName>InsertApexNotifyingProperty.snippet</FileName>
+    <DisplayName>Insert Apex Notifying Property</DisplayName>
+    <Description>Inserts an Apex Notifying Property</Description>
+    <FileContentType>Code Snippet</FileContentType>
+    <ContentVersion>2.0</ContentVersion>
+    <Attributes>
+      <Attribute name="lang" value="csharp"/>
+    </Attributes>
+  </Content>
+</VSContent>
