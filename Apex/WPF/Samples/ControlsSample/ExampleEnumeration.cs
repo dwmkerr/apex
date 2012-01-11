@@ -1,17 +1,11 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="ExampleEnumeration.cs" company="">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel;
 
 namespace ControlsSample
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-
-  using Apex.Data;
 
   /// <summary>
   /// TODO: Update summary.
@@ -22,10 +16,10 @@ namespace ControlsSample
     /// 
     /// </summary>
     
-    [ApexEnumValue("Microsoft SQL Server")]
+    [Description("Microsoft SQL Server")]
     SQLServer,
 
-    [ApexEnumValue("Oracle")]
+    [Description("Oracle")]
     Oracle
   }
 }
