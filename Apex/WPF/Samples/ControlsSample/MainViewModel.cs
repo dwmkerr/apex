@@ -20,6 +20,7 @@ namespace ControlsSample
             Samples.Add(new Sample() { Name = "Apex Grid", View = new Samples.ApexGrid() });
             Samples.Add(new Sample() { Name = "Cross Button", View = new Samples.CrossButton() });
             Samples.Add(new Sample() { Name = "Padded Grid", View = new Samples.PaddedGrid() });
+            Samples.Add(new Sample() { Name = "Enum Combo Box", View = new Samples.EnumComboBox() });
         }
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace ControlsSample
         {
             get { return (Sample)GetValue(SelectedSampleProperty); }
             set { SetValue(SelectedSampleProperty, value); }
-        }
+        }             
                 
     }
 }
