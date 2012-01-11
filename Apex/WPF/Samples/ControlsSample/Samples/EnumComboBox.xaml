@@ -16,7 +16,8 @@
             Rows="Auto,Auto,Auto,Auto" Columns="*,2*">
             
             <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Enum Combo Box" />
-            <apexControls:EnumComboBox x:Name="ecb" Grid.Row="0" Grid.Column="1" SelectedItem="{Binding ExampleEnumeration}" />     
+            <apexControls:EnumComboBox x:Name="ecb" Grid.Row="0" Grid.Column="1" SelectedItem="{Binding ExampleEnumeration}"
+                                       EnumValue="{Binding ExampleEnumeration}"/>     
             <Button Grid.Row="1" Grid.Column="1" Content="Test" Click="Button_Click" />
             
         </apexControls:PaddedGrid>
