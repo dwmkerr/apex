@@ -79,6 +79,7 @@
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CrossButton.cs" />
+    <Compile Include="Controls\EnumComboBox.cs" />
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\StringNullOrEmptyToVisibilityConverter.cs" />
     <Compile Include="Converters\StringCaseConverter.cs" />
+    <Compile Include="Data\ApexEnumValueAttribute.cs" />
     <Compile Include="Design\DesignTime.cs" />
     <Compile Include="DragAndDrop\DragAndDropHost.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
