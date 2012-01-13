@@ -13,12 +13,18 @@
         </Grid.DataContext>
         <apexControls:PaddedGrid 
             Padding="6"
-            Rows="Auto,Auto,Auto,Auto" Columns="*,2*">
+            Rows="Auto,Auto,Auto,Auto,Auto" Columns="*,2*">
             
             <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Enum Combo Box" />
-            <apexControls:EnumComboBox x:Name="ecb" Grid.Row="0" Grid.Column="1" SelectedItem="{Binding ExampleEnumeration}"
-                                       EnumValue="{Binding ExampleEnumeration}"/>     
-            <Button Grid.Row="1" Grid.Column="1" Content="Test" Click="Button_Click" />
+            <apexControls:EnumerationComboBox x:Name="ecb" Grid.Row="0" Grid.Column="1" 
+                                       SelectedEnumeration="{Binding ExampleEnumeration}" />
+            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Selected Enumeration" />
+            <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedEnumeration}" />
+            <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Selected Item" />
+            <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem}" />
+            <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="Selected Item Name" />
+            <TextBlock Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem.Name}" />
+            <Button Grid.Row="4" Grid.Column="1" Content="Test" Click="Button_Click" />
             
         </apexControls:PaddedGrid>
 
