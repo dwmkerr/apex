@@ -79,7 +79,7 @@
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CrossButton.cs" />
-    <Compile Include="Controls\EnumComboBox.cs" />
+    <Compile Include="Controls\EnumerationComboBox.cs" />
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
