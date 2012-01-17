@@ -87,6 +87,9 @@
     <Compile Include="..\..\WPF\Apex\Commands\EventBindings.cs">
       <Link>Commands\EventBindings.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\FrameworkPropertyMetadata.cs">
+      <Link>Consistency\FrameworkPropertyMetadata.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\Freezable.cs">
       <Link>Consistency\Freezable.cs</Link>
     </Compile>
@@ -104,6 +107,9 @@
     </Compile>
     <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Controls\EnumerationComboBox.cs">
+      <Link>Controls\EnumerationComboBox.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\Controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>

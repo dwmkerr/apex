@@ -19,7 +19,7 @@ namespace ControlsSample.Samples
   {
 
     private NotifyingProperty ExampleEnumerationProperty =
-      new NotifyingProperty("ExampleEnumeration", typeof(ExampleEnumeration), ExampleEnumeration.SQLServer);
+      new NotifyingProperty("ExampleEnumeration", typeof(ExampleEnumeration), ExampleEnumeration.Oracle);
 
     public ExampleEnumeration ExampleEnumeration
     {
