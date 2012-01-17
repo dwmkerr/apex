@@ -87,6 +87,9 @@
     <Compile Include="..\..\WPF\Apex\Commands\EventBindings.cs">
       <Link>Commands\EventBindings.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\DispatcherHelper.cs">
+      <Link>Consistency\DispatcherHelper.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\Freezable.cs">
       <Link>Consistency\Freezable.cs</Link>
     </Compile>

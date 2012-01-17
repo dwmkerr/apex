@@ -67,6 +67,9 @@
     <Compile Include="..\..\WPF\Apex\Commands\EventBindings.cs">
       <Link>Commands\EventBindings.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Consistency\DispatcherHelper.cs">
+      <Link>Consistency\DispatcherHelper.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Consistency\Freezable.cs">
       <Link>Consistency\Freezable.cs</Link>
     </Compile>
@@ -118,6 +121,9 @@
     <Compile Include="..\..\WPF\Apex\Extensions\DependencyObjectExtensions.cs">
       <Link>Extensions\DependencyObjectExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\..\WPF\Apex\Extensions\EnumExtensions.cs">
+      <Link>Extensions\EnumExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\Apex\Extensions\FrameworkElementExtensions.cs">
       <Link>Extensions\FrameworkElementExtensions.cs</Link>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="..\..\WPF\Apex\Extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\Apex\Helpers\EnumHelper.cs">
+      <Link>Helpers\EnumHelper.cs</Link>
     </Compile>
     <Compile Include="..\..\WPF\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
@@ -140,6 +149,7 @@
       <Link>MVVM\ViewModel.cs</Link>
     </Compile>
     <Compile Include="Controls\CommandButton.cs" />
+    <Compile Include="Controls\EnumerationComboBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
