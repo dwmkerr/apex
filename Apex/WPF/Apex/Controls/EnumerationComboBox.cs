@@ -23,31 +23,6 @@ namespace Apex.Controls
     /// </summary>
     public class EnumerationComboBox : ComboBox
     {
-      /// <summary>
-      /// Raises the <see cref="E:Initialized"/> event.
-      /// </summary>
-      /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        protected override void OnInitialized(EventArgs e)
-        {
-            //  Call the base.
-            base.OnInitialized(e);
-          
-          //  Set the display member path and selected value path.
-            DisplayMemberPath = "Name";
-            SelectedValuePath = "Value";
-
-          //  If we have enumerations and a selected enumeration, set the selected item.
-            if (Enumerations != null && SelectedEnumeration != null)
-            {
-              var selectedEnum = from enumeration in Enumerations where enumeration.Value.ToString() == SelectedEnumeration.ToString() select enumeration;
-              this.SelectedItem = selectedEnum.FirstOrDefault();
-            }
-
-          //  Wait for selection changed events.
-            SelectionChanged += new SelectionChangedEventHandler(EnumerationComboBoxTemp_SelectionChanged);
-          
-        }
-
         /// <summary>
         /// Handles the SelectionChanged event of the EnumerationComboBoxTemp control.
         /// </summary>
@@ -76,8 +51,9 @@ namespace Apex.Controls
             //  Get the enum type.
             var enumType = SelectedEnumeration.GetType();
 
-            //  Get the enum values.
-            var enumValues = Enum.GetValues(enumType);
+            //  Get the enum values. Use the helper rather than Enum.GetValues
+          //  as it works in Silverlight too.
+            var enumValues = Apex.Helpers.EnumHelper.GetValues(enumType);
 
             //  Create some enum value/descriptions.
             Enumerations = new List<NameValue>();
@@ -91,6 +67,29 @@ namespace Apex.Controls
 
             //  Set the items source.
             ItemsSource = Enumerations;
+
+          //  Initialise the control.
+            Initialise();
+        }
+
+        /// <summary>
+        /// Initialises this instance.
+        /// </summary>
+        private void Initialise()
+        {
+          //  Set the display member path and selected value path.
+          DisplayMemberPath = "Name";
+          SelectedValuePath = "Value";
+
+          //  If we have enumerations and a selected enumeration, set the selected item.
+          if (Enumerations != null && SelectedEnumeration != null)
+          {
+            var selectedEnum = from enumeration in Enumerations where enumeration.Value.ToString() == SelectedEnumeration.ToString() select enumeration;
+            this.SelectedItem = selectedEnum.FirstOrDefault();
+          }
+
+          //  Wait for selection changed events.
+          SelectionChanged += new SelectionChangedEventHandler(EnumerationComboBoxTemp_SelectionChanged);
         }
 
         /// <summary>
@@ -98,7 +97,11 @@ namespace Apex.Controls
         /// </summary>
         public static readonly DependencyProperty SelectedEnumerationProperty =
           DependencyProperty.Register("SelectedEnumeration", typeof(object), typeof(EnumerationComboBox),
+#if !SILVERLIGHT
           new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSelectedEnumerationChanged)));
+#else
+        new PropertyMetadata(null, new PropertyChangedCallback(OnSelectedEnumerationChanged)));
+#endif
 
         public object SelectedEnumeration
         {
