@@ -70,13 +70,9 @@ namespace Apex.MVVM
       //  We are executing.
       IsExecuting = true;
 
-      //  Store the calling dispatcher.
-#if !SILVERLIGHT
-      callingDispatcher = Dispatcher.CurrentDispatcher;
-#else
-      callingDispatcher = System.Windows.Application.Current.RootVisual.Dispatcher;
-#endif
-
+      //  Store the calling dispatcher. Use the Consistency object
+      //  so that the same call works properly in WPF/SL/WP7.
+      callingDispatcher = Apex.Consistency.DispatcherHelper.CurrentDispatcher;
 
       // Run the action on a new thread from the thread pool (this will therefore work in SL and WP7 as well).
       ThreadPool.QueueUserWorkItem(
