@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.IO;
 using System.Windows.Markup;
+using Apex.Extensions;
 
 //  http://social.msdn.microsoft.com/forums/en-US/wpf/thread/f230804d-fc0f-4321-a61e-69a2c890b28d/
 //  TODO: Add a dependency property - selectedenumeration
@@ -17,53 +18,49 @@ using System.Windows.Markup;
 namespace Apex.Controls
 {
     /// <summary>
-    /// TODO: Update summary.
+    /// A EnumerationComboBox shows a selected enumeration value from a set of all available enumeration values.
+    /// If the enumeration value has the 'Description' attribute, this is used.
     /// </summary>
     public class EnumerationComboBox : ComboBox
     {
+      /// <summary>
+      /// Raises the <see cref="E:Initialized"/> event.
+      /// </summary>
+      /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         protected override void OnInitialized(EventArgs e)
         {
             //  Call the base.
             base.OnInitialized(e);
-
-          /*
-
-            MemoryStream sr = null;
-
-            ParserContext pc = null;
-
-            string xaml = string.Empty;
-
-            xaml = "<DataTemplate><TextBlock Text=\"{Binding Value}\"/></DataTemplate>";
-
-            sr = new MemoryStream(Encoding.ASCII.GetBytes(xaml));
-
-            pc = new ParserContext();
-
-            pc.XmlnsDictionary.Add("", "http://schemas.microsoft.com/winfx/2006/xaml/presentation");
-
-            pc.XmlnsDictionary.Add("x", "http://schemas.microsoft.com/winfx/2006/xaml");
-
-            DataTemplate datatemplate = (DataTemplate)XamlReader.Load(sr, pc);
-
-            this.Resources.Add("dt", datatemplate);
-
-            this.ItemTemplate = datatemplate;*/
-
+          
+          //  Set the display member path and selected value path.
             DisplayMemberPath = "Name";
             SelectedValuePath = "Value";
 
+          //  If we have enumerations and a selected enumeration, set the selected item.
+            if (Enumerations != null && SelectedEnumeration != null)
+            {
+              var selectedEnum = from enumeration in Enumerations where enumeration.Value.ToString() == SelectedEnumeration.ToString() select enumeration;
+              this.SelectedItem = selectedEnum.FirstOrDefault();
+            }
+
+          //  Wait for selection changed events.
             SelectionChanged += new SelectionChangedEventHandler(EnumerationComboBoxTemp_SelectionChanged);
           
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the EnumerationComboBoxTemp control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
         void EnumerationComboBoxTemp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
           //  Get the new item.
           if (e.AddedItems.Count == 0 || e.AddedItems[0] is NameValue == false)
             return;
-          NameValue nameValue = e.AddedItems[0] as NameValue;
 
+          //  Keep the selected enumeration up to date.
+          NameValue nameValue = e.AddedItems[0] as NameValue;
           SelectedEnumeration = nameValue.Value;
         }
 
@@ -89,30 +86,19 @@ namespace Apex.Controls
             foreach (var enumValue in enumValues)
             {
                 //  Add the enumeration item.
-              Enumerations.Add(new NameValue(GetEnumName(enumType, enumValue), enumValue));
+              Enumerations.Add(new NameValue(((Enum)enumValue).GetDescription(), enumValue));
             }
 
             //  Set the items source.
             ItemsSource = Enumerations;
         }
 
-        private string GetEnumName(Type enumType, object enumValue)
-        {
-            var descriptionAttribute = enumType
-              .GetField(enumValue.ToString())
-              .GetCustomAttributes(typeof(DescriptionAttribute), false)
-              .FirstOrDefault() as DescriptionAttribute;
-
-
-            return descriptionAttribute != null
-              ? descriptionAttribute.Description
-              : enumValue.ToString();
-        }
-
-        
-        private static readonly DependencyProperty SelectedEnumerationProperty =
+        /// <summary>
+        /// The SelectedEnumerationProperty.
+        /// </summary>
+        public static readonly DependencyProperty SelectedEnumerationProperty =
           DependencyProperty.Register("SelectedEnumeration", typeof(object), typeof(EnumerationComboBox),
-          new PropertyMetadata(null, new PropertyChangedCallback(OnSelectedEnumerationChanged)));
+          new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(OnSelectedEnumerationChanged)));
 
         public object SelectedEnumeration
         {

@@ -22,14 +22,6 @@ namespace ControlsSample.Samples
       public EnumComboBox()
         {
             InitializeComponent();
-          /*
-            ecb.SelectedItem = viewModel.ExampleEnumeration;
-            ecb.TODO();*/
         }
-
-      private void Button_Click(object sender, RoutedEventArgs e)
-      {/*
-        ecb.TODO();*/
-      }
     }
 }

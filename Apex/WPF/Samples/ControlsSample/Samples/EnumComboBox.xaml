@@ -24,7 +24,6 @@
             <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem}" />
             <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="Selected Item Name" />
             <TextBlock Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem.Name}" />
-            <Button Grid.Row="4" Grid.Column="1" Content="Test" Click="Button_Click" />
             
         </apexControls:PaddedGrid>
 

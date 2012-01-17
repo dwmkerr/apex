@@ -68,6 +68,7 @@
     <Compile Include="Adorners\VisualAdorner.cs" />
     <Compile Include="Commands\CommandReference.cs" />
     <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Consistency\FrameworkPropertyMetadata.cs" />
     <Compile Include="Consistency\Freezable.cs" />
     <Compile Include="Consistency\GridLengthConverter.cs" />
     <Compile Include="Consistency\HitTest.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="DragAndDrop\DragAndDrop.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
