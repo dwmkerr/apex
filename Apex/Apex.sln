@@ -45,9 +45,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snippets", "Extensions\Snippets\Snippets.csproj", "{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{BE012C6B-5299-4C00-B47B-16656BD82E32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WinForms", "WinForms\Apex.WinForms\Apex.WinForms.csproj", "{D0C8993B-4802-4019-90B1-84965241E7FB}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 16
+		SccNumberOfProjects = 17
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -111,6 +115,10 @@ Global
 		SccProjectTopLevelParentUniqueName15 = Apex.sln
 		SccProjectName15 = Extensions/Snippets
 		SccLocalPath15 = Extensions\\Snippets
+		SccProjectUniqueName16 = WinForms\\Apex.WinForms\\Apex.WinForms.csproj
+		SccProjectTopLevelParentUniqueName16 = Apex.sln
+		SccProjectName16 = WinForms/Apex.WinForms
+		SccLocalPath16 = WinForms\\Apex.WinForms
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +291,16 @@ Global
 		{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE}.Release|x86.ActiveCfg = Release|x86
 		{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE}.Release|x86.Build.0 = Release|x86
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -306,5 +324,6 @@ Global
 		{12704CED-DA46-418B-BF4C-81D6FC14BDCA} = {5D667BCA-10C9-4C42-B42E-DD273B3EC042}
 		{521E3997-5583-4848-80FB-F0095B27E288} = {5D667BCA-10C9-4C42-B42E-DD273B3EC042}
 		{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{D0C8993B-4802-4019-90B1-84965241E7FB} = {BE012C6B-5299-4C00-B47B-16656BD82E32}
 	EndGlobalSection
 EndGlobal
