@@ -49,9 +49,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{BE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WinForms", "WinForms\Apex.WinForms\Apex.WinForms.csproj", "{D0C8993B-4802-4019-90B1-84965241E7FB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{C6B0C858-9F62-4778-A4C7-36635947E3E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsSample", "WinForms\Samples\ControlsSample\ControlsSample.csproj", "{3754DC54-5B50-4F1D-9F0F-5B9132287E52}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 17
+		SccNumberOfProjects = 18
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -119,6 +123,10 @@ Global
 		SccProjectTopLevelParentUniqueName16 = Apex.sln
 		SccProjectName16 = WinForms/Apex.WinForms
 		SccLocalPath16 = WinForms\\Apex.WinForms
+		SccProjectUniqueName17 = WinForms\\Samples\\ControlsSample\\ControlsSample.csproj
+		SccProjectTopLevelParentUniqueName17 = Apex.sln
+		SccProjectName17 = WinForms/Samples/ControlsSample
+		SccLocalPath17 = WinForms\\Samples\\ControlsSample
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -301,6 +309,16 @@ Global
 		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D0C8993B-4802-4019-90B1-84965241E7FB}.Release|x86.ActiveCfg = Release|Any CPU
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Debug|x86.ActiveCfg = Debug|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Debug|x86.Build.0 = Debug|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Release|Any CPU.ActiveCfg = Release|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Release|Mixed Platforms.Build.0 = Release|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Release|x86.ActiveCfg = Release|x86
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -325,5 +343,7 @@ Global
 		{521E3997-5583-4848-80FB-F0095B27E288} = {5D667BCA-10C9-4C42-B42E-DD273B3EC042}
 		{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{D0C8993B-4802-4019-90B1-84965241E7FB} = {BE012C6B-5299-4C00-B47B-16656BD82E32}
+		{C6B0C858-9F62-4778-A4C7-36635947E3E4} = {BE012C6B-5299-4C00-B47B-16656BD82E32}
+		{3754DC54-5B50-4F1D-9F0F-5B9132287E52} = {C6B0C858-9F62-4778-A4C7-36635947E3E4}
 	EndGlobalSection
 EndGlobal
