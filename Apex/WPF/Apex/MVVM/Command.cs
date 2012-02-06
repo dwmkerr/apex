@@ -46,6 +46,7 @@ namespace Apex.MVVM
                 return;
 
             //  Call the action or the parameterized action, whichever has been set.
+            param = args.Parameter;
             InvokeAction(param);
 
             //  Call the executed function.
