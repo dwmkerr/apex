@@ -129,9 +129,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Apex\Apex.csproj">
+    <ProjectReference Include="..\..\.NET 4.0\Apex\Apex.csproj">
       <Project>{67D54A68-A287-4797-9667-ACCBF9683119}</Project>
-      <Name>Apex</Name>
+      <Name>Apex %28WPF\.NET 4.0\Apex%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

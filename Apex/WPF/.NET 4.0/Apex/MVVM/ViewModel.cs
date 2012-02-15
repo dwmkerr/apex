@@ -42,9 +42,20 @@ namespace Apex.MVVM
         /// </summary>
         /// <param name="notifyingProperty">The notifying property.</param>
         /// <param name="value">The value to set.</param>
-        /// <param name="forceUpdate">If set to <c>true</c> we'll force an update
-        /// of the binding by calling NotifyPropertyChanged.</param>
-        protected void SetValue(NotifyingProperty notifyingProperty, object value, bool forceUpdate = false)
+        protected void SetValue(NotifyingProperty notifyingProperty, object value)
+        {
+            //  Call SetValue without forcing an update.
+            SetValue(notifyingProperty, value, false);
+        }
+
+        /// <summary>
+        /// Sets the value of the notifying property.
+        /// </summary>
+        /// <param name="notifyingProperty">The notifying property.</param>
+        /// <param name="value">The value to set.</param>
+        /// <param name="forceUpdate">if set to <c>true</c> NotifyPropertyChanged will be called
+        /// regardless of whether the new value is different to the old one.</param>
+        protected void SetValue(NotifyingProperty notifyingProperty, object value, bool forceUpdate)
         {
             //  We'll only set the value and notify that it has changed if the
             //  value is different - or if we are forcing an update.
