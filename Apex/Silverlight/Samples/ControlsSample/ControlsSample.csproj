@@ -95,9 +95,9 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Apex.Silverlight\Apex.Silverlight.csproj">
-      <Project>{B58F68A9-FD12-4F08-B294-95480C737540}</Project>
-      <Name>Apex.Silverlight</Name>
+    <ProjectReference Include="..\..\.NET 4.0\Apex.Silverlight\Apex.Silverlight.csproj">
+      <Project>{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}</Project>
+      <Name>Apex.Silverlight %28Silverlight\.NET 4.0\Apex.Silverlight%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
