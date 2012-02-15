@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13FE4D78-23FA-4B5D-875B-5B71640F132B}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Apex.Silverlight</RootNamespace>
+    <AssemblyName>Apex.Silverlight</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignManifests>false</SignManifests>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Apex.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Adorners\Adorner.cs">
+      <Link>Adorners\Adorner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Adorners\AdornerLayer.xaml.cs">
+      <Link>Adorners\AdornerLayer.xaml.cs</Link>
+      <DependentUpon>AdornerLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Adorners\UIElementAdorner.cs">
+      <Link>Adorners\UIElementAdorner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Adorners\VisualAdorner.cs">
+      <Link>Adorners\VisualAdorner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\CommandReference.cs">
+      <Link>Commands\CommandReference.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\Commands.cs">
+      <Link>Commands\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBinding.cs">
+      <Link>Commands\EventBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBindingCollection.cs">
+      <Link>Commands\EventBindingCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBindings.cs">
+      <Link>Commands\EventBindings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\DispatcherHelper.cs">
+      <Link>Consistency\DispatcherHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\FrameworkPropertyMetadata.cs">
+      <Link>Consistency\FrameworkPropertyMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\Freezable.cs">
+      <Link>Consistency\Freezable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\GridLengthConverter.cs">
+      <Link>Consistency\GridLengthConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\HitTest.cs">
+      <Link>Consistency\HitTest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\MouseClickDetector.cs">
+      <Link>Consistency\MouseClickDetector.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\SystemParameters.cs">
+      <Link>Consistency\SystemParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\ApexGrid.cs">
+      <Link>Controls\ApexGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\PaddedGrid.cs">
+      <Link>Controls\PaddedGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\VariableGrid.cs">
+      <Link>Controls\VariableGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\BooleanToVisibilityConverter.cs">
+      <Link>Converters\BooleanToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\DateTimeToSensibleStringConverter.cs">
+      <Link>Converters\DateTimeToSensibleStringConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\DivideByTwoConverter.cs">
+      <Link>Converters\DivideByTwoConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\EnumToBooleanConverter.cs">
+      <Link>Converters\EnumToBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\InvertedBooleanConverter.cs">
+      <Link>Converters\InvertedBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\NullToVisibilityConverter.cs">
+      <Link>Converters\NullToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\StringCaseConverter.cs">
+      <Link>Converters\StringCaseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
+      <Link>Converters\StringNullOrEmptyToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Design\DesignTime.cs">
+      <Link>Design\DesignTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\DragAndDrop\DragAndDrop.cs">
+      <Link>DragAndDrop\DragAndDrop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\DragAndDrop\DragAndDropHost.cs">
+      <Link>DragAndDrop\DragAndDropHost.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\DateTimeExtensions.cs">
+      <Link>Extensions\DateTimeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\DependencyObjectExtensions.cs">
+      <Link>Extensions\DependencyObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\EnumExtensions.cs">
+      <Link>Extensions\EnumExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\FrameworkElementExtensions.cs">
+      <Link>Extensions\FrameworkElementExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\ListExtensions.cs">
+      <Link>Extensions\ListExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Helpers\EnumHelper.cs">
+      <Link>Helpers\EnumHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\AsynchronousCommand.cs">
+      <Link>MVVM\AsynchronousCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\Command.cs">
+      <Link>MVVM\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\NotifyingProperty.cs">
+      <Link>MVVM\NotifyingProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\ViewModel.cs">
+      <Link>MVVM\ViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\..\..\WPF\.NET 4.0\Apex\Adorners\AdornerLayer.xaml">
+      <Link>Adorners\AdornerLayer.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\ResourceDictionaries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Apex.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)bin\$(ConfigurationName)\*.dll" "$(SolutionDir)Deploy\$(ConfigurationName)\.NET 3.5\" /i /d /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
