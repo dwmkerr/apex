@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{316AF189-94F7-4F15-A93A-3B34E8A523B2}</ProjectGuid>
+    <ProjectGuid>{5CA8754C-8D71-420A-BA16-A795F11D317D}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -52,109 +52,121 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\WPF\Apex\Commands\CommandReference.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\CommandReference.cs">
       <Link>Commands\CommandReference.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\Commands.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\Commands.cs">
       <Link>Commands\Commands.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\EventBinding.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBinding.cs">
       <Link>Commands\EventBinding.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\EventBindingCollection.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBindingCollection.cs">
       <Link>Commands\EventBindingCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Commands\EventBindings.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBindings.cs">
       <Link>Commands\EventBindings.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Consistency\DispatcherHelper.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\DispatcherHelper.cs">
       <Link>Consistency\DispatcherHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Consistency\Freezable.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\FrameworkPropertyMetadata.cs">
+      <Link>Consistency\FrameworkPropertyMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\Freezable.cs">
       <Link>Consistency\Freezable.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Consistency\GridLengthConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\GridLengthConverter.cs">
       <Link>Consistency\GridLengthConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Consistency\HitTest.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\HitTest.cs">
       <Link>Consistency\HitTest.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Consistency\MouseClickDetector.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\MouseClickDetector.cs">
       <Link>Consistency\MouseClickDetector.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Consistency\SystemParameters.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\SystemParameters.cs">
       <Link>Consistency\SystemParameters.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Controls\ApexGrid.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Controls\PaddedGrid.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\EnumerationComboBox.cs">
+      <Link>Controls\EnumerationComboBox.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Controls\VariableGrid.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\VariableGrid.cs">
       <Link>Controls\VariableGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Converters\BooleanToVisibilityConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Converters\DateTimeToSensibleStringConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\DateTimeToSensibleStringConverter.cs">
       <Link>Converters\DateTimeToSensibleStringConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Converters\DivideByTwoConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\DivideByTwoConverter.cs">
       <Link>Converters\DivideByTwoConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Converters\EnumToBooleanConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\EnumToBooleanConverter.cs">
       <Link>Converters\EnumToBooleanConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Converters\NullToVisibilityConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\InvertedBooleanConverter.cs">
+      <Link>Converters\InvertedBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Converters\StringCaseConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\StringCaseConverter.cs">
       <Link>Converters\StringCaseConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
       <Link>Converters\StringNullOrEmptyToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Extensions\DateTimeExtensions.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\DateTimeExtensions.cs">
       <Link>Extensions\DateTimeExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Extensions\DependencyObjectExtensions.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\DependencyObjectExtensions.cs">
       <Link>Extensions\DependencyObjectExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Extensions\EnumExtensions.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\EnumExtensions.cs">
       <Link>Extensions\EnumExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Extensions\FrameworkElementExtensions.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\FrameworkElementExtensions.cs">
       <Link>Extensions\FrameworkElementExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Extensions\ListExtensions.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\ListExtensions.cs">
       <Link>Extensions\ListExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Extensions\StringExtensions.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\Helpers\EnumHelper.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Helpers\EnumHelper.cs">
       <Link>Helpers\EnumHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\MVVM\AsynchronousCommand.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\MVVM\Command.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\MVVM\NotifyingProperty.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
-    <Compile Include="..\..\WPF\Apex\MVVM\ViewModel.cs">
+    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
     </Compile>
     <Compile Include="Controls\CommandButton.cs" />
-    <Compile Include="Controls\EnumerationComboBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)bin\$(ConfigurationName)\*.dll" "$(SolutionDir)Deploy\$(ConfigurationName)\Windows Phone 7.0\" /i /d /y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

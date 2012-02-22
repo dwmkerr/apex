@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WP7", "WP7", "{6701A4FD-CF4D-4DE4-B51B-56E7AF3F8347}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WP7", "WP7\Apex.WP7\Apex.WP7.csproj", "{316AF189-94F7-4F15-A93A-3B34E8A523B2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex", "WPF\.NET 4.0\Apex\Apex.csproj", "{67D54A68-A287-4797-9667-ACCBF9683119}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{92E46CAC-42EF-4F9D-9E3D-037CA3187EB2}"
@@ -55,11 +53,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET 4.0", ".NET 4.0", "{A0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex", "WPF\.NET 3.5\Apex\Apex.csproj", "{ECCD3814-F5C6-411F-8F3E-FCC2FC346E29}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET 4.0", ".NET 4.0", "{06B58D1F-DD01-4867-BBD4-B7F56E7AD313}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight 4", "Silverlight 4", "{06B58D1F-DD01-4867-BBD4-B7F56E7AD313}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight", "Silverlight\.NET 4.0\Apex.Silverlight\Apex.Silverlight.csproj", "{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET 3.5", ".NET 3.5", "{1FDAB146-3EF3-4B09-84E7-CB8EE1F43CB7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight 3", "Silverlight 3", "{1FDAB146-3EF3-4B09-84E7-CB8EE1F43CB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight", "Silverlight\.NET 3.5\Apex.Silverlight\Apex.Silverlight.csproj", "{13FE4D78-23FA-4B5D-875B-5B71640F132B}"
 EndProject
@@ -71,9 +69,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET 3.5", ".NET 3.5", "{5B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WinForms", "WinForms\.NET 3.5\Apex.WinForms\Apex.WinForms.csproj", "{045F9F82-B22A-4083-A978-51552906E813}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WP 7.0", "WP 7.0", "{0F6BF3BD-F32D-45AF-B00B-C71B55F55B1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WP 7.1", "WP 7.1", "{B36C5CD5-A84C-4691-9FB1-41F678FC2811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WP7", "WP7\WP 7.0\Apex.WP7\Apex.WP7.csproj", "{5CA8754C-8D71-420A-BA16-A795F11D317D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WP7", "WP7\WP 7.1\Apex.WP7\Apex.WP7.csproj", "{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 21
+		SccNumberOfProjects = 22
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -89,74 +95,78 @@ Global
 		SccProjectTopLevelParentUniqueName3 = Apex.sln
 		SccProjectName3 = WPF/Samples/MVVMSample
 		SccLocalPath3 = WPF\\Samples\\MVVMSample
-		SccProjectUniqueName4 = WP7\\Apex.WP7\\Apex.WP7.csproj
+		SccProjectUniqueName4 = WP7\\Samples\\MVVMSample\\MVVMSample.csproj
 		SccProjectTopLevelParentUniqueName4 = Apex.sln
-		SccProjectName4 = WP7/Apex.WP7
-		SccLocalPath4 = WP7\\Apex.WP7
-		SccProjectUniqueName5 = WP7\\Samples\\MVVMSample\\MVVMSample.csproj
+		SccProjectName4 = WP7/Samples/MVVMSample
+		SccLocalPath4 = WP7\\Samples\\MVVMSample
+		SccProjectUniqueName5 = WP7\\Samples\\ControlsSample\\ControlsSample.csproj
 		SccProjectTopLevelParentUniqueName5 = Apex.sln
-		SccProjectName5 = WP7/Samples/MVVMSample
-		SccLocalPath5 = WP7\\Samples\\MVVMSample
-		SccProjectUniqueName6 = WP7\\Samples\\ControlsSample\\ControlsSample.csproj
+		SccProjectName5 = WP7/Samples/ControlsSample
+		SccLocalPath5 = WP7\\Samples\\ControlsSample
+		SccProjectUniqueName6 = Silverlight\\Samples\\MVVMSample\\MVVMSample.csproj
 		SccProjectTopLevelParentUniqueName6 = Apex.sln
-		SccProjectName6 = WP7/Samples/ControlsSample
-		SccLocalPath6 = WP7\\Samples\\ControlsSample
-		SccProjectUniqueName7 = Silverlight\\Samples\\MVVMSample\\MVVMSample.csproj
+		SccProjectName6 = Silverlight/Samples/MVVMSample
+		SccLocalPath6 = Silverlight\\Samples\\MVVMSample
+		SccProjectUniqueName7 = Silverlight\\Samples\\ControlsSample\\ControlsSample.csproj
 		SccProjectTopLevelParentUniqueName7 = Apex.sln
-		SccProjectName7 = Silverlight/Samples/MVVMSample
-		SccLocalPath7 = Silverlight\\Samples\\MVVMSample
-		SccProjectUniqueName8 = Silverlight\\Samples\\ControlsSample\\ControlsSample.csproj
+		SccProjectName7 = Silverlight/Samples/ControlsSample
+		SccLocalPath7 = Silverlight\\Samples\\ControlsSample
+		SccProjectUniqueName8 = Silverlight\\Samples\\DragAndDropSample\\DragAndDropSample.csproj
 		SccProjectTopLevelParentUniqueName8 = Apex.sln
-		SccProjectName8 = Silverlight/Samples/ControlsSample
-		SccLocalPath8 = Silverlight\\Samples\\ControlsSample
-		SccProjectUniqueName9 = Silverlight\\Samples\\DragAndDropSample\\DragAndDropSample.csproj
+		SccProjectName8 = Silverlight/Samples/DragAndDropSample
+		SccLocalPath8 = Silverlight\\Samples\\DragAndDropSample
+		SccProjectUniqueName9 = Silverlight\\Samples\\CommandingSample\\CommandingSample.csproj
 		SccProjectTopLevelParentUniqueName9 = Apex.sln
-		SccProjectName9 = Silverlight/Samples/DragAndDropSample
-		SccLocalPath9 = Silverlight\\Samples\\DragAndDropSample
-		SccProjectUniqueName10 = Silverlight\\Samples\\CommandingSample\\CommandingSample.csproj
+		SccProjectName9 = Silverlight/Samples/CommandingSample
+		SccLocalPath9 = Silverlight\\Samples\\CommandingSample
+		SccProjectUniqueName10 = WPF\\Samples\\CommandingExample\\CommandingSample.csproj
 		SccProjectTopLevelParentUniqueName10 = Apex.sln
-		SccProjectName10 = Silverlight/Samples/CommandingSample
-		SccLocalPath10 = Silverlight\\Samples\\CommandingSample
-		SccProjectUniqueName11 = WPF\\Samples\\CommandingExample\\CommandingSample.csproj
+		SccProjectName10 = WPF/Samples/CommandingExample
+		SccLocalPath10 = WPF\\Samples\\CommandingExample
+		SccProjectUniqueName11 = WP7\\Samples\\CommandingSample\\CommandingSample.csproj
 		SccProjectTopLevelParentUniqueName11 = Apex.sln
-		SccProjectName11 = WPF/Samples/CommandingExample
-		SccLocalPath11 = WPF\\Samples\\CommandingExample
-		SccProjectUniqueName12 = WP7\\Samples\\CommandingSample\\CommandingSample.csproj
+		SccProjectName11 = WP7/Samples/CommandingSample
+		SccLocalPath11 = WP7\\Samples\\CommandingSample
+		SccProjectUniqueName12 = Extensions\\Snippets\\Snippets.csproj
 		SccProjectTopLevelParentUniqueName12 = Apex.sln
-		SccProjectName12 = WP7/Samples/CommandingSample
-		SccLocalPath12 = WP7\\Samples\\CommandingSample
-		SccProjectUniqueName13 = Extensions\\Snippets\\Snippets.csproj
+		SccProjectName12 = Extensions/Snippets
+		SccLocalPath12 = Extensions\\Snippets
+		SccProjectUniqueName13 = WinForms\\Samples\\ControlsSample\\ControlsSample.csproj
 		SccProjectTopLevelParentUniqueName13 = Apex.sln
-		SccProjectName13 = Extensions/Snippets
-		SccLocalPath13 = Extensions\\Snippets
-		SccProjectUniqueName14 = WinForms\\Samples\\ControlsSample\\ControlsSample.csproj
+		SccProjectName13 = WinForms/Samples/ControlsSample
+		SccLocalPath13 = WinForms\\Samples\\ControlsSample
+		SccProjectUniqueName14 = WPF\\.NET\u00203.5\\Apex\\Apex.csproj
 		SccProjectTopLevelParentUniqueName14 = Apex.sln
-		SccProjectName14 = WinForms/Samples/ControlsSample
-		SccLocalPath14 = WinForms\\Samples\\ControlsSample
-		SccProjectUniqueName15 = WPF\\.NET\u00203.5\\Apex\\Apex.csproj
+		SccProjectName14 = WPF/.NET\u00203.5/Apex
+		SccLocalPath14 = WPF\\.NET\u00203.5\\Apex
+		SccProjectUniqueName15 = WPF\\.NET\u00204.0\\Apex\\Apex.csproj
 		SccProjectTopLevelParentUniqueName15 = Apex.sln
-		SccProjectName15 = WPF/.NET\u00203.5/Apex
-		SccLocalPath15 = WPF\\.NET\u00203.5\\Apex
-		SccProjectUniqueName16 = WPF\\.NET\u00204.0\\Apex\\Apex.csproj
+		SccProjectName15 = WPF/.NET\u00204.0/Apex
+		SccLocalPath15 = WPF\\.NET\u00204.0\\Apex
+		SccProjectUniqueName16 = Silverlight\\.NET\u00204.0\\Apex.Silverlight\\Apex.Silverlight.csproj
 		SccProjectTopLevelParentUniqueName16 = Apex.sln
-		SccProjectName16 = WPF/.NET\u00204.0/Apex
-		SccLocalPath16 = WPF\\.NET\u00204.0\\Apex
-		SccProjectUniqueName17 = Silverlight\\.NET\u00204.0\\Apex.Silverlight\\Apex.Silverlight.csproj
+		SccProjectName16 = Silverlight/.NET\u00204.0/Apex.Silverlight
+		SccLocalPath16 = Silverlight\\.NET\u00204.0\\Apex.Silverlight
+		SccProjectUniqueName17 = Silverlight\\.NET\u00203.5\\Apex.Silverlight\\Apex.Silverlight.csproj
 		SccProjectTopLevelParentUniqueName17 = Apex.sln
-		SccProjectName17 = Silverlight/.NET\u00204.0/Apex.Silverlight
-		SccLocalPath17 = Silverlight\\.NET\u00204.0\\Apex.Silverlight
-		SccProjectUniqueName18 = Silverlight\\.NET\u00203.5\\Apex.Silverlight\\Apex.Silverlight.csproj
+		SccProjectName17 = Silverlight/.NET\u00203.5/Apex.Silverlight
+		SccLocalPath17 = Silverlight\\.NET\u00203.5\\Apex.Silverlight
+		SccProjectUniqueName18 = WinForms\\.NET\u00204.0\\Apex.WinForms\\Apex.WinForms.csproj
 		SccProjectTopLevelParentUniqueName18 = Apex.sln
-		SccProjectName18 = Silverlight/.NET\u00203.5/Apex.Silverlight
-		SccLocalPath18 = Silverlight\\.NET\u00203.5\\Apex.Silverlight
-		SccProjectUniqueName19 = WinForms\\.NET\u00204.0\\Apex.WinForms\\Apex.WinForms.csproj
+		SccProjectName18 = WinForms/.NET\u00204.0/Apex.WinForms
+		SccLocalPath18 = WinForms\\.NET\u00204.0\\Apex.WinForms
+		SccProjectUniqueName19 = WinForms\\.NET\u00203.5\\Apex.WinForms\\Apex.WinForms.csproj
 		SccProjectTopLevelParentUniqueName19 = Apex.sln
-		SccProjectName19 = WinForms/.NET\u00204.0/Apex.WinForms
-		SccLocalPath19 = WinForms\\.NET\u00204.0\\Apex.WinForms
-		SccProjectUniqueName20 = WinForms\\.NET\u00203.5\\Apex.WinForms\\Apex.WinForms.csproj
+		SccProjectName19 = WinForms/.NET\u00203.5/Apex.WinForms
+		SccLocalPath19 = WinForms\\.NET\u00203.5\\Apex.WinForms
+		SccProjectUniqueName20 = WP7\\WP\u00207.0\\Apex.WP7\\Apex.WP7.csproj
 		SccProjectTopLevelParentUniqueName20 = Apex.sln
-		SccProjectName20 = WinForms/.NET\u00203.5/Apex.WinForms
-		SccLocalPath20 = WinForms\\.NET\u00203.5\\Apex.WinForms
+		SccProjectName20 = WP7/WP\u00207.0/Apex.WP7
+		SccLocalPath20 = WP7\\WP\u00207.0\\Apex.WP7
+		SccProjectUniqueName21 = WP7\\WP\u00207.1\\Apex.WP7\\Apex.WP7.csproj
+		SccProjectTopLevelParentUniqueName21 = Apex.sln
+		SccProjectName21 = WP7/WP\u00207.1/Apex.WP7
+		SccLocalPath21 = WP7\\WP\u00207.1\\Apex.WP7
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,16 +177,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2}.Release|x86.ActiveCfg = Release|Any CPU
 		{67D54A68-A287-4797-9667-ACCBF9683119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67D54A68-A287-4797-9667-ACCBF9683119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67D54A68-A287-4797-9667-ACCBF9683119}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -379,6 +379,26 @@ Global
 		{045F9F82-B22A-4083-A978-51552906E813}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{045F9F82-B22A-4083-A978-51552906E813}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{045F9F82-B22A-4083-A978-51552906E813}.Release|x86.ActiveCfg = Release|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5CA8754C-8D71-420A-BA16-A795F11D317D}.Release|x86.ActiveCfg = Release|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -390,8 +410,9 @@ Global
 		{5D667BCA-10C9-4C42-B42E-DD273B3EC042} = {8C1BF32D-B8C8-4BED-9171-7E01FB460490}
 		{06B58D1F-DD01-4867-BBD4-B7F56E7AD313} = {8C1BF32D-B8C8-4BED-9171-7E01FB460490}
 		{1FDAB146-3EF3-4B09-84E7-CB8EE1F43CB7} = {8C1BF32D-B8C8-4BED-9171-7E01FB460490}
-		{316AF189-94F7-4F15-A93A-3B34E8A523B2} = {6701A4FD-CF4D-4DE4-B51B-56E7AF3F8347}
 		{19B4056B-BFD6-4467-A047-35F6C4D8A8A3} = {6701A4FD-CF4D-4DE4-B51B-56E7AF3F8347}
+		{0F6BF3BD-F32D-45AF-B00B-C71B55F55B1B} = {6701A4FD-CF4D-4DE4-B51B-56E7AF3F8347}
+		{B36C5CD5-A84C-4691-9FB1-41F678FC2811} = {6701A4FD-CF4D-4DE4-B51B-56E7AF3F8347}
 		{67D54A68-A287-4797-9667-ACCBF9683119} = {A068B70D-3E2D-434F-8AF3-74D6CE6B2025}
 		{479D5D9F-394D-4635-953D-DA0078211320} = {92E46CAC-42EF-4F9D-9E3D-037CA3187EB2}
 		{A6533E15-A64B-44E9-87B4-7B1372302FF9} = {92E46CAC-42EF-4F9D-9E3D-037CA3187EB2}
@@ -414,5 +435,7 @@ Global
 		{13FE4D78-23FA-4B5D-875B-5B71640F132B} = {1FDAB146-3EF3-4B09-84E7-CB8EE1F43CB7}
 		{A479105C-717B-4500-8FFC-B3D12BEEF13E} = {D6C77288-67F6-4377-802E-33C668FEB028}
 		{045F9F82-B22A-4083-A978-51552906E813} = {5BF885F4-A9C8-4C4B-B21A-72FFB14B3360}
+		{5CA8754C-8D71-420A-BA16-A795F11D317D} = {0F6BF3BD-F32D-45AF-B00B-C71B55F55B1B}
+		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A} = {B36C5CD5-A84C-4691-9FB1-41F678FC2811}
 	EndGlobalSection
 EndGlobal
