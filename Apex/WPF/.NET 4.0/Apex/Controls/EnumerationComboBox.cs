@@ -79,7 +79,11 @@ namespace Apex.Controls
         {
             //  Set the display member path and selected value path.
             DisplayMemberPath = "Name";
+
+#if !WINDOWS_PHONE
+            //  TODO: Check what we can do for WP7.
             SelectedValuePath = "Value";
+#endif
 
             //  If we have enumerations and a selected enumeration, set the selected item.
             if (enumerations != null && SelectedEnumeration != null)

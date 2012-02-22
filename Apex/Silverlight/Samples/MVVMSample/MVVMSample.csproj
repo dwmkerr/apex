@@ -98,7 +98,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\.NET 4.0\Apex.Silverlight\Apex.Silverlight.csproj">
       <Project>{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}</Project>
-      <Name>Apex.Silverlight %28Silverlight\.NET 4.0\Apex.Silverlight%29</Name>
+      <Name>Apex.Silverlight %28Silverlight\Silverlight 4\Apex.Silverlight%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
