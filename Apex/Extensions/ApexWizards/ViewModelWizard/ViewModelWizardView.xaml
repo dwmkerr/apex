@@ -1,0 +1,30 @@
+﻿<Window x:Class="ApexWizards.ViewModelWizard.ViewModelWizardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ApexWizards.ViewModelWizard"
+        xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+        Title="New Apex ViewModel" Height="300" Width="300">
+    
+    <Window.DataContext>
+        <local:ViewModelWizardViewModel x:Name="viewModel" />
+    </Window.DataContext>
+    
+    <apexControls:ApexGrid Rows="Auto,*,Auto">
+        
+        <!-- Instructions. -->
+        <TextBlock Grid.Row="0" Text="Enter parameters" />
+    
+        <!-- Parameters. -->
+        <apexControls:PaddedGrid Grid.Row="1" Rows="Auto,Auto,Auto" Padding="4">
+
+            <CheckBox Grid.Row="0" IsChecked="{Binding CreateExampleNotifyingProperty}" Content="Create example notifying property" />
+            <CheckBox Grid.Row="1" IsChecked="{Binding CreateExampleObservableCollection}" Content="Create example observable collection" />
+            <CheckBox Grid.Row="2" IsChecked="{Binding CreateExampleCommand}" Content="Create example command" />
+
+        </apexControls:PaddedGrid>
+        
+        <Button Grid.Row="2" Command="{Binding OKCommand}" Width="200" Content="OK" />
+        
+    </apexControls:ApexGrid>
+    
+</Window>

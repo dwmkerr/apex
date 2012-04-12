@@ -47,15 +47,22 @@
             <!-- Now sepecify the code language and the actual snippet content. -->
             <Code Language="CSharp" Kind="any">
                 <![CDATA[
+                    
+                    /// <summary>
+                    /// The NotifyingProperty for the $PropertyName$ property.
+                    /// </summary>
                     private NotifyingProperty $PropertyName$Property = 
                       new NotifyingProperty("$PropertyName$", typeof($PropertyType$), default($PropertyType$));
                     
+                    /// <summary>
+                    /// Gets or sets $PropertyName$.
+                    /// </summary>
+                    /// <value>The value of $PropertyName$.</value>
                     public $PropertyType$ $PropertyName$
                     {
                       get { return ($PropertyType$)GetValue($PropertyName$Property); }
                       set { SetValue($PropertyName$Property, value); }
-                    }
-                ]]>
+                    }]]>
             </Code>
         </Snippet>
     </CodeSnippet>

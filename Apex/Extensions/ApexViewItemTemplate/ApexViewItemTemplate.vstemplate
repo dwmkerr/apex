@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Apex View</Name>
+    <Description>A View is the presentation object for a view model.</Description>
+    <Icon>ApexViewItemTemplate.ico</Icon>
+    <TemplateID>0d99e9f7-420f-434c-80aa-28eadbaac2b7</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>View.xaml</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    
+    <!-- Reference all assemblies required for WPF and Apex itself.-->
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Xaml</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>WindowsBase</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationCore</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationFramework</Assembly>
+			</Reference>
+      <Reference>
+        <Assembly>Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
+      </Reference>
+		</References>
+
+    <ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">View.xaml</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">View.xaml.cs</ProjectItem>
+  </TemplateContent>
+
+  <!-- Use the appropriate IWizard from the ApexWizards assembly. -->
+  <WizardExtension>
+    <Assembly>
+      ApexWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d
+    </Assembly>
+    <FullClassName>ApexWizards.ViewWizard.ViewWizard</FullClassName>
+  </WizardExtension>
+  
+</VSTemplate>
