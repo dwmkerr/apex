@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Apex ViewModel</Name>
+    <Description>An Apex ViewModel is a ViewModel class that can be used to control data
+    and functionality in an MVVM project.</Description>
+    <Icon>ApexViewModelItemTemplate.ico</Icon>
+    <TemplateID>08f13c16-4e6f-465f-a017-46d7ec994e5b</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>ViewModel.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    
+    <!-- Reference all assemblies required for WPF and Apex itself.-->
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>WindowsBase</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationCore</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationFramework</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
+      </Reference>
+    </References>
+
+    <ProjectItem ReplaceParameters="true">ViewModel.cs</ProjectItem>
+  </TemplateContent>
+  
+  <!-- Use the appropriate IWizard from the ApexWizards assembly. -->
+  <WizardExtension>
+    <Assembly>
+      ApexWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d
+    </Assembly>
+    <FullClassName>ApexWizards.ViewModelWizard.ViewModelWizard</FullClassName>
+  </WizardExtension>
+  
+</VSTemplate>

@@ -77,9 +77,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WP7", "WP7\WP 7.0\Apex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.WP7", "WP7\WP 7.1\Apex.WP7\Apex.WP7.csproj", "{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexViewModelItemTemplate", "Extensions\ApexViewModelItemTemplate\ApexViewModelItemTemplate.csproj", "{AF89FFA4-42EC-4AE3-B172-A04A231759DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexWizards", "Extensions\ApexWizards\ApexWizards.csproj", "{07F81CED-6B5E-48B2-A935-81C289E995C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexVsix", "Extensions\ApexVsix\ApexVsix.csproj", "{33CCC542-0C41-4230-BEEC-9A09B4B2267A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexViewItemTemplate", "Extensions\ApexViewItemTemplate\ApexViewItemTemplate.csproj", "{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexViewAndViewModelItemTemplate", "Extensions\ApexViewAndViewModelItemTemplate\ApexViewAndViewModelItemTemplate.csproj", "{75D3F944-603B-4849-A466-40E07ECFF81E}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 22
+		SccNumberOfProjects = 27
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -167,6 +177,26 @@ Global
 		SccProjectTopLevelParentUniqueName21 = Apex.sln
 		SccProjectName21 = WP7/WP\u00207.1/Apex.WP7
 		SccLocalPath21 = WP7\\WP\u00207.1\\Apex.WP7
+		SccProjectUniqueName22 = Extensions\\ApexViewModelItemTemplate\\ApexViewModelItemTemplate.csproj
+		SccProjectTopLevelParentUniqueName22 = Apex.sln
+		SccProjectName22 = Extensions/ApexViewModelItemTemplate
+		SccLocalPath22 = Extensions\\ApexViewModelItemTemplate
+		SccProjectUniqueName23 = Extensions\\ApexWizards\\ApexWizards.csproj
+		SccProjectTopLevelParentUniqueName23 = Apex.sln
+		SccProjectName23 = Extensions/ApexWizards
+		SccLocalPath23 = Extensions\\ApexWizards
+		SccProjectUniqueName24 = Extensions\\ApexVsix\\ApexVsix.csproj
+		SccProjectTopLevelParentUniqueName24 = Apex.sln
+		SccProjectName24 = Extensions/ApexVsix
+		SccLocalPath24 = Extensions\\ApexVsix
+		SccProjectUniqueName25 = Extensions\\ApexViewItemTemplate\\ApexViewItemTemplate.csproj
+		SccProjectTopLevelParentUniqueName25 = Apex.sln
+		SccProjectName25 = Extensions/ApexViewItemTemplate
+		SccLocalPath25 = Extensions\\ApexViewItemTemplate
+		SccProjectUniqueName26 = Extensions\\ApexViewAndViewModelItemTemplate\\ApexViewAndViewModelItemTemplate.csproj
+		SccProjectTopLevelParentUniqueName26 = Apex.sln
+		SccProjectName26 = Extensions/ApexViewAndViewModelItemTemplate
+		SccLocalPath26 = Extensions\\ApexViewAndViewModelItemTemplate
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -399,6 +429,56 @@ Global
 		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE}.Release|x86.ActiveCfg = Release|Any CPU
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Debug|x86.ActiveCfg = Debug|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Debug|x86.Build.0 = Debug|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Release|Any CPU.ActiveCfg = Release|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Release|Mixed Platforms.Build.0 = Release|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Release|x86.ActiveCfg = Release|x86
+		{07F81CED-6B5E-48B2-A935-81C289E995C8}.Release|x86.Build.0 = Release|x86
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A}.Release|x86.ActiveCfg = Release|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}.Release|x86.ActiveCfg = Release|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{75D3F944-603B-4849-A466-40E07ECFF81E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -426,6 +506,11 @@ Global
 		{12704CED-DA46-418B-BF4C-81D6FC14BDCA} = {5D667BCA-10C9-4C42-B42E-DD273B3EC042}
 		{521E3997-5583-4848-80FB-F0095B27E288} = {5D667BCA-10C9-4C42-B42E-DD273B3EC042}
 		{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{AF89FFA4-42EC-4AE3-B172-A04A231759DE} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{07F81CED-6B5E-48B2-A935-81C289E995C8} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{33CCC542-0C41-4230-BEEC-9A09B4B2267A} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{75D3F944-603B-4849-A466-40E07ECFF81E} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{C6B0C858-9F62-4778-A4C7-36635947E3E4} = {BE012C6B-5299-4C00-B47B-16656BD82E32}
 		{D6C77288-67F6-4377-802E-33C668FEB028} = {BE012C6B-5299-4C00-B47B-16656BD82E32}
 		{5BF885F4-A9C8-4C4B-B21A-72FFB14B3360} = {BE012C6B-5299-4C00-B47B-16656BD82E32}

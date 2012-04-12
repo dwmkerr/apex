@@ -1,0 +1,29 @@
+﻿<Window x:Class="ApexWizards.ViewWizard.ViewWizardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ApexWizards.ViewWizard"
+        xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+        Title="New Apex View" Height="300" Width="300">
+    
+    <Window.DataContext>
+        <local:ViewWizardViewModel x:Name="viewModel" />
+    </Window.DataContext>
+    
+    <apexControls:ApexGrid Rows="Auto,*,Auto">
+        
+        <!-- Instructions. -->
+        <TextBlock Grid.Row="0" Text="Enter parameters" />
+    
+        <!-- Parameters. -->
+        <apexControls:PaddedGrid Grid.Row="1" Rows="Auto,Auto,Auto" Columns="*,*" Padding="4">
+
+            <Label Grid.Row="0" Grid.Column="0" Content="View Model Type" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ViewModelType}" />
+            <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding ViewCreatesViewModel}" Content="View Creates ViewModel" />
+        </apexControls:PaddedGrid>
+        
+        <Button Grid.Row="2" Command="{Binding OKCommand}" Width="200" Content="OK" />
+        
+    </apexControls:ApexGrid>
+    
+</Window>
