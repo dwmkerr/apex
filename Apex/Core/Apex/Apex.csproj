@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Controls\CrossButton.cs" />
     <Compile Include="Controls\EnumerationComboBox.cs" />
+    <Compile Include="Controls\MultiBorder.cs" />
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
@@ -164,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\ResourceDictionaries\MultiBorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\ResourceDictionaries\PivotControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -172,7 +177,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)bin\$(ConfigurationName)\*.dll" "$(SolutionDir)Deploy\$(ConfigurationName)\.NET 4.0\" /i /d /y
-"C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil" /if "$(TargetPath)"</PostBuildEvent>
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil" /if "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -88,9 +88,6 @@
       <DependentUpon>ViewWizardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewWizard\ViewWizardViewModel.cs" />
-    <Compile Include="UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModelWizard\ViewModelWizard.cs" />
     <Compile Include="ViewModelWizard\ViewModelWizardView.xaml.cs">
       <DependentUpon>ViewModelWizardView.xaml</DependentUpon>
@@ -99,10 +96,6 @@
     <Page Include="ViewWizard\ViewWizardView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewModelWizard\ViewModelWizardView.xaml">
       <SubType>Designer</SubType>
@@ -157,6 +150,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Apex.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Core\Apex\Apex.csproj">
       <Project>{67D54A68-A287-4797-9667-ACCBF9683119}</Project>
       <Name>Apex</Name>
@@ -164,7 +160,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil" /if "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil" /if "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
