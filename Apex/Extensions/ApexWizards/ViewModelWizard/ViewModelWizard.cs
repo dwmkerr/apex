@@ -44,7 +44,7 @@ namespace ApexWizards.ViewModelWizard
                 view.ShowDialog();
                 
                 //  Update the custom parameters.
-                replacementsDictionary.Add("$ViewModelType$", view.ViewModel.CreateExampleNotifyingProperty ? "1" : "0");
+                replacementsDictionary.Add("$CreateExampleNotifyingProperty$", view.ViewModel.CreateExampleNotifyingProperty ? "1" : "0");
                 replacementsDictionary.Add("$CreateExampleObservableCollection$", view.ViewModel.CreateExampleObservableCollection ? "1" : "0");
                 replacementsDictionary.Add("$CreateExampleCommand$", view.ViewModel.CreateExampleCommand ? "1" : "0");
             }

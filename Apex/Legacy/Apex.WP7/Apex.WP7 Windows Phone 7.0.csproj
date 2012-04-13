@@ -52,109 +52,109 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\CommandReference.cs">
+    <Compile Include="..\..\Core\Apex\Commands\CommandReference.cs">
       <Link>Commands\CommandReference.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\Commands.cs">
+    <Compile Include="..\..\Core\Apex\Commands\Commands.cs">
       <Link>Commands\Commands.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBinding.cs">
+    <Compile Include="..\..\Core\Apex\Commands\EventBinding.cs">
       <Link>Commands\EventBinding.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBindingCollection.cs">
+    <Compile Include="..\..\Core\Apex\Commands\EventBindingCollection.cs">
       <Link>Commands\EventBindingCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Commands\EventBindings.cs">
+    <Compile Include="..\..\Core\Apex\Commands\EventBindings.cs">
       <Link>Commands\EventBindings.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\DispatcherHelper.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\DispatcherHelper.cs">
       <Link>Consistency\DispatcherHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\FrameworkPropertyMetadata.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\FrameworkPropertyMetadata.cs">
       <Link>Consistency\FrameworkPropertyMetadata.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\Freezable.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\Freezable.cs">
       <Link>Consistency\Freezable.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\GridLengthConverter.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\GridLengthConverter.cs">
       <Link>Consistency\GridLengthConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\HitTest.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\HitTest.cs">
       <Link>Consistency\HitTest.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\MouseClickDetector.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\MouseClickDetector.cs">
       <Link>Consistency\MouseClickDetector.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Consistency\SystemParameters.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\SystemParameters.cs">
       <Link>Consistency\SystemParameters.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\ApexGrid.cs">
+    <Compile Include="..\..\Core\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\EnumerationComboBox.cs">
+    <Compile Include="..\..\Core\Apex\Controls\EnumerationComboBox.cs">
       <Link>Controls\EnumerationComboBox.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\PaddedGrid.cs">
+    <Compile Include="..\..\Core\Apex\Controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Controls\VariableGrid.cs">
+    <Compile Include="..\..\Core\Apex\Controls\VariableGrid.cs">
       <Link>Controls\VariableGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\BooleanToVisibilityConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\DateTimeToSensibleStringConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\DateTimeToSensibleStringConverter.cs">
       <Link>Converters\DateTimeToSensibleStringConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\DivideByTwoConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\DivideByTwoConverter.cs">
       <Link>Converters\DivideByTwoConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\EnumToBooleanConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\EnumToBooleanConverter.cs">
       <Link>Converters\EnumToBooleanConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\InvertedBooleanConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\InvertedBooleanConverter.cs">
       <Link>Converters\InvertedBooleanConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\NullToVisibilityConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\StringCaseConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\StringCaseConverter.cs">
       <Link>Converters\StringCaseConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
       <Link>Converters\StringNullOrEmptyToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\DateTimeExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\DateTimeExtensions.cs">
       <Link>Extensions\DateTimeExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\DependencyObjectExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\DependencyObjectExtensions.cs">
       <Link>Extensions\DependencyObjectExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\EnumExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\EnumExtensions.cs">
       <Link>Extensions\EnumExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\FrameworkElementExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\FrameworkElementExtensions.cs">
       <Link>Extensions\FrameworkElementExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\ListExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\ListExtensions.cs">
       <Link>Extensions\ListExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Extensions\StringExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\Helpers\EnumHelper.cs">
+    <Compile Include="..\..\Core\Apex\Helpers\EnumHelper.cs">
       <Link>Helpers\EnumHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\AsynchronousCommand.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\Command.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\NotifyingProperty.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\WPF\.NET 4.0\Apex\MVVM\ViewModel.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
     </Compile>
     <Compile Include="Controls\CommandButton.cs" />

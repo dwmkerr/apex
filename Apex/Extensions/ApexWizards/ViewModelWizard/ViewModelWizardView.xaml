@@ -3,27 +3,59 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ApexWizards.ViewModelWizard"
         xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
-        Title="New Apex ViewModel" Height="300" Width="300">
+        Title="New View Model" Height="400" Width="500"
+        FontFamily="Segoe UI" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     
     <Window.DataContext>
         <local:ViewModelWizardViewModel x:Name="viewModel" />
-    </Window.DataContext>
+    </Window.DataContext>    
     
     <apexControls:ApexGrid Rows="Auto,*,Auto">
         
-        <!-- Instructions. -->
-        <TextBlock Grid.Row="0" Text="Enter parameters" />
-    
-        <!-- Parameters. -->
-        <apexControls:PaddedGrid Grid.Row="1" Rows="Auto,Auto,Auto" Padding="4">
+        <!-- Top block of color. -->
+        <apexControls:MultiBorder Grid.Row="0" Height="60" Background="#FFFFFF">
 
-            <CheckBox Grid.Row="0" IsChecked="{Binding CreateExampleNotifyingProperty}" Content="Create example notifying property" />
-            <CheckBox Grid.Row="1" IsChecked="{Binding CreateExampleObservableCollection}" Content="Create example observable collection" />
-            <CheckBox Grid.Row="2" IsChecked="{Binding CreateExampleCommand}" Content="Create example command" />
+            <apexControls:ApexGrid Rows="Auto" Columns="*,Auto">
+                <TextBlock Grid.Row="0" FontWeight="Light" Text="New View Model" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="24" />
+                <Image Grid.Column="1" Source="/ApexWizards;component/Apex.png" Stretch="None" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+            </apexControls:ApexGrid>
 
-        </apexControls:PaddedGrid>
+        </apexControls:MultiBorder>
         
-        <Button Grid.Row="2" Command="{Binding OKCommand}" Width="200" Content="OK" />
+        
+        <!-- Main content. -->
+        <apexControls:MultiBorder Grid.Row="1"
+                                  BorderThicknessTop="1" BorderBrushTop="#dadada"
+                                  BorderThicknessBottom="1" BorderBrushBottom="#b8c2d5">
+            <apexControls:MultiBorder.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#f1f1f1" />
+                    <GradientStop Offset="0.2" Color="#ffffff" />
+                    <GradientStop Offset="0.4" Color="#fbfcfe" />
+                    <GradientStop Offset="1" Color="#ccd7ec" />
+                </LinearGradientBrush>
+            </apexControls:MultiBorder.Background>
+
+            <apexControls:ApexGrid Grid.Row="2" Rows="Auto,Auto,Auto,Auto" Margin="20">
+                
+                <TextBlock Grid.Row="0" TextWrapping="Wrap">A View Model is the object that aggregates data from a Model into a form that
+                can be presented by a View. A View Model also exposes Commands which can be invoked by a user interface or unit test.</TextBlock>
+
+                <CheckBox Grid.Row="1" Margin="12" IsChecked="{Binding CreateExampleNotifyingProperty}" Content="Create an example notifying property" />
+                <CheckBox Grid.Row="2" Margin="12" IsChecked="{Binding CreateExampleObservableCollection}" Content="Create an example observable collection" />
+                <CheckBox Grid.Row="3" Margin="12" IsChecked="{Binding CreateExampleCommand}" Content="Create an example command" />
+
+            </apexControls:ApexGrid>
+            
+        </apexControls:MultiBorder>
+
+        <apexControls:MultiBorder Grid.Row="2" Height="50" Background="#ccd7ec"
+                                  BorderThicknessTop="1" BorderBrushTop="#dce3f2" Padding="20,0,20,0">
+
+
+            <Button Command="{Binding OKCommand}" Width="80" Height="24" Content="OK" HorizontalAlignment="Right" />
+            
+        </apexControls:MultiBorder>
         
     </apexControls:ApexGrid>
     

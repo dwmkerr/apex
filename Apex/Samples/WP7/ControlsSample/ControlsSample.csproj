@@ -93,9 +93,9 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WP 7.0\Apex.WP7\Apex.WP7.csproj">
+    <ProjectReference Include="..\..\..\Legacy\Apex.WP7\Apex.WP7 Windows Phone 7.0.csproj">
       <Project>{5CA8754C-8D71-420A-BA16-A795F11D317D}</Project>
-      <Name>Apex.WP7 %28WP7\WP 7.0\Apex.WP7%29</Name>
+      <Name>Apex.WP7 Windows Phone 7.0</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
