@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+          <Title>Insert Attached Dependency Property</Title>
+          <Description>Inserts an Attached Dependency Property.</Description>
+          <Author>Dave Kerr</Author>
+          <Shortcut>apexadp</Shortcut>
+          <HelpUrl></HelpUrl>
+          <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+          </SnippetTypes>          
+        </Header>
+        <Snippet>
+            <Declarations>
+              <Literal>
+                <ID>PropertyName</ID>
+                <ToolTip>Enter the property name</ToolTip>
+                <Default>PropertyName</Default>
+              </Literal>
+              <Literal>
+                <ID>PropertyType</ID>
+                <ToolTip>Enter the property name</ToolTip>
+                <Default>PropertyType</Default>
+              </Literal>
+              <Literal>
+                <ID>ParentType</ID>
+                <ToolTip>Enter the parent type.</ToolTip>
+                <Default>ParentType</Default>
+              </Literal>
+            </Declarations>
+            <Code Language="CSharp" Kind="any">
+                <![CDATA[
+                   public static readonly DependencyProperty $PropertyName$Property = 
+                     DependencyProperty.RegisterAttached("$PropertyName$", typeof($PropertyType$), 
+                     typeof($ParentType$), new PropertyMetadata(default($PropertyType$), 
+                     On$PropertyName$Changed));
+                  
+                   public static $PropertyType$ Get$PropertyName$(FrameworkElement element)
+                   {
+                      return ($PropertyType$)element.GetValue($PropertyName$Property);
+                   }
+
+                   public static void Set$PropertyName$(FrameworkElement element, $PropertyType$ value)
+                   {
+                      element.SetValue($PropertyName$Property, value);
+                   }
+ 
+                   private static void On$PropertyName$Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+                    {
+                      FrameworkElement me = d as FrameworkElement;
+                    }
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
