@@ -52,18 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\.NET 4.0\Apex.WinForms\Controls\ColorEventArgs.cs">
+    <Compile Include="..\..\Core\Apex.WinForms\Controls\ColorEventArgs.cs">
       <Link>Controls\ColorEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex.WinForms\Controls\ColorMap.cs">
+    <Compile Include="..\..\Core\Apex.WinForms\Controls\ColorMap.cs">
       <Link>Controls\ColorMap.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex.WinForms\Controls\ExpandingPanel.cs">
+    <Compile Include="..\..\Core\Apex.WinForms\Controls\ExpandingPanel.cs">
       <Link>Controls\ExpandingPanel.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex.WinForms\Controls\ExpandingPanelContainer.cs">
+    <Compile Include="..\..\Core\Apex.WinForms\Controls\ExpandingPanelContainer.cs">
       <Link>Controls\ExpandingPanelContainer.cs</Link>
       <SubType>Component</SubType>
     </Compile>

@@ -53,148 +53,148 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\.NET 4.0\Apex\Adorners\Adorner.cs">
+    <Compile Include="..\..\Core\Apex\Adorners\Adorner.cs">
       <Link>Adorners\Adorner.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Adorners\AdornerLayer.xaml.cs">
+    <Compile Include="..\..\Core\Apex\Adorners\AdornerLayer.xaml.cs">
       <Link>Adorners\AdornerLayer.xaml.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Adorners\UIElementAdorner.cs">
+    <Compile Include="..\..\Core\Apex\Adorners\UIElementAdorner.cs">
       <Link>Adorners\UIElementAdorner.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Adorners\VisualAdorner.cs">
+    <Compile Include="..\..\Core\Apex\Adorners\VisualAdorner.cs">
       <Link>Adorners\VisualAdorner.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Commands\CommandReference.cs">
+    <Compile Include="..\..\Core\Apex\Commands\CommandReference.cs">
       <Link>Commands\CommandReference.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Commands\Commands.cs">
+    <Compile Include="..\..\Core\Apex\Commands\Commands.cs">
       <Link>Commands\Commands.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Commands\EventBinding.cs">
+    <Compile Include="..\..\Core\Apex\Commands\EventBinding.cs">
       <Link>Commands\EventBinding.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Commands\EventBindingCollection.cs">
+    <Compile Include="..\..\Core\Apex\Commands\EventBindingCollection.cs">
       <Link>Commands\EventBindingCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Commands\EventBindings.cs">
+    <Compile Include="..\..\Core\Apex\Commands\EventBindings.cs">
       <Link>Commands\EventBindings.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Consistency\DispatcherHelper.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\DispatcherHelper.cs">
       <Link>Consistency\DispatcherHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Consistency\FrameworkPropertyMetadata.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\FrameworkPropertyMetadata.cs">
       <Link>Consistency\FrameworkPropertyMetadata.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Consistency\Freezable.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\Freezable.cs">
       <Link>Consistency\Freezable.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Consistency\GridLengthConverter.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\GridLengthConverter.cs">
       <Link>Consistency\GridLengthConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Consistency\HitTest.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\HitTest.cs">
       <Link>Consistency\HitTest.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Consistency\MouseClickDetector.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\MouseClickDetector.cs">
       <Link>Consistency\MouseClickDetector.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Consistency\SystemParameters.cs">
+    <Compile Include="..\..\Core\Apex\Consistency\SystemParameters.cs">
       <Link>Consistency\SystemParameters.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\AnimatedScrollViewer.cs">
+    <Compile Include="..\..\Core\Apex\Controls\AnimatedScrollViewer.cs">
       <Link>Controls\AnimatedScrollViewer.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\ApexGrid.cs">
+    <Compile Include="..\..\Core\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\CircularProgressBar.xaml.cs">
+    <Compile Include="..\..\Core\Apex\Controls\CircularProgressBar.xaml.cs">
       <Link>Controls\CircularProgressBar.xaml.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\CrossButton.cs">
+    <Compile Include="..\..\Core\Apex\Controls\CrossButton.cs">
       <Link>Controls\CrossButton.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\EnumerationComboBox.cs">
+    <Compile Include="..\..\Core\Apex\Controls\EnumerationComboBox.cs">
       <Link>Controls\EnumerationComboBox.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\PaddedGrid.cs">
+    <Compile Include="..\..\Core\Apex\Controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\PivotControl.cs">
+    <Compile Include="..\..\Core\Apex\Controls\PivotControl.cs">
       <Link>Controls\PivotControl.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\PivotItem.cs">
+    <Compile Include="..\..\Core\Apex\Controls\PivotItem.cs">
       <Link>Controls\PivotItem.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Controls\VariableGrid.cs">
+    <Compile Include="..\..\Core\Apex\Controls\VariableGrid.cs">
       <Link>Controls\VariableGrid.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\BooleanToVisibilityConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\DateTimeToSensibleStringConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\DateTimeToSensibleStringConverter.cs">
       <Link>Converters\DateTimeToSensibleStringConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\DivideByTwoConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\DivideByTwoConverter.cs">
       <Link>Converters\DivideByTwoConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\EnumToBooleanConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\EnumToBooleanConverter.cs">
       <Link>Converters\EnumToBooleanConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\InvertedBooleanConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\InvertedBooleanConverter.cs">
       <Link>Converters\InvertedBooleanConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\NullToVisibilityConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\StringCaseConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\StringCaseConverter.cs">
       <Link>Converters\StringCaseConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
+    <Compile Include="..\..\Core\Apex\Converters\StringNullOrEmptyToVisibilityConverter.cs">
       <Link>Converters\StringNullOrEmptyToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Design\DesignTime.cs">
+    <Compile Include="..\..\Core\Apex\Design\DesignTime.cs">
       <Link>Design\DesignTime.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\DragAndDrop\DragAndDrop.cs">
+    <Compile Include="..\..\Core\Apex\DragAndDrop\DragAndDrop.cs">
       <Link>DragAndDrop\DragAndDrop.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\DragAndDrop\DragAndDropHost.cs">
+    <Compile Include="..\..\Core\Apex\DragAndDrop\DragAndDropHost.cs">
       <Link>DragAndDrop\DragAndDropHost.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Extensions\DateTimeExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\DateTimeExtensions.cs">
       <Link>Extensions\DateTimeExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Extensions\DependencyObjectExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\DependencyObjectExtensions.cs">
       <Link>Extensions\DependencyObjectExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Extensions\EnumExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\EnumExtensions.cs">
       <Link>Extensions\EnumExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Extensions\FrameworkElementExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\FrameworkElementExtensions.cs">
       <Link>Extensions\FrameworkElementExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Extensions\ListExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\ListExtensions.cs">
       <Link>Extensions\ListExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Extensions\StringExtensions.cs">
+    <Compile Include="..\..\Core\Apex\Extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Helpers\DispatcherHelper.cs">
+    <Compile Include="..\..\Core\Apex\Helpers\DispatcherHelper.cs">
       <Link>Helpers\DispatcherHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\Helpers\EnumHelper.cs">
+    <Compile Include="..\..\Core\Apex\Helpers\EnumHelper.cs">
       <Link>Helpers\EnumHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\MVVM\AsynchronousCommand.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\MVVM\Command.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\MVVM\NotifyingProperty.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
-    <Compile Include="..\..\.NET 4.0\Apex\MVVM\ViewModel.cs">
+    <Compile Include="..\..\Core\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,32 +203,32 @@
     <None Include="Apex.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="..\..\.NET 4.0\Apex\Adorners\AdornerLayer.xaml">
+    <Page Include="..\..\Core\Apex\Adorners\AdornerLayer.xaml">
       <Link>Adorners\AdornerLayer.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\..\.NET 4.0\Apex\Controls\CircularProgressBar.xaml">
+    <Page Include="..\..\Core\Apex\Controls\CircularProgressBar.xaml">
       <Link>Controls\CircularProgressBar.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\..\.NET 4.0\Apex\Themes\Generic.xaml">
+    <Page Include="..\..\Core\Apex\Themes\Generic.xaml">
       <Link>Themes\Generic.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\..\.NET 4.0\Apex\Themes\ResourceDictionaries\CrossButton.xaml">
+    <Page Include="..\..\Core\Apex\Themes\ResourceDictionaries\CrossButton.xaml">
       <Link>Themes\ResourceDictionaries\CrossButton.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\..\.NET 4.0\Apex\Themes\ResourceDictionaries\DragAndDropHost.xaml">
+    <Page Include="..\..\Core\Apex\Themes\ResourceDictionaries\DragAndDropHost.xaml">
       <Link>Themes\ResourceDictionaries\DragAndDropHost.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\..\.NET 4.0\Apex\Themes\ResourceDictionaries\PivotControl.xaml">
+    <Page Include="..\..\Core\Apex\Themes\ResourceDictionaries\PivotControl.xaml">
       <Link>Themes\ResourceDictionaries\PivotControl.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
