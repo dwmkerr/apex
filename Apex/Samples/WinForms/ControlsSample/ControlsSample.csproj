@@ -81,7 +81,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\.NET 4.0\Apex.WinForms\Apex.WinForms.csproj">
+    <ProjectReference Include="..\..\..\Core\Apex.WinForms\Apex.WinForms.csproj">
       <Project>{A479105C-717B-4500-8FFC-B3D12BEEF13E}</Project>
       <Name>Apex.WinForms %28WinForms\.NET 4.0\Apex.WinForms%29</Name>
     </ProjectReference>
