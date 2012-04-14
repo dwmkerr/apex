@@ -44,7 +44,9 @@
     <None Include=".vscontent" />
     <None Include="InsertAttachedDependencyProperty.snippet" />
     <None Include="InsertDependencyProperty.snippet" />
-    <None Include="InsertApexNotifyingProperty.snippet" />
+    <None Include="InsertApexNotifyingProperty.snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="InsertViewModelCommand.snippet" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

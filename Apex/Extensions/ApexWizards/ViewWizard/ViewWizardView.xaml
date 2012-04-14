@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ApexWizards.ViewWizard"
         xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
-        Height="400" Width="500"
-        Title="New View"
+        Height="400" Width="500" Title="New View"
+        TextOptions.TextFormattingMode="Display"
         FontFamily="Segoe UI" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     
     <Window.DataContext>
@@ -40,12 +40,13 @@
             <apexControls:ApexGrid Grid.Row="2" Columns="*,2*" Rows="Auto,Auto,Auto,Auto" Margin="20">
 
                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap">A View is a user interface that is
-                associated with a specific View Model type. Enter the View Model Type below. If 'View Creates ViewModel' is
+                associated with a specific ViewModel type. Enter the ViewModel Type below. If 'View Creates ViewModel' is
                 specified, then the ViewModel instance will be created automatically when the view is created.</TextBlock>
-
-                <Label Grid.Row="1" Margin="12" Grid.Column="0" Content="View Model Type" />
-                <TextBox Grid.Row="1" Margin="12" Grid.Column="1" Text="{Binding ViewModelType}" />
-                <CheckBox Grid.Row="2" Margin="12" Grid.ColumnSpan="2" Grid.Column="0" IsChecked="{Binding ViewCreatesViewModel}" Content="View Creates ViewModel" />
+                
+                <Label Grid.Row="1" Margin="12" Grid.Column="0" Content="ViewModel Type" />
+                <TextBox x:Name="textBoxViewModelType" Grid.Row="1" Margin="12" Grid.Column="1" Text="{Binding ViewModelType}" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="12,-6,0,0"  Text="Leave this field blank for a generic view." FontStyle="Italic" />
+                <CheckBox Grid.Row="3" Margin="12" Grid.ColumnSpan="2" Grid.Column="0" IsChecked="{Binding ViewCreatesViewModel}" Content="View Creates ViewModel" />
 
             </apexControls:ApexGrid>
 

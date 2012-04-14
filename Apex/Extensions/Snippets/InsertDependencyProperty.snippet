@@ -31,16 +31,29 @@
             </Declarations>
             <Code Language="CSharp" Kind="any">
                 <![CDATA[
+                
+                    /// <summary>
+                    /// The DependencyProperty for the $PropertyName$ property.
+                    /// </summary>
                     private static readonly DependencyProperty $PropertyName$Property = 
                       DependencyProperty.Register("$PropertyName$", typeof($PropertyType$), typeof($ParentType$),
                       new PropertyMetadata(null, new PropertyChangedCallback(On$PropertyName$Changed)));
                     
+                    /// <summary>
+                    /// Gets or sets $PropertyName$.
+                    /// </summary>
+                    /// <value>The value of $PropertyName$.</value>
                     public $PropertyType$ $PropertyName$
                     {
                       get { return ($PropertyType$)GetValue($PropertyName$Property); }
                       set { SetValue($PropertyName$Property, value); }
-                    }
+                    }                    
                     
+                    /// <summary>
+                    /// Called when $PropertyName$ is changed.
+                    /// </summary>
+                    /// <param name="o">The o.</param>
+                    /// <param name="args">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
                     private static void On$PropertyName$Changed(DependencyObject o, DependencyPropertyChangedEventArgs args)
                     {
                       $ParentType$ me = o as $ParentType$;

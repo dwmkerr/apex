@@ -44,10 +44,10 @@ namespace ApexWizards.ViewWizard
                 view.ShowDialog();
                 
                 //  Update the custom parameters.
-                replacementsDictionary.Add("$ViewModelType$", view.ViewModel.ViewModelType);
+                replacementsDictionary.Add("$ViewModelType$", string.IsNullOrEmpty(view.ViewModel.ViewModelType) ? "object" : view.ViewModel.ViewModelType);
                 replacementsDictionary.Add("$ViewCreatesViewModel$", view.ViewModel.ViewCreatesViewModel ? "1" : "0");
             }
-            catch (Exception ex)
+            catch
             {
             }
         }

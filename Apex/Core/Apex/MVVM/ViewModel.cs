@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Windows.Threading;
+using System;
 
 namespace Apex.MVVM
 {
@@ -7,6 +9,11 @@ namespace Apex.MVVM
     /// </summary>
     public class ViewModel : INotifyPropertyChanged
     {
+        public ViewModel()
+        {
+            callingDispatcher = Apex.Consistency.DispatcherHelper.CurrentDispatcher;
+        }
+
         /// <summary>
         /// The property changed event.
         /// </summary>
@@ -68,5 +75,15 @@ namespace Apex.MVVM
                 NotifyPropertyChanged(notifyingProperty.Name);
             }
         }
+
+        public void OnUI(Action action)
+        {
+            if (callingDispatcher.CheckAccess())
+                action();
+            else
+                callingDispatcher.BeginInvoke(((Action)(() => { action(); })));
+        }
+
+        protected Dispatcher callingDispatcher;
     }
 }

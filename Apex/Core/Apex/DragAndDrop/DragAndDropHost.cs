@@ -96,13 +96,13 @@ namespace Apex.DragAndDrop
                 //  as SystemParameters doesn't have it in silverlight.
                 if (
                     (Math.Abs(initialMousePosition.X - currentMousePosition.X) >=
-                MinimumHorizontalDragDistance) &&
+                MinimumHorizontalDragDistance) ||
                     (Math.Abs(initialMousePosition.Y - currentMousePosition.Y) >=
                 MinimumHorizontalDragDistance))
                 {
                     //  We'll try starting a drag and drop.
                     DoDragAndDropStart(dragSource, dragElement, dragData);
-                    if(dragging)
+                    if (dragging)
                         host.CaptureMouse();
                 }
             }
