@@ -48,7 +48,7 @@ namespace ApexWizards.ViewModelWizard
                 replacementsDictionary.Add("$CreateExampleObservableCollection$", view.ViewModel.CreateExampleObservableCollection ? "1" : "0");
                 replacementsDictionary.Add("$CreateExampleCommand$", view.ViewModel.CreateExampleCommand ? "1" : "0");
             }
-            catch (Exception ex)
+            catch
             {
             }
         }

@@ -82,16 +82,19 @@
     <Compile Include="Consistency\SystemParameters.cs" />
     <Compile Include="Controls\AnimatedScrollViewer.cs" />
     <Compile Include="Controls\ApexGrid.cs" />
+    <Compile Include="Controls\CartesianCanvas.cs" />
     <Compile Include="Controls\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CrossButton.cs" />
     <Compile Include="Controls\EnumerationComboBox.cs" />
+    <Compile Include="Controls\FlipPanel.cs" />
     <Compile Include="Controls\MultiBorder.cs" />
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
     <Compile Include="Controls\VariableGrid.cs" />
+    <Compile Include="Controls\ViewBroker.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\DateTimeToSensibleStringConverter.cs" />
     <Compile Include="Converters\DivideByTwoConverter.cs" />
@@ -117,6 +120,7 @@
     <Compile Include="MVVM\ApexBroker.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
+    <Compile Include="MVVM\SafeObservableCollection.cs" />
     <Compile Include="MVVM\View.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="MVVM\Command.cs" />

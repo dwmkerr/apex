@@ -18,8 +18,8 @@ namespace $rootnamespace$
         public $safeitemrootname$ ()
 	    {
             //  TODO: Use the following snippets to help build viewmodels:
-            //      apexnp - Creates an Apex Notifying Property
-            //      apexc - Creates an Apex Command.
+            //      apexnp - Creates a Notifying Property
+            //      apexc - Creates a Command.
             $if$ ($CreateExampleCommand$ == 1)
             //  Create the example command.
             ExampleCommand = new Command(DoExampleCommand);$endif$
