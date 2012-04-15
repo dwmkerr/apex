@@ -104,6 +104,7 @@
     <Compile Include="Converters\StringNullOrEmptyToVisibilityConverter.cs" />
     <Compile Include="Converters\StringCaseConverter.cs" />
     <Compile Include="Design\DesignTime.cs" />
+    <Compile Include="DragAndDrop\DragAndDropEventArgs.cs" />
     <Compile Include="DragAndDrop\DragAndDropHost.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
