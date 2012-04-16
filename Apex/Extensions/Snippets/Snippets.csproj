@@ -42,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include=".vscontent" />
+    <None Include="InsertObservableCollection.snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="InsertAttachedDependencyProperty.snippet" />
     <None Include="InsertDependencyProperty.snippet" />
     <None Include="InsertApexNotifyingProperty.snippet">

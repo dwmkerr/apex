@@ -57,7 +57,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
-    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
@@ -155,6 +158,9 @@
     </Compile>
     <Compile Include="..\Apex\DragAndDrop\DragAndDrop.cs">
       <Link>DragAndDrop\DragAndDrop.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\DragAndDrop\DragAndDropEventArgs.cs">
+      <Link>DragAndDrop\DragAndDropEventArgs.cs</Link>
     </Compile>
     <Compile Include="..\Apex\DragAndDrop\DragAndDropHost.cs">
       <Link>DragAndDrop\DragAndDropHost.cs</Link>
