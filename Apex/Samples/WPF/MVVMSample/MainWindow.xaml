@@ -3,27 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:MVVMSample"
         xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
-        Title="MainWindow" Height="200" Width="300">
+        xmlns:simpleExample="clr-namespace:MVVMSample.SimpleExample"
+        Title="Apex MVVM Samples" Height="400" Width="500">
     
     <!-- The datacontext for the window is an instance of our viewmodel. -->
     <Window.DataContext>
         <local:MainViewModel x:Name="viewModel" />
     </Window.DataContext>
-    
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="First Name" />
-            <TextBox Margin="4" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="Second Name" />
-            <TextBox Margin="4" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}" />
-            <Button Margin="4" Width="80" Content="Build Name" Command="{Binding BuildNameCommand}" />
-            <TextBox Margin="4" Text="{Binding FullName}">
-                <apexCommands:EventBindings.EventBindings>
-                    <apexCommands:EventBindingCollection>
-                        <apexCommands:EventBinding EventName="PreviewMouseLeftButtonUp" Command="{Binding BuildNameCommand}" CommandParameter="{Binding FullName}" />
-                    </apexCommands:EventBindingCollection>
-                </apexCommands:EventBindings.EventBindings>
-            </TextBox>
-        </StackPanel>
-    </Grid>
+
+    <TabControl>
+        <TabItem Header="Simple Sample">
+            <simpleExample:SimpleExampleView />
+        </TabItem>
+    </TabControl>
+
 </Window>
