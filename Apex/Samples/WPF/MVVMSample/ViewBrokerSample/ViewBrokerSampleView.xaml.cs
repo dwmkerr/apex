@@ -12,7 +12,18 @@ namespace MVVMSample.ViewBrokerSample
     {
         public ViewBrokerSampleView()
         {
+            //  Register mappings with the broker.
+            var globalBroker = Apex.MVVM.ApexBroker.GlobalBroker;
+            globalBroker.RegisterViewForViewModel(typeof(FolderViewModel), typeof(FolderView));
+            globalBroker.RegisterViewForViewModel(typeof(FileViewModel), typeof(FileView));
+
             InitializeComponent();
+        }
+
+        private void TreeView_SelectedItemChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<object> e)
+        {
+            //  Set the selected item.
+            viewModel.SelectedItem = treeView.SelectedItem;
         }
     }
 

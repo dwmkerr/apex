@@ -4,6 +4,7 @@
         xmlns:local="clr-namespace:MVVMSample"
         xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
         xmlns:simpleExample="clr-namespace:MVVMSample.SimpleExample"
+        xmlns:viewBrokerSample="clr-namespace:MVVMSample.ViewBrokerSample"
         Title="Apex MVVM Samples" Height="400" Width="500">
     
     <!-- The datacontext for the window is an instance of our viewmodel. -->
@@ -11,9 +12,12 @@
         <local:MainViewModel x:Name="viewModel" />
     </Window.DataContext>
 
-    <TabControl>
+    <TabControl Margin="4">
         <TabItem Header="Simple Sample">
             <simpleExample:SimpleExampleView />
+        </TabItem>
+        <TabItem Header="View Broker Sample">
+            <viewBrokerSample:ViewBrokerSampleView />
         </TabItem>
     </TabControl>
 
