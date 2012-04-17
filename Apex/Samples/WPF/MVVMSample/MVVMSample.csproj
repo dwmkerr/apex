@@ -63,8 +63,14 @@
       <DependentUpon>SimpleExampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SimpleExample\SimpleExampleViewModel.cs" />
-    <Compile Include="ViewBrokerSample\ComponentViewModel.cs" />
-    <Compile Include="ViewBrokerSample\DeviceViewModel.cs" />
+    <Compile Include="ViewBrokerSample\FileView.xaml.cs">
+      <DependentUpon>FileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBrokerSample\FileViewModel.cs" />
+    <Compile Include="ViewBrokerSample\FolderView.xaml.cs">
+      <DependentUpon>FolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBrokerSample\FolderViewModel.cs" />
     <Compile Include="ViewBrokerSample\ViewBrokerSampleView.xaml.cs">
       <DependentUpon>ViewBrokerSampleView.xaml</DependentUpon>
     </Compile>
@@ -83,6 +89,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SimpleExample\SimpleExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewBrokerSample\FileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewBrokerSample\FolderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -15,7 +15,7 @@
     </local:ViewBrokerSampleViewBase.ViewModel>
     
     <!-- The main grid. Holds the description and the sample. -->
-    <apexControls:ApexGrid Columns="300,*" Rows="Auto,*">
+    <apexControls:ApexGrid Columns="3,*" Rows="Auto,*">
 
         <!-- The description. -->
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Description" FontSize="20" FontWeight="Light" />
@@ -31,19 +31,34 @@
 
         <!-- The sample. -->
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Sample" FontSize="20" FontWeight="Light" />
+        
+        <!-- Sample grid. -->
+        <apexControls:ApexGrid Grid.Row="1" Grid.Column="1" Rows="Auto,*" Columns="200,*">
+            
+            <!-- Tree title. -->
+            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="16" FontWeight="Light" Text="Files and Folders" />
+            
+            <!-- Files and folders tree. -->
+            <TreeView x:Name="treeView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Folders}" SelectedItemChanged="TreeView_SelectedItemChanged">
+                <TreeView.Resources>
+                    <HierarchicalDataTemplate DataType="{x:Type local:FolderViewModel}" ItemsSource="{Binding Files}">
+                        <TextBlock Text="{Binding Name}" />
+                    </HierarchicalDataTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type local:FileViewModel}">
+                        <TextBlock Text="{Binding Name}" />
+                    </HierarchicalDataTemplate>
+                </TreeView.Resources>
+            </TreeView>
+            
+            <!-- Details title. -->
+            <TextBlock Grid.Row="0" Grid.Column="1" FontSize="16" FontWeight="Light" Text="Details" />
 
-        <!-- The data entry grid. -->
-        <apexControls:PaddedGrid Grid.Row="1" Grid.Column="1" Rows="Auto,Auto,Auto,Auto,Auto" Columns="Auto,120">
+            <!-- View broker. -->
+            <apexControls:ViewBroker Grid.Row="1" Grid.Column="1" ViewModel="{Binding SelectedItem}">
+                <TextBlock>If there is nothing in the view model, then this will be shown.</TextBlock>
+            </apexControls:ViewBroker>
 
-            <!-- The first name. -->
-            <Label Grid.Row="0" Grid.Column="0" Content="First Name" />
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
-            <Label Grid.Row="1" Grid.Column="0" Content="Second Name" />
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}" />
-            <Label Grid.Row="2" Grid.Column="0" Content="Full Name" />
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FullName}" IsReadOnly="True" />
-            <Button Grid.Row="3" Grid.Column="1" Width="80" Content="Build Name" Command="{Binding BuildNameCommand}" />
-        </apexControls:PaddedGrid>
+        </apexControls:ApexGrid>
 
     </apexControls:ApexGrid>
 </local:ViewBrokerSampleViewBase>

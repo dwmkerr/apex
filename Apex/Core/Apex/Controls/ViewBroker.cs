@@ -72,9 +72,11 @@ namespace Apex.Controls
         {
             ViewBroker me = o as ViewBroker;
 
-            //  Dispose of the current content.
-            me.Content = null;
-
+            //  If we have not yet stored the default content, do so now (this is what
+            //  is shown when the view model is null).
+            if(me.defaultContent == null)
+                me.defaultContent = me.Content;
+            
             //  As long as we have a view model, we can attempt to use the broker
             //  to get a view for it.
             if (me.ViewModel != null)
@@ -94,7 +96,7 @@ namespace Apex.Controls
 
                 //  In general, this type will be a View. If it is, it will have a viewmodel property.
                 PropertyInfo viewModelProperty = viewType.GetProperty("ViewModel");
-                if (viewModelProperty != null && viewModelProperty.PropertyType == typeof(object))
+                if (viewModelProperty != null)
                 {
                     //  Set the view model of the view to the provided view model.
                     viewModelProperty.SetValue(viewInstance, me.ViewModel, null);
@@ -103,7 +105,16 @@ namespace Apex.Controls
                 //  Finally, set the view as the content.
                 me.Content = viewInstance;
             }
+            else
+            {
+                //  No view model, so go back to the default content.
+                me.Content = me.defaultContent;
+            }
         }
-  
+
+        /// <summary>
+        /// The default content (shown when no VM is set).
+        /// </summary>
+        private object defaultContent;
     }
 }
