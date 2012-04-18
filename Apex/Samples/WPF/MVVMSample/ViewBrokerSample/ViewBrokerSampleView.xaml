@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:MVVMSample.ViewBrokerSample"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="500">
+             d:DesignHeight="400" d:DesignWidth="600">
 
     <!-- The View creates its own ViewModel, so set the ViewModel 
     to a new instance of the ViewModel class. -->
@@ -15,17 +15,20 @@
     </local:ViewBrokerSampleViewBase.ViewModel>
     
     <!-- The main grid. Holds the description and the sample. -->
-    <apexControls:ApexGrid Columns="3,*" Rows="Auto,*">
+    <apexControls:ApexGrid Columns="300,*" Rows="Auto,*">
 
         <!-- The description. -->
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Description" FontSize="20" FontWeight="Light" />
         <FlowDocumentScrollViewer Grid.Row="1" Grid.Column="0">
             <FlowDocument FontSize="12" FontFamily="Segoe UI" Background="LightYellow">
-                <Paragraph>In this sample we have a ViewModel with three notifying properties - FirstName, SecondName and FullName. Each of the text 
-            boxes are bound to one of these properties.</Paragraph>
-                <Paragraph>We also have a command that builds the full name from the first and second 
-            names.</Paragraph>
-                <Paragraph>This sample demonstrates ViewModel, NotifyingProperty and Command.</Paragraph>
+                <Paragraph>In this sample we have a ViewModel that has a property representing the item selected in the tree control.
+                We would like to show different views for the different types of items (files or folders).</Paragraph>
+                <Paragraph>In this case we can use a 'ViewBroker'. A View Broker will show the correct view
+                for a viewmodel. The association of View to ViewModel is done via 'ApexBroker'.</Paragraph>
+                <Paragraph>View brokers are a great way to allow various items to be shown. View brokers
+                can also be provided with a 'hint' that can change the view to select. An example 
+                of how you might use this is to register views that allow data to be edited by expert users 
+                with the hint 'expertMode' - you can then have the expert mode view automatically used.</Paragraph>
             </FlowDocument>
         </FlowDocumentScrollViewer>
 
@@ -39,7 +42,8 @@
             <TextBlock Grid.Row="0" Grid.Column="0" FontSize="16" FontWeight="Light" Text="Files and Folders" />
             
             <!-- Files and folders tree. -->
-            <TreeView x:Name="treeView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Folders}" SelectedItemChanged="TreeView_SelectedItemChanged">
+            <TreeView x:Name="treeView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Folders}" SelectedItemChanged="TreeView_SelectedItemChanged"
+                      Margin="4">
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type local:FolderViewModel}" ItemsSource="{Binding Files}">
                         <TextBlock Text="{Binding Name}" />
@@ -54,7 +58,7 @@
             <TextBlock Grid.Row="0" Grid.Column="1" FontSize="16" FontWeight="Light" Text="Details" />
 
             <!-- View broker. -->
-            <apexControls:ViewBroker Grid.Row="1" Grid.Column="1" ViewModel="{Binding SelectedItem}">
+            <apexControls:ViewBroker Grid.Row="1" Grid.Column="1" ViewModel="{Binding SelectedItem}" Margin="4">
                 <TextBlock>If there is nothing in the view model, then this will be shown.</TextBlock>
             </apexControls:ViewBroker>
 
