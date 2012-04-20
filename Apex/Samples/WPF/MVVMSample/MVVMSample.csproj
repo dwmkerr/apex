@@ -59,6 +59,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommandingSample\CommandingSampleView.xaml.cs">
+      <DependentUpon>CommandingSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommandingSample\CommandingSampleViewModel.cs" />
     <Compile Include="SimpleExample\SimpleExampleView.xaml.cs">
       <DependentUpon>SimpleExampleView.xaml</DependentUpon>
     </Compile>
@@ -75,6 +79,10 @@
       <DependentUpon>ViewBrokerSampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewBrokerSample\ViewBrokerSampleViewModel.cs" />
+    <Page Include="CommandingSample\CommandingSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

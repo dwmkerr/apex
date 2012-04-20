@@ -5,7 +5,8 @@
         xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
         xmlns:simpleExample="clr-namespace:MVVMSample.SimpleExample"
         xmlns:viewBrokerSample="clr-namespace:MVVMSample.ViewBrokerSample"
-        Title="Apex MVVM Samples" Height="400" Width="500">
+        xmlns:commandingSample="clr-namespace:MVVMSample.CommandingSample"
+        Title="Apex MVVM Samples" Height="500" Width="700">
     
     <!-- The datacontext for the window is an instance of our viewmodel. -->
     <Window.DataContext>
@@ -18,6 +19,9 @@
         </TabItem>
         <TabItem Header="View Broker Sample">
             <viewBrokerSample:ViewBrokerSampleView />
+        </TabItem>
+        <TabItem Header="Commanding Sample">
+            <commandingSample:CommandingSampleView />
         </TabItem>
     </TabControl>
 
