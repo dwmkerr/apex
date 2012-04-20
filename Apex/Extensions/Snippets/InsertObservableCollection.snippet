@@ -49,19 +49,18 @@
                 <![CDATA[
                     
                     /// <summary>
-                    /// The NotifyingProperty for the $PropertyName$ property.
+                    /// The $PropertyName$ observable collection.
                     /// </summary>
-                    private NotifyingProperty $PropertyName$Property = 
-                      new NotifyingProperty("$PropertyName$", typeof($PropertyType$), default($PropertyType$));
+                    private ObservableCollection<$PropertyType$> $PropertyName$Property = 
+                      new ObservableCollection<$PropertyType$>();
                     
                     /// <summary>
-                    /// Gets or sets $PropertyName$.
+                    /// Gets the $PropertyName$ observable collection.
                     /// </summary>
-                    /// <value>The value of $PropertyName$.</value>
-                    public $PropertyType$ $PropertyName$
+                    /// <value>The $PropertyName$ observable collection.</value>
+                    public ObservableCollection<$PropertyType$> $PropertyName$
                     {
-                      get { return ($PropertyType$)GetValue($PropertyName$Property); }
-                      set { SetValue($PropertyName$Property, value); }
+                      get { return $PropertyName$Property; }
                     }]]>
             </Code>
         </Snippet>
