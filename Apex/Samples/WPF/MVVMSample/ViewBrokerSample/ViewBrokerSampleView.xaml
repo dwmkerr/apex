@@ -15,12 +15,12 @@
     </local:ViewBrokerSampleViewBase.ViewModel>
     
     <!-- The main grid. Holds the description and the sample. -->
-    <apexControls:ApexGrid Columns="300,*" Rows="Auto,*">
+    <apexControls:ApexGrid Columns="300,Auto,*" Rows="Auto,*">
 
         <!-- The description. -->
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Description" FontSize="20" FontWeight="Light" />
         <FlowDocumentScrollViewer Grid.Row="1" Grid.Column="0">
-            <FlowDocument FontSize="12" FontFamily="Segoe UI" Background="LightYellow">
+            <FlowDocument FontSize="12" FontFamily="Segoe UI">
                 <Paragraph>In this sample we have a ViewModel that has a property representing the item selected in the tree control.
                 We would like to show different views for the different types of items (files or folders).</Paragraph>
                 <Paragraph>In this case we can use a 'ViewBroker'. A View Broker will show the correct view
@@ -32,11 +32,14 @@
             </FlowDocument>
         </FlowDocumentScrollViewer>
 
+        <!-- Splitter. -->
+        <GridSplitter Grid.Column="1" Grid.RowSpan="2" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" Width="5" />
+        
         <!-- The sample. -->
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="Sample" FontSize="20" FontWeight="Light" />
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Sample" FontSize="20" FontWeight="Light" />
         
         <!-- Sample grid. -->
-        <apexControls:ApexGrid Grid.Row="1" Grid.Column="1" Rows="Auto,*" Columns="200,*">
+        <apexControls:ApexGrid Grid.Row="1" Grid.Column="2" Rows="Auto,*" Columns="200,*">
             
             <!-- Tree title. -->
             <TextBlock Grid.Row="0" Grid.Column="0" FontSize="16" FontWeight="Light" Text="Files and Folders" />
