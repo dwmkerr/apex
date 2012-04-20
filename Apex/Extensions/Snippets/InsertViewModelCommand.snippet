@@ -21,14 +21,23 @@
             </Declarations>
             <Code Language="CSharp" Kind="any">
                 <![CDATA[
-                                                
-                    private void Do$CommandName$(object o)
+                
+                    /// <summary>
+                    /// Performs the $CommandName$ command.
+                    /// </summary>
+                    /// <param name="parameter">The $CommandName$ command parameter.</param>
+                    private void Do$CommandName$Command(object parameter)
                     {
                     }
                 
-                    public ViewModelCommand $CommandName$
+                    /// <summary>
+                    /// Gets the $CommandName$ command.
+                    /// </summary>
+                    /// <value>The value of $PropertyName$.</value>
+                    public Command $CommandName$
                     {
-                      get { return $CommandName$; }
+                      get;
+                      private set;
                     }
                 ]]>
             </Code>

@@ -9,6 +9,14 @@
              d:DesignHeight="300" d:DesignWidth="300">
 
     <Grid>
-        <TextBlock>Folder</TextBlock>
+        <apexControls:PaddedGrid Rows="Auto,Auto,Auto,Auto,*" Columns="150,*" Padding="4">
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Folder Details" FontWeight="Bold" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Name" />
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Name}" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Description" />
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Description}" />
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Text="Files" FontWeight="Bold" />
+            <ListBox Grid.Row="4" Grid.ColumnSpan="2" ItemsSource="{Binding Files}" DisplayMemberPath="Name" />
+        </apexControls:PaddedGrid>
     </Grid>
 </local:FolderViewBase>

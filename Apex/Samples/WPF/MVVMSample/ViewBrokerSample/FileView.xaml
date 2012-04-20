@@ -9,11 +9,12 @@
              d:DesignHeight="300" d:DesignWidth="300">
             
     <Grid>
-        <apexControls:PaddedGrid Rows="Auto,Auto" Columns="100,120" Padding="4">
-            <Label Grid.Row="0" Grid.Column="0" Content="Name" />
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
-            <Label Grid.Row="1" Grid.Column="0" Content="Description" />
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Description}" />
+        <apexControls:PaddedGrid Rows="Auto,Auto,Auto" Columns="150,*" Padding="4">
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="File Details" FontWeight="Bold" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Name" />
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Name}" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Description" />
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Description}" />
         </apexControls:PaddedGrid>
     </Grid>
 </local:FileViewBase>
