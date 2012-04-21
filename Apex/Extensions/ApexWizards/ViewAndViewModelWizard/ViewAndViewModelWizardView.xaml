@@ -38,7 +38,7 @@
                 </LinearGradientBrush>
             </apexControls:MultiBorder.Background>
 
-            <apexControls:ApexGrid Grid.Row="2" Columns="*,2*" Rows="Auto,Auto,Auto,Auto" Margin="20">
+            <apexControls:ApexGrid Grid.Row="2" Columns="*,2*" Rows="Auto,Auto,Auto,Auto,Auto" Margin="20">
 
                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap">Enter a base name below and press OK to createa a view
                     and view model pair.</TextBlock>
@@ -55,7 +55,9 @@
                 <TextBox 
                     Grid.Row="3" Margin="12" Grid.Column="1" 
                     Text="{Binding ViewName}" />
-                
+                <CheckBox Grid.Row="4" Margin="12" Grid.ColumnSpan="2" Grid.Column="0" IsChecked="{Binding ViewCreatesViewModel}" Content="View Creates ViewModel" />
+
+
             </apexControls:ApexGrid>
 
         </apexControls:MultiBorder>
