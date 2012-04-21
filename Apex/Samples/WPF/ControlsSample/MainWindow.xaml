@@ -3,32 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
         xmlns:local="clr-namespace:ControlsSample"
-        Title="Apex Controls Samples" Height="350" Width="525">
+        Title="Apex Controls Samples" Height="500" Width="700">
     
     <!-- The view model. -->
     <Window.DataContext>
         <local:MainViewModel x:Name="viewModel" />
     </Window.DataContext>
-    
-    <!-- The main grid. -->
-    <apexControls:ApexGrid Columns="*,Auto,3*">
-        
-        <!-- The list of samples. -->
-        <ListBox 
-            Grid.Column="0" ItemsSource="{Binding Samples}" 
-            SelectedItem="{Binding SelectedSample}" DisplayMemberPath="Name" />
-        <!-- The grid splitter. -->
-        <GridSplitter 
-            Grid.Column="1"
-            ResizeDirection="Columns"
-            ResizeBehavior="PreviousAndNext"
-            VerticalAlignment="Stretch" 
-            Width="5" />
 
-        <!-- The sample view. -->
-        <ContentControl 
-            Grid.Column="2" Content="{Binding SelectedSample.View}" />
+    <TabControl Margin="4">
+    </TabControl>
 
-    </apexControls:ApexGrid>
-        
 </Window>

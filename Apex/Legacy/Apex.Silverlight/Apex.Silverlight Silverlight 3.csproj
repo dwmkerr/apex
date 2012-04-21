@@ -155,6 +155,9 @@
     <Compile Include="..\..\Core\Apex\DragAndDrop\DragAndDrop.cs">
       <Link>DragAndDrop\DragAndDrop.cs</Link>
     </Compile>
+    <Compile Include="..\..\Core\Apex\DragAndDrop\DragAndDropEventArgs.cs">
+      <Link>DragAndDrop\DragAndDropEventArgs.cs</Link>
+    </Compile>
     <Compile Include="..\..\Core\Apex\DragAndDrop\DragAndDropHost.cs">
       <Link>DragAndDrop\DragAndDropHost.cs</Link>
     </Compile>

@@ -85,6 +85,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewAndViewModelWizard\ViewAndViewModelWizard.cs" />
+    <Compile Include="ViewAndViewModelWizard\ViewAndViewModelWizardView.xaml.cs">
+      <DependentUpon>ViewAndViewModelWizardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAndViewModelWizard\ViewAndViewModelWizardViewModel.cs" />
     <Compile Include="ViewWizard\ViewWizard.cs" />
     <Compile Include="ViewWizard\ViewWizardView.xaml.cs">
       <DependentUpon>ViewWizardView.xaml</DependentUpon>
@@ -95,6 +100,10 @@
       <DependentUpon>ViewModelWizardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModelWizard\ViewModelWizardViewModel.cs" />
+    <Page Include="ViewAndViewModelWizard\ViewAndViewModelWizardView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewWizard\ViewWizardView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
