@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <TemplateData>
-    <Name>ApexViewAndViewModelItemTemplate</Name>
-    <Description>&lt;No description available&gt;</Description>
+    <Name>Apex View and View Model</Name>
+    <Description>Create a View and View Model pair.</Description>
     <Icon>ApexViewAndViewModelItemTemplate.ico</Icon>
     <TemplateID>ac2393e1-9676-4b5e-8c04-da2533f1663c</TemplateID>
     <ProjectType>CSharp</ProjectType>
@@ -11,12 +11,31 @@
     <DefaultName>Class.cs</DefaultName>
   </TemplateData>
   <TemplateContent>
-		<References>
-			<Reference>
-				<Assembly>System</Assembly>
-			</Reference>
-		</References>
+    
+    <!-- Reference all assemblies required for WPF and Apex itself.-->
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Xaml</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>WindowsBase</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationCore</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationFramework</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
+      </Reference>
+    </References>
+    
+    <ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">View.xaml</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">View.xaml.cs</ProjectItem>
 
-    <ProjectItem ReplaceParameters="true">Class.cs</ProjectItem>
   </TemplateContent>
 </VSTemplate>
