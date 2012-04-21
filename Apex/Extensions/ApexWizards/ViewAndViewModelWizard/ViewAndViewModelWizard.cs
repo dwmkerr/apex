@@ -57,10 +57,13 @@ namespace ApexWizards.ViewAndViewModelWizard
                 //  Create the wizard view.
                 ViewAndViewModelWizardView view = new ViewAndViewModelWizardView();
 
+                view.ViewModel.BaseName = replacementsDictionary["$rootname$"];
+
                 //  Set the view model name.
-                string viewModelName = string.Empty;
-                replacementsDictionary.TryGetValue("$safeitemrootname$", out viewModelName);
-                view.ViewModel.ViewModelName = viewModelName;
+                replacementsDictionary.Add("$BaseName$", view.ViewModel.BaseName);
+                replacementsDictionary.Add("$ViewModelName$", view.ViewModel.ViewModelName);
+                replacementsDictionary.Add("$ViewName$", view.ViewModel.ViewName);
+                replacementsDictionary.Add("$ViewCreatesViewModel$", view.ViewModel.ViewCreatesViewModel ? "1" : "0");
 
                 //  Show the view.
                 view.ShowDialog();

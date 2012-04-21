@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <TemplateData>
-    <Name>Apex View and View Model</Name>
-    <Description>Create a View and View Model pair.</Description>
+    <Name>Apex View and ViewModel</Name>
+    <Description>Create a View and ViewModel pair.</Description>
     <Icon>ApexViewAndViewModelItemTemplate.ico</Icon>
     <TemplateID>ac2393e1-9676-4b5e-8c04-da2533f1663c</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <DefaultName>Class.cs</DefaultName>
+    <DefaultName>BaseName.cs</DefaultName>
   </TemplateData>
   <TemplateContent>
     
@@ -34,8 +34,18 @@
       </Reference>
     </References>
     
-    <ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">View.xaml</ProjectItem>
-    <ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">View.xaml.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$View.xaml" ReplaceParameters="true">View.xaml</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$View.xaml.cs" ReplaceParameters="true">View.xaml.cs</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$ViewModel.cs" ReplaceParameters="true">ViewModel.cs</ProjectItem>
 
   </TemplateContent>
+
+  <!-- Use the appropriate IWizard from the ApexWizards assembly. -->
+  <WizardExtension>
+    <Assembly>
+      ApexWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d
+    </Assembly>
+    <FullClassName>ApexWizards.ViewAndViewModelWizard.ViewAndViewModelWizard</FullClassName>
+  </WizardExtension>
+  
 </VSTemplate>

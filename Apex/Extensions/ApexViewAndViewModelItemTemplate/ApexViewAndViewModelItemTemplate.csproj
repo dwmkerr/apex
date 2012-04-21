@@ -60,7 +60,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Class.cs" />
     <None Include="ApexViewAndViewModelItemTemplate.ico" />
   </ItemGroup>
   <ItemGroup>

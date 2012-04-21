@@ -6,11 +6,11 @@ using Apex.MVVM;
 namespace $rootnamespace$
 {
     /// <summary>
-    /// Interaction logic for $safeitemrootname$.xaml
+    /// Interaction logic for $ViewName$.xaml
     /// </summary>
-    public partial class $safeitemrootname$ : $safeitemrootname$Base
+    public partial class $ViewName$ : $ViewName$Base
     {
-        public $safeitemrootname$()
+        public $ViewName$()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace $rootnamespace$
     /// class explicitly for the view so that we can provide it in the XAML
     /// markup.
     /// </summary>
-    public partial class $safeitemrootname$Base : View<$ViewModelType$>
+    public partial class $ViewName$Base : View<$ViewModelName$>
     {
     }
 }

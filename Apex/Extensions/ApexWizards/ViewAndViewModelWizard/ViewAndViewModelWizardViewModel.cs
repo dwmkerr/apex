@@ -39,10 +39,20 @@ namespace ApexWizards.ViewAndViewModelWizard
         /// <value>
         /// The name of the view model.
         /// </value>
-        public string BaseNameName
+        public string BaseName
         {
             get { return (string)GetValue(BaseNameProperty); }
-            set { SetValue(BaseNameProperty, value); }
+            set 
+            { 
+                SetValue(BaseNameProperty, value); 
+
+                //  Update the names.
+                if (BaseName != null)
+                {
+                    ViewModelName = BaseName + "ViewModel";
+                    ViewName = BaseName + "View";
+                }
+            }
         }
 
         /// <summary>
@@ -57,7 +67,7 @@ namespace ApexWizards.ViewAndViewModelWizard
         /// <value>
         /// The name of the view model.
         /// </value>
-        public string ViewNameName
+        public string ViewName
         {
             get { return (string)GetValue(ViewNameProperty); }
             set { SetValue(ViewNameProperty, value); }
@@ -75,10 +85,19 @@ namespace ApexWizards.ViewAndViewModelWizard
         /// <value>
         /// The name of the view model.
         /// </value>
-        public string ViewModelNameName
+        public string ViewModelName
         {
             get { return (string)GetValue(ViewModelNameProperty); }
             set { SetValue(ViewModelNameProperty, value); }
+        }
+
+        private NotifyingProperty ViewCreatesViewModelProperty =
+          new NotifyingProperty("ViewCreatesViewModel", typeof(bool), default(bool));
+
+        public bool ViewCreatesViewModel
+        {
+            get { return (bool)GetValue(ViewCreatesViewModelProperty); }
+            set { SetValue(ViewCreatesViewModelProperty, value); }
         }
 
         /// <summary>

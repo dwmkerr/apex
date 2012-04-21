@@ -1,4 +1,4 @@
-﻿<local:$safeitemrootname$Base x:Class="$rootnamespace$.$safeitemrootname$"
+﻿<local:$safeitemrootname$Base x:Class="$rootnamespace$.$ViewName$"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,10 +10,10 @@
     $if$ ($ViewCreatesViewModel$ == 1)
     <!-- The View creates its own ViewModel, so set the ViewModel 
     to a new instance of the ViewModel class. -->
-    <local:$safeitemrootname$Base.ViewModel>
-        <local:$ViewModelType$ x:Name="viewModel" />
-    </local:$safeitemrootname$Base.ViewModel>
+    <local:$ViewName$Base.ViewModel>
+        <local:$ViewModelName$ x:Name="viewModel" />
+    </local:$ViewName$Base.ViewModel>
     $endif$        
     <Grid>
     </Grid>
-</local:$safeitemrootname$Base>
+</local:$ViewName$Base>
