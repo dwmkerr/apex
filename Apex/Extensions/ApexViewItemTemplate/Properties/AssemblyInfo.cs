@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ApexViewItemTemplate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("7Layer")]
+[assembly: AssemblyCompany("Dave Kerr")]
 [assembly: AssemblyProduct("ApexViewItemTemplate")]
-[assembly: AssemblyCopyright("Copyright © 7Layer 2012")]
+[assembly: AssemblyCopyright("Copyright © Dave Kerr 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

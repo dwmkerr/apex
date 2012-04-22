@@ -38,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DeployExtension>False</DeployExtension>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,11 +49,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ApexViewAndViewModelItemTemplate\ApexViewAndViewModelItemTemplate.csproj">
-      <Project>{75D3F944-603B-4849-A466-40E07ECFF81E}</Project>
-      <Name>ApexViewAndViewModelItemTemplate</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\ApexViewItemTemplate\ApexViewItemTemplate.csproj">
       <Project>{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}</Project>
       <Name>ApexViewItemTemplate</Name>

@@ -28,7 +28,7 @@
         <Assembly>PresentationFramework</Assembly>
       </Reference>
       <Reference>
-        <Assembly>Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
+        <Assembly>Apex, Version=1.3.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
       </Reference>
     </References>
 
