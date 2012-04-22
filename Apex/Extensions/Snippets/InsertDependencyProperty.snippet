@@ -31,13 +31,12 @@
             </Declarations>
             <Code Language="CSharp" Kind="any">
                 <![CDATA[
-                
                     /// <summary>
                     /// The DependencyProperty for the $PropertyName$ property.
                     /// </summary>
                     private static readonly DependencyProperty $PropertyName$Property = 
                       DependencyProperty.Register("$PropertyName$", typeof($PropertyType$), typeof($ParentType$),
-                      new PropertyMetadata(default<$PropertyType$>, new PropertyChangedCallback(On$PropertyName$Changed)));
+                      new PropertyMetadata(default($PropertyType$), new PropertyChangedCallback(On$PropertyName$Changed)));
                     
                     /// <summary>
                     /// Gets or sets $PropertyName$.

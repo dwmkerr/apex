@@ -7,13 +7,14 @@ using System.Collections.ObjectModel;
 using Apex.Adorners;
 using System.Windows.Controls;
 using System.Windows;
+using System.Windows.Input;
 
 namespace DragAndDropSample.CanvasSample
 {
     /// <summary>
     /// Interaction logic for CanvasSampleView.xaml
     /// </summary>
-    public partial class CanvasSampleView : CanvasSampleViewBase
+    public partial class CanvasSampleView : UserControl
     {
         public CanvasSampleView()
         {
@@ -25,7 +26,14 @@ namespace DragAndDropSample.CanvasSample
 
         void Instance_DragAndDropEnd(object sender, DragAndDropEventArgs args)
         {
-            
+            Point point = Mouse.GetPosition(dragAndDropHost);
+            point.Offset(-args.InitialElementOffset.X, -args.InitialElementOffset.Y);
+
+            //  Set the position of the element.
+            Canvas.SetLeft(args.DragElement, point.X);
+            Canvas.SetTop(args.DragElement, point.Y);
+
+            args.DragElement.Opacity = 1;
         }
 
         void Instance_DragAndDropContinue(object sender, DragAndDropEventArgs args)
@@ -37,16 +45,7 @@ namespace DragAndDropSample.CanvasSample
         {
             args.Allow = true;
             args.DragAdorner = new VisualAdorner(args.DragElement);
+            args.DragElement.Opacity = 0;
         }
-    }
-
-    /// <summary>
-    /// Base class for the ItemsControlSampleView View.
-    /// Until such time as XAML supports generics, we must define a base
-    /// class explicitly for the view so that we can provide it in the XAML
-    /// markup.
-    /// </summary>
-    public partial class CanvasSampleViewBase : View<CanvasSampleViewModel>
-    {
     }
 }

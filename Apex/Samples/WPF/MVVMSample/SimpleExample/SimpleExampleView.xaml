@@ -1,9 +1,10 @@
-﻿<local:SimpleExampleViewBase x:Class="MVVMSample.SimpleExample.SimpleExampleView"
+﻿<UserControl x:Class="MVVMSample.SimpleExample.SimpleExampleView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMSample.SimpleExample"
+             xmlns:apexMVVM="clr-namespace:Apex.MVVM;assembly=Apex"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
              mc:Ignorable="d" 
@@ -11,9 +12,9 @@
     
     <!-- The View creates its own ViewModel, so set the ViewModel 
     to a new instance of the ViewModel class. -->
-    <local:SimpleExampleViewBase.ViewModel>
+    <apexMVVM:View.ViewModel>
         <local:SimpleExampleViewModel x:Name="viewModel" />
-    </local:SimpleExampleViewBase.ViewModel>
+    </apexMVVM:View.ViewModel>
     
     <!-- The main grid. Holds the description and the sample. -->
     <apexControls:ApexGrid Columns="300,Auto,*" Rows="Auto,*">
@@ -50,4 +51,4 @@
         </apexControls:PaddedGrid>
 
     </apexControls:ApexGrid>
-</local:SimpleExampleViewBase>
+</UserControl>

@@ -1,9 +1,10 @@
-﻿<local:FolderViewBase x:Class="MVVMSample.ViewBrokerSample.FolderView"
+﻿<UserControl x:Class="MVVMSample.ViewBrokerSample.FolderView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMSample.ViewBrokerSample"
+             xmlns:apexMVVM="clr-namespace:Apex.MVVM;assembly=Apex"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -19,4 +20,4 @@
             <ListBox Grid.Row="4" Grid.ColumnSpan="2" ItemsSource="{Binding Files}" DisplayMemberPath="Name" />
         </apexControls:PaddedGrid>
     </Grid>
-</local:FolderViewBase>
+</UserControl>
