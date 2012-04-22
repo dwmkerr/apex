@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("ApexWizards")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("7Layer")]
-[assembly: AssemblyProduct("ApexWizards")]
-[assembly: AssemblyCopyright("Copyright © 7Layer 2012")]
+[assembly: AssemblyCompany("Dave Kerr")]
+[assembly: AssemblyProduct("Apex")]
+[assembly: AssemblyCopyright("Copyright © Dave Kerr 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
