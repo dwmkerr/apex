@@ -8,7 +8,7 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop;assembly=Apex"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="500" d:DesignWidth="600">
     
     <!-- The View creates its own ViewModel, so set the ViewModel 
     to a new instance of the ViewModel class. -->
@@ -27,10 +27,36 @@
         </Border>
     </DataTemplate>
     </UserControl.Resources>
-    <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost">
-        <apexControls:ApexGrid Rows="*,*" Columns="*,*">
 
-            <ItemsControl 
+    <!-- The main grid. Holds the description and the sample. -->
+    <apexControls:ApexGrid Columns="300,Auto,*" Rows="Auto,*">
+
+        <!-- The description. -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Description" FontSize="20" FontWeight="Light" />
+        <FlowDocumentScrollViewer Grid.Row="1" Grid.Column="0">
+            <FlowDocument FontSize="12" FontFamily="Segoe UI">
+                <Paragraph>In this first Drag and Drop sample, we have four ItemControls. The root level element
+                is the 'DragAndDropHost' - this element is used to handle all drag
+                and drop operations.</Paragraph>
+                <Paragraph>All that you need to do to implement drag and drop is handle the following 
+                three events in the code-behind: DragAndDropStart, DragAndDropContinue and
+                DragAndDropEnd.</Paragraph>
+                <Paragraph>Any element you can drag from must have the IsDragSource property
+                set. Any element you can drag to must have the IsDropTarget property
+                set. Any element that can be dragged must have the IsDraggable property
+                set.</Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+
+        <!-- Splitter. -->
+        <GridSplitter Grid.Column="1" Grid.RowSpan="2" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" Width="5" />
+
+        <!-- The sample. -->
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Sample" FontSize="20" FontWeight="Light" />
+        <dragAndDrop:DragAndDropHost Grid.Row="1" Grid.Column="2" x:Name="dragAndDropHost">
+            <apexControls:ApexGrid Rows="*,*" Columns="*,*">
+
+                <ItemsControl 
                 Background="#22440044"
             x:Name="listTopLeft"
             Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Group1}"
@@ -38,7 +64,7 @@
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
 
-            <ItemsControl
+                <ItemsControl
                 Background="#22000044"
             x:Name="listTopRight"
             Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Group2}"
@@ -46,7 +72,7 @@
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
 
-            <ItemsControl 
+                <ItemsControl 
                 Background="#22004400"
             x:Name="listBottomLeft"
             Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Group3}"
@@ -54,13 +80,14 @@
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
 
-            <ItemsControl
+                <ItemsControl
                 Background="#22440000"
             x:Name="listBottomRight"
             Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Group4}"
             ItemTemplate="{StaticResource draggableItemTemplate}"
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
-        </apexControls:ApexGrid>
-    </dragAndDrop:DragAndDropHost>
+            </apexControls:ApexGrid>
+        </dragAndDrop:DragAndDropHost>
+    </apexControls:ApexGrid>
 </UserControl>
