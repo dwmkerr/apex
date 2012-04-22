@@ -15,31 +15,19 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_08AD319D78344D2EBA617C8905C56D57"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1053F86F416315420BBEDECA54AA804F"
-        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1053F86F416315420BBEDECA54AA804F"
-        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_107AF4B959F04365A2AB03789C3A1B0C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2A72D282E4314112B6FAC2591D027F4E"
+        "MsmKey" = "8:_2243F77E731643A8AE21C6922A72D4B9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_290ACC9B3BE846D3964A898087F260CF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,19 +39,31 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_436EE538618DA9109E0A5EA2C5B45104"
+        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_436EE538618DA9109E0A5EA2C5B45104"
+        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_45DD32913DD24812A4C2032A001F24E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_46AA8FBD134B4971BBCED65FCFE2071F"
+        "MsmKey" = "8:_46C83E85F58B41FFA8BCE6BD78FF35C7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5D485AA9CB874629A5D82B122BAF0812"
+        "MsmKey" = "8:_5ACC44E59E71497088C0E38F0CDB558D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,8 +75,14 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_72B553CE0CDB40099BD655B44ACE18C5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_77A59E43953EDD1BA6C415C4230CBE37"
-        "OwnerKey" = "8:_AB41C95DE6D5EE96E516304C099D1E7B"
+        "OwnerKey" = "8:_D712143E59DC97154EE9257DD9AAAD38"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -93,13 +99,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AB41C95DE6D5EE96E516304C099D1E7B"
-        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
+        "MsmKey" = "8:_9C7FF85753ED0882D1C24428E3C2D1F2"
+        "OwnerKey" = "8:_77A59E43953EDD1BA6C415C4230CBE37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B3CA896DDEE64DEAA7519C1503614C9D"
+        "MsmKey" = "8:_B910C398FD6B4DEFBAF697CCEA54CCA1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -111,14 +117,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CC2B93586D8049B0AC8B73D0FA01FBFB"
+        "MsmKey" = "8:_CCAEE436421340B6947DD817D3E49E79"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DB8D2778A2CB44BFA21D8FD535F2662F"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_D712143E59DC97154EE9257DD9AAAD38"
+        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -129,7 +135,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E269B385363F437BA9D96941391E07A6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E26ADBDBC4824054AAF31B3174243F93"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_EB4D5163652244DEBA7BFDC215483E01"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F0922A1D8164432492F64EAFE27A31AF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -160,7 +184,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AB41C95DE6D5EE96E516304C099D1E7B"
+        "OwnerKey" = "8:_D712143E59DC97154EE9257DD9AAAD38"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -172,13 +196,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9C7FF85753ED0882D1C24428E3C2D1F2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1053F86F416315420BBEDECA54AA804F"
+        "OwnerKey" = "8:_436EE538618DA9109E0A5EA2C5B45104"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -292,12 +322,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_08AD319D78344D2EBA617C8905C56D57"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2243F77E731643A8AE21C6922A72D4B9"
             {
-            "SourcePath" = "8:..\\VSIX\\ApexVsix.zip"
-            "TargetName" = "8:ApexVsix.zip"
+            "SourcePath" = "8:..\\Samples\\InsertViewModelCommand.snippet"
+            "TargetName" = "8:InsertViewModelCommand.snippet"
             "Tag" = "8:"
-            "Folder" = "8:_0B355A6D658D4A5DA816224060C9635C"
+            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -312,43 +342,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1053F86F416315420BBEDECA54AA804F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_290ACC9B3BE846D3964A898087F260CF"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1053F86F416315420BBEDECA54AA804F"
-                    {
-                    "Name" = "8:Apex.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Apex.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\VSIX\\ItemTemplates\\CSharp\\1033\\ApexViewItemTemplate.zip"
+            "TargetName" = "8:ApexViewItemTemplate.zip"
             "Tag" = "8:"
-            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A72D282E4314112B6FAC2591D027F4E"
-            {
-            "SourcePath" = "8:..\\VSIX\\[Content_Types].xml"
-            "TargetName" = "8:[Content_Types].xml"
-            "Tag" = "8:"
-            "Folder" = "8:_0B355A6D658D4A5DA816224060C9635C"
+            "Folder" = "8:_1B3B496F9C9040739CFA86AA3BA02720"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -383,12 +382,43 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_46AA8FBD134B4971BBCED65FCFE2071F"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_436EE538618DA9109E0A5EA2C5B45104"
             {
-            "SourcePath" = "8:..\\VSIX\\extension.vsixmanifest"
-            "TargetName" = "8:extension.vsixmanifest"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_436EE538618DA9109E0A5EA2C5B45104"
+                    {
+                    "Name" = "8:Apex.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Apex.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_0B355A6D658D4A5DA816224060C9635C"
+            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_46C83E85F58B41FFA8BCE6BD78FF35C7"
+            {
+            "SourcePath" = "8:..\\Samples\\InsertObservableCollection.snippet"
+            "TargetName" = "8:InsertObservableCollection.snippet"
+            "Tag" = "8:"
+            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -403,10 +433,30 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5D485AA9CB874629A5D82B122BAF0812"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5ACC44E59E71497088C0E38F0CDB558D"
             {
-            "SourcePath" = "8:..\\..\\Extensions\\Snippets\\InsertAttachedDependencyProperty.snippet"
-            "TargetName" = "8:InsertAttachedDependencyProperty.snippet"
+            "SourcePath" = "8:..\\VSIX\\ItemTemplates\\CSharp\\1033\\ApexViewModelItemTemplate.zip"
+            "TargetName" = "8:ApexViewModelItemTemplate.zip"
+            "Tag" = "8:"
+            "Folder" = "8:_1B3B496F9C9040739CFA86AA3BA02720"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_72B553CE0CDB40099BD655B44ACE18C5"
+            {
+            "SourcePath" = "8:..\\Samples\\InsertDependencyProperty.snippet"
+            "TargetName" = "8:InsertDependencyProperty.snippet"
             "Tag" = "8:"
             "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
             "Condition" = "8:"
@@ -454,14 +504,85 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AB41C95DE6D5EE96E516304C099D1E7B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9C7FF85753ED0882D1C24428E3C2D1F2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:TRUE"
+            "AssemblyAsmDisplayName" = "8:stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_9C7FF85753ED0882D1C24428E3C2D1F2"
+                    {
+                    "Name" = "8:stdole.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:stdole.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B910C398FD6B4DEFBAF697CCEA54CCA1"
+            {
+            "SourcePath" = "8:..\\Banner.bmp"
+            "TargetName" = "8:Banner.bmp"
+            "Tag" = "8:"
+            "Folder" = "8:_AA334FFFB899490EA92532F518F56C52"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CCAEE436421340B6947DD817D3E49E79"
+            {
+            "SourcePath" = "8:..\\Samples\\InsertRoutedEvent.snippet"
+            "TargetName" = "8:InsertRoutedEvent.snippet"
+            "Tag" = "8:"
+            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D712143E59DC97154EE9257DD9AAAD38"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AB41C95DE6D5EE96E516304C099D1E7B"
+                    "_D712143E59DC97154EE9257DD9AAAD38"
                     {
                     "Name" = "8:Microsoft.VisualStudio.TemplateWizardInterface.dll"
                     "Attributes" = "3:512"
@@ -485,10 +606,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B3CA896DDEE64DEAA7519C1503614C9D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E269B385363F437BA9D96941391E07A6"
             {
-            "SourcePath" = "8:..\\..\\Extensions\\Snippets\\InsertViewModelCommand.snippet"
-            "TargetName" = "8:InsertViewModelCommand.snippet"
+            "SourcePath" = "8:..\\Samples\\InsertAttachedDependencyProperty.snippet"
+            "TargetName" = "8:InsertAttachedDependencyProperty.snippet"
             "Tag" = "8:"
             "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
             "Condition" = "8:"
@@ -505,9 +626,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC2B93586D8049B0AC8B73D0FA01FBFB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E26ADBDBC4824054AAF31B3174243F93"
             {
-            "SourcePath" = "8:..\\..\\Extensions\\Snippets\\InsertApexNotifyingProperty.snippet"
+            "SourcePath" = "8:..\\Samples\\InsertApexNotifyingProperty.snippet"
             "TargetName" = "8:InsertApexNotifyingProperty.snippet"
             "Tag" = "8:"
             "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
@@ -525,12 +646,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DB8D2778A2CB44BFA21D8FD535F2662F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F0922A1D8164432492F64EAFE27A31AF"
             {
-            "SourcePath" = "8:..\\..\\Extensions\\Snippets\\InsertDependencyProperty.snippet"
-            "TargetName" = "8:InsertDependencyProperty.snippet"
+            "SourcePath" = "8:..\\VSIX\\extension.vsixmanifest"
+            "TargetName" = "8:extension.vsixmanifest"
             "Tag" = "8:"
-            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
+            "Folder" = "8:_0B355A6D658D4A5DA816224060C9635C"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -561,6 +682,39 @@
             "Property" = "8:NEWPROPERTY1"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5A2961448B7B4070A2C11A98AA3ABAEC"
+                    {
+                    "Name" = "8:ItemTemplates"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_DF023E4851B64BEB869688FE952A4332"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_10F38F3BBD034CA087FEDEFE4036930C"
+                            {
+                            "Name" = "8:CSharp"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_B987EAFCDEAA41BB948FE062E95A3C12"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_1B3B496F9C9040739CFA86AA3BA02720"
+                                    {
+                                    "Name" = "8:1033"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_87B3BBFB21D04312A7D462E5405B0015"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_150E67A2DE834E0F92C205C7BE0D2BA5"
@@ -637,6 +791,17 @@
                                 {
                                 }
                             }
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_AA334FFFB899490EA92532F518F56C52"
+                    {
+                    "Name" = "8:Assets"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_792AA01BF97D4BBEB6B61DE00B59C7F5"
+                        "Folders"
+                        {
                         }
                     }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_BC8FDD1856564D499EE1DDADD7789D43"
@@ -926,7 +1091,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_B910C398FD6B4DEFBAF697CCEA54CCA1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -974,7 +1140,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_B910C398FD6B4DEFBAF697CCEA54CCA1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -1009,7 +1176,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_B910C398FD6B4DEFBAF697CCEA54CCA1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -1222,7 +1390,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_B910C398FD6B4DEFBAF697CCEA54CCA1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -1266,7 +1435,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_B910C398FD6B4DEFBAF697CCEA54CCA1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -1300,7 +1470,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_107AF4B959F04365A2AB03789C3A1B0C"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Debug\\Apex.WinForms.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Release\\Apex.WinForms.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
@@ -1328,7 +1498,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_45DD32913DD24812A4C2032A001F24E1"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Debug\\Apex.Silverlight.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Release\\Apex.Silverlight.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2F1E2C8799AA466092990901D2121EEE"
@@ -1356,7 +1526,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6CC9A795B9CC44CC81A4409E2CB82AB4"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Debug\\Apex.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Release\\Apex.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
@@ -1384,7 +1554,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8507DE4B969E4FCABE2CA773D6B9B5A7"
             {
-            "SourcePath" = "8:..\\..\\Samples\\WPF\\MVVMSample\\obj\\x86\\Debug\\MVVMSample.exe"
+            "SourcePath" = "8:..\\..\\Samples\\WPF\\MVVMSample\\obj\\x86\\Release\\MVVMSample.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BC8FDD1856564D499EE1DDADD7789D43"
@@ -1412,7 +1582,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_943D59412801456AB4FA914B0850A829"
             {
-            "SourcePath" = "8:..\\..\\Extensions\\ApexWizards\\obj\\x86\\Debug\\ApexWizards.dll"
+            "SourcePath" = "8:..\\..\\Extensions\\ApexWizards\\obj\\x86\\Release\\ApexWizards.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
@@ -1440,7 +1610,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BF8965F6C7F0480EB59B01FB4FAC4065"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Debug\\Apex.WinForms.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Release\\Apex.WinForms.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2F1E2C8799AA466092990901D2121EEE"
@@ -1468,7 +1638,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DDE00AC6B0BB4567B4429CC5A2C5E705"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Debug\\Apex.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Release\\Apex.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2F1E2C8799AA466092990901D2121EEE"
@@ -1496,7 +1666,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EB4D5163652244DEBA7BFDC215483E01"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Debug\\Apex.Silverlight.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Release\\Apex.Silverlight.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"

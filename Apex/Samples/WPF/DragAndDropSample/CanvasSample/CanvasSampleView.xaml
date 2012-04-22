@@ -1,0 +1,27 @@
+﻿<local:CanvasSampleViewBase x:Class="DragAndDropSample.CanvasSample.CanvasSampleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DragAndDropSample.CanvasSample"
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+             xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop;assembly=Apex"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    
+    <!-- The View creates its own ViewModel, so set the ViewModel 
+    to a new instance of the ViewModel class. -->
+    <local:CanvasSampleViewBase.ViewModel>
+        <local:CanvasSampleViewModel x:Name="viewModel" />
+    </local:CanvasSampleViewBase.ViewModel>
+
+    
+    <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost">
+        <Canvas
+            dragAndDrop:DragAndDrop.IsDragSource="True"
+            dragAndDrop:DragAndDrop.IsDropTarget="True">
+            <Ellipse Width="50" Height="50" Fill="Red" Stroke="Black" StrokeThickness="2"
+                     dragAndDrop:DragAndDrop.IsDraggable="True" />
+        </Canvas>
+    </dragAndDrop:DragAndDropHost>
+</local:CanvasSampleViewBase>
