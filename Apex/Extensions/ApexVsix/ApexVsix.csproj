@@ -51,10 +51,7 @@
     <ProjectReference Include="..\ApexViewAndViewModelItemTemplate\ApexViewAndViewModelItemTemplate.csproj">
       <Project>{75D3F944-603B-4849-A466-40E07ECFF81E}</Project>
       <Name>ApexViewAndViewModelItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
     </ProjectReference>
     <ProjectReference Include="..\ApexViewItemTemplate\ApexViewItemTemplate.csproj">
       <Project>{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}</Project>

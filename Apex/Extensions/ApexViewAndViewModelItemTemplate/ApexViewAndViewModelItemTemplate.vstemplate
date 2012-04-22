@@ -8,7 +8,7 @@
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <DefaultName>BaseName.cs</DefaultName>
+    <DefaultName>ViewModel.cs</DefaultName>
   </TemplateData>
   <TemplateContent>
     

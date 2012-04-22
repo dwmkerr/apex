@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include=".vscontent" />
+    <None Include="InsertRoutedEvent.snippet" />
     <None Include="InsertObservableCollection.snippet">
       <SubType>Designer</SubType>
     </None>
