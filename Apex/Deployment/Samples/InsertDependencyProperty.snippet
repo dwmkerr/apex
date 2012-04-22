@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+          <Title>Insert Dependency Property</Title>
+          <Description>Inserts a Dependency Property.</Description>
+          <Author>Dave Kerr</Author>
+          <Shortcut>apexdp</Shortcut>
+          <HelpUrl>http://apex.codeplex.com</HelpUrl>
+          <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+          </SnippetTypes>          
+        </Header>
+        <Snippet>
+            <Declarations>
+              <Literal>
+                <ID>PropertyName</ID>
+                <ToolTip>Enter the property name</ToolTip>
+                <Default>PropertyName</Default>
+              </Literal>
+              <Literal>
+                <ID>PropertyType</ID>
+                <ToolTip>Enter the property name</ToolTip>
+                <Default>PropertyType</Default>
+              </Literal>
+              <Literal>
+                <ID>ParentType</ID>
+                <ToolTip>Enter the parent type.</ToolTip>
+                <Default>ParentType</Default>
+              </Literal>
+            </Declarations>
+            <Code Language="CSharp" Kind="any">
+                <![CDATA[
+                
+                    /// <summary>
+                    /// The DependencyProperty for the $PropertyName$ property.
+                    /// </summary>
+                    private static readonly DependencyProperty $PropertyName$Property = 
+                      DependencyProperty.Register("$PropertyName$", typeof($PropertyType$), typeof($ParentType$),
+                      new PropertyMetadata(default<$PropertyType$>, new PropertyChangedCallback(On$PropertyName$Changed)));
+                    
+                    /// <summary>
+                    /// Gets or sets $PropertyName$.
+                    /// </summary>
+                    /// <value>The value of $PropertyName$.</value>
+                    public $PropertyType$ $PropertyName$
+                    {
+                      get { return ($PropertyType$)GetValue($PropertyName$Property); }
+                      set { SetValue($PropertyName$Property, value); }
+                    }                    
+                    
+                    /// <summary>
+                    /// Called when $PropertyName$ is changed.
+                    /// </summary>
+                    /// <param name="o">The dependency object.</param>
+                    /// <param name="args">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+                    private static void On$PropertyName$Changed(DependencyObject o, DependencyPropertyChangedEventArgs args)
+                    {
+                      $ParentType$ me = o as $ParentType$;
+                    }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

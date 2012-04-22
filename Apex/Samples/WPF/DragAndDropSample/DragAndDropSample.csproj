@@ -59,6 +59,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CanvasSample\CanvasSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ItemsControlSample\ItemsControlSampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +75,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CanvasSample\CanvasSampleView.xaml.cs">
+      <DependentUpon>CanvasSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CanvasSample\CanvasSampleViewModel.cs" />
+    <Compile Include="ItemsControlSample\ItemsControlSampleView.xaml.cs">
+      <DependentUpon>ItemsControlSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsControlSample\ItemsControlSampleViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -103,6 +119,7 @@
       <Name>Apex</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
