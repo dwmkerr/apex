@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace Apex.MVVM
 {
@@ -77,7 +78,8 @@ namespace Apex.MVVM
         {
             return (from vmm in viewModelViewMappings
                     where vmm.ViewModelType.AssemblyQualifiedName == viewModelType.AssemblyQualifiedName
-                    && vmm.Hint == hint select vmm.ViewType).FirstOrDefault();
+                    && vmm.Hint == hint
+                    select vmm.ViewType).FirstOrDefault();
         }
 
         /// <summary>
@@ -89,14 +91,33 @@ namespace Apex.MVVM
         /// <summary>
         /// The global broker, generally used for all broker operations.
         /// </summary>
-        private static ApexBroker globalBroker = new ApexBroker();
+        private static ApexBroker globalBroker;
+
+        /// <summary>
+        /// The sync object.
+        /// </summary>
+        private static object syncObject = new object();
 
         /// <summary>
         /// Gets the global broker.
         /// </summary>
         public static ApexBroker GlobalBroker
         {
-            get { return globalBroker; }
+            get 
+            { 
+                //  Lock on the sync object.
+                lock (syncObject)
+                {
+                    if (globalBroker == null)
+                    {
+                        //  Create the global broker.
+                        globalBroker = new ApexBroker();
+                    }
+                }
+
+                //  Return the global broker.
+                return globalBroker; 
+            }
         }
     }
 }
