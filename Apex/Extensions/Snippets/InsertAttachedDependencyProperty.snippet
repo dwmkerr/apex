@@ -6,7 +6,7 @@
           <Description>Inserts an Attached Dependency Property.</Description>
           <Author>Dave Kerr</Author>
           <Shortcut>apexadp</Shortcut>
-          <HelpUrl></HelpUrl>
+          <HelpUrl>http://apex.codeplex.com</HelpUrl>
           <SnippetTypes>
             <SnippetType>Expansion</SnippetType>
           </SnippetTypes>          
@@ -36,7 +36,7 @@
                     /// </summary>
                     private static readonly DependencyProperty $PropertyName$Property = 
                       DependencyProperty.RegisterAttached("$PropertyName$", typeof($PropertyType$), typeof($ParentType$),
-                      new PropertyMetadata(null, new PropertyChangedCallback(On$PropertyName$Changed)));
+                      new PropertyMetadata(default<$PropertyType$>, new PropertyChangedCallback(On$PropertyName$Changed)));
                     
                     /// <summary>
                     /// Gets the value of the $PropertyName$ property.

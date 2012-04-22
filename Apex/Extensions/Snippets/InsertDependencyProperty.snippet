@@ -6,7 +6,7 @@
           <Description>Inserts a Dependency Property.</Description>
           <Author>Dave Kerr</Author>
           <Shortcut>apexdp</Shortcut>
-          <HelpUrl></HelpUrl>
+          <HelpUrl>http://apex.codeplex.com</HelpUrl>
           <SnippetTypes>
             <SnippetType>Expansion</SnippetType>
           </SnippetTypes>          
@@ -37,7 +37,7 @@
                     /// </summary>
                     private static readonly DependencyProperty $PropertyName$Property = 
                       DependencyProperty.Register("$PropertyName$", typeof($PropertyType$), typeof($ParentType$),
-                      new PropertyMetadata(null, new PropertyChangedCallback(On$PropertyName$Changed)));
+                      new PropertyMetadata(default<$PropertyType$>, new PropertyChangedCallback(On$PropertyName$Changed)));
                     
                     /// <summary>
                     /// Gets or sets $PropertyName$.
