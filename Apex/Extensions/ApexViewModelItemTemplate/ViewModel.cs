@@ -10,6 +10,7 @@ namespace $rootnamespace$
     /// <summary>
     /// The $safeitemrootname$ ViewModel class.
     /// </summary>
+    [ViewModel]
 	public class $safeitemrootname$ : ViewModel
 	{
         /// <summary>

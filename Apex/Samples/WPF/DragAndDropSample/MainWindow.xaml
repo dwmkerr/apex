@@ -6,7 +6,7 @@
         xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop;assembly=Apex"
         xmlns:itemsControlSample="clr-namespace:DragAndDropSample.ItemsControlSample"
         xmlns:canvasSample="clr-namespace:DragAndDropSample.CanvasSample"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Drag and Drop Sample" Height="350" Width="525">
     <Window.DataContext>
         <local:MainViewModel x:Name="viewModel" />
     </Window.DataContext>

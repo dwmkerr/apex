@@ -8,43 +8,49 @@ using System.Windows;
 namespace Apex.MVVM
 {
     /// <summary>
-    /// A View is a usercontrol with a viewmodel.
+    /// Container for View attached properties.
     /// </summary>
-    /// <typeparam name="TViewModel">The type of the view model.</typeparam>
-    public class View<TViewModel> : UserControl
+    public static class View
     {
         /// <summary>
-        /// The ViewModel dependency property.
+        /// The DependencyProperty for the ViewModel property.
         /// </summary>
         private static readonly DependencyProperty ViewModelProperty =
-          DependencyProperty.Register("ViewModel", typeof(TViewModel), typeof(View<TViewModel>),
-          new PropertyMetadata(null, new PropertyChangedCallback(OnViewModelChanged)));
+          DependencyProperty.RegisterAttached("ViewModel", typeof(object), typeof(FrameworkElement),
+          new PropertyMetadata(default(object), new PropertyChangedCallback(OnViewModelChanged)));
 
         /// <summary>
-        /// Gets or sets the view model.
+        /// Gets the value of the ViewModel property.
         /// </summary>
-        /// <value>
-        /// The view model.
-        /// </value>
-        public TViewModel ViewModel
+        /// <param name="o">The dependency object.</param>
+        /// <returns>The value of the ViewModel property.</returns>
+        public static object GetViewModel(DependencyObject o)
         {
-            get { return (TViewModel)GetValue(ViewModelProperty); }
-            set { SetValue(ViewModelProperty, value); }
+            return (object)o.GetValue(ViewModelProperty);
         }
 
         /// <summary>
-        /// Called when [view model changed].
+        /// Sets the value of the ViewModel property.
         /// </summary>
-        /// <param name="o">The o.</param>
-        /// <param name="args">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        /// <param name="o">The dependency object.</param>
+        /// <param name="value">The value of the ViewModel property.</param>
+        public static void SetViewModel(DependencyObject o, object value)
+        {
+            o.SetValue(ViewModelProperty, value);
+        }
+
+        /// <summary>
+        /// Called when ViewModel is changed.
+        /// </summary>
+        /// <param name="o">The dependency object.</param>
+        /// <param name="args">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnViewModelChanged(DependencyObject o, DependencyPropertyChangedEventArgs args)
         {
-            //  Get the caller.
-            View<TViewModel> me = o as View<TViewModel>;
+            //  Get the framework element.
+            FrameworkElement me = o as FrameworkElement;
 
-            //  Ensure the data context is set.
-            me.DataContext = me.ViewModel;
+            //  Set the data context as the view model.
+            me.DataContext = GetViewModel(me);
         }
-                
     }
 }

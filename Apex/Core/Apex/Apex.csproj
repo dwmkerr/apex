@@ -121,11 +121,13 @@
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="MVVM\ApexBroker.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
+    <Compile Include="MVVM\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\SafeObservableCollection.cs" />
     <Compile Include="MVVM\View.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="MVVM\Command.cs" />
+    <Compile Include="MVVM\ViewModelAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -183,7 +185,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)bin\$(ConfigurationName)\*.dll" "$(SolutionDir)Deploy\$(ConfigurationName)\.NET 4.0\" /i /d /y
-"%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil" /if "$(TargetPath)"</PostBuildEvent>
+"%25ProgramFiles(x86)%25\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil.exe"  /i "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

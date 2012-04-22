@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2243F77E731643A8AE21C6922A72D4B9"
+        "MsmKey" = "8:_172EB7848AD24070807DCD9C2122289C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,20 +33,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_38F0AF9935441F33203919F2E4F182E9"
-        "OwnerKey" = "8:_77A59E43953EDD1BA6C415C4230CBE37"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_436EE538618DA9109E0A5EA2C5B45104"
-        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_436EE538618DA9109E0A5EA2C5B45104"
-        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
+        "MsmKey" = "8:_3AE49B7336A84C43899FFDCB1BAE6118"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -57,8 +45,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_46C83E85F58B41FFA8BCE6BD78FF35C7"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_55AEDD773757815C0178D1117129CB96"
+        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -75,14 +63,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_72B553CE0CDB40099BD655B44ACE18C5"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_754B9AFD43F439EAFBF0581157CAFA83"
+        "OwnerKey" = "8:_77A59E43953EDD1BA6C415C4230CBE37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_77A59E43953EDD1BA6C415C4230CBE37"
-        "OwnerKey" = "8:_D712143E59DC97154EE9257DD9AAAD38"
+        "OwnerKey" = "8:_55AEDD773757815C0178D1117129CB96"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7AFD15650555E5050D022402B7589666"
+        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7AFD15650555E5050D022402B7589666"
+        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -99,8 +99,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_96EC398F68744952B2AD86064A8FBD6A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9C7FF85753ED0882D1C24428E3C2D1F2"
         "OwnerKey" = "8:_77A59E43953EDD1BA6C415C4230CBE37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0229AA991D841048B98D17EA296E0E1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -117,31 +129,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CCAEE436421340B6947DD817D3E49E79"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D712143E59DC97154EE9257DD9AAAD38"
-        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_DDE00AC6B0BB4567B4429CC5A2C5E705"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E269B385363F437BA9D96941391E07A6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E26ADBDBC4824054AAF31B3174243F93"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -154,6 +142,18 @@
         "Entry"
         {
         "MsmKey" = "8:_F0922A1D8164432492F64EAFE27A31AF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FB9CC2FE57C442AAA0B049F227EBD29F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FD6D4BBB28314EC584C61FA9651B174A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -184,7 +184,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D712143E59DC97154EE9257DD9AAAD38"
+        "OwnerKey" = "8:_55AEDD773757815C0178D1117129CB96"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -208,7 +208,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_436EE538618DA9109E0A5EA2C5B45104"
+        "OwnerKey" = "8:_7AFD15650555E5050D022402B7589666"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -322,12 +322,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2243F77E731643A8AE21C6922A72D4B9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_172EB7848AD24070807DCD9C2122289C"
             {
-            "SourcePath" = "8:..\\Samples\\InsertViewModelCommand.snippet"
-            "TargetName" = "8:InsertViewModelCommand.snippet"
+            "SourcePath" = "8:..\\Samples\\InsertAttachedDependencyProperty.snippet"
+            "TargetName" = "8:InsertAttachedDependencyProperty.snippet"
             "Tag" = "8:"
-            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
+            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -362,12 +362,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_38F0AF9935441F33203919F2E4F182E9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3AE49B7336A84C43899FFDCB1BAE6118"
             {
-            "SourcePath" = "8:dte80a.olb"
-            "TargetName" = "8:dte80a.olb"
+            "SourcePath" = "8:..\\Samples\\InsertViewModelCommand.snippet"
+            "TargetName" = "8:InsertViewModelCommand.snippet"
             "Tag" = "8:"
-            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
+            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -378,24 +378,24 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_436EE538618DA9109E0A5EA2C5B45104"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_55AEDD773757815C0178D1117129CB96"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_436EE538618DA9109E0A5EA2C5B45104"
+                    "_55AEDD773757815C0178D1117129CB96"
                     {
-                    "Name" = "8:Apex.dll"
+                    "Name" = "8:Microsoft.VisualStudio.TemplateWizardInterface.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Apex.dll"
+            "SourcePath" = "8:Microsoft.VisualStudio.TemplateWizardInterface.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
@@ -411,26 +411,6 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_46C83E85F58B41FFA8BCE6BD78FF35C7"
-            {
-            "SourcePath" = "8:..\\Samples\\InsertObservableCollection.snippet"
-            "TargetName" = "8:InsertObservableCollection.snippet"
-            "Tag" = "8:"
-            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5ACC44E59E71497088C0E38F0CDB558D"
@@ -453,12 +433,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_72B553CE0CDB40099BD655B44ACE18C5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_754B9AFD43F439EAFBF0581157CAFA83"
             {
-            "SourcePath" = "8:..\\Samples\\InsertDependencyProperty.snippet"
-            "TargetName" = "8:InsertDependencyProperty.snippet"
+            "SourcePath" = "8:dte80a.olb"
+            "TargetName" = "8:dte80a.olb"
             "Tag" = "8:"
-            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
+            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -469,8 +449,8 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_77A59E43953EDD1BA6C415C4230CBE37"
@@ -504,6 +484,57 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7AFD15650555E5050D022402B7589666"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Apex, Version=1.2.1.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7AFD15650555E5050D022402B7589666"
+                    {
+                    "Name" = "8:Apex.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Apex.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_96EC398F68744952B2AD86064A8FBD6A"
+            {
+            "SourcePath" = "8:..\\Samples\\InsertDependencyProperty.snippet"
+            "TargetName" = "8:InsertDependencyProperty.snippet"
+            "Tag" = "8:"
+            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9C7FF85753ED0882D1C24428E3C2D1F2"
             {
             "AssemblyRegister" = "3:1"
@@ -531,8 +562,28 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B0229AA991D841048B98D17EA296E0E1"
+            {
+            "SourcePath" = "8:..\\Samples\\InsertObservableCollection.snippet"
+            "TargetName" = "8:InsertObservableCollection.snippet"
+            "Tag" = "8:"
+            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B910C398FD6B4DEFBAF697CCEA54CCA1"
@@ -555,103 +606,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CCAEE436421340B6947DD817D3E49E79"
-            {
-            "SourcePath" = "8:..\\Samples\\InsertRoutedEvent.snippet"
-            "TargetName" = "8:InsertRoutedEvent.snippet"
-            "Tag" = "8:"
-            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D712143E59DC97154EE9257DD9AAAD38"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_D712143E59DC97154EE9257DD9AAAD38"
-                    {
-                    "Name" = "8:Microsoft.VisualStudio.TemplateWizardInterface.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.VisualStudio.TemplateWizardInterface.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E269B385363F437BA9D96941391E07A6"
-            {
-            "SourcePath" = "8:..\\Samples\\InsertAttachedDependencyProperty.snippet"
-            "TargetName" = "8:InsertAttachedDependencyProperty.snippet"
-            "Tag" = "8:"
-            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E26ADBDBC4824054AAF31B3174243F93"
-            {
-            "SourcePath" = "8:..\\Samples\\InsertApexNotifyingProperty.snippet"
-            "TargetName" = "8:InsertApexNotifyingProperty.snippet"
-            "Tag" = "8:"
-            "Folder" = "8:_36126A512450434CB8B2870D7F68CB7E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F0922A1D8164432492F64EAFE27A31AF"
             {
             "SourcePath" = "8:..\\VSIX\\extension.vsixmanifest"
             "TargetName" = "8:extension.vsixmanifest"
             "Tag" = "8:"
             "Folder" = "8:_0B355A6D658D4A5DA816224060C9635C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FB9CC2FE57C442AAA0B049F227EBD29F"
+            {
+            "SourcePath" = "8:..\\Samples\\InsertApexNotifyingProperty.snippet"
+            "TargetName" = "8:InsertApexNotifyingProperty.snippet"
+            "Tag" = "8:"
+            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FD6D4BBB28314EC584C61FA9651B174A"
+            {
+            "SourcePath" = "8:..\\Samples\\InsertRoutedEvent.snippet"
+            "TargetName" = "8:InsertRoutedEvent.snippet"
+            "Tag" = "8:"
+            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -719,7 +719,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_150E67A2DE834E0F92C205C7BE0D2BA5"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\Apex"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -828,6 +828,18 @@
                 {
                 }
             }
+            "{994432C3-9487-495D-8656-3E829A8DBDDE}:_481A1BFBC7084D32A4744A821DE908EE"
+            {
+            "DefaultLocation" = "8:[VSSHELLDIR]VC#\\Snippets\\1033\\Visual C#"
+            "Name" = "8:Code Snippets Folder"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:NEWPROPERTY2"
+                "Folders"
+                {
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_62B0B44052734B99B60362F7125A6008"
             {
             "Name" = "8:#1921"
@@ -850,61 +862,6 @@
                     }
                 }
             }
-            "{1525181F-901A-416C-8A58-119130FE478E}:_F7855AE2F75D4097BE41FC0D16AE18B0"
-            {
-            "Name" = "8:#1918"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:PersonalFolder"
-                "Folders"
-                {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_35CF2EFB47A548A78FE62474EC651001"
-                    {
-                    "Name" = "8:Visual Studio 2010"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_72F2298193BD4E39A37D615FC99A5B99"
-                        "Folders"
-                        {
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_84B351FC00F349F1A7914F3A6E95C1E3"
-                            {
-                            "Name" = "8:Code Snippets"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_E8F5642D3595421FA8BA3D9442CE6F6B"
-                                "Folders"
-                                {
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_169D4683B5AF4BB8ADE372AE651DAFAC"
-                                    {
-                                    "Name" = "8:Visual C#"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_3A1CD9954F8B4153BBC9DACA536A09BD"
-                                        "Folders"
-                                        {
-                                            "{9EF0B969-E518-4E46-987F-47570745A589}:_36126A512450434CB8B2870D7F68CB7E"
-                                            {
-                                            "Name" = "8:My Code Snippets"
-                                            "AlwaysCreate" = "11:FALSE"
-                                            "Condition" = "8:"
-                                            "Transitive" = "11:FALSE"
-                                            "Property" = "8:_17032CB229104F65AB116A39BBDF2147"
-                                                "Folders"
-                                                {
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
         "LaunchCondition"
         {
@@ -919,6 +876,14 @@
             "Value" = "8:InstallDir"
             "Property" = "8:VSINSTALLDIR"
             }
+            "{CF66B7F7-B7DA-4B08-A67A-233430638C9C}:_61CCE5A03E034002A9255E2BFBB96E79"
+            {
+            "Name" = "8:Search for Visual Studio Shell directory"
+            "Root" = "2:1"
+            "RegKey" = "8:SOFTWARE\\Microsoft\\VisualStudio\\10.0"
+            "Value" = "8:ShellFolder"
+            "Property" = "8:VSSHELLDIR"
+            }
         }
         "MsiBootstrapper"
         {
@@ -930,7 +895,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Apex SDK"
         "ProductCode" = "8:{E54EF8C4-084C-4989-A902-BA2935F72A6A}"
-        "PackageCode" = "8:{800C3498-2DA9-4A51-9A49-287E70B31EA8}"
+        "PackageCode" = "8:{EFD9A37D-737E-4F3D-9D2F-5DD34B370685}"
         "UpgradeCode" = "8:{8B037F9F-0C3C-4EDE-B0A4-AADB8694B22D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1470,7 +1435,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_107AF4B959F04365A2AB03789C3A1B0C"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Release\\Apex.WinForms.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Debug\\Apex.WinForms.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
@@ -1498,7 +1463,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_45DD32913DD24812A4C2032A001F24E1"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Release\\Apex.Silverlight.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Debug\\Apex.Silverlight.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2F1E2C8799AA466092990901D2121EEE"
@@ -1526,7 +1491,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6CC9A795B9CC44CC81A4409E2CB82AB4"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Release\\Apex.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Debug\\Apex.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
@@ -1554,7 +1519,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8507DE4B969E4FCABE2CA773D6B9B5A7"
             {
-            "SourcePath" = "8:..\\..\\Samples\\WPF\\MVVMSample\\obj\\x86\\Release\\MVVMSample.exe"
+            "SourcePath" = "8:..\\..\\Samples\\WPF\\MVVMSample\\obj\\x86\\Debug\\MVVMSample.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BC8FDD1856564D499EE1DDADD7789D43"
@@ -1582,7 +1547,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_943D59412801456AB4FA914B0850A829"
             {
-            "SourcePath" = "8:..\\..\\Extensions\\ApexWizards\\obj\\x86\\Release\\ApexWizards.dll"
+            "SourcePath" = "8:..\\..\\Extensions\\ApexWizards\\obj\\x86\\Debug\\ApexWizards.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
@@ -1610,7 +1575,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BF8965F6C7F0480EB59B01FB4FAC4065"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Release\\Apex.WinForms.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.WinForms\\obj\\Debug\\Apex.WinForms.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2F1E2C8799AA466092990901D2121EEE"
@@ -1638,7 +1603,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DDE00AC6B0BB4567B4429CC5A2C5E705"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Release\\Apex.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex\\obj\\Debug\\Apex.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2F1E2C8799AA466092990901D2121EEE"
@@ -1666,7 +1631,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EB4D5163652244DEBA7BFDC215483E01"
             {
-            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Release\\Apex.Silverlight.dll"
+            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Debug\\Apex.Silverlight.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"

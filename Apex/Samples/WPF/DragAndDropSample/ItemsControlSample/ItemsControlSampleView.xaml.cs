@@ -12,7 +12,7 @@ namespace DragAndDropSample.ItemsControlSample
     /// <summary>
     /// Interaction logic for ItemsControlSampleView.xaml
     /// </summary>
-    public partial class ItemsControlSampleView : ItemsControlSampleViewBase
+    public partial class ItemsControlSampleView : UserControl
     {
         public ItemsControlSampleView()
         {
@@ -41,15 +41,5 @@ namespace DragAndDropSample.ItemsControlSample
             args.Allow = true;
             args.DragAdorner = new VisualAdorner(args.DragElement);
         }
-    }
-
-    /// <summary>
-    /// Base class for the ItemsControlSampleView View.
-    /// Until such time as XAML supports generics, we must define a base
-    /// class explicitly for the view so that we can provide it in the XAML
-    /// markup.
-    /// </summary>
-    public partial class ItemsControlSampleViewBase : View<ItemsControlSampleViewModel>
-    {
     }
 }

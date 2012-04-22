@@ -94,13 +94,12 @@ namespace Apex.Controls
                 //  We have the view type, now we must create an instance of it.
                 object viewInstance = Activator.CreateInstance(viewType);
 
-                //  In general, this type will be a View. If it is, it will have a viewmodel property.
-                PropertyInfo viewModelProperty = viewType.GetProperty("ViewModel");
-                if (viewModelProperty != null)
-                {
-                    //  Set the view model of the view to the provided view model.
-                    viewModelProperty.SetValue(viewInstance, me.ViewModel, null);
-                }
+                //  It must be a dependency object and framework element.
+                if (viewInstance is FrameworkElement == false)
+                    throw new InvalidOperationException("A View must be a FrameworkElement");
+                
+                //  Set the view model.
+                View.SetViewModel((FrameworkElement)viewInstance, me.ViewModel);
 
                 //  Finally, set the view as the content.
                 me.Content = viewInstance;
