@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Singleton ViewModel</Name>
+    <Description>A Singleton is class that is designed to have only one instance.</Description>
+    <Icon>SingletonItemTemplate.ico</Icon>
+    <TemplateID>DB8B078E-28D9-49B8-B0FC-A58849D88FD0</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Singleton.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+        <!-- Reference all assemblies required for WPF and Apex itself.-->
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+
+    <ProjectItem ReplaceParameters="true">Singleton.cs</ProjectItem>
+  </TemplateContent>
+  
+</VSTemplate>
