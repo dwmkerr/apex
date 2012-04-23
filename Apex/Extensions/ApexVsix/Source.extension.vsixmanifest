@@ -7,6 +7,7 @@
     <Description xml:space="preserve">Apex is a powerful MVVM Framework for WPF, Silverlight and Windows Phone 7.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://apex.codeplex.com</MoreInfoUrl>
+    <InstalledByMsi>true</InstalledByMsi>
     <SupportedProducts>
       <VisualStudio Version="10.0">
         <Edition>Ultimate</Edition>
@@ -15,7 +16,6 @@
       </VisualStudio>
     </SupportedProducts>
     <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
-    <InstalledByMsi>true</InstalledByMsi>
   </Identifier>
   <References />
   <Content>

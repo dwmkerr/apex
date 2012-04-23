@@ -3,7 +3,7 @@
 namespace $rootnamespace$
 {
     /// <summary>
-    /// The  <see cref="$safeitemrootname$"/> Singleton class.
+    /// The <see cref="$safeitemrootname$"/> Singleton class.
     /// </summary>
     public sealed class $safeitemrootname$
     {
