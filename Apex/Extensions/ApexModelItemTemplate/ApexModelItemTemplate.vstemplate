@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Apex Model</Name>
+    <Description>An Apex Model provides a Model for an MVVM Application. The Model is implemented as a 
+    singleton and exposed to components via an interface accessed via the ApexBroker.</Description>
+    <Icon>ApexModelItemTemplate.ico</Icon>
+    <TemplateID>3A0FA631-400B-4F7A-8C9A-4564263FA66D</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Model.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    
+    <!-- Reference all assemblies required for WPF and Apex itself.-->
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Apex, Version=1.3.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
+      </Reference>
+    </References>
+
+    <ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">Model.cs</ProjectItem>
+    <ProjectItem TargetFileName="I$fileinputname$.cs" ReplaceParameters="true">IModel.cs</ProjectItem>
+    
+  </TemplateContent>
+  
+</VSTemplate>

@@ -54,6 +54,33 @@ namespace Apex.MVVM
     public class ApexBroker
     {
         /// <summary>
+        /// Registers the model.
+        /// </summary>
+        /// <typeparam name="TModelInterface">The model interface type.</typeparam>
+        /// <param name="model">The model.</param>
+        public void RegisterModel<TModelInterface>(object model)
+        {
+            modelInterfaceToModelDictionary[typeof(TModelInterface)] = model;
+        }
+
+        /// <summary>
+        /// Gets the model.
+        /// </summary>
+        /// <typeparam name="TModelInterface">The type of the model interface.</typeparam>
+        /// <returns>The model.</returns>
+        public TModelInterface GetModel<TModelInterface>()
+        {
+            try
+            {
+                return (TModelInterface)modelInterfaceToModelDictionary[typeof(TModelInterface)];
+            }
+            catch
+            {
+                throw new InvalidOperationException("The Model Type " + typeof(TModelInterface).Name + " has not been registered.");
+            }
+        }
+
+        /// <summary>
         /// Registers the view for view model.
         /// </summary>
         /// <param name="viewModelType">Type of the view model.</param>
@@ -87,6 +114,12 @@ namespace Apex.MVVM
         /// </summary>
         private List<ViewModelViewMapping> viewModelViewMappings =
             new List<ViewModelViewMapping>();
+
+        /// <summary>
+        /// The map of model interfaces to model instances.
+        /// </summary>
+        private Dictionary<Type, object> modelInterfaceToModelDictionary = 
+            new Dictionary<Type, object>();
 
         /// <summary>
         /// The global broker, generally used for all broker operations.
