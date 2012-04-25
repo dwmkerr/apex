@@ -71,9 +71,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsSample", "Samples\W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMSample", "Samples\WP7\MVVMSample\MVVMSample.csproj", "{E94096B6-36C3-49EA-B580-06DB182C9F7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonItemTemplate", "Extensions\SingletonItemTemplate\SingletonItemTemplate.csproj", "{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexModelItemTemplate", "Extensions\ApexModelItemTemplate\ApexModelItemTemplate.csproj", "{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 27
+		SccNumberOfProjects = 29
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -181,6 +185,14 @@ Global
 		SccProjectTopLevelParentUniqueName26 = Apex.sln
 		SccProjectName26 = Legacy/Apex.WP7
 		SccLocalPath26 = Legacy\\Apex.WP7
+		SccProjectUniqueName27 = Extensions\\SingletonItemTemplate\\SingletonItemTemplate.csproj
+		SccProjectTopLevelParentUniqueName27 = Apex.sln
+		SccProjectName27 = Extensions/SingletonItemTemplate
+		SccLocalPath27 = Extensions\\SingletonItemTemplate
+		SccProjectUniqueName28 = Extensions\\ApexModelItemTemplate\\ApexModelItemTemplate.csproj
+		SccProjectTopLevelParentUniqueName28 = Apex.sln
+		SccProjectName28 = Extensions/ApexModelItemTemplate
+		SccLocalPath28 = Extensions\\ApexModelItemTemplate
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -457,6 +469,26 @@ Global
 		{E94096B6-36C3-49EA-B580-06DB182C9F7D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E94096B6-36C3-49EA-B580-06DB182C9F7D}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 		{E94096B6-36C3-49EA-B580-06DB182C9F7D}.Release|x86.ActiveCfg = Release|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}.Release|x86.ActiveCfg = Release|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -467,6 +499,8 @@ Global
 		{07F81CED-6B5E-48B2-A935-81C289E995C8} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{33CCC542-0C41-4230-BEEC-9A09B4B2267A} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{67D54A68-A287-4797-9667-ACCBF9683119} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{A479105C-717B-4500-8FFC-B3D12BEEF13E} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
