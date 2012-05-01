@@ -73,6 +73,11 @@
     </Compile>
     <Compile Include="Adorners\UIElementAdorner.cs" />
     <Compile Include="Adorners\VisualAdorner.cs" />
+    <Compile Include="Behaviours\Behaviour.cs" />
+    <Compile Include="Behaviours\BehaviourCollection.cs" />
+    <Compile Include="Behaviours\Behaviours.cs" />
+    <Compile Include="Behaviours\GridViewContextMenuBehaviour.cs" />
+    <Compile Include="Behaviours\IBehaviour.cs" />
     <Compile Include="Commands\CommandReference.cs" />
     <Compile Include="Commands\Commands.cs" />
     <Compile Include="Consistency\DispatcherHelper.cs" />
