@@ -1,0 +1,15 @@
+﻿<Window x:Class="PopupSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PopupSample"
+        xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:MainViewModel x:Name="viewModel" />
+    </Window.DataContext>
+    <apexControls:ApplicationHost>
+    <Grid>
+            <Button Width="120" Height="30" Content="Show Popup" Command="{Binding ShowPopupCommand}" />
+        </Grid>
+    </apexControls:ApplicationHost>
+</Window>

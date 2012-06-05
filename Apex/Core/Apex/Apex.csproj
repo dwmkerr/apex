@@ -88,6 +88,7 @@
     <Compile Include="Consistency\SystemParameters.cs" />
     <Compile Include="Controls\AnimatedScrollViewer.cs" />
     <Compile Include="Controls\ApexGrid.cs" />
+    <Compile Include="Controls\ApplicationHost.cs" />
     <Compile Include="Controls\CartesianCanvas.cs" />
     <Compile Include="Controls\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
@@ -127,6 +128,8 @@
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="MVVM\ApexBroker.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
+    <Compile Include="MVVM\IApplicationHost.cs" />
+    <Compile Include="MVVM\IPopup.cs" />
     <Compile Include="MVVM\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\SafeObservableCollection.cs" />
@@ -168,6 +171,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionaries\ApplicationHost.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
