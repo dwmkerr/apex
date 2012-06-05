@@ -4,6 +4,7 @@
     xmlns:local="clr-namespace:Apex.Silverlight">
     
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/CrossButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

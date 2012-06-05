@@ -97,6 +97,30 @@ namespace Apex.MVVM
         }
 
         /// <summary>
+        /// Registers the application host.
+        /// </summary>
+        /// <param name="applicationHost">The application host.</param>
+        public void RegisterApplicationHost(IApplicationHost applicationHost)
+        {
+            //  Store the application host.
+            this.applicationHost = applicationHost;
+        }
+
+        /// <summary>
+        /// Gets the application host.
+        /// </summary>
+        /// <returns></returns>
+        public IApplicationHost GetApplicationHost()
+        {
+            //  Error check.
+            if(applicationHost == null)
+                throw new InvalidOperationException("No application host has been registered.");
+
+            //  Return the application host.
+            return applicationHost;
+        }
+
+        /// <summary>
         /// Gets the view for view model.
         /// </summary>
         /// <param name="hint">The hint.</param>
@@ -125,6 +149,11 @@ namespace Apex.MVVM
         /// The global broker, generally used for all broker operations.
         /// </summary>
         private static ApexBroker globalBroker;
+
+        /// <summary>
+        /// Gets the application host.
+        /// </summary>
+        private IApplicationHost applicationHost;
 
         /// <summary>
         /// The sync object.
