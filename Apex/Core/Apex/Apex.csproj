@@ -126,14 +126,13 @@
     <Compile Include="Commands\EventBindings.cs" />
     <Compile Include="Helpers\DispatcherHelper.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
-    <Compile Include="Helpers\Popups\BounceUpDownPopupAnimationHelper.cs" />
-    <Compile Include="Helpers\Popups\DiagnonalSlideInOutPopupAnimationHelper.cs" />
+    <Compile Include="Helpers\Popups\BounceInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\FadeInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\PopupAnimationHelper.cs" />
-    <Compile Include="MVVM\ApexBroker.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="MVVM\IApplicationHost.cs" />
     <Compile Include="MVVM\IPopup.cs" />
+    <Compile Include="MVVM\ApexBroer.cs" />
     <Compile Include="MVVM\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\SafeObservableCollection.cs" />

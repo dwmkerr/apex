@@ -14,12 +14,12 @@ namespace Apex.Helpers.Popups
     /// The popup animation helper provides the functionality to animate a popup
     /// being shown in a popup host.
     /// </summary>
-    public class BounceUpDownPopupAnimationHelper : PopupAnimationHelper
+    public class BounceInOutPopupAnimationHelper : PopupAnimationHelper
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FadeInOutPopupAnimationHelper"/> class.
         /// </summary>
-        public BounceUpDownPopupAnimationHelper()
+        public BounceInOutPopupAnimationHelper()
         {
             //  Set default properties.
             BounceInDuration = new Duration(TimeSpan.FromMilliseconds(400));

@@ -157,7 +157,7 @@ namespace Apex.Controls
         /// <summary>
         /// The popup animation helper, fade in by default.
         /// </summary>
-        private PopupAnimationHelper popupAnimationHelper = new BounceUpDownPopupAnimationHelper();// FadeInOutPopupAnimationHelper();
+        private PopupAnimationHelper popupAnimationHelper = new BounceInOutPopupAnimationHelper();// FadeInOutPopupAnimationHelper();
 
         /// <summary>
         /// Occurs when a popup is opened.
