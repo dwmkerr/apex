@@ -1,58 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Reflection;
+using System.Collections.Generic;
 
 namespace Apex.MVVM
 {
     /// <summary>
-    /// The view-viewmodel mapping.
+    /// The <see cref="ApexBroker"/> ApexBroker Singleton class.
     /// </summary>
-    internal class ViewModelViewMapping
+    public sealed class ApexBroker
     {
         /// <summary>
-        /// Gets or sets the type of the view model.
+        /// Initializes a new instance of the <see cref="ApexBroker"/> class.
+        /// Declared private to enforce a single instance only.
         /// </summary>
-        /// <value>
-        /// The type of the view model.
-        /// </value>
-        public Type ViewModelType
+        private ApexBroker()
         {
-            get;
-            set;
         }
 
-        /// <summary>
-        /// Gets or sets the type of the view.
-        /// </summary>
-        /// <value>
-        /// The type of the view.
-        /// </value>
-        public Type ViewType
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Gets or sets the hint.
-        /// </summary>
-        /// <value>
-        /// The hint.
-        /// </value>
-        public string Hint
-        {
-            get;
-            set;
-        }
-    }
-
-    /// <summary>
-    /// The Apex Broker can be used to get views for viewmodels.
-    /// </summary>
-    public class ApexBroker
-    {
         /// <summary>
         /// Registers the model.
         /// </summary>
@@ -113,7 +77,7 @@ namespace Apex.MVVM
         public IApplicationHost GetApplicationHost()
         {
             //  Error check.
-            if(applicationHost == null)
+            if (applicationHost == null)
                 throw new InvalidOperationException("No application host has been registered.");
 
             //  Return the application host.
@@ -142,43 +106,70 @@ namespace Apex.MVVM
         /// <summary>
         /// The map of model interfaces to model instances.
         /// </summary>
-        private Dictionary<Type, object> modelInterfaceToModelDictionary = 
+        private Dictionary<Type, object> modelInterfaceToModelDictionary =
             new Dictionary<Type, object>();
-
-        /// <summary>
-        /// The global broker, generally used for all broker operations.
-        /// </summary>
-        private static ApexBroker globalBroker;
-
+        
         /// <summary>
         /// Gets the application host.
         /// </summary>
         private IApplicationHost applicationHost;
 
         /// <summary>
-        /// The sync object.
+        /// The Singleton instace. Declared 'static readonly' to enforce
+        /// a single instance only and lazy initialisation.
         /// </summary>
-        private static object syncObject = new object();
+        private static readonly ApexBroker instance = new ApexBroker();
 
         /// <summary>
-        /// Gets the global broker.
+        /// Gets the ApexBroker Singleton Instance.
         /// </summary>
-        public static ApexBroker GlobalBroker
+        public static ApexBroker Instance
         {
-            get 
-            { 
-                //  Lock on the sync object.
-                lock (syncObject)
-                {
-                    if (globalBroker == null)
-                    {
-                        //  Create the global broker.
-                        globalBroker = new ApexBroker();
-                    }
-                }
+            get
+            {
+                return instance;
+            }
+        }
 
-                //  Return the global broker.
-                return globalBroker; 
+        /// <summary>
+        /// The view-viewmodel mapping.
+        /// </summary>
+        internal class ViewModelViewMapping
+        {
+            /// <summary>
+            /// Gets or sets the type of the view model.
+            /// </summary>
+            /// <value>
+            /// The type of the view model.
+            /// </value>
+            public Type ViewModelType
+            {
+                get;
+                set;
+            }
+
+            /// <summary>
+            /// Gets or sets the type of the view.
+            /// </summary>
+            /// <value>
+            /// The type of the view.
+            /// </value>
+            public Type ViewType
+            {
+                get;
+                set;
+            }
+
+            /// <summary>
+            /// Gets or sets the hint.
+            /// </summary>
+            /// <value>
+            /// The hint.
+            /// </value>
+            public string Hint
+            {
+                get;
+                set;
             }
         }
     }

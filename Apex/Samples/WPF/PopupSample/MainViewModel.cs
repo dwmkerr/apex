@@ -14,7 +14,6 @@ namespace PopupSample
             ShowPopupCommand = new Command(DoShowPopupCommand);
             UseFadeInOutAnimationHelperCommand = new Command(DoUseFadeInOutAnimationHelperCommand);
             UseBounceUpDownAnimationHelperCommand = new Command(DoUseBounceUpDownOutAnimationHelperCommand);
-            UseDiagonalSlideInOuAnimationHelperCommand = new Command(DoUseDiagonalSlideInOutAnimationHelperCommand);
         }
 
         private void DoShowPopupCommand()
@@ -29,12 +28,7 @@ namespace PopupSample
 
         private void DoUseBounceUpDownOutAnimationHelperCommand()
         {
-            ApexBroker.GlobalBroker.GetApplicationHost().PopupAnimationHelper = new BounceUpDownPopupAnimationHelper();
-        }
-
-        private void DoUseDiagonalSlideInOutAnimationHelperCommand()
-        {
-            ApexBroker.GlobalBroker.GetApplicationHost().PopupAnimationHelper = new DiagnonalSlideInOutPopupAnimationHelper();
+            ApexBroker.GlobalBroker.GetApplicationHost().PopupAnimationHelper = new BounceInOutPopupAnimationHelper();
         }
 
         public Command ShowPopupCommand { get; private set; }
@@ -42,7 +36,5 @@ namespace PopupSample
         public Command UseFadeInOutAnimationHelperCommand { get; private set; }
 
         public Command UseBounceUpDownAnimationHelperCommand { get; private set; }
-
-        public Command UseDiagonalSlideInOuAnimationHelperCommand { get; private set; }
     }
 }
