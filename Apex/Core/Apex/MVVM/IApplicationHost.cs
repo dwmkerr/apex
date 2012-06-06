@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Apex.Helpers.Popups;
 
 namespace Apex.MVVM
 {
@@ -23,5 +24,13 @@ namespace Apex.MVVM
         /// </summary>
         /// <param name="popup">The popup.</param>
         void ClosePopup(IPopup popup);
+
+        /// <summary>
+        /// Gets or sets the popup animation helper.
+        /// </summary>
+        /// <value>
+        /// The popup animation helper.
+        /// </value>
+        PopupAnimationHelper PopupAnimationHelper { get; set; }
     }
 }

@@ -8,8 +8,13 @@
         <local:MainViewModel x:Name="viewModel" />
     </Window.DataContext>
     <apexControls:ApplicationHost>
-    <Grid>
-            <Button Width="120" Height="30" Content="Show Popup" Command="{Binding ShowPopupCommand}" />
-        </Grid>
+        <apexControls:ApexGrid Rows="Auto,Auto,*,Auto">
+           
+            <TextBlock Grid.Row="0">TODO: Description</TextBlock>
+            <TextBlock Grid.Row="1">Popup Animation Helper: <Hyperlink Command="{Binding UseFadeInOutAnimationHelperCommand}">Fade In Out</Hyperlink>,
+            <Hyperlink Command="{Binding UseBounceUpDownAnimationHelperCommand}">Bounce Up Down</Hyperlink>, 
+            <Hyperlink Command="{Binding UseDiagonalSlideInOuAnimationHelperCommand}">Diagonal Slide In/Out</Hyperlink></TextBlock>
+            <Button Grid.Row="2" Width="120" Height="30" Content="Show Popup" Command="{Binding ShowPopupCommand}" />
+        </apexControls:ApexGrid>
     </apexControls:ApplicationHost>
 </Window>
