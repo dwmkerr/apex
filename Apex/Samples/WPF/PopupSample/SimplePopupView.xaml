@@ -5,17 +5,39 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
-             Width="200"
-             Height="300"
-             Background="White"
+             Width="300"
+             Height="400"
              d:DesignHeight="400" d:DesignWidth="300">
-    <Border Background="#F3F5F7" BorderBrush="#3A30FF">
+    <Grid>
+        <Grid Margin="20">
+            <Grid.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" ShadowDepth="25" Direction="325"
+                                            Softness="1" Opacity="0.5" />
+            </Grid.BitmapEffect>
+        </Grid>
 
-        <apexControls:ApexGrid Rows="Auto,*,Auto">
-            <Border Grid.Row="0" Background="#3A30FF">
-                <TextBlock Text="Popup" Foreground="White" FontFamily="Segoe UI" FontWeight="Light" FontSize="24" Margin="8" HorizontalAlignment="Center" />
-            </Border>
-        <Button Grid.Row="1" x:Name="Close" Width="60" Height="20" Content="Close" Click="Close_Click" />
-        </apexControls:ApexGrid>
-    </Border>
+
+        <Border Margin="20" Background="#F3F5F7" BorderBrush="#3A30FF" BorderThickness="1">
+
+            <apexControls:ApexGrid Rows="Auto,*,Auto">
+                <Border Grid.Row="0" Background="#3A30FF">
+                    <TextBlock Text="Popup" Foreground="White" FontFamily="Segoe UI" FontWeight="Light" FontSize="24" Margin="8" HorizontalAlignment="Center" />
+                </Border>
+
+                <TextBlock Grid.Row="1" Margin="5" FontFamily="Segoe UI" FontSize="16"
+                           TextWrapping="Wrap" VerticalAlignment="Center">
+                    As you as you have an ApplicationHost as a top-level item in your 
+                    application, you can use popups with ease!
+                </TextBlock>
+                
+                <!-- Stack panel for commands. -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="Close" Margin="8" Width="100" Height="24" Content="Close" Click="Close_Click" />
+                    <Button x:Name="OpenAnother" Margin="8" Width="100" Height="24" Content="Open Another" Click="Close_Click" />
+                </StackPanel>
+
+            </apexControls:ApexGrid>
+        </Border>
+    </Grid>
+    
 </UserControl>
