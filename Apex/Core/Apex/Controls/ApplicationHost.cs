@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 using Apex.Adorners;
 using Apex.DragAndDrop;
+using Apex.Helpers.Popups;
 using Apex.MVVM;
 
 namespace Apex.Controls
@@ -18,7 +19,6 @@ namespace Apex.Controls
     /// </summary>
     [TemplatePart(Name = "PART_ApplicationHost", Type = typeof(Grid))]
     [TemplatePart(Name = "PART_DragAndDropHost", Type = typeof(DragAndDropHost))]
-    [TemplatePart(Name = "PART_PopupBackground", Type = typeof(Grid))]
     [TemplatePart(Name = "PART_PopupHost", Type = typeof(Grid))]
     public class ApplicationHost : ContentControl, IApplicationHost
     {
@@ -58,7 +58,6 @@ namespace Apex.Controls
             {
                 applicationHost = (Grid)GetTemplateChild("PART_ApplicationHost");
                 dragAndDropHost = (DragAndDropHost)GetTemplateChild("PART_DragAndDropHost");
-                popupBackground = (Grid)GetTemplateChild("PART_PopupBackground");
                 popupHost = (Grid)GetTemplateChild("PART_PopupHost");
             }
             catch
@@ -101,8 +100,8 @@ namespace Apex.Controls
             //  Push our popup onto the popup stack.
             popupStack.Push(Tuple.Create(popup, dispatcherFrame));
 
-            //  Add the popup to the visual tree, i.e. displaying it.
-            AddPopupToVisualTree(popup);
+            //  Transition the popup.
+            popupAnimationHelper.ShowPopup(popupHost, popup);
             
             //  Push the dispatcher frame - this will now block until we close the popup.
             System.Windows.Threading.Dispatcher.PushFrame(dispatcherFrame); 
@@ -121,59 +120,15 @@ namespace Apex.Controls
             if(popupStack.Peek().Item1 != popup)
                 throw new InvalidOperationException("Cannot close the specified popup - it is not the top of the popup stack.");
 
-            //  Remove the popup from the visual tree.
-            RemovePopupFromVisualTree(popup);
+            //  Transition the popup.
+            popupAnimationHelper.ClosePopup(popupHost, popup);
 
             //  Raise the close event.
             var eventArgs = new RoutedEventArgs(PopupClosedEvent);
             RaiseEvent(eventArgs);
         }
 
-        /// <summary>
-        /// Adds the popup to visual tree.
-        /// </summary>
-        /// <param name="popup">The popup.</param>
-        private void AddPopupToVisualTree(IPopup popup)
-        {
-            //  Cast to a UI element.
-            var popupAsUiElement = popup as UIElement;
-
-            //  If we don't have a valid popup, fail.
-            if(popupAsUiElement == null)
-                throw new InvalidOperationException("The specified popup is not a UI element.");
-
-            //  Make the popup host visible.
-            popupBackground.Visibility = Visibility.Visible;
-            popupHost.Visibility = Visibility.Visible;
-
-            //  Add the popup to the popup host.
-            popupHost.Children.Add(popupAsUiElement);
-        }
-
-        /// <summary>
-        /// Removes the popup from visual tree.
-        /// </summary>
-        /// <param name="popup">The popup.</param>
-        private void RemovePopupFromVisualTree(IPopup popup)
-        {
-            //  Cast to a UI element.
-            var popupAsUiElement = popup as UIElement;
-
-            //  If we don't have a valid popup, fail.
-            if (popupAsUiElement == null)
-                throw new InvalidOperationException("The specified popup is not a UI element.");
-
-            //  Remove the popup from the popup host.
-            popupHost.Children.Remove(popupAsUiElement);
-            
-            //  If the host is empty, hide it.
-            if(popupHost.Children.Count == 0)
-            {
-                popupHost.Visibility = Visibility.Hidden;
-                popupBackground.Visibility = Visibility.Hidden;
-            }
-        }
-
+       
         /// <summary>
         /// The top level application host.
         /// </summary>
@@ -183,12 +138,7 @@ namespace Apex.Controls
         /// The drag and drop host.
         /// </summary>
         private DragAndDropHost dragAndDropHost;
-
-        /// <summary>
-        /// The popup background.
-        /// </summary>
-        private Grid popupBackground;
-
+        
         /// <summary>
         /// The popup host.
         /// </summary>
@@ -203,6 +153,11 @@ namespace Apex.Controls
         /// The last popup result.
         /// </summary>
         private object lastPopupResult;
+
+        /// <summary>
+        /// The popup animation helper, fade in by default.
+        /// </summary>
+        private PopupAnimationHelper popupAnimationHelper = new BounceUpDownPopupAnimationHelper();// FadeInOutPopupAnimationHelper();
 
         /// <summary>
         /// Occurs when a popup is opened.
@@ -234,5 +189,23 @@ namespace Apex.Controls
             remove { RemoveHandler(PopupClosedEvent, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the popup animation helper.
+        /// </summary>
+        /// <value>
+        /// The popup animation helper.
+        /// </value>
+        public PopupAnimationHelper PopupAnimationHelper
+        {
+            get { return popupAnimationHelper; }
+            set 
+            {
+                if(value == null) 
+                    throw new ArgumentException("Popup animation helper cannot be null.");
+                if(popupAnimationHelper.OpenPopupsCount > 0)
+                    throw new InvalidOperationException("Cannot change the popup animation helper - there are popups open.");
+                popupAnimationHelper = value;
+            }
+        }
     }
 }

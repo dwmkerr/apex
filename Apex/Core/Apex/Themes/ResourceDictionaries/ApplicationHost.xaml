@@ -14,8 +14,7 @@
                         <dragAndDrop:DragAndDropHost x:Name="PART_DragAndDropHost">
                             <Grid x:Name="PART_ApplicationHost">
                                 <ContentPresenter />
-                                <Grid x:Name="PART_PopupBackground" Visibility="Hidden" Background="White" Opacity="0.5" />
-                                <Grid x:Name="PART_PopupHost" Visibility="Hidden" />
+                                <Grid x:Name="PART_PopupHost" Visibility="Visible" />
                             </Grid>
                         </dragAndDrop:DragAndDropHost>
                     </Border>
