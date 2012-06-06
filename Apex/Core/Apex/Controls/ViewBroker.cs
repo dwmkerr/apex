@@ -29,23 +29,6 @@ namespace Apex.Controls
             set { SetValue(BrokerHintProperty, value); }
         }
 
-        /// <summary>
-        /// The DependencyProperty for the Broker property.
-        /// </summary>
-        private static readonly DependencyProperty BrokerProperty =
-          DependencyProperty.Register("Broker", typeof(ApexBroker), typeof(ViewBroker),
-          new PropertyMetadata(null));
-
-        /// <summary>
-        /// Gets or sets Broker.
-        /// </summary>
-        /// <value>The value of Broker.</value>
-        public ApexBroker Broker
-        {
-            get { return (ApexBroker)GetValue(BrokerProperty); }
-            set { SetValue(BrokerProperty, value); }
-        }
-
         /// <summary>   
         /// The DependencyProperty for the ViewModel property.
         /// </summary>
@@ -81,11 +64,8 @@ namespace Apex.Controls
             //  to get a view for it.
             if (me.ViewModel != null)
             {
-                //  If we have a broker, we'll use that. Otherwise we'll use the global broker.
-                ApexBroker broker = me.Broker ?? ApexBroker.GlobalBroker;
-
                 //  Get the type of the view.
-                Type viewType = broker.GetViewForViewModel(me.ViewModel.GetType(), me.BrokerHint);
+                Type viewType = ApexBroker.GetViewForViewModel(me.ViewModel.GetType(), me.BrokerHint);
 
                 //  If we don't have a type, we must throw an exception.
                 if (viewType == null)

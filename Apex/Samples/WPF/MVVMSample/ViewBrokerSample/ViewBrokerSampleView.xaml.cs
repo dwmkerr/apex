@@ -14,9 +14,8 @@ namespace MVVMSample.ViewBrokerSample
         public ViewBrokerSampleView()
         {
             //  Register mappings with the broker.
-            var globalBroker = Apex.MVVM.ApexBroker.GlobalBroker;
-            globalBroker.RegisterViewForViewModel(typeof(FolderViewModel), typeof(FolderView));
-            globalBroker.RegisterViewForViewModel(typeof(FileViewModel), typeof(FileView));
+            ApexBroker.RegisterViewForViewModel(typeof(FolderViewModel), typeof(FolderView));
+            ApexBroker.RegisterViewForViewModel(typeof(FileViewModel), typeof(FileView));
 
             InitializeComponent();
         }

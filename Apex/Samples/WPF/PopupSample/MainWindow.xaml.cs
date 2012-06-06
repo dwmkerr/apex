@@ -28,7 +28,7 @@ namespace PopupSample
 
         void ShowPopupCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)
         {
-            var appHost = ApexBroker.GlobalBroker.GetApplicationHost();
+            var appHost = ApexBroker.GetApplicationHost();
             appHost.ShowPopup(new SimplePopupView());
         }
     }

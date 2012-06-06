@@ -51,7 +51,7 @@ namespace Apex.Controls
             PopupClosed += OnPopupClosed;
 
             //  Register with the broker.
-            ApexBroker.GlobalBroker.RegisterApplicationHost(this);
+            ApexBroker.RegisterApplicationHost(this);
 
             //  Get the template parts.
             try
@@ -157,7 +157,7 @@ namespace Apex.Controls
         /// <summary>
         /// The popup animation helper, fade in by default.
         /// </summary>
-        private PopupAnimationHelper popupAnimationHelper = new BounceInOutPopupAnimationHelper();// FadeInOutPopupAnimationHelper();
+        private PopupAnimationHelper popupAnimationHelper = new BounceInOutPopupAnimationHelper() { BounceInDirection = 180, BounceOutDirection = 180 };
 
         /// <summary>
         /// Occurs when a popup is opened.

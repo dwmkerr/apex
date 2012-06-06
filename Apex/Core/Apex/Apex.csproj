@@ -132,7 +132,7 @@
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="MVVM\IApplicationHost.cs" />
     <Compile Include="MVVM\IPopup.cs" />
-    <Compile Include="MVVM\ApexBroer.cs" />
+    <Compile Include="MVVM\ApexBroker.cs" />
     <Compile Include="MVVM\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\SafeObservableCollection.cs" />
