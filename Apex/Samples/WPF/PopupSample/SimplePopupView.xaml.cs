@@ -27,7 +27,7 @@ namespace PopupSample
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            ApexBroker.GlobalBroker.GetApplicationHost().ClosePopup(this);
+            ApexBroker.GetApplicationHost().ClosePopup(this);
         }
 
         public object GetPopupResult()
