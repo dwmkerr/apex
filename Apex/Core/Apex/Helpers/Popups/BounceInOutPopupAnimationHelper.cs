@@ -49,7 +49,7 @@ namespace Apex.Helpers.Popups
             var y = bounceInDistance * Math.Cos(BounceInDirection * Math.PI / 180);
 
             //  Create and set the translation.
-            var translation = new TranslateTransform(x, y);
+            var translation = new TranslateTransform() { X = x, Y = y };
             popupFrameworkElement.RenderTransform = translation;
 
             //  Initially, the popup background is invisible and the popup top margin is very high.
@@ -67,12 +67,12 @@ namespace Apex.Helpers.Popups
             var storyboard = new Storyboard();
             
             //  Create an animation for the opacity.
-            var popupBackgroundOpacityAnimation = new DoubleAnimation(0, 0.5, BounceInDuration);
-            var popupTranslateXAnimation = new DoubleAnimation(0, BounceInDuration);
-            var popupTranslateYAnimation = new DoubleAnimation(0, BounceInDuration);
+            var popupBackgroundOpacityAnimation = new DoubleAnimation() { From = 0, To = 0.5, Duration = BounceInDuration };
+            var popupTranslateXAnimation = new DoubleAnimation() { To = 0, Duration = BounceInDuration };
+            var popupTranslateYAnimation = new DoubleAnimation() { To = 0, Duration = BounceInDuration };
             popupTranslateXAnimation.EasingFunction = new ElasticEase() { EasingMode = EasingMode.EaseOut, Oscillations = 2, Springiness = 8 };
             popupTranslateYAnimation.EasingFunction = new ElasticEase() { EasingMode = EasingMode.EaseOut, Oscillations = 2, Springiness = 8 };
-            var popupOpacityAnimation = new DoubleAnimation(0, 1, BounceInDuration);
+            var popupOpacityAnimation = new DoubleAnimation { From = 0, To = 1, Duration = BounceInDuration };
 
             //  Set the targets for the animations
             Storyboard.SetTarget(popupBackgroundOpacityAnimation, popupBackground);
@@ -91,7 +91,11 @@ namespace Apex.Helpers.Popups
             storyboard.Children.Add(popupOpacityAnimation);
 
             //  Start the storyboard.
+#if !SILVERLIGHT
             storyboard.Begin(popupHost);
+#else
+            storyboard.Begin();
+#endif
         }
 
         /// <summary>
@@ -118,10 +122,10 @@ namespace Apex.Helpers.Popups
             var storyboard = new Storyboard();
             
             //  Create an animation for the opacity.
-            var popupBackgroundOpacityAnimation = new DoubleAnimation(0, BounceOutDuration);
-            var popupOpacityAnimation = new DoubleAnimation(0, BounceOutDuration);
-            var popupTranslateXAnimation = new DoubleAnimation(x, BounceOutDuration);
-            var popupTranslateYAnimation = new DoubleAnimation(y, BounceOutDuration);
+            var popupBackgroundOpacityAnimation = new DoubleAnimation() { To = 0, Duration = BounceOutDuration };
+            var popupOpacityAnimation = new DoubleAnimation() { To = 0, Duration = BounceOutDuration };
+            var popupTranslateXAnimation = new DoubleAnimation() { To = x, Duration = BounceOutDuration };
+            var popupTranslateYAnimation = new DoubleAnimation() { To = y, Duration = BounceOutDuration };
             
             //  Set the targets for the animations
             Storyboard.SetTarget(popupBackgroundOpacityAnimation, popupBackground);
@@ -148,7 +152,11 @@ namespace Apex.Helpers.Popups
             };
 
             //  Start the storyboard.
+#if !SILVERLIGHT
             storyboard.Begin(popupHost);
+#else
+            storyboard.Begin();
+#endif
         }
 
         /// <summary>

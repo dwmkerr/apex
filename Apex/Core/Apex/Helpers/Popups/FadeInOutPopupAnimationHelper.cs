@@ -49,8 +49,8 @@ namespace Apex.Helpers.Popups
             var storyboard = new Storyboard();
             
             //  Create an animation for the opacity.
-            var popupBackgroundOpacityAnimation = new DoubleAnimation(0, 0.5, FadeInDuration);
-            var popupOpacityAnimation = new DoubleAnimation(0, 1, FadeInDuration);
+            var popupBackgroundOpacityAnimation = new DoubleAnimation() { From = 0, To = 0.5, Duration = FadeInDuration};
+            var popupOpacityAnimation = new DoubleAnimation() { From = 0, To = 1, Duration = FadeInDuration };
 
             //  Set the targets for the animations
             Storyboard.SetTarget(popupBackgroundOpacityAnimation, popupBackground);
@@ -63,7 +63,11 @@ namespace Apex.Helpers.Popups
             storyboard.Children.Add(popupOpacityAnimation);
 
             //  Start the storyboard.
+#if !SILVERLIGHT
             storyboard.Begin(popupHost);
+#else
+            storyboard.Begin();
+#endif
         }
 
         /// <summary>
@@ -78,8 +82,8 @@ namespace Apex.Helpers.Popups
             var storyboard = new Storyboard();
             
             //  Create an animation for the opacity.
-            var popupBackgroundOpacityAnimation = new DoubleAnimation(0, FadeOutDuration);
-            var popupOpacityAnimation = new DoubleAnimation(0, FadeOutDuration);
+            var popupBackgroundOpacityAnimation = new DoubleAnimation() { To = 0, Duration = FadeOutDuration };
+            var popupOpacityAnimation = new DoubleAnimation() { To = 0, Duration = FadeOutDuration };
 
             //  Set the targets for the animations
             Storyboard.SetTarget(popupBackgroundOpacityAnimation, popupBackground);
@@ -100,7 +104,11 @@ namespace Apex.Helpers.Popups
             };
 
             //  Start the storyboard.
+#if !SILVERLIGHT
             storyboard.Begin(popupHost);
+#else
+            storyboard.Begin();
+#endif
         }
 
         /// <summary>

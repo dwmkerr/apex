@@ -79,9 +79,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight3", "Legacy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight4", "Legacy\Apex.Silverlight4\Apex.Silverlight4.csproj", "{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopupSample", "Samples\Silverlight\PopupSample\PopupSample.csproj", "{285A1652-0307-49B6-8A22-64B1CBC01661}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A7AAB5CF-4785-4DAF-A77A-94162B40BDD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Tests", "Tests\Apex.Tests\Apex.Tests.csproj", "{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{145D0D4D-D218-432D-B7DB-9E6094117FF5}"
+	ProjectSection(SolutionItems) = preProject
+		Apex.vsmdi = Apex.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 31
+		SccNumberOfProjects = 33
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -205,6 +218,17 @@ Global
 		SccProjectTopLevelParentUniqueName30 = Apex.sln
 		SccProjectName30 = Legacy/Apex.Silverlight4
 		SccLocalPath30 = Legacy\\Apex.Silverlight4
+		SccProjectUniqueName31 = Samples\\Silverlight\\PopupSample\\PopupSample.csproj
+		SccProjectTopLevelParentUniqueName31 = Apex.sln
+		SccProjectName31 = Samples/Silverlight/PopupSample
+		SccLocalPath31 = Samples\\Silverlight\\PopupSample
+		SccProjectUniqueName32 = Tests\\Apex.Tests\\Apex.Tests.csproj
+		SccProjectTopLevelParentUniqueName32 = Apex.sln
+		SccProjectName32 = Tests/Apex.Tests
+		SccLocalPath32 = Tests\\Apex.Tests
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Apex.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -521,6 +545,26 @@ Global
 		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|x86.ActiveCfg = Release|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{285A1652-0307-49B6-8A22-64B1CBC01661}.Release|x86.ActiveCfg = Release|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -554,11 +598,14 @@ Global
 		{A2C1DAA3-81A0-4555-8F6E-495C25B754E5} = {353D4028-64A3-4D6D-A32B-89ECD5C85915}
 		{12704CED-DA46-418B-BF4C-81D6FC14BDCA} = {353D4028-64A3-4D6D-A32B-89ECD5C85915}
 		{F5A06B77-A59B-4449-862C-907A1085B59D} = {353D4028-64A3-4D6D-A32B-89ECD5C85915}
+		{285A1652-0307-49B6-8A22-64B1CBC01661} = {353D4028-64A3-4D6D-A32B-89ECD5C85915}
 		{072EFBD3-E6F1-4471-89E8-C0BA5F77C050} = {B71DA8DD-EC3F-4408-92F6-02BA6D96253E}
 		{8550269A-AC03-4D05-91F3-043973FA56DE} = {B71DA8DD-EC3F-4408-92F6-02BA6D96253E}
 		{E94096B6-36C3-49EA-B580-06DB182C9F7D} = {B71DA8DD-EC3F-4408-92F6-02BA6D96253E}
 		{3754DC54-5B50-4F1D-9F0F-5B9132287E52} = {C4342C25-B333-4AB8-B8CD-A9541DD83CF1}
 		{7F2B4D5B-884D-4B57-9D8D-AFB64B867869} = {F5DF7EFC-25E2-4E4A-B952-256FA4CD45D7}
 		{DE858B80-AD75-491D-9552-0B46E1F7C8EC} = {F5DF7EFC-25E2-4E4A-B952-256FA4CD45D7}
+		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2} = {A7AAB5CF-4785-4DAF-A77A-94162B40BDD0}
+		{145D0D4D-D218-432D-B7DB-9E6094117FF5} = {A7AAB5CF-4785-4DAF-A77A-94162B40BDD0}
 	EndGlobalSection
 EndGlobal

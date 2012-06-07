@@ -65,21 +65,8 @@ namespace Apex.Controls
                 throw new Exception("Unable to access the internal elements of the Application host.");
             }
         }
-        
-        void OnPopupClosed(object sender, RoutedEventArgs e)
-        {
-            //  Get the top popup.
-            var topPopup = popupStack.Peek();
 
-            //  Pop the top popup.
-            popupStack.Pop();
-
-            //  Cancel the dispatcher frame.
-            topPopup.Item2.Continue = false;
-
-            //  Store the popup result.
-            lastPopupResult = topPopup.Item1.GetPopupResult();
-        }
+#if !SILVERLIGHT
 
         /// <summary>
         /// Pushes a popup onto the popup stack.
@@ -104,11 +91,71 @@ namespace Apex.Controls
             popupAnimationHelper.ShowPopup(popupHost, popup);
             
             //  Push the dispatcher frame - this will now block until we close the popup.
-            System.Windows.Threading.Dispatcher.PushFrame(dispatcherFrame); 
+            Dispatcher.PushFrame(dispatcherFrame); 
 
             //  Return the last popup result.
             return lastPopupResult;
         }
+        
+        /// <summary>
+        /// Called when a popup is closed.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        void OnPopupClosed(object sender, RoutedEventArgs e)
+        {
+            //  Get the top popup.
+            var topPopup = popupStack.Peek();
+
+            //  Pop the top popup.
+            popupStack.Pop();
+
+            //  Cancel the dispatcher frame.
+            topPopup.Item2.Continue = false;
+
+            //  Store the popup result.
+            lastPopupResult = topPopup.Item1.GetPopupResult();
+        }
+#else
+        
+        /// <summary>
+        /// Pushes a popup onto the popup stack.
+        /// </summary>
+        /// <param name="popup">The popup.</param>
+        /// <param name="onPopopClosed">The action to invoke when the popop is closed.</param>
+        public void ShowPopup(IPopup popup, Action<object> onPopopClosed)
+        {
+            //  Fire the popup opened event.
+            FirePopupOpened();
+            
+            //  Push our popup onto the popup stack.
+            popupStack.Push(Tuple.Create(popup, onPopopClosed));
+
+            //  Transition the popup.
+            popupAnimationHelper.ShowPopup(popupHost, popup);
+        }
+        
+        /// <summary>
+        /// Called when a popup is closed.
+        /// </summary>
+        void OnPopupClosed()
+        {
+            //  Get the top popup.
+            var topPopup = popupStack.Peek();
+
+            //  Pop the top popup.
+            popupStack.Pop();
+        
+            //  Store the popup result.
+            lastPopupResult = topPopup.Item1.GetPopupResult();
+
+            //  Fire the action.
+            var theAction = topPopup.Item2;
+            if(theAction != null)
+                theAction(lastPopupResult);
+        }
+
+#endif
 
         /// <summary>
         /// Closes the popup.
@@ -124,8 +171,42 @@ namespace Apex.Controls
             popupAnimationHelper.ClosePopup(popupHost, popup);
 
             //  Raise the close event.
-            var eventArgs = new RoutedEventArgs(PopupClosedEvent);
-            RaiseEvent(eventArgs);
+            FirePopupClosed();
+        }
+
+        /// <summary>
+        /// Fires the popup opened event.
+        /// </summary>
+        protected virtual void FirePopupOpened()
+        {
+#if !SILVERLIGHT
+            //  Raise the popup opened event.
+            var args = new RoutedEventArgs(PopupOpenedEvent);
+            RaiseEvent(args);
+#else
+            //  Raise the popup opened event.
+            var theEvent = PopupOpened;
+            if(theEvent != null)
+                theEvent();
+#endif
+        }
+
+        /// <summary>
+        /// Fires the popup closed event.
+        /// </summary>
+        protected virtual void FirePopupClosed()
+        {
+            
+#if !SILVERLIGHT
+            //  Raise the popup closed event.
+            var args = new RoutedEventArgs(PopupClosedEvent);
+            RaiseEvent(args);
+#else
+            //  Raise the popup closed event.
+            var theEvent = PopupClosed;
+            if(theEvent != null)
+                theEvent();
+#endif
         }
 
        
@@ -144,10 +225,23 @@ namespace Apex.Controls
         /// </summary>
         private Grid popupHost;
 
+#if !SILVERLIGHT
+
         /// <summary>
         /// The current stack of popups.
         /// </summary>
-        private Stack<Tuple<IPopup, DispatcherFrame>> popupStack = new Stack<Tuple<IPopup, DispatcherFrame>>();
+        private readonly Stack<Tuple<IPopup, DispatcherFrame>> popupStack = 
+            new Stack<Tuple<IPopup, DispatcherFrame>>();
+
+#else
+        
+        /// <summary>
+        /// The current stack of popups.
+        /// </summary>
+        private readonly Stack<Tuple<IPopup, Action<object>>> popupStack = 
+            new Stack<Tuple<IPopup, Action<object>>>();
+
+#endif
 
         /// <summary>
         /// The last popup result.
@@ -158,6 +252,8 @@ namespace Apex.Controls
         /// The popup animation helper, fade in by default.
         /// </summary>
         private PopupAnimationHelper popupAnimationHelper = new BounceInOutPopupAnimationHelper() { BounceInDirection = 180, BounceOutDirection = 180 };
+
+#if !SILVERLIGHT
 
         /// <summary>
         /// Occurs when a popup is opened.
@@ -188,6 +284,20 @@ namespace Apex.Controls
             add { AddHandler(PopupClosedEvent, value); }
             remove { RemoveHandler(PopupClosedEvent, value); }
         }
+
+#else
+
+        /// <summary>
+        /// Occurs when a popup is opened.
+        /// </summary>
+        public event Action PopupOpened;
+
+        /// <summary>
+        /// Occurs when a popup is closed.
+        /// </summary>
+        public event Action PopupClosed;
+
+#endif
 
         /// <summary>
         /// Gets or sets the popup animation helper.

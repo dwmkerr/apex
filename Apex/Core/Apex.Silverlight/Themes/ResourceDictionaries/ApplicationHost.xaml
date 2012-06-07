@@ -4,10 +4,10 @@
     xmlns:controls="clr-namespace:Apex.Controls"
     xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop">
     
-    <Style TargetType="{x:Type controls:ApplicationHost}">
+    <Style TargetType="controls:ApplicationHost">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:ApplicationHost}">
+                <ControlTemplate TargetType="controls:ApplicationHost">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">

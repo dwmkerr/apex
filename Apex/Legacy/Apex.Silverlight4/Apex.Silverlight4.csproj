@@ -186,11 +186,29 @@
     <Compile Include="..\..\Core\Apex\Helpers\EnumHelper.cs">
       <Link>Helpers\EnumHelper.cs</Link>
     </Compile>
+    <Compile Include="..\..\Core\Apex\Helpers\Popups\BounceInOutPopupAnimationHelper.cs">
+      <Link>Helpers\Popups\BounceInOutPopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Apex\Helpers\Popups\FadeInOutPopupAnimationHelper.cs">
+      <Link>Helpers\Popups\FadeInOutPopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Apex\Helpers\Popups\PopupAnimationHelper.cs">
+      <Link>Helpers\Popups\PopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Apex\MVVM\ApexBroker.cs">
+      <Link>MVVM\ApexBroker.cs</Link>
+    </Compile>
     <Compile Include="..\..\Core\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Apex\MVVM\IApplicationHost.cs">
+      <Link>MVVM\IApplicationHost.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Apex\MVVM\IPopup.cs">
+      <Link>MVVM\IPopup.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>

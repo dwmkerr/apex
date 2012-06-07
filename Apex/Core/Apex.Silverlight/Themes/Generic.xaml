@@ -1,9 +1,10 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Apex.Silverlight">
-    
-    <ResourceDictionary.MergedDictionaries>
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/ApplicationHost.xaml" />
+            <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/DragAndDropHost.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

@@ -121,6 +121,9 @@
     <Compile Include="..\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Controls\ApplicationHost.cs">
+      <Link>Controls\ApplicationHost.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Controls\EnumerationComboBox.cs">
       <Link>Controls\EnumerationComboBox.cs</Link>
     </Compile>
@@ -187,11 +190,29 @@
     <Compile Include="..\Apex\Helpers\EnumHelper.cs">
       <Link>Helpers\EnumHelper.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Helpers\Popups\BounceInOutPopupAnimationHelper.cs">
+      <Link>Helpers\Popups\BounceInOutPopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Helpers\Popups\FadeInOutPopupAnimationHelper.cs">
+      <Link>Helpers\Popups\FadeInOutPopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Helpers\Popups\PopupAnimationHelper.cs">
+      <Link>Helpers\Popups\PopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\ApexBroker.cs">
+      <Link>MVVM\ApexBroker.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
     <Compile Include="..\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\IApplicationHost.cs">
+      <Link>MVVM\IApplicationHost.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\IPopup.cs">
+      <Link>MVVM\IPopup.cs</Link>
     </Compile>
     <Compile Include="..\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
@@ -211,10 +232,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\ResourceDictionaries\ApplicationHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionaries\DragAndDropHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Themes\ResourceDictionaries\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Apex.snk" />
   </ItemGroup>
