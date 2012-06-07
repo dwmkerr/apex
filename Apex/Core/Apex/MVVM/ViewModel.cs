@@ -65,6 +65,20 @@ namespace Apex.MVVM
         }
 
         /// <summary>
+        /// Restores the initial state.
+        /// This restores all of the values of the notifying properties.
+        /// </summary>
+        public void RestoreInitialState()
+        {
+            //  Go through each notifying property.
+            foreach (var notifyingProperty in GetNotifyingProperties())
+            {
+                //  Restore it's initial state.
+                notifyingProperty.RestoreInitialState();
+            }
+        }
+
+        /// <summary>
         /// Gets the value of a notifying property.
         /// </summary>
         /// <param name="notifyingProperty">The notifying property.</param>

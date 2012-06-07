@@ -32,7 +32,7 @@ namespace Apex.Tests
         public string FirstName
         {
             get { return (string)GetValue(FirstNameProperty); }
-            set { SetValue(SecondNameProperty, value); }
+            set { SetValue(FirstNameProperty, value); }
         }
 
         /// <summary>
