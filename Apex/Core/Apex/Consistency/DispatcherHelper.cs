@@ -3,7 +3,9 @@
   using System.Collections.Generic;
   using System.Linq;
   using System.Text;
+  using System.Windows;
   using System.Windows.Threading;
+  using Apex.MVVM;
 
 namespace Apex.Consistency
 {
@@ -21,7 +23,14 @@ namespace Apex.Consistency
 #if !SILVERLIGHT
         return Dispatcher.CurrentDispatcher;
 #else
-       return System.Windows.Application.Current.RootVisual.Dispatcher;
+          if (Application.Current.RootVisual != null)
+              return Application.Current.RootVisual.Dispatcher;
+          else if (ApexBroker.GetApplicationHost() != null && ApexBroker.GetApplicationHost() is UIElement)
+              return ((UIElement) ApexBroker.GetApplicationHost()).Dispatcher;
+          else
+          {
+              throw new InvalidOperationException("Cannot find a root element to get a dispatcher. Try including an ApplicationHost as a top level element.");
+          }
 #endif
       }
     }

@@ -1,4 +1,7 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Threading;
 using System;
 
@@ -9,16 +12,6 @@ namespace Apex.MVVM
     /// </summary>
     public class ViewModel : INotifyPropertyChanged
     {
-        public ViewModel()
-        {
-            callingDispatcher = Apex.Consistency.DispatcherHelper.CurrentDispatcher;
-        }
-
-        /// <summary>
-        /// The property changed event.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// Raises the property changed event.
         /// </summary>
@@ -32,6 +25,43 @@ namespace Apex.MVVM
             //  If the event has been subscribed to, fire it.
             if (propertyChanged != null)
                 propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets all the the notifying properties for the view model.
+        /// </summary>
+        /// <param name="declaredOnly">if set to <c>true</c> gets the notifying properties for the view model only,
+        ///  not properties from superclasses..</param>
+        /// <returns>All notifying properties for the view model.</returns>
+        public IEnumerable<NotifyingProperty> GetNotifyingProperties(bool declaredOnly = false)
+        {
+            //  Get my type.
+            var myType = GetType();
+
+            //  Go through all properties, yield notifying properties.
+            var flags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance;
+            if(declaredOnly)
+                flags |= BindingFlags.DeclaredOnly;
+
+            //  Return the properties that are notifying properties.
+            return from field in myType.GetFields(flags)
+                   where
+                   field.FieldType == typeof(NotifyingProperty)
+                   select field.GetValue(this) as NotifyingProperty;
+        }
+
+        /// <summary>
+        /// Saves the initial state.
+        /// This stores all of the values of the notifying properties.
+        /// </summary>
+        public void SaveInitialState()
+        {
+            //  Go through each notifying property.
+            foreach(var notifyingProperty in GetNotifyingProperties())
+            {
+                //  Save it's initial state.
+                notifyingProperty.SaveInitialState();
+            }
         }
 
         /// <summary>
@@ -69,21 +99,16 @@ namespace Apex.MVVM
             if (notifyingProperty.Value != value || forceUpdate)
             {
                 //  Set the value.
-                notifyingProperty.Value = value;
+                notifyingProperty.SetValue(value);
 
                 //  Notify that the property has changed.
                 NotifyPropertyChanged(notifyingProperty.Name);
             }
         }
 
-        public void OnUI(Action action)
-        {
-            if (callingDispatcher.CheckAccess())
-                action();
-            else
-                callingDispatcher.BeginInvoke(((Action)(() => { action(); })));
-        }
-
-        protected Dispatcher callingDispatcher;
+        /// <summary>
+        /// The property changed event.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
