@@ -85,6 +85,15 @@ namespace Apex.MVVM
         }
 
         /// <summary>
+        /// Restores the initial state.
+        /// </summary>
+        public void RestoreInitialState()
+        {
+            //  Clone the initial state into the value.
+            Value = initialState;
+        }
+
+        /// <summary>
         /// Fires the notifying property changed event.
         /// </summary>
         /// <param name="oldValue">The old value.</param>
