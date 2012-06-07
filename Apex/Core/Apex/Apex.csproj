@@ -130,6 +130,7 @@
     <Compile Include="Helpers\Popups\FadeInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\PopupAnimationHelper.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
+    <Compile Include="MVVM\ModelTypedViewModel.cs" />
     <Compile Include="MVVM\IApplicationHost.cs" />
     <Compile Include="MVVM\IPopup.cs" />
     <Compile Include="MVVM\ApexBroker.cs" />
