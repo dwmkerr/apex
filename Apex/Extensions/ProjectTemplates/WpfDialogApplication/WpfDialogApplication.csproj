@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{479D5D9F-394D-4635-953D-DA0078211320}</ProjectGuid>
+    <ProjectGuid>{44644E74-1118-444E-B337-BEB5FA3F67DB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVVMSample</RootNamespace>
-    <AssemblyName>MVVMSample</AssemblyName>
+    <RootNamespace>WpfDialogApplication</RootNamespace>
+    <AssemblyName>WpfDialogApplication</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -59,31 +59,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CommandingSample\CommandingSampleView.xaml.cs">
-      <DependentUpon>CommandingSampleView.xaml</DependentUpon>
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CommandingSample\CommandingSampleViewModel.cs" />
-    <Compile Include="SimpleSample\SimpleExampleView.xaml.cs">
-      <DependentUpon>SimpleExampleView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SimpleSample\SimpleExampleViewModel.cs" />
-    <Compile Include="ViewBrokerSample\FileView.xaml.cs">
-      <DependentUpon>FileView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewBrokerSample\FileViewModel.cs" />
-    <Compile Include="ViewBrokerSample\FolderView.xaml.cs">
-      <DependentUpon>FolderView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewBrokerSample\FolderViewModel.cs" />
-    <Compile Include="ViewBrokerSample\ViewBrokerSampleView.xaml.cs">
-      <DependentUpon>ViewBrokerSampleView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewBrokerSample\ViewBrokerSampleViewModel.cs" />
-    <Page Include="CommandingSample\CommandingSampleView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -91,29 +71,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainViewModel.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SimpleSample\SimpleExampleView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewBrokerSample\FileView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewBrokerSample\FolderView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewBrokerSample\ViewBrokerSampleView.xaml">
+    <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AppModel.cs" />
+    <Compile Include="Models\IAppModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -143,7 +112,6 @@
       <Name>Apex</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

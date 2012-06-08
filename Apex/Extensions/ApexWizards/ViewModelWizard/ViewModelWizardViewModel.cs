@@ -13,10 +13,21 @@ namespace ApexWizards.ViewModelWizard
     {
         public ViewModelWizardViewModel()
         {
-            OKCommand = new Command(DoOKCommand, true);
+            OKCommand = new Command(DoOKCommand);
+            CancelCommand = new Command(DoCancelCommand);
         }
 
+        /// <summary>
+        /// Does the OK command.
+        /// </summary>
         private void DoOKCommand()
+        {
+        }
+
+        /// <summary>
+        /// Does the cancel command.
+        /// </summary>
+        private void DoCancelCommand()
         {
         }
 
@@ -60,11 +71,15 @@ namespace ApexWizards.ViewModelWizard
             set { SetValue(CreateExampleCommandProperty, value); }
         }
 
-        public Command OKCommand
-        {
-            get;
-            private set;
-        }
+        /// <summary>
+        /// Gets the OK command.
+        /// </summary>
+        public Command OKCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the cancel command.
+        /// </summary>
+        public Command CancelCommand { get; private set; }
                 
     }
 }
