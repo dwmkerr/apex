@@ -66,7 +66,8 @@ namespace ApexWizards.ViewAndViewModelWizard
                 replacementsDictionary.Add("$ViewCreatesViewModel$", view.ViewModel.ViewCreatesViewModel ? "1" : "0");
 
                 //  Show the view.
-                view.ShowDialog();
+                var result = view.ShowDialog();
+                cancelled = result == null || result.Value == false;
             }
             catch
             {
@@ -82,7 +83,12 @@ namespace ApexWizards.ViewAndViewModelWizard
         /// </returns>
         public bool ShouldAddProjectItem(string filePath)
         {
-            return true;
+            return !cancelled;
         }
+
+        /// <summary>
+        /// Flag to indicate cancellation.
+        /// </summary>
+        private bool cancelled = false;
     }
 }

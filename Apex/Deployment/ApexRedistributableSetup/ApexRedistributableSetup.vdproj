@@ -224,7 +224,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Apex Redistributables"
         "ProductCode" = "8:{673AB100-865A-400C-9B53-2694E9548EBC}"
-        "PackageCode" = "8:{EF23731A-30DC-4300-8C72-3512D452A19B}"
+        "PackageCode" = "8:{50B8E1DA-0E8D-4120-A9C0-BE28D750D410}"
         "UpgradeCode" = "8:{B72586A0-6BBB-4534-A530-159CEF10C25E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

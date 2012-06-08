@@ -23,10 +23,23 @@ namespace ApexWizards.ViewModelWizard
             InitializeComponent();
 
             ViewModel.OKCommand.Executed += new Apex.MVVM.CommandEventHandler(OKCommand_Executed);
+            ViewModel.CancelCommand.Executed += new Apex.MVVM.CommandEventHandler(CancelCommand_Executed);
+        }
+
+        /// <summary>
+        /// Handles the Executed event of the CancelCommand control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="args">The <see cref="Apex.MVVM.CommandEventArgs"/> instance containing the event data.</param>
+        void CancelCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)
+        {
+            DialogResult = false;
+            Close();
         }
 
         void OKCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)
         {
+            DialogResult = true;
             Close();
         }
 

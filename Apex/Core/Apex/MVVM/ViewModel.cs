@@ -62,6 +62,9 @@ namespace Apex.MVVM
                 //  Save it's initial state.
                 notifyingProperty.SaveInitialState();
             }
+
+            //  At this stage, we can clear the HasChanges flag.
+            HasChanges = false;
         }
 
         /// <summary>
@@ -76,6 +79,17 @@ namespace Apex.MVVM
                 //  Restore it's initial state.
                 notifyingProperty.RestoreInitialState();
             }
+
+            //  At this stage, we can clear the HasChanges flag.
+            HasChanges = false;
+        }
+
+        /// <summary>
+        /// Resets the has changes flag.
+        /// </summary>
+        public void ResetHasChangesFlag()
+        {
+            HasChanges = false;
         }
 
         /// <summary>
@@ -117,12 +131,40 @@ namespace Apex.MVVM
 
                 //  Notify that the property has changed.
                 NotifyPropertyChanged(notifyingProperty.Name);
+
+                //  We have changes.
+                HasChanges = true;
             }
         }
+
+        /// <summary>
+        /// A flag used to sow whether a view model has changes.
+        /// </summary>
+        private bool hasChanges;
 
         /// <summary>
         /// The property changed event.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance has changes.
+        /// </summary>
+        /// <value>
+        /// 	<c>true</c> if this instance has changes; otherwise, <c>false</c>.
+        /// </value>
+        public bool HasChanges
+        {
+            get { return hasChanges; }
+            protected set
+            {
+                if(hasChanges != value)
+                {
+                    hasChanges = value;
+                    NotifyPropertyChanged("HasChanges");
+                }
+            }
+        }
+
     }
 }

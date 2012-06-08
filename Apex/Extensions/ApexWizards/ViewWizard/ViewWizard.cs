@@ -41,7 +41,8 @@ namespace ApexWizards.ViewWizard
                 view.ViewModel.ViewName = viewName;
 
                 //  Show the view.
-                view.ShowDialog();
+                var result = view.ShowDialog();
+                cancelled = result == null || result.Value == false;
                 
                 //  Update the custom parameters.
                 replacementsDictionary.Add("$ViewModelType$", string.IsNullOrEmpty(view.ViewModel.ViewModelType) ? "object" : view.ViewModel.ViewModelType);
@@ -52,9 +53,21 @@ namespace ApexWizards.ViewWizard
             }
         }
 
+        /// <summary>
+        /// Indicates whether the specified project item should be added to the project.
+        /// </summary>
+        /// <param name="filePath">The path to the project item.</param>
+        /// <returns>
+        /// true if the project item should be added to the project; otherwise, false.
+        /// </returns>
         public bool ShouldAddProjectItem(string filePath)
         {
-            return true;
+            return !cancelled;
         }
+
+        /// <summary>
+        /// Flag to indicate cancellation.
+        /// </summary>
+        private bool cancelled = false;
     }
 }

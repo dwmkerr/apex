@@ -57,21 +57,101 @@ namespace Apex.Tests
             string propertyName = null;
             personViewModel.PropertyChanged += (sender, args) => 
             {
+                //  Ignore has changes.
+                if (args.PropertyName == "HasChanges")
+                    return;
+                
                 propertyName = args.PropertyName;
                 called = true; 
             }; 
 
             //  Change a value.
-            personViewModel.FirstName = "Homer Simpson";
+            personViewModel.FirstName = "Homer";
 
             //  Assert it's changed.
-            Assert.IsTrue(personViewModel.FirstName == "Homer Simpson", "Failed to save property.");
+            Assert.IsTrue(personViewModel.FirstName == "Homer", "Failed to save property.");
 
             //  Assert notify property changed is called.
             Assert.IsTrue(called == true, "Notify property changed was not called.");
 
             //  Assert the property name was passed.
             Assert.IsTrue(propertyName == "FirstName", "Property name was not passed correctly.");
+        }
+
+        [TestMethod]
+        public void HasChangesIsSetCorrectly()
+        {
+            //  By default has changes should be false.
+            Assert.IsTrue(personViewModel.HasChanges == false, "HasChanges is not initially set to false.");
+
+            //  Change a value.
+            personViewModel.FirstName = "Homer";
+
+            //  Assert has changes is updated changed.
+            Assert.IsTrue(personViewModel.HasChanges == true, "Has changes is not set when a property changes.");
+
+            //  Reset the flag.
+            personViewModel.ResetHasChangesFlag();
+
+            //  Has changes should be false.
+            Assert.IsTrue(personViewModel.HasChanges == false, "HasChanges is not set to false after ResetHasChangesFlag.");
+
+            //  Set a property that isn't a change.
+            personViewModel.FirstName = "Homer";
+
+            //  Has changes should be false.
+            Assert.IsTrue(personViewModel.HasChanges == false, "HasChanges is set to true after a change to an equivalent value.");
+        }
+
+        [TestMethod]
+        public void CanSaveInitialState()
+        {
+            //  Set properties.
+            personViewModel.FirstName = "Homer";
+            personViewModel.SecondName = "Simpson";
+
+            //  We should have changes.
+            Assert.IsTrue(personViewModel.HasChanges, "Changes are not setting the HasChanges flag.");
+
+            //  Set the initial state.
+            personViewModel.SaveInitialState();
+
+            //  We should have no changes.
+            Assert.IsTrue(personViewModel.HasChanges == false, "SaveInitialState is not resetting the HasChanges flag.");
+        }
+
+        [TestMethod]
+        public void CanRestoreInitialState()
+        {
+            //  Set properties.
+            personViewModel.FirstName = "Homer";
+            personViewModel.SecondName = "Simpson";
+
+            //  We should have changes.
+            Assert.IsTrue(personViewModel.HasChanges, "Changes are not setting the HasChanges flag.");
+
+            //  Set the initial state.
+            personViewModel.SaveInitialState();
+
+            //  We should have no changes.
+            Assert.IsTrue(personViewModel.HasChanges == false, "SaveInitialState is not resetting the HasChanges flag.");
+
+            //  Make chanes.
+            personViewModel.FirstName = "Ralph";
+            personViewModel.SecondName = "Wiggum";
+
+            //  We should have changes.
+            Assert.IsTrue(personViewModel.HasChanges, "Changes are not setting the HasChanges flag.");
+
+            //  Restore the initial state.
+            personViewModel.RestoreInitialState();
+            
+            //  We should have no changes.
+            Assert.IsTrue(personViewModel.HasChanges == false, "RestoreInitialState is not resetting the HasChanges flag.");
+
+            //  Ensure we're back at the initial state.
+            Assert.IsTrue(personViewModel.FirstName == "Homer", "Restore initial state hasn't restored a property.");
+            Assert.IsTrue(personViewModel.SecondName == "Simpson", "Restore initial state hasn't restored a property.");
         }
     }
 }

@@ -92,9 +92,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateProjects", "TemplateProjects", "{3830FB7B-9AB1-4DCB-816F-4A7CC10ACC3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDialogApplication", "Extensions\ProjectTemplates\WpfDialogApplication\WpfDialogApplication.csproj", "{44644E74-1118-444E-B337-BEB5FA3F67DB}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 33
+		SccNumberOfProjects = 34
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -226,6 +230,10 @@ Global
 		SccProjectTopLevelParentUniqueName32 = Apex.sln
 		SccProjectName32 = Tests/Apex.Tests
 		SccLocalPath32 = Tests\\Apex.Tests
+		SccProjectUniqueName33 = Extensions\\ProjectTemplates\\WpfDialogApplication\\WpfDialogApplication.csproj
+		SccProjectTopLevelParentUniqueName33 = Apex.sln
+		SccProjectName33 = Extensions/ProjectTemplates/WpfDialogApplication
+		SccLocalPath33 = Extensions\\ProjectTemplates\\WpfDialogApplication
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Apex.vsmdi
@@ -565,6 +573,16 @@ Global
 		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2}.Release|x86.ActiveCfg = Release|Any CPU
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Debug|x86.ActiveCfg = Debug|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Debug|x86.Build.0 = Debug|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Release|Any CPU.ActiveCfg = Release|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Release|Mixed Platforms.Build.0 = Release|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Release|x86.ActiveCfg = Release|x86
+		{44644E74-1118-444E-B337-BEB5FA3F67DB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -577,6 +595,7 @@ Global
 		{42E16903-0DBC-4143-9BF3-9AE702C8AA9B} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{13AB5DFE-B4C6-44D8-B194-0C7963A98CD7} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
+		{3830FB7B-9AB1-4DCB-816F-4A7CC10ACC3D} = {E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}
 		{67D54A68-A287-4797-9667-ACCBF9683119} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{A479105C-717B-4500-8FFC-B3D12BEEF13E} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
@@ -607,5 +626,6 @@ Global
 		{DE858B80-AD75-491D-9552-0B46E1F7C8EC} = {F5DF7EFC-25E2-4E4A-B952-256FA4CD45D7}
 		{C9F7E022-1B56-47F4-80DF-A33591AD7ED2} = {A7AAB5CF-4785-4DAF-A77A-94162B40BDD0}
 		{145D0D4D-D218-432D-B7DB-9E6094117FF5} = {A7AAB5CF-4785-4DAF-A77A-94162B40BDD0}
+		{44644E74-1118-444E-B337-BEB5FA3F67DB} = {3830FB7B-9AB1-4DCB-816F-4A7CC10ACC3D}
 	EndGlobalSection
 EndGlobal

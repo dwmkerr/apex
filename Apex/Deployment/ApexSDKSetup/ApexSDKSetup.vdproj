@@ -75,18 +75,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7AFD15650555E5050D022402B7589666"
-        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7AFD15650555E5050D022402B7589666"
-        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7E6E442995834BB4B8BA4C3893EB2140"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -95,6 +83,18 @@
         {
         "MsmKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8B3218B58F9970777D689D15D0E98863"
+        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8B3218B58F9970777D689D15D0E98863"
+        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -220,7 +220,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7AFD15650555E5050D022402B7589666"
+        "OwnerKey" = "8:_8B3218B58F9970777D689D15D0E98863"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -496,14 +496,34 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7AFD15650555E5050D022402B7589666"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7E6E442995834BB4B8BA4C3893EB2140"
+            {
+            "SourcePath" = "8:..\\..\\Extensions\\Snippets\\InsertAttachedDependencyProperty.snippet"
+            "TargetName" = "8:InsertAttachedDependencyProperty.snippet"
+            "Tag" = "8:"
+            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8B3218B58F9970777D689D15D0E98863"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Apex, Version=1.3.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7AFD15650555E5050D022402B7589666"
+                    "_8B3218B58F9970777D689D15D0E98863"
                     {
                     "Name" = "8:Apex.dll"
                     "Attributes" = "3:512"
@@ -525,26 +545,6 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7E6E442995834BB4B8BA4C3893EB2140"
-            {
-            "SourcePath" = "8:..\\..\\Extensions\\Snippets\\InsertAttachedDependencyProperty.snippet"
-            "TargetName" = "8:InsertAttachedDependencyProperty.snippet"
-            "Tag" = "8:"
-            "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9C7FF85753ED0882D1C24428E3C2D1F2"
@@ -947,7 +947,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Apex SDK"
         "ProductCode" = "8:{FB11D68E-B058-494C-84D8-2D58BADC666D}"
-        "PackageCode" = "8:{7BDC1C60-3CD0-41AF-A44E-511083A35049}"
+        "PackageCode" = "8:{8EFAE56C-AD12-4D49-B470-3870393B4401}"
         "UpgradeCode" = "8:{8B037F9F-0C3C-4EDE-B0A4-AADB8694B22D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
