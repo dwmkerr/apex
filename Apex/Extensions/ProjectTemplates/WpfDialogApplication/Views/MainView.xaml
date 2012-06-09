@@ -18,7 +18,8 @@
         <!-- Top block of color. -->
         <apexControls:MultiBorder Grid.Row="0" Height="60" Background="#FFFFFF">
 
-                <TextBlock Grid.Row="0" FontWeight="Light" Text="{Binding Title}" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="24" />
+            <!-- The title block. -->
+            <TextBlock Grid.Row="0" FontWeight="Light" Text="{Binding Title}" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="24" />
 
         </apexControls:MultiBorder>
 
@@ -35,16 +36,10 @@
                 </LinearGradientBrush>
             </apexControls:MultiBorder.Background>
 
-            <apexControls:ApexGrid Grid.Row="2" Columns="*,2*" Rows="Auto,Auto,Auto,Auto" Margin="20">
+            <apexControls:ApexGrid Grid.Row="2" Rows="Auto,Auto" Margin="20">
 
-                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap">A View is a user interface that is
-                associated with a specific ViewModel type. Enter the ViewModel Type below. If 'View Creates ViewModel' is
-                specified, then the ViewModel instance will be created automatically when the view is created.</TextBlock>
-
-                <Label Grid.Row="1" Margin="12" Grid.Column="0" Content="ViewModel Type" />
-                <TextBox x:Name="textBoxViewModelType" Grid.Row="1" Margin="12" Grid.Column="1" Text="{Binding ViewModelType}" />
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="12,-6,0,0"  Text="Leave this field blank for a generic view." FontStyle="Italic" />
-                <CheckBox Grid.Row="3" Margin="12" Grid.ColumnSpan="2" Grid.Column="0" IsChecked="{Binding ViewCreatesViewModel}" Content="View Creates ViewModel" />
+                <TextBlock Grid.Row="0" TextWrapping="Wrap">Main content can go here.</TextBlock>
+                <TextBlock Grid.Row="1" TextWrapping="Wrap">This application was last run at: <Run Text="{Binding LastRunTime}" />.</TextBlock>
 
             </apexControls:ApexGrid>
 
@@ -53,8 +48,7 @@
         <apexControls:MultiBorder Grid.Row="2" Height="50" Background="#ccd7ec"
                                   BorderThicknessTop="1" BorderBrushTop="#dce3f2" Padding="20,0,20,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Command="{Binding SaveChangesCommand}" Margin="0,0,8,0" Width="120" Height="24" Content="Save Changes" />
-                <Button Command="{Binding CancelCommand}" Width="120" Height="24" Content="Close" />
+                <Button Command="{Binding CloseCommand}" Width="100" Height="24" Content="Close" />
             </StackPanel>
 
         </apexControls:MultiBorder>

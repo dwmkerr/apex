@@ -10,5 +10,16 @@ namespace WpfDialogApplication.Models
     /// </summary>
     public interface IAppModel
     {
+        /// <summary>
+        /// Gets the last run time (i.e. the time the application was last run).
+        /// </summary>
+        /// <returns>The last run time.</returns>
+        DateTime LoadLastRunTime();
+
+        /// <summary>
+        /// Saves the last run time.
+        /// </summary>
+        /// <param name="lastRunTime">The last run time.</param>
+        void SaveLastRunTime(DateTime lastRunTime);
     }
 }
