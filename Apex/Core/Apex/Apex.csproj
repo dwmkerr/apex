@@ -130,17 +130,19 @@
     <Compile Include="Helpers\Popups\FadeInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\PopupAnimationHelper.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
+    <Compile Include="MVVM\Attributes\ModelAttribute.cs" />
+    <Compile Include="MVVM\Attributes\ExecutionContext.cs" />
     <Compile Include="MVVM\ModelTypedViewModel.cs" />
     <Compile Include="MVVM\IApplicationHost.cs" />
     <Compile Include="MVVM\IPopup.cs" />
     <Compile Include="MVVM\ApexBroker.cs" />
-    <Compile Include="MVVM\ViewAttribute.cs" />
+    <Compile Include="MVVM\Attributes\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\SafeObservableCollection.cs" />
     <Compile Include="MVVM\View.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="MVVM\Command.cs" />
-    <Compile Include="MVVM\ViewModelAttribute.cs" />
+    <Compile Include="MVVM\Attributes\ViewModelAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

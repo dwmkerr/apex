@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Apex.MVVM;
 
 namespace WpfDialogApplication.Views
 {
@@ -22,6 +23,19 @@ namespace WpfDialogApplication.Views
         public MainView()
         {
             InitializeComponent();
+
+            //  Listen out for the close command.
+            viewModel.CloseCommand.Executed += CloseCommand_Executed;
+        }
+
+        /// <summary>
+        /// Handles the Executed event of the CloseCommand control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="args">The <see cref="Apex.MVVM.CommandEventArgs"/> instance containing the event data.</param>
+        void CloseCommand_Executed(object sender, CommandEventArgs args)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

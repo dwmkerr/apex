@@ -20,13 +20,19 @@ namespace WpfDialogApplication
         /// <param name="e">A <see cref="T:System.Windows.StartupEventArgs"/> that contains the event data.</param>
         protected override void OnStartup(StartupEventArgs e)
         {
+            //  Call the base.
             base.OnStartup(e);
 
-            //  Create the main model for the application.
-            var appModel = new AppModel();
+            //  Initialise the broker.
+            //ApexBroker.Initialise();
+        }
 
-            //  Register the model with the broker.
-            ApexBroker.RegisterModel<IAppModel>(appModel);
+        protected override void OnExit(ExitEventArgs e)
+        {
+            //  Save the last run time.
+            ApexBroker.GetModel<IAppModel>().SaveLastRunTime(DateTime.Now);
+
+            base.OnExit(e);
         }
     }
 }
