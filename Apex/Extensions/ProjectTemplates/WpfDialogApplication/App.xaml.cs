@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using Apex.MVVM;
 using WpfDialogApplication.Models;
+using Apex;
 
 namespace WpfDialogApplication
 {

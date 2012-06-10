@@ -119,8 +119,8 @@
                 <apexControls:ImageButton 
                     x:Name="minimizeButton" Click="minimizeButton_Click"
                     Padding="2" Margin="1" Cursor="Hand" ToolTip="Minimize"
-                    NormalImageSource="/ZuneStyleApplication;component/Resources/Minimize.png"
-                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/MinimizeOver.png"
+                    NormalImageSource="/ZuneStyleApplication;component/Resources/Images/Minimize.png"
+                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/Images/MinimizeOver.png"
                     Visibility="{Binding ElementName=zuneShell, Path=WindowState, 
                     Converter={StaticResource WindowStateToButtonVisibilityConverter}, ConverterParameter=Minimize}" />
 
@@ -128,8 +128,8 @@
                 <apexControls:ImageButton 
                     x:Name="restoreButton" Click="restoreButton_Click"
                     Padding="2" Margin="1" Cursor="Hand" ToolTip="Restore"
-                    NormalImageSource="/ZuneStyleApplication;component/Resources/Restore.png"
-                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/RestoreOver.png"
+                    NormalImageSource="/ZuneStyleApplication;component/Resources/Images/Restore.png"
+                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/Images/RestoreOver.png"
                     Visibility="{Binding ElementName=zuneShell, Path=WindowState, 
                     Converter={StaticResource WindowStateToButtonVisibilityConverter}, ConverterParameter=Restore}" />
 
@@ -137,8 +137,8 @@
                 <apexControls:ImageButton 
                     x:Name="maximizeButton" Click="maximizeButton_Click"
                     Padding="2" Margin="1" Cursor="Hand" ToolTip="Maximize"
-                    NormalImageSource="/ZuneStyleApplication;component/Resources/Maximize.png"
-                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/MaximizeOver.png"
+                    NormalImageSource="/ZuneStyleApplication;component/Resources/Images/Maximize.png"
+                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/Images/MaximizeOver.png"
                     Visibility="{Binding ElementName=zuneShell, Path=WindowState, 
                     Converter={StaticResource WindowStateToButtonVisibilityConverter}, ConverterParameter=Maximize}" />
 
@@ -146,8 +146,8 @@
                 <apexControls:ImageButton 
                     x:Name="closeButton" Click="closeButton_Click"
                     Padding="2" Margin="1" Cursor="Hand" ToolTip="Close"
-                    NormalImageSource="/ZuneStyleApplication;component/Resources/Close.png"
-                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/CloseOver.png" />
+                    NormalImageSource="/ZuneStyleApplication;component/Resources/Images/Close.png"
+                    MouseOverImageSource="/ZuneStyleApplication;component/Resources/Images/CloseOver.png" />
 
             </StackPanel>
             

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Apex.MVVM;
 using WpfDialogApplication.Models;
+using Apex;
 
 namespace WpfDialogApplication.ViewModels
 {

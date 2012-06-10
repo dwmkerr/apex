@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
 using Apex.Shells;
+using Apex.MVVM;
 
 namespace Apex
 {
@@ -22,11 +23,15 @@ namespace Apex
                 //  We may have already been initialised.
                 if (isInitialised)
                     return;
+
+                //  Enumerate all types to search.
+                var typesToSearch = (from a in AppDomain.CurrentDomain.GetAssemblies()
+                                    where a.GlobalAssemblyCache == false && a.IsDynamic == false
+                                    from t in a.GetExportedTypes()
+                                    select t).ToList();
             
                 //  Find every type that has the Model attribute.
-                var modelTypes = from a in AppDomain.CurrentDomain.GetAssemblies()
-                                 where a.GlobalAssemblyCache == false && a.IsDynamic == false
-                                 from t in a.GetExportedTypes()
+                var modelTypes = from t in typesToSearch
                                  where t.GetCustomAttributes(typeof(ModelAttribute), false).Any()
                                  select new
                                  {
@@ -42,6 +47,22 @@ namespace Apex
 
                     //  Register the model instance as a model of the specified model interface type.
                     modelInterfaceToModelDictionary[modelType.ModelAttribute.ModelInterfaceType] = modelInstance;
+                }
+
+                //  Find every type that has the View attribute.
+                var viewTypes = from t in typesToSearch
+                                 where t.GetCustomAttributes(typeof(ViewAttribute), false).Any()
+                                 select new
+                                 {
+                                     ViewType = t,
+                                     ViewAttribute = (ViewAttribute)t.GetCustomAttributes(typeof(ViewAttribute), false).Single()
+                                 };
+
+                //  Register each view to viewmodel.
+                foreach (var viewType in viewTypes)
+                {
+                    //  Register the mapping.
+                    RegisterViewForViewModel(viewType.ViewAttribute.ViewModelType, viewType.ViewType);
                 }
 
                 //  We're now initialised.
