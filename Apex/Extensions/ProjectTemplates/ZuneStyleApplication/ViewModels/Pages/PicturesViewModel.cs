@@ -8,16 +8,16 @@ using Apex.MVVM;
 namespace ZuneStyleApplication.ViewModels
 {
     /// <summary>
-    /// The MusicViewModel ViewModel class.
+    /// The PicturesViewModel ViewModel class.
     /// </summary>
-    public class MusicViewModel : PageViewModel
+    public class PicturesViewModel : PageViewModel
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MusicViewModel"/> class.
+        /// Initializes a new instance of the <see cref="PicturesViewModel"/> class.
         /// </summary>
-        public MusicViewModel()
+        public PicturesViewModel()
         {
-            Title = "music";
+            Title = "Pictures";
         }
     }
 }

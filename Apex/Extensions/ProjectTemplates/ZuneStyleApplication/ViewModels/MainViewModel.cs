@@ -19,28 +19,24 @@ namespace ZuneStyleApplication.ViewModels
         public MainViewModel()
         {
             //  Set the title.
-            Title = "ZUNE";
+            Title = "Zune";
 
-            //  Create the child page view models.
-            CollectionViewModel = new CollectionViewModel();
+            //  Create a view model for each page.
+            var homeViewModel = new PageViewModel() { IsSelected = true, Title = "Home" };
+            homeViewModel.Pages.Add(new HomeViewModel() { IsSelected = true});
+            var collectionViewModel = new PageViewModel() { Title = "Collection" };
+            collectionViewModel.Pages.Add(new MusicViewModel() { IsSelected = true });
+            collectionViewModel.Pages.Add(new PicturesViewModel());
+            var marketplaceViewModel = new PageViewModel() { Title = "Marketplace" };
+            var socialViewModel = new PageViewModel() { Title = "Social" };
 
             //  Add the child page view models.
-            Pages.Add(CollectionViewModel);
 
             //  Add some empty pages.
-            Pages.Add(new PageViewModel() { Title = "marketplace" });
-            Pages.Add(new PageViewModel() { Title = "social" });
+            Pages.Add(homeViewModel);
+            Pages.Add(collectionViewModel);
+            Pages.Add(marketplaceViewModel);
+            Pages.Add(socialViewModel);
         }
-
-        /// <summary>
-        /// Gets the collection view model.
-        /// </summary>
-        public CollectionViewModel CollectionViewModel
-        {
-            get;
-            private set;
-        }
-
-
     }
 }

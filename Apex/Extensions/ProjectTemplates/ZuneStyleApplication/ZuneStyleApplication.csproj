@@ -60,7 +60,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Resources\ResourceDictionaries\ZuneResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExamplePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\PicturesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,13 +92,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\Collection\CollectionViewModel.cs" />
+    <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\Collection\MusicViewModel.cs" />
+    <Compile Include="ViewModels\Pages\MusicViewModel.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
-    <Compile Include="ViewModels\Collection\PicturesViewModel.cs" />
+    <Compile Include="ViewModels\Pages\PicturesViewModel.cs" />
+    <Compile Include="Views\ExamplePopup.xaml.cs">
+      <DependentUpon>ExamplePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MusicView.xaml.cs">
+      <DependentUpon>MusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\PicturesView.xaml.cs">
+      <DependentUpon>PicturesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowStateToButtonVisibilityConverter.cs" />
     <Compile Include="WindowStateToBorderThicknessConverter.cs" />
@@ -117,16 +149,18 @@
       <Name>Apex</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Resources\Close.png" />
-    <Resource Include="Resources\CloseOver.png" />
-    <Resource Include="Resources\Maximize.png" />
-    <Resource Include="Resources\MaximizeOver.png" />
-    <Resource Include="Resources\Minimize.png" />
-    <Resource Include="Resources\MinimizeOver.png" />
-    <Resource Include="Resources\Restore.png" />
-    <Resource Include="Resources\RestoreOver.png" />
+    <Folder Include="ViewModels\Collection\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Close.png" />
+    <Resource Include="Resources\Images\CloseOver.png" />
+    <Resource Include="Resources\Images\Maximize.png" />
+    <Resource Include="Resources\Images\MaximizeOver.png" />
+    <Resource Include="Resources\Images\Minimize.png" />
+    <Resource Include="Resources\Images\MinimizeOver.png" />
+    <Resource Include="Resources\Images\Restore.png" />
+    <Resource Include="Resources\Images\RestoreOver.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

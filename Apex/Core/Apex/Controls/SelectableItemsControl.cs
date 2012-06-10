@@ -35,6 +35,53 @@ namespace Apex.Controls
         }
 
         /// <summary>
+        /// Called when the <see cref="P:System.Windows.Controls.ItemsControl.ItemsSource"/> property changes.
+        /// </summary>
+        /// <param name="oldValue">Old value of the <see cref="P:System.Windows.Controls.ItemsControl.ItemsSource"/> property.</param>
+        /// <param name="newValue">New value of the <see cref="P:System.Windows.Controls.ItemsControl.ItemsSource"/> property.</param>
+        protected override void OnItemsSourceChanged(System.Collections.IEnumerable oldValue, System.Collections.IEnumerable newValue)
+        {
+            //  Call the base.
+            base.OnItemsSourceChanged(oldValue, newValue);
+
+            //  Check for selected items.
+            ISelectableItem itemToSelect = null;
+            if (newValue != null)
+            {
+                foreach (var newItem in newValue)
+                {
+                    if (newItem is ISelectableItem && ((ISelectableItem)newItem).IsSelected)
+                        itemToSelect = (ISelectableItem)newItem;
+                }
+            }
+
+            //  Select the item to select (if there is one).
+            if (itemToSelect != null)
+                DoSelectItemCommand(itemToSelect);
+        }
+
+        protected override void OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            //  Call the base.
+            base.OnItemsChanged(e);
+
+            //  Check for selected items.
+            ISelectableItem itemToSelect = null;
+            if (ItemsSource != null)
+            {
+                foreach (var newItem in ItemsSource)
+                {
+                    if (newItem is ISelectableItem && ((ISelectableItem)newItem).IsSelected)
+                        itemToSelect = (ISelectableItem)newItem;
+                }
+            }
+
+            //  Select the item to select (if there is one).
+            if (itemToSelect != null)
+                DoSelectItemCommand(itemToSelect);
+        }
+
+        /// <summary>
         /// The DependencyProperty for the SelectedItem property.
         /// </summary>
         private static readonly DependencyProperty SelectedItemProperty =
