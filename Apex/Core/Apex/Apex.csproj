@@ -101,6 +101,7 @@
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
+    <Compile Include="Controls\SelectableItemsControl.cs" />
     <Compile Include="Controls\TreeView.cs" />
     <Compile Include="Controls\VariableGrid.cs" />
     <Compile Include="Controls\ViewBroker.cs" />
@@ -130,13 +131,15 @@
     <Compile Include="Helpers\Popups\BounceInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\FadeInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\PopupAnimationHelper.cs" />
+    <Compile Include="Interop\dwmapi.cs" />
+    <Compile Include="Interop\User32.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="MVVM\Attributes\ModelAttribute.cs" />
     <Compile Include="MVVM\Attributes\ExecutionContext.cs" />
     <Compile Include="MVVM\ModelTypedViewModel.cs" />
     <Compile Include="MVVM\IApplicationHost.cs" />
     <Compile Include="MVVM\IPopup.cs" />
-    <Compile Include="MVVM\ApexBroker.cs" />
+    <Compile Include="ApexBroker.cs" />
     <Compile Include="MVVM\Attributes\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\SafeObservableCollection.cs" />
@@ -157,7 +160,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Shells\CustomShell.cs" />
     <Compile Include="Shells\IShell.cs" />
+    <Compile Include="Shells\Shell.cs" />
+    <Compile Include="Shells\WindowStateToBorderThicknessConverter.cs" />
+    <Compile Include="Shells\WindowStateToButtonVisibilityConverter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
