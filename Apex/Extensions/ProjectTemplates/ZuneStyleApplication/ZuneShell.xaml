@@ -7,7 +7,9 @@
         xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
         xmlns:apexShells="clr-namespace:Apex.Shells;assembly=Apex"
         Background="White"
-        Title="Zune" Height="350" Width="525">
+        Title="Zune" 
+        MinHeight="350" MinWidth="525"
+                        Height="350" Width="525">
     
     <!-- The resources. -->
     <apexShells:CustomShell.Resources>
