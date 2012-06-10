@@ -67,7 +67,8 @@ namespace ZuneStyleApplication
         {
             var desiredWidth = Width + e.HorizontalChange;
             var desiredHeight = Height + e.VerticalChange;
-            Width = Math.Floor(
+            Width = Math.Max(desiredWidth, MinWidth);
+            Height = Math.Max(desiredHeight, MinHeight);
         }
 
         private void thumbTopLeft_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
@@ -76,12 +77,18 @@ namespace ZuneStyleApplication
             var desiredTop = Top + e.VerticalChange;
             var desiredWidth = Width - e.HorizontalChange;
             var desiredHeight = Height - e.VerticalChange;
+            Width = Math.Max(desiredWidth, MinWidth);
+            Height = Math.Max(desiredHeight, MinHeight);
+            Top = desiredTop;
+            Left = desiredLeft;
         }
 
         private void thumbTop_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             var desiredTop = Top + e.VerticalChange;
             var desiredHeight = Height - e.VerticalChange;
+            Height = Math.Max(desiredHeight, MinHeight);
+            Top = desiredTop;
         }
 
         private void thumbTopRight_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
@@ -89,17 +96,23 @@ namespace ZuneStyleApplication
             var desiredTop = Top + e.VerticalChange;
             var desiredHeight = Height - e.VerticalChange;
             var desiredWidth = Width + e.HorizontalChange;
+            Width = Math.Max(desiredWidth, MinWidth);
+            Height = Math.Max(desiredHeight, MinHeight);
+            Top = desiredTop;
         }
 
         private void thumbLeft_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             var desiredLeft = Left + e.HorizontalChange;
             var desiredWidth = Width - e.HorizontalChange;
+            Width = Math.Max(desiredWidth, MinWidth);
+            Left = desiredLeft;
         }
 
         private void thumbRight_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             var desiredWidth = Width + e.HorizontalChange;
+            Width = Math.Max(desiredWidth, MinWidth);
         }
 
         private void thumbBottomLeft_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
@@ -107,17 +120,22 @@ namespace ZuneStyleApplication
             var desiredLeft = Left + e.HorizontalChange;
             var desiredWidth = Width - e.HorizontalChange;
             var desiredHeight = Height + e.VerticalChange;
+            Width = Math.Max(desiredWidth, MinWidth);
+            Height = Math.Max(desiredHeight, MinHeight);
+            Left = desiredLeft;
         }
 
         private void thumbBottom_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             var desiredHeight = Height + e.VerticalChange;
+            Height = Math.Max(desiredHeight, MinHeight);
         }
 
         private void thumbBottomRight_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
             var desiredWidth = Width + e.HorizontalChange;
             var desiredHeight = Height + e.VerticalChange;
+            Width = Math.Max(desiredWidth, MinWidth);
         }
     }
 }
