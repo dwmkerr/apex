@@ -65,59 +65,59 @@ namespace ZuneStyleApplication
 
         private void thumbDiagonal_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            //  Adjust the window width and height.
-            Width += e.HorizontalChange;
-            Height += e.VerticalChange;
+            var desiredWidth = Width + e.HorizontalChange;
+            var desiredHeight = Height + e.VerticalChange;
+            Width = Math.Floor(
         }
 
         private void thumbTopLeft_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Left += e.HorizontalChange;
-            Top += e.VerticalChange;
-            Width -= e.HorizontalChange;
-            Height -= e.VerticalChange;
+            var desiredLeft = Left + e.HorizontalChange;
+            var desiredTop = Top + e.VerticalChange;
+            var desiredWidth = Width - e.HorizontalChange;
+            var desiredHeight = Height - e.VerticalChange;
         }
 
         private void thumbTop_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Top += e.VerticalChange;
-            Height -= e.VerticalChange;
+            var desiredTop = Top + e.VerticalChange;
+            var desiredHeight = Height - e.VerticalChange;
         }
 
         private void thumbTopRight_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Top += e.VerticalChange;
-            Height -= e.VerticalChange;
-            Width += e.HorizontalChange;
+            var desiredTop = Top + e.VerticalChange;
+            var desiredHeight = Height - e.VerticalChange;
+            var desiredWidth = Width + e.HorizontalChange;
         }
 
         private void thumbLeft_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Left += e.HorizontalChange;
-            Width -= e.HorizontalChange;
+            var desiredLeft = Left + e.HorizontalChange;
+            var desiredWidth = Width - e.HorizontalChange;
         }
 
         private void thumbRight_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Width += e.HorizontalChange;
+            var desiredWidth = Width + e.HorizontalChange;
         }
 
         private void thumbBottomLeft_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Left += e.HorizontalChange;
-            Width -= e.HorizontalChange;
-            Height += e.VerticalChange;
+            var desiredLeft = Left + e.HorizontalChange;
+            var desiredWidth = Width - e.HorizontalChange;
+            var desiredHeight = Height + e.VerticalChange;
         }
 
         private void thumbBottom_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Height += e.VerticalChange;
+            var desiredHeight = Height + e.VerticalChange;
         }
 
         private void thumbBottomRight_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            Width += e.HorizontalChange;
-            Height += e.VerticalChange;
+            var desiredWidth = Width + e.HorizontalChange;
+            var desiredHeight = Height + e.VerticalChange;
         }
     }
 }
