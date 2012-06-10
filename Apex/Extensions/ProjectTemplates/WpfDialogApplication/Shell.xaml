@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="clr-namespace:WpfDialogApplication.Views"
         xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
-        Title="MainWindow" Height="350" Width="525">
+        Title="My Application" Height="350" Width="525">
     
     <!-- The application host.-->
     <apexControls:ApplicationHost>

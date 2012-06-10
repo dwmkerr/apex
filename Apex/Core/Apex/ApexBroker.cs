@@ -2,8 +2,9 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
+using Apex.Shells;
 
-namespace Apex.MVVM
+namespace Apex
 {
     /// <summary>
     /// The <see cref="ApexBroker"/> ApexBroker Singleton class.
@@ -92,6 +93,37 @@ namespace Apex.MVVM
                 ViewType = viewType,
                 Hint = hint
             });
+        }
+
+        /// <summary>
+        /// Registers the shell.
+        /// </summary>
+        /// <param name="applicationHost">The shell.</param>
+        public static void RegisterShell(IShell shell)
+        {
+            //  Ensure we don't already have a shell registered.
+            if (ApexBroker.shell != null)
+                throw new InvalidOperationException("A shell has already been registered. Only one application host can be registered.");
+
+            //  Store the shell.
+            ApexBroker.shell = shell;
+        }
+
+        /// <summary>
+        /// Gets the shell host.
+        /// </summary>
+        /// <returns>The registered shell.</returns>
+        public static IShell GetShell()
+        {
+            //  We must be initialised for this to work.
+            EnsureInitialised();
+
+            //  Error check.
+            if (shell == null)
+                throw new InvalidOperationException("No shell has been registered.");
+
+            //  Return the application host.
+            return shell;
         }
 
         /// <summary>
@@ -207,9 +239,14 @@ namespace Apex.MVVM
             new Dictionary<Type, object>();
         
         /// <summary>
-        /// Gets the application host.
+        /// The application host.
         /// </summary>
         private static IApplicationHost applicationHost;
+
+        /// <summary>
+        /// The shell.
+        /// </summary>
+        private static IShell shell;
         
         /// <summary>
         /// The view-viewmodel mapping.

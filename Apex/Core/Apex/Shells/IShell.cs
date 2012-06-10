@@ -12,20 +12,29 @@ namespace Apex.Shells
     /// </summary>
     public interface IShell
     {
-        bool CanMinimize { get; }
+        /// <summary>
+        /// Minimizes the shell, if supported.
+        /// </summary>
+        void DoMinimize();
 
-        bool CanMaximize { get; }
+        /// <summary>
+        /// Maximizes the shell, if supported.
+        /// </summary>
+        void DoMaximize();
 
-        bool CanFullscreen { get; }
+        /// <summary>
+        /// Restores the shell, if supported.
+        /// </summary>
+        void DoRestore();
 
-        void Minimize();
+        /// <summary>
+        /// Fullscreens the shell, if supported.
+        /// </summary>
+        void DoFullscreen();
 
-        void Maximize();
-
-        void Restore();
-
-        void Fullscreen();
-
-        void Close();
+        /// <summary>
+        /// Closes the shell, if supported.
+        /// </summary>
+        void DoClose();
     }
 }
