@@ -6,7 +6,9 @@
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/ApplicationHost.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/CrossButton.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/DragAndDropHost.xaml" />
+        <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/ImageButton.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/MultiBorder.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/PivotControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
 </ResourceDictionary>

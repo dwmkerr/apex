@@ -96,6 +96,7 @@
     <Compile Include="Controls\CrossButton.cs" />
     <Compile Include="Controls\EnumerationComboBox.cs" />
     <Compile Include="Controls\FlipPanel.cs" />
+    <Compile Include="Controls\ImageButton.cs" />
     <Compile Include="Controls\MultiBorder.cs" />
     <Compile Include="Controls\PaddedGrid.cs" />
     <Compile Include="Controls\PivotControl.cs" />
@@ -156,6 +157,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Shells\IShell.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -181,6 +183,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\ResourceDictionaries\ApplicationHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionaries\ImageButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
