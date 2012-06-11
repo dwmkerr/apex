@@ -25,10 +25,17 @@ namespace Apex
                     return;
 
                 //  Enumerate all types to search.
+#if !SILVERLIGHT
                 var typesToSearch = (from a in AppDomain.CurrentDomain.GetAssemblies()
                                     where a.GlobalAssemblyCache == false && a.IsDynamic == false
                                     from t in a.GetExportedTypes()
                                     select t).ToList();
+#else
+                var typesToSearch = (from a in AppDomain.CurrentDomain.GetAssemblies()
+                                     where a.IsDynamic == false
+                                     from t in a.GetExportedTypes()
+                                     select t).ToList();
+#endif
             
                 //  Find every type that has the Model attribute.
                 var modelTypes = from t in typesToSearch

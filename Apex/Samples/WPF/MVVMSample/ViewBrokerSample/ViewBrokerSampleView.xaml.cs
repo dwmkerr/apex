@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Apex;
 using Apex.MVVM;
 using System.Windows.Controls;
 

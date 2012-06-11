@@ -13,7 +13,7 @@ namespace Apex.Shells
     /// A Custom Shell is a Shell Window that has its chrome entirely
     /// drawn by WPF.
     /// </summary>
-    public class CustomShell : Shell
+    public class CustomShell : ShellWindow
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomShell"/> class.

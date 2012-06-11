@@ -82,6 +82,9 @@
     <Compile Include="..\Apex\Adorners\VisualAdorner.cs">
       <Link>Adorners\VisualAdorner.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\ApexBroker.cs">
+      <Link>ApexBroker.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Commands\CommandReference.cs">
       <Link>Commands\CommandReference.cs</Link>
     </Compile>
@@ -199,11 +202,20 @@
     <Compile Include="..\Apex\Helpers\Popups\PopupAnimationHelper.cs">
       <Link>Helpers\Popups\PopupAnimationHelper.cs</Link>
     </Compile>
-    <Compile Include="..\Apex\MVVM\ApexBroker.cs">
-      <Link>MVVM\ApexBroker.cs</Link>
-    </Compile>
     <Compile Include="..\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\Attributes\ExecutionContext.cs">
+      <Link>MVVM\Attributes\ExecutionContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\Attributes\ModelAttribute.cs">
+      <Link>MVVM\Attributes\ModelAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\Attributes\ViewAttribute.cs">
+      <Link>MVVM\Attributes\ViewAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\Attributes\ViewModelAttribute.cs">
+      <Link>MVVM\Attributes\ViewModelAttribute.cs</Link>
     </Compile>
     <Compile Include="..\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
@@ -219,6 +231,9 @@
     </Compile>
     <Compile Include="..\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Shells\IShell.cs">
+      <Link>Shells\IShell.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

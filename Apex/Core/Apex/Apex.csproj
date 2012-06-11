@@ -162,7 +162,7 @@
     </Compile>
     <Compile Include="Shells\CustomShell.cs" />
     <Compile Include="Shells\IShell.cs" />
-    <Compile Include="Shells\Shell.cs" />
+    <Compile Include="Shells\ShellWindow.cs" />
     <Compile Include="Shells\WindowStateToBorderThicknessConverter.cs" />
     <Compile Include="Shells\WindowStateToButtonVisibilityConverter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
