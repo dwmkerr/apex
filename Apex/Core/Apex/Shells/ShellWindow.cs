@@ -8,14 +8,14 @@ using Apex.MVVM;
 namespace Apex.Shells
 {
     /// <summary>
-    /// In WPF, a shell is simply a window.
+    /// A Shell Window for WPF.
     /// </summary>
-    public class Shell : Window, IShell
+    public class ShellWindow : Window, IShell
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Shell"/> class.
+        /// Initializes a new instance of the <see cref="ShellWindow"/> class.
         /// </summary>
-        public Shell()
+        public ShellWindow()
         {
             //  Register the shell.
             ApexBroker.RegisterShell(this);
