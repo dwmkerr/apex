@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:views="clr-namespace:ZuneStyleApplication.Views"
              xmlns:viewModels="clr-namespace:ZuneStyleApplication.ViewModels"
              xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
@@ -121,11 +122,13 @@
 
             <!-- A View Broker for the main view. -->
             <apexControls:ViewBroker ViewModel="{Binding ActivePage.ActivePage}" Margin="6,94,6,6">
-                <Grid Background="Red">
-                    <TextBlock>Initial</TextBlock>
-                </Grid>
+                <views:DefaultView />
             </apexControls:ViewBroker>
-            
+            <!--
+            <apexControls:ViewBroker ViewModel="{Binding ActivePage.ActivePage}" Margin="6,94,6,6">
+                <views:DefaultView />
+            </apexControls:ViewBroker>
+            -->
         </Grid>
 
     </apexShells:Shell>

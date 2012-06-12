@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ZuneStyleApplication.Views.DefaultView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+    <apexControls:ApexGrid Rows="Auto,Auto,*,Auto" TextBlock.FontFamily="Segoe UI" Margin="30">
+        
+        <!-- The title. -->
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" FontSize="34" FontWeight="Normal">POWERED BY APEX.</TextBlock>
+        
+        <!-- Details. -->
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" FontSize="24" LineHeight="34" FontWeight="Thin">
+            Apex is framework that lets you to rapidly build compelling applications using WPF, Silverlight or Windows Phone 7.
+            The framework let's you create maintainable, testable and extensible applications with dazzling user interfaces.
+            Visit <Hyperlink>http://apex.codeplex.com</Hyperlink> to download the SDK and get started!
+        </TextBlock>
+        
+    </apexControls:ApexGrid>
+</UserControl>
