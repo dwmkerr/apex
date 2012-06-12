@@ -12,6 +12,12 @@ namespace Apex.Controls
 {
     public class ViewBroker : ContentControl
     {
+        protected override void OnContentChanged(object oldContent, object newContent)
+        {
+            //  TODO: Default content defined in the XAML overrides the first view.
+            base.OnContentChanged(oldContent, newContent);
+        }
+
         /// <summary>
         /// The DependencyProperty for the BrokerHint property.
         /// </summary>
