@@ -4,10 +4,10 @@
     xmlns:shells="clr-namespace:Apex.Shells"
     xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop">
 
-    <Style TargetType="shells:Shell}">
+    <Style TargetType="shells:Shell">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="shells:Shell}">
+                <ControlTemplate TargetType="shells:Shell">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">

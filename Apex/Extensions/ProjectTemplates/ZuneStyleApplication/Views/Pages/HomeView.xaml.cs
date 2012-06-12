@@ -30,7 +30,7 @@ namespace ZuneStyleApplication.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ApexBroker.GetApplicationHost().ShowPopup(new ExamplePopup());
+            ApexBroker.GetShell().ShowPopup(new ExamplePopup());
         }
     }
 }
