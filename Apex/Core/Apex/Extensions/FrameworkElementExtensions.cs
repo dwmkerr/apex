@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -11,6 +12,7 @@ namespace Apex.Extensions
   internal static class FrameworkElementExtensions
   {
 #if !SILVERLIGHT
+
     /// <summary>
     /// Get the window container of framework element.
     /// </summary>
@@ -25,7 +27,9 @@ namespace Apex.Extensions
       }
       return null;
     }
+
 #endif
+
     public static FrameworkElement GetTopLevelParent(this FrameworkElement element)
     {
       FrameworkElement p = element;

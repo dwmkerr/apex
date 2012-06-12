@@ -126,12 +126,12 @@ namespace Apex
         /// <summary>
         /// Registers the shell.
         /// </summary>
-        /// <param name="applicationHost">The shell.</param>
+        /// <param name="shell">The shell.</param>
         public static void RegisterShell(IShell shell)
         {
             //  Ensure we don't already have a shell registered.
             if (ApexBroker.shell != null)
-                throw new InvalidOperationException("A shell has already been registered. Only one application host can be registered.");
+                throw new InvalidOperationException("A shell has already been registered. Only shell can be registered.");
 
             //  Store the shell.
             ApexBroker.shell = shell;
@@ -152,37 +152,6 @@ namespace Apex
 
             //  Return the application host.
             return shell;
-        }
-
-        /// <summary>
-        /// Registers the application host.
-        /// </summary>
-        /// <param name="applicationHost">The application host.</param>
-        public static void RegisterApplicationHost(IApplicationHost applicationHost)
-        {
-            //  Ensure we don't already have an application host registered.
-            if (ApexBroker.applicationHost != null)
-                throw new InvalidOperationException("An application host has already been registered. Only one application host can be registered.");
-
-            //  Store the application host.
-            ApexBroker.applicationHost = applicationHost;
-        }
-
-        /// <summary>
-        /// Gets the application host.
-        /// </summary>
-        /// <returns></returns>
-        public static IApplicationHost GetApplicationHost()
-        {
-            //  We must be initialised for this to work.
-            EnsureInitialised();
-
-            //  Error check.
-            if (applicationHost == null)
-                throw new InvalidOperationException("No application host has been registered.");
-
-            //  Return the application host.
-            return applicationHost;
         }
 
         /// <summary>
@@ -265,11 +234,6 @@ namespace Apex
         /// </summary>
         private static Dictionary<Type, object> modelInterfaceToModelDictionary =
             new Dictionary<Type, object>();
-        
-        /// <summary>
-        /// The application host.
-        /// </summary>
-        private static IApplicationHost applicationHost;
 
         /// <summary>
         /// The shell.

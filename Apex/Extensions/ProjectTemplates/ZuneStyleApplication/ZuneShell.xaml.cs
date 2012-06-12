@@ -22,7 +22,7 @@ namespace ZuneStyleApplication
     /// <summary>
     /// Interaction logic for ZuneShell.xaml
     /// </summary>
-    public partial class ZuneShell : CustomShell
+    public partial class ZuneShell : CustomShellWindow
     {
         public ZuneShell()
         {

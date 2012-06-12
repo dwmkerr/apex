@@ -18,14 +18,14 @@ namespace Apex.Helpers.Popups
         /// <summary>
         /// A list that stores each popup and associated background.
         /// </summary>
-        private readonly List<Tuple<IPopup, Grid>> popupsAndBackgrounds = new List<Tuple<IPopup, Grid>>();
+        private readonly List<Tuple<UIElement, Grid>> popupsAndBackgrounds = new List<Tuple<UIElement, Grid>>();
 
         /// <summary>
         /// Shows the popup in the popup host.
         /// </summary>
         /// <param name="popupHost">The popup host.</param>
         /// <param name="popup">The popup.</param>
-        public void ShowPopup(Grid popupHost, IPopup popup)
+        public void ShowPopup(Grid popupHost, UIElement popup)
         {
             //  Create the popup background.
             var popupBackground = new Grid();
@@ -37,7 +37,7 @@ namespace Apex.Helpers.Popups
             popupsAndBackgrounds.Add(popupAndBackground);
 
             //  Animate the popup.
-            AnimatePopupShow(popupHost, popupBackground, (UIElement)popup);
+            AnimatePopupShow(popupHost, popupBackground, popup);
         }
 
         /// <summary>
@@ -47,10 +47,10 @@ namespace Apex.Helpers.Popups
         /// </summary>
         /// <param name="popupHost">The popup host.</param>
         /// <param name="popup">The popup.</param>
-        public void ClosePopup(Grid popupHost, IPopup popup)
+        public void ClosePopup(Grid popupHost, UIElement popup)
         {
             //  Find the tuple for the popup.
-            var popupAndBackground = Enumerable.FirstOrDefault<Tuple<IPopup, Grid>>((from pab in popupsAndBackgrounds where pab.Item1 == popup select pab));
+            var popupAndBackground = (from pab in popupsAndBackgrounds where pab.Item1 == popup select pab).FirstOrDefault();
 
             //  If it's missing, then this popup was not shown in this instance of the helper.
             if(popupAndBackground == null)
@@ -60,7 +60,7 @@ namespace Apex.Helpers.Popups
             popupsAndBackgrounds.Remove(popupAndBackground);
 
             //  Animate the popup.
-            AnimatePopupHide(popupHost, popupAndBackground.Item2, (UIElement)popup);
+            AnimatePopupHide(popupHost, popupAndBackground.Item2, popup);
         }
 
         /// <summary>

@@ -25,11 +25,11 @@ namespace Apex.Consistency
 #else
           if (Application.Current.RootVisual != null)
               return Application.Current.RootVisual.Dispatcher;
-          else if (ApexBroker.GetApplicationHost() != null && ApexBroker.GetApplicationHost() is UIElement)
-              return ((UIElement) ApexBroker.GetApplicationHost()).Dispatcher;
+          else if (ApexBroker.GetShell() != null && ApexBroker.GetShell() is UIElement)
+              return ((UIElement) ApexBroker.GetShell()).Dispatcher;
           else
           {
-              throw new InvalidOperationException("Cannot find a root element to get a dispatcher. Try including an ApplicationHost as a top level element.");
+              throw new InvalidOperationException("Cannot find a root element to get a dispatcher. Try including a Shell as a top level element.");
           }
 #endif
       }

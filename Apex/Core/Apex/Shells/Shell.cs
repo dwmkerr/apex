@@ -5,38 +5,37 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using Apex.Adorners;
+using Apex.Controls;
 using Apex.DragAndDrop;
 using Apex.Helpers.Popups;
-using Apex.MVVM;
+using Apex.Extensions;
 
-namespace Apex.Controls
+namespace Apex.Shells
 {
-
     /// <summary>
-    /// The application host is the main root level element of an application
-    /// and provides drag and drop and popup functionality.
+    /// The shell is a control used internally to provide the bulk of shell operations valid 
+    /// across all platforms - popups, drag and drop etc.
     /// </summary>
     [TemplatePart(Name = "PART_ApplicationHost", Type = typeof(Grid))]
     [TemplatePart(Name = "PART_DragAndDropHost", Type = typeof(DragAndDropHost))]
     [TemplatePart(Name = "PART_PopupHost", Type = typeof(Grid))]
-    public class ApplicationHost : ContentControl, IApplicationHost
+    internal class Shell : ContentControl, IShell
     {
 #if !SILVERLIGHT
         /// <summary>
-        /// Initializes the <see cref="ApplicationHost"/> class.
+        /// Initializes the <see cref="Shell"/> class.
         /// </summary>
-        static ApplicationHost()
+        static Shell()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ApplicationHost), new FrameworkPropertyMetadata(typeof(ApplicationHost)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(Shell), new FrameworkPropertyMetadata(typeof(Shell)));
         }
 #else
         /// <summary>
-        /// Initializes the <see cref="ApplicationHost"/> class.
+        /// Initializes the <see cref="Shell"/> class.
         /// </summary>
-        public ApplicationHost()
+        public Shell()
         {
-            this.DefaultStyleKey = typeof(ApplicationHost);
+            this.DefaultStyleKey = typeof(Shell);
         }
 #endif
         /// <summary>
@@ -47,12 +46,12 @@ namespace Apex.Controls
             //  Call the base.
             base.OnApplyTemplate();
 
+            //  Register the shell.
+            ApexBroker.RegisterShell(this);
+
             //  Wire up the close event handler.
             PopupClosed += OnPopupClosed;
-
-            //  Register with the broker.
-            ApexBroker.RegisterApplicationHost(this);
-
+            
             //  Get the template parts.
             try
             {
@@ -66,6 +65,67 @@ namespace Apex.Controls
             }
         }
 
+
+#if !SILVERLIGHT
+
+        /// <summary>
+        /// Minimizes the shell, if supported.
+        /// </summary>
+        public void DoMinimize()
+        {
+            //  Get the parent window.
+            var parentWindow = this.GetParentWindow();
+            if (parentWindow == null)
+                throw new InvalidOperationException("Cannot minimize shell - parent window cannot be found.");
+            parentWindow.WindowState = WindowState.Minimized;
+        }
+
+        /// <summary>
+        /// Maximizes the shell, if supported.
+        /// </summary>
+        public void DoMaximize()
+        {
+            //  Get the parent window.
+            var parentWindow = this.GetParentWindow();
+            if (parentWindow == null)
+                throw new InvalidOperationException("Cannot maximize shell - parent window cannot be found.");
+            parentWindow.WindowState = WindowState.Maximized;
+        }
+
+        /// <summary>
+        /// Restores the shell, if supported.
+        /// </summary>
+        public void DoRestore()
+        {
+            //  Get the parent window.
+            var parentWindow = this.GetParentWindow();
+            if (parentWindow == null)
+                throw new InvalidOperationException("Cannot restore shell - parent window cannot be found.");
+            parentWindow.WindowState = WindowState.Normal;
+        }
+
+        /// <summary>
+        /// Closes the shell, if supported.
+        /// </summary>
+        public void DoClose()
+        {
+            //  Get the parent window.
+            var parentWindow = this.GetParentWindow();
+            if (parentWindow == null)
+                throw new InvalidOperationException("Cannot close shell - parent window cannot be found.");
+            parentWindow.Close();
+        }
+
+#endif
+
+        /// <summary>
+        /// Fullscreens the shell, if supported.
+        /// </summary>
+        public void DoFullscreen()
+        {
+            throw new NotImplementedException();
+        }
+
 #if !SILVERLIGHT
 
         /// <summary>
@@ -75,26 +135,30 @@ namespace Apex.Controls
         /// <returns>
         /// The popup result.
         /// </returns>
-        public object ShowPopup(IPopup popup)
+        public object ShowPopup(UIElement popup)
         {
             //  Raise the popup opened event.
             var args = new RoutedEventArgs(PopupOpenedEvent);
             RaiseEvent(args);
 
-            //  Create a new dispatcher frame.
-            var dispatcherFrame = new DispatcherFrame();
-      
-            //  Push our popup onto the popup stack.
-            popupStack.Push(Tuple.Create(popup, dispatcherFrame));
+            //  Create a new popup state with a new dispatcher frame.
+            var popupState = new PopupState()
+            {
+                PopupElement = popup,
+                DispatcherFrame = new DispatcherFrame()
+            };
+            
+            //  Push our popup state onto the popup stack.
+            popupStack.Push(popupState);
 
             //  Transition the popup.
             popupAnimationHelper.ShowPopup(popupHost, popup);
             
             //  Push the dispatcher frame - this will now block until we close the popup.
-            Dispatcher.PushFrame(dispatcherFrame); 
+            Dispatcher.PushFrame(popupState.DispatcherFrame); 
 
-            //  Return the last popup result.
-            return lastPopupResult;
+            //  Return the popup result (which by now will be stored in its state).
+            return popupState.PopupResult;
         }
         
         /// <summary>
@@ -111,10 +175,7 @@ namespace Apex.Controls
             popupStack.Pop();
 
             //  Cancel the dispatcher frame.
-            topPopup.Item2.Continue = false;
-
-            //  Store the popup result.
-            lastPopupResult = topPopup.Item1.GetPopupResult();
+            topPopup.DispatcherFrame.Continue = false;
         }
 #else
         
@@ -123,13 +184,20 @@ namespace Apex.Controls
         /// </summary>
         /// <param name="popup">The popup.</param>
         /// <param name="onPopopClosed">The action to invoke when the popop is closed.</param>
-        public void ShowPopup(IPopup popup, Action<object> onPopopClosed)
+        public void ShowPopup(UIElement popup, Action<object> onPopopClosed)
         {
             //  Fire the popup opened event.
             FirePopupOpened();
+
+            //  Create the popup state.
+            var popupState = new PopupState()
+            {
+                PopupElement = popup,
+                ClosedAction = onPopopClosed
+            };
             
             //  Push our popup onto the popup stack.
-            popupStack.Push(Tuple.Create(popup, onPopopClosed));
+            popupStack.Push(popupState);
 
             //  Transition the popup.
             popupAnimationHelper.ShowPopup(popupHost, popup);
@@ -146,13 +214,10 @@ namespace Apex.Controls
             //  Pop the top popup.
             popupStack.Pop();
         
-            //  Store the popup result.
-            lastPopupResult = topPopup.Item1.GetPopupResult();
-
             //  Fire the action.
-            var theAction = topPopup.Item2;
+            var theAction = topPopup.ClosedAction;
             if(theAction != null)
-                theAction(lastPopupResult);
+                theAction(topPopup.PopupResult);
         }
 
 #endif
@@ -161,11 +226,15 @@ namespace Apex.Controls
         /// Closes the popup.
         /// </summary>
         /// <param name="popup">The popup.</param>
-        public void ClosePopup(IPopup popup)
+        /// <param name="result">The popup result, which will be provided to the caller of ShowPopup.</param>
+        public void ClosePopup(UIElement popup, object result)
         {
             //  Make sure we're the top of the stack.
-            if(popupStack.Peek().Item1 != popup)
+            if(popupStack.Peek().PopupElement != popup)
                 throw new InvalidOperationException("Cannot close the specified popup - it is not the top of the popup stack.");
+
+            //  Store the popup result.
+            popupStack.Peek().PopupResult = result;
 
             //  Transition the popup.
             popupAnimationHelper.ClosePopup(popupHost, popup);
@@ -196,7 +265,6 @@ namespace Apex.Controls
         /// </summary>
         protected virtual void FirePopupClosed()
         {
-            
 #if !SILVERLIGHT
             //  Raise the popup closed event.
             var args = new RoutedEventArgs(PopupClosedEvent);
@@ -225,28 +293,11 @@ namespace Apex.Controls
         /// </summary>
         private Grid popupHost;
 
-#if !SILVERLIGHT
-
         /// <summary>
         /// The current stack of popups.
         /// </summary>
-        private readonly Stack<Tuple<IPopup, DispatcherFrame>> popupStack = 
-            new Stack<Tuple<IPopup, DispatcherFrame>>();
-
-#else
-        
-        /// <summary>
-        /// The current stack of popups.
-        /// </summary>
-        private readonly Stack<Tuple<IPopup, Action<object>>> popupStack = 
-            new Stack<Tuple<IPopup, Action<object>>>();
-
-#endif
-
-        /// <summary>
-        /// The last popup result.
-        /// </summary>
-        private object lastPopupResult;
+        private readonly Stack<PopupState> popupStack =
+            new Stack<PopupState>();
 
         /// <summary>
         /// The popup animation helper, fade in by default.
@@ -259,13 +310,13 @@ namespace Apex.Controls
         /// Occurs when a popup is opened.
         /// </summary>
         public static readonly RoutedEvent PopupOpenedEvent = EventManager.RegisterRoutedEvent("PopupOpened",
-            RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ApplicationHost));
+            RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Shell));
 
         /// <summary>
         /// Occurs when a popup is closed.
         /// </summary>
         public static readonly RoutedEvent PopupClosedEvent = EventManager.RegisterRoutedEvent("PopupClosed",
-            RoutingStrategy.Bubble, typeof(RoutedEventArgs), typeof(ApplicationHost));
+            RoutingStrategy.Bubble, typeof(RoutedEventArgs), typeof(Shell));
 
         /// <summary>
         /// Occurs when a popup is opened.
@@ -316,6 +367,17 @@ namespace Apex.Controls
                     throw new InvalidOperationException("Cannot change the popup animation helper - there are popups open.");
                 popupAnimationHelper = value;
             }
+        }
+
+        internal class PopupState
+        {
+            public UIElement PopupElement { get; set; }
+#if !SILVERLIGHT
+            public DispatcherFrame DispatcherFrame { get; set; }
+#else
+            public Action<object> ClosedAction { get; set; }
+#endif
+            public object PopupResult { get; set; }
         }
     }
 }

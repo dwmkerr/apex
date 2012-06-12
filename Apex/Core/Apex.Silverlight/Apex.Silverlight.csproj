@@ -58,14 +58,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
-    <Reference Include="System.Windows">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
@@ -123,9 +120,6 @@
     </Compile>
     <Compile Include="..\Apex\Controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
-    </Compile>
-    <Compile Include="..\Apex\Controls\ApplicationHost.cs">
-      <Link>Controls\ApplicationHost.cs</Link>
     </Compile>
     <Compile Include="..\Apex\Controls\EnumerationComboBox.cs">
       <Link>Controls\EnumerationComboBox.cs</Link>
@@ -220,12 +214,6 @@
     <Compile Include="..\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
     </Compile>
-    <Compile Include="..\Apex\MVVM\IApplicationHost.cs">
-      <Link>MVVM\IApplicationHost.cs</Link>
-    </Compile>
-    <Compile Include="..\Apex\MVVM\IPopup.cs">
-      <Link>MVVM\IPopup.cs</Link>
-    </Compile>
     <Compile Include="..\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
@@ -234,6 +222,9 @@
     </Compile>
     <Compile Include="..\Apex\Shells\IShell.cs">
       <Link>Shells\IShell.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Shells\Shell.cs">
+      <Link>Shells\Shell.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -247,16 +238,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\ResourceDictionaries\ApplicationHost.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Themes\ResourceDictionaries\DragAndDropHost.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\ResourceDictionaries\Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="system" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Apex.snk" />
   </ItemGroup>
