@@ -15,16 +15,17 @@ using System.Windows.Shapes;
 using System.Drawing.Printing;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using Apex.Controls;
 using Apex.Shells;
 
 namespace ZuneStyleApplication
 {
     /// <summary>
-    /// Interaction logic for ZuneShell.xaml
+    /// Interaction logic for Zune.xaml
     /// </summary>
-    public partial class ZuneShell : CustomShellWindow
+    public partial class Zune : CustomWindow
     {
-        public ZuneShell()
+        public Zune()
         {
             InitializeComponent();
         }        

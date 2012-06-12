@@ -19,7 +19,7 @@ namespace Apex.Shells
     [TemplatePart(Name = "PART_ApplicationHost", Type = typeof(Grid))]
     [TemplatePart(Name = "PART_DragAndDropHost", Type = typeof(DragAndDropHost))]
     [TemplatePart(Name = "PART_PopupHost", Type = typeof(Grid))]
-    internal class Shell : ContentControl, IShell
+    public class Shell : ContentControl, IShell
     {
 #if !SILVERLIGHT
         /// <summary>

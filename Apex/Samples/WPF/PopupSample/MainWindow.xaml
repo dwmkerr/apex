@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:PopupSample"
         xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+        xmlns:apexShells="clr-namespace:Apex.Shells;assembly=Apex"
         Title="Popup Sample" Height="500" Width="600">
     <Window.DataContext>
         <local:MainViewModel x:Name="viewModel" />
     </Window.DataContext>
-    <apexControls:ApplicationHost>
+    <apexShells:Shell>
         <apexControls:ApexGrid Rows="Auto,Auto,*,Auto"
                                TextBlock.FontFamily="Segoe UI" TextBlock.FontSize="16">
 
@@ -37,5 +38,5 @@
             <Hyperlink Command="{Binding UseDiagonalSlideInOuAnimationHelperCommand}">Diagonal Slide In/Out</Hyperlink></TextBlock>
             <Button Grid.Row="2" Width="120" Height="30" Content="Show Popup" Command="{Binding ShowPopupCommand}" />
         </apexControls:ApexGrid>
-    </apexControls:ApplicationHost>
+    </apexShells:Shell>
 </Window>

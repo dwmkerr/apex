@@ -18,7 +18,7 @@ namespace Apex.Helpers.Popups
         /// <summary>
         /// A list that stores each popup and associated background.
         /// </summary>
-        private readonly List<Tuple<UIElement, Grid>> popupsAndBackgrounds = new List<Tuple<UIElement, Grid>>();
+        private readonly List<PopupAndBackground> popupsAndBackgrounds = new List<PopupAndBackground>();
 
         /// <summary>
         /// Shows the popup in the popup host.
@@ -27,17 +27,18 @@ namespace Apex.Helpers.Popups
         /// <param name="popup">The popup.</param>
         public void ShowPopup(Grid popupHost, UIElement popup)
         {
-            //  Create the popup background.
-            var popupBackground = new Grid();
-
-            //  Create a tuple to hold the popup and its background.
-            var popupAndBackground = Tuple.Create(popup, popupBackground);
-
+            //  Create the popup and background.
+            var popupAndBackground = new PopupAndBackground()
+            {
+                PopupElement = popup,
+                Background = new Grid()
+            };
+            
             //  Add the tuple to the internal collection.
             popupsAndBackgrounds.Add(popupAndBackground);
 
             //  Animate the popup.
-            AnimatePopupShow(popupHost, popupBackground, popup);
+            AnimatePopupShow(popupHost, popupAndBackground.Background, popup);
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace Apex.Helpers.Popups
         public void ClosePopup(Grid popupHost, UIElement popup)
         {
             //  Find the tuple for the popup.
-            var popupAndBackground = (from pab in popupsAndBackgrounds where pab.Item1 == popup select pab).FirstOrDefault();
+            var popupAndBackground = (from pab in popupsAndBackgrounds where pab.PopupElement == popup select pab).FirstOrDefault();
 
             //  If it's missing, then this popup was not shown in this instance of the helper.
             if(popupAndBackground == null)
@@ -60,7 +61,7 @@ namespace Apex.Helpers.Popups
             popupsAndBackgrounds.Remove(popupAndBackground);
 
             //  Animate the popup.
-            AnimatePopupHide(popupHost, popupAndBackground.Item2, popup);
+            AnimatePopupHide(popupHost, popupAndBackground.Background, popup);
         }
 
         /// <summary>
@@ -85,6 +86,12 @@ namespace Apex.Helpers.Popups
         public int OpenPopupsCount
         {
             get { return popupsAndBackgrounds.Count; }   
+        }
+
+        internal class PopupAndBackground
+        {
+            public UIElement PopupElement { get; set; }
+            public Grid Background { get; set; }
         }
     }
 

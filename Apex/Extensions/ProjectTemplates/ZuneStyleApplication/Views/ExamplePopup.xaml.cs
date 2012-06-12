@@ -19,32 +19,21 @@ namespace ZuneStyleApplication.Views
     /// <summary>
     /// Interaction logic for ExamplePopup.xaml
     /// </summary>
-    public partial class ExamplePopup : UserControl, IPopup
+    public partial class ExamplePopup : UserControl
     {
         public ExamplePopup()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Gets the popup result.
-        /// </summary>
-        /// <returns>
-        /// The popup result.
-        /// </returns>
-        public object GetPopupResult()
-        {
-            return true;
-        }
-
         private void button_OK_Click(object sender, RoutedEventArgs e)
         {
-            ApexBroker.GetApplicationHost().ClosePopup(this);
+            ApexBroker.GetShell().ClosePopup(this, true);
         }
 
         private void button_Cancel_Click(object sender, RoutedEventArgs e)
         {
-            ApexBroker.GetApplicationHost().ClosePopup(this);
+            ApexBroker.GetShell().ClosePopup(this, false);
         }
     }
 }

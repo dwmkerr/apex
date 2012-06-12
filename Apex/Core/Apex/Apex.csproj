@@ -134,7 +134,6 @@
     <Compile Include="Interop\User32.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="MVVM\Attributes\ModelAttribute.cs" />
-    <Compile Include="MVVM\Attributes\ExecutionContext.cs" />
     <Compile Include="MVVM\ModelTypedViewModel.cs" />
     <Compile Include="ApexBroker.cs" />
     <Compile Include="MVVM\Attributes\ViewAttribute.cs" />
