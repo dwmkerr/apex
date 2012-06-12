@@ -19,7 +19,7 @@ namespace PopupSample
     /// <summary>
     /// Interaction logic for SimplePopupView.xaml
     /// </summary>
-    public partial class SimplePopupView : UserControl, IPopup
+    public partial class SimplePopupView : UserControl
     {
         public SimplePopupView()
         {
@@ -28,12 +28,7 @@ namespace PopupSample
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            ApexBroker.GetApplicationHost().ClosePopup(this);
-        }
-
-        public object GetPopupResult()
-        {
-            return null;
+            ApexBroker.GetShell().ClosePopup(this, null);
         }
     }
 }

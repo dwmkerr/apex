@@ -199,9 +199,6 @@
     <Compile Include="..\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
-    <Compile Include="..\Apex\MVVM\Attributes\ExecutionContext.cs">
-      <Link>MVVM\Attributes\ExecutionContext.cs</Link>
-    </Compile>
     <Compile Include="..\Apex\MVVM\Attributes\ModelAttribute.cs">
       <Link>MVVM\Attributes\ModelAttribute.cs</Link>
     </Compile>

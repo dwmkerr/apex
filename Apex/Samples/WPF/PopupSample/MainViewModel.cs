@@ -24,12 +24,12 @@ namespace PopupSample
 
         private void DoUseFadeInOutAnimationHelperCommand()
         {
-            ApexBroker.GetApplicationHost().PopupAnimationHelper = new FadeInOutPopupAnimationHelper();
+            ApexBroker.GetShell().PopupAnimationHelper = new FadeInOutPopupAnimationHelper();
         }
 
         private void DoUseBounceUpDownOutAnimationHelperCommand()
         {
-            ApexBroker.GetApplicationHost().PopupAnimationHelper = new BounceInOutPopupAnimationHelper();
+            ApexBroker.GetShell().PopupAnimationHelper = new BounceInOutPopupAnimationHelper();
         }
 
         public Command ShowPopupCommand { get; private set; }

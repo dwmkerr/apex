@@ -6,6 +6,7 @@
              xmlns:viewModels="clr-namespace:ZuneStyleApplication.ViewModels"
              xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+             xmlns:apexShells="clr-namespace:Apex.Shells;assembly=Apex"
              xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="500">
@@ -16,7 +17,7 @@
     </UserControl.DataContext>
     
     <!-- The application host. An application host supports popups and drag and drop. -->
-    <apexControls:ApplicationHost TextBlock.FontFamily="Segoe UI">        
+    <apexShells:Shell TextBlock.FontFamily="Segoe UI">        
         <Grid>
             
             <!-- Top right title panel. -->
@@ -127,5 +128,5 @@
             
         </Grid>
 
-    </apexControls:ApplicationHost>
+    </apexShells:Shell>
 </UserControl>
