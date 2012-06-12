@@ -96,13 +96,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDialogApplication", "Ext
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplication", "Extensions\ProjectTemplates\ZuneStyleApplication\ZuneStyleApplication.csproj", "{F9D779D2-A509-4FA7-B399-45215FFBDAD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight.TEMP", "Core\Apex.Silverlight.TEMP\Apex.Silverlight.TEMP.csproj", "{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight", "Core\Apex.Silverlight\Apex.Silverlight.csproj", "{58D389D5-4E56-48C4-8F67-8232A4033A26}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 36
+		SccNumberOfProjects = 35
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -238,14 +236,10 @@ Global
 		SccProjectTopLevelParentUniqueName33 = Apex.sln
 		SccProjectName33 = Extensions/ProjectTemplates/ZuneStyleApplication
 		SccLocalPath33 = Extensions\\ProjectTemplates\\ZuneStyleApplication
-		SccProjectUniqueName34 = Core\\Apex.Silverlight.TEMP\\Apex.Silverlight.TEMP.csproj
+		SccProjectUniqueName34 = Core\\Apex.Silverlight\\Apex.Silverlight.csproj
 		SccProjectTopLevelParentUniqueName34 = Apex.sln
-		SccProjectName34 = Core/Apex.Silverlight.TEMP
-		SccLocalPath34 = Core\\Apex.Silverlight.TEMP
-		SccProjectUniqueName35 = Core\\Apex.Silverlight\\Apex.Silverlight.csproj
-		SccProjectTopLevelParentUniqueName35 = Apex.sln
-		SccProjectName35 = Core/Apex.Silverlight
-		SccLocalPath35 = Core\\Apex.Silverlight
+		SccProjectName34 = Core/Apex.Silverlight
+		SccLocalPath34 = Core\\Apex.Silverlight
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Apex.vsmdi
@@ -595,16 +589,6 @@ Global
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|x86.ActiveCfg = Release|x86
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|x86.Build.0 = Release|x86
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A}.Release|x86.ActiveCfg = Release|Any CPU
 		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -631,7 +615,6 @@ Global
 		{67D54A68-A287-4797-9667-ACCBF9683119} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{A479105C-717B-4500-8FFC-B3D12BEEF13E} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
-		{A68B362C-73EC-4AC7-844F-CC3AB38BDD7A} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{58D389D5-4E56-48C4-8F67-8232A4033A26} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{ECCD3814-F5C6-411F-8F3E-FCC2FC346E29} = {C0329934-0922-4B83-8C9F-B573CA14B8A1}
 		{045F9F82-B22A-4083-A978-51552906E813} = {C0329934-0922-4B83-8C9F-B573CA14B8A1}
