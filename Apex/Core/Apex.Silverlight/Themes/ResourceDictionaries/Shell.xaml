@@ -1,13 +1,13 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Apex.Controls"
+    xmlns:shells="clr-namespace:Apex.Shells"
     xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop">
-    
-    <Style TargetType="controls:ApplicationHost">
+
+    <Style TargetType="shells:Shell}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controls:ApplicationHost">
+                <ControlTemplate TargetType="shells:Shell}">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">

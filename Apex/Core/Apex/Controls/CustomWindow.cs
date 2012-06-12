@@ -7,18 +7,18 @@ using System.Windows.Interop;
 using Apex.Interop;
 using System.Runtime.InteropServices;
 
-namespace Apex.Shells
+namespace Apex.Controls
 {
     /// <summary>
-    /// A Custom Shell is a Shell Window that has its chrome entirely
+    /// A Custom Window is a Window that has its chrome entirely
     /// drawn by WPF.
     /// </summary>
-    public class CustomShell : ShellWindow
+    public class CustomShellWindow : Window
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomShell"/> class.
+        /// Initializes a new instance of the <see cref="CustomShellWindow"/> class.
         /// </summary>
-        public CustomShell()
+        public CustomShellWindow()
         {
             //  Custom shells have no border and no window style.
             ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -80,7 +80,7 @@ namespace Apex.Shells
         /// The DependencyProperty for the HasDropShadow property.
         /// </summary>
         private static readonly DependencyProperty HasDropShadowProperty =
-          DependencyProperty.Register("HasDropShadow", typeof(bool), typeof(CustomShell),
+          DependencyProperty.Register("HasDropShadow", typeof(bool), typeof(CustomShellWindow),
           new PropertyMetadata(true, new PropertyChangedCallback(OnHasDropShadowChanged)));
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Apex.Shells
         /// <param name="args">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnHasDropShadowChanged(DependencyObject o, DependencyPropertyChangedEventArgs args)
         {
-            CustomShell me = o as CustomShell;
+            CustomShellWindow me = o as CustomShellWindow;
         }
     }
 }

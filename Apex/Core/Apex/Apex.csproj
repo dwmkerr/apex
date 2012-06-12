@@ -88,7 +88,6 @@
     <Compile Include="Consistency\SystemParameters.cs" />
     <Compile Include="Controls\AnimatedScrollViewer.cs" />
     <Compile Include="Controls\ApexGrid.cs" />
-    <Compile Include="Controls\ApplicationHost.cs" />
     <Compile Include="Controls\CartesianCanvas.cs" />
     <Compile Include="Controls\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
@@ -137,8 +136,6 @@
     <Compile Include="MVVM\Attributes\ModelAttribute.cs" />
     <Compile Include="MVVM\Attributes\ExecutionContext.cs" />
     <Compile Include="MVVM\ModelTypedViewModel.cs" />
-    <Compile Include="MVVM\IApplicationHost.cs" />
-    <Compile Include="MVVM\IPopup.cs" />
     <Compile Include="ApexBroker.cs" />
     <Compile Include="MVVM\Attributes\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
@@ -160,11 +157,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Shells\CustomShell.cs" />
+    <Compile Include="Controls\CustomWindow.cs" />
     <Compile Include="Shells\IShell.cs" />
-    <Compile Include="Shells\ShellWindow.cs" />
-    <Compile Include="Shells\WindowStateToBorderThicknessConverter.cs" />
-    <Compile Include="Shells\WindowStateToButtonVisibilityConverter.cs" />
+    <Compile Include="Shells\Shell.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -189,7 +184,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\ResourceDictionaries\ApplicationHost.xaml">
+    <Page Include="Themes\ResourceDictionaries\Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
