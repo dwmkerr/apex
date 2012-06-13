@@ -9,12 +9,12 @@
     <apexControls:ApexGrid Rows="Auto,Auto,*,Auto" TextBlock.FontFamily="Segoe UI" Margin="30">
         
         <!-- The title. -->
-        <TextBlock Grid.Row="0" TextWrapping="Wrap" FontSize="34" FontWeight="Normal">POWERED BY APEX.</TextBlock>
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" FontSize="34" FontWeight="Normal">POWERED BY <Span Foreground="{StaticResource ZuneColor1Brush}">APEX</Span>.</TextBlock>
         
         <!-- Details. -->
         <TextBlock Grid.Row="1" TextWrapping="Wrap" FontSize="24" LineHeight="34" FontWeight="Thin">
             Apex is framework that lets you to rapidly build compelling applications using WPF, Silverlight or Windows Phone 7.
-            The framework let's you create maintainable, testable and extensible applications with dazzling user interfaces.
+            The framework help you create maintainable, testable and extensible applications with dazzling user interfaces.
             Visit <Hyperlink>http://apex.codeplex.com</Hyperlink> to download the SDK and get started!
         </TextBlock>
         

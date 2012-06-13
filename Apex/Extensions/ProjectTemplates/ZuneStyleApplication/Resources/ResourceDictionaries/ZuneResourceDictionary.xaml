@@ -22,6 +22,24 @@
         <GradientStop Offset="1" Color="{StaticResource PopupBackgroundBottomColor}" />
     </LinearGradientBrush>
 
+    <Style x:Key="Heading1Style" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="LineHeight" Value="50" />
+        <Setter Property="FontWeight" Value="Light" />
+    </Style>
+
+    <Style x:Key="Heading2Style" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="LineHeight" Value="30" />
+        <Setter Property="FontWeight" Value="Light" />
+    </Style>
+
+    <Style x:Key="Heading3Style" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="LineHeight" Value="24" />
+        <Setter Property="FontWeight" Value="Light" />
+    </Style>
+    
     <Style x:Key="MenuItemStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="24" />
         <Setter Property="FontWeight" Value="Light" />
