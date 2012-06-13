@@ -15,11 +15,17 @@ namespace Apex.Helpers
         public static IEnumerable<Assembly> GetDomainAssemblies()
         {
 #if SILVERLIGHT3
+            
             return new List<Assembly> {Assembly.GetCallingAssembly(), Assembly.GetExecutingAssembly()};
+#elif SILVERLIGHT4
+            //  TODO: According to MSDN AppDomain.CurrentDomain.GetAssemblies should compile in SL4 - it doesn't seem to.
+            //  We can force it to work by making things dynamic.
+            dynamic appDomain = AppDomain.CurrentDomain;
+            return appDomain.GetAssemblies();
 #else
             return AppDomain.CurrentDomain.GetAssemblies();
 #endif
-            
+
         }
 
         /// <summary>
