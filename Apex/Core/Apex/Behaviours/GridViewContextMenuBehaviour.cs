@@ -2,24 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Controls;
+using System.Windows.Interactivity;
 
 namespace Apex.Behaviours
 {
-
     /// <summary>
     /// Automatically creates a context menu for a list view item allowing the grid columns to be
     /// shown or hidden.
     /// </summary>
-    public class GridViewContextMenuBehaviour : Behaviour<ListView>
+    public class GridViewContextMenuBehaviour : Behavior<ListView>
     {
         /// <summary>
-        /// Called when attached.
+        /// Called after the behavior is attached to an AssociatedObject.
         /// </summary>
-        /// <param name="element">The element.</param>
-        public override void OnAttached(ListView element)
+        protected override void OnAttached()
         {
+            base.OnAttached();
+
+            //  Get the list view.
+            var element = AssociatedObject as ListView;
             //  Ensure we have a grid view.
             if (element == null || element.View == null || element.View is GridView == false)
                 throw new InvalidOperationException("The GridViewContextMenuBehaviour must be attached to a ListView with the GridView View.");
@@ -71,11 +73,11 @@ namespace Apex.Behaviours
         }
 
         /// <summary>
-        /// Called when detached.
+        /// Called when the behavior is being detached from its AssociatedObject, but before it has actually occurred.
         /// </summary>
-        /// <param name="element">The element.</param>
-        public override void OnDetached(ListView element)
+        protected override void OnDetaching()
         {
+            base.OnDetaching();
         }
 
         private GridView gridView;
