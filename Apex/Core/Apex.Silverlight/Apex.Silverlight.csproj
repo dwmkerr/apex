@@ -183,6 +183,9 @@
     <Compile Include="..\apex\extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Helpers\AssembliesHelper.cs">
+      <Link>Helpers\AssembliesHelper.cs</Link>
+    </Compile>
     <Compile Include="..\apex\helpers\EnumHelper.cs">
       <Link>Helpers\EnumHelper.cs</Link>
     </Compile>
