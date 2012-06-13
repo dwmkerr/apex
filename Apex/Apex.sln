@@ -75,8 +75,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopupSample", "Samples\WPF\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight3", "Legacy\Apex.Silverlight3\Apex.Silverlight3.csproj", "{13B41E58-A2ED-4423-B986-EF0EC029932E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight4", "Legacy\Apex.Silverlight4\Apex.Silverlight4.csproj", "{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopupSample", "Samples\Silverlight\PopupSample\PopupSample.csproj", "{285A1652-0307-49B6-8A22-64B1CBC01661}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A7AAB5CF-4785-4DAF-A77A-94162B40BDD0}"
@@ -96,7 +94,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDialogApplication", "Ext
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplication", "Extensions\ProjectTemplates\ZuneStyleApplication\ZuneStyleApplication.csproj", "{F9D779D2-A509-4FA7-B399-45215FFBDAD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight", "Core\Apex.Silverlight\Apex.Silverlight.csproj", "{58D389D5-4E56-48C4-8F67-8232A4033A26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight", "Core\Apex.Silverlight\Apex.Silverlight.csproj", "{A9132C33-99DE-4780-BD39-99D7CF1E2345}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex.Silverlight4.OLD", "Legacy\Apex.Silverlight4.OLD\Apex.Silverlight4.OLD.csproj", "{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -216,30 +216,30 @@ Global
 		SccProjectTopLevelParentUniqueName28 = Apex.sln
 		SccProjectName28 = Legacy/Apex.Silverlight3
 		SccLocalPath28 = Legacy\\Apex.Silverlight3
-		SccProjectUniqueName29 = Legacy\\Apex.Silverlight4\\Apex.Silverlight4.csproj
+		SccProjectUniqueName29 = Samples\\Silverlight\\PopupSample\\PopupSample.csproj
 		SccProjectTopLevelParentUniqueName29 = Apex.sln
-		SccProjectName29 = Legacy/Apex.Silverlight4
-		SccLocalPath29 = Legacy\\Apex.Silverlight4
-		SccProjectUniqueName30 = Samples\\Silverlight\\PopupSample\\PopupSample.csproj
+		SccProjectName29 = Samples/Silverlight/PopupSample
+		SccLocalPath29 = Samples\\Silverlight\\PopupSample
+		SccProjectUniqueName30 = Tests\\Apex.Tests\\Apex.Tests.csproj
 		SccProjectTopLevelParentUniqueName30 = Apex.sln
-		SccProjectName30 = Samples/Silverlight/PopupSample
-		SccLocalPath30 = Samples\\Silverlight\\PopupSample
-		SccProjectUniqueName31 = Tests\\Apex.Tests\\Apex.Tests.csproj
+		SccProjectName30 = Tests/Apex.Tests
+		SccLocalPath30 = Tests\\Apex.Tests
+		SccProjectUniqueName31 = Extensions\\ProjectTemplates\\WpfDialogApplication\\WpfDialogApplication.csproj
 		SccProjectTopLevelParentUniqueName31 = Apex.sln
-		SccProjectName31 = Tests/Apex.Tests
-		SccLocalPath31 = Tests\\Apex.Tests
-		SccProjectUniqueName32 = Extensions\\ProjectTemplates\\WpfDialogApplication\\WpfDialogApplication.csproj
+		SccProjectName31 = Extensions/ProjectTemplates/WpfDialogApplication
+		SccLocalPath31 = Extensions\\ProjectTemplates\\WpfDialogApplication
+		SccProjectUniqueName32 = Extensions\\ProjectTemplates\\ZuneStyleApplication\\ZuneStyleApplication.csproj
 		SccProjectTopLevelParentUniqueName32 = Apex.sln
-		SccProjectName32 = Extensions/ProjectTemplates/WpfDialogApplication
-		SccLocalPath32 = Extensions\\ProjectTemplates\\WpfDialogApplication
-		SccProjectUniqueName33 = Extensions\\ProjectTemplates\\ZuneStyleApplication\\ZuneStyleApplication.csproj
+		SccProjectName32 = Extensions/ProjectTemplates/ZuneStyleApplication
+		SccLocalPath32 = Extensions\\ProjectTemplates\\ZuneStyleApplication
+		SccProjectUniqueName33 = Core\\Apex.Silverlight\\Apex.Silverlight.csproj
 		SccProjectTopLevelParentUniqueName33 = Apex.sln
-		SccProjectName33 = Extensions/ProjectTemplates/ZuneStyleApplication
-		SccLocalPath33 = Extensions\\ProjectTemplates\\ZuneStyleApplication
-		SccProjectUniqueName34 = Core\\Apex.Silverlight\\Apex.Silverlight.csproj
+		SccProjectName33 = Core/Apex.Silverlight
+		SccLocalPath33 = Core\\Apex.Silverlight
+		SccProjectUniqueName34 = Legacy\\Apex.Silverlight4.OLD\\Apex.Silverlight4.OLD.csproj
 		SccProjectTopLevelParentUniqueName34 = Apex.sln
-		SccProjectName34 = Core/Apex.Silverlight
-		SccLocalPath34 = Core\\Apex.Silverlight
+		SccProjectName34 = Legacy/Apex.Silverlight4.OLD
+		SccLocalPath34 = Legacy\\Apex.Silverlight4.OLD
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Apex.vsmdi
@@ -539,16 +539,6 @@ Global
 		{13B41E58-A2ED-4423-B986-EF0EC029932E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{13B41E58-A2ED-4423-B986-EF0EC029932E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{13B41E58-A2ED-4423-B986-EF0EC029932E}.Release|x86.ActiveCfg = Release|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|x86.ActiveCfg = Release|Any CPU
 		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{285A1652-0307-49B6-8A22-64B1CBC01661}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -589,16 +579,26 @@ Global
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|x86.ActiveCfg = Release|x86
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|x86.Build.0 = Release|x86
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{58D389D5-4E56-48C4-8F67-8232A4033A26}.Release|x86.ActiveCfg = Release|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345}.Release|x86.ActiveCfg = Release|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BEEFE65C-7EDD-4787-ACF9-86D552E407CE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -615,7 +615,7 @@ Global
 		{67D54A68-A287-4797-9667-ACCBF9683119} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{A479105C-717B-4500-8FFC-B3D12BEEF13E} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{9BC524A0-83F9-4864-A1E5-F93EB7DDAF8A} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
-		{58D389D5-4E56-48C4-8F67-8232A4033A26} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
+		{A9132C33-99DE-4780-BD39-99D7CF1E2345} = {6685A8B7-9331-4950-A189-8D4CAD5B00FB}
 		{ECCD3814-F5C6-411F-8F3E-FCC2FC346E29} = {C0329934-0922-4B83-8C9F-B573CA14B8A1}
 		{045F9F82-B22A-4083-A978-51552906E813} = {C0329934-0922-4B83-8C9F-B573CA14B8A1}
 		{5CA8754C-8D71-420A-BA16-A795F11D317D} = {C0329934-0922-4B83-8C9F-B573CA14B8A1}

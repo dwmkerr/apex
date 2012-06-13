@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
+using Apex.Helpers;
 using Apex.Shells;
 using Apex.MVVM;
 
@@ -25,17 +26,7 @@ namespace Apex
                     return;
 
                 //  Enumerate all types to search.
-#if !SILVERLIGHT
-                var typesToSearch = (from a in AppDomain.CurrentDomain.GetAssemblies()
-                                    where a.GlobalAssemblyCache == false && a.IsDynamic == false
-                                    from t in a.GetExportedTypes()
-                                    select t).ToList();
-#else
-                var typesToSearch = (from a in AppDomain.CurrentDomain.GetAssemblies()
-                                     where a.IsDynamic == false
-                                     from t in a.GetExportedTypes()
-                                     select t).ToList();
-#endif
+                var typesToSearch = AssembliesHelper.GetTypesInDomain().ToList();
             
                 //  Find every type that has the Model attribute.
                 var modelTypes = from t in typesToSearch
@@ -196,9 +187,9 @@ namespace Apex
             //  Test assemblies we know about.
             var unitTestFrameworkMS = @"microsoft.visualstudio.qualitytools.unittestframework";
             var unitTestFrameworkNunit = @"nunit.framework";
-            bool isUnitTest = AppDomain.CurrentDomain.GetAssemblies().Any(a =>
-                (a.FullName.ToLowerInvariant().StartsWith(unitTestFrameworkMS) ||
-                a.FullName.ToLowerInvariant().StartsWith(unitTestFrameworkNunit)));
+            bool isUnitTest = AssembliesHelper.GetDomainAssemblies().Any(a =>
+                (a.FullName.ToLower().StartsWith(unitTestFrameworkMS) ||
+                a.FullName.ToLower().StartsWith(unitTestFrameworkNunit)));
 
             //  If we're not in a unit test, we're in the designer.
             if (isUnitTest)
