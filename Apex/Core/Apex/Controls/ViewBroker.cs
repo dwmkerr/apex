@@ -89,6 +89,10 @@ namespace Apex.Controls
 
                 //  Finally, set the view as the content.
                 me.Content = viewInstance;
+
+                //  If the view instance implements IView, we can activate it.
+                if (viewInstance is IView)
+                    ((IView)viewInstance).OnActivated();
             }
             else
             {

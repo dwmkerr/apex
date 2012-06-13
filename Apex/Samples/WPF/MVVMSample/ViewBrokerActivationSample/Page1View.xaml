@@ -9,9 +9,19 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="40">
-            <TextBlock>
+            <TextBlock FontSize="50" Text="Heading 1" Opacity="0">
                 <i:Interaction.Behaviors>
-                    <apexBehaviours:SlideFadeInBehaviour />
+                    <apexBehaviours:SlideFadeInBehaviour Duration="0:0:0.2" />
+                </i:Interaction.Behaviors>
+            </TextBlock>
+            <TextBlock FontSize="30" Text="Heading 2" Opacity="0">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.2" Duration="0:0:1.2" />
+                </i:Interaction.Behaviors>
+            </TextBlock>
+            <TextBlock FontSize="14" Text="Text" Opacity="0">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.4" Duration="0:0:3.2" />
                 </i:Interaction.Behaviors>
             </TextBlock>
         </StackPanel>

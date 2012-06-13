@@ -66,6 +66,54 @@ namespace Apex.Extensions
       return retVal;
     }
 
+    /// <summary>
+    /// Gets all children of a specified type, through the visual tree.
+    /// This function recurses.
+    /// </summary>
+    /// <typeparam name="T">The type of child to get.</typeparam>
+    /// <param name="me">The dependency object to get children of.</param>
+    /// <returns>All children of type T of the dependency object.</returns>
+    public static IEnumerable<T> GetVisualChildren<T>(this DependencyObject me) where T : DependencyObject
+    {
+        for (int i = 0; i < VisualTreeHelper.GetChildrenCount(me); i++)
+        {
+            DependencyObject child = VisualTreeHelper.GetChild(me, i);
+            if (child != null && child is T)
+                yield return (T)child;
+
+            foreach (T childOfChild in child.GetVisualChildren<T>())
+                yield return childOfChild;
+        }
+    }
+
+#if !SILVERLIGHT4 && !SILVERLIGHT3
+
+    /// <summary>
+    /// Gets all children of a specified type, through the logical tree.
+    /// This function recurses.
+    /// </summary>
+    /// <typeparam name="T">The type of child to get.</typeparam>
+    /// <param name="me">The dependency object to get children of.</param>
+    /// <returns>All children of type T of the dependency object.</returns>
+    public static IEnumerable<T> GetLogicalChildren<T>(this DependencyObject me) where T : DependencyObject
+    {
+        foreach(var child in LogicalTreeHelper.GetChildren(me))
+        {
+            //  If the child is not a dependency object, we can't use it.
+            var childDependencyObject = child as DependencyObject;
+            if (childDependencyObject == null)
+                continue;
+
+            if (childDependencyObject != null && childDependencyObject is T)
+                yield return (T)childDependencyObject;
+
+            foreach (T childOfChild in childDependencyObject.GetLogicalChildren<T>())
+                yield return childOfChild;
+        }
+    }
+
+#endif
+
     public static T GetChildObject<T>(this DependencyObject obj, string name) where T : DependencyObject
     {
       for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
@@ -87,6 +135,11 @@ namespace Apex.Extensions
 
     public static IEnumerable<T> GetChildren<T>(this DependencyObject parent) where T : DependencyObject
     {
+        return parent.GetChildren<T>(false);
+    }
+
+    public static IEnumerable<T> GetChildren<T>(this DependencyObject parent, bool recursive) where T : DependencyObject
+    {
       if (parent == null) yield break;
 
       if (parent is ContentElement || parent is FrameworkElement)
@@ -96,6 +149,12 @@ namespace Apex.Extensions
         {
           var depObj = obj as DependencyObject;
           if (depObj != null) yield return (T)obj;
+          if (recursive)
+          {
+              var more = depObj.GetChildren<T>(true);
+              foreach (var i in more)
+                  yield return i;
+          }
         }
       }
       else
@@ -104,7 +163,14 @@ namespace Apex.Extensions
         int count = VisualTreeHelper.GetChildrenCount(parent);
         for (int i = 0; i < count; i++)
         {
-          yield return (T)VisualTreeHelper.GetChild(parent, i);
+            T child = (T)VisualTreeHelper.GetChild(parent, i);
+            yield return child;
+            if (recursive)
+            {
+                var more = child.GetChildren<T>(true);
+                foreach (var ch in more)
+                    yield return ch;
+            }
         }
       }
     }

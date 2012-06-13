@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Apex.MVVM;
+using Apex.Behaviours;
 
 namespace MVVMSample.ViewBrokerActivationSample
 {
@@ -28,6 +29,8 @@ namespace MVVMSample.ViewBrokerActivationSample
 
         public void OnActivated()
         {
+            //  Do the fade in.
+            SlideFadeInBehaviour.DoSlideFadeIn(this);
         }
 
         public void OnDeactivated()
