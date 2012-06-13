@@ -15,16 +15,28 @@ namespace Apex.Behaviours
     /// </summary>
     public class SlideFadeInBehaviour : Behavior<UIElement>
     {
+        /// <summary>
+        /// Called after the behavior is attached to an AssociatedObject.
+        /// </summary>
         protected override void OnAttached()
         {
             base.OnAttached();
+            AssociatedObject.Opacity = 0;
         }
 
+        /// <summary>
+        /// Called when the behavior is being detached from its AssociatedObject, but before it has actually occurred.
+        /// </summary>
         protected override void OnDetaching()
         {
             base.OnDetaching();
         }
 
+        /// <summary>
+        /// Performs the slide fade in of all elements contained in 'container'
+        /// that have the SlideFadeInBehaviour.
+        /// </summary>
+        /// <param name="container">The container.</param>
         public static void DoSlideFadeIn(FrameworkElement container)
         {
             //  We're going to fill a list with slide fade in behaviours.
@@ -59,7 +71,11 @@ namespace Apex.Behaviours
 #endif
         }
 
-        public IEnumerable<Timeline> CreateAnimations()
+        /// <summary>
+        /// Creates the animations required to slide fade in this element.
+        /// </summary>
+        /// <returns>Required animations.</returns>
+        private IEnumerable<Timeline> CreateAnimations()
         {
             //  Create and set the translation.
             var translation = new TranslateTransform() { X = -SlideDistance, Y = 0 };

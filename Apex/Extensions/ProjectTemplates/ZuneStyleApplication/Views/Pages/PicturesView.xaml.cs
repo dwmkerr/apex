@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Apex.MVVM;
 using ZuneStyleApplication.ViewModels;
+using Apex.Behaviours;
 
 namespace ZuneStyleApplication.Views
 {
@@ -20,11 +21,21 @@ namespace ZuneStyleApplication.Views
     /// Interaction logic for PicturesView.xaml
     /// </summary>
     [View(typeof(PicturesViewModel))]
-    public partial class PicturesView : UserControl
+    public partial class PicturesView : UserControl, IView
     {
         public PicturesView()
         {
             InitializeComponent();
+        }
+
+        public void OnActivated()
+        {
+            //  Fade in all of the elements.
+            SlideFadeInBehaviour.DoSlideFadeIn(this);
+        }
+
+        public void OnDeactivated()
+        {
         }
     }
 }
