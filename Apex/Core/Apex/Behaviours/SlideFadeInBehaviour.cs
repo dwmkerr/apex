@@ -25,23 +25,38 @@ namespace Apex.Behaviours
             base.OnDetaching();
         }
 
-        public static void DoSlideFadeIn(UIElement container)
+        public static void DoSlideFadeIn(FrameworkElement container)
         {
             //  We're going to fill a list with slide fade in behaviours.
             var slideFadeInBehaviours = new List<SlideFadeInBehaviour>();
 
             //  Get all children.
-            var children = container.GetChildren<UIElement>();
+            var children = container.GetLogicalChildren<UIElement>();
 
-            //  Go through each child.
-            foreach(var child in children)
+            //  Go through each child, add all slide fade in behaviours.
+            foreach (var child in children)
             {
-                //  Get the behaviours.
-                var behaviours = Interaction.GetBehaviors(child);
-
                 //  Do we have an slide fade in behaviours?
-                slideFadeInBehaviours.AddRange( from b in behaviours where );
+                slideFadeInBehaviours.AddRange(
+                    from b in Interaction.GetBehaviors(child)
+                    where b is SlideFadeInBehaviour
+                    select b as SlideFadeInBehaviour);
             }
+
+            //  Create the animation for each fade in.
+            var animations = slideFadeInBehaviours.SelectMany(s => s.CreateAnimations());
+
+            //  Create a storyboard, add the animations.
+            var storyboard = new Storyboard();
+            foreach (var animation in animations)
+                storyboard.Children.Add(animation);
+
+            //  Start the storyboard.
+#if !SILVERLIGHT
+            storyboard.Begin(container);
+#else
+            storyboard.Begin();
+#endif
         }
 
         public IEnumerable<Timeline> CreateAnimations()
@@ -51,11 +66,11 @@ namespace Apex.Behaviours
             AssociatedObject.RenderTransform = translation;
 
             //  Create an animation for the opacity.
-            var opacityAnimation = new DoubleAnimation() { From = 0, To = 1, Duration = Duration };
+            var opacityAnimation = new DoubleAnimation() { From = 0, To = 1, Duration = Duration, BeginTime = BeginTime};
 
             //  Create an animation for the slide in.
-            var slideInAnimation = new DoubleAnimation() { To = 0, Duration = Duration };
-            slideInAnimation.EasingFunction = new ElasticEase() { EasingMode = EasingMode.EaseOut, Oscillations = 2, Springiness = 8 };
+            var slideInAnimation = new DoubleAnimation() { To = 0, Duration = Duration, BeginTime = BeginTime };
+            slideInAnimation.EasingFunction = new CubicEase() { EasingMode = EasingMode.EaseOut };
 
             //  Set the targets for the animations.
             Storyboard.SetTarget(opacityAnimation, AssociatedObject);
@@ -64,19 +79,36 @@ namespace Apex.Behaviours
             Storyboard.SetTargetProperty(slideInAnimation, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.X)"));
 
             //  Return the animations.
-            return new List<Timeline> {opacityAnimation, slideInAnimation};
+            return new List<Timeline> { opacityAnimation, slideInAnimation };
         }
 
         private const double SlideDistance = 40.0;
 
         public static readonly DependencyProperty DurationProperty =
-            DependencyProperty.Register("Duration", typeof(Duration), typeof(SlideFadeInBehaviour), 
+            DependencyProperty.Register("Duration", typeof(Duration), typeof(SlideFadeInBehaviour),
             new PropertyMetadata(new Duration(TimeSpan.FromMilliseconds(750))));
 
         public Duration Duration
         {
-            get { return (TimeSpan)GetValue(DurationProperty); }
+            get { return (Duration)GetValue(DurationProperty); }
             set { SetValue(DurationProperty, value); }
+        }
+
+        /// <summary>
+        /// The DependencyProperty for the BeginTime property.
+        /// </summary>
+        private static readonly DependencyProperty BeginTimeProperty =
+          DependencyProperty.Register("BeginTime", typeof(TimeSpan), typeof(SlideFadeInBehaviour),
+          new PropertyMetadata(TimeSpan.FromMilliseconds(0)));
+
+        /// <summary>
+        /// Gets or sets BeginTime.
+        /// </summary>
+        /// <value>The value of BeginTime.</value>
+        public TimeSpan BeginTime
+        {
+            get { return (TimeSpan)GetValue(BeginTimeProperty); }
+            set { SetValue(BeginTimeProperty, value); }
         }
     }
 }

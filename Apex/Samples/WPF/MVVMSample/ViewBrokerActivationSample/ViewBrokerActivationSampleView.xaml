@@ -74,7 +74,9 @@
             </apexControls:SelectableItemsControl>
             
             <!-- View broker. -->
-            <apexControls:ViewBroker Grid.Row="2" ViewModel="{Binding SelectedPageViewModel}" />
+            <apexControls:ViewBroker Grid.Row="2" ViewModel="{Binding SelectedPageViewModel}">
+                <Grid Background="#FF0000" />
+            </apexControls:ViewBroker>
 
         </apexControls:ApexGrid>
 
