@@ -5,6 +5,7 @@
         xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
         xmlns:simpleExample="clr-namespace:MVVMSample.SimpleExample"
         xmlns:viewBrokerSample="clr-namespace:MVVMSample.ViewBrokerSample"
+        xmlns:viewBrokerActivationSample="clr-namespace:MVVMSample.ViewBrokerActivationSample"
         xmlns:commandingSample="clr-namespace:MVVMSample.CommandingSample"
         Title="Apex MVVM Samples" Height="500" Width="700">
     
@@ -19,6 +20,9 @@
         </TabItem>
         <TabItem Header="View Broker Sample">
             <viewBrokerSample:ViewBrokerSampleView />
+        </TabItem>
+        <TabItem Header="View Broker Activation Sample">
+            <viewBrokerActivationSample:ViewBrokerActivationSampleView />
         </TabItem>
         <TabItem Header="Commanding Sample">
             <commandingSample:CommandingSampleView />

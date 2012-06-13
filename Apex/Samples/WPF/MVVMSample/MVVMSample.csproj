@@ -42,6 +42,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +64,18 @@
       <DependentUpon>CommandingSampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="CommandingSample\CommandingSampleViewModel.cs" />
+    <Compile Include="ViewBrokerActivationSample\Page1View.xaml.cs">
+      <DependentUpon>Page1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBrokerActivationSample\Page2View.xaml.cs">
+      <DependentUpon>Page2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBrokerActivationSample\Page2ViewModel.cs" />
+    <Compile Include="ViewBrokerActivationSample\Page1ViewModel.cs" />
+    <Compile Include="ViewBrokerActivationSample\ViewBrokerActivationSampleView.xaml.cs">
+      <DependentUpon>ViewBrokerActivationSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBrokerActivationSample\ViewBrokerActivationSampleViewModel.cs" />
     <Compile Include="SimpleSample\SimpleExampleView.xaml.cs">
       <DependentUpon>SimpleExampleView.xaml</DependentUpon>
     </Compile>
@@ -80,6 +93,18 @@
     </Compile>
     <Compile Include="ViewBrokerSample\ViewBrokerSampleViewModel.cs" />
     <Page Include="CommandingSample\CommandingSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewBrokerActivationSample\Page1View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewBrokerActivationSample\Page2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewBrokerActivationSample\ViewBrokerActivationSampleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

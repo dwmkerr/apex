@@ -53,6 +53,7 @@
     <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -73,11 +74,8 @@
     </Compile>
     <Compile Include="Adorners\UIElementAdorner.cs" />
     <Compile Include="Adorners\VisualAdorner.cs" />
-    <Compile Include="Behaviours\Behaviour.cs" />
-    <Compile Include="Behaviours\BehaviourCollection.cs" />
-    <Compile Include="Behaviours\Behaviours.cs" />
     <Compile Include="Behaviours\GridViewContextMenuBehaviour.cs" />
-    <Compile Include="Behaviours\IBehaviour.cs" />
+    <Compile Include="Behaviours\SlideFadeInBehaviour.cs" />
     <Compile Include="Commands\CommandReference.cs" />
     <Compile Include="Commands\Commands.cs" />
     <Compile Include="Consistency\DispatcherHelper.cs" />
@@ -134,16 +132,18 @@
     <Compile Include="Interop\dwmapi.cs" />
     <Compile Include="Interop\User32.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
-    <Compile Include="MVVM\Attributes\ModelAttribute.cs" />
+    <Compile Include="Attributes\ModelAttribute.cs" />
+    <Compile Include="MVVM\IView.cs" />
+    <Compile Include="MVVM\IModel.cs" />
     <Compile Include="MVVM\ModelTypedViewModel.cs" />
     <Compile Include="ApexBroker.cs" />
-    <Compile Include="MVVM\Attributes\ViewAttribute.cs" />
+    <Compile Include="Attributes\ViewAttribute.cs" />
     <Compile Include="MVVM\NotifyingProperty.cs" />
     <Compile Include="MVVM\SafeObservableCollection.cs" />
     <Compile Include="MVVM\View.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="MVVM\Command.cs" />
-    <Compile Include="MVVM\Attributes\ViewModelAttribute.cs" />
+    <Compile Include="Attributes\ViewModelAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -43,6 +43,10 @@ namespace Apex
                     //  Create the model instance.
                     var modelInstance = Activator.CreateInstance(modelType.ModelType);
 
+                    //  If the model implements the IModel interface, notify it that it can be initialised.
+                    if(modelInstance is IModel)
+                        ((IModel)modelInstance).OnInitialised();
+
                     //  Register the model instance as a model of the specified model interface type.
                     modelInterfaceToModelDictionary[modelType.ModelAttribute.ModelInterfaceType] = modelInstance;
                 }

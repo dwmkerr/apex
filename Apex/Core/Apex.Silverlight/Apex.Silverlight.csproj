@@ -81,6 +81,15 @@
     <Compile Include="..\Apex\ApexBroker.cs">
       <Link>ApexBroker.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Attributes\ModelAttribute.cs">
+      <Link>Attributes\ModelAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Attributes\ViewAttribute.cs">
+      <Link>Attributes\ViewAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Attributes\ViewModelAttribute.cs">
+      <Link>Attributes\ViewModelAttribute.cs</Link>
+    </Compile>
     <Compile Include="..\apex\commands\CommandReference.cs">
       <Link>Commands\CommandReference.cs</Link>
     </Compile>
@@ -201,17 +210,14 @@
     <Compile Include="..\apex\mvvm\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
-    <Compile Include="..\apex\mvvm\attributes\ModelAttribute.cs">
-      <Link>MVVM\Attributes\ModelAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\apex\mvvm\attributes\ViewAttribute.cs">
-      <Link>MVVM\Attributes\ViewAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\apex\mvvm\attributes\ViewModelAttribute.cs">
-      <Link>MVVM\Attributes\ViewModelAttribute.cs</Link>
-    </Compile>
     <Compile Include="..\apex\mvvm\Command.cs">
       <Link>MVVM\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\IModel.cs">
+      <Link>MVVM\IModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\IView.cs">
+      <Link>MVVM\IView.cs</Link>
     </Compile>
     <Compile Include="..\apex\mvvm\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
