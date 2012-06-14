@@ -105,7 +105,7 @@
     <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\Pages\MusicViewModel.cs" />
-    <Compile Include="ViewModels\PageViewModel.cs" />
+    <Compile Include="Pages\PageViewModel.cs" />
     <Compile Include="ViewModels\Pages\PicturesViewModel.cs" />
     <Compile Include="Views\ExamplePopup.xaml.cs">
       <DependentUpon>ExamplePopup.xaml</DependentUpon>
@@ -122,8 +122,8 @@
     <Compile Include="Views\Pages\PicturesView.xaml.cs">
       <DependentUpon>PicturesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowStateToButtonVisibilityConverter.cs" />
-    <Compile Include="WindowStateToBorderThicknessConverter.cs" />
+    <Compile Include="Resources\Converters\WindowStateToButtonVisibilityConverter.cs" />
+    <Compile Include="Resources\Converters\WindowStateToBorderThicknessConverter.cs" />
     <Compile Include="ZuneShell.xaml.cs">
       <DependentUpon>ZuneShell.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -154,7 +154,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Apex\Apex.csproj">
+    <ProjectReference Include="..\..\..\..\Core\Apex\Apex.csproj">
       <Project>{67D54A68-A287-4797-9667-ACCBF9683119}</Project>
       <Name>Apex</Name>
     </ProjectReference>

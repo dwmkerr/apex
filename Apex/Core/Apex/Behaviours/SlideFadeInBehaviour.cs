@@ -21,6 +21,8 @@ namespace Apex.Behaviours
         protected override void OnAttached()
         {
             base.OnAttached();
+
+            //  TODO: In the designer this makes the element invisible, another way?
             AssociatedObject.Opacity = 0;
         }
 
