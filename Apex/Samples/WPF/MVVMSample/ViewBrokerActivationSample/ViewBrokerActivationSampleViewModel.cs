@@ -18,7 +18,7 @@ namespace MVVMSample.ViewBrokerActivationSample
         public ViewBrokerActivationSampleViewModel()
         {
             //  Add the page view models.
-            pageViewModels.Add(new Page1ViewModel());
+            pageViewModels.Add(new Page1ViewModel() { IsSelected = true});
             pageViewModels.Add(new Page2ViewModel());
         }
 
