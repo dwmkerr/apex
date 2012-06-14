@@ -61,7 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\DefaultView.xaml">
+    <Page Include="DefaultView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,23 +69,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ExamplePopup.xaml">
+    <Page Include="ExamplePopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\HomeView.xaml">
+    <Page Include="Pages\Home\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainView.xaml">
+    <Page Include="MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\MusicView.xaml">
+    <Page Include="Pages\Music\MusicView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\PicturesView.xaml">
+    <Page Include="Pages\Pictures\PicturesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,27 +99,27 @@
     </Compile>
     <Compile Include="Models\IZuneModel.cs" />
     <Compile Include="Models\ZuneModel.cs" />
-    <Compile Include="Views\DefaultView.xaml.cs">
+    <Compile Include="DefaultView.xaml.cs">
       <DependentUpon>DefaultView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\Pages\MusicViewModel.cs" />
+    <Compile Include="Pages\Home\HomeViewModel.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Pages\Music\MusicViewModel.cs" />
     <Compile Include="Pages\PageViewModel.cs" />
-    <Compile Include="ViewModels\Pages\PicturesViewModel.cs" />
-    <Compile Include="Views\ExamplePopup.xaml.cs">
+    <Compile Include="Pages\Pictures\PicturesViewModel.cs" />
+    <Compile Include="ExamplePopup.xaml.cs">
       <DependentUpon>ExamplePopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\HomeView.xaml.cs">
+    <Compile Include="Pages\Home\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainView.xaml.cs">
+    <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\MusicView.xaml.cs">
+    <Compile Include="Pages\Music\MusicView.xaml.cs">
       <DependentUpon>MusicView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\PicturesView.xaml.cs">
+    <Compile Include="Pages\Pictures\PicturesView.xaml.cs">
       <DependentUpon>PicturesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\Converters\WindowStateToButtonVisibilityConverter.cs" />
@@ -161,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\Collection\" />
+    <Folder Include="ViewModels\Pages\" />
+    <Folder Include="Views\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Close.png" />
