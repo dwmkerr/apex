@@ -49,32 +49,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ApexViewItemTemplate\ApexViewItemTemplate.csproj">
-      <Project>{42E16903-0DBC-4143-9BF3-9AE702C8AA9B}</Project>
-      <Name>ApexViewItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-    </ProjectReference>
-    <ProjectReference Include="..\ApexViewModelItemTemplate\ApexViewModelItemTemplate.csproj">
-      <Project>{AF89FFA4-42EC-4AE3-B172-A04A231759DE}</Project>
-      <Name>ApexViewModelItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-    </ProjectReference>
-    <ProjectReference Include="..\SingletonItemTemplate\SingletonItemTemplate.csproj">
-      <Project>{2D49E696-7AFD-46AD-8812-DC7ECE8DB2D1}</Project>
-      <Name>SingletonItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\VSSDK\Microsoft.VsSDK.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
