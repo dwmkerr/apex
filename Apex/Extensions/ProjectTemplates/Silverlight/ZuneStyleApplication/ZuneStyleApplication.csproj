@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50819296-DB19-4B13-8EA7-8E4B45CB45BF}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZuneStyleApplication</RootNamespace>
+    <AssemblyName>ZuneStyleApplication</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ZuneStyleApplication.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ZuneStyleApplication.App</SilverlightAppEntry>
+    <TestPageFileName>ZuneStyleApplicationTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Models\IZuneModel.cs" />
+    <Compile Include="Models\ZuneModel.cs" />
+    <Compile Include="Pages\Apex\ApexView.xaml.cs">
+      <DependentUpon>ApexView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Apex\ApexViewModel.cs" />
+    <Compile Include="Pages\Music\MusicView.xaml.cs">
+      <DependentUpon>MusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Music\MusicViewModel.cs" />
+    <Compile Include="Pages\PageViewModel.cs" />
+    <Compile Include="Pages\Pictures\PicturesView.xaml.cs">
+      <DependentUpon>PicturesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pictures\PicturesViewModel.cs" />
+    <Compile Include="Pages\TheModel\TheModelView.xaml.cs">
+      <DependentUpon>TheModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TheModel\TheModelViewModel.cs" />
+    <Compile Include="Pages\ThePages\ThePagesView.xaml.cs">
+      <DependentUpon>ThePagesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ThePages\ThePagesViewModel.cs" />
+    <Compile Include="Pages\TheShell\TheShellView.xaml.cs">
+      <DependentUpon>TheShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TheShell\TheShellViewModel.cs" />
+    <Compile Include="Popups\ExamplePopup.xaml.cs">
+      <DependentUpon>ExamplePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Converters\WindowStateToBorderThicknessConverter.cs" />
+    <Compile Include="Resources\Converters\WindowStateToButtonVisibilityConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Apex\ApexView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Music\MusicView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Pictures\PicturesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TheModel\TheModelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ThePages\ThePagesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TheShell\TheShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popups\ExamplePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\ZuneResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <Resource Include="Resources\Fonts\segoeui.ttf" />
+    <Resource Include="Resources\Fonts\segoeuib.ttf" />
+    <Resource Include="Resources\Fonts\segoeuii.ttf" />
+    <Resource Include="Resources\Fonts\segoeuil.ttf" />
+    <Resource Include="Resources\Fonts\segoeuiz.ttf" />
+    <Resource Include="Resources\Fonts\seguisb.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\Apex.Silverlight\Apex.Silverlight.csproj">
+      <Project>{A9132C33-99DE-4780-BD39-99D7CF1E2345}</Project>
+      <Name>Apex.Silverlight</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CloseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MaximizeOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\MinimizeOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ModelAttribute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\RestoreOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ShowPopop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\UsingTheModel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ViewModel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

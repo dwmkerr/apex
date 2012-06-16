@@ -35,9 +35,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDialogApplication", "Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplication", "ProjectTemplates\WPF\ZuneStyleApplication\ZuneStyleApplication.csproj", "{F9D779D2-A509-4FA7-B399-45215FFBDAD7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight", "{A25742F4-32D7-48A1-8778-8109A8C16DC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplication", "ProjectTemplates\Silverlight\ZuneStyleApplication\ZuneStyleApplication.csproj", "{50819296-DB19-4B13-8EA7-8E4B45CB45BF}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 13
+		SccNumberOfProjects = 14
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -86,6 +90,10 @@ Global
 		SccProjectTopLevelParentUniqueName12 = Extensions.sln
 		SccProjectName12 = ProjectTemplates/WPF/ZuneStyleApplication
 		SccLocalPath12 = ProjectTemplates\\WPF\\ZuneStyleApplication
+		SccProjectUniqueName13 = ProjectTemplates\\Silverlight\\ZuneStyleApplication\\ZuneStyleApplication.csproj
+		SccProjectTopLevelParentUniqueName13 = Extensions.sln
+		SccProjectName13 = ProjectTemplates/Silverlight/ZuneStyleApplication
+		SccLocalPath13 = ProjectTemplates\\Silverlight\\ZuneStyleApplication
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -216,6 +224,16 @@ Global
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|x86.ActiveCfg = Release|x86
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7}.Release|x86.Build.0 = Release|x86
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -230,7 +248,9 @@ Global
 		{A2D2AA8F-A963-442D-AE52-F6543A375696} = {A456F37C-5E9A-48AC-ADB4-7E2BAD83CFD6}
 		{CC481432-5733-4103-A7C7-CCDC4C7049BB} = {A456F37C-5E9A-48AC-ADB4-7E2BAD83CFD6}
 		{9CBD1637-1576-4900-833E-2B8C68A97DB6} = {BBAAABBF-86D1-430C-8B6A-E35124DD94C4}
+		{A25742F4-32D7-48A1-8778-8109A8C16DC7} = {BBAAABBF-86D1-430C-8B6A-E35124DD94C4}
 		{44644E74-1118-444E-B337-BEB5FA3F67DB} = {9CBD1637-1576-4900-833E-2B8C68A97DB6}
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7} = {9CBD1637-1576-4900-833E-2B8C68A97DB6}
+		{50819296-DB19-4B13-8EA7-8E4B45CB45BF} = {A25742F4-32D7-48A1-8778-8109A8C16DC7}
 	EndGlobalSection
 EndGlobal
