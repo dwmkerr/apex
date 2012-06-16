@@ -1,0 +1,7 @@
+Apex 1.4
+
+Added the ApexBroker.
+
+Added the ViewBroker.
+
+Added all MVVM attributes.

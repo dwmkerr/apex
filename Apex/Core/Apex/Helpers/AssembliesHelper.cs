@@ -47,13 +47,17 @@ namespace Apex.Helpers
                                      where a.IsDynamic == false
                                      from t in a.GetExportedTypes()
                                      select t).ToList();
-#elif SILVERLIGHT
+#elif SILVERLIGHT5
                 var typesToSearch = (from a in GetDomainAssemblies()
                                      where a.IsDynamic == false
                                      from t in a.GetExportedTypes()
                                      select t).ToList();
-#else
+#elif SILVERLIGHT
                 var typesToSearch = (from a in GetDomainAssemblies()
+                                     from t in a.GetExportedTypes()
+                                     select t).ToList();
+#else
+            var typesToSearch = (from a in GetDomainAssemblies()
                                     where a.GlobalAssemblyCache == false && a.IsDynamic == false
                                     from t in a.GetExportedTypes()
                                     select t).ToList();

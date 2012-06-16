@@ -45,7 +45,7 @@ namespace Apex.Behaviours
             var slideFadeInBehaviours = new List<SlideFadeInBehaviour>();
 
             //  Get all children.
-            var children = container.GetLogicalChildren<UIElement>();
+            var children = container.GetChildren<UIElement>();
 
             //  Go through each child, add all slide fade in behaviours.
             foreach (var child in children)

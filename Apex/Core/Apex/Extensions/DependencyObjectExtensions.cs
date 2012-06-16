@@ -147,52 +147,15 @@ namespace Apex.Extensions
             return foundChild;
         }
 
-#if !SILVERLIGHT
-
         public static IEnumerable<T> GetChildren<T>(this DependencyObject parent) where T : DependencyObject
         {
-            return parent.GetChildren<T>(false);
-        }
-
-        public static IEnumerable<T> GetChildren<T>(this DependencyObject parent, bool recursive)
-            where T : DependencyObject
-        {
-            if (parent == null) yield break;
-
-            if (parent is ContentElement || parent is FrameworkElement)
-            {
-                //use the logical tree for content / framework elements
-                foreach (object obj in LogicalTreeHelper.GetChildren(parent))
-                {
-                    var depObj = obj as DependencyObject;
-                    if (depObj != null) yield return (T) obj;
-                    if (recursive)
-                    {
-                        var more = depObj.GetChildren<T>(true);
-                        foreach (var i in more)
-                            yield return i;
-                    }
-                }
-            }
-            else
-            {
-                //use the visual tree per default
-                int count = VisualTreeHelper.GetChildrenCount(parent);
-                for (int i = 0; i < count; i++)
-                {
-                    T child = (T) VisualTreeHelper.GetChild(parent, i);
-                    yield return child;
-                    if (recursive)
-                    {
-                        var more = child.GetChildren<T>(true);
-                        foreach (var ch in more)
-                            yield return ch;
-                    }
-                }
-            }
-        }
-
+#if SILVERLIGHT
+            return parent.GetVisualChildren<T>();
+#else
+            return parent.GetLogicalChildren<T>();
 #endif
+        }
+
 
 #if !SILVERLIGHT
 
