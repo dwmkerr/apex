@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Apex.MVVM;
+﻿using Apex.MVVM;
 using System.Collections.ObjectModel;
 using Apex.Controls;
 
-namespace ZuneStyleApplication.ViewModels
+namespace ZuneStyleApplication.Pages
 {
     [ViewModel]
     public class PageViewModel : ViewModel, ISelectableItem
@@ -22,7 +18,7 @@ namespace ZuneStyleApplication.ViewModels
         /// <summary>
         /// The NotifyingProperty for the Title property.
         /// </summary>
-        private NotifyingProperty TitleProperty =
+        private readonly NotifyingProperty TitleProperty =
           new NotifyingProperty("Title", typeof(string), default(string));
 
         /// <summary>
@@ -38,7 +34,7 @@ namespace ZuneStyleApplication.ViewModels
         /// <summary>
         /// The NotifyingProperty for the IsSelected property.
         /// </summary>
-        private NotifyingProperty IsSelectedProperty =
+        private readonly NotifyingProperty IsSelectedProperty =
           new NotifyingProperty("IsSelected", typeof(bool), default(bool));
 
         /// <summary>
@@ -54,7 +50,7 @@ namespace ZuneStyleApplication.ViewModels
         /// <summary>
         /// The Pages observable collection.
         /// </summary>
-        private ObservableCollection<PageViewModel> PagesProperty =
+        private readonly ObservableCollection<PageViewModel> PagesProperty =
           new ObservableCollection<PageViewModel>();
 
         /// <summary>
@@ -69,7 +65,7 @@ namespace ZuneStyleApplication.ViewModels
         /// <summary>
         /// The NotifyingProperty for the ActivePage property.
         /// </summary>
-        private NotifyingProperty ActivePageProperty =
+        private readonly NotifyingProperty ActivePageProperty =
           new NotifyingProperty("ActivePage", typeof(PageViewModel), default(PageViewModel));
 
         /// <summary>

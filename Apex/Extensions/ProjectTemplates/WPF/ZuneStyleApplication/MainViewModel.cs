@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using Apex.MVVM;
+﻿using Apex.MVVM;
+using ZuneStyleApplication.Pages;
+using ZuneStyleApplication.Pages.Apex;
+using ZuneStyleApplication.Pages.TheModel;
+using ZuneStyleApplication.Pages.ThePages;
+using ZuneStyleApplication.Pages.TheShell;
+using ZuneStyleApplication.ViewModels;
 
-namespace ZuneStyleApplication.ViewModels
+namespace ZuneStyleApplication
 {
     /// <summary>
     /// The MainViewModel ViewModel class.
@@ -21,22 +22,37 @@ namespace ZuneStyleApplication.ViewModels
             //  Set the title.
             Title = "Zune";
 
-            //  Create a view model for each page.
-            var homeViewModel = new PageViewModel() { IsSelected = true, Title = "Home" };
-            homeViewModel.Pages.Add(new HomeViewModel() { IsSelected = true});
-            var collectionViewModel = new PageViewModel() { Title = "Collection" };
+            //  Create the pages.
+            CreatePages();
+        }
+
+        /// <summary>
+        /// Creates the pages.
+        /// </summary>
+        private void CreatePages()
+        {
+            //  Create the 'home' section.
+            var homeViewModel = new PageViewModel()
+            {
+                IsSelected = true, Title = "Home"
+            };
+
+            //  Add home pages.
+            homeViewModel.Pages.Add(new ApexViewModel() { IsSelected = true });
+            homeViewModel.Pages.Add(new TheShellViewModel());
+            homeViewModel.Pages.Add(new TheModelViewModel());
+            homeViewModel.Pages.Add(new ThePagesViewModel());
+
+            //  Create the 'collection' section.
+            var collectionViewModel = new PageViewModel() {Title = "Collection"};
+
+            //  Add the collection pages.
             collectionViewModel.Pages.Add(new MusicViewModel() { IsSelected = true });
             collectionViewModel.Pages.Add(new PicturesViewModel());
-            var marketplaceViewModel = new PageViewModel() { Title = "Marketplace" };
-            var socialViewModel = new PageViewModel() { Title = "Social" };
 
-            //  Add the child page view models.
-
-            //  Add some empty pages.
+            //  Add the page groups to the view model.
             Pages.Add(homeViewModel);
             Pages.Add(collectionViewModel);
-            Pages.Add(marketplaceViewModel);
-            Pages.Add(socialViewModel);
         }
     }
 }

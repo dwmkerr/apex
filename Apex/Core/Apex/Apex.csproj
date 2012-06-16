@@ -68,6 +68,9 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Adorners\Adorner.cs" />
     <Compile Include="Adorners\AdornerLayer.xaml.cs">
       <DependentUpon>AdornerLayer.xaml</DependentUpon>
@@ -99,7 +102,6 @@
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
     <Compile Include="Controls\SelectableItemsControl.cs" />
-    <Compile Include="Controls\TreeView.cs" />
     <Compile Include="Controls\VariableGrid.cs" />
     <Compile Include="Controls\ViewBroker.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />

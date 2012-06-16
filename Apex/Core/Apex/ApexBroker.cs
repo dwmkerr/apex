@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Windows;
 using Apex.Helpers;
 using Apex.Shells;
 using Apex.MVVM;
@@ -47,8 +49,8 @@ namespace Apex
                     if(modelInstance is IModel)
                         ((IModel)modelInstance).OnInitialised();
 
-                    //  Register the model instance as a model of the specified model interface type.
-                    modelInterfaceToModelDictionary[modelType.ModelAttribute.ModelInterfaceType] = modelInstance;
+                    //  Store the model.
+                    modelInstances.Add(modelInstance);
                 }
 
                 //  Find every type that has the View attribute.
@@ -73,32 +75,22 @@ namespace Apex
         }
 
         /// <summary>
-        /// Registers the model.
-        /// </summary>
-        /// <typeparam name="TModelInterface">The model interface type.</typeparam>
-        /// <param name="model">The model.</param>
-        public static void RegisterModel<TModelInterface>(object model)
-        {
-            modelInterfaceToModelDictionary[typeof(TModelInterface)] = model;
-        }
-
-        /// <summary>
         /// Gets the model.
         /// </summary>
-        /// <typeparam name="TModelInterface">The type of the model interface.</typeparam>
-        /// <returns>The model.</returns>
-        public static TModelInterface GetModel<TModelInterface>()
+        /// <typeparam name="TModel">The type of the model.</typeparam>
+        /// <returns>The model instance.</returns>
+        public static TModel GetModel<TModel>()
         {
             //  We must be initialised for this to work.
             EnsureInitialised();
 
             try
             {
-                return (TModelInterface)modelInterfaceToModelDictionary[typeof(TModelInterface)];
+                return (TModel) modelInstances.Single(m => m is TModel);
             }
             catch
             {
-                throw new InvalidOperationException("The Model Type " + typeof(TModelInterface).Name + " has not been registered.");
+                throw new InvalidOperationException("The Model Type " + typeof(TModel).Name + " has not been registered.");
             }
         }
 
@@ -184,9 +176,21 @@ namespace Apex
         /// <returns>The current execution context.</returns>
         private static ExecutionContext DetermineExecutionContext()
         {
-            //  Are we running in the visual studio IDE?
-            if (Assembly.GetExecutingAssembly().FullName.Contains("devenv"))
+
+#if SILVERLIGHT
+            //  We can check the designer properties in Silverlight to
+            //  determine whether we're in the desinger.
+            if(DesignerProperties.IsInDesignTool)
                 return ExecutionContext.Design;
+#else
+            //  We can check the IsInDesignModeProperty property in WPF to
+            //  determine whether we're in the desinger.
+            var prop = DesignerProperties.IsInDesignModeProperty;
+            if((bool)DependencyPropertyDescriptor
+                .FromProperty(prop, typeof(FrameworkElement))
+                .Metadata.DefaultValue == true)
+                return ExecutionContext.Design;
+#endif
             
             //  Test assemblies we know about.
             var unitTestFrameworkMS = @"microsoft.visualstudio.qualitytools.unittestframework";
@@ -225,10 +229,10 @@ namespace Apex
             new List<ViewModelViewMapping>();
 
         /// <summary>
-        /// The map of model interfaces to model instances.
+        /// The model instances.
         /// </summary>
-        private static Dictionary<Type, object> modelInterfaceToModelDictionary =
-            new Dictionary<Type, object>();
+        private static List<object> modelInstances =
+            new List<object>();
 
         /// <summary>
         /// The shell.

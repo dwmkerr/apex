@@ -1,31 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using System.Drawing.Printing;
-using System.Runtime.InteropServices;
-using System.Windows.Interop;
 using Apex.Controls;
-using Apex.Shells;
 
 namespace ZuneStyleApplication
 {
     /// <summary>
-    /// Interaction logic for Zune.xaml
+    /// Interaction logic for ZuneWindow.xaml
     /// </summary>
-    public partial class Zune : CustomWindow
+    public partial class ZuneWindow : CustomWindow
     {
-        public Zune()
+        public ZuneWindow()
         {
             InitializeComponent();
         }        
@@ -62,12 +47,6 @@ namespace ZuneStyleApplication
             //  Is it a drag?
             if (e.ClickCount == 1)
                 DragMove();
-        }
-
-        private void thumbDiagonal_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
-        {
-            var desiredWidth = Width + e.HorizontalChange;
-            var desiredHeight = Height + e.VerticalChange;
         }
 
         private void thumbTopLeft_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
@@ -135,6 +114,7 @@ namespace ZuneStyleApplication
             var desiredWidth = Width + e.HorizontalChange;
             var desiredHeight = Height + e.VerticalChange;
             Width = Math.Max(desiredWidth, MinWidth);
+            Height = Math.Max(desiredHeight, MinHeight);
         }
     }
 }

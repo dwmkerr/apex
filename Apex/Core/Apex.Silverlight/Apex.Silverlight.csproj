@@ -65,6 +65,9 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\apex\adorners\Adorner.cs">
       <Link>Adorners\Adorner.cs</Link>
     </Compile>
@@ -89,6 +92,12 @@
     </Compile>
     <Compile Include="..\Apex\Attributes\ViewModelAttribute.cs">
       <Link>Attributes\ViewModelAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Behaviours\GridViewContextMenuBehaviour.cs">
+      <Link>Behaviours\GridViewContextMenuBehaviour.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Behaviours\SlideFadeInBehaviour.cs">
+      <Link>Behaviours\SlideFadeInBehaviour.cs</Link>
     </Compile>
     <Compile Include="..\apex\commands\CommandReference.cs">
       <Link>Commands\CommandReference.cs</Link>
@@ -135,8 +144,14 @@
     <Compile Include="..\apex\controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Controls\SelectableItemsControl.cs">
+      <Link>Controls\SelectableItemsControl.cs</Link>
+    </Compile>
     <Compile Include="..\apex\controls\VariableGrid.cs">
       <Link>Controls\VariableGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Controls\ViewBroker.cs">
+      <Link>Controls\ViewBroker.cs</Link>
     </Compile>
     <Compile Include="..\apex\converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>

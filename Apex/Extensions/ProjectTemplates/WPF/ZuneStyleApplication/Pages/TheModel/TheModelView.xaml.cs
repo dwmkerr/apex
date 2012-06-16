@@ -11,26 +11,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Apex;
 using Apex.MVVM;
 using ZuneStyleApplication.ViewModels;
-using Apex;
+using Apex.Behaviours;
+using ZuneStyleApplication.Views;
 
-namespace ZuneStyleApplication.Views
+namespace ZuneStyleApplication.Pages.TheModel
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for TheModelView.xaml
     /// </summary>
-    [View(typeof(HomeViewModel))]
-    public partial class HomeView : UserControl
+    [View(typeof(TheModelViewModel))]
+    public partial class TheModelView : UserControl, IView
     {
-        public HomeView()
+        public TheModelView()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void OnActivated()
         {
-            ApexBroker.GetShell().ShowPopup(new ExamplePopup());
+            //  Fade in all of the elements.
+            SlideFadeInBehaviour.DoSlideFadeIn(this);
+        }
+
+        public void OnDeactivated()
+        {
         }
     }
 }

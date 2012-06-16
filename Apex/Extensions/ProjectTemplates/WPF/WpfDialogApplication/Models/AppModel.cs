@@ -11,7 +11,7 @@ namespace WpfDialogApplication.Models
     /// By decorating the class with the 'Model' attribute, we will always
     /// get this class back when we request a model via 'ApexBroker.GetModel'.
     /// </summary>
-    [Model(typeof(IAppModel))]
+    [Model]
     public class AppModel : IAppModel
     {
         /// <summary>

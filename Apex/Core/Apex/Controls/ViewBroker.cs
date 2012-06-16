@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 using Apex.MVVM;
-using System.ComponentModel;
-using System.Reflection;
 
 namespace Apex.Controls
 {

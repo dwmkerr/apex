@@ -61,19 +61,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="DefaultView.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Pages\Apex\ApexView.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ThePages\ThePagesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TheModel\TheModelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TheShell\TheShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\ZuneListBoxResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\ZuneScrollBarResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\ResourceDictionaries\ZuneResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ExamplePopup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Home\HomeView.xaml">
+    <Page Include="Popups\ExamplePopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,7 +105,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ZuneShell.xaml">
+    <Page Include="ZuneWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -99,19 +115,28 @@
     </Compile>
     <Compile Include="Models\IZuneModel.cs" />
     <Compile Include="Models\ZuneModel.cs" />
-    <Compile Include="DefaultView.xaml.cs">
-      <DependentUpon>DefaultView.xaml</DependentUpon>
+    <Compile Include="Pages\Apex\ApexView.xaml.cs">
+      <DependentUpon>ApexView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Home\HomeViewModel.cs" />
+    <Compile Include="Pages\Apex\ApexViewModel.cs" />
+    <Compile Include="Pages\ThePages\ThePagesView.xaml.cs">
+      <DependentUpon>ThePagesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ThePages\ThePagesViewModel.cs" />
+    <Compile Include="Pages\TheModel\TheModelView.xaml.cs">
+      <DependentUpon>TheModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TheModel\TheModelViewModel.cs" />
+    <Compile Include="Pages\TheShell\TheShellView.xaml.cs">
+      <DependentUpon>TheShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TheShell\TheShellViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Pages\Music\MusicViewModel.cs" />
     <Compile Include="Pages\PageViewModel.cs" />
     <Compile Include="Pages\Pictures\PicturesViewModel.cs" />
-    <Compile Include="ExamplePopup.xaml.cs">
+    <Compile Include="Popups\ExamplePopup.xaml.cs">
       <DependentUpon>ExamplePopup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Home\HomeView.xaml.cs">
-      <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -124,8 +149,8 @@
     </Compile>
     <Compile Include="Resources\Converters\WindowStateToButtonVisibilityConverter.cs" />
     <Compile Include="Resources\Converters\WindowStateToBorderThicknessConverter.cs" />
-    <Compile Include="ZuneShell.xaml.cs">
-      <DependentUpon>ZuneShell.xaml</DependentUpon>
+    <Compile Include="ZuneWindow.xaml.cs">
+      <DependentUpon>ZuneWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -160,9 +185,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\Collection\" />
-    <Folder Include="ViewModels\Pages\" />
-    <Folder Include="Views\Pages\" />
+    <Resource Include="Resources\Images\ModelAttribute.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Close.png" />
@@ -173,6 +196,18 @@
     <Resource Include="Resources\Images\MinimizeOver.png" />
     <Resource Include="Resources\Images\Restore.png" />
     <Resource Include="Resources\Images\RestoreOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\UsingTheModel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ShowPopop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ViewModel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\View.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

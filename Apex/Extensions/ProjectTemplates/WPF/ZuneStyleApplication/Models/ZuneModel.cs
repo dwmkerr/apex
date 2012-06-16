@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Apex;
 using Apex.MVVM;
 
 namespace ZuneStyleApplication.Models
 {
-    [Model(typeof(IZuneModel))]
+    /// <summary>
+    /// The Zune Model. Can be accessed via ApexBroker.GetModel
+    /// via the interface IZuneModel.
+    /// </summary>
+    [Model]
     public class ZuneModel : IModel, IZuneModel
     {
         /// <summary>
@@ -24,13 +29,15 @@ namespace ZuneStyleApplication.Models
         public IEnumerable<string> GetArtists()
         {
             yield return "John Coltrain";
+            yield return "Miles Davis";
+            yield return "Joe Pass";
         }
 
         /// <summary>
         /// Gets the ablums.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<string> GetAblums()
+        public IEnumerable<string> GetAlbums()
         {
             yield return "Giant Steps";
         }

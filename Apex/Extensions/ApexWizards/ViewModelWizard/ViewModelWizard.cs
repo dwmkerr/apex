@@ -8,7 +8,7 @@ namespace ApexWizards.ViewModelWizard
 {
 
     /// <summary>
-    /// TODO: Update summary.
+    /// The View Model wizard.
     /// </summary>
     public class ViewModelWizard : IWizard
     {

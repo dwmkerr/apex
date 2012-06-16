@@ -7,7 +7,7 @@ using Apex.MVVM;
 namespace ApexWizards.ViewModelWizard
 {
     /// <summary>
-    /// TODO: Update summary.
+    /// The View Model Wizard View Model.
     /// </summary>
     public class ViewModelWizardViewModel : ViewModel
     {

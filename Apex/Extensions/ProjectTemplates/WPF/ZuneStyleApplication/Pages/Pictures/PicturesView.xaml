@@ -8,10 +8,11 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <apexControls:ApexGrid
-        Margin="40,4,40,4" Rows="Auto,Auto,Auto,Auto" Columns="*,*,*" >
+    <ScrollViewer Margin="40,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid
+        Rows="Auto,Auto,Auto,Auto" Columns="*,*,*" >
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="0"
             Grid.Column="0"
             Style="{StaticResource Heading1Style}">
@@ -19,9 +20,9 @@
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>CAMERA ROLL</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="1"
             Grid.Column="0"
             Style="{StaticResource Heading3Style}">
@@ -29,9 +30,9 @@
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.3" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>recent photos</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="0"
             Grid.Column="1"
             Style="{StaticResource Heading1Style}">
@@ -39,19 +40,19 @@
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.3" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>ALBUMS</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="1"
             Grid.Column="1"
             Style="{StaticResource Heading3Style}">
             <i:Interaction.Behaviors>
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
             </i:Interaction.Behaviors>
-            <TextBlock.Text>photo albumns</TextBlock.Text>
-        </TextBlock>
+            <TextBlock.Text>photo albums</TextBlock.Text>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="0"
             Grid.Column="2"
             Style="{StaticResource Heading1Style}">
@@ -59,9 +60,9 @@
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>SLIDESHOWS</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="1"
             Grid.Column="2"
             Style="{StaticResource Heading3Style}">
@@ -69,7 +70,9 @@
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.9" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>something else</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-    </apexControls:ApexGrid>
+        </apexControls:ApexGrid>
+
+    </ScrollViewer>
 </UserControl>

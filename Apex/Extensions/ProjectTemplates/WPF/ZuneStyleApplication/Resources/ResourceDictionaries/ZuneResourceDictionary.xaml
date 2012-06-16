@@ -5,17 +5,28 @@
 
     <apexConverters:StringCaseConverter x:Key="StringCaseConverter" />
 
+    <!-- The key zune colors, many UI elements will use these to give a consistent
+    visual style across the application. -->
     <Color x:Key="ZuneColor1">#F10DA2</Color>
     <Color x:Key="ZuneColor2">#E95214</Color>
+
+    <!-- The grey zune colors, most UI elements will use these to give a consistent
+    visual style across the application. -->
+    <Color x:Key="ZuneLightGrayColor">#BFBFBF</Color>
+    <Color x:Key="ZuneMediumGrayColor">#A7A5A5</Color>
+    <Color x:Key="ZuneDarkGrayColor">#828689</Color>
+    
+    <!-- Each of the core zune colors has a solid color brush to make
+    it easier to apply the colors in XAML. -->
+    <SolidColorBrush x:Key="ZuneColor1Brush" Color="{StaticResource ZuneColor1}" />
+    <SolidColorBrush x:Key="ZuneColor2Brush" Color="{StaticResource ZuneColor2}" />
+    <SolidColorBrush x:Key="ZuneLightGrayBrush" Color="{StaticResource ZuneLightGrayColor}" />
+    <SolidColorBrush x:Key="ZuneMediumGrayBrush" Color="{StaticResource ZuneMediumGrayColor}" />
+    <SolidColorBrush x:Key="ZuneDarkGrayBrush" Color="{StaticResource ZuneDarkGrayColor}" />
 
     <Color x:Key="PopupBackgroundTopColor">#fdfdfd</Color>
     <Color x:Key="PopupBackgroundBottomColor">#f0f0f0</Color>
     
-    <SolidColorBrush x:Key="ZuneColor1Brush" Color="{StaticResource ZuneColor1}" />
-    <SolidColorBrush x:Key="ZuneColor2Brush" Color="{StaticResource ZuneColor2}" />
-
-    <SolidColorBrush x:Key="ZuneDarkGrayBrush" Color="#828689" />
-    <SolidColorBrush x:Key="ZuneLightGrayBrush" Color="#BFBFBF" />
     
     <LinearGradientBrush x:Key="PopupBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="0" Color="{StaticResource PopupBackgroundTopColor}" />
@@ -38,6 +49,12 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="LineHeight" Value="24" />
         <Setter Property="FontWeight" Value="Light" />
+    </Style>
+
+    <Style x:Key="CodeStyle" TargetType="Span">
+        <Setter Property="FontFamily" Value="Courier New" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="#696969" />
     </Style>
     
     <Style x:Key="MenuItemStyle" TargetType="TextBlock">
@@ -64,5 +81,32 @@
             </DataTrigger>
         </Style.Triggers>
     </Style>
-    
+
+
+    <Style TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ZuneColor1Brush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="TextBlock.FontSize" Value="24"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false"/>
+                        <Trigger Property="IsGrouping" Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
