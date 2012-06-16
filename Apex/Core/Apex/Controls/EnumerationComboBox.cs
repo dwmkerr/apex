@@ -1,19 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Controls;
-using System.ComponentModel;
-using System.Windows.Data;
-using System.Collections.ObjectModel;
 using System.Windows;
-using System.IO;
-using System.Windows.Markup;
 using Apex.Extensions;
-
-//  http://social.msdn.microsoft.com/forums/en-US/wpf/thread/f230804d-fc0f-4321-a61e-69a2c890b28d/
-//  TODO: Add a dependency property - selectedenumeration
-//  then set the datatemplate to show it
 
 namespace Apex.Controls
 {

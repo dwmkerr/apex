@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace ZuneStyleApplication.Models
 {
     /// <summary>
-    /// The Zune Model interface.
+    /// The ZuneWindow Model interface.
     /// </summary>
     public interface IZuneModel
     {
@@ -12,7 +12,7 @@ namespace ZuneStyleApplication.Models
         /// Gets the ablums.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<string> GetAblums();
+        IEnumerable<string> GetAlbums();
 
         /// <summary>
         /// Gets the artists.

@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using Apex;
 using Apex.MVVM;
+using ZuneStyleApplication.Models;
+using ZuneStyleApplication.Pages;
 
 namespace ZuneStyleApplication.ViewModels
 {
     /// <summary>
     /// The MusicViewModel ViewModel class.
     /// </summary>
+    [ViewModel]
     public class MusicViewModel : PageViewModel
     {
         /// <summary>
@@ -18,6 +22,38 @@ namespace ZuneStyleApplication.ViewModels
         public MusicViewModel()
         {
             Title = "Music";
+
+            if(ApexBroker.CurrentExecutionContext == ExecutionContext.Design)
+            {
+                //  Add some design-time data.
+                artists.Add("The Beatles");
+                artists.Add("Pink Floyd");
+            }
+            else
+            {
+                
+                //  Get the artists from the model.
+                var zuneModel = ApexBroker.GetModel<IZuneModel>();
+                foreach (var artist in zuneModel.GetArtists())
+                    artists.Add(artist);
+            }
+
+        }
+
+        private readonly ObservableCollection<string> artists = new ObservableCollection<string>();
+
+        public ObservableCollection<string> Artists
+        {
+            get { return artists; }
+        }
+
+        private readonly NotifyingProperty SelectedArtistProperty = new NotifyingProperty("SelectedArtist",
+            typeof(string), default(string));
+
+        public string SelectedArtist
+        {
+            get { return (string) GetValue(SelectedArtistProperty); }
+            set { SetValue(SelectedArtistProperty, value); }
         }
     }
 }

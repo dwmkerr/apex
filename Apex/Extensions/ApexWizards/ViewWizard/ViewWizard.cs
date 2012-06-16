@@ -8,7 +8,7 @@ namespace ApexWizards.ViewWizard
 {
 
     /// <summary>
-    /// TODO: Update summary.
+    /// The View Wizard.
     /// </summary>
     public class ViewWizard : IWizard
     {

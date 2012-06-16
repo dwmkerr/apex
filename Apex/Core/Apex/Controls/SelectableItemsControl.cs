@@ -87,8 +87,7 @@ namespace Apex.Controls
         private static readonly DependencyProperty SelectedItemProperty =
             DependencyProperty.Register("SelectedItem", typeof(object), typeof(SelectableItemsControl),
             new FrameworkPropertyMetadata(default(object), 
-                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                new PropertyChangedCallback(OnSelectedItemChanged)));
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         /// Gets or sets SelectedItem.
@@ -101,19 +100,9 @@ namespace Apex.Controls
         }
 
         /// <summary>
-        /// Called when SelectedItem is changed.
-        /// </summary>
-        /// <param name="o">The dependency object.</param>
-        /// <param name="args">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
-        private static void OnSelectedItemChanged(DependencyObject o, DependencyPropertyChangedEventArgs args)
-        {
-            SelectableItemsControl me = o as SelectableItemsControl;
-        }
-
-        /// <summary>
         /// Performs the SelectItem command.
         /// </summary>
-        /// <param name="parameter">The SelectItem command parameter.</param>
+        /// <param name="itemToSelect">The item to select.</param>
         private void DoSelectItemCommand(object itemToSelect)
         {
             //  Go through every item in the items source.

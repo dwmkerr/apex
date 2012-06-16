@@ -6,12 +6,18 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:apexBehaviours="clr-namespace:Apex.Behaviours;assembly=Apex"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+             xmlns:local="clr-namespace:ZuneStyleApplication.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <apexControls:ApexGrid
-        Margin="40,4,40,4" Rows="Auto,Auto,Auto,Auto" Columns="*,*,*" >
-        
-        <TextBlock 
+
+    <UserControl.DataContext>
+        <local:MusicViewModel x:Name="viewModel" />
+    </UserControl.DataContext>
+
+    <ScrollViewer Margin="40,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid  Rows="Auto,Auto,*,Auto" Columns="*,5,*,5,*" >
+
+            <TextBlock 
             Grid.Row="0"
             Grid.Column="0"
             Style="{StaticResource Heading1Style}">
@@ -19,9 +25,9 @@
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>ARTISTS</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="1"
             Grid.Column="0"
             Style="{StaticResource Heading3Style}">
@@ -29,47 +35,56 @@
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.3" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>artists could go here</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <ListBox 
+            Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Artists}"
+            SelectedItem="{Binding SelectedArtist}">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
+                </i:Interaction.Behaviors>
+            </ListBox>
+
+            <TextBlock 
             Grid.Row="0"
-            Grid.Column="1"
+            Grid.Column="2"
             Style="{StaticResource Heading1Style}">
             <i:Interaction.Behaviors>
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.3" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>ALBUMS</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="1"
-            Grid.Column="1"
+            Grid.Column="2"
             Style="{StaticResource Heading3Style}">
             <i:Interaction.Behaviors>
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>albums could go here</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="0"
-            Grid.Column="2"
+            Grid.Column="4"
             Style="{StaticResource Heading1Style}">
             <i:Interaction.Behaviors>
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>TRACKS</TextBlock.Text>
-        </TextBlock>
+            </TextBlock>
 
-        <TextBlock 
+            <TextBlock 
             Grid.Row="1"
-            Grid.Column="2"
+            Grid.Column="4"
             Style="{StaticResource Heading3Style}">
             <i:Interaction.Behaviors>
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.9" />
             </i:Interaction.Behaviors>
             <TextBlock.Text>...you guessed it</TextBlock.Text>
-        </TextBlock>
-        
-    </apexControls:ApexGrid>
+            </TextBlock>
+
+        </apexControls:ApexGrid>
+    </ScrollViewer>
 </UserControl>
