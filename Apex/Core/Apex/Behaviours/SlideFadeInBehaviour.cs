@@ -23,7 +23,9 @@ namespace Apex.Behaviours
             base.OnAttached();
 
             //  TODO: In the designer this makes the element invisible, another way?
+#if !SILVERLIGHT
             AssociatedObject.Opacity = 0;
+#endif
         }
 
         /// <summary>

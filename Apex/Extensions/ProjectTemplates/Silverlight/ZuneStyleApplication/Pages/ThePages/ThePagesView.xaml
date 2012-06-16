@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="ZuneStyleApplication.Pages.ThePages.ThePagesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:apexBehaviours="clr-namespace:Apex.Behaviours;assembly=Apex.Silverlight"
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex.Silverlight"
+             xmlns:local="clr-namespace:ZuneStyleApplication.Pages.ThePages"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600">
+    
+    <!-- The view model. -->
+    <UserControl.DataContext>
+        <local:ThePagesViewModel x:Name="viewModel" />
+    </UserControl.DataContext>
+
+    <ScrollViewer Margin="40,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid
+        Rows="Auto,Auto,Auto,Auto,Auto,Auto,Auto" >
+        
+        <TextBlock 
+            Grid.Row="0"
+            Grid.Column="0"
+            Style="{StaticResource Heading1Style}"
+            FontWeight="Normal">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0" />
+            </i:Interaction.Behaviors>THE <Span Foreground="{StaticResource ZuneColor1Brush}">PAGES</Span>.
+        </TextBlock>
+        
+        <TextBlock 
+            Grid.Row="1"
+            Grid.Column="0"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.2" />
+            </i:Interaction.Behaviors>Each page is made up of a <Span FontWeight="Black">view</Span> and
+            a <Span FontWeight="Black">viewmodel</Span>.
+        </TextBlock>
+
+        <TextBlock 
+            Grid.Row="2"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.4" />
+            </i:Interaction.Behaviors>A viewmodel has the [ViewModel] attribute and ultimately derives
+            from the ViewModel class.
+        </TextBlock>
+
+        <Image
+            Grid.Row="3" Source="/Resources/Images/ViewModel.png" 
+            Margin="0,20,0,0"
+            Stretch="None">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
+            </i:Interaction.Behaviors>
+        </Image>
+
+        <TextBlock 
+            Grid.Row="4"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.8" />
+            </i:Interaction.Behaviors>A view has the [View] attribute, which it uses to specify
+            what its viewmodel type is and implements the IView interface.
+        </TextBlock>
+
+        <Image
+            Grid.Row="5" Source="/Resources/Images/View.png" 
+            Margin="0,20,0,0"
+            Stretch="None">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:1" />
+            </i:Interaction.Behaviors>
+        </Image>
+
+        <TextBlock 
+            Grid.Row="6"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:1.2" />
+            </i:Interaction.Behaviors>Decorating views and viewmodels with these attributes
+            means that the ApexBroker can do funky things like automatically create the correct
+            view for a viewmodel and present it to the user. This is what the <Span FontWeight="Bold">ViewBroker</Span>
+            control in this template does.
+            </TextBlock>
+
+
+        </apexControls:ApexGrid>
+    </ScrollViewer>
+</UserControl>
