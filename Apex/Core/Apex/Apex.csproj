@@ -68,9 +68,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\SharedAssemblyInfo.cs">
-      <Link>SharedAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="Adorners\Adorner.cs" />
     <Compile Include="Adorners\AdornerLayer.xaml.cs">
       <DependentUpon>AdornerLayer.xaml</DependentUpon>

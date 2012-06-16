@@ -52,6 +52,18 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Apex\ApexBroker.cs">
+      <Link>ApexBroker.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Attributes\ModelAttribute.cs">
+      <Link>Attributes\ModelAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Attributes\ViewAttribute.cs">
+      <Link>Attributes\ViewAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Attributes\ViewModelAttribute.cs">
+      <Link>Attributes\ViewModelAttribute.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Commands\CommandReference.cs">
       <Link>Commands\CommandReference.cs</Link>
     </Compile>
@@ -142,8 +154,20 @@
     <Compile Include="..\Apex\Extensions\StringExtensions.cs">
       <Link>Extensions\StringExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Helpers\AssembliesHelper.cs">
+      <Link>Helpers\AssembliesHelper.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Helpers\EnumHelper.cs">
       <Link>Helpers\EnumHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Helpers\Popups\BounceInOutPopupAnimationHelper.cs">
+      <Link>Helpers\Popups\BounceInOutPopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Helpers\Popups\FadeInOutPopupAnimationHelper.cs">
+      <Link>Helpers\Popups\FadeInOutPopupAnimationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Helpers\Popups\PopupAnimationHelper.cs">
+      <Link>Helpers\Popups\PopupAnimationHelper.cs</Link>
     </Compile>
     <Compile Include="..\Apex\MVVM\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
@@ -151,11 +175,20 @@
     <Compile Include="..\Apex\MVVM\Command.cs">
       <Link>MVVM\Command.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\MVVM\IModel.cs">
+      <Link>MVVM\IModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\IView.cs">
+      <Link>MVVM\IView.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\MVVM\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>
     </Compile>
     <Compile Include="..\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Shells\IShell.cs">
+      <Link>Shells\IShell.cs</Link>
     </Compile>
     <Compile Include="Controls\CommandButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

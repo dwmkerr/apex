@@ -60,14 +60,12 @@
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\SharedAssemblyInfo.cs">
-      <Link>SharedAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="..\apex\adorners\Adorner.cs">
       <Link>Adorners\Adorner.cs</Link>
     </Compile>
@@ -92,9 +90,6 @@
     </Compile>
     <Compile Include="..\Apex\Attributes\ViewModelAttribute.cs">
       <Link>Attributes\ViewModelAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\Apex\Behaviours\GridViewContextMenuBehaviour.cs">
-      <Link>Behaviours\GridViewContextMenuBehaviour.cs</Link>
     </Compile>
     <Compile Include="..\Apex\Behaviours\SlideFadeInBehaviour.cs">
       <Link>Behaviours\SlideFadeInBehaviour.cs</Link>

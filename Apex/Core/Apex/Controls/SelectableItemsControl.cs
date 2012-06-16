@@ -5,6 +5,9 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 using Apex.MVVM;
+using Apex.Extensions;
+using System.Windows.Data;
+using System.Collections;
 
 namespace Apex.Controls
 {
@@ -32,7 +35,55 @@ namespace Apex.Controls
         {
             //  Wire up commands.
             SelectItemCommand = new Command(DoSelectItemCommand);
+
+
+
+#if SILVERLIGHT
+
+            //  Listen for the items source changed.
+            RegisterForNotification("ItemsSource", this, new PropertyChangedCallback(OnItemsSourceChanged));
+#endif
         }
+
+#if SILVERLIGHT
+
+        /// Listen for change of the dependency property TODO move into a helper class.
+        public void RegisterForNotification(string propertyName, FrameworkElement element, PropertyChangedCallback callback)
+        {
+
+            //Bind to a depedency property
+            Binding b = new Binding(propertyName) { Source = element };
+            var prop = System.Windows.DependencyProperty.RegisterAttached(
+                "ListenAttached" + propertyName,
+                typeof(object),
+                typeof(UserControl),
+                new System.Windows.PropertyMetadata(callback));
+
+            element.SetBinding(prop, b);
+        }
+
+        private void OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {   
+            //  Get the items.
+            var newValue = e.NewValue as IEnumerable;
+
+            //  Check for selected items.
+            ISelectableItem itemToSelect = null;
+            if (newValue != null)
+            {
+                foreach (var newItem in newValue)
+                {
+                    if (newItem is ISelectableItem && ((ISelectableItem)newItem).IsSelected)
+                        itemToSelect = (ISelectableItem)newItem;
+                }
+            }
+
+            //  Select the item to select (if there is one).
+            if (itemToSelect != null)
+                DoSelectItemCommand(itemToSelect);
+        }
+
+#else
 
         /// <summary>
         /// Called when the <see cref="P:System.Windows.Controls.ItemsControl.ItemsSource"/> property changes.
@@ -59,6 +110,8 @@ namespace Apex.Controls
             if (itemToSelect != null)
                 DoSelectItemCommand(itemToSelect);
         }
+
+#endif
 
         protected override void OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
@@ -87,7 +140,11 @@ namespace Apex.Controls
         private static readonly DependencyProperty SelectedItemProperty =
             DependencyProperty.Register("SelectedItem", typeof(object), typeof(SelectableItemsControl),
             new FrameworkPropertyMetadata(default(object), 
+#if !SILVERLIGHT
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+#else
+                FrameworkPropertyMetadataOptions.None));
+#endif
 
         /// <summary>
         /// Gets or sets SelectedItem.
