@@ -45,12 +45,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_43C7932FE02948C9A5E35A07C707FAD6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_493C66995DD8C92170DBC985A43CED35"
         "OwnerKey" = "8:_84A0DEBA12636DDBDDA4DFFF9D269A31"
         "MsmSig" = "8:_UNDEFINED"
@@ -76,12 +70,6 @@
         "Entry"
         {
         "MsmKey" = "8:_598BD3F88E45FDD3C84F52CE0884E497"
-        "OwnerKey" = "8:_43C7932FE02948C9A5E35A07C707FAD6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_598BD3F88E45FDD3C84F52CE0884E497"
         "OwnerKey" = "8:_935C0A7B30C84480A8CF3C0BF548470D"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -100,6 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
+        "OwnerKey" = "8:_9EB5BDC35AB44F876137C5C6E8B62E5E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
         "OwnerKey" = "8:_DDE00AC6B0BB4567B4429CC5A2C5E705"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -113,12 +107,6 @@
         {
         "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
         "OwnerKey" = "8:_6CC9A795B9CC44CC81A4409E2CB82AB4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
-        "OwnerKey" = "8:_9EB5BDC35AB44F876137C5C6E8B62E5E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -346,6 +334,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_85D66EC6B23FC445DC757FA1D9865470"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -437,12 +431,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9C7FF85753ED0882D1C24428E3C2D1F2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1502,7 +1490,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Apex SDK"
         "ProductCode" = "8:{F4CC53A8-2C2B-4D73-B4B6-954A58A036CD}"
-        "PackageCode" = "8:{C13C734F-E3E6-4FC4-9BCD-17C50741F9A2}"
+        "PackageCode" = "8:{511E25F7-368D-401B-B8E6-818EDA56E1A5}"
         "UpgradeCode" = "8:{8B037F9F-0C3C-4EDE-B0A4-AADB8694B22D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -2091,34 +2079,6 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{A479105C-717B-4500-8FFC-B3D12BEEF13E}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_43C7932FE02948C9A5E35A07C707FAD6"
-            {
-            "SourcePath" = "8:..\\..\\Core\\Apex.Silverlight\\obj\\Release\\Apex.Silverlight.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{A9132C33-99DE-4780-BD39-99D7CF1E2345}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

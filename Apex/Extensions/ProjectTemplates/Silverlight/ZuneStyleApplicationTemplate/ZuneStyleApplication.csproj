@@ -72,6 +72,9 @@
     <Reference Include="Apex.Silverlight, Version=1.4.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Dependencies\Apex.Silverlight.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
