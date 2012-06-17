@@ -3,8 +3,7 @@
     <Name>Apex Zune Style Application (WPF)</Name>
     <Description>&lt;No description available&gt;</Description>
     <ProjectType>CSharp</ProjectType>
-    <ProjectSubType>
-    </ProjectSubType>
+    <ProjectSubType></ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>ZuneStyleApplication</DefaultName>
@@ -14,15 +13,15 @@
     <Icon>ZuneStyleApplicationTemplate.ico</Icon>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="ZuneStyleApplication.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
+    <Project TargetFileName="$safeprojectname$.csproj" File="ZuneStyleApplication.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml">MainView.xaml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml.cs">MainView.xaml.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainViewModel.cs">MainViewModel.cs</ProjectItem>
       <Folder Name="Models" TargetFolderName="Models">
-        <ProjectItem ReplaceParameters="true" TargetFileName="IZuneModel.cs">IZuneModel.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ZuneModel.cs">ZuneModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="I$safeprojectname$Model.cs">IZuneModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$Model.cs">ZuneModel.cs</ProjectItem>
       </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
         <Folder Name="Apex" TargetFolderName="Apex">
@@ -63,10 +62,6 @@
       </Folder>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.cs">Resources.Designer.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.cs">Settings.Designer.cs</ProjectItem>
       </Folder>
       <Folder Name="Resources" TargetFolderName="Resources">
         <Folder Name="Converters" TargetFolderName="Converters">
@@ -94,8 +89,8 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="ZuneScrollBarResourceDictionary.xaml">ZuneScrollBarResourceDictionary.xaml</ProjectItem>
         </Folder>
       </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="ZuneWindow.xaml">ZuneWindow.xaml</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="ZuneWindow.xaml.cs">ZuneWindow.xaml.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$Window.xaml">ZuneWindow.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$Window.xaml.cs">ZuneWindow.xaml.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

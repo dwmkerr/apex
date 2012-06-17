@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ZuneStyleApplicationTemplate</RootNamespace>
-    <AssemblyName>ZuneStyleApplicationTemplate</AssemblyName>
+    <AssemblyName>WpfZuneStyleApplicationTemplate</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="AssemblyInfo.cs" />
-    <None Include="ProjectTemplate.csproj">
+    <None Include="ZuneStyleApplication.csproj">
       <SubType>Designer</SubType>
     </None>
     <None Include="ZuneStyleApplicationTemplate.ico" />

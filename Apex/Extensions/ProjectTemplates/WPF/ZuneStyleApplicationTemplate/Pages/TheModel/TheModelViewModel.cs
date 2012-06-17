@@ -21,12 +21,6 @@ namespace $safeprojectname$.Pages.TheModel
         public TheModelViewModel()
         {
             Title = "The Model";
-
-            //  Get the Zune Model.
-            var zuneModel = ApexBroker.GetModel<IZuneModel>();
-
-            //  Get the albums.
-            var albums = zuneModel.GetAlbums();
         }
     }
 }

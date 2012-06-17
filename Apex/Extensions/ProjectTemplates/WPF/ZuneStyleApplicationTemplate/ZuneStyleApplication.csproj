@@ -51,9 +51,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference>
-      <Assembly>Apex, Version=1.4.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
-    </Reference>
+    <Reference Include="Apex, Version=1.4.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -104,7 +102,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ZuneWindow.xaml">
+    <Page Include="$safeprojectname$Window.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -112,8 +110,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\IZuneModel.cs" />
-    <Compile Include="Models\ZuneModel.cs" />
+    <Compile Include="Models\I$safeprojectname$Model.cs" />
+    <Compile Include="Models\$safeprojectname$Model.cs" />
     <Compile Include="Pages\Apex\ApexView.xaml.cs">
       <DependentUpon>ApexView.xaml</DependentUpon>
     </Compile>
@@ -148,8 +146,8 @@
     </Compile>
     <Compile Include="Resources\Converters\WindowStateToButtonVisibilityConverter.cs" />
     <Compile Include="Resources\Converters\WindowStateToBorderThicknessConverter.cs" />
-    <Compile Include="ZuneWindow.xaml.cs">
-      <DependentUpon>ZuneWindow.xaml</DependentUpon>
+    <Compile Include="$safeprojectname$Window.xaml.cs">
+      <DependentUpon>$safeprojectname$Window.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -157,31 +155,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Core\Apex\Apex.csproj">
-      <Project>{67D54A68-A287-4797-9667-ACCBF9683119}</Project>
-      <Name>Apex</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

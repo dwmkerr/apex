@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace $safeprojectname$.Models
 {
     /// <summary>
-    /// The ZuneWindow Model interface.
+    /// The $safeprojectname$ Model interface.
     /// </summary>
-    public interface IZuneModel
+    public interface I$safeprojectname$Model
     {
         /// <summary>
         /// Gets the ablums.

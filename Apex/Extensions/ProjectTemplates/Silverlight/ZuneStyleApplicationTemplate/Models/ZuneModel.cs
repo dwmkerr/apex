@@ -8,11 +8,11 @@ using Apex.MVVM;
 namespace $safeprojectname$.Models
 {
     /// <summary>
-    /// The Zune Model. Can be accessed via ApexBroker.GetModel
-    /// via the interface IZuneModel.
+    /// The $safeprojectname$ Model. Can be accessed via ApexBroker.GetModel
+    /// via the interface I$safeprojectname$Model.
     /// </summary>
     [Model]
-    public class ZuneModel : IModel, IZuneModel
+    public class $safeprojectname$Model : IModel, I$safeprojectname$Model
     {
         /// <summary>
         /// Called to initialise a model.

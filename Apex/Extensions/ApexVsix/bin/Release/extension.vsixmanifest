@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="ApexVsix.7Layer.3e9a8115-7d5a-4717-90c4-96f6beb94753">
+    <Name>Apex</Name>
+    <Author>Dave Kerr</Author>
+    <Version>1.4</Version>
+    <Description xml:space="preserve">Apex is a powerful MVVM Framework for WPF, Silverlight and Windows Phone 7.</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>http://apex.codeplex.com</MoreInfoUrl>
+    <GettingStartedGuide>http://apex.codeplex.com/documentation</GettingStartedGuide>
+    <Icon>Apex.ico</Icon>
+    <PreviewImage>ApexVsixPreviewImage.png</PreviewImage>
+    <InstalledByMsi>false</InstalledByMsi>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
+  </Identifier>
+  <References />
+  <Content>
+    <ProjectTemplate>ProjectTemplates</ProjectTemplate>
+    <ItemTemplate>ItemTemplates</ItemTemplate>
+  </Content>
+</Vsix>

@@ -6,11 +6,11 @@ using Apex.Controls;
 namespace $safeprojectname$
 {
     /// <summary>
-    /// Interaction logic for ZuneWindow.xaml
+    /// Interaction logic for $safeprojectname$Window.xaml
     /// </summary>
-    public partial class ZuneWindow : CustomWindow
+    public partial class $safeprojectname$Window : CustomWindow
     {
-        public ZuneWindow()
+        public $safeprojectname$Window()
         {
             InitializeComponent();
         }        
