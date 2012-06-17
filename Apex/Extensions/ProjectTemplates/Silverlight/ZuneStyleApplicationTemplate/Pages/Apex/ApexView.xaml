@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="$safeprojectname$.Pages.Apex.ApexView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:apexBehaviours="clr-namespace:Apex.Behaviours;assembly=Apex.Silverlight"
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex.Silverlight"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600">
+    <ScrollViewer Margin="0,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid Margin="40,0,0,0"
+       Rows="Auto,Auto,Auto,Auto" >
+
+            <TextBlock 
+            Grid.Row="0"
+            Grid.Column="0"
+            Style="{StaticResource Heading1Style}"
+            FontWeight="Normal">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0" />
+            </i:Interaction.Behaviors>
+            POWERED BY <Span Foreground="{StaticResource ZuneColor1Brush}">APEX</Span>.
+            </TextBlock>
+
+            <TextBlock 
+            Grid.Row="1"
+            Grid.Column="0"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.2" />
+            </i:Interaction.Behaviors>These pages provide you with the details you'll need to work with this template - they can be deleted when you are familiar
+            with how new pages are constructed.
+            </TextBlock>
+
+            <TextBlock 
+            Grid.Row="2"
+            Grid.Column="0"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.4" />
+            </i:Interaction.Behaviors>Use the controls above the title to move between pages.
+            </TextBlock>
+
+        </apexControls:ApexGrid>
+    </ScrollViewer>
+</UserControl>

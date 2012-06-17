@@ -1,0 +1,101 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Apex Zune Style Application (WPF)</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ZuneStyleApplication</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>ZuneStyleApplicationTemplate.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="ZuneStyleApplication.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml">MainView.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml.cs">MainView.xaml.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MainViewModel.cs">MainViewModel.cs</ProjectItem>
+      <Folder Name="Models" TargetFolderName="Models">
+        <ProjectItem ReplaceParameters="true" TargetFileName="IZuneModel.cs">IZuneModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ZuneModel.cs">ZuneModel.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Pages" TargetFolderName="Pages">
+        <Folder Name="Apex" TargetFolderName="Apex">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ApexView.xaml">ApexView.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ApexView.xaml.cs">ApexView.xaml.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ApexViewModel.cs">ApexViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Music" TargetFolderName="Music">
+          <ProjectItem ReplaceParameters="true" TargetFileName="MusicView.xaml">MusicView.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="MusicView.xaml.cs">MusicView.xaml.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="MusicViewModel.cs">MusicViewModel.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageViewModel.cs">PageViewModel.cs</ProjectItem>
+        <Folder Name="Pictures" TargetFolderName="Pictures">
+          <ProjectItem ReplaceParameters="true" TargetFileName="PicturesView.xaml">PicturesView.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PicturesView.xaml.cs">PicturesView.xaml.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PicturesViewModel.cs">PicturesViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="TheModel" TargetFolderName="TheModel">
+          <ProjectItem ReplaceParameters="true" TargetFileName="TheModelView.xaml">TheModelView.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TheModelView.xaml.cs">TheModelView.xaml.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TheModelViewModel.cs">TheModelViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="ThePages" TargetFolderName="ThePages">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ThePagesView.xaml">ThePagesView.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ThePagesView.xaml.cs">ThePagesView.xaml.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ThePagesViewModel.cs">ThePagesViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="TheShell" TargetFolderName="TheShell">
+          <ProjectItem ReplaceParameters="true" TargetFileName="TheShellView.xaml">TheShellView.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TheShellView.xaml.cs">TheShellView.xaml.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TheShellViewModel.cs">TheShellViewModel.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Popups" TargetFolderName="Popups">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ExamplePopup.xaml">ExamplePopup.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ExamplePopup.xaml.cs">ExamplePopup.xaml.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.cs">Resources.Designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.cs">Settings.Designer.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Resources" TargetFolderName="Resources">
+        <Folder Name="Converters" TargetFolderName="Converters">
+          <ProjectItem ReplaceParameters="true" TargetFileName="WindowStateToBorderThicknessConverter.cs">WindowStateToBorderThicknessConverter.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="WindowStateToButtonVisibilityConverter.cs">WindowStateToButtonVisibilityConverter.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Images" TargetFolderName="Images">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Close.png">Close.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="CloseOver.png">CloseOver.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Maximize.png">Maximize.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="MaximizeOver.png">MaximizeOver.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Minimize.png">Minimize.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="MinimizeOver.png">MinimizeOver.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ModelAttribute.png">ModelAttribute.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Restore.png">Restore.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="RestoreOver.png">RestoreOver.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ShowPopop.png">ShowPopop.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="UsingTheModel.png">UsingTheModel.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="View.png">View.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ViewModel.png">ViewModel.png</ProjectItem>
+        </Folder>
+        <Folder Name="ResourceDictionaries" TargetFolderName="ResourceDictionaries">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ZuneListBoxResourceDictionary.xaml">ZuneListBoxResourceDictionary.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ZuneResourceDictionary.xaml">ZuneResourceDictionary.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ZuneScrollBarResourceDictionary.xaml">ZuneScrollBarResourceDictionary.xaml</ProjectItem>
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ZuneWindow.xaml">ZuneWindow.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ZuneWindow.xaml.cs">ZuneWindow.xaml.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

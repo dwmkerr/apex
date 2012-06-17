@@ -111,9 +111,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplication", "Extensions\ProjectTemplates\Silverlight\ZuneStyleApplication\ZuneStyleApplication.csproj", "{50819296-DB19-4B13-8EA7-8E4B45CB45BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplicationTemplate", "Extensions\ProjectTemplates\WPF\ZuneStyleApplicationTemplate\ZuneStyleApplicationTemplate.csproj", "{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplicationTemplate", "ZuneStyleApplicationTemplate\ZuneStyleApplicationTemplate.csproj", "{7866F157-5838-4392-A2F5-1C5494B84086}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 37
+		SccNumberOfProjects = 39
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -261,6 +265,14 @@ Global
 		SccProjectTopLevelParentUniqueName36 = Apex.sln
 		SccProjectName36 = Extensions/ProjectTemplates/Silverlight/ZuneStyleApplication
 		SccLocalPath36 = Extensions\\ProjectTemplates\\Silverlight\\ZuneStyleApplication
+		SccProjectUniqueName37 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate\\ZuneStyleApplicationTemplate.csproj
+		SccProjectTopLevelParentUniqueName37 = Apex.sln
+		SccProjectName37 = Extensions/ProjectTemplates/WPF/ZuneStyleApplicationTemplate
+		SccLocalPath37 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate
+		SccProjectUniqueName38 = ZuneStyleApplicationTemplate\\ZuneStyleApplicationTemplate.csproj
+		SccProjectTopLevelParentUniqueName38 = Apex.sln
+		SccProjectName38 = ZuneStyleApplicationTemplate
+		SccLocalPath38 = ZuneStyleApplicationTemplate
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Apex.vsmdi
@@ -638,6 +650,26 @@ Global
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|x86.ActiveCfg = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -681,6 +713,7 @@ Global
 		{12691B81-92AC-43B5-BD26-D8ACF28C6130} = {3830FB7B-9AB1-4DCB-816F-4A7CC10ACC3D}
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7} = {74AA33D3-E5E1-470F-A289-05C83540DE7A}
 		{44644E74-1118-444E-B337-BEB5FA3F67DB} = {74AA33D3-E5E1-470F-A289-05C83540DE7A}
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8} = {74AA33D3-E5E1-470F-A289-05C83540DE7A}
 		{246C6B54-4B69-4A81-B62E-FC4332F8C812} = {7A235DAF-F174-4388-80B7-D6A92B4C84E1}
 		{65E06D7C-F88B-45BE-8886-F9CFA514EC27} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{781CF2CC-231E-4948-AF40-1B87A46ED559} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
@@ -688,5 +721,6 @@ Global
 		{A2D2AA8F-A963-442D-AE52-F6543A375696} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{CC481432-5733-4103-A7C7-CCDC4C7049BB} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF} = {12691B81-92AC-43B5-BD26-D8ACF28C6130}
+		{7866F157-5838-4392-A2F5-1C5494B84086} = {12691B81-92AC-43B5-BD26-D8ACF28C6130}
 	EndGlobalSection
 EndGlobal
