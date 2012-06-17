@@ -15,6 +15,9 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$safeprojectname$.csproj" File="ZuneStyleApplication.csproj" ReplaceParameters="true">
+      <Folder Name="Dependencies" TargetFolderName="Dependencies">
+        <ProjectItem ReplaceParameters="false" TargetFileName="Apex.Silverlight.dll">Apex.Silverlight.dll</ProjectItem>
+      </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml">MainView.xaml</ProjectItem>
