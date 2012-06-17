@@ -9,14 +9,10 @@
              xmlns:local="clr-namespace:ZuneStyleApplication.Pages.TheShell"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600">
-    
-    <!-- The view model. -->
-    <UserControl.DataContext>
-        <local:TheShellViewModel x:Name="viewModel" />
-    </UserControl.DataContext>
 
-    <ScrollViewer Margin="40,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <apexControls:ApexGrid Rows="Auto,Auto,Auto,Auto,Auto" >
+    <ScrollViewer 
+        Margin="0,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid Margin="40,0,0,0" Rows="Auto,Auto,Auto,Auto,Auto" >
 
             <TextBlock 
             Grid.Row="0"
@@ -55,7 +51,7 @@
             </TextBlock>
 
             <Image
-            Grid.Row="3" Source="/Resources/Images/ShowPopop.png" 
+            Grid.Row="3" Source="/ZuneStyleApplication;component/Resources/Images/ShowPopop.png" 
             Margin="0,20,0,0"
             Stretch="None">
                 <i:Interaction.Behaviors>
@@ -63,17 +59,18 @@
                 </i:Interaction.Behaviors>
             </Image>
 
-            <TextBlock 
+            <Button 
             Grid.Row="4"
             Grid.Column="0"
-            Style="{StaticResource Heading2Style}"
-            Margin="0,20,0,0"
-            TextWrapping="Wrap">
-            <i:Interaction.Behaviors>
-                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.8" />
-            </i:Interaction.Behaviors><Hyperlink Command="{Binding ShowPopupCommand}">Show a popup</Hyperlink>
-            using the Shell by clicking the hyperlink.
-            </TextBlock>
+                Width="200" HorizontalAlignment="Left"
+            Command="{Binding ShowPopupCommand}"
+            Margin="0,20,0,0">
+                <TextBlock
+            Style="{StaticResource Heading2Style}">SHOW POPUP</TextBlock>
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.8" />
+                </i:Interaction.Behaviors>
+            </Button>
 
 
         </apexControls:ApexGrid>

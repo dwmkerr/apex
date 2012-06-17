@@ -20,8 +20,8 @@
         </Style>
     </UserControl.Resources>
 
-    <ScrollViewer Margin="40,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <apexControls:ApexGrid Rows="Auto,Auto,Auto,Auto,Auto" >
+    <ScrollViewer Margin="0,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid Margin="40,0,0,0" Rows="Auto,Auto,Auto,Auto,Auto" >
 
             <TextBlock 
             Grid.Row="0"
@@ -66,7 +66,7 @@
             </TextBlock>
 
             <Image
-            Grid.Row="4" Source="/ZuneStyleApplication;component/Images/UsingTheModel.png" 
+            Grid.Row="4" Source="/ZuneStyleApplication;component/Resources/Images/UsingTheModel.png" 
             Margin="0,20,0,0"
             Stretch="None">
                 <i:Interaction.Behaviors>

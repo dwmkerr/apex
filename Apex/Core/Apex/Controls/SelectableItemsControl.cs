@@ -41,8 +41,17 @@ namespace Apex.Controls
 #if SILVERLIGHT
 
             //  Listen for the items source changed.
-            RegisterForNotification("ItemsSource", this, new PropertyChangedCallback(OnItemsSourceChanged));
+           RegisterForNotification("ItemsSource", this, new PropertyChangedCallback(OnItemsSourceChanged));
 #endif
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            //  If we have an items source source, we should set the selected value (if there is one).
+            CheckNewItemsSourceForSelectedItem(ItemsSource);
+
         }
 
 #if SILVERLIGHT
@@ -56,7 +65,7 @@ namespace Apex.Controls
             var prop = System.Windows.DependencyProperty.RegisterAttached(
                 "ListenAttached" + propertyName,
                 typeof(object),
-                typeof(UserControl),
+                typeof(ItemsControl),
                 new System.Windows.PropertyMetadata(callback));
 
             element.SetBinding(prop, b);
@@ -65,22 +74,7 @@ namespace Apex.Controls
         private void OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {   
             //  Get the items.
-            var newValue = e.NewValue as IEnumerable;
-
-            //  Check for selected items.
-            ISelectableItem itemToSelect = null;
-            if (newValue != null)
-            {
-                foreach (var newItem in newValue)
-                {
-                    if (newItem is ISelectableItem && ((ISelectableItem)newItem).IsSelected)
-                        itemToSelect = (ISelectableItem)newItem;
-                }
-            }
-
-            //  Select the item to select (if there is one).
-            if (itemToSelect != null)
-                DoSelectItemCommand(itemToSelect);
+            CheckNewItemsSourceForSelectedItem(e.NewValue as IEnumerable);
         }
 
 #else
@@ -113,25 +107,34 @@ namespace Apex.Controls
 
 #endif
 
+        private void CheckNewItemsSourceForSelectedItem(IEnumerable newItemsSource)
+        {
+            if (newItemsSource == null)
+                return;
+            //  Do we have an item to select?
+            var itemToSelect = (from object i in newItemsSource
+                                where i is ISelectableItem && ((ISelectableItem)i).IsSelected
+                                select i as ISelectableItem).FirstOrDefault();
+
+
+            //  Select the item to select (if there is one).
+            if (itemToSelect != null)
+                InternalSelectItem(itemToSelect, newItemsSource);
+        }
+
         protected override void OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             //  Call the base.
             base.OnItemsChanged(e);
 
-            //  Check for selected items.
-            ISelectableItem itemToSelect = null;
-            if (ItemsSource != null)
-            {
-                foreach (var newItem in ItemsSource)
-                {
-                    if (newItem is ISelectableItem && ((ISelectableItem)newItem).IsSelected)
-                        itemToSelect = (ISelectableItem)newItem;
-                }
-            }
+            //  Do we have an item to select?
+            var selectedItem = (from object i in ItemsSource
+                           where i is ISelectableItem && ((ISelectableItem)i).IsSelected
+                           select i as ISelectableItem).FirstOrDefault();
 
             //  Select the item to select (if there is one).
-            if (itemToSelect != null)
-                DoSelectItemCommand(itemToSelect);
+            if (selectedItem != null)
+                InternalSelectItem(selectedItem, ItemsSource);
         }
 
         /// <summary>
@@ -143,8 +146,9 @@ namespace Apex.Controls
 #if !SILVERLIGHT
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 #else
-                FrameworkPropertyMetadataOptions.None));
+ FrameworkPropertyMetadataOptions.None));
 #endif
+
 
         /// <summary>
         /// Gets or sets SelectedItem.
@@ -162,39 +166,39 @@ namespace Apex.Controls
         /// <param name="itemToSelect">The item to select.</param>
         private void DoSelectItemCommand(object itemToSelect)
         {
-            //  Go through every item in the items source.
-            foreach (var item in ItemsSource)
+            //  Use the internal function for this for consistency.
+            InternalSelectItem(itemToSelect, ItemsSource);
+        }
+
+        /// <summary>
+        /// Used internally to select the item, even if it is not in the current itemsource.
+        /// This tidies things up because in the Silverlight version we have to do a bit more
+        /// manual work and call this function.
+        /// </summary>
+        /// <param name="itemToSelect">The item to select.</param>
+        /// <param name="itemsSource">The items source.</param>
+        private void InternalSelectItem(object itemToSelect, IEnumerable itemsSource)
+        {
+            //  Handle the trivial case.
+            if (SelectedItem == itemToSelect)
+                return;
+
+            //  Deactivate the old item.
+            var oldItem = (from object i in itemsSource
+                          where i is ISelectableItem && ((ISelectableItem) i).IsSelected
+                          select i as ISelectableItem).FirstOrDefault();
+            if(oldItem != null)
             {
-                //  Is this the selected item?
-                bool isSelected = item == itemToSelect;
+                oldItem.IsSelected = false;
+                oldItem.OnDeselected();
+            }
 
-                //  If this is the selected item, store it.
-                if (isSelected)
-                    SelectedItem = item;
-                
-                //  Is the item an ISelectableItem?
-                var selectableItem = item as ISelectableItem;
-                if (selectableItem != null)
-                {
-                    //  The item implements ISelectableItem, meaning that we 
-                    //  can keep it fully up-to-date on it's selection status.
-
-                    //  Do we need to deselect it?
-                    if (selectableItem.IsSelected && isSelected == false)
-                    {
-                        //  Deselect the item.
-                        selectableItem.OnDeselected();
-                        selectableItem.IsSelected = false;
-                    }
-
-                    //  Do we need to select it?
-                    if (selectableItem.IsSelected == false && isSelected)
-                    {
-                        //  Select the item.
-                        selectableItem.OnSelected();
-                        selectableItem.IsSelected = true;
-                    }
-                }
+            //  Activate the new item.
+            SelectedItem = itemToSelect;
+            if(itemToSelect is ISelectableItem)
+            {
+                ((ISelectableItem)itemToSelect).IsSelected = true;
+                ((ISelectableItem)itemToSelect).OnSelected();
             }
         }
 

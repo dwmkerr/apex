@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Interactivity;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -23,17 +24,7 @@ namespace Apex.Behaviours
             base.OnAttached();
 
             //  TODO: In the designer this makes the element invisible, another way?
-#if !SILVERLIGHT
             AssociatedObject.Opacity = 0;
-#endif
-        }
-
-        /// <summary>
-        /// Called when the behavior is being detached from its AssociatedObject, but before it has actually occurred.
-        /// </summary>
-        protected override void OnDetaching()
-        {
-            base.OnDetaching();
         }
 
         /// <summary>
@@ -47,7 +38,7 @@ namespace Apex.Behaviours
             var slideFadeInBehaviours = new List<SlideFadeInBehaviour>();
 
             //  Get all children.
-            var children = container.GetChildren<UIElement>();
+            var children = container.GetLogicalChildren<UIElement>();
 
             //  Go through each child, add all slide fade in behaviours.
             foreach (var child in children)

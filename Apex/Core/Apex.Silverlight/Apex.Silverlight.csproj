@@ -124,6 +124,9 @@
     <Compile Include="..\apex\consistency\HitTest.cs">
       <Link>Consistency\HitTest.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Consistency\LogicalTreeHelper.cs">
+      <Link>Consistency\LogicalTreeHelper.cs</Link>
+    </Compile>
     <Compile Include="..\apex\consistency\MouseClickDetector.cs">
       <Link>Consistency\MouseClickDetector.cs</Link>
     </Compile>
