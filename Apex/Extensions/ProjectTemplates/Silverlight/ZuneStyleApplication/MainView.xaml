@@ -10,7 +10,8 @@
              xmlns:apexShells="clr-namespace:Apex.Shells;assembly=Apex.Silverlight"
              xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex.Silverlight"
              xmlns:ZuneStyleApplication="clr-namespace:ZuneStyleApplication"
-    mc:Ignorable="d"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
 
     <!-- Set the view model. -->
@@ -35,6 +36,7 @@
 
                 <!-- The title. -->
                 <TextBlock 
+                    FontFamily="/ZuneStyleApplication;component/Resources/Fonts/segoeui.ttf#Segoe UI"
                     Grid.Row="0" FontWeight="ExtraBlack" FontSize="13" Text="{Binding Title, Converter={StaticResource StringCaseConverter}, ConverterParameter=Upper}"
                     Margin="0,2,4,0"
                     HorizontalAlignment="Right" />
@@ -42,6 +44,7 @@
                 <!-- The subtitle. -->
                 <TextBlock 
                     Grid.Row="1" FontWeight="ExtraBlack" FontSize="9"
+                    FontFamily="/ZuneStyleApplication;component/Resources/Fonts/segoeui.ttf#Segoe UI"
                     Foreground="{StaticResource ZuneDarkGrayBrush}"
                     Margin="0,-2,4,0"
                     HorizontalAlignment="Right">
@@ -93,6 +96,15 @@
                                     Style="{StaticResource MenuItemStyle}" 
                                     apexCommands:ExtendedCommands.LeftClickCommand="{Binding ElementName=selectableItemsControl_TopMenu, Path=SelectItemCommand}"
                                     apexCommands:ExtendedCommands.LeftClickCommandParameter="{Binding}">
+                                    
+                                   <i:Interaction.Triggers>
+                                        <ei:DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <ei:ChangePropertyAction PropertyName="Foreground" Value="Black" />
+                                        </ei:DataTrigger>
+                                        <ei:DataTrigger Binding="{Binding IsSelected}" Value="False">
+                                            <ei:ChangePropertyAction PropertyName="Foreground" Value="{StaticResource ZuneLightGrayBrush}" />
+                                        </ei:DataTrigger>
+                                   </i:Interaction.Triggers>
                                 </TextBlock>
                             </DataTemplate>
                         </apexControls:SelectableItemsControl.ItemTemplate>
@@ -118,6 +130,16 @@
                                     Style="{StaticResource SubMenuItemStyle}" 
                                     apexCommands:ExtendedCommands.LeftClickCommand="{Binding ElementName=selectableItemsControl_BottomMenu, Path=SelectItemCommand}"
                                     apexCommands:ExtendedCommands.LeftClickCommandParameter="{Binding}">
+                                    
+                                   <i:Interaction.Triggers>
+                                        <ei:DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <ei:ChangePropertyAction PropertyName="Foreground" Value="Black" />
+                                         <!--   <ei:ChangePropertyAction PropertyName="FontWeight" Value="ExtraBold" /> -->
+                                        </ei:DataTrigger>
+                                        <ei:DataTrigger Binding="{Binding IsSelected}" Value="False">
+                                            <ei:ChangePropertyAction PropertyName="Foreground" Value="{StaticResource ZuneLightGrayBrush}" />
+                                        </ei:DataTrigger>
+                                   </i:Interaction.Triggers>
                                 </TextBlock>
                             </DataTemplate>
                         </apexControls:SelectableItemsControl.ItemTemplate>

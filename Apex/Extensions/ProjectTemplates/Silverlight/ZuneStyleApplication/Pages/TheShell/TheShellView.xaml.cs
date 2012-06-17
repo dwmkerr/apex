@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 using Apex;
 using Apex.MVVM;
-using ZuneStyleApplication.ViewModels;
 using Apex.Behaviours;
 using ZuneStyleApplication.Views;
 
@@ -36,7 +23,7 @@ namespace ZuneStyleApplication.Pages.TheShell
             SlideFadeInBehaviour.DoSlideFadeIn(this);
 
             //  Handle the 'show popup' executed event.
-            viewModel.ShowPopupCommand.Executed += ShowPopupCommand_Executed;
+            ((TheShellViewModel)DataContext).ShowPopupCommand.Executed += ShowPopupCommand_Executed;
         }
 
         /// <summary>
@@ -52,6 +39,8 @@ namespace ZuneStyleApplication.Pages.TheShell
 
         public void OnDeactivated()
         {
+            //  Remove the handler for the 'show popup' executed event.
+            ((TheShellViewModel)DataContext).ShowPopupCommand.Executed -= ShowPopupCommand_Executed;
         }
     }
 }

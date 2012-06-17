@@ -1,4 +1,5 @@
-﻿using Apex.MVVM;
+﻿using System;
+using Apex.MVVM;
 using System.Collections.ObjectModel;
 using Apex.Controls;
 
@@ -50,8 +51,9 @@ namespace ZuneStyleApplication.Pages
         /// <summary>
         /// The Pages observable collection.
         /// </summary>
-        private readonly ObservableCollection<PageViewModel> PagesProperty =
-          new ObservableCollection<PageViewModel>();
+        private readonly NotifyingProperty PagesProperty =
+          new NotifyingProperty("Pages", typeof(ObservableCollection<PageViewModel>),
+              new ObservableCollection<PageViewModel>());
 
         /// <summary>
         /// Gets the Pages observable collection.
@@ -59,7 +61,8 @@ namespace ZuneStyleApplication.Pages
         /// <value>The Pages observable collection.</value>
         public ObservableCollection<PageViewModel> Pages
         {
-            get { return PagesProperty; }
+            get { return (ObservableCollection<PageViewModel>)GetValue(PagesProperty); }
+            set { SetValue(PagesProperty,value); }
         }     
 
         /// <summary>

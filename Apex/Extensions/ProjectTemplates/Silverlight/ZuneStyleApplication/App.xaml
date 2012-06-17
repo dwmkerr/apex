@@ -6,6 +6,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/ZuneStyleApplication;component/Resources/ResourceDictionaries/ZuneResourceDictionary.xaml" />
+                <ResourceDictionary Source="/ZuneStyleApplication;component/Resources/ResourceDictionaries/ZuneScrollBarResourceDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

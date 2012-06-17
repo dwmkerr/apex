@@ -11,21 +11,6 @@ namespace Apex.Controls
     public class ViewBroker : ContentControl
     {
         /// <summary>
-        /// Called when the <see cref="P:System.Windows.Controls.ContentControl.Content"/> property changes.
-        /// </summary>
-        /// <param name="oldContent">The old value of the <see cref="P:System.Windows.Controls.ContentControl.Content"/> property.</param>
-        /// <param name="newContent">The new value of the <see cref="P:System.Windows.Controls.ContentControl.Content"/> property.</param>
-        protected override void OnContentChanged(object oldContent, object newContent)
-        {
-            //  Call the base.
-            base.OnContentChanged(oldContent, newContent);
-
-            //  The first time we get this, it'll be setting the default content.
-            if (defaultContent == null && newContent != null)
-                defaultContent = newContent;
-        }
-
-        /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal processes 
         /// call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
         /// </summary>
@@ -33,9 +18,6 @@ namespace Apex.Controls
         {
             //  Call the base.
             base.OnApplyTemplate();
-
-            //  Set the template applied flag.
-            templateApplied = true;
 
             //  If we have no view model selected, we're done.
             if(ViewModel == null)
@@ -90,18 +72,10 @@ namespace Apex.Controls
         private static void OnViewModelChanged(DependencyObject o, DependencyPropertyChangedEventArgs args)
         {
             ViewBroker me = o as ViewBroker;
-
-            //  We are only going to switch the content to the view if we're applied the template
-            //  and we have a view.
-            if (me.templateApplied == false)
-                return;
-
+            
             //  If the viewmodel is null, show the default content.
             if (me.ViewModel == null)
-            {
-                me.Content = me.defaultContent;
                 return;
-            }
 
             //  Get the appropriate view and activate it.
             var view = me.GetViewForViewModel(me.ViewModel);
@@ -149,18 +123,11 @@ namespace Apex.Controls
             if (viewInstance is FrameworkElement == false)
                 throw new InvalidOperationException("A View must be a FrameworkElement");
 
+            //  Set the data context.
+            ((FrameworkElement) viewInstance).DataContext = viewModel;
+
             //  Return the view instance.
             return viewInstance;
         }
-
-        /// <summary>
-        /// The default content (shown when no VM is set).
-        /// </summary>
-        private object defaultContent;
-
-        /// <summary>
-        /// A flag indicating whether the template has been applied.
-        /// </summary>
-        private bool templateApplied;
     }
 }

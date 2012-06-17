@@ -14,8 +14,8 @@
         <local:MusicViewModel x:Name="viewModel" />
     </UserControl.DataContext>
 
-    <ScrollViewer Margin="40,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <apexControls:ApexGrid  Rows="Auto,Auto,*,Auto" Columns="*,5,*,5,*" >
+    <ScrollViewer Margin="0,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid  Margin="40,0,0,0" Rows="Auto,Auto,*,Auto" Columns="*,5,*,5,*" >
 
             <TextBlock 
             Grid.Row="0"

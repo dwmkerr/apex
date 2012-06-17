@@ -15,14 +15,13 @@
         <local:TheShellViewModel x:Name="viewModel" />
     </UserControl.DataContext>
 
-    <ScrollViewer Margin="40,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <apexControls:ApexGrid Rows="Auto,Auto,Auto,Auto,Auto" >
+    <ScrollViewer Margin="0,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid Margin="40,0,0,0" Rows="Auto,Auto,Auto,Auto,Auto,Auto" >
 
             <TextBlock 
             Grid.Row="0"
             Grid.Column="0"
-            Style="{StaticResource Heading1Style}"
-            FontWeight="Normal">
+            Style="{StaticResource Heading1Style}">
             <i:Interaction.Behaviors>
                 <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0" />
             </i:Interaction.Behaviors>THE <Span Foreground="{StaticResource ZuneColor1Brush}">SHELL</Span>.
@@ -63,17 +62,18 @@
                 </i:Interaction.Behaviors>
             </Image>
 
-            <TextBlock 
+            <Button 
             Grid.Row="4"
             Grid.Column="0"
-            Style="{StaticResource Heading2Style}"
-            Margin="0,20,0,0"
-            TextWrapping="Wrap">
-            <i:Interaction.Behaviors>
-                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.8" />
-            </i:Interaction.Behaviors><Hyperlink Command="{Binding ShowPopupCommand}">Show a popup</Hyperlink>
-            using the Shell by clicking the hyperlink.
-            </TextBlock>
+                Width="200" HorizontalAlignment="Left"
+            Command="{Binding ShowPopupCommand}"
+            Margin="0,20,0,0">
+                <TextBlock
+            Style="{StaticResource Heading2Style}">SHOW POPUP</TextBlock>
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.8" />
+                </i:Interaction.Behaviors>
+            </Button>
 
 
         </apexControls:ApexGrid>
