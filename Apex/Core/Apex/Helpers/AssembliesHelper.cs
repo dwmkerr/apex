@@ -18,7 +18,7 @@ namespace Apex.Helpers
         /// <returns>Assemblies in the domain.</returns>
         public static IEnumerable<Assembly> GetDomainAssemblies()
         {
-#if SILVERLIGHT3
+#if SILVERLIGHT3 || WINDOWS_PHONE
             return new List<Assembly> {Assembly.GetCallingAssembly(), Assembly.GetExecutingAssembly()};
 #elif SILVERLIGHT4
             //  TODO: According to MSDN AppDomain.CurrentDomain.GetAssemblies should compile in SL4 - it doesn't seem to.

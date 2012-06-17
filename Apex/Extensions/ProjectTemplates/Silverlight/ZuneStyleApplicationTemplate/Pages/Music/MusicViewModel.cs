@@ -33,7 +33,7 @@ namespace $safeprojectname$.ViewModels
             {
                 
                 //  Get the artists from the model.
-                var zuneModel = ApexBroker.GetModel<IZuneModel>();
+                var zuneModel = ApexBroker.GetModel<I$safeprojectname$Model>();
                 foreach (var artist in zuneModel.GetArtists())
                     artists.Add(artist);
             }

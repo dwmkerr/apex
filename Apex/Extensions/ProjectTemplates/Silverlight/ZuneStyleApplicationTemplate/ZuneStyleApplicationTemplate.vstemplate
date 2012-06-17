@@ -11,18 +11,18 @@
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Icon>__TemplateIcon.ico</Icon>
+    <Icon>ZuneStyleApplicationTemplate.ico</Icon>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="ZuneStyleApplication.csproj" File="ZuneStyleApplication.csproj" ReplaceParameters="true">
+    <Project TargetFileName="$safeprojectname$.csproj" File="ZuneStyleApplication.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml">MainView.xaml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml.cs">MainView.xaml.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainViewModel.cs">MainViewModel.cs</ProjectItem>
       <Folder Name="Models" TargetFolderName="Models">
-        <ProjectItem ReplaceParameters="true" TargetFileName="IZuneModel.cs">IZuneModel.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ZuneModel.cs">ZuneModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="I$safeprojectname$Model.cs">IZuneModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$Model.cs">ZuneModel.cs</ProjectItem>
       </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
         <Folder Name="Apex" TargetFolderName="Apex">

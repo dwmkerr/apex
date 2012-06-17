@@ -44,7 +44,7 @@ namespace ApexWizards.ViewWizard
         /// <param name="args">The <see cref="Apex.MVVM.CommandEventArgs"/> instance containing the event data.</param>
         void OKCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)
         {
-            DialogResult = false;
+            DialogResult = true;
             Close();
         }
 

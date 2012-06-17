@@ -4,12 +4,12 @@ using Apex.MVVM;
 namespace $rootnamespace$
 {
     /// <summary>
-    /// The <see cref="$safeitemrootname$"/> Model Singleton class.
+    /// The <see cref="$safeitemrootname$"/> Model class.
     /// This class implements the <see cref="I$safeitemrootname$"/> Model interface.
     /// You can retrieve the model with:
     /// <code>I$safeitemrootname$ model = ApexBroker.GetModel<I$safeitemrootname$>()</code>
     /// </summary>
-    [Model(typeof(I$safeitemrootname$))]
+    [Model]
     public sealed class $safeitemrootname$ : I$safeitemrootname$, IModel
     {
         /// <summary>

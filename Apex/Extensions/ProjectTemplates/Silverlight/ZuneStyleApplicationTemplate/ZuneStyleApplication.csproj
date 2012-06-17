@@ -69,9 +69,7 @@
     <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
-    <Reference>
-      <Assembly>Apex.Silverlight, Version=1.4.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d</Assembly>
-    </Reference>
+    <Reference Include="Apex.Silverlight, Version=1.4.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -81,8 +79,8 @@
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainViewModel.cs" />
-    <Compile Include="Models\IZuneModel.cs" />
-    <Compile Include="Models\ZuneModel.cs" />
+    <Compile Include="Models\I$safeprojectname$Model.cs" />
+    <Compile Include="Models\$safeprojectname$Model.cs" />
     <Compile Include="Pages\Apex\ApexView.xaml.cs">
       <DependentUpon>ApexView.xaml</DependentUpon>
     </Compile>

@@ -95,8 +95,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ItemTemplates", "ItemTempla
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{246C6B54-4B69-4A81-B62E-FC4332F8C812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexModelItemTemplate", "Extensions\ItemTemplates\WPF\ApexModelItemTemplate\ApexModelItemTemplate.csproj", "{65E06D7C-F88B-45BE-8886-F9CFA514EC27}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexViewAndViewModelItemTemplate", "Extensions\ItemTemplates\WPF\ApexViewAndViewModelItemTemplate\ApexViewAndViewModelItemTemplate.csproj", "{781CF2CC-231E-4948-AF40-1B87A46ED559}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexViewItemTemplate", "Extensions\ItemTemplates\WPF\ApexViewItemTemplate\ApexViewItemTemplate.csproj", "{BDE45320-0EDB-4AF6-8782-C3983DD285C7}"
@@ -111,9 +109,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplication", "Extensions\ProjectTemplates\Silverlight\ZuneStyleApplication\ZuneStyleApplication.csproj", "{50819296-DB19-4B13-8EA7-8E4B45CB45BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplicationTemplate", "Extensions\ProjectTemplates\WPF\ZuneStyleApplicationTemplate\ZuneStyleApplicationTemplate.csproj", "{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightZuneStyleApplicationTemplate", "Extensions\ProjectTemplates\Silverlight\ZuneStyleApplicationTemplate\SilverlightZuneStyleApplicationTemplate.csproj", "{7866F157-5838-4392-A2F5-1C5494B84086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplicationTemplate", "ZuneStyleApplicationTemplate\ZuneStyleApplicationTemplate.csproj", "{7866F157-5838-4392-A2F5-1C5494B84086}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfZuneStyleApplicationTemplate", "Extensions\ProjectTemplates\WPF\ZuneStyleApplicationTemplate\WpfZuneStyleApplicationTemplate.csproj", "{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexModelItemTemplate", "Extensions\ItemTemplates\WPF\ApexModelItemTemplate\ApexModelItemTemplate.csproj", "{65E06D7C-F88B-45BE-8886-F9CFA514EC27}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -233,46 +233,46 @@ Global
 		SccProjectTopLevelParentUniqueName28 = Apex.sln
 		SccProjectName28 = Legacy/Apex.Silverlight4
 		SccLocalPath28 = Legacy\\Apex.Silverlight4
-		SccProjectUniqueName29 = Extensions\\ItemTemplates\\WPF\\ApexModelItemTemplate\\ApexModelItemTemplate.csproj
+		SccProjectUniqueName29 = Extensions\\ItemTemplates\\WPF\\ApexViewAndViewModelItemTemplate\\ApexViewAndViewModelItemTemplate.csproj
 		SccProjectTopLevelParentUniqueName29 = Apex.sln
-		SccProjectName29 = Extensions/ItemTemplates/WPF/ApexModelItemTemplate
-		SccLocalPath29 = Extensions\\ItemTemplates\\WPF\\ApexModelItemTemplate
-		SccProjectUniqueName30 = Extensions\\ItemTemplates\\WPF\\ApexViewAndViewModelItemTemplate\\ApexViewAndViewModelItemTemplate.csproj
+		SccProjectName29 = Extensions/ItemTemplates/WPF/ApexViewAndViewModelItemTemplate
+		SccLocalPath29 = Extensions\\ItemTemplates\\WPF\\ApexViewAndViewModelItemTemplate
+		SccProjectUniqueName30 = Extensions\\ItemTemplates\\WPF\\ApexViewItemTemplate\\ApexViewItemTemplate.csproj
 		SccProjectTopLevelParentUniqueName30 = Apex.sln
-		SccProjectName30 = Extensions/ItemTemplates/WPF/ApexViewAndViewModelItemTemplate
-		SccLocalPath30 = Extensions\\ItemTemplates\\WPF\\ApexViewAndViewModelItemTemplate
-		SccProjectUniqueName31 = Extensions\\ItemTemplates\\WPF\\ApexViewItemTemplate\\ApexViewItemTemplate.csproj
+		SccProjectName30 = Extensions/ItemTemplates/WPF/ApexViewItemTemplate
+		SccLocalPath30 = Extensions\\ItemTemplates\\WPF\\ApexViewItemTemplate
+		SccProjectUniqueName31 = Extensions\\ItemTemplates\\WPF\\ApexViewModelItemTemplate\\ApexViewModelItemTemplate.csproj
 		SccProjectTopLevelParentUniqueName31 = Apex.sln
-		SccProjectName31 = Extensions/ItemTemplates/WPF/ApexViewItemTemplate
-		SccLocalPath31 = Extensions\\ItemTemplates\\WPF\\ApexViewItemTemplate
-		SccProjectUniqueName32 = Extensions\\ItemTemplates\\WPF\\ApexViewModelItemTemplate\\ApexViewModelItemTemplate.csproj
+		SccProjectName31 = Extensions/ItemTemplates/WPF/ApexViewModelItemTemplate
+		SccLocalPath31 = Extensions\\ItemTemplates\\WPF\\ApexViewModelItemTemplate
+		SccProjectUniqueName32 = Extensions\\ItemTemplates\\WPF\\SingletonItemTemplate\\SingletonItemTemplate.csproj
 		SccProjectTopLevelParentUniqueName32 = Apex.sln
-		SccProjectName32 = Extensions/ItemTemplates/WPF/ApexViewModelItemTemplate
-		SccLocalPath32 = Extensions\\ItemTemplates\\WPF\\ApexViewModelItemTemplate
-		SccProjectUniqueName33 = Extensions\\ItemTemplates\\WPF\\SingletonItemTemplate\\SingletonItemTemplate.csproj
+		SccProjectName32 = Extensions/ItemTemplates/WPF/SingletonItemTemplate
+		SccLocalPath32 = Extensions\\ItemTemplates\\WPF\\SingletonItemTemplate
+		SccProjectUniqueName33 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplication\\ZuneStyleApplication.csproj
 		SccProjectTopLevelParentUniqueName33 = Apex.sln
-		SccProjectName33 = Extensions/ItemTemplates/WPF/SingletonItemTemplate
-		SccLocalPath33 = Extensions\\ItemTemplates\\WPF\\SingletonItemTemplate
-		SccProjectUniqueName34 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplication\\ZuneStyleApplication.csproj
+		SccProjectName33 = Extensions/ProjectTemplates/WPF/ZuneStyleApplication
+		SccLocalPath33 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplication
+		SccProjectUniqueName34 = Extensions\\ProjectTemplates\\WPF\\WpfDialogApplication\\WpfDialogApplication.csproj
 		SccProjectTopLevelParentUniqueName34 = Apex.sln
-		SccProjectName34 = Extensions/ProjectTemplates/WPF/ZuneStyleApplication
-		SccLocalPath34 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplication
-		SccProjectUniqueName35 = Extensions\\ProjectTemplates\\WPF\\WpfDialogApplication\\WpfDialogApplication.csproj
+		SccProjectName34 = Extensions/ProjectTemplates/WPF/WpfDialogApplication
+		SccLocalPath34 = Extensions\\ProjectTemplates\\WPF\\WpfDialogApplication
+		SccProjectUniqueName35 = Extensions\\ProjectTemplates\\Silverlight\\ZuneStyleApplication\\ZuneStyleApplication.csproj
 		SccProjectTopLevelParentUniqueName35 = Apex.sln
-		SccProjectName35 = Extensions/ProjectTemplates/WPF/WpfDialogApplication
-		SccLocalPath35 = Extensions\\ProjectTemplates\\WPF\\WpfDialogApplication
-		SccProjectUniqueName36 = Extensions\\ProjectTemplates\\Silverlight\\ZuneStyleApplication\\ZuneStyleApplication.csproj
+		SccProjectName35 = Extensions/ProjectTemplates/Silverlight/ZuneStyleApplication
+		SccLocalPath35 = Extensions\\ProjectTemplates\\Silverlight\\ZuneStyleApplication
+		SccProjectUniqueName36 = Extensions\\ProjectTemplates\\Silverlight\\ZuneStyleApplicationTemplate\\SilverlightZuneStyleApplicationTemplate.csproj
 		SccProjectTopLevelParentUniqueName36 = Apex.sln
-		SccProjectName36 = Extensions/ProjectTemplates/Silverlight/ZuneStyleApplication
-		SccLocalPath36 = Extensions\\ProjectTemplates\\Silverlight\\ZuneStyleApplication
-		SccProjectUniqueName37 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate\\ZuneStyleApplicationTemplate.csproj
+		SccProjectName36 = Extensions/ProjectTemplates/Silverlight/ZuneStyleApplicationTemplate
+		SccLocalPath36 = Extensions\\ProjectTemplates\\Silverlight\\ZuneStyleApplicationTemplate
+		SccProjectUniqueName37 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate\\WpfZuneStyleApplicationTemplate.csproj
 		SccProjectTopLevelParentUniqueName37 = Apex.sln
 		SccProjectName37 = Extensions/ProjectTemplates/WPF/ZuneStyleApplicationTemplate
 		SccLocalPath37 = Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate
-		SccProjectUniqueName38 = ZuneStyleApplicationTemplate\\ZuneStyleApplicationTemplate.csproj
+		SccProjectUniqueName38 = Extensions\\ItemTemplates\\WPF\\ApexModelItemTemplate\\ApexModelItemTemplate.csproj
 		SccProjectTopLevelParentUniqueName38 = Apex.sln
-		SccProjectName38 = ZuneStyleApplicationTemplate
-		SccLocalPath38 = ZuneStyleApplicationTemplate
+		SccProjectName38 = Extensions/ItemTemplates/WPF/ApexModelItemTemplate
+		SccLocalPath38 = Extensions\\ItemTemplates\\WPF\\ApexModelItemTemplate
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Apex.vsmdi
@@ -590,16 +590,6 @@ Global
 		{B751E60A-2285-4337-87DB-B68220C1F798}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B751E60A-2285-4337-87DB-B68220C1F798}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B751E60A-2285-4337-87DB-B68220C1F798}.Release|x86.ActiveCfg = Release|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|x86.ActiveCfg = Release|Any CPU
 		{781CF2CC-231E-4948-AF40-1B87A46ED559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{781CF2CC-231E-4948-AF40-1B87A46ED559}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{781CF2CC-231E-4948-AF40-1B87A46ED559}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -650,16 +640,6 @@ Global
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|x86.ActiveCfg = Release|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|x86.ActiveCfg = Release|Any CPU
 		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -670,6 +650,26 @@ Global
 		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|x86.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|x86.ActiveCfg = Release|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -715,11 +715,11 @@ Global
 		{44644E74-1118-444E-B337-BEB5FA3F67DB} = {74AA33D3-E5E1-470F-A289-05C83540DE7A}
 		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8} = {74AA33D3-E5E1-470F-A289-05C83540DE7A}
 		{246C6B54-4B69-4A81-B62E-FC4332F8C812} = {7A235DAF-F174-4388-80B7-D6A92B4C84E1}
-		{65E06D7C-F88B-45BE-8886-F9CFA514EC27} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{781CF2CC-231E-4948-AF40-1B87A46ED559} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{BDE45320-0EDB-4AF6-8782-C3983DD285C7} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{A2D2AA8F-A963-442D-AE52-F6543A375696} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{CC481432-5733-4103-A7C7-CCDC4C7049BB} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
+		{65E06D7C-F88B-45BE-8886-F9CFA514EC27} = {246C6B54-4B69-4A81-B62E-FC4332F8C812}
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF} = {12691B81-92AC-43B5-BD26-D8ACF28C6130}
 		{7866F157-5838-4392-A2F5-1C5494B84086} = {12691B81-92AC-43B5-BD26-D8ACF28C6130}
 	EndGlobalSection
