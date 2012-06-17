@@ -39,9 +39,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZuneStyleApplication", "ProjectTemplates\Silverlight\ZuneStyleApplication\ZuneStyleApplication.csproj", "{50819296-DB19-4B13-8EA7-8E4B45CB45BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfZuneStyleApplicationTemplate", "ProjectTemplates\WPF\ZuneStyleApplicationTemplate\WpfZuneStyleApplicationTemplate.csproj", "{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightZuneStyleApplicationTemplate", "ProjectTemplates\Silverlight\ZuneStyleApplicationTemplate\SilverlightZuneStyleApplicationTemplate.csproj", "{7866F157-5838-4392-A2F5-1C5494B84086}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 14
+		SccNumberOfProjects = 16
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -94,6 +98,14 @@ Global
 		SccProjectTopLevelParentUniqueName13 = Extensions.sln
 		SccProjectName13 = ProjectTemplates/Silverlight/ZuneStyleApplication
 		SccLocalPath13 = ProjectTemplates\\Silverlight\\ZuneStyleApplication
+		SccProjectUniqueName14 = ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate\\WpfZuneStyleApplicationTemplate.csproj
+		SccProjectTopLevelParentUniqueName14 = Extensions.sln
+		SccProjectName14 = ProjectTemplates/WPF/ZuneStyleApplicationTemplate
+		SccLocalPath14 = ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate
+		SccProjectUniqueName15 = ProjectTemplates\\Silverlight\\ZuneStyleApplicationTemplate\\SilverlightZuneStyleApplicationTemplate.csproj
+		SccProjectTopLevelParentUniqueName15 = Extensions.sln
+		SccProjectName15 = ProjectTemplates/Silverlight/ZuneStyleApplicationTemplate
+		SccLocalPath15 = ProjectTemplates\\Silverlight\\ZuneStyleApplicationTemplate
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -234,6 +246,26 @@ Global
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}.Release|x86.ActiveCfg = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7866F157-5838-4392-A2F5-1C5494B84086}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -251,6 +283,8 @@ Global
 		{A25742F4-32D7-48A1-8778-8109A8C16DC7} = {BBAAABBF-86D1-430C-8B6A-E35124DD94C4}
 		{44644E74-1118-444E-B337-BEB5FA3F67DB} = {9CBD1637-1576-4900-833E-2B8C68A97DB6}
 		{F9D779D2-A509-4FA7-B399-45215FFBDAD7} = {9CBD1637-1576-4900-833E-2B8C68A97DB6}
+		{9595B8A7-722F-4D54-8142-7F64E0AAA5A8} = {9CBD1637-1576-4900-833E-2B8C68A97DB6}
 		{50819296-DB19-4B13-8EA7-8E4B45CB45BF} = {A25742F4-32D7-48A1-8778-8109A8C16DC7}
+		{7866F157-5838-4392-A2F5-1C5494B84086} = {A25742F4-32D7-48A1-8778-8109A8C16DC7}
 	EndGlobalSection
 EndGlobal

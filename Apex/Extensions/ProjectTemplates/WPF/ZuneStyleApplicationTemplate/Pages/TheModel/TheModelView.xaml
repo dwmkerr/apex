@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="$safeprojectname$.Pages.TheModel.TheModelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:apexBehaviours="clr-namespace:Apex.Behaviours;assembly=Apex"
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+             xmlns:local="clr-namespace:$safeprojectname$.Pages.TheModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600">
+    
+    <!-- The view model. -->
+    <UserControl.DataContext>
+        <local:TheModelViewModel x:Name="viewModel" />
+    </UserControl.DataContext>
+
+    <ScrollViewer Margin="0,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid Margin="40,0,0,0" Rows="Auto,Auto,Auto,Auto,Auto" >
+
+            <TextBlock 
+            Grid.Row="0"
+            Grid.Column="0"
+            Style="{StaticResource Heading1Style}"
+            FontWeight="Normal">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0" />
+            </i:Interaction.Behaviors>THE <Span Foreground="{StaticResource ZuneColor1Brush}">MODEL</Span>.
+            </TextBlock>
+
+            <TextBlock 
+            Grid.Row="1"
+            Grid.Column="0"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.2" />
+            </i:Interaction.Behaviors>A model is an object used to manage data and perform operations. Apex will automatically
+            create a single instance of any class decorated with the [Model] attribute. If it implements IModel it will
+            also call it's OnInitialised function.
+            </TextBlock>
+
+            <Image
+            Grid.Row="2" Source="/Resources/Images/ModelAttribute.png" 
+            Margin="0,20,0,0"
+            Stretch="None" RenderOptions.BitmapScalingMode="Linear">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.4" />
+                </i:Interaction.Behaviors>
+            </Image>
+
+            <TextBlock 
+            Grid.Row="3"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
+            </i:Interaction.Behaviors>Any class can access a model by calling ApexBroker.GetModel.
+            </TextBlock>
+
+            <Image
+            Grid.Row="4" Source="/$safeprojectname$;component/Images/UsingTheModel.png" 
+            Margin="0,20,0,0"
+            Stretch="None" RenderOptions.BitmapScalingMode="Linear">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.8" />
+                </i:Interaction.Behaviors>
+            </Image>
+
+        </apexControls:ApexGrid>
+    </ScrollViewer>
+</UserControl>

@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_1053F86F416315420BBEDECA54AA804F"
+        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1053F86F416315420BBEDECA54AA804F"
+        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_107AF4B959F04365A2AB03789C3A1B0C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -39,6 +51,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_52331DCE4DA343B3951BEACE030D0E70"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_55AEDD773757815C0178D1117129CB96"
         "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,6 +65,36 @@
         {
         "MsmKey" = "8:_5A7109D60F1445AD897B296BBF08C216"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
+        "OwnerKey" = "8:_6CC9A795B9CC44CC81A4409E2CB82AB4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
+        "OwnerKey" = "8:_DDE00AC6B0BB4567B4429CC5A2C5E705"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
+        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
+        "OwnerKey" = "8:_1053F86F416315420BBEDECA54AA804F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
+        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -83,18 +131,6 @@
         {
         "MsmKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8B3218B58F9970777D689D15D0E98863"
-        "OwnerKey" = "8:_8507DE4B969E4FCABE2CA773D6B9B5A7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8B3218B58F9970777D689D15D0E98863"
-        "OwnerKey" = "8:_943D59412801456AB4FA914B0850A829"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -220,7 +256,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8B3218B58F9970777D689D15D0E98863"
+        "OwnerKey" = "8:_1053F86F416315420BBEDECA54AA804F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_604A9AA3286D79C6FECE20D659616E80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -334,6 +376,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1053F86F416315420BBEDECA54AA804F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Apex, Version=1.4.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_1053F86F416315420BBEDECA54AA804F"
+                    {
+                    "Name" = "8:Apex.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Apex.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A32E61B554E4D36B8CAED9FF4458BCF"
             {
             "SourcePath" = "8:..\\..\\Extensions\\ApexVsix\\bin\\Release\\ApexViewItemTemplate.zip"
@@ -360,6 +433,26 @@
             "TargetName" = "8:InsertViewModelCommand.snippet"
             "Tag" = "8:"
             "Folder" = "8:_481A1BFBC7084D32A4744A821DE908EE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_52331DCE4DA343B3951BEACE030D0E70"
+            {
+            "SourcePath" = "8:..\\..\\Extensions\\ProjectTemplates\\WPF\\ZuneStyleApplicationTemplate\\bin\\Release\\ProjectTemplates\\CSharp\\1033\\ZuneStyleApplicationTemplate.zip"
+            "TargetName" = "8:ZuneStyleApplicationTemplate.zip"
+            "Tag" = "8:"
+            "Folder" = "8:_A1CE364C790A4FDEAC9C9C78CAC00DFA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -423,6 +516,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_604A9AA3286D79C6FECE20D659616E80"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_604A9AA3286D79C6FECE20D659616E80"
+                    {
+                    "Name" = "8:System.Windows.Interactivity.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Windows.Interactivity.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_67F1F03C730D4BDDBE7DD983BC6DA30B"
@@ -514,37 +638,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8B3218B58F9970777D689D15D0E98863"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Apex, Version=1.3.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_8B3218B58F9970777D689D15D0E98863"
-                    {
-                    "Name" = "8:Apex.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Apex.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_30EC876B3D584C9CB09C2CF0585051BE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9C7FF85753ED0882D1C24428E3C2D1F2"
@@ -726,7 +819,7 @@
         {
             "{994432C3-9487-495D-8656-3E829A8DBDDE}:_0B355A6D658D4A5DA816224060C9635C"
             {
-            "DefaultLocation" = "8:[VSINSTALLDIR]Extensions\\DaveKerr\\Apex\\1.5"
+            "DefaultLocation" = "8:[VSINSTALLDIR]Extensions\\DaveKerr\\Apex\\1.4"
             "Name" = "8:ApexExtensionFolder"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -759,6 +852,39 @@
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_87B3BBFB21D04312A7D462E5405B0015"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9AFDE13A93E942FE9198C9F2EDCF9DB4"
+                    {
+                    "Name" = "8:ProjectTemplates"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_D9B4CF8A783C436D8FD11F829AFBDC6E"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_AB797A68092447698D7F57496ED6AC2D"
+                            {
+                            "Name" = "8:CSharp"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_D0EBE9AC60094974975CFCF09F41EBC1"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A1CE364C790A4FDEAC9C9C78CAC00DFA"
+                                    {
+                                    "Name" = "8:1033"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_CA243389D22A4AC5A390FBAEDFE91813"
                                         "Folders"
                                         {
                                         }

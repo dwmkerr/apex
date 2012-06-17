@@ -3,11 +3,11 @@
   <Identifier Id="ApexVsix.7Layer.3e9a8115-7d5a-4717-90c4-96f6beb94753">
     <Name>Apex</Name>
     <Author>Dave Kerr</Author>
-    <Version>1.3</Version>
+    <Version>1.4</Version>
     <Description xml:space="preserve">Apex is a powerful MVVM Framework for WPF, Silverlight and Windows Phone 7.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://apex.codeplex.com</MoreInfoUrl>
-    <InstalledByMsi>true</InstalledByMsi>
+    <InstalledByMsi>false</InstalledByMsi>
     <SupportedProducts>
       <VisualStudio Version="10.0">
         <Edition>Ultimate</Edition>
@@ -19,6 +19,6 @@
   </Identifier>
   <References />
   <Content>
-    <ItemTemplate>ItemTemplates</ItemTemplate>
+    <ProjectTemplate>ProjectTemplates</ProjectTemplate>
   </Content>
 </Vsix>

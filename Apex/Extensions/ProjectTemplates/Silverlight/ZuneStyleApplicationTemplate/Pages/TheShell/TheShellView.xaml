@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="$safeprojectname$.Pages.TheShell.TheShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:apexBehaviours="clr-namespace:Apex.Behaviours;assembly=Apex.Silverlight"
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex.Silverlight"
+             xmlns:local="clr-namespace:$safeprojectname$.Pages.TheShell"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600">
+
+    <ScrollViewer 
+        Margin="0,4,40,4" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <apexControls:ApexGrid Margin="40,0,0,0" Rows="Auto,Auto,Auto,Auto,Auto" >
+
+            <TextBlock 
+            Grid.Row="0"
+            Grid.Column="0"
+            Style="{StaticResource Heading1Style}"
+            FontWeight="Normal">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0" />
+            </i:Interaction.Behaviors>THE <Span Foreground="{StaticResource ZuneColor1Brush}">SHELL</Span>.
+            </TextBlock>
+
+            <TextBlock 
+            Grid.Row="1"
+            Grid.Column="0"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.2" />
+            </i:Interaction.Behaviors>The shell is an <Span FontWeight="SemiBold">optional</Span> part of your application.
+            The shell is a control you put at the very top level of your application, that all other controls should be contained
+            whithin.
+            </TextBlock>
+
+            <TextBlock 
+            Grid.Row="2"
+            Grid.Column="0"
+            Style="{StaticResource Heading2Style}"
+            Margin="0,20,0,0"
+            TextWrapping="Wrap">
+            <i:Interaction.Behaviors>
+                <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.4" />
+            </i:Interaction.Behaviors>If your application has a shell, you can get it at any time
+            with the ApexBroker.GetShell function. A shell lets you show popups, handle drag and drop
+            and control the main window or page of an application consistently across Silverlight, WPF and WP7.
+            </TextBlock>
+
+            <Image
+            Grid.Row="3" Source="/$safeprojectname$;component/Resources/Images/ShowPopop.png" 
+            Margin="0,20,0,0"
+            Stretch="None">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.6" />
+                </i:Interaction.Behaviors>
+            </Image>
+
+            <Button 
+            Grid.Row="4"
+            Grid.Column="0"
+                Width="200" HorizontalAlignment="Left"
+            Command="{Binding ShowPopupCommand}"
+            Margin="0,20,0,0">
+                <TextBlock
+            Style="{StaticResource Heading2Style}">SHOW POPUP</TextBlock>
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.8" />
+                </i:Interaction.Behaviors>
+            </Button>
+
+
+        </apexControls:ApexGrid>
+    </ScrollViewer>
+</UserControl>
