@@ -70,6 +70,7 @@ namespace Apex.Commands
         {
             FrameworkElement element = sender as FrameworkElement;
 
+            //  TODO Silverlight 5 actually provides the click count, we should use it.
             //  Silverlight doesn't give us quite as much help here as WPF does.
 #if SILVERLIGHT
             if (MouseClickDetector.IsDoubleClick(sender, e) || element == null /* TODO Ensure it's left button */)
