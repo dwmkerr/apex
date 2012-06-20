@@ -1,0 +1,4167 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+   <param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex Assembly">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Introduction">
+        <param name="Local" value="Apex_introduction.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Getting Started">
+        <param name="Local" value="Apex_gettingstarted.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Namespaces">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ApexBroker">
+        <param name="Local" value="Apex~Apex.ApexBroker.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.ApexBroker.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.ApexBroker_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.ApexBroker_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetModel&lt;TModel&gt; Method">
+        <param name="Local" value="Apex~Apex.ApexBroker~GetModel.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetShell Method">
+        <param name="Local" value="Apex~Apex.ApexBroker~GetShell.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetViewForViewModel Method">
+        <param name="Local" value="Apex~Apex.ApexBroker~GetViewForViewModel.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Initialise Method">
+        <param name="Local" value="Apex~Apex.ApexBroker~Initialise.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RegisterShell Method">
+        <param name="Local" value="Apex~Apex.ApexBroker~RegisterShell.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RegisterViewForViewModel Method">
+        <param name="Local" value="Apex~Apex.ApexBroker~RegisterViewForViewModel.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.ApexBroker_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CurrentExecutionContext Property">
+        <param name="Local" value="Apex~Apex.ApexBroker~CurrentExecutionContext.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Enumerations">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ExecutionContext">
+        <param name="Local" value="Apex~Apex.ExecutionContext.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Adorners Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Adorners_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Adorner">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Adorner Constructor">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ParentAdornerLayer Property">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner~ParentAdornerLayer.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Translation Property">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner~Translation.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="UIElement Property">
+        <param name="Local" value="Apex~Apex.Adorners.Adorner~UIElement.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AdornerLayer">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AdornerLayer Constructor">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AddAdorner Method">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer~AddAdorner.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetAdornerLayer Method">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer~GetAdornerLayer.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InitializeComponent Method">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer~InitializeComponent.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnApplyTemplate Method">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer~OnApplyTemplate.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RemoveAdorner Method">
+        <param name="Local" value="Apex~Apex.Adorners.AdornerLayer~RemoveAdorner.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="UIElementAdorner">
+        <param name="Local" value="Apex~Apex.Adorners.UIElementAdorner.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Adorners.UIElementAdorner.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Adorners.UIElementAdorner_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="UIElementAdorner Constructor">
+        <param name="Local" value="Apex~Apex.Adorners.UIElementAdorner~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="VisualAdorner">
+        <param name="Local" value="Apex~Apex.Adorners.VisualAdorner.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Adorners.VisualAdorner.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Adorners.VisualAdorner_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="VisualAdorner Constructor">
+        <param name="Local" value="Apex~Apex.Adorners.VisualAdorner~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Behaviours Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Behaviours_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GridViewContextMenuBehaviour">
+        <param name="Local" value="Apex~Apex.Behaviours.GridViewContextMenuBehaviour.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Behaviours.GridViewContextMenuBehaviour.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Behaviours.GridViewContextMenuBehaviour_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GridViewContextMenuBehaviour Constructor">
+        <param name="Local" value="Apex~Apex.Behaviours.GridViewContextMenuBehaviour~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Behaviours.GridViewContextMenuBehaviour_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnAttached Method">
+        <param name="Local" value="Apex~Apex.Behaviours.GridViewContextMenuBehaviour~OnAttached.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnDetaching Method">
+        <param name="Local" value="Apex~Apex.Behaviours.GridViewContextMenuBehaviour~OnDetaching.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SlideFadeInBehaviour">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SlideFadeInBehaviour Constructor">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoSlideFadeIn Method">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour~DoSlideFadeIn.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnAttached Method">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour~OnAttached.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BeginTime Property">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour~BeginTime.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Duration Property">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour~Duration.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DurationProperty Field">
+        <param name="Local" value="Apex~Apex.Behaviours.SlideFadeInBehaviour~DurationProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Commands Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Commands_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandReference">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandReference Constructor">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CanExecute Method">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference~CanExecute.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CreateInstanceCore Method">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference~CreateInstanceCore.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Execute Method">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference~Execute.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Command Property">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference~Command.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference~CommandProperty.html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CanExecuteChanged Event">
+        <param name="Local" value="Apex~Apex.Commands.CommandReference~CanExecuteChanged_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EventBinding">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EventBinding Constructor">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Bind Method">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~Bind.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CreateInstanceCore Method">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~CreateInstanceCore.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Command Property">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~Command.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandParameter Property">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~CommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EventName Property">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~EventName.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandParameterProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~CommandParameterProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.EventBinding~CommandProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EventBindingCollection">
+        <param name="Local" value="Apex~Apex.Commands.EventBindingCollection.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Commands.EventBindingCollection.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Commands.EventBindingCollection_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EventBindingCollection Constructor">
+        <param name="Local" value="Apex~Apex.Commands.EventBindingCollection~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EventBindings">
+        <param name="Local" value="Apex~Apex.Commands.EventBindings.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Commands.EventBindings.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Commands.EventBindings_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Commands.EventBindings_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetEventBindings Method">
+        <param name="Local" value="Apex~Apex.Commands.EventBindings~GetEventBindings.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnEventBindingsChanged Method">
+        <param name="Local" value="Apex~Apex.Commands.EventBindings~OnEventBindingsChanged.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetEventBindings Method">
+        <param name="Local" value="Apex~Apex.Commands.EventBindings~SetEventBindings.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ExtendedCommands">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetContextMenuDataContext Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetContextMenuDataContext.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetLeftClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetLeftClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetLeftClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetLeftClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetLeftDoubleClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetLeftDoubleClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetLeftDoubleClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetLeftDoubleClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetRightClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetRightClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetRightClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetRightClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetRightDoubleClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetRightDoubleClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetRightDoubleClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~GetRightDoubleClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetContextMenuDataContext Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetContextMenuDataContext.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetLeftClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetLeftClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetLeftClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetLeftClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetLeftDoubleClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetLeftDoubleClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetLeftDoubleClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetLeftDoubleClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetRightClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetRightClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetRightClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetRightClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetRightDoubleClickCommand Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetRightDoubleClickCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetRightDoubleClickCommandParameter Method">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~SetRightDoubleClickCommandParameter.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ContextMenuDataContextProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~ContextMenuDataContextProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="LeftClickCommandParameterProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~LeftClickCommandParameterProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="LeftClickCommandProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~LeftClickCommandProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="LeftDoubleClickCommandParameterProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~LeftDoubleClickCommandParameterProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="LeftDoubleClickCommandProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~LeftDoubleClickCommandProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RightClickCommandParameterProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~RightClickCommandParameterProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RightClickCommandProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~RightClickCommandProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RightDoubleClickCommandParameterProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~RightDoubleClickCommandParameterProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RightDoubleClickCommandProperty Field">
+        <param name="Local" value="Apex~Apex.Commands.ExtendedCommands~RightDoubleClickCommandProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Consistency Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Consistency_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DispatcherHelper">
+        <param name="Local" value="Apex~Apex.Consistency.DispatcherHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Consistency.DispatcherHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Consistency.DispatcherHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Consistency.DispatcherHelper_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CurrentDispatcher Property">
+        <param name="Local" value="Apex~Apex.Consistency.DispatcherHelper~CurrentDispatcher.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GridLengthConverter">
+        <param name="Local" value="Apex~Apex.Consistency.GridLengthConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Consistency.GridLengthConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Consistency.GridLengthConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GridLengthConverter Constructor">
+        <param name="Local" value="Apex~Apex.Consistency.GridLengthConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Consistency.GridLengthConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertFromString Method">
+        <param name="Local" value="Apex~Apex.Consistency.GridLengthConverter~ConvertFromString.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="HitTest">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="HitTest Constructor">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoHitTest Method">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest~DoHitTest.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Hits Property">
+        <param name="Local" value="Apex~Apex.Consistency.HitTest~Hits.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="LogicalTreeHelper">
+        <param name="Local" value="Apex~Apex.Consistency.LogicalTreeHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Consistency.LogicalTreeHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Consistency.LogicalTreeHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Consistency.LogicalTreeHelper_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetChildren Method">
+        <param name="Local" value="Apex~Apex.Consistency.LogicalTreeHelper~GetChildren.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="TryGetChildren Method">
+        <param name="Local" value="Apex~Apex.Consistency.LogicalTreeHelper~TryGetChildren.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="TryGetContent Method">
+        <param name="Local" value="Apex~Apex.Consistency.LogicalTreeHelper~TryGetContent.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SystemParameters">
+        <param name="Local" value="Apex~Apex.Consistency.SystemParameters.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Consistency.SystemParameters.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Consistency.SystemParameters_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Consistency.SystemParameters_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MinimumHorizontalDragDistance Property">
+        <param name="Local" value="Apex~Apex.Consistency.SystemParameters~MinimumHorizontalDragDistance.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MinimumVerticalDragDistance Property">
+        <param name="Local" value="Apex~Apex.Consistency.SystemParameters~MinimumVerticalDragDistance.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Controls Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatedScrollViewer">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatedScrollViewer Constructor">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CurrentHorizontalOffset Property">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer~CurrentHorizontalOffset.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CurrentVerticalOffset Property">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer~CurrentVerticalOffset.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CurrentHorizontalOffsetProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer~CurrentHorizontalOffsetProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CurrentVerticalOffsetProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.AnimatedScrollViewer~CurrentVerticalOffsetProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ApexGrid">
+        <param name="Local" value="Apex~Apex.Controls.ApexGrid.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.ApexGrid.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.ApexGrid_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ApexGrid Constructor">
+        <param name="Local" value="Apex~Apex.Controls.ApexGrid~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.ApexGrid_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Columns Property">
+        <param name="Local" value="Apex~Apex.Controls.ApexGrid~Columns.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Rows Property">
+        <param name="Local" value="Apex~Apex.Controls.ApexGrid~Rows.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CartesianCanvas">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CartesianCanvas Constructor">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AdjustPoint Method">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas~AdjustPoint.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ArrangeOverride Method">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas~ArrangeOverride.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="origin Field">
+        <param name="Local" value="Apex~Apex.Controls.CartesianCanvas~origin.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CircularProgressBar">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CircularProgressBar Constructor">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InitializeComponent Method">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar~InitializeComponent.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ProgressText Property">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar~ProgressText.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ProgressTextProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.CircularProgressBar~ProgressTextProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CrossButton">
+        <param name="Local" value="Apex~Apex.Controls.CrossButton.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.CrossButton.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.CrossButton_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CrossButton Constructor">
+        <param name="Local" value="Apex~Apex.Controls.CrossButton~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CustomWindow">
+        <param name="Local" value="Apex~Apex.Controls.CustomWindow.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.CustomWindow.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.CustomWindow_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CustomWindow Constructor">
+        <param name="Local" value="Apex~Apex.Controls.CustomWindow~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.CustomWindow_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="HasDropShadow Property">
+        <param name="Local" value="Apex~Apex.Controls.CustomWindow~HasDropShadow.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EnumerationComboBox">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EnumerationComboBox Constructor">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectedEnumeration Property">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox~SelectedEnumeration.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectedEnumerationProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.EnumerationComboBox~SelectedEnumerationProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FlipPanel">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FlipPanel Constructor">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AspectRatio Property">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~AspectRatio.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ContentBack Property">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~ContentBack.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ContentFront Property">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~ContentFront.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FlipCommand Property">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~FlipCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsFlipped Property">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~IsFlipped.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AspectRatioProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~AspectRatioProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ContentBackProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~ContentBackProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ContentFrontProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~ContentFrontProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="flipCommand Field">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~flipCommand.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FlippedBackToFrontEvent Field">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~FlippedBackToFrontEvent.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FlippedFrontToBackEvent Field">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~FlippedFrontToBackEvent.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsFlippedProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~IsFlippedProperty.html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FlippedBackToFront Event">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~FlippedBackToFront_EV.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FlippedFrontToBack Event">
+        <param name="Local" value="Apex~Apex.Controls.FlipPanel~FlippedFrontToBack_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ImageButton">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ImageButton Constructor">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DisabledImageSource Property">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~DisabledImageSource.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MouseOverImageSource Property">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~MouseOverImageSource.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NormalImageSource Property">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~NormalImageSource.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PressedImageSource Property">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~PressedImageSource.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DisabledImageSourceProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~DisabledImageSourceProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MouseOverImageSourceProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~MouseOverImageSourceProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NormalImageSourceProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~NormalImageSourceProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PressedImageSourceProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.ImageButton~PressedImageSourceProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MultiBorder">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MultiBorder Constructor">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushBottom Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushBottom.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushLeft Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushLeft.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushRight Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushRight.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushTop Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushTop.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessBottom Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessBottom.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessLeft Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessLeft.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessRight Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessRight.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessTop Property">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessTop.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushBottomProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushBottomProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushLeftProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushLeftProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushRightProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushRightProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderBrushTopProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderBrushTopProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessBottomProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessBottomProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessLeftProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessLeftProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessRightProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessRightProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BorderThicknessTopProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.MultiBorder~BorderThicknessTopProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PaddedGrid">
+        <param name="Local" value="Apex~Apex.Controls.PaddedGrid.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.PaddedGrid.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.PaddedGrid_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PaddedGrid Constructor">
+        <param name="Local" value="Apex~Apex.Controls.PaddedGrid~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.PaddedGrid_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Padding Property">
+        <param name="Local" value="Apex~Apex.Controls.PaddedGrid~Padding.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PivotControl">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PivotControl Constructor">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnApplyTemplate Method">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~OnApplyTemplate.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnSelectedPivotItemChanged Method">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~OnSelectedPivotItemChanged.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectPivotItem Method">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~SelectPivotItem.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PivotItems Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~PivotItems.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectedPivotItem Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~SelectedPivotItem.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectPivotItemCommand Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~SelectPivotItemCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ShowPivotHeadings Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~ShowPivotHeadings.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PivotItemsProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~PivotItemsProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectedPivotItemProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.PivotControl~SelectedPivotItemProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PivotItem">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PivotItem Constructor">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Content Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~Content.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsInitialPage Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~IsInitialPage.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsSelected Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~IsSelected.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Title Property">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~Title.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ContentProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~ContentProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsSelectedProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~IsSelectedProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="selectedCommand Field">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~selectedCommand.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="TitleProperty Field">
+        <param name="Local" value="Apex~Apex.Controls.PivotItem~TitleProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectableItemsControl">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectableItemsControl Constructor">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnApplyTemplate Method">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl~OnApplyTemplate.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnItemsChanged Method">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl~OnItemsChanged.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectedItem Property">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl~SelectedItem.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SelectItemCommand Property">
+        <param name="Local" value="Apex~Apex.Controls.SelectableItemsControl~SelectItemCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="VariableGrid">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="VariableGrid Constructor">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Columns Property">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid~Columns.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ColumnWidth Property">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid~ColumnWidth.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RowHeight Property">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid~RowHeight.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Rows Property">
+        <param name="Local" value="Apex~Apex.Controls.VariableGrid~Rows.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewBroker">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewBroker Constructor">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnApplyTemplate Method">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker~OnApplyTemplate.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BrokerHint Property">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker~BrokerHint.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModel Property">
+        <param name="Local" value="Apex~Apex.Controls.ViewBroker~ViewModel.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Interfaces">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ISelectableItem">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnDeselected Method">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem~OnDeselected.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnSelected Method">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem~OnSelected.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsSelected Property">
+        <param name="Local" value="Apex~Apex.Controls.ISelectableItem~IsSelected.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Converters Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BooleanToVisibilityConverter">
+        <param name="Local" value="Apex~Apex.Converters.BooleanToVisibilityConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.BooleanToVisibilityConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.BooleanToVisibilityConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BooleanToVisibilityConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.BooleanToVisibilityConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.BooleanToVisibilityConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.BooleanToVisibilityConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.BooleanToVisibilityConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DateTimeToSensibleStringConverter">
+        <param name="Local" value="Apex~Apex.Converters.DateTimeToSensibleStringConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.DateTimeToSensibleStringConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.DateTimeToSensibleStringConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DateTimeToSensibleStringConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.DateTimeToSensibleStringConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.DateTimeToSensibleStringConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.DateTimeToSensibleStringConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.DateTimeToSensibleStringConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DivideByTwoConverter">
+        <param name="Local" value="Apex~Apex.Converters.DivideByTwoConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.DivideByTwoConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.DivideByTwoConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DivideByTwoConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.DivideByTwoConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.DivideByTwoConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.DivideByTwoConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.DivideByTwoConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EnumToBooleanConverter">
+        <param name="Local" value="Apex~Apex.Converters.EnumToBooleanConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.EnumToBooleanConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.EnumToBooleanConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EnumToBooleanConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.EnumToBooleanConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.EnumToBooleanConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.EnumToBooleanConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.EnumToBooleanConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InvertedBooleanConverter">
+        <param name="Local" value="Apex~Apex.Converters.InvertedBooleanConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.InvertedBooleanConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.InvertedBooleanConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InvertedBooleanConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.InvertedBooleanConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.InvertedBooleanConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.InvertedBooleanConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.InvertedBooleanConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NullToVisibilityConverter">
+        <param name="Local" value="Apex~Apex.Converters.NullToVisibilityConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.NullToVisibilityConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.NullToVisibilityConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NullToVisibilityConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.NullToVisibilityConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.NullToVisibilityConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.NullToVisibilityConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.NullToVisibilityConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="StringCaseConverter">
+        <param name="Local" value="Apex~Apex.Converters.StringCaseConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.StringCaseConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.StringCaseConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="StringCaseConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.StringCaseConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.StringCaseConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.StringCaseConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.StringCaseConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="StringNullOrEmptyToVisibilityConverter">
+        <param name="Local" value="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="StringNullOrEmptyToVisibilityConverter Constructor">
+        <param name="Local" value="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Convert Method">
+        <param name="Local" value="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter~Convert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ConvertBack Method">
+        <param name="Local" value="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter~ConvertBack.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Design Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Design_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DesignTime">
+        <param name="Local" value="Apex~Apex.Design.DesignTime.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Design.DesignTime.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Design.DesignTime_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Design.DesignTime_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsDesignTime Property">
+        <param name="Local" value="Apex~Apex.Design.DesignTime~IsDesignTime.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.DragAndDrop Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.DragAndDrop_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDrop">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetIsDraggable Method">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop~GetIsDraggable.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetIsDragSource Method">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop~GetIsDragSource.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetIsDropTarget Method">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop~GetIsDropTarget.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetIsDraggable Method">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop~SetIsDraggable.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetIsDragSource Method">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop~SetIsDragSource.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetIsDropTarget Method">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop~SetIsDropTarget.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsDragSourceProperty Field">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDrop~IsDragSourceProperty.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropEventArgs">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropEventArgs Constructor">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Allow Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~Allow.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAdorner Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragAdorner.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragData Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragData.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragElement Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragElement.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragSource Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragSource.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DropTarget Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DropTarget.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InitialElementOffset Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropEventArgs~InitialElementOffset.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropHost">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropHost Constructor">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnApplyTemplate Method">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost~OnApplyTemplate.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MinimumHorizontalDragDistance Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost~MinimumHorizontalDragDistance.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="MinimumVerticalDragDistance Property">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost~MinimumVerticalDragDistance.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropContinue Event">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost~DragAndDropContinue_EV.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropEnd Event">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost~DragAndDropEnd_EV.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropStart Event">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropHost~DragAndDropStart_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Delegates">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DragAndDropDelegate">
+        <param name="Local" value="Apex~Apex.DragAndDrop.DragAndDropDelegate.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Extensions Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Extensions_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DateTimeExtensions">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BeginningOfDay Method">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions~BeginningOfDay.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BeginningOfMonth Method">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions~BeginningOfMonth.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BeginningOfWeek Method">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions~BeginningOfWeek.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EndOfDay Method">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions~EndOfDay.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="WorkDaysBetween Method">
+        <param name="Local" value="Apex~Apex.Extensions.DateTimeExtensions~WorkDaysBetween.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DependencyObjectExtensions">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FindChild&lt;T&gt; Method">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions~FindChild.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetBindingObjects Method">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions~GetBindingObjects.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetDependencyProperties Method">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions~GetDependencyProperties.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetLogicalChildren&lt;T&gt; Method">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions~GetLogicalChildren.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetParent&lt;T&gt; Method">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions~GetParent.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetTopLevelParent Method">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions~GetTopLevelParent.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetVisualChildren&lt;T&gt; Method">
+        <param name="Local" value="Apex~Apex.Extensions.DependencyObjectExtensions~GetVisualChildren.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EnumExtensions">
+        <param name="Local" value="Apex~Apex.Extensions.EnumExtensions.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Extensions.EnumExtensions.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Extensions.EnumExtensions_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Extensions.EnumExtensions_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetDescription Method">
+        <param name="Local" value="Apex~Apex.Extensions.EnumExtensions~GetDescription.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ListExtensions">
+        <param name="Local" value="Apex~Apex.Extensions.ListExtensions.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Extensions.ListExtensions.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Extensions.ListExtensions_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Extensions.ListExtensions_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RandomElement&lt;T&gt; Method">
+        <param name="Local" value="Apex~Apex.Extensions.ListExtensions~RandomElement.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Shuffle&lt;T&gt; Method">
+        <param name="Local" value="Apex~Apex.Extensions.ListExtensions~Shuffle.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="StringExtensions">
+        <param name="Local" value="Apex~Apex.Extensions.StringExtensions.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Extensions.StringExtensions.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Extensions.StringExtensions_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Extensions.StringExtensions_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ContainsCaseInsensitive Method">
+        <param name="Local" value="Apex~Apex.Extensions.StringExtensions~ContainsCaseInsensitive.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Helpers Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AssembliesHelper">
+        <param name="Local" value="Apex~Apex.Helpers.AssembliesHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers.AssembliesHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Helpers.AssembliesHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Helpers.AssembliesHelper_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetDomainAssemblies Method">
+        <param name="Local" value="Apex~Apex.Helpers.AssembliesHelper~GetDomainAssemblies.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetTypesInDomain Method">
+        <param name="Local" value="Apex~Apex.Helpers.AssembliesHelper~GetTypesInDomain.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DispatcherHelper">
+        <param name="Local" value="Apex~Apex.Helpers.DispatcherHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers.DispatcherHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Helpers.DispatcherHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Helpers.DispatcherHelper_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoEvents Method">
+        <param name="Local" value="Apex~Apex.Helpers.DispatcherHelper~DoEvents.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EnumHelper">
+        <param name="Local" value="Apex~Apex.Helpers.EnumHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers.EnumHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Helpers.EnumHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="EnumHelper Constructor">
+        <param name="Local" value="Apex~Apex.Helpers.EnumHelper~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Helpers.EnumHelper_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetValues Method">
+        <param name="Local" value="Apex~Apex.Helpers.EnumHelper~GetValues.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Helpers.Popups Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers.Popups_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BounceInOutPopupAnimationHelper">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BounceInOutPopupAnimationHelper Constructor">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatePopupHide Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~AnimatePopupHide.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatePopupShow Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~AnimatePopupShow.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BounceInDirection Property">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceInDirection.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BounceInDuration Property">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceInDuration.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BounceOutDirection Property">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceOutDirection.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="BounceOutDuration Property">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceOutDuration.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FadeInOutPopupAnimationHelper">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FadeInOutPopupAnimationHelper Constructor">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatePopupHide Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~AnimatePopupHide.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatePopupShow Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~AnimatePopupShow.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FadeInDuration Property">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~FadeInDuration.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FadeOutDuration Property">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~FadeOutDuration.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PopupAnimationHelper">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatePopupHide Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper~AnimatePopupHide.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AnimatePopupShow Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper~AnimatePopupShow.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ClosePopup Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper~ClosePopup.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ShowPopup Method">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper~ShowPopup.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OpenPopupsCount Property">
+        <param name="Local" value="Apex~Apex.Helpers.Popups.PopupAnimationHelper~OpenPopupsCount.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.MVVM Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AsynchronousCommand">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AsynchronousCommand Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~_ctor.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AsynchronousCommand Constructor(Action,Boolean)">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~_ctor(Action,Boolean).html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="AsynchronousCommand Constructor(Action&lt;Object&gt;,Boolean)">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~_ctor(Action{Object},Boolean).html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CancelIfRequested Method">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~CancelIfRequested.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoExecute Method">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~DoExecute.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InvokeCancelled Method">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~InvokeCancelled.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ReportProgress Method">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~ReportProgress.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CancelCommand Property">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~CancelCommand.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsCancellationRequested Property">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~IsCancellationRequested.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsExecuting Property">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~IsExecuting.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="callingDispatcher Field">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~callingDispatcher.html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Cancelled Event">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~Cancelled_EV.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PropertyChanged Event">
+        <param name="Local" value="Apex~Apex.MVVM.AsynchronousCommand~PropertyChanged_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CancelCommandEventArgs">
+        <param name="Local" value="Apex~Apex.MVVM.CancelCommandEventArgs.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.CancelCommandEventArgs.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.CancelCommandEventArgs_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CancelCommandEventArgs Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.CancelCommandEventArgs~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.CancelCommandEventArgs_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Cancel Property">
+        <param name="Local" value="Apex~Apex.MVVM.CancelCommandEventArgs~Cancel.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Command">
+        <param name="Local" value="Apex~Apex.MVVM.Command.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.Command.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.Command_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Command Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.Command~_ctor.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Command Constructor(Action,Boolean)">
+        <param name="Local" value="Apex~Apex.MVVM.Command~_ctor(Action,Boolean).html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Command Constructor(Action&lt;Object&gt;,Boolean)">
+        <param name="Local" value="Apex~Apex.MVVM.Command~_ctor(Action{Object},Boolean).html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.Command_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoExecute Method">
+        <param name="Local" value="Apex~Apex.MVVM.Command~DoExecute.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InvokeAction Method">
+        <param name="Local" value="Apex~Apex.MVVM.Command~InvokeAction.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InvokeExecuted Method">
+        <param name="Local" value="Apex~Apex.MVVM.Command~InvokeExecuted.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="InvokeExecuting Method">
+        <param name="Local" value="Apex~Apex.MVVM.Command~InvokeExecuting.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.Command_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CanExecute Property">
+        <param name="Local" value="Apex~Apex.MVVM.Command~CanExecute.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.MVVM.Command_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="action Field">
+        <param name="Local" value="Apex~Apex.MVVM.Command~action.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="parameterizedAction Field">
+        <param name="Local" value="Apex~Apex.MVVM.Command~parameterizedAction.html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.MVVM.Command_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CanExecuteChanged Event">
+        <param name="Local" value="Apex~Apex.MVVM.Command~CanExecuteChanged_EV.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Executed Event">
+        <param name="Local" value="Apex~Apex.MVVM.Command~Executed_EV.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Executing Event">
+        <param name="Local" value="Apex~Apex.MVVM.Command~Executing_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandEventArgs">
+        <param name="Local" value="Apex~Apex.MVVM.CommandEventArgs.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.CommandEventArgs.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.CommandEventArgs_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandEventArgs Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.CommandEventArgs~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.CommandEventArgs_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Parameter Property">
+        <param name="Local" value="Apex~Apex.MVVM.CommandEventArgs~Parameter.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ModelAttribute">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ModelAttribute Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute~_ctor.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ModelAttribute Constructor()">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute~_ctor().html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ModelAttribute Constructor(ExecutionContext)">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute~_ctor(ExecutionContext).html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Context Property">
+        <param name="Local" value="Apex~Apex.MVVM.ModelAttribute~Context.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NotifyingProperty">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NotifyingProperty Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FireNotifyingPropertyChanged Method">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~FireNotifyingPropertyChanged.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RestoreInitialState Method">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~RestoreInitialState.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SaveInitialState Method">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~SaveInitialState.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetValue Method">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~SetValue.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Name Property">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~Name.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Type Property">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~Type.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Value Property">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~Value.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NotifyingPropertyChanged Event">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingProperty~NotifyingPropertyChanged_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NotifyingPropertyChangedArgs">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedArgs.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedArgs.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedArgs_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NotifyingPropertyChangedArgs Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedArgs~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedArgs_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NewValue Property">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedArgs~NewValue.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OldValue Property">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedArgs~OldValue.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SafeObservableCollection&lt;T&gt;">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SafeObservableCollection&lt;T&gt; Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Add Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~Add.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Clear Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~Clear.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Contains Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~Contains.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CopyTo Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~CopyTo.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetEnumerator Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~GetEnumerator.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IndexOf Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~IndexOf.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Insert Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~Insert.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Remove Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~Remove.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RemoveAt Method">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~RemoveAt.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Count Property">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~Count.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IsReadOnly Property">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~IsReadOnly.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Item Property">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~Item.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CollectionChanged Event">
+        <param name="Local" value="Apex~Apex.MVVM.SafeObservableCollection`1~CollectionChanged_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="View">
+        <param name="Local" value="Apex~Apex.MVVM.View.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.View.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.View_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.View_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetViewModel Method">
+        <param name="Local" value="Apex~Apex.MVVM.View~GetViewModel.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetViewModel Method">
+        <param name="Local" value="Apex~Apex.MVVM.View~SetViewModel.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewAttribute">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewAttribute Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute~_ctor.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewAttribute Constructor()">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute~_ctor().html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewAttribute Constructor(Type)">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute~_ctor(Type).html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewAttribute Constructor(Type,String)">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute~_ctor(Type,String).html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Hint Property">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute~Hint.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModelType Property">
+        <param name="Local" value="Apex~Apex.MVVM.ViewAttribute~ViewModelType.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModel">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModel Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetNotifyingProperties Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~GetNotifyingProperties.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="GetValue Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~GetValue.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NotifyPropertyChanged Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~NotifyPropertyChanged.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ResetHasChangesFlag Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~ResetHasChangesFlag.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="RestoreInitialState Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~RestoreInitialState.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SaveInitialState Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~SaveInitialState.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetValue Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~SetValue.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetValue(NotifyingProperty,Object) Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~SetValue(NotifyingProperty,Object).html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="SetValue(NotifyingProperty,Object,Boolean) Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~SetValue(NotifyingProperty,Object,Boolean).html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="HasChanges Property">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~HasChanges.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PropertyChanged Event">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel~PropertyChanged_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModel&lt;TModel&gt;">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel`1.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel`1.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel`1_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel`1_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FromModel Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel`1~FromModel.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ToModel Method">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModel`1~ToModel.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModelAttribute">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModelAttribute Constructor">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute~_ctor.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModelAttribute Constructor()">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute~_ctor().html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ViewModelAttribute Constructor(ExecutionContext)">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute~_ctor(ExecutionContext).html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Context Property">
+        <param name="Local" value="Apex~Apex.MVVM.ViewModelAttribute~Context.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Interfaces">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IModel">
+        <param name="Local" value="Apex~Apex.MVVM.IModel.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.IModel.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.IModel_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.IModel_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnInitialised Method">
+        <param name="Local" value="Apex~Apex.MVVM.IModel~OnInitialised.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IView">
+        <param name="Local" value="Apex~Apex.MVVM.IView.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.MVVM.IView.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.MVVM.IView_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.MVVM.IView_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnActivated Method">
+        <param name="Local" value="Apex~Apex.MVVM.IView~OnActivated.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnDeactivated Method">
+        <param name="Local" value="Apex~Apex.MVVM.IView~OnDeactivated.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Delegates">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CancelCommandEventHandler">
+        <param name="Local" value="Apex~Apex.MVVM.CancelCommandEventHandler.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="CommandEventHandler">
+        <param name="Local" value="Apex~Apex.MVVM.CommandEventHandler.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="NotifyingPropertyChangedEvent">
+        <param name="Local" value="Apex~Apex.MVVM.NotifyingPropertyChangedEvent.html">
+     </OBJECT>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Apex.Shells Namespace">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Shells_namespace.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Classes">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Shell">
+        <param name="Local" value="Apex~Apex.Shells.Shell.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Shells.Shell.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Shells.Shell_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Shell Constructor">
+        <param name="Local" value="Apex~Apex.Shells.Shell~_ctor.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Shells.Shell_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ClosePopup Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~ClosePopup.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoClose Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~DoClose.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoFullscreen Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~DoFullscreen.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoMaximize Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~DoMaximize.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoMinimize Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~DoMinimize.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoRestore Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~DoRestore.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FirePopupClosed Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~FirePopupClosed.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="FirePopupOpened Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~FirePopupOpened.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="OnApplyTemplate Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~OnApplyTemplate.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ShowPopup Method">
+        <param name="Local" value="Apex~Apex.Shells.Shell~ShowPopup.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Shells.Shell_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PopupAnimationHelper Property">
+        <param name="Local" value="Apex~Apex.Shells.Shell~PopupAnimationHelper.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Fields">
+        <param name="Local" value="Apex~Apex.Shells.Shell_fields.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PopupClosedEvent Field">
+        <param name="Local" value="Apex~Apex.Shells.Shell~PopupClosedEvent.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PopupOpenedEvent Field">
+        <param name="Local" value="Apex~Apex.Shells.Shell~PopupOpenedEvent.html">
+     </OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Events">
+        <param name="Local" value="Apex~Apex.Shells.Shell_events.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PopupClosed Event">
+        <param name="Local" value="Apex~Apex.Shells.Shell~PopupClosed_EV.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PopupOpened Event">
+        <param name="Local" value="Apex~Apex.Shells.Shell~PopupOpened_EV.html">
+     </OBJECT>
+</UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Interfaces">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="IShell">
+        <param name="Local" value="Apex~Apex.Shells.IShell.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Overview">
+        <param name="Local" value="Apex~Apex.Shells.IShell.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Members">
+        <param name="Local" value="Apex~Apex.Shells.IShell_members.html">
+     </OBJECT>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Methods">
+        <param name="Local" value="Apex~Apex.Shells.IShell_methods.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ClosePopup Method">
+        <param name="Local" value="Apex~Apex.Shells.IShell~ClosePopup.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoClose Method">
+        <param name="Local" value="Apex~Apex.Shells.IShell~DoClose.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoFullscreen Method">
+        <param name="Local" value="Apex~Apex.Shells.IShell~DoFullscreen.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoMaximize Method">
+        <param name="Local" value="Apex~Apex.Shells.IShell~DoMaximize.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoMinimize Method">
+        <param name="Local" value="Apex~Apex.Shells.IShell~DoMinimize.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="DoRestore Method">
+        <param name="Local" value="Apex~Apex.Shells.IShell~DoRestore.html">
+     </OBJECT>
+<UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="ShowPopup Method">
+        <param name="Local" value="Apex~Apex.Shells.IShell~ShowPopup.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Properties">
+        <param name="Local" value="Apex~Apex.Shells.IShell_properties.html">
+     </OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="PopupAnimationHelper Property">
+        <param name="Local" value="Apex~Apex.Shells.IShell~PopupAnimationHelper.html">
+     </OBJECT>
+<UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</UL>
+</BODY></HTML>
