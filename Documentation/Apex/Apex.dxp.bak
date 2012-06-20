@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DocumentXProject Id="b7585c0c-e121-4d3d-ba1a-5d109ed48cb0" Version="2011.1">
-  <Features />
+  <Features>
+    <Feature>Document! X</Feature>
+  </Features>
   <SeparateFiles>false</SeparateFiles>
   <Flags>
     <Flag Id="{46CEF21D-3301-4517-A875-A0906828390E}" HighlightColor="#FFA1FFD0">Exclude from Online</Flag>
@@ -9,15 +11,27 @@
   <PropertyDefinitions />
   <PropertyDefinitionValues />
   <Title />
-  <ContentFiles />
+  <ContentFiles>
+    <ContentFile FileName="Apex.dxc" Moniker="..\..\Apex\Core\Apex\bin\Release\Apex.dll" DocType="DX.NET" />
+  </ContentFiles>
   <ContentFromProjectPlugin />
   <Filters>
-    <ExcludedItems />
+    <ExcludedItems>
+      <ExcludedItem>Apex~Apex.Helpers.Popups.PopupAnimationHelper+PopupAndBackground</ExcludedItem>
+      <ExcludedItem>Apex~Apex.Extensions.FrameworkElementExtensions</ExcludedItem>
+      <ExcludedItem>Apex~Apex.Controls.NameValue</ExcludedItem>
+      <ExcludedItem>Apex~Apex.Shells.Shell+PopupState</ExcludedItem>
+      <ExcludedItem>Apex~Apex.Consistency.MouseClickDetector</ExcludedItem>
+      <ExcludedItem>Apex~Apex.Interop_namespace</ExcludedItem>
+      <ExcludedItem>Apex~Apex.ApexBroker+ViewModelViewMapping</ExcludedItem>
+    </ExcludedItems>
   </Filters>
   <ComProjectPlugin />
   <AjaxProjectPlugin />
   <JavaProjectPlugin />
-  <DotNetAssemblies />
+  <DotNetAssemblies>
+    <Assembly FileName="..\..\Apex\Core\Apex\bin\Release\Apex.dll" RootTypeName="" />
+  </DotNetAssemblies>
   <DatabaseProjectPlugin>
     <Databases />
   </DatabaseProjectPlugin>
@@ -49,7 +63,11 @@
     <TocLayout Id="c7552482-a1ae-44a2-a9fc-c757d62b5073">
       <Name />
       <Description />
-      <RootNodes />
+      <RootNodes>
+        <TocNode Name="" Id="e24bd67f-94db-4adb-bafe-543f85fdb9c3" IconIndex="-1" IsNew="false" Target="" DependsOnItemTypeFilter="" DependsOnMinimumCount="0" DependsOnStillProcessChildNodes="false" BuildFlags="" DependsOnItemTypeName="" NodeType="ALLTEMPLATETOCS">
+          <ChildNodes />
+        </TocNode>
+      </RootNodes>
     </TocLayout>
   </TableOfContents>
   <TopicsProjectPlugin>
@@ -59,6 +77,26 @@
         <ChildTopicCategories />
         <Topics />
       </TopicCategory>
+      <TopicCategory Id="e9b0bd23-938e-435e-a36a-ae9ed220c132" AutoIndex="false">
+        <Caption m="2012-06-20T11:01:08.3715631Z">Introduction</Caption>
+        <ChildTopicCategories />
+        <Topics>
+          <Topic Id="6bda1d89-81b3-4a54-8c96-bf543e0dad86" Status="New Topic" CreatedOn="2012-06-20T11:01:10.8835631Z" ModifiedOn="2012-06-20T11:02:31.8835631Z" PageTypeName="" AutoIndex="true" HelpContextIds="" Name="Introduction" BuildFlags="">
+            <Title m="2012-06-20T11:01:19.4915631Z">Introduction</Title>
+            <ContentsTitle />
+            <Notes></Notes>
+            <TopicSections>
+              <TopicSection Name="BodyText">
+                <Content m="2012-06-20T11:02:31.8835631Z">&lt;P&gt;This documentation is designed to cover all aspects of working with the Apex Framework.&lt;/P&gt;
+&lt;P&gt;As this framework is under continuous development, the documentation will change over time. For any suggestions or questions, please start a discussion on the Apex homepage at &lt;A href="http://apex.codeplex.com"&gt;http://apex.codeplex.com&lt;/A&gt;.&lt;/P&gt;</Content>
+              </TopicSection>
+            </TopicSections>
+            <TopicLinks />
+            <TopicKeywords />
+            <PropertyDefinitionValues />
+          </Topic>
+        </Topics>
+      </TopicCategory>
     </TopicCategories>
     <CustomTopicPropertyDefinitions />
     <PropertyDefinitionValues />
@@ -67,6 +105,9 @@
     <AutoNameEnabled>false</AutoNameEnabled>
     <AutoNamePrefix></AutoNamePrefix>
     <IncludeTopicNameInTitle>false</IncludeTopicNameInTitle>
+    <TopicEditorState>
+      <Attributes />
+    </TopicEditorState>
   </TopicsProjectPlugin>
   <WidgetsProjectPlugin>
     <WidgetTypes Version="2011.1" />
@@ -191,7 +232,7 @@
         </DiagramSettings>
         <RootComponentName></RootComponentName>
         <IncludeConstructorsOnAbstractTypes>false</IncludeConstructorsOnAbstractTypes>
-        <TemplateName></TemplateName>
+        <TemplateName>Visual Studio 2008 Style</TemplateName>
         <ExcludeAllPrivateTypes>true</ExcludeAllPrivateTypes>
         <ExcludeAllFriendTypes>true</ExcludeAllFriendTypes>
         <ExcludeAllProtectedTypes>false</ExcludeAllProtectedTypes>
@@ -236,7 +277,7 @@
         <GenericIndicator>ArgumentsInBrackets</GenericIndicator>
         <RootProjectName></RootProjectName>
         <IncludeConstructorsOnAbstractTypes>false</IncludeConstructorsOnAbstractTypes>
-        <TemplateName></TemplateName>
+        <TemplateName>Visual Studio 2008 Style</TemplateName>
         <ExcludeAllPrivateTypes>true</ExcludeAllPrivateTypes>
         <ExcludeAllFriendTypes>true</ExcludeAllFriendTypes>
         <ExcludeAllProtectedTypes>false</ExcludeAllProtectedTypes>
@@ -272,12 +313,12 @@
         </DiagramSettings>
         <RootProjectName></RootProjectName>
         <IncludeConstructorsOnAbstractTypes>false</IncludeConstructorsOnAbstractTypes>
-        <TemplateName></TemplateName>
+        <TemplateName>Visual Studio 2008 Style</TemplateName>
         <ExcludeAllPrivateTypes>true</ExcludeAllPrivateTypes>
         <IncludeMemberIndexKeywords>false</IncludeMemberIndexKeywords>
       </Com>
       <Database>
-        <TemplateName></TemplateName>
+        <TemplateName>Visual Studio 2008 Style</TemplateName>
         <IncludeSqlServerSystemObjects>false</IncludeSqlServerSystemObjects>
         <IncludeSourceForViews>true</IncludeSourceForViews>
         <IncludeSourceForTriggers>true</IncludeSourceForTriggers>
@@ -308,13 +349,13 @@
         <DiagramItemMaxRecurse>3</DiagramItemMaxRecurse>
         <GenerateDiagrams>true</GenerateDiagrams>
         <IsOverrideTemplateDiagramStyleEnabled>false</IsOverrideTemplateDiagramStyleEnabled>
-        <TemplateName></TemplateName>
+        <TemplateName>Visual Studio 2008 Style</TemplateName>
         <IncludeBreadcrumbs>true</IncludeBreadcrumbs>
         <SourceContentUsage>Merge</SourceContentUsage>
         <UseSourceContent>true</UseSourceContent>
       </Xsd>
       <Filters />
-      <HelpCompiler CompileHelpFile="true" IsWebOutputEnabled="true" IsMarkOfTheWebEnabled="false">
+      <HelpCompiler CompileHelpFile="true" IsWebOutputEnabled="false" IsMarkOfTheWebEnabled="false">
         <MarkOfTheWebDomain>(0014)about:internet</MarkOfTheWebDomain>
         <HelpFileVersion>HtmlHelp1</HelpFileVersion>
         <Help2Namespace>newprojecttest1</Help2Namespace>
@@ -324,19 +365,19 @@
         <RuntimeMerge></RuntimeMerge>
         <IncludeTextPopupFile>false</IncludeTextPopupFile>
         <Help3BuildIdentifier></Help3BuildIdentifier>
-        <Help3VendorName></Help3VendorName>
+        <Help3VendorName>Dave Kerr</Help3VendorName>
         <Help3CatalogName>VS</Help3CatalogName>
         <Help3CatalogVersion>100</Help3CatalogVersion>
         <Help3CatalogLocaleText>en-US</Help3CatalogLocaleText>
         <Help3TemplateName></Help3TemplateName>
-        <Help3ProductName></Help3ProductName>
-        <Help3BookName></Help3BookName>
+        <Help3ProductName>Apex</Help3ProductName>
+        <Help3BookName>Apex Documentation</Help3BookName>
         <IsHelp3CreateRegistrationScriptEnabled>true</IsHelp3CreateRegistrationScriptEnabled>
         <IsHelp3RegisterLocallyEnabled>true</IsHelp3RegisterLocallyEnabled>
         <IsHelp3SigningEnabled>false</IsHelp3SigningEnabled>
         <IsHelp3ValidationEnabled>false</IsHelp3ValidationEnabled>
         <IsHelp3KeywordsEnabled>false</IsHelp3KeywordsEnabled>
-        <BrowserHelpTemplateName></BrowserHelpTemplateName>
+        <BrowserHelpTemplateName>Default</BrowserHelpTemplateName>
         <IsCustomHtmlHelpWindowSettings>false</IsCustomHtmlHelpWindowSettings>
         <CustomHtmlHelpWindowSettings>
           <IsExpandVisible>true</IsExpandVisible>
@@ -402,6 +443,15 @@
       <OutputDirectory></OutputDirectory>
     </ProjectProfile>
   </ProjectProfiles>
+  <BuildConfigurations>
+    <BuildConfiguration Id="5b92d7c8-8d63-4385-b689-2a2a6ce46d15" Name="BuildConfiguration">
+      <BuildConfigurationItems>
+        <BuildConfigurationItem ProjectProfileId="6b2cfb6d-7340-49af-9cfb-d31ec7a4a0d5" IsIncluded="true">
+          <ProjectLocale CultureId="-" />
+        </BuildConfigurationItem>
+      </BuildConfigurationItems>
+    </BuildConfiguration>
+  </BuildConfigurations>
   <HelpContextIDHeaderFile></HelpContextIDHeaderFile>
   <PrimaryLocale CultureId="-">
     <ExportDateTime></ExportDateTime>

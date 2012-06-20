@@ -77,6 +77,26 @@
         <ChildTopicCategories />
         <Topics />
       </TopicCategory>
+      <TopicCategory Id="e9b0bd23-938e-435e-a36a-ae9ed220c132" AutoIndex="false">
+        <Caption m="2012-06-20T11:01:08.3715631Z">Introduction</Caption>
+        <ChildTopicCategories />
+        <Topics>
+          <Topic Id="6bda1d89-81b3-4a54-8c96-bf543e0dad86" Status="New Topic" CreatedOn="2012-06-20T11:01:10.8835631Z" ModifiedOn="2012-06-20T11:02:31.8835631Z" PageTypeName="" AutoIndex="true" HelpContextIds="" Name="Introduction" BuildFlags="">
+            <Title m="2012-06-20T11:01:19.4915631Z">Introduction</Title>
+            <ContentsTitle />
+            <Notes></Notes>
+            <TopicSections>
+              <TopicSection Name="BodyText">
+                <Content m="2012-06-20T11:02:31.8835631Z">&lt;P&gt;This documentation is designed to cover all aspects of working with the Apex Framework.&lt;/P&gt;
+&lt;P&gt;As this framework is under continuous development, the documentation will change over time. For any suggestions or questions, please start a discussion on the Apex homepage at &lt;A href="http://apex.codeplex.com"&gt;http://apex.codeplex.com&lt;/A&gt;.&lt;/P&gt;</Content>
+              </TopicSection>
+            </TopicSections>
+            <TopicLinks />
+            <TopicKeywords />
+            <PropertyDefinitionValues />
+          </Topic>
+        </Topics>
+      </TopicCategory>
     </TopicCategories>
     <CustomTopicPropertyDefinitions />
     <PropertyDefinitionValues />
@@ -85,17 +105,20 @@
     <AutoNameEnabled>false</AutoNameEnabled>
     <AutoNamePrefix></AutoNamePrefix>
     <IncludeTopicNameInTitle>false</IncludeTopicNameInTitle>
+    <TopicEditorState>
+      <Attributes />
+    </TopicEditorState>
   </TopicsProjectPlugin>
   <WidgetsProjectPlugin>
     <WidgetTypes Version="2011.1" />
   </WidgetsProjectPlugin>
   <ProjectProfiles>
-    <ProjectProfile Id="6b2cfb6d-7340-49af-9cfb-d31ec7a4a0d5" Name="Default">
-      <DefaultItemQualifiedName></DefaultItemQualifiedName>
+    <ProjectProfile Id="6b2cfb6d-7340-49af-9cfb-d31ec7a4a0d5" Name="Apex">
+      <DefaultItemQualifiedName>Introduction</DefaultItemQualifiedName>
       <StripMetadata>false</StripMetadata>
       <AlwaysCopyTemplateFiles>true</AlwaysCopyTemplateFiles>
       <OutputFileExtension>.html</OutputFileExtension>
-      <Title />
+      <Title m="2012-06-20T11:03:15.8755631Z">Apex</Title>
       <ClearOutputDirectoryBeforeBuild>false</ClearOutputDirectoryBeforeBuild>
       <IsNewIndicatorEnabled>false</IsNewIndicatorEnabled>
       <IsNewDateTime></IsNewDateTime>
@@ -420,6 +443,15 @@
       <OutputDirectory></OutputDirectory>
     </ProjectProfile>
   </ProjectProfiles>
+  <BuildConfigurations>
+    <BuildConfiguration Id="5b92d7c8-8d63-4385-b689-2a2a6ce46d15" Name="BuildConfiguration">
+      <BuildConfigurationItems>
+        <BuildConfigurationItem ProjectProfileId="6b2cfb6d-7340-49af-9cfb-d31ec7a4a0d5" IsIncluded="true">
+          <ProjectLocale CultureId="-" />
+        </BuildConfigurationItem>
+      </BuildConfigurationItems>
+    </BuildConfiguration>
+  </BuildConfigurations>
   <HelpContextIDHeaderFile></HelpContextIDHeaderFile>
   <PrimaryLocale CultureId="-">
     <ExportDateTime></ExportDateTime>
