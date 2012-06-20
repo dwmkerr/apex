@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Windows.Controls;
@@ -35,17 +37,36 @@ namespace Apex.Controls
         {
             //  Wire up commands.
             SelectItemCommand = new Command(DoSelectItemCommand);
+
+            Binding binding = new Binding("ItemsSource") {Source = this};
+            SetBinding(dp, binding);
         }
-        
+
+
+        static readonly DependencyProperty dp = DependencyProperty.RegisterAttached("ItemsSourceProxy", typeof (IEnumerable),
+                                                         typeof (SelectableItemsControl),
+                                                         new PropertyMetadata(null,
+                                                                              new PropertyChangedCallback(
+                                                                                  OnItemsSourceProxyChanged)));
+
+        private static void OnItemsSourceProxyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var me = d as SelectableItemsControl;
+            me.CheckNewItemsSourceForSelectedItem(e.NewValue as IEnumerable, true);
+
+            me.DoFudge();
+        }
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
 
             //  If we have an items source source, we should set the selected value (if there is one).
-            CheckNewItemsSourceForSelectedItem(SelectableItemsSource, true);
+            CheckNewItemsSourceForSelectedItem(ItemsSource, true);
+
+            DoFudge();
 
         }
-        
 
         private void CheckNewItemsSourceForSelectedItem(IEnumerable newItemsSource, bool forceNotify)
         {
@@ -62,50 +83,24 @@ namespace Apex.Controls
                 InternalSelectItem(itemToSelect, newItemsSource, forceNotify);
         }
 
-        protected override void OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+
+        protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
         {
-            //  Call the base.
             base.OnItemsChanged(e);
 
             //  Do we have an item to select?
-            var selectedItem = (from object i in SelectableItemsSource
-                           where i is ISelectableItem && ((ISelectableItem)i).IsSelected
-                           select i as ISelectableItem).FirstOrDefault();
+            var selectedItem = (from object i in ItemsSource
+                                where i is ISelectableItem && ((ISelectableItem)i).IsSelected
+                                select i as ISelectableItem).FirstOrDefault();
+
+            System.Diagnostics.Debug.WriteLine(Name + ": ItemsChanged, " + (SelectedItem == null ? "null" : SelectedItem.GetType().Name) +
+                " -> " + (selectedItem == null ? "null" : selectedItem.GetType().Name));
 
             //  Select the item to select (if there is one).
             if (selectedItem != null)
-                InternalSelectItem(selectedItem, SelectableItemsSource);
-        }
+                InternalSelectItem(selectedItem, ItemsSource);
 
-        /// <summary>
-        /// The DependencyProperty for the SelectedItem property.
-        /// </summary>
-        private static readonly DependencyProperty SelectableItemsSourceProperty =
-            DependencyProperty.Register("SelectableItemsSource", typeof (IEnumerable), typeof (SelectableItemsControl),
-                                        new PropertyMetadata(default(object),
-                                                             new PropertyChangedCallback(SelectableItemsSourceChanged)));
-
-        private static void SelectableItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            SelectableItemsControl me = d as SelectableItemsControl;
-            IEnumerable newValue = e.NewValue as IEnumerable;
-            me.ItemsSource = e.NewValue as IEnumerable;
-
-            //  Check for selected items.
-            ISelectableItem itemToSelect = null;
-            if (newValue != null)
-            {
-                foreach (var newItem in newValue)
-                {
-                    if (newItem is ISelectableItem && ((ISelectableItem)newItem).IsSelected)
-                        itemToSelect = (ISelectableItem)newItem;
-                }
-            }
-
-            //  Select the item to select (if there is one).
-            if (itemToSelect != null)
-                me.DoSelectItemCommand(itemToSelect);
-            
+            DoFudge();
         }
 
         /// <summary>
@@ -115,19 +110,24 @@ namespace Apex.Controls
             DependencyProperty.Register("SelectedItem", typeof(object), typeof(SelectableItemsControl),
             new FrameworkPropertyMetadata(default(object), 
 #if !SILVERLIGHT
-                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(SelectedItemChanged)));
 #else
- FrameworkPropertyMetadataOptions.None));
+ FrameworkPropertyMetadataOptions.None, new PropertyChangedCallback(SelectedItemChanged)));
 #endif
-        /// <summary>
-        /// Gets or sets SelectableItemsSource.
-        /// </summary>
-        /// <value>The value of SelectableItemsSource.</value>
-        public IEnumerable SelectableItemsSource
+
+        private static void SelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            get { return (IEnumerable)GetValue(SelectableItemsSourceProperty); }
-            set { SetValue(SelectableItemsSourceProperty, value); }
+            if(e.NewValue == null)
+                System.Diagnostics.Debug.WriteLine("NULL");
+            var me = d as SelectableItemsControl;
+            System.Diagnostics.Debug.WriteLine(me.Name + ": " + (e.OldValue == null ? "null" : e.OldValue.GetType().Name) +
+                " -> " + (e.NewValue == null ? "null" : e.NewValue.GetType().Name));
+
+
+
+            me.DoFudge();
         }
+       
 
 
         /// <summary>
@@ -147,7 +147,17 @@ namespace Apex.Controls
         private void DoSelectItemCommand(object itemToSelect)
         {
             //  Use the internal function for this for consistency.
-            InternalSelectItem(itemToSelect, SelectableItemsSource);
+            InternalSelectItem(itemToSelect, ItemsSource);
+
+            DoFudge();
+        }
+
+        private IEnumerable fudgeFactor = null;
+        private void DoFudge()
+        {
+            if (ItemsSource != fudgeFactor && fudgeFactor != null)
+                CheckNewItemsSourceForSelectedItem(ItemsSource, true);
+            fudgeFactor = ItemsSource;
         }
 
         /// <summary>
@@ -160,8 +170,11 @@ namespace Apex.Controls
         private void InternalSelectItem(object itemToSelect, IEnumerable itemsSource, bool forceNotify = false)
         {
             //  Handle the trivial case.
-           // if (SelectedItem == itemToSelect && !forceNotify)
-           //     return;
+            if (SelectedItem == itemToSelect && !forceNotify)
+                return;
+
+            System.Diagnostics.Debug.WriteLine(Name + ": InternalSelectItem, " + (SelectedItem == null ? "null" : SelectedItem.GetType().Name) +
+                " -> " + (itemToSelect == null ? "null" : itemToSelect.GetType().Name));
 
             //  Deactivate the old item.
             var oldItem = (from object i in itemsSource

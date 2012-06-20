@@ -1,0 +1,2281 @@
+﻿<html>
+<head>
+    <meta name="GENERATOR" content="Innovasys HelpStudio (www.innovasys.com)">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <base target="webcontent">
+    <script src="script/webutility.js" type="text/javascript"></script>
+    <script lang="javascript">
+    <!--
+
+        var supressNavigate;
+        var disableTocSyncThisTime = false;
+
+        if (isPostMessageEnabled()) {
+            addMessageListener(tocMessageHandler);
+        }
+
+        function tocMessageHandler(event) {
+            var message = getMessage(event.data);
+
+            switch (message.messageType) {
+                case "pageloaded":
+                    pageLoaded(message.messageData);
+                    break;
+            }
+        }
+
+        /* Called by content pages. Highlight the matching TOC node */
+        function pageLoaded(url) {
+            if (disableTocSyncThisTime) {
+                disableTocSyncThisTime = false;
+                return
+            }
+
+            var liElements = document.getElementsByTagName("li");
+
+            for (var x = 0; x < liElements.length; x++) {
+                var href = liElements[x].childNodes[0].href;
+                if (href === url) {
+                    // Need to ensure any parent books are expanded
+                    expandParents(liElements[x]);
+                    if (!InView(liElements[x]))
+                        ScrollIntoView(liElements[x], false, 20);
+                    highlightNode(liElements[x]);
+                    break;
+                }
+            }
+        }
+
+        /* Ensure that all parent nodes are expanded */
+        function expandParents(e) {
+            var parent = e.parentNode;
+            if (!parent)
+                return;
+            else {
+                expandParents(parent);
+                if (parent.tagName === "LI") {
+                    if (parent.className === "tbc") {
+                        supressNavigate = true;
+                        parent.childNodes[0].onclick();
+                        supressNavigate = false;
+                    }
+                }
+            }
+        }
+
+        var lastHighlightedNode;
+
+        /* Applies highlighting to an LI element */
+        function highlightNode(e) {
+
+            if (!e || e.tagName != "LI")
+                e = sourceElement(e);
+
+            var currentLI = findParentTagByName(e, "LI");
+            if (currentLI) {
+                var SPANs = currentLI.getElementsByTagName("SPAN");
+                var SPAN = SPANs[0];
+                if (SPAN.className != "highlightednodetext") {
+                    if (lastHighlightedNode) {
+                        // Remove highlighting from the last node we highlighted
+                        lastHighlightedNode.className = "nodetext";
+                    }
+                    // Set style to highlighted
+                    SPAN.className = "highlightednodetext";
+                    // Save the last highlighted node so we can remove the style
+                    //  before highlighting the next node
+                    lastHighlightedNode = SPAN;
+                }
+            }
+        }
+
+        // Initiailizes the document by processing the top level UL tag
+        function makeExpandable() {
+
+            // Check we have DOM support
+            if (!document.createElement) return;
+
+            // Set up the root node
+            processUL(documentElement("tocroot"));
+
+            // Show the TOC, hide the load progress
+            documentElement("tocdiv").style.display = "block";
+            documentElement("progressdiv").style.display = "none";
+
+        }
+
+        // Processes all the LI tags below a UL tag to give them
+        //  an appropriate class name / icon
+        function processUL(ul) {
+
+            if (!ul.childNodes || ul.childNodes.length == 0) return;
+            for (var itemi = 0; itemi < ul.childNodes.length; itemi++) {
+                var item = ul.childNodes[itemi];
+                if (item.nodeName == "LI") {
+
+                    var a;
+                    var subul;
+                    subul = "";
+
+                    // Look in each LI child node for A or UL tags
+                    for (var sitemi = 0; sitemi < item.childNodes.length; sitemi++) {
+                        var sitem = item.childNodes[sitemi];
+                        switch (sitem.nodeName) {
+                            case "A":
+                                a = sitem;
+                                break;
+                            // Found a UL - this is a book node 
+                            case "UL":
+                                if (sitem.childNodes.length > 0) {
+                                    if (trimString(sitem.innerHTML).length > 0) {
+                                        subul = sitem;
+                                        break;
+                                    }
+                                }
+                        }
+                    }
+
+                    // This is a book node
+                    if (subul)
+                        ConfigureBook(a, ul);
+                    // A page node
+                    else
+                        ConfigureNode(a);
+
+                }
+            }
+
+        }
+
+        function trimString(text) {
+            text = text.replace(/^\s+/g, "");
+            return text.replace(/\s+$/g, "");
+        }
+
+        // Standard book node click handler. Toggles the icon / class name
+        function clickHandler(e) {
+
+            var LI;
+            var A;
+
+            if ((e) && e.tagName == "A") {
+                A = e;
+                LI = A.parentNode;
+            }
+            else {
+                if (window.event)
+                    e = window.event;
+                A = this;
+                LI = this.parentNode;
+            }
+
+            if (LI.className == 'tbo') {
+                if (LI.getAttribute("icon") <= 0) {
+                    if (LI.getAttribute("isnew") == "True")
+                        A.childNodes[0].src = "webimages/3.gif";
+                    else
+                        A.childNodes[0].src = "webimages/1.gif";
+                }
+                else
+                    A.childNodes[0].src = "webimages/" + LI.getAttribute("icon") + ".gif";
+                LI.className = 'tbc';
+            }
+            else {
+                if (LI.getAttribute("icon") <= 0) {
+                    if (LI.getAttribute("isnew") == "True")
+                        A.childNodes[0].src = "webimages/4.gif";
+                    else
+                        A.childNodes[0].src = "webimages/0.gif";
+                }
+                else
+                    A.childNodes[0].src = "webimages/" + LI.getAttribute("icon") + ".gif";
+                LI.className = 'tbo';
+            }
+            A.className = LI.className
+
+            // Find the UL tag and synch the class
+            for (var sitemi = 0; sitemi < LI.childNodes.length; sitemi++) {
+                var sitem = LI.childNodes[sitemi];
+                switch (sitem.nodeName) {
+                    // Found a UL - this is a book node 
+                    case "UL":
+                        if (trimString(sitem.innerHTML).length > 0) {
+                            sitem.className = LI.className
+                            break;
+                        }
+                }
+            }
+
+            if (e) {
+                cancelEvent(e);
+                if (A.href.substring(A.href.length - 1, A.href.length) != "#" && !supressNavigate) {
+                    disableTocSyncThisTime = true;
+                    parent.parent.frames["webcontent"].location.href = A.href;
+                }
+            }
+
+            highlightNode(LI);
+
+        }
+
+        function nodeClickHandler(e) {
+            var LI;
+            var A;
+
+            if ((e) && e.tagName == "A") {
+                A = e;
+                LI = A.parentNode;
+            }
+            else {
+                if (window.event)
+                    e = window.event;
+                A = this;
+                LI = this.parentNode;
+            }
+            cancelEvent(e);
+            if (A.href.substring(A.href.length - 1, A.href.length) != "#" && !supressNavigate) {
+                // We don't want the URL change to cause a potentially wrong TOC sync because 
+                //  we will call the correct sync in the next line.
+                disableTocSyncThisTime = true;
+                parent.parent.frames["webcontent"].location.href = A.href;
+            }
+            highlightNode(LI);
+        }
+
+        // Event handler for the first click on a book node
+        // Sets up all the child items, adds the standard click handler
+        //  and then re-processes the click
+        function firstBookClick(e) {
+
+            var LI;
+
+            if (window.event) {
+                e = window.event;
+            }
+
+            LI = this.parentNode;
+
+            // Find the UL tag and process it
+            for (var elementi = 0; elementi < LI.childNodes.length; elementi++) {
+                var element = LI.childNodes[elementi];
+                switch (element.nodeName) {
+                    // Found a UL - this is a book node 
+                    case "UL":
+                        processUL(element);
+                        // Re-assign onclick to the routine onclick handler
+                        this.onclick = clickHandler;
+                        this.onclick(e)
+                        break;
+                }
+            }
+
+            highlightNode(LI);
+
+        }
+
+        // Configure a page with the appropriate icon and class name
+        function ConfigureNode(a) {
+            // Set the className to tp so that the plus / minus symbols aren't rendered
+            a.parentNode.className = "tp";
+            a.className = "tp"
+            if (a.parentNode.getAttribute("icon") <= 0) {
+                if (a.parentNode.getAttribute("isnew") == "True")
+                    a.childNodes[0].src = "webimages/10.gif";
+                else
+                    a.childNodes[0].src = "webimages/9.gif";
+            }
+            else
+                a.childNodes[0].src = "webimages/" + a.parentNode.getAttribute("icon") + ".gif";
+            a.onclick = nodeClickHandler;
+        }
+
+        // Configure a book node with an appropriate icon and class name
+        function ConfigureBook(a) {
+            a.parentNode.className = "tbc"
+            a.className = "tbc"
+            // If the icon attribute is set to the default, set it to the default icon for a book
+            if (a.parentNode.getAttribute("icon") <= 0) {
+                if (a.parentNode.getAttribute("isnew") == "True")
+                    a.childNodes[0].src = "webimages/3.gif";
+                else
+                    a.childNodes[0].src = "webimages/1.gif";
+            }
+            // Custom icon
+            else {
+                a.childNodes[0].src = "webimages/" + a.parentNode.getAttribute("icon") + ".gif";
+            }
+            a.onclick = firstBookClick;
+        }
+
+        /* Cancels an event, preventing further bubbling and returning false to cancel default behavior */
+        function cancelEvent(e) {
+            e.returnValue = false;
+            e.cancelBubble = true;
+
+            if (e.stopPropagation) {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+        }
+    -->
+    </script>
+    <style>
+    <!--
+        body
+        {
+            margin: 0;
+            font-family:    Verdana, Arial, Helvetica, sans-serif;
+        }
+        td
+        {
+            font-size:  70%;
+        }
+    A:link
+    {
+        COLOR : black
+    }
+    A:active
+    {
+        COLOR : black
+    }
+    A:visited
+    {
+        COLOR : black
+    }
+    A:hover
+    {
+        COLOR : black
+    }
+
+    /* Padding to 3px to maximize use of screen space */
+    ul
+    {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 8px;
+        padding-left: 8px;
+    }
+
+    ul#tocroot
+    {
+        margin-left: 5px;
+        padding-left: 5px;
+    }
+
+    /* Padding to 3px to maximize use of screen space */
+    /* List style to none as the plus/minus is generated */
+    /*  by the background style below */
+    li
+    {
+        list-style: none;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    /* Padding so that the hierarchy is indented to appear below the node above */
+    a {
+        padding-left: 14px;
+        color: black;
+        text-decoration: none;
+    }
+
+    /* Plus and minus graphics */
+    a.tbo {
+        background: url(webimages/minus.gif) center left no-repeat;
+    }
+    a.tbc {
+        background: url(webimages/plus.gif) center left no-repeat;
+    }
+
+    /* Show & hide the UL tags under open & closed items */
+    ul.tbo { display: block; }
+    ul.tbc { display: none; }
+
+    /* No border for the images */
+    img {
+        border: 0;
+        margin-bottom: -3px;
+    }
+
+    /* Spacing between the node icon and text */
+    span.nodetext,span.highlightednodetext {
+        margin-left: 3px;
+        padding: 2px;
+    }
+
+    span.highlightednodetext {
+    	background-color: #e0e0e0;
+    }
+    -->
+    </style>
+</head>
+<body topmargin="0" leftmargin="0" target="webcontent" onload="makeExpandable()">
+    <div id="progressdiv" width="98%" height="98%">
+        <table border="0" height="100%" width="100%">
+            <tr>
+                <td align="center" valign="middle">
+                    Loading Table of Contents...
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td nowrap>
+                <div id="tocdiv" class="toc" style="display: none">
+                    <ul id="tocroot" class="toc">
+                        <li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex Assembly</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex_introduction.html"><img class="icon"/><span class="nodetext">Introduction</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex_gettingstarted.html"><img class="icon"/><span class="nodetext">Getting Started</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Namespaces</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker.html"><img class="icon"/><span class="nodetext">ApexBroker</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker~GetModel.html"><img class="icon"/><span class="nodetext">GetModel&lt;TModel&gt; Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker~GetShell.html"><img class="icon"/><span class="nodetext">GetShell Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker~GetViewForViewModel.html"><img class="icon"/><span class="nodetext">GetViewForViewModel Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker~Initialise.html"><img class="icon"/><span class="nodetext">Initialise Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker~RegisterShell.html"><img class="icon"/><span class="nodetext">RegisterShell Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker~RegisterViewForViewModel.html"><img class="icon"/><span class="nodetext">RegisterViewForViewModel Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ApexBroker~CurrentExecutionContext.html"><img class="icon"/><span class="nodetext">CurrentExecutionContext Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Enumerations</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.ExecutionContext.html"><img class="icon"/><span class="nodetext">ExecutionContext</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Adorners Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner.html"><img class="icon"/><span class="nodetext">Adorner</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner~_ctor.html"><img class="icon"/><span class="nodetext">Adorner Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner~ParentAdornerLayer.html"><img class="icon"/><span class="nodetext">ParentAdornerLayer Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner~Translation.html"><img class="icon"/><span class="nodetext">Translation Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.Adorner~UIElement.html"><img class="icon"/><span class="nodetext">UIElement Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer.html"><img class="icon"/><span class="nodetext">AdornerLayer</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer~_ctor.html"><img class="icon"/><span class="nodetext">AdornerLayer Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer~AddAdorner.html"><img class="icon"/><span class="nodetext">AddAdorner Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer~GetAdornerLayer.html"><img class="icon"/><span class="nodetext">GetAdornerLayer Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer~InitializeComponent.html"><img class="icon"/><span class="nodetext">InitializeComponent Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer~OnApplyTemplate.html"><img class="icon"/><span class="nodetext">OnApplyTemplate Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.AdornerLayer~RemoveAdorner.html"><img class="icon"/><span class="nodetext">RemoveAdorner Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.UIElementAdorner.html"><img class="icon"/><span class="nodetext">UIElementAdorner</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.UIElementAdorner.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.UIElementAdorner_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.UIElementAdorner~_ctor.html"><img class="icon"/><span class="nodetext">UIElementAdorner Constructor</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.VisualAdorner.html"><img class="icon"/><span class="nodetext">VisualAdorner</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.VisualAdorner.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.VisualAdorner_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Adorners.VisualAdorner~_ctor.html"><img class="icon"/><span class="nodetext">VisualAdorner Constructor</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Behaviours Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.GridViewContextMenuBehaviour.html"><img class="icon"/><span class="nodetext">GridViewContextMenuBehaviour</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.GridViewContextMenuBehaviour.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.GridViewContextMenuBehaviour_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.GridViewContextMenuBehaviour~_ctor.html"><img class="icon"/><span class="nodetext">GridViewContextMenuBehaviour Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.GridViewContextMenuBehaviour_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.GridViewContextMenuBehaviour~OnAttached.html"><img class="icon"/><span class="nodetext">OnAttached Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.GridViewContextMenuBehaviour~OnDetaching.html"><img class="icon"/><span class="nodetext">OnDetaching Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour.html"><img class="icon"/><span class="nodetext">SlideFadeInBehaviour</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour~_ctor.html"><img class="icon"/><span class="nodetext">SlideFadeInBehaviour Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour~DoSlideFadeIn.html"><img class="icon"/><span class="nodetext">DoSlideFadeIn Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour~OnAttached.html"><img class="icon"/><span class="nodetext">OnAttached Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour~BeginTime.html"><img class="icon"/><span class="nodetext">BeginTime Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour~Duration.html"><img class="icon"/><span class="nodetext">Duration Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Behaviours.SlideFadeInBehaviour~DurationProperty.html"><img class="icon"/><span class="nodetext">DurationProperty Field</span></a>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Commands Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference.html"><img class="icon"/><span class="nodetext">CommandReference</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference~_ctor.html"><img class="icon"/><span class="nodetext">CommandReference Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference~CanExecute.html"><img class="icon"/><span class="nodetext">CanExecute Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference~CreateInstanceCore.html"><img class="icon"/><span class="nodetext">CreateInstanceCore Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference~Execute.html"><img class="icon"/><span class="nodetext">Execute Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference~Command.html"><img class="icon"/><span class="nodetext">Command Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference~CommandProperty.html"><img class="icon"/><span class="nodetext">CommandProperty Field</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.CommandReference~CanExecuteChanged_EV.html"><img class="icon"/><span class="nodetext">CanExecuteChanged Event</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding.html"><img class="icon"/><span class="nodetext">EventBinding</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~_ctor.html"><img class="icon"/><span class="nodetext">EventBinding Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~Bind.html"><img class="icon"/><span class="nodetext">Bind Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~CreateInstanceCore.html"><img class="icon"/><span class="nodetext">CreateInstanceCore Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~Command.html"><img class="icon"/><span class="nodetext">Command Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~CommandParameter.html"><img class="icon"/><span class="nodetext">CommandParameter Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~EventName.html"><img class="icon"/><span class="nodetext">EventName Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~CommandParameterProperty.html"><img class="icon"/><span class="nodetext">CommandParameterProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBinding~CommandProperty.html"><img class="icon"/><span class="nodetext">CommandProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindingCollection.html"><img class="icon"/><span class="nodetext">EventBindingCollection</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindingCollection.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindingCollection_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindingCollection~_ctor.html"><img class="icon"/><span class="nodetext">EventBindingCollection Constructor</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindings.html"><img class="icon"/><span class="nodetext">EventBindings</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindings.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindings_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindings_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindings~GetEventBindings.html"><img class="icon"/><span class="nodetext">GetEventBindings Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindings~OnEventBindingsChanged.html"><img class="icon"/><span class="nodetext">OnEventBindingsChanged Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.EventBindings~SetEventBindings.html"><img class="icon"/><span class="nodetext">SetEventBindings Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands.html"><img class="icon"/><span class="nodetext">ExtendedCommands</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetContextMenuDataContext.html"><img class="icon"/><span class="nodetext">GetContextMenuDataContext Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetLeftClickCommand.html"><img class="icon"/><span class="nodetext">GetLeftClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetLeftClickCommandParameter.html"><img class="icon"/><span class="nodetext">GetLeftClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetLeftDoubleClickCommand.html"><img class="icon"/><span class="nodetext">GetLeftDoubleClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetLeftDoubleClickCommandParameter.html"><img class="icon"/><span class="nodetext">GetLeftDoubleClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetRightClickCommand.html"><img class="icon"/><span class="nodetext">GetRightClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetRightClickCommandParameter.html"><img class="icon"/><span class="nodetext">GetRightClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetRightDoubleClickCommand.html"><img class="icon"/><span class="nodetext">GetRightDoubleClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~GetRightDoubleClickCommandParameter.html"><img class="icon"/><span class="nodetext">GetRightDoubleClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetContextMenuDataContext.html"><img class="icon"/><span class="nodetext">SetContextMenuDataContext Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetLeftClickCommand.html"><img class="icon"/><span class="nodetext">SetLeftClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetLeftClickCommandParameter.html"><img class="icon"/><span class="nodetext">SetLeftClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetLeftDoubleClickCommand.html"><img class="icon"/><span class="nodetext">SetLeftDoubleClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetLeftDoubleClickCommandParameter.html"><img class="icon"/><span class="nodetext">SetLeftDoubleClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetRightClickCommand.html"><img class="icon"/><span class="nodetext">SetRightClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetRightClickCommandParameter.html"><img class="icon"/><span class="nodetext">SetRightClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetRightDoubleClickCommand.html"><img class="icon"/><span class="nodetext">SetRightDoubleClickCommand Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~SetRightDoubleClickCommandParameter.html"><img class="icon"/><span class="nodetext">SetRightDoubleClickCommandParameter Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~ContextMenuDataContextProperty.html"><img class="icon"/><span class="nodetext">ContextMenuDataContextProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~LeftClickCommandParameterProperty.html"><img class="icon"/><span class="nodetext">LeftClickCommandParameterProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~LeftClickCommandProperty.html"><img class="icon"/><span class="nodetext">LeftClickCommandProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~LeftDoubleClickCommandParameterProperty.html"><img class="icon"/><span class="nodetext">LeftDoubleClickCommandParameterProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~LeftDoubleClickCommandProperty.html"><img class="icon"/><span class="nodetext">LeftDoubleClickCommandProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~RightClickCommandParameterProperty.html"><img class="icon"/><span class="nodetext">RightClickCommandParameterProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~RightClickCommandProperty.html"><img class="icon"/><span class="nodetext">RightClickCommandProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~RightDoubleClickCommandParameterProperty.html"><img class="icon"/><span class="nodetext">RightDoubleClickCommandParameterProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Commands.ExtendedCommands~RightDoubleClickCommandProperty.html"><img class="icon"/><span class="nodetext">RightDoubleClickCommandProperty Field</span></a>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Consistency Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.DispatcherHelper.html"><img class="icon"/><span class="nodetext">DispatcherHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.DispatcherHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.DispatcherHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.DispatcherHelper_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.DispatcherHelper~CurrentDispatcher.html"><img class="icon"/><span class="nodetext">CurrentDispatcher Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.GridLengthConverter.html"><img class="icon"/><span class="nodetext">GridLengthConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.GridLengthConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.GridLengthConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.GridLengthConverter~_ctor.html"><img class="icon"/><span class="nodetext">GridLengthConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.GridLengthConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.GridLengthConverter~ConvertFromString.html"><img class="icon"/><span class="nodetext">ConvertFromString Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest.html"><img class="icon"/><span class="nodetext">HitTest</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest~_ctor.html"><img class="icon"/><span class="nodetext">HitTest Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest~DoHitTest.html"><img class="icon"/><span class="nodetext">DoHitTest Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.HitTest~Hits.html"><img class="icon"/><span class="nodetext">Hits Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.LogicalTreeHelper.html"><img class="icon"/><span class="nodetext">LogicalTreeHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.LogicalTreeHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.LogicalTreeHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.LogicalTreeHelper_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.LogicalTreeHelper~GetChildren.html"><img class="icon"/><span class="nodetext">GetChildren Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.LogicalTreeHelper~TryGetChildren.html"><img class="icon"/><span class="nodetext">TryGetChildren Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.LogicalTreeHelper~TryGetContent.html"><img class="icon"/><span class="nodetext">TryGetContent Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.SystemParameters.html"><img class="icon"/><span class="nodetext">SystemParameters</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.SystemParameters.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.SystemParameters_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.SystemParameters_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.SystemParameters~MinimumHorizontalDragDistance.html"><img class="icon"/><span class="nodetext">MinimumHorizontalDragDistance Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Consistency.SystemParameters~MinimumVerticalDragDistance.html"><img class="icon"/><span class="nodetext">MinimumVerticalDragDistance Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Controls Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer.html"><img class="icon"/><span class="nodetext">AnimatedScrollViewer</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer~_ctor.html"><img class="icon"/><span class="nodetext">AnimatedScrollViewer Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer~CurrentHorizontalOffset.html"><img class="icon"/><span class="nodetext">CurrentHorizontalOffset Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer~CurrentVerticalOffset.html"><img class="icon"/><span class="nodetext">CurrentVerticalOffset Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer~CurrentHorizontalOffsetProperty.html"><img class="icon"/><span class="nodetext">CurrentHorizontalOffsetProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.AnimatedScrollViewer~CurrentVerticalOffsetProperty.html"><img class="icon"/><span class="nodetext">CurrentVerticalOffsetProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ApexGrid.html"><img class="icon"/><span class="nodetext">ApexGrid</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ApexGrid.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ApexGrid_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ApexGrid~_ctor.html"><img class="icon"/><span class="nodetext">ApexGrid Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ApexGrid_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ApexGrid~Columns.html"><img class="icon"/><span class="nodetext">Columns Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ApexGrid~Rows.html"><img class="icon"/><span class="nodetext">Rows Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas.html"><img class="icon"/><span class="nodetext">CartesianCanvas</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas~_ctor.html"><img class="icon"/><span class="nodetext">CartesianCanvas Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas~AdjustPoint.html"><img class="icon"/><span class="nodetext">AdjustPoint Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas~ArrangeOverride.html"><img class="icon"/><span class="nodetext">ArrangeOverride Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CartesianCanvas~origin.html"><img class="icon"/><span class="nodetext">origin Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar.html"><img class="icon"/><span class="nodetext">CircularProgressBar</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar~_ctor.html"><img class="icon"/><span class="nodetext">CircularProgressBar Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar~InitializeComponent.html"><img class="icon"/><span class="nodetext">InitializeComponent Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar~ProgressText.html"><img class="icon"/><span class="nodetext">ProgressText Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CircularProgressBar~ProgressTextProperty.html"><img class="icon"/><span class="nodetext">ProgressTextProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CrossButton.html"><img class="icon"/><span class="nodetext">CrossButton</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CrossButton.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CrossButton_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CrossButton~_ctor.html"><img class="icon"/><span class="nodetext">CrossButton Constructor</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CustomWindow.html"><img class="icon"/><span class="nodetext">CustomWindow</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CustomWindow.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CustomWindow_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CustomWindow~_ctor.html"><img class="icon"/><span class="nodetext">CustomWindow Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CustomWindow_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.CustomWindow~HasDropShadow.html"><img class="icon"/><span class="nodetext">HasDropShadow Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox.html"><img class="icon"/><span class="nodetext">EnumerationComboBox</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox~_ctor.html"><img class="icon"/><span class="nodetext">EnumerationComboBox Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox~SelectedEnumeration.html"><img class="icon"/><span class="nodetext">SelectedEnumeration Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.EnumerationComboBox~SelectedEnumerationProperty.html"><img class="icon"/><span class="nodetext">SelectedEnumerationProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel.html"><img class="icon"/><span class="nodetext">FlipPanel</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~_ctor.html"><img class="icon"/><span class="nodetext">FlipPanel Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~AspectRatio.html"><img class="icon"/><span class="nodetext">AspectRatio Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~ContentBack.html"><img class="icon"/><span class="nodetext">ContentBack Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~ContentFront.html"><img class="icon"/><span class="nodetext">ContentFront Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~FlipCommand.html"><img class="icon"/><span class="nodetext">FlipCommand Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~IsFlipped.html"><img class="icon"/><span class="nodetext">IsFlipped Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~AspectRatioProperty.html"><img class="icon"/><span class="nodetext">AspectRatioProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~ContentBackProperty.html"><img class="icon"/><span class="nodetext">ContentBackProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~ContentFrontProperty.html"><img class="icon"/><span class="nodetext">ContentFrontProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~flipCommand.html"><img class="icon"/><span class="nodetext">flipCommand Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~FlippedBackToFrontEvent.html"><img class="icon"/><span class="nodetext">FlippedBackToFrontEvent Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~FlippedFrontToBackEvent.html"><img class="icon"/><span class="nodetext">FlippedFrontToBackEvent Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~IsFlippedProperty.html"><img class="icon"/><span class="nodetext">IsFlippedProperty Field</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~FlippedBackToFront_EV.html"><img class="icon"/><span class="nodetext">FlippedBackToFront Event</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.FlipPanel~FlippedFrontToBack_EV.html"><img class="icon"/><span class="nodetext">FlippedFrontToBack Event</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton.html"><img class="icon"/><span class="nodetext">ImageButton</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~_ctor.html"><img class="icon"/><span class="nodetext">ImageButton Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~DisabledImageSource.html"><img class="icon"/><span class="nodetext">DisabledImageSource Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~MouseOverImageSource.html"><img class="icon"/><span class="nodetext">MouseOverImageSource Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~NormalImageSource.html"><img class="icon"/><span class="nodetext">NormalImageSource Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~PressedImageSource.html"><img class="icon"/><span class="nodetext">PressedImageSource Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~DisabledImageSourceProperty.html"><img class="icon"/><span class="nodetext">DisabledImageSourceProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~MouseOverImageSourceProperty.html"><img class="icon"/><span class="nodetext">MouseOverImageSourceProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~NormalImageSourceProperty.html"><img class="icon"/><span class="nodetext">NormalImageSourceProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ImageButton~PressedImageSourceProperty.html"><img class="icon"/><span class="nodetext">PressedImageSourceProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder.html"><img class="icon"/><span class="nodetext">MultiBorder</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~_ctor.html"><img class="icon"/><span class="nodetext">MultiBorder Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushBottom.html"><img class="icon"/><span class="nodetext">BorderBrushBottom Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushLeft.html"><img class="icon"/><span class="nodetext">BorderBrushLeft Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushRight.html"><img class="icon"/><span class="nodetext">BorderBrushRight Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushTop.html"><img class="icon"/><span class="nodetext">BorderBrushTop Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessBottom.html"><img class="icon"/><span class="nodetext">BorderThicknessBottom Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessLeft.html"><img class="icon"/><span class="nodetext">BorderThicknessLeft Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessRight.html"><img class="icon"/><span class="nodetext">BorderThicknessRight Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessTop.html"><img class="icon"/><span class="nodetext">BorderThicknessTop Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushBottomProperty.html"><img class="icon"/><span class="nodetext">BorderBrushBottomProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushLeftProperty.html"><img class="icon"/><span class="nodetext">BorderBrushLeftProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushRightProperty.html"><img class="icon"/><span class="nodetext">BorderBrushRightProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderBrushTopProperty.html"><img class="icon"/><span class="nodetext">BorderBrushTopProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessBottomProperty.html"><img class="icon"/><span class="nodetext">BorderThicknessBottomProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessLeftProperty.html"><img class="icon"/><span class="nodetext">BorderThicknessLeftProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessRightProperty.html"><img class="icon"/><span class="nodetext">BorderThicknessRightProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.MultiBorder~BorderThicknessTopProperty.html"><img class="icon"/><span class="nodetext">BorderThicknessTopProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PaddedGrid.html"><img class="icon"/><span class="nodetext">PaddedGrid</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PaddedGrid.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PaddedGrid_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PaddedGrid~_ctor.html"><img class="icon"/><span class="nodetext">PaddedGrid Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PaddedGrid_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PaddedGrid~Padding.html"><img class="icon"/><span class="nodetext">Padding Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl.html"><img class="icon"/><span class="nodetext">PivotControl</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~_ctor.html"><img class="icon"/><span class="nodetext">PivotControl Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~OnApplyTemplate.html"><img class="icon"/><span class="nodetext">OnApplyTemplate Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~OnSelectedPivotItemChanged.html"><img class="icon"/><span class="nodetext">OnSelectedPivotItemChanged Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~SelectPivotItem.html"><img class="icon"/><span class="nodetext">SelectPivotItem Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~PivotItems.html"><img class="icon"/><span class="nodetext">PivotItems Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~SelectedPivotItem.html"><img class="icon"/><span class="nodetext">SelectedPivotItem Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~SelectPivotItemCommand.html"><img class="icon"/><span class="nodetext">SelectPivotItemCommand Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~ShowPivotHeadings.html"><img class="icon"/><span class="nodetext">ShowPivotHeadings Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~PivotItemsProperty.html"><img class="icon"/><span class="nodetext">PivotItemsProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotControl~SelectedPivotItemProperty.html"><img class="icon"/><span class="nodetext">SelectedPivotItemProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem.html"><img class="icon"/><span class="nodetext">PivotItem</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~_ctor.html"><img class="icon"/><span class="nodetext">PivotItem Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~Content.html"><img class="icon"/><span class="nodetext">Content Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~IsInitialPage.html"><img class="icon"/><span class="nodetext">IsInitialPage Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~IsSelected.html"><img class="icon"/><span class="nodetext">IsSelected Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~Title.html"><img class="icon"/><span class="nodetext">Title Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~ContentProperty.html"><img class="icon"/><span class="nodetext">ContentProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~IsSelectedProperty.html"><img class="icon"/><span class="nodetext">IsSelectedProperty Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~selectedCommand.html"><img class="icon"/><span class="nodetext">selectedCommand Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.PivotItem~TitleProperty.html"><img class="icon"/><span class="nodetext">TitleProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl.html"><img class="icon"/><span class="nodetext">SelectableItemsControl</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl~_ctor.html"><img class="icon"/><span class="nodetext">SelectableItemsControl Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl~OnApplyTemplate.html"><img class="icon"/><span class="nodetext">OnApplyTemplate Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl~OnItemsChanged.html"><img class="icon"/><span class="nodetext">OnItemsChanged Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl~SelectedItem.html"><img class="icon"/><span class="nodetext">SelectedItem Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.SelectableItemsControl~SelectItemCommand.html"><img class="icon"/><span class="nodetext">SelectItemCommand Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid.html"><img class="icon"/><span class="nodetext">VariableGrid</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid~_ctor.html"><img class="icon"/><span class="nodetext">VariableGrid Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid~Columns.html"><img class="icon"/><span class="nodetext">Columns Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid~ColumnWidth.html"><img class="icon"/><span class="nodetext">ColumnWidth Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid~RowHeight.html"><img class="icon"/><span class="nodetext">RowHeight Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.VariableGrid~Rows.html"><img class="icon"/><span class="nodetext">Rows Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker.html"><img class="icon"/><span class="nodetext">ViewBroker</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker~_ctor.html"><img class="icon"/><span class="nodetext">ViewBroker Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker~OnApplyTemplate.html"><img class="icon"/><span class="nodetext">OnApplyTemplate Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker~BrokerHint.html"><img class="icon"/><span class="nodetext">BrokerHint Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ViewBroker~ViewModel.html"><img class="icon"/><span class="nodetext">ViewModel Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Interfaces</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem.html"><img class="icon"/><span class="nodetext">ISelectableItem</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem~OnDeselected.html"><img class="icon"/><span class="nodetext">OnDeselected Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem~OnSelected.html"><img class="icon"/><span class="nodetext">OnSelected Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Controls.ISelectableItem~IsSelected.html"><img class="icon"/><span class="nodetext">IsSelected Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Converters Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.BooleanToVisibilityConverter.html"><img class="icon"/><span class="nodetext">BooleanToVisibilityConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.BooleanToVisibilityConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.BooleanToVisibilityConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.BooleanToVisibilityConverter~_ctor.html"><img class="icon"/><span class="nodetext">BooleanToVisibilityConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.BooleanToVisibilityConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.BooleanToVisibilityConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.BooleanToVisibilityConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DateTimeToSensibleStringConverter.html"><img class="icon"/><span class="nodetext">DateTimeToSensibleStringConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DateTimeToSensibleStringConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DateTimeToSensibleStringConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DateTimeToSensibleStringConverter~_ctor.html"><img class="icon"/><span class="nodetext">DateTimeToSensibleStringConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DateTimeToSensibleStringConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DateTimeToSensibleStringConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DateTimeToSensibleStringConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DivideByTwoConverter.html"><img class="icon"/><span class="nodetext">DivideByTwoConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DivideByTwoConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DivideByTwoConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DivideByTwoConverter~_ctor.html"><img class="icon"/><span class="nodetext">DivideByTwoConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DivideByTwoConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DivideByTwoConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.DivideByTwoConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.EnumToBooleanConverter.html"><img class="icon"/><span class="nodetext">EnumToBooleanConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.EnumToBooleanConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.EnumToBooleanConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.EnumToBooleanConverter~_ctor.html"><img class="icon"/><span class="nodetext">EnumToBooleanConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.EnumToBooleanConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.EnumToBooleanConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.EnumToBooleanConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.InvertedBooleanConverter.html"><img class="icon"/><span class="nodetext">InvertedBooleanConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.InvertedBooleanConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.InvertedBooleanConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.InvertedBooleanConverter~_ctor.html"><img class="icon"/><span class="nodetext">InvertedBooleanConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.InvertedBooleanConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.InvertedBooleanConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.InvertedBooleanConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.NullToVisibilityConverter.html"><img class="icon"/><span class="nodetext">NullToVisibilityConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.NullToVisibilityConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.NullToVisibilityConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.NullToVisibilityConverter~_ctor.html"><img class="icon"/><span class="nodetext">NullToVisibilityConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.NullToVisibilityConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.NullToVisibilityConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.NullToVisibilityConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringCaseConverter.html"><img class="icon"/><span class="nodetext">StringCaseConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringCaseConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringCaseConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringCaseConverter~_ctor.html"><img class="icon"/><span class="nodetext">StringCaseConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringCaseConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringCaseConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringCaseConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter.html"><img class="icon"/><span class="nodetext">StringNullOrEmptyToVisibilityConverter</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter~_ctor.html"><img class="icon"/><span class="nodetext">StringNullOrEmptyToVisibilityConverter Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter~Convert.html"><img class="icon"/><span class="nodetext">Convert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Converters.StringNullOrEmptyToVisibilityConverter~ConvertBack.html"><img class="icon"/><span class="nodetext">ConvertBack Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Design Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Design_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Design.DesignTime.html"><img class="icon"/><span class="nodetext">DesignTime</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Design.DesignTime.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Design.DesignTime_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Design.DesignTime_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Design.DesignTime~IsDesignTime.html"><img class="icon"/><span class="nodetext">IsDesignTime Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.DragAndDrop Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop.html"><img class="icon"/><span class="nodetext">DragAndDrop</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop~GetIsDraggable.html"><img class="icon"/><span class="nodetext">GetIsDraggable Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop~GetIsDragSource.html"><img class="icon"/><span class="nodetext">GetIsDragSource Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop~GetIsDropTarget.html"><img class="icon"/><span class="nodetext">GetIsDropTarget Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop~SetIsDraggable.html"><img class="icon"/><span class="nodetext">SetIsDraggable Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop~SetIsDragSource.html"><img class="icon"/><span class="nodetext">SetIsDragSource Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop~SetIsDropTarget.html"><img class="icon"/><span class="nodetext">SetIsDropTarget Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDrop~IsDragSourceProperty.html"><img class="icon"/><span class="nodetext">IsDragSourceProperty Field</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs.html"><img class="icon"/><span class="nodetext">DragAndDropEventArgs</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~_ctor.html"><img class="icon"/><span class="nodetext">DragAndDropEventArgs Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~Allow.html"><img class="icon"/><span class="nodetext">Allow Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragAdorner.html"><img class="icon"/><span class="nodetext">DragAdorner Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragData.html"><img class="icon"/><span class="nodetext">DragData Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragElement.html"><img class="icon"/><span class="nodetext">DragElement Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DragSource.html"><img class="icon"/><span class="nodetext">DragSource Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~DropTarget.html"><img class="icon"/><span class="nodetext">DropTarget Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropEventArgs~InitialElementOffset.html"><img class="icon"/><span class="nodetext">InitialElementOffset Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost.html"><img class="icon"/><span class="nodetext">DragAndDropHost</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost~_ctor.html"><img class="icon"/><span class="nodetext">DragAndDropHost Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost~OnApplyTemplate.html"><img class="icon"/><span class="nodetext">OnApplyTemplate Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost~MinimumHorizontalDragDistance.html"><img class="icon"/><span class="nodetext">MinimumHorizontalDragDistance Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost~MinimumVerticalDragDistance.html"><img class="icon"/><span class="nodetext">MinimumVerticalDragDistance Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost~DragAndDropContinue_EV.html"><img class="icon"/><span class="nodetext">DragAndDropContinue Event</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost~DragAndDropEnd_EV.html"><img class="icon"/><span class="nodetext">DragAndDropEnd Event</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropHost~DragAndDropStart_EV.html"><img class="icon"/><span class="nodetext">DragAndDropStart Event</span></a>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Delegates</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.DragAndDrop.DragAndDropDelegate.html"><img class="icon"/><span class="nodetext">DragAndDropDelegate</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Extensions Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions.html"><img class="icon"/><span class="nodetext">DateTimeExtensions</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions~BeginningOfDay.html"><img class="icon"/><span class="nodetext">BeginningOfDay Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions~BeginningOfMonth.html"><img class="icon"/><span class="nodetext">BeginningOfMonth Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions~BeginningOfWeek.html"><img class="icon"/><span class="nodetext">BeginningOfWeek Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions~EndOfDay.html"><img class="icon"/><span class="nodetext">EndOfDay Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DateTimeExtensions~WorkDaysBetween.html"><img class="icon"/><span class="nodetext">WorkDaysBetween Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions.html"><img class="icon"/><span class="nodetext">DependencyObjectExtensions</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions~FindChild.html"><img class="icon"/><span class="nodetext">FindChild&lt;T&gt; Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions~GetBindingObjects.html"><img class="icon"/><span class="nodetext">GetBindingObjects Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions~GetDependencyProperties.html"><img class="icon"/><span class="nodetext">GetDependencyProperties Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions~GetLogicalChildren.html"><img class="icon"/><span class="nodetext">GetLogicalChildren&lt;T&gt; Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions~GetParent.html"><img class="icon"/><span class="nodetext">GetParent&lt;T&gt; Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions~GetTopLevelParent.html"><img class="icon"/><span class="nodetext">GetTopLevelParent Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.DependencyObjectExtensions~GetVisualChildren.html"><img class="icon"/><span class="nodetext">GetVisualChildren&lt;T&gt; Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.EnumExtensions.html"><img class="icon"/><span class="nodetext">EnumExtensions</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.EnumExtensions.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.EnumExtensions_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.EnumExtensions_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.EnumExtensions~GetDescription.html"><img class="icon"/><span class="nodetext">GetDescription Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.ListExtensions.html"><img class="icon"/><span class="nodetext">ListExtensions</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.ListExtensions.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.ListExtensions_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.ListExtensions_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.ListExtensions~RandomElement.html"><img class="icon"/><span class="nodetext">RandomElement&lt;T&gt; Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.ListExtensions~Shuffle.html"><img class="icon"/><span class="nodetext">Shuffle&lt;T&gt; Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.StringExtensions.html"><img class="icon"/><span class="nodetext">StringExtensions</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.StringExtensions.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.StringExtensions_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.StringExtensions_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Extensions.StringExtensions~ContainsCaseInsensitive.html"><img class="icon"/><span class="nodetext">ContainsCaseInsensitive Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Helpers Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.AssembliesHelper.html"><img class="icon"/><span class="nodetext">AssembliesHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.AssembliesHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.AssembliesHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.AssembliesHelper_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.AssembliesHelper~GetDomainAssemblies.html"><img class="icon"/><span class="nodetext">GetDomainAssemblies Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.AssembliesHelper~GetTypesInDomain.html"><img class="icon"/><span class="nodetext">GetTypesInDomain Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.DispatcherHelper.html"><img class="icon"/><span class="nodetext">DispatcherHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.DispatcherHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.DispatcherHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.DispatcherHelper_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.DispatcherHelper~DoEvents.html"><img class="icon"/><span class="nodetext">DoEvents Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.EnumHelper.html"><img class="icon"/><span class="nodetext">EnumHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.EnumHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.EnumHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.EnumHelper~_ctor.html"><img class="icon"/><span class="nodetext">EnumHelper Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.EnumHelper_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.EnumHelper~GetValues.html"><img class="icon"/><span class="nodetext">GetValues Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Helpers.Popups Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.html"><img class="icon"/><span class="nodetext">BounceInOutPopupAnimationHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~_ctor.html"><img class="icon"/><span class="nodetext">BounceInOutPopupAnimationHelper Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~AnimatePopupHide.html"><img class="icon"/><span class="nodetext">AnimatePopupHide Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~AnimatePopupShow.html"><img class="icon"/><span class="nodetext">AnimatePopupShow Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceInDirection.html"><img class="icon"/><span class="nodetext">BounceInDirection Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceInDuration.html"><img class="icon"/><span class="nodetext">BounceInDuration Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceOutDirection.html"><img class="icon"/><span class="nodetext">BounceOutDirection Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.BounceInOutPopupAnimationHelper~BounceOutDuration.html"><img class="icon"/><span class="nodetext">BounceOutDuration Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.html"><img class="icon"/><span class="nodetext">FadeInOutPopupAnimationHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~_ctor.html"><img class="icon"/><span class="nodetext">FadeInOutPopupAnimationHelper Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~AnimatePopupHide.html"><img class="icon"/><span class="nodetext">AnimatePopupHide Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~AnimatePopupShow.html"><img class="icon"/><span class="nodetext">AnimatePopupShow Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~FadeInDuration.html"><img class="icon"/><span class="nodetext">FadeInDuration Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.FadeInOutPopupAnimationHelper~FadeOutDuration.html"><img class="icon"/><span class="nodetext">FadeOutDuration Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper.html"><img class="icon"/><span class="nodetext">PopupAnimationHelper</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper~AnimatePopupHide.html"><img class="icon"/><span class="nodetext">AnimatePopupHide Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper~AnimatePopupShow.html"><img class="icon"/><span class="nodetext">AnimatePopupShow Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper~ClosePopup.html"><img class="icon"/><span class="nodetext">ClosePopup Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper~ShowPopup.html"><img class="icon"/><span class="nodetext">ShowPopup Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Helpers.Popups.PopupAnimationHelper~OpenPopupsCount.html"><img class="icon"/><span class="nodetext">OpenPopupsCount Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.MVVM Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand.html"><img class="icon"/><span class="nodetext">AsynchronousCommand</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~_ctor.html"><img class="icon"/><span class="nodetext">AsynchronousCommand Constructor</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~_ctor(Action,Boolean).html"><img class="icon"/><span class="nodetext">AsynchronousCommand Constructor(Action,Boolean)</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~_ctor(Action{Object},Boolean).html"><img class="icon"/><span class="nodetext">AsynchronousCommand Constructor(Action&lt;Object&gt;,Boolean)</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~CancelIfRequested.html"><img class="icon"/><span class="nodetext">CancelIfRequested Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~DoExecute.html"><img class="icon"/><span class="nodetext">DoExecute Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~InvokeCancelled.html"><img class="icon"/><span class="nodetext">InvokeCancelled Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~ReportProgress.html"><img class="icon"/><span class="nodetext">ReportProgress Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~CancelCommand.html"><img class="icon"/><span class="nodetext">CancelCommand Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~IsCancellationRequested.html"><img class="icon"/><span class="nodetext">IsCancellationRequested Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~IsExecuting.html"><img class="icon"/><span class="nodetext">IsExecuting Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~callingDispatcher.html"><img class="icon"/><span class="nodetext">callingDispatcher Field</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~Cancelled_EV.html"><img class="icon"/><span class="nodetext">Cancelled Event</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.AsynchronousCommand~PropertyChanged_EV.html"><img class="icon"/><span class="nodetext">PropertyChanged Event</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CancelCommandEventArgs.html"><img class="icon"/><span class="nodetext">CancelCommandEventArgs</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CancelCommandEventArgs.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CancelCommandEventArgs_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CancelCommandEventArgs~_ctor.html"><img class="icon"/><span class="nodetext">CancelCommandEventArgs Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CancelCommandEventArgs_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CancelCommandEventArgs~Cancel.html"><img class="icon"/><span class="nodetext">Cancel Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command.html"><img class="icon"/><span class="nodetext">Command</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~_ctor.html"><img class="icon"/><span class="nodetext">Command Constructor</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~_ctor(Action,Boolean).html"><img class="icon"/><span class="nodetext">Command Constructor(Action,Boolean)</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~_ctor(Action{Object},Boolean).html"><img class="icon"/><span class="nodetext">Command Constructor(Action&lt;Object&gt;,Boolean)</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~DoExecute.html"><img class="icon"/><span class="nodetext">DoExecute Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~InvokeAction.html"><img class="icon"/><span class="nodetext">InvokeAction Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~InvokeExecuted.html"><img class="icon"/><span class="nodetext">InvokeExecuted Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~InvokeExecuting.html"><img class="icon"/><span class="nodetext">InvokeExecuting Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~CanExecute.html"><img class="icon"/><span class="nodetext">CanExecute Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~action.html"><img class="icon"/><span class="nodetext">action Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~parameterizedAction.html"><img class="icon"/><span class="nodetext">parameterizedAction Field</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~CanExecuteChanged_EV.html"><img class="icon"/><span class="nodetext">CanExecuteChanged Event</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~Executed_EV.html"><img class="icon"/><span class="nodetext">Executed Event</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.Command~Executing_EV.html"><img class="icon"/><span class="nodetext">Executing Event</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CommandEventArgs.html"><img class="icon"/><span class="nodetext">CommandEventArgs</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CommandEventArgs.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CommandEventArgs_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CommandEventArgs~_ctor.html"><img class="icon"/><span class="nodetext">CommandEventArgs Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CommandEventArgs_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CommandEventArgs~Parameter.html"><img class="icon"/><span class="nodetext">Parameter Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute.html"><img class="icon"/><span class="nodetext">ModelAttribute</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute~_ctor.html"><img class="icon"/><span class="nodetext">ModelAttribute Constructor</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute~_ctor().html"><img class="icon"/><span class="nodetext">ModelAttribute Constructor()</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute~_ctor(ExecutionContext).html"><img class="icon"/><span class="nodetext">ModelAttribute Constructor(ExecutionContext)</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ModelAttribute~Context.html"><img class="icon"/><span class="nodetext">Context Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty.html"><img class="icon"/><span class="nodetext">NotifyingProperty</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~_ctor.html"><img class="icon"/><span class="nodetext">NotifyingProperty Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~FireNotifyingPropertyChanged.html"><img class="icon"/><span class="nodetext">FireNotifyingPropertyChanged Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~RestoreInitialState.html"><img class="icon"/><span class="nodetext">RestoreInitialState Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~SaveInitialState.html"><img class="icon"/><span class="nodetext">SaveInitialState Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~SetValue.html"><img class="icon"/><span class="nodetext">SetValue Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~Name.html"><img class="icon"/><span class="nodetext">Name Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~Type.html"><img class="icon"/><span class="nodetext">Type Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~Value.html"><img class="icon"/><span class="nodetext">Value Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingProperty~NotifyingPropertyChanged_EV.html"><img class="icon"/><span class="nodetext">NotifyingPropertyChanged Event</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedArgs.html"><img class="icon"/><span class="nodetext">NotifyingPropertyChangedArgs</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedArgs.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedArgs_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedArgs~_ctor.html"><img class="icon"/><span class="nodetext">NotifyingPropertyChangedArgs Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedArgs_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedArgs~NewValue.html"><img class="icon"/><span class="nodetext">NewValue Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedArgs~OldValue.html"><img class="icon"/><span class="nodetext">OldValue Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1.html"><img class="icon"/><span class="nodetext">SafeObservableCollection&lt;T&gt;</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~_ctor.html"><img class="icon"/><span class="nodetext">SafeObservableCollection&lt;T&gt; Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~Add.html"><img class="icon"/><span class="nodetext">Add Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~Clear.html"><img class="icon"/><span class="nodetext">Clear Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~Contains.html"><img class="icon"/><span class="nodetext">Contains Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~CopyTo.html"><img class="icon"/><span class="nodetext">CopyTo Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~GetEnumerator.html"><img class="icon"/><span class="nodetext">GetEnumerator Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~IndexOf.html"><img class="icon"/><span class="nodetext">IndexOf Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~Insert.html"><img class="icon"/><span class="nodetext">Insert Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~Remove.html"><img class="icon"/><span class="nodetext">Remove Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~RemoveAt.html"><img class="icon"/><span class="nodetext">RemoveAt Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~Count.html"><img class="icon"/><span class="nodetext">Count Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~IsReadOnly.html"><img class="icon"/><span class="nodetext">IsReadOnly Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~Item.html"><img class="icon"/><span class="nodetext">Item Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.SafeObservableCollection`1~CollectionChanged_EV.html"><img class="icon"/><span class="nodetext">CollectionChanged Event</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.View.html"><img class="icon"/><span class="nodetext">View</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.View.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.View_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.View_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.View~GetViewModel.html"><img class="icon"/><span class="nodetext">GetViewModel Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.View~SetViewModel.html"><img class="icon"/><span class="nodetext">SetViewModel Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute.html"><img class="icon"/><span class="nodetext">ViewAttribute</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute~_ctor.html"><img class="icon"/><span class="nodetext">ViewAttribute Constructor</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute~_ctor().html"><img class="icon"/><span class="nodetext">ViewAttribute Constructor()</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute~_ctor(Type).html"><img class="icon"/><span class="nodetext">ViewAttribute Constructor(Type)</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute~_ctor(Type,String).html"><img class="icon"/><span class="nodetext">ViewAttribute Constructor(Type,String)</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute~Hint.html"><img class="icon"/><span class="nodetext">Hint Property</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewAttribute~ViewModelType.html"><img class="icon"/><span class="nodetext">ViewModelType Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel.html"><img class="icon"/><span class="nodetext">ViewModel</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~_ctor.html"><img class="icon"/><span class="nodetext">ViewModel Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~GetNotifyingProperties.html"><img class="icon"/><span class="nodetext">GetNotifyingProperties Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~GetValue.html"><img class="icon"/><span class="nodetext">GetValue Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~NotifyPropertyChanged.html"><img class="icon"/><span class="nodetext">NotifyPropertyChanged Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~ResetHasChangesFlag.html"><img class="icon"/><span class="nodetext">ResetHasChangesFlag Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~RestoreInitialState.html"><img class="icon"/><span class="nodetext">RestoreInitialState Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~SaveInitialState.html"><img class="icon"/><span class="nodetext">SaveInitialState Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~SetValue.html"><img class="icon"/><span class="nodetext">SetValue Method</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~SetValue(NotifyingProperty,Object).html"><img class="icon"/><span class="nodetext">SetValue(NotifyingProperty,Object) Method</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~SetValue(NotifyingProperty,Object,Boolean).html"><img class="icon"/><span class="nodetext">SetValue(NotifyingProperty,Object,Boolean) Method</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~HasChanges.html"><img class="icon"/><span class="nodetext">HasChanges Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel~PropertyChanged_EV.html"><img class="icon"/><span class="nodetext">PropertyChanged Event</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel`1.html"><img class="icon"/><span class="nodetext">ViewModel&lt;TModel&gt;</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel`1.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel`1_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel`1_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel`1~FromModel.html"><img class="icon"/><span class="nodetext">FromModel Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModel`1~ToModel.html"><img class="icon"/><span class="nodetext">ToModel Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute.html"><img class="icon"/><span class="nodetext">ViewModelAttribute</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute~_ctor.html"><img class="icon"/><span class="nodetext">ViewModelAttribute Constructor</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute~_ctor().html"><img class="icon"/><span class="nodetext">ViewModelAttribute Constructor()</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute~_ctor(ExecutionContext).html"><img class="icon"/><span class="nodetext">ViewModelAttribute Constructor(ExecutionContext)</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.ViewModelAttribute~Context.html"><img class="icon"/><span class="nodetext">Context Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Interfaces</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IModel.html"><img class="icon"/><span class="nodetext">IModel</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IModel.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IModel_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IModel_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IModel~OnInitialised.html"><img class="icon"/><span class="nodetext">OnInitialised Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IView.html"><img class="icon"/><span class="nodetext">IView</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IView.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IView_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IView_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IView~OnActivated.html"><img class="icon"/><span class="nodetext">OnActivated Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.IView~OnDeactivated.html"><img class="icon"/><span class="nodetext">OnDeactivated Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Delegates</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CancelCommandEventHandler.html"><img class="icon"/><span class="nodetext">CancelCommandEventHandler</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.CommandEventHandler.html"><img class="icon"/><span class="nodetext">CommandEventHandler</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.MVVM.NotifyingPropertyChangedEvent.html"><img class="icon"/><span class="nodetext">NotifyingPropertyChangedEvent</span></a>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Apex.Shells Namespace</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells_namespace.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Classes</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell.html"><img class="icon"/><span class="nodetext">Shell</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~_ctor.html"><img class="icon"/><span class="nodetext">Shell Constructor</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~ClosePopup.html"><img class="icon"/><span class="nodetext">ClosePopup Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~DoClose.html"><img class="icon"/><span class="nodetext">DoClose Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~DoFullscreen.html"><img class="icon"/><span class="nodetext">DoFullscreen Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~DoMaximize.html"><img class="icon"/><span class="nodetext">DoMaximize Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~DoMinimize.html"><img class="icon"/><span class="nodetext">DoMinimize Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~DoRestore.html"><img class="icon"/><span class="nodetext">DoRestore Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~FirePopupClosed.html"><img class="icon"/><span class="nodetext">FirePopupClosed Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~FirePopupOpened.html"><img class="icon"/><span class="nodetext">FirePopupOpened Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~OnApplyTemplate.html"><img class="icon"/><span class="nodetext">OnApplyTemplate Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~ShowPopup.html"><img class="icon"/><span class="nodetext">ShowPopup Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~PopupAnimationHelper.html"><img class="icon"/><span class="nodetext">PopupAnimationHelper Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell_fields.html"><img class="icon"/><span class="nodetext">Fields</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~PopupClosedEvent.html"><img class="icon"/><span class="nodetext">PopupClosedEvent Field</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~PopupOpenedEvent.html"><img class="icon"/><span class="nodetext">PopupOpenedEvent Field</span></a>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell_events.html"><img class="icon"/><span class="nodetext">Events</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~PopupClosed_EV.html"><img class="icon"/><span class="nodetext">PopupClosed Event</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.Shell~PopupOpened_EV.html"><img class="icon"/><span class="nodetext">PopupOpened Event</span></a>
+</ul>
+</ul>
+</ul>
+<li class="tbc" icon="-1"><a href="#" target="lbottom"><img class="icon"/><span class="nodetext">Interfaces</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell.html"><img class="icon"/><span class="nodetext">IShell</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell.html"><img class="icon"/><span class="nodetext">Overview</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell_members.html"><img class="icon"/><span class="nodetext">Members</span></a>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell_methods.html"><img class="icon"/><span class="nodetext">Methods</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~ClosePopup.html"><img class="icon"/><span class="nodetext">ClosePopup Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~DoClose.html"><img class="icon"/><span class="nodetext">DoClose Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~DoFullscreen.html"><img class="icon"/><span class="nodetext">DoFullscreen Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~DoMaximize.html"><img class="icon"/><span class="nodetext">DoMaximize Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~DoMinimize.html"><img class="icon"/><span class="nodetext">DoMinimize Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~DoRestore.html"><img class="icon"/><span class="nodetext">DoRestore Method</span></a>
+<ul class='tbc'>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~ShowPopup.html"><img class="icon"/><span class="nodetext">ShowPopup Method</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell_properties.html"><img class="icon"/><span class="nodetext">Properties</span></a>
+<ul class='tbc'>
+<li class="tbc" icon="-1" isnew="False"><a href="Apex~Apex.Shells.IShell~PopupAnimationHelper.html"><img class="icon"/><span class="nodetext">PopupAnimationHelper Property</span></a>
+<ul class='tbc'>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

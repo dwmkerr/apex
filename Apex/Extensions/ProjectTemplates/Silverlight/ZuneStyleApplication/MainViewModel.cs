@@ -54,5 +54,22 @@ namespace ZuneStyleApplication
             Pages.Add(homeViewModel);
             Pages.Add(collectionViewModel);
         }
+
+        /// <summary>
+        /// The active sub page notifying property.
+        /// </summary>
+        private readonly NotifyingProperty ActiveSubPageProperty = new NotifyingProperty("ActiveSubPage", typeof(PageViewModel), null);
+
+        /// <summary>
+        /// Gets or sets the active sub page.
+        /// </summary>
+        /// <value>
+        /// The active sub page.
+        /// </value>
+        public PageViewModel ActiveSubPage
+        {
+            get { return (PageViewModel) GetValue(ActiveSubPageProperty); }
+            set { SetValue(ActiveSubPageProperty, value); }
+        }
     }
 }
