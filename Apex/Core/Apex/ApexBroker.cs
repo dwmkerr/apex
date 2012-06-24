@@ -125,6 +125,39 @@ namespace Apex
         }
 
         /// <summary>
+        /// Registers a service. Generally a Service is some kind of object that implements an interface,
+        /// for example 'ILogService' or 'IMessagingService'.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <param name="serviceInstance">The service instance.</param>
+        public static void RegisterService<TService>(TService serviceInstance)
+        {
+            lock(syncLock)
+            {
+                if(serviceTypesToInstances.ContainsKey(typeof(TService)))
+                    throw new InvalidOperationException("A Service of this type has already been registered.");
+                serviceTypesToInstances[typeof (TService)] = serviceInstance;
+            }
+        }
+
+        /// <summary>
+        /// Gets the service based on the service type, such as 'ILogService' or 'IMessagingService'.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <returns>The service instance.</returns>
+        public static TService GetService<TService>()
+        {
+            TService instance;
+
+            lock(syncLock)
+            {
+                instance = (TService)serviceTypesToInstances[typeof(TService)];
+            }
+
+            return instance;
+        }
+
+        /// <summary>
         /// Gets the shell host.
         /// </summary>
         /// <returns>The registered shell.</returns>
@@ -233,6 +266,11 @@ namespace Apex
         /// </summary>
         private static List<object> modelInstances =
             new List<object>();
+
+        /// <summary>
+        /// Dictionary of service types to service instances.
+        /// </summary>
+        private static Dictionary<Type, object> serviceTypesToInstances = new Dictionary<Type, object>(); 
 
         /// <summary>
         /// The shell.
