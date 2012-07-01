@@ -130,7 +130,7 @@ namespace Apex
         /// </summary>
         /// <typeparam name="TService">The type of the service.</typeparam>
         /// <param name="serviceInstance">The service instance.</param>
-        public static void RegisterService<TService>(TService serviceInstance)
+        public static void RegisterService<TService>(object serviceInstance)
         {
             lock(syncLock)
             {
@@ -141,17 +141,33 @@ namespace Apex
         }
 
         /// <summary>
+        /// Registers a service. Generally a Service is some kind of object that implements an interface,
+        /// for example 'ILogService' or 'IMessagingService'.
+        /// If the service already exists it will be overriden.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <param name="serviceInstance">The service instance.</param>
+        public static void RegisterOrOverrideService<TService>(object serviceInstance)
+        {
+            lock (syncLock)
+            {
+                serviceTypesToInstances[typeof(TService)] = serviceInstance;
+            }
+        }
+
+        /// <summary>
         /// Gets the service based on the service type, such as 'ILogService' or 'IMessagingService'.
         /// </summary>
         /// <typeparam name="TService">The type of the service.</typeparam>
         /// <returns>The service instance.</returns>
         public static TService GetService<TService>()
         {
-            TService instance;
+            TService instance = default(TService);
 
             lock(syncLock)
             {
-                instance = (TService)serviceTypesToInstances[typeof(TService)];
+                if(serviceTypesToInstances.ContainsKey(typeof(TService)))
+                    instance = (TService)serviceTypesToInstances[typeof(TService)];
             }
 
             return instance;
