@@ -92,6 +92,7 @@
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CrossButton.cs" />
+    <Compile Include="Controls\CueTextBox.cs" />
     <Compile Include="Controls\EnumerationComboBox.cs" />
     <Compile Include="Controls\FlipPanel.cs" />
     <Compile Include="Controls\ImageButton.cs" />
@@ -184,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\ResourceDictionaries\CueTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\ResourceDictionaries\Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -209,7 +214,10 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\ClearSearch.png" />
+    <Resource Include="Resources\Images\Search.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)bin\$(ConfigurationName)\*.dll" "$(SolutionDir)Deployment\Binaries\$(ConfigurationName)\Core\" /i /d /y</PostBuildEvent>

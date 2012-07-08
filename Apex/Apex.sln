@@ -115,9 +115,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfZuneStyleApplicationTemp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexModelItemTemplate", "Extensions\ItemTemplates\WPF\ApexModelItemTemplate\ApexModelItemTemplate.csproj", "{65E06D7C-F88B-45BE-8886-F9CFA514EC27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery", "Samples\WPF\Gallery\Gallery.csproj", "{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 39
+		SccNumberOfProjects = 40
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs33
 		SccLocalPath0 = .
@@ -273,6 +275,10 @@ Global
 		SccProjectTopLevelParentUniqueName38 = Apex.sln
 		SccProjectName38 = Extensions/ItemTemplates/WPF/ApexModelItemTemplate
 		SccLocalPath38 = Extensions\\ItemTemplates\\WPF\\ApexModelItemTemplate
+		SccProjectUniqueName39 = Samples\\WPF\\Gallery\\Gallery.csproj
+		SccProjectTopLevelParentUniqueName39 = Apex.sln
+		SccProjectName39 = Samples/WPF/Gallery
+		SccLocalPath39 = Samples\\WPF\\Gallery
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Apex.vsmdi
@@ -670,6 +676,16 @@ Global
 		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{65E06D7C-F88B-45BE-8886-F9CFA514EC27}.Release|x86.ActiveCfg = Release|Any CPU
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Debug|x86.ActiveCfg = Debug|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Debug|x86.Build.0 = Debug|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Release|Any CPU.ActiveCfg = Release|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Release|x86.ActiveCfg = Release|x86
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -697,6 +713,7 @@ Global
 		{EB143A15-9C0F-43CA-9419-BEC75C6D3A4D} = {B57DB265-7B82-4C9A-AB06-28D2B420F89A}
 		{479D5D9F-394D-4635-953D-DA0078211320} = {B57DB265-7B82-4C9A-AB06-28D2B420F89A}
 		{C097B6AB-F4E6-47E3-BC0C-5153B13AEC26} = {B57DB265-7B82-4C9A-AB06-28D2B420F89A}
+		{B6DEAE4E-ACDF-43EE-BD7A-24863442F556} = {B57DB265-7B82-4C9A-AB06-28D2B420F89A}
 		{521E3997-5583-4848-80FB-F0095B27E288} = {353D4028-64A3-4D6D-A32B-89ECD5C85915}
 		{A2C1DAA3-81A0-4555-8F6E-495C25B754E5} = {353D4028-64A3-4D6D-A32B-89ECD5C85915}
 		{12704CED-DA46-418B-BF4C-81D6FC14BDCA} = {353D4028-64A3-4D6D-A32B-89ECD5C85915}

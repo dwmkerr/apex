@@ -1,0 +1,13 @@
+﻿<Window x:Class="Gallery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cueTextBox="clr-namespace:Gallery.CueTextBox"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TabControl>
+            <TabItem Header="CueTextBox">
+                <cueTextBox:CueTextBoxView />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
