@@ -4,6 +4,7 @@
     >
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/CrossButton.xaml" />
+        <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/CueTextBox.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/DragAndDropHost.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/ImageButton.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/MultiBorder.xaml" />
