@@ -15,15 +15,13 @@
         
         <!-- Second section, the search text box. -->
         <apexControls:SearchTextBox 
-            x:Name="cueTextBox"
+            x:Name="searchTextBox"
             Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" CueText="Search"></apexControls:SearchTextBox>
         
         <!-- Third section, search options.-->
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label Content="Cue" />
-            <TextBox Text="{Binding CueText, ElementName=cueTextBox}" Width="200" />
-            <Label Content="CueDisplayMode" />
-            <apexControls:EnumerationComboBox SelectedEnumeration="{Binding CueDisplayMode, ElementName=cueTextBox}" />
+            <Label Content="SearchMode" />
+            <apexControls:EnumerationComboBox SelectedEnumeration="{Binding SearchMode, ElementName=searchTextBox}" />
         </StackPanel>
     </apexControls:ApexGrid>
 </UserControl>
