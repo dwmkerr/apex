@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Gallery.CueTextBox.CueTextBoxView"
+﻿<UserControl x:Class="Gallery.SearchTextBox.SearchTextBoxView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,15 +10,15 @@
         
         <!-- First section, a description of the control. -->
         <TextBlock Grid.Row="0" TextWrapping="Wrap">
-            The CueTextBox is a standard text box that allows a cue to be set, via the 'CueText' property.
+            The SearchTextBox is a text box that mimicks the behaviour of the Windows 7 search box in the top right of Windows Explorer, or the Start Menu.
         </TextBlock>
         
-        <!-- Second section, the cue text box. -->
-        <apexControls:CueTextBox 
+        <!-- Second section, the search text box. -->
+        <apexControls:SearchTextBox 
             x:Name="cueTextBox"
-            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" CueText="Enter Username"></apexControls:CueTextBox>
+            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" CueText="Search"></apexControls:SearchTextBox>
         
-        <!-- Third section, cue options.-->
+        <!-- Third section, search options.-->
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Label Content="Cue" />
             <TextBox Text="{Binding CueText, ElementName=cueTextBox}" Width="200" />
