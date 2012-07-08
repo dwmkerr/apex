@@ -12,10 +12,6 @@
         <GradientStop Color="#E3E9EF" Offset="1"/>
     </LinearGradientBrush>
 
-    <SolidColorBrush x:Key="SearchTextBox_Background" Color="White" />
-    
-    <SolidColorBrush x:Key="SearchTextBox_LabelTextColor" Color="Gray" />
-
     <Style x:Key="{x:Type controls:CueTextBox}" TargetType="{x:Type controls:CueTextBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{StaticResource CueTextBoxBorder}" />
