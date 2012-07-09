@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Threading;
 using System;
+using System.Xml.Serialization;
 
 namespace Apex.MVVM
 {
@@ -153,6 +154,7 @@ namespace Apex.MVVM
         /// <value>
         /// 	<c>true</c> if this instance has changes; otherwise, <c>false</c>.
         /// </value>
+        [XmlIgnore]
         public bool HasChanges
         {
             get { return hasChanges; }

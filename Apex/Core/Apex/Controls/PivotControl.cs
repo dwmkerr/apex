@@ -16,6 +16,7 @@ using System.Windows.Media.Animation;
 using Apex.Extensions;
 using System.Collections.ObjectModel;
 using Apex.MVVM;
+using Apex.DragAndDrop;
 
 namespace Apex.Controls
 {
