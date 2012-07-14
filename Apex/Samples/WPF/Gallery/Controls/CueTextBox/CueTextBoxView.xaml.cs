@@ -11,22 +11,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Apex.MVVM;
 
-namespace Gallery
+namespace Gallery.CueTextBox
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for CueTextBoxView.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    [View(typeof(CueTextBoxViewModel))]
+    public partial class CueTextBoxView : UserControl
     {
-        public MainView()
+        public CueTextBoxView()
         {
             InitializeComponent();
-        }
-
-        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            ((GalleryViewModel) DataContext).SelectedGalleryItem = e.NewValue as GalleryItemViewModel;
         }
     }
 }

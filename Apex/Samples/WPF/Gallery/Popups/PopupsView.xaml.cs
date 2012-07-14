@@ -11,17 +11,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Apex;
+using Apex.MVVM;
+using PopupSample;
 
-namespace Gallery.CueTextBox
+namespace Gallery.Popups
 {
     /// <summary>
-    /// Interaction logic for CueTextBoxView.xaml
+    /// Interaction logic for PopupsView.xaml
     /// </summary>
-    public partial class CueTextBoxView : UserControl
+    [View(typeof(PopupsViewModel))]
+    public partial class PopupsView : UserControl
     {
-        public CueTextBoxView()
+        public PopupsView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var appHost = ApexBroker.GetShell();
+            appHost.ShowPopup(new SimplePopupView());
         }
     }
 }

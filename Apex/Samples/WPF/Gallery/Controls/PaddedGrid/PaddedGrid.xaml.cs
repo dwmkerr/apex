@@ -11,22 +11,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Apex.MVVM;
+using Gallery.Controls.PaddedGrid;
 
-namespace Gallery
+namespace ControlsSample.Samples
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for PaddedGrid.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    [View(typeof(PaddedGridViewModel))]
+    public partial class PaddedGrid : UserControl
     {
-        public MainView()
+        public PaddedGrid()
         {
             InitializeComponent();
-        }
-
-        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            ((GalleryViewModel) DataContext).SelectedGalleryItem = e.NewValue as GalleryItemViewModel;
         }
     }
 }

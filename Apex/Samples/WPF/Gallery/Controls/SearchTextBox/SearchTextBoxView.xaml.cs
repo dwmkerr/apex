@@ -11,22 +11,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Apex.MVVM;
 
-namespace Gallery
+namespace Gallery.SearchTextBox
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for SearchTextBoxView.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    [View(typeof(SearchTextBoxViewModel))]
+    public partial class SearchTextBoxView : UserControl
     {
-        public MainView()
+        public SearchTextBoxView()
         {
             InitializeComponent();
-        }
-
-        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            ((GalleryViewModel) DataContext).SelectedGalleryItem = e.NewValue as GalleryItemViewModel;
         }
     }
 }
