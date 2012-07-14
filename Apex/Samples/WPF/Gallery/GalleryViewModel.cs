@@ -7,6 +7,7 @@ using Apex.MVVM;
 using Gallery.Controls.ApexGrid;
 using Gallery.Controls.CrossButton;
 using Gallery.Controls.EnumComboBox;
+using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
 using Gallery.CueTextBox;
 using Gallery.PivotControl;
@@ -24,6 +25,7 @@ namespace Gallery
             controlItems.GalleryItems.Add(new CueTextBoxViewModel());
             controlItems.GalleryItems.Add(new CrossButtonViewModel());
             controlItems.GalleryItems.Add(new EnumComboBoxViewModel());
+            controlItems.GalleryItems.Add(new MultiBorderViewModel());
             controlItems.GalleryItems.Add(new PaddedGridViewModel());
             controlItems.GalleryItems.Add(new PivotControlViewModel());
             controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
