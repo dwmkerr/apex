@@ -3,23 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Gallery"
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
             xmlns:cueTextBox="clr-namespace:Gallery.CueTextBox"
             xmlns:searchTextBox="clr-namespace:Gallery.SearchTextBox"
              xmlns:pivotControl="clr-namespace:Gallery.PivotControl" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <TabControl>
-            <TabItem Header="CueTextBox">
-                <cueTextBox:CueTextBoxView />
-            </TabItem>
-            <TabItem Header="SearchTextBox">
-                <searchTextBox:SearchTextBoxView />
-            </TabItem>
-            <TabItem Header="PivotControl">
-                <pivotControl:PivotControlView />
-            </TabItem>
-        </TabControl>
-            
-    </Grid>
+    
+    <UserControl.DataContext>
+        <local:GalleryViewModel />
+    </UserControl.DataContext>
+    
+    <apexControls:ApexGrid Columns="200,Auto,*">
+        
+        <TreeView ItemsSource="{Binding GalleryItems}" SelectedItemChanged="TreeView_SelectedItemChanged">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding GalleryItems}">
+                    <TextBlock Text="{Binding Title}" />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        
+        <apexControls:ViewBroker Grid.Column="2" ViewModel="{Binding SelectedGalleryItem}" AllowUnknownViewModels="True"  />
+        
+    </apexControls:ApexGrid>
 </UserControl>

@@ -11,15 +11,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Apex.MVVM;
+using Gallery.Controls.CrossButton;
 
-namespace Gallery.SearchTextBox
+namespace ControlsSample.Samples
 {
     /// <summary>
-    /// Interaction logic for SearchTextBoxView.xaml
+    /// Interaction logic for CrossButton.xaml
     /// </summary>
-    public partial class SearchTextBoxView : UserControl
+    [View(typeof(CrossButtonViewModel))]
+    public partial class CrossButton : UserControl
     {
-        public SearchTextBoxView()
+        public CrossButton()
         {
             InitializeComponent();
         }

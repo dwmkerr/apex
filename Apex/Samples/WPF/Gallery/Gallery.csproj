@@ -59,19 +59,53 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\ApexGrid\ApexGrid.xaml.cs">
+      <DependentUpon>ApexGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ApexGrid\ApexGridViewModel.cs" />
+    <Compile Include="Controls\CrossButton\CrossButton.xaml.cs">
+      <DependentUpon>CrossButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CrossButton\CrossButtonViewModel.cs" />
+    <Compile Include="Controls\EnumComboBox\EnumComboBoxView.xaml.cs">
+      <DependentUpon>EnumComboBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EnumComboBox\EnumComboBoxViewModel.cs" />
+    <Compile Include="Controls\EnumComboBox\ExampleEnumeration.cs" />
+    <Compile Include="Controls\PaddedGrid\PaddedGrid.xaml.cs">
+      <DependentUpon>PaddedGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PaddedGrid\PaddedGridViewModel.cs" />
+    <Compile Include="Controls\SearchTextBox\SearchTextBoxViewModel.cs" />
+    <Page Include="Controls\ApexGrid\ApexGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CrossButton\CrossButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EnumComboBox\EnumComboBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PaddedGrid\PaddedGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PivotControl\PivotControlView.xaml">
+    <Page Include="Controls\PivotControl\PivotControlView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SearchTextBox\SearchTextBoxView.xaml">
+    <Page Include="Controls\SearchTextBox\SearchTextBoxView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CueTextBox\CueTextBoxView.xaml">
+    <Page Include="Controls\CueTextBox\CueTextBoxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,25 +117,43 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\CueTextBox\CueTextBoxViewModel.cs" />
+    <Compile Include="GalleryItemViewModel.cs" />
+    <Compile Include="GalleryViewModel.cs" />
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PivotControl\PivotControlViewModel.cs" />
-    <Compile Include="PivotControl\PivotControlView.xaml.cs">
+    <Compile Include="Controls\PivotControl\PivotControlViewModel.cs" />
+    <Compile Include="Controls\PivotControl\PivotControlView.xaml.cs">
       <DependentUpon>PivotControlView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SearchTextBox\SearchTextBoxView.xaml.cs">
+    <Compile Include="Controls\SearchTextBox\SearchTextBoxView.xaml.cs">
       <DependentUpon>SearchTextBoxView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CueTextBox\CueTextBoxView.xaml.cs">
+    <Compile Include="Controls\CueTextBox\CueTextBoxView.xaml.cs">
       <DependentUpon>CueTextBoxView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Popups\PopupsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popups\SimplePopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Popups\PopupsView.xaml.cs">
+      <DependentUpon>PopupsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\PopupsViewModel.cs" />
+    <Compile Include="Popups\SimplePopupView.xaml.cs">
+      <DependentUpon>SimplePopupView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

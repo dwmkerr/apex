@@ -47,6 +47,24 @@ namespace Apex.Controls
             set { SetValue(BrokerHintProperty, value); }
         }
 
+        
+        /// <summary>
+        /// The DependencyProperty for the AllowUnknownViewModels property.
+        /// </summary>
+        public static readonly DependencyProperty AllowUnknownViewModelsProperty =
+          DependencyProperty.Register("AllowUnknownViewModels", typeof(bool), typeof(ViewBroker),
+          new PropertyMetadata(default(bool)));
+
+        /// <summary>
+        /// Gets or sets AllowUnknownViewModels.
+        /// </summary>
+        /// <value>The value of AllowUnknownViewModels.</value>
+        public bool AllowUnknownViewModels
+        {
+            get { return (bool)GetValue(AllowUnknownViewModelsProperty); }
+            set { SetValue(AllowUnknownViewModelsProperty, value); }
+        }
+
         /// <summary>   
         /// The DependencyProperty for the ViewModel property.
         /// </summary>
@@ -111,8 +129,10 @@ namespace Apex.Controls
             //  Get the type of the view, given the broker hint.
             var viewType = ApexBroker.GetViewForViewModel(viewModel.GetType(), BrokerHint);
 
-            //  If we don't have a type, we must throw an exception.
-            if (viewType == null)
+            //  If we don't have a type, we must throw an exception, unless we allow this.
+            if (viewType == null && AllowUnknownViewModels)
+                return null;
+            else if(viewType == null)
                 throw new InvalidOperationException("Cannot broker a view for the view model type " + viewModel.GetType().Name);
 
             //  We have the view type, now we must create an instance of it.
