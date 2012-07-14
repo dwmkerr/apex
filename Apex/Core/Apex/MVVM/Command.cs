@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using System;
+
 namespace Apex.MVVM
 {
     /// <summary>
@@ -12,7 +13,7 @@ namespace Apex.MVVM
         /// </summary>
         /// <param name="action">The action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-      public Command(Action action, bool canExecute = true)
+        public Command(Action action, bool canExecute = true)
         {
             //  Set the action.
             this.action = action;
@@ -24,11 +25,20 @@ namespace Apex.MVVM
         /// </summary>
         /// <param name="parameterizedAction">The parameterized action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-      public Command(Action<object> parameterizedAction, bool canExecute = true)
+        public Command(Action<object> parameterizedAction, bool canExecute = true)
         {
             //  Set the action.
             this.parameterizedAction = parameterizedAction;
             this.canExecute = canExecute;
+        }
+
+        /// <summary>
+        /// Does the execute.
+        /// </summary>
+        public virtual void DoExecute()
+        {
+            //  Call the main command function.
+            DoExecute(null);
         }
 
         /// <summary>
@@ -38,7 +48,7 @@ namespace Apex.MVVM
         public virtual void DoExecute(object param)
         {
             //  Invoke the executing command, allowing the command to be cancelled.
-            CancelCommandEventArgs args = new CancelCommandEventArgs() { Parameter = param, Cancel = false };
+            CancelCommandEventArgs args = new CancelCommandEventArgs() {Parameter = param, Cancel = false};
             InvokeExecuting(args);
 
             //  If the event has been cancelled, bail now.
@@ -50,14 +60,14 @@ namespace Apex.MVVM
             InvokeAction(param);
 
             //  Call the executed function.
-            InvokeExecuted(new CommandEventArgs() { Parameter = param });
+            InvokeExecuted(new CommandEventArgs() {Parameter = param});
         }
 
         protected void InvokeAction(object param)
         {
             Action theAction = action;
             Action<object> theParameterizedAction = parameterizedAction;
-             if (theAction != null)
+            if (theAction != null)
                 theAction();
             else if (theParameterizedAction != null)
                 theParameterizedAction(param);
@@ -86,6 +96,7 @@ namespace Apex.MVVM
         /// The action (or parameterized action) that will be called when the command is invoked.
         /// </summary>
         protected Action action = null;
+
         protected Action<object> parameterizedAction = null;
 
         /// <summary>
