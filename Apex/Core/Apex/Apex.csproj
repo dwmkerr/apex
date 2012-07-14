@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Adorners\UIElementAdorner.cs" />
     <Compile Include="Adorners\VisualAdorner.cs" />
+    <Compile Include="Behaviours\SmoothScrollingBehaviour.cs" />
     <Compile Include="Behaviours\GridViewContextMenuBehaviour.cs" />
     <Compile Include="Behaviours\SlideFadeInBehaviour.cs" />
     <Compile Include="Commands\CommandReference.cs" />
