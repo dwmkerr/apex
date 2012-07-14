@@ -63,6 +63,10 @@
       <DependentUpon>ApexGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ApexGrid\ApexGridViewModel.cs" />
+    <Compile Include="Controls\MultiBorder\MultiBorderBoxView.xaml.cs">
+      <DependentUpon>MultiBorderBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MultiBorder\MutliBorderViewModel.cs" />
     <Compile Include="Controls\CrossButton\CrossButton.xaml.cs">
       <DependentUpon>CrossButton.xaml</DependentUpon>
     </Compile>
@@ -78,6 +82,10 @@
     <Compile Include="Controls\PaddedGrid\PaddedGridViewModel.cs" />
     <Compile Include="Controls\SearchTextBox\SearchTextBoxViewModel.cs" />
     <Page Include="Controls\ApexGrid\ApexGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MultiBorder\MultiBorderBoxView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
