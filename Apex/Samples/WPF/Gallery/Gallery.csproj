@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PivotControl\PivotControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SearchTextBox\SearchTextBoxView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +85,10 @@
     </Compile>
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PivotControl\PivotControlViewModel.cs" />
+    <Compile Include="PivotControl\PivotControlView.xaml.cs">
+      <DependentUpon>PivotControlView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchTextBox\SearchTextBoxView.xaml.cs">
       <DependentUpon>SearchTextBoxView.xaml</DependentUpon>
@@ -123,6 +131,7 @@
       <Name>Apex</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
