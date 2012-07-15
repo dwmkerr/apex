@@ -21,18 +21,43 @@ namespace Apex.Behaviours
         /// </summary>
         protected override void OnAttached()
         {
+            //  Call the base.
             base.OnAttached();
+
+            //  Wire up the context menu.
+            WireUpContextMenu();
         }
 
-        private void WireContextMenu()
+        /// <summary>
+        /// Called when the behavior is being detached from its AssociatedObject, but before it has actually occurred.
+        /// </summary>
+        protected override void OnDetaching()
         {
+            //  Unwire the context menu.
+            UnWireContextMenu();
 
-            //  Get the associated list view.
-            var listView = AssociatedObject as ListView;
+            //  Call the base.
+            base.OnDetaching();
+        }
 
+        /// <summary>
+        /// Wires up the context menu.
+        /// </summary>
+        private void WireUpContextMenu()
+        {
             //  If we have the listview, wait for the right mouse click.
-            if (listView != null)
-                listView.MouseRightButtonUp += listView_MouseRightButtonUp;
+            if (AssociatedObject != null)
+                AssociatedObject.MouseRightButtonUp += listView_MouseRightButtonUp;
+        }
+
+        /// <summary>
+        /// Unwires context menu.
+        /// </summary>
+        private void UnWireContextMenu()
+        {
+            //  If we have the listview, remove the event handler.
+            if (AssociatedObject != null)
+                AssociatedObject.MouseRightButtonUp -= listView_MouseRightButtonUp;
         }
 
         
@@ -60,12 +85,21 @@ namespace Apex.Behaviours
         /// <param name="args">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void OnContextMenuChanged(DependencyObject o, DependencyPropertyChangedEventArgs args)
         {
+            //  Get the behaviour.
             var me = o as ListViewItemContextMenuBehaviour;
-            me.WireContextMenu();
+
+            //  Wire up the context menu.
+            me.WireUpContextMenu();
         }
 
+        /// <summary>
+        /// Handles the MouseRightButtonUp event of the listView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         private void listView_MouseRightButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            //  Make sure we have a dependency object.
             var originalDependencyObject = e.OriginalSource as DependencyObject;
             if (originalDependencyObject == null)
                 return;

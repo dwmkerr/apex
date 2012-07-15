@@ -13,6 +13,7 @@ using Gallery.CueTextBox;
 using Gallery.PivotControl;
 using Gallery.Popups;
 using Gallery.SearchTextBox;
+using Gallery.Behaviours.ListViewItemContextMenuBehaviour;
 
 namespace Gallery
 {
@@ -36,6 +37,8 @@ namespace Gallery
             GalleryItems.Add(popupItems);
 
             var behaviourItems = new GalleryItemViewModel() {Title = "Behaviours"};
+            behaviourItems.GalleryItems.Add(new ListViewItemContextMenuBehaviourViewModel());
+            GalleryItems.Add(behaviourItems);
         }
 
         /// <summary>

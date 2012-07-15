@@ -42,6 +42,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,6 +60,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Behaviours\ListViewItemContextMenuBehaviour\ListViewItemContextMenuBehaviourView.xaml.cs">
+      <DependentUpon>ListViewItemContextMenuBehaviourView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviours\ListViewItemContextMenuBehaviour\ListViewItemContextMenuBehaviourViewModel.cs" />
+    <Compile Include="Behaviours\ListViewItemContextMenuBehaviour\PersonViewModel.cs" />
     <Compile Include="Controls\ApexGrid\ApexGrid.xaml.cs">
       <DependentUpon>ApexGrid.xaml</DependentUpon>
     </Compile>
@@ -81,6 +87,10 @@
     </Compile>
     <Compile Include="Controls\PaddedGrid\PaddedGridViewModel.cs" />
     <Compile Include="Controls\SearchTextBox\SearchTextBoxViewModel.cs" />
+    <Page Include="Behaviours\ListViewItemContextMenuBehaviour\ListViewItemContextMenuBehaviourView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\ApexGrid\ApexGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
