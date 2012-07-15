@@ -35,6 +35,7 @@
                                 Visibility="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, 
                                 Converter={StaticResource StringNullOrEmptyToVisibilityConverter}, ConverterParameter=Invert}"
                                    Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                Cursor="IBeam"
                      Padding="2,0,0,0"
                      FontStyle="Italic" />
                         </Grid>
