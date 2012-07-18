@@ -8,6 +8,7 @@
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/DragAndDropHost.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/ImageButton.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/MultiBorder.xaml" />
+        <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/PathTextBox.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/PivotControl.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/SearchTextBox.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/Shell.xaml" />
