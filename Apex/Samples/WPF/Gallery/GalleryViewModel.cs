@@ -10,6 +10,7 @@ using Gallery.Controls.EnumComboBox;
 using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
 using Gallery.CueTextBox;
+using Gallery.PathTextBox;
 using Gallery.PivotControl;
 using Gallery.Popups;
 using Gallery.SearchTextBox;
@@ -28,6 +29,7 @@ namespace Gallery
             controlItems.GalleryItems.Add(new EnumComboBoxViewModel());
             controlItems.GalleryItems.Add(new MultiBorderViewModel());
             controlItems.GalleryItems.Add(new PaddedGridViewModel());
+            controlItems.GalleryItems.Add(new PathTextBoxViewModel());
             controlItems.GalleryItems.Add(new PivotControlViewModel());
             controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
             GalleryItems.Add(controlItems);
