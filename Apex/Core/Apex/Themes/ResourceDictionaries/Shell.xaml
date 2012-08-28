@@ -11,12 +11,12 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <dragAndDrop:DragAndDropHost x:Name="PART_DragAndDropHost">
+                     <!--   <dragAndDrop:DragAndDropHost x:Name="PART_DragAndDropHost"> -->
                             <Grid x:Name="PART_ApplicationHost">
                                 <ContentPresenter />
                                 <Grid x:Name="PART_PopupHost" Visibility="Visible" />
                             </Grid>
-                        </dragAndDrop:DragAndDropHost>
+                       <!-- </dragAndDrop:DragAndDropHost> -->
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

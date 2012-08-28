@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using Apex.MVVM;
 using Gallery.Controls.ApexGrid;
-using Gallery.Controls.CrossButton;
-using Gallery.Controls.EnumComboBox;
-using Gallery.Controls.MultiBorder;
+//using Gallery.Controls.CrossButton;
+//using Gallery.Controls.EnumComboBox;
+//using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
 using Gallery.CueTextBox;
-using Gallery.PathTextBox;
-using Gallery.PivotControl;
-using Gallery.Popups;
-using Gallery.SearchTextBox;
-using Gallery.Behaviours.ListViewItemContextMenuBehaviour;
-using Gallery.DragAndDrop.CanvasSample;
-using Gallery.DragAndDrop.ItemsControlSample;
+//using Gallery.PathTextBox;
+//using Gallery.PivotControl;
+//using Gallery.Popups;
+//using Gallery.SearchTextBox;
+//using Gallery.Behaviours.ListViewItemContextMenuBehaviour;
+//using Gallery.DragAndDrop.CanvasSample;
+//using Gallery.DragAndDrop.ItemsControlSample;
 
 namespace Gallery
 {
@@ -27,27 +27,27 @@ namespace Gallery
             var controlItems = new GalleryItemViewModel() {Title = "Controls"};
             controlItems.GalleryItems.Add(new ApexGridViewModel());
             controlItems.GalleryItems.Add(new CueTextBoxViewModel());
-            controlItems.GalleryItems.Add(new CrossButtonViewModel());
-            controlItems.GalleryItems.Add(new EnumComboBoxViewModel());
-            controlItems.GalleryItems.Add(new MultiBorderViewModel());
+            //controlItems.GalleryItems.Add(new CrossButtonViewModel());
+            //controlItems.GalleryItems.Add(new EnumComboBoxViewModel());
+            //controlItems.GalleryItems.Add(new MultiBorderViewModel());
             controlItems.GalleryItems.Add(new PaddedGridViewModel());
-            controlItems.GalleryItems.Add(new PathTextBoxViewModel());
-            controlItems.GalleryItems.Add(new PivotControlViewModel());
-            controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
+            //controlItems.GalleryItems.Add(new PathTextBoxViewModel());
+            //controlItems.GalleryItems.Add(new PivotControlViewModel());
+            //controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
             GalleryItems.Add(controlItems);
 
-            var popupItems = new GalleryItemViewModel() { Title = "Popups" };
-            popupItems.GalleryItems.Add(new PopupsViewModel());
-            GalleryItems.Add(popupItems);
+            //var popupItems = new GalleryItemViewModel() {Title = "Popups"};
+            //popupItems.GalleryItems.Add(new PopupsViewModel());
+            //GalleryItems.Add(popupItems);
 
-            var behaviourItems = new GalleryItemViewModel() { Title = "Behaviours" };
-            behaviourItems.GalleryItems.Add(new ListViewItemContextMenuBehaviourViewModel());
-            GalleryItems.Add(behaviourItems);
+            //var behaviourItems = new GalleryItemViewModel() {Title = "Behaviours"};
+            //behaviourItems.GalleryItems.Add(new ListViewItemContextMenuBehaviourViewModel());
+            //GalleryItems.Add(behaviourItems);
 
-            var dragAndDropItems = new GalleryItemViewModel() { Title = "Drag and Drop" };
-            dragAndDropItems.GalleryItems.Add(new CanvasSampleViewModel());
-            dragAndDropItems.GalleryItems.Add(new ItemsControlSampleViewModel());
-            GalleryItems.Add(dragAndDropItems);
+            //var dragAndDropItems = new GalleryItemViewModel() { Title = "Drag and Drop" };
+            //dragAndDropItems.GalleryItems.Add(new CanvasSampleViewModel());
+            //dragAndDropItems.GalleryItems.Add(new ItemsControlSampleViewModel());
+            //GalleryItems.Add(dragAndDropItems);
         }
 
         /// <summary>
