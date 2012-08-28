@@ -36,6 +36,11 @@ namespace Apex.Shells
         /// </summary>
         void DoClose();
 
+        /// <summary>
+        /// Gets the drag and drop host.
+        /// </summary>
+        DragAndDrop.DragAndDropHost DragAndDropHost { get; }
+
 #endif
 
         /// <summary>

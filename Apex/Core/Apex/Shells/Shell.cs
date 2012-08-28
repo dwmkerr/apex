@@ -56,7 +56,7 @@ namespace Apex.Shells
             try
             {
                 applicationHost = (Grid)GetTemplateChild("PART_ApplicationHost");
-                dragAndDropHost = (DragAndDropHost)GetTemplateChild("PART_DragAndDropHost");
+               // dragAndDropHost = (DragAndDropHost)GetTemplateChild("PART_DragAndDropHost");
                 popupHost = (Grid)GetTemplateChild("PART_PopupHost");
             }
             catch
@@ -114,6 +114,14 @@ namespace Apex.Shells
             if (parentWindow == null)
                 throw new InvalidOperationException("Cannot close shell - parent window cannot be found.");
             parentWindow.Close();
+        }
+
+        /// <summary>
+        /// Gets the drag and drop host.
+        /// </summary>
+        public DragAndDrop.DragAndDropHost DragAndDropHost 
+        {
+            get { return dragAndDropHost; }
         }
 
 #endif

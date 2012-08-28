@@ -136,6 +136,9 @@
     <Compile Include="..\apex\controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Controls\CueTextBox.cs">
+      <Link>Controls\CueTextBox.cs</Link>
+    </Compile>
     <Compile Include="..\apex\controls\EnumerationComboBox.cs">
       <Link>Controls\EnumerationComboBox.cs</Link>
     </Compile>
@@ -260,6 +263,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\ResourceDictionaries\CueTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\ResourceDictionaries\DragAndDropHost.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

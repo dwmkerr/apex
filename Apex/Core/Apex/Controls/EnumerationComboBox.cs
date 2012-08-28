@@ -134,8 +134,13 @@ namespace Apex.Controls
 
     /// <summary>
     /// A name-value pair.
+    /// If we're in Silverlight, we must make this class public so that it can be reflected properly.
     /// </summary>
+#if SILVERLIGHT
+    public class NameValue
+#else
     internal class NameValue
+#endif
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NameValue"/> class.

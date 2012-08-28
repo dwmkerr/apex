@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
              xmlns:local="clr-namespace:Gallery"
-             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex.Silverlight"
             xmlns:cueTextBox="clr-namespace:Gallery.CueTextBox"
-            xmlns:searchTextBox="clr-namespace:Gallery.SearchTextBox"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     
@@ -17,23 +17,25 @@
     <apexControls:ApexGrid Columns="200,Auto,*">
         
         <!-- The main tree view of samples. -->
-        <TreeView 
+        <sdk:TreeView 
             ItemsSource="{Binding GalleryItems}" SelectedItemChanged="TreeView_SelectedItemChanged"
             Margin="4">
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding GalleryItems}">
+            <sdk:TreeView.ItemTemplate>
+                <sdk:HierarchicalDataTemplate ItemsSource="{Binding GalleryItems}">
                     <TextBlock Text="{Binding Title}" />
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
+                </sdk:HierarchicalDataTemplate>
+            </sdk:TreeView.ItemTemplate>
+        </sdk:TreeView>
         
         <!-- The splitter. -->
-        <GridSplitter 
-            Grid.Column="1" Width="5" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" />
+        <sdk:GridSplitter 
+            Grid.Column="1" Width="5"  Grid.RowSpan="2"
+            HorizontalAlignment="Left" VerticalAlignment="Stretch" />
         
         <!-- The view broker. -->        
         <apexControls:ViewBroker 
             Grid.Column="2" ViewModel="{Binding SelectedGalleryItem}" AllowUnknownViewModels="True" 
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
             Margin="4" />
         
     </apexControls:ApexGrid>

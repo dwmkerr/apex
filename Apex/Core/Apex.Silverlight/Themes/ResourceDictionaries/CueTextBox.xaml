@@ -12,19 +12,19 @@
         <GradientStop Color="#E3E9EF" Offset="1"/>
     </LinearGradientBrush>
 
-    <Style x:Key="{x:Type controls:CueTextBox}" TargetType="{x:Type controls:CueTextBox}">
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+    <Style TargetType="controls:CueTextBox">
+      <!--  <Setter Property="Background" Value="{StaticResource {SystemColors.WindowBrushKey}}" /> -->
         <Setter Property="BorderBrush" Value="{StaticResource CueTextBoxBorder}" />
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <!--     <Setter Property="Foreground" Value="{StaticResource {SystemColors.ControlTextBrushKey}}" /> -->
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="1"/>
         <Setter Property="AllowDrop" Value="true"/>
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+       <!-- <Setter Property="FocusVisualStyle" Value="{x:Null}"/> -->
+       <!-- <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/> -->
+       <!-- <Setter Property="Stylus.IsFlicksEnabled" Value="False"/> -->
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CueTextBox}">
+                <ControlTemplate TargetType="controls:CueTextBox">
                     <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
                   BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid x:Name="LayoutGrid">
@@ -34,7 +34,7 @@
                                 Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CueText}"
                                 Visibility="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, 
                                 Converter={StaticResource StringNullOrEmptyToVisibilityConverter}, ConverterParameter=Invert}"
-                                   Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                   Foreground="#999999"
                      Padding="2,0,0,0"
                      FontStyle="Italic" />
                         </Grid>

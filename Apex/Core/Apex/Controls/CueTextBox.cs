@@ -29,18 +29,40 @@ namespace Apex.Controls
     /// label in the text box area that instructs the user on what they should enter in the text box.
     /// The cue can be set via the CueText property.
     /// </summary>
-    [TemplatePart(Name = "PART_CueLabel", Type = typeof(Label))]
+    [TemplatePart(Name = "PART_CueLabel", Type = typeof(TextBlock))]
     public class CueTextBox : TextBox
     {
         /// <summary>
         /// Initializes the <see cref="CueTextBox"/> class.
         /// </summary>
+#if !SILVERLIGHT
         static CueTextBox()
         {
             //  Override the default style. 
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CueTextBox), new FrameworkPropertyMetadata(typeof(CueTextBox)));
         }
+#else
+        public CueTextBox()
+        {
+            //  Override the default style.
+            DefaultStyleKey = typeof(CueTextBox);
 
+            //  Handle the text changed event.
+            TextChanged += new TextChangedEventHandler(CueTextBox_TextChanged);
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event of the CueTextBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        void CueTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //  Update the cue visibilty.
+            UpdateCueVisiblity();
+        }
+
+#endif
         /// <summary>
         /// Raises the <see cref="E:System.Windows.UIElement.LostFocus"/> event (using the provided arguments).
         /// </summary>
@@ -78,7 +100,7 @@ namespace Apex.Controls
             try
             {
                 //  Get the cue labe.
-                cueLabel = (Label)GetTemplateChild("PART_CueLabel");
+                cueLabel = (TextBlock)GetTemplateChild("PART_CueLabel");
             }
             catch
             {
@@ -86,6 +108,8 @@ namespace Apex.Controls
             }
 
         }
+
+#if !SILVERLIGHT
 
         /// <summary>
         /// Is called when content in this editing control changes.
@@ -99,6 +123,8 @@ namespace Apex.Controls
             UpdateCueVisiblity();
         }
 
+#endif
+
         /// <summary>
         /// Updates the cue visiblity.
         /// </summary>
@@ -108,10 +134,10 @@ namespace Apex.Controls
             switch(CueDisplayMode)
             {
                 case CueDisplayMode.HideWhenHasTextOrFocus:
-                    cueLabel.Visibility = IsFocused || !string.IsNullOrEmpty(Text) ? Visibility.Hidden : Visibility.Visible;
+                    cueLabel.Visibility = /*IsFocused || */!string.IsNullOrEmpty(Text) ? Visibility.Collapsed : Visibility.Visible;
                     break;
                 case CueDisplayMode.HideWhenHasText:
-                    cueLabel.Visibility = string.IsNullOrEmpty(Text) ? Visibility.Visible : Visibility.Hidden;
+                    cueLabel.Visibility = string.IsNullOrEmpty(Text) ? Visibility.Visible : Visibility.Collapsed;
                     break;
             }
         }
@@ -119,7 +145,7 @@ namespace Apex.Controls
         /// <summary>
         /// The cue label.
         /// </summary>
-        private Label cueLabel;
+        private TextBlock cueLabel;
         
         /// <summary>
         /// The DependencyProperty for the CueText property.
