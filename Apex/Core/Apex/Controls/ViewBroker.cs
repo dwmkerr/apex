@@ -93,7 +93,10 @@ namespace Apex.Controls
             
             //  If the viewmodel is null, show the default content.
             if (me.ViewModel == null)
+            {
+                me.ActivateView(null);
                 return;
+            }
 
             //  Get the appropriate view and activate it.
             var view = me.GetViewForViewModel(me.ViewModel);

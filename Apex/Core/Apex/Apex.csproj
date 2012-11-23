@@ -108,6 +108,7 @@
     <Compile Include="Controls\VariableGrid.cs" />
     <Compile Include="Controls\ViewBroker.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumIsToVisibilityConverter.cs" />
     <Compile Include="Converters\DateTimeToSensibleStringConverter.cs" />
     <Compile Include="Converters\DivideByTwoConverter.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />

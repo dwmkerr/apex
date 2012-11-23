@@ -87,8 +87,22 @@ namespace MVVMSample.CommandingSample
                   }
               });
 
+            //  Create the disable during execution command.
+            DisabledDuringExecutionAsyncCommand = new AsynchronousCommand(
+                () =>
+                {
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        //  Report progress.
+                        DisabledDuringExecutionAsyncCommand.ReportProgress(() => { Messages.Add(i.ToString()); });
+
+                        System.Threading.Thread.Sleep(200);
+                    }
+                });
+            DisabledDuringExecutionAsyncCommand.DisableDuringExecution = true;
+
             //  Create the event binding command.
-            EventBindingCommand = new Command(DoEventBindingCommand, true);
+            EventBindingCommand = new Command(DoEventBindingCommand);
         }
 
         private void DoSimpleCommand()
@@ -154,6 +168,8 @@ namespace MVVMSample.CommandingSample
             get;
             private set;
         }
+
+        public AsynchronousCommand DisabledDuringExecutionAsyncCommand { get; private set; }
 
         public Command EventBindingCommand
         {

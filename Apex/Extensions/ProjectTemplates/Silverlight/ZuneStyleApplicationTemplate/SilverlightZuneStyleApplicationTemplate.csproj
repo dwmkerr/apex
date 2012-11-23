@@ -131,15 +131,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\Close.png" />
-    <None Include="Resources\Images\CloseOver.png" />
-    <None Include="Resources\Images\Maximize.png" />
-    <None Include="Resources\Images\MaximizeOver.png" />
-    <None Include="Resources\Images\Minimize.png" />
-    <None Include="Resources\Images\MinimizeOver.png" />
     <None Include="Resources\Images\ModelAttribute.png" />
-    <None Include="Resources\Images\Restore.png" />
-    <None Include="Resources\Images\RestoreOver.png" />
     <None Include="Resources\Images\ShowPopop.png" />
     <None Include="Resources\Images\UsingTheModel.png" />
     <None Include="Resources\Images\View.png" />
