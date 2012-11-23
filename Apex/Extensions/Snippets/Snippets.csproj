@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include=".vscontent" />
+    <None Include="InsertAsynchronousCommand.snippet" />
     <None Include="InsertRoutedEvent.snippet" />
     <None Include="InsertObservableCollection.snippet">
       <SubType>Designer</SubType>
@@ -51,7 +52,7 @@
     <None Include="InsertApexNotifyingProperty.snippet">
       <SubType>Designer</SubType>
     </None>
-    <None Include="InsertViewModelCommand.snippet" />
+    <None Include="InsertCommand.snippet" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
