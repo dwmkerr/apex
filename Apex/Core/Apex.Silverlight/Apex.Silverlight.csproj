@@ -163,6 +163,9 @@
     <Compile Include="..\apex\converters\DivideByTwoConverter.cs">
       <Link>Converters\DivideByTwoConverter.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Converters\EnumIsToVisibilityConverter.cs">
+      <Link>Converters\EnumIsToVisibilityConverter.cs</Link>
+    </Compile>
     <Compile Include="..\apex\converters\EnumToBooleanConverter.cs">
       <Link>Converters\EnumToBooleanConverter.cs</Link>
     </Compile>
@@ -234,6 +237,9 @@
     </Compile>
     <Compile Include="..\Apex\MVVM\IView.cs">
       <Link>MVVM\IView.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\MVVM\ModelTypedViewModel.cs">
+      <Link>MVVM\ModelTypedViewModel.cs</Link>
     </Compile>
     <Compile Include="..\apex\mvvm\NotifyingProperty.cs">
       <Link>MVVM\NotifyingProperty.cs</Link>

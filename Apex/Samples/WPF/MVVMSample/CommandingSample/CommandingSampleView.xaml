@@ -119,6 +119,11 @@
                         </StackPanel>
 
                         <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Disable During Execution Asynchronous Command." />
+                            <Button Width="160" Content="DDE Asynchronous Command" Command="{Binding DisabledDuringExecutionAsyncCommand}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
                             <TextBlock TextWrapping="Wrap" Text="Binding a command to an event example." />
                             <Border Margin="20" Background="Red">
                                 <apexCommands:EventBindings.EventBindings>

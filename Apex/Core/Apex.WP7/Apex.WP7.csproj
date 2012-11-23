@@ -124,6 +124,9 @@
     <Compile Include="..\Apex\Converters\DivideByTwoConverter.cs">
       <Link>Converters\DivideByTwoConverter.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Converters\EnumIsToVisibilityConverter.cs">
+      <Link>Converters\EnumIsToVisibilityConverter.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Converters\EnumToBooleanConverter.cs">
       <Link>Converters\EnumToBooleanConverter.cs</Link>
     </Compile>
