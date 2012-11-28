@@ -10,6 +10,10 @@ using Gallery.Controls.EnumComboBox;
 using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
 using Gallery.CueTextBox;
+using Gallery.MVVM.CommandingSample;
+using Gallery.MVVM.SimpleSample;
+using Gallery.MVVM.ViewBrokerActivationSample;
+using Gallery.MVVM.ViewBrokerSample;
 using Gallery.PathTextBox;
 using Gallery.PivotControl;
 using Gallery.Popups;
@@ -48,6 +52,13 @@ namespace Gallery
             dragAndDropItems.GalleryItems.Add(new CanvasSampleViewModel());
             dragAndDropItems.GalleryItems.Add(new ItemsControlSampleViewModel());
             GalleryItems.Add(dragAndDropItems);
+
+            var mvvmItems = new GalleryItemViewModel() {Title = "MVVM"};
+            mvvmItems.GalleryItems.Add(new SimpleExampleViewModel());
+            mvvmItems.GalleryItems.Add(new CommandingSampleViewModel());
+            mvvmItems.GalleryItems.Add(new ViewBrokerSampleViewModel());
+            mvvmItems.GalleryItems.Add(new ViewBrokerActivationSampleViewModel());
+            GalleryItems.Add(mvvmItems);
         }
 
         /// <summary>

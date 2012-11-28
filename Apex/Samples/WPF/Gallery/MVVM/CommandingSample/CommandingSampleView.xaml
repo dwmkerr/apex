@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="Gallery.MVVM.CommandingSample.CommandingSampleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:apexMVVM="clr-namespace:Apex.MVVM;assembly=Apex"
+        xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
+        xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+        xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex"
+             xmlns:CommandingSample="clr-namespace:Gallery.MVVM.CommandingSample" mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+    
+    <!-- The View creates its own ViewModel, so set the ViewModel 
+    to a new instance of the ViewModel class. -->
+    <apexMVVM:View.ViewModel>
+        <CommandingSample:CommandingSampleViewModel x:Name="viewModel" />
+    </apexMVVM:View.ViewModel>
+    
+    <!-- The main grid. Holds the description and the sample. -->
+    <apexControls:ApexGrid Columns="300,Auto,*" Rows="Auto,*">
+            
+        <!-- The description. -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Description" FontSize="20" FontWeight="Light" />
+        <FlowDocumentScrollViewer Grid.Row="1" Grid.Column="0">
+            <FlowDocument FontSize="12" FontFamily="Segoe UI">
+                <Paragraph>This sample demonstrates the different ways that you can use Command objects and Asynchronous Command objects.</Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+
+        <!-- Splitter. -->
+        <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" Width="5" />
+        
+        <!-- The sample. -->
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Sample" FontSize="20" FontWeight="Light" />
+        
+        <!-- The data entry grid. -->
+        <apexControls:ApexGrid Grid.Row="1" Grid.Column="2" Columns="*,*">
+
+            <!-- Left hand column, the messages. -->
+            <apexControls:ApexGrid Grid.Column="1" Margin="4" Rows="Auto,*">
+
+                <TextBlock Grid.Row="0" Text="Output" FontSize="24" />
+                <ScrollViewer Grid.Row="1">
+                    <ItemsControl ItemsSource="{Binding Messages}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+            </apexControls:ApexGrid>
+
+            <!-- Right hand column, the commands. -->
+            <apexControls:ApexGrid Margin="4" Rows="Auto,*">
+                
+                <apexControls:ApexGrid.Resources>
+                        <apexConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                </apexControls:ApexGrid.Resources>
+
+                <TextBlock Grid.Row="0" Text="Command Examples" FontSize="24"  />
+
+                <ScrollViewer Grid.Row="1" >
+
+                    <StackPanel Orientation="Vertical">
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="A simple command example." />
+                            <Button Width="160" Content="Simple Command" Command="{Binding SimpleCommand}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="A lamba command example." />
+                            <Button Width="160" Content="Lambda Command" Command="{Binding LambdaCommand}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="A parameterised command example." />
+                            <Button Width="160" Content="Parameterised Command" Command="{Binding ParameterisedCommand}" CommandParameter="Apples" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Enabling and disabling a command example." />
+                            <CheckBox IsChecked="{Binding EnableDisableCommand.CanExecute, Mode=TwoWay}" Content="Enabled" />
+                            <Button Width="160" Content="Enable/Disable Command" Command="{Binding EnableDisableCommand}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="A command with events." />
+                            <Button Width="160" Content="Events Command" Command="{Binding EventsCommand}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="An asynchronous command." />
+                            <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand1}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Another asynchronous command." />
+                            <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand2}" 
+                                Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
+                            <StackPanel Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <TextBlock Margin="4" Text="The command is running!" />
+                                <ProgressBar Margin="4" Height="20" Width="120" IsIndeterminate="True" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Cancellable Asynchronous Command." />
+                            <Button Width="160" Content="Cancellable Async Command" Command="{Binding CancellableAsyncCommand}" 
+                                Visibility="{Binding CancellableAsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
+                            <StackPanel Visibility="{Binding CancellableAsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <TextBlock Margin="4" Text="The command is running!" />
+                                <ProgressBar Margin="4" Height="20" Width="120" IsIndeterminate="True" />
+                                <Button Margin="4" Width="100" Content="Cancel" Command="{Binding CancellableAsyncCommand.CancelCommand}" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Disable During Execution Asynchronous Command." />
+                            <Button Width="160" Content="DDE Asynchronous Command" Command="{Binding DisabledDuringExecutionAsyncCommand}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Binding a command to an event example." />
+                            <Border Margin="20" Background="Red">
+                                <apexCommands:EventBindings.EventBindings>
+                                    <apexCommands:EventBindingCollection>
+                                        <apexCommands:EventBinding EventName="MouseLeftButtonDown" Command="{Binding EventBindingCommand}" />
+                                    </apexCommands:EventBindingCollection>
+                                </apexCommands:EventBindings.EventBindings>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Left Click on Me" FontSize="16" Foreground="White" />
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+
+            </apexControls:ApexGrid>
+
+        </apexControls:ApexGrid>
+
+    </apexControls:ApexGrid>
+</UserControl>
