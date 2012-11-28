@@ -82,15 +82,7 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="seguisb.ttf">seguisb.ttf</ProjectItem>
         </Folder>
         <Folder Name="Images" TargetFolderName="Images">
-          <ProjectItem ReplaceParameters="false" TargetFileName="Close.png">Close.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="CloseOver.png">CloseOver.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="Maximize.png">Maximize.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="MaximizeOver.png">MaximizeOver.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="Minimize.png">Minimize.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="MinimizeOver.png">MinimizeOver.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="ModelAttribute.png">ModelAttribute.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="Restore.png">Restore.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="RestoreOver.png">RestoreOver.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="ShowPopop.png">ShowPopop.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="UsingTheModel.png">UsingTheModel.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="View.png">View.png</ProjectItem>
