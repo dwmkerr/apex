@@ -16,5 +16,13 @@ namespace $rootnamespace$
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Gets the ViewModel.
+        /// </summary>
+        public $ViewModelType$ ViewModel
+        {
+            get { return ($ViewModelType$) DataContext; }
+        }
     }
 }
