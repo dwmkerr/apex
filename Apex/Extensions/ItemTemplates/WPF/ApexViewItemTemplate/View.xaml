@@ -14,9 +14,9 @@
     $if$ ($ViewCreatesViewModel$ == 1)
     <!-- The View creates its own ViewModel, so set the ViewModel 
     to a new instance of the ViewModel class. -->
-    <apexMVVM:View.ViewModel>
+    <UserControl.DataContext>
         <local:$ViewModelType$ x:Name="viewModel" />
-    </apexMVVM:View.ViewModel>
+    </UserControl.DataContext>
     $endif$        
     <Grid>
     </Grid>
