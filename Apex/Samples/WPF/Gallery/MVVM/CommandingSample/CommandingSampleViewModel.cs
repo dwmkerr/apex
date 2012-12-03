@@ -102,6 +102,10 @@ namespace Gallery.MVVM.CommandingSample
 
             //  Create the event binding command.
             EventBindingCommand = new Command(DoEventBindingCommand);
+
+            //  Create the typed commands.
+            IntTypedCommand = new Command<int>(DoIntTypedCommand);
+            StringTypedCommand = new Command<string>(DoStringTypedCommand);
         }
 
         private void DoSimpleCommand()
@@ -118,6 +122,24 @@ namespace Gallery.MVVM.CommandingSample
         private void DoEventBindingCommand()
         {
             Messages.Add("Called a command via an event.");
+        }
+
+        /// <summary>
+        /// Does the int typed command.
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        private void DoIntTypedCommand(int parameter)
+        {
+            Messages.Add("Received an int parameter: " + parameter);
+        }
+
+        /// <summary>
+        /// Does the string typed command.
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        private void DoStringTypedCommand(string parameter)
+        {
+            Messages.Add("Received a string parameter: " + parameter);
         }
         
         public Command SimpleCommand
@@ -176,8 +198,24 @@ namespace Gallery.MVVM.CommandingSample
             private set;
         }
 
-        private ObservableCollection<string> messages = new ObservableCollection<string>();
+        /// <summary>
+        /// Gets the int typed command.
+        /// </summary>
+        public Command<int> IntTypedCommand { get; private set; }
 
+        /// <summary>
+        /// Gets the string typed command.
+        /// </summary>
+        public Command<string> StringTypedCommand { get; private set; }
+
+        /// <summary>
+        /// The messages observable collection.
+        /// </summary>
+        private readonly ObservableCollection<string> messages = new ObservableCollection<string>();
+
+        /// <summary>
+        /// Gets the messages.
+        /// </summary>
         public ObservableCollection<string> Messages
         {
             get { return messages; }
