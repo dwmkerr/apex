@@ -16,7 +16,8 @@
         <!-- Second section, the cue text box. -->
         <apexControls:CueTextBox 
             x:Name="cueTextBox"
-            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" CueText="Enter Username"></apexControls:CueTextBox>
+            Grid.Row="1" VerticalAlignment="Center"
+            HorizontalAlignment="Center" Width="120" CueText="Enter Username" CueDisplayMode="HideWhenHasText" />
         
         <!-- Third section, cue options.-->
         <StackPanel Grid.Row="2" Orientation="Horizontal">

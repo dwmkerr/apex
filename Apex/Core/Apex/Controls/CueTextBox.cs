@@ -80,10 +80,10 @@ namespace Apex.Controls
         /// Invoked whenever an unhandled <see cref="E:System.Windows.UIElement.GotFocus"/> event reaches this element in its route.
         /// </summary>
         /// <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> that contains the event data.</param>
-        protected override void  OnGotFocus(RoutedEventArgs e)
+        protected override void OnGotFocus(RoutedEventArgs e)
         {
             //  Call the base.
- 	         base.OnGotFocus(e);
+            base.OnGotFocus(e);
 
             //  Update the cue visibilty.
             UpdateCueVisiblity();
@@ -107,6 +107,8 @@ namespace Apex.Controls
                 throw new Exception("Unable to access the internal elements of the CueTextBox.");
             }
 
+            //  Initial visibility.
+            UpdateCueVisiblity();
         }
 
 #if !SILVERLIGHT
@@ -130,11 +132,19 @@ namespace Apex.Controls
         /// </summary>
         private void UpdateCueVisiblity()
         {
+            //  If we don't have the cue label we can skip.
+            if(cueLabel == null)
+                return;
+            
             //  We set the cue visibilty based on the cue display mode.
             switch(CueDisplayMode)
             {
                 case CueDisplayMode.HideWhenHasTextOrFocus:
-                    cueLabel.Visibility = /*IsFocused || */!string.IsNullOrEmpty(Text) ? Visibility.Collapsed : Visibility.Visible;
+#if !SILVERLIGHT
+                    cueLabel.Visibility = (IsFocused || !string.IsNullOrEmpty(Text)) ? Visibility.Collapsed : Visibility.Visible;
+#else              
+                    cueLabel.Visibility = !string.IsNullOrEmpty(Text) ? Visibility.Collapsed : Visibility.Visible;
+#endif
                     break;
                 case CueDisplayMode.HideWhenHasText:
                     cueLabel.Visibility = string.IsNullOrEmpty(Text) ? Visibility.Visible : Visibility.Collapsed;

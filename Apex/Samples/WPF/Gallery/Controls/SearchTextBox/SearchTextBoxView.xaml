@@ -16,7 +16,7 @@
         <!-- Second section, the search text box. -->
         <apexControls:SearchTextBox 
             x:Name="searchTextBox"
-            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" CueText="Search"></apexControls:SearchTextBox>
+            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" CueText="Search" CueDisplayMode="HideWhenHasText" />
         
         <!-- Third section, search options.-->
         <StackPanel Grid.Row="2" Orientation="Horizontal">
