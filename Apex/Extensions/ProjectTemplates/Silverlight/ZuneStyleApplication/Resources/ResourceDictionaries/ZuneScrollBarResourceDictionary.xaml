@@ -15,14 +15,15 @@
 
     <Style TargetType="ScrollBar">
         <Setter Property="Background" Value="{StaticResource ScrollBarLightBrush}"/>
-        <Setter Property="MinWidth" Value="17"/>
-        <Setter Property="MinHeight" Value="17"/>
+        <Setter Property="MinWidth" Value="17" />
+        <Setter Property="MinHeight" Value="17" />
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollBar">
                     <Grid x:Name="Root" Background="Transparent">
                         <Grid.Resources>
+                            
                             <ControlTemplate x:Key="RepeatButtonTemplate" TargetType="RepeatButton">
                                 <Grid x:Name="Root" Background="Transparent">
                                     <VisualStateManager.VisualStateGroups>
@@ -32,40 +33,41 @@
                                     </VisualStateManager.VisualStateGroups>
                                 </Grid>
                             </ControlTemplate>
+                            
                             <ControlTemplate x:Key="VerticalThumbTemplate" TargetType="Thumb">
                                 <Grid>
                                     <VisualStateManager.VisualStateGroups>
                                         <VisualStateGroup x:Name="CommonStates">
                                             <VisualState x:Name="Normal">
                                                 <Storyboard>
-                                                <ColorAnimation
-                                Storyboard.TargetName="thumbBrush"
-                                Storyboard.TargetProperty="Color"
-                                To="{StaticResource ScrollBarMediumColor}"
-                                Duration="0:0:0.2" />
-                                                <DoubleAnimation
-                                Storyboard.TargetName="ThumbVisual"
-                                Storyboard.TargetProperty="Width"
-                                To="3"
-                                Duration="0:0:0.2">
-                                                    <DoubleAnimation.EasingFunction>
-                                                        <CubicEase EasingMode="EaseOut" />
-                                                    </DoubleAnimation.EasingFunction>
-                                                </DoubleAnimation>
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="thumbBrush"
+                                                        Storyboard.TargetProperty="Color"
+                                                        To="{StaticResource ScrollBarMediumColor}"
+                                                        Duration="0:0:0.2" />
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="ThumbVisual"
+                                                        Storyboard.TargetProperty="Width"
+                                                        To="3"
+                                                        Duration="0:0:0.2">
+                                                        <DoubleAnimation.EasingFunction>
+                                                            <CubicEase EasingMode="EaseOut" />
+                                                        </DoubleAnimation.EasingFunction>
+                                                    </DoubleAnimation>
                                                 </Storyboard>
                                             </VisualState>
                                             <VisualState x:Name="MouseOver">
                                                 <Storyboard>
                                                     <ColorAnimation
-                                Storyboard.TargetName="thumbBrush"
-                                Storyboard.TargetProperty="Color"
-                                To="{StaticResource ScrollBarDarkColor}"
-                                Duration="0:0:0.2" />
+                                                        Storyboard.TargetName="thumbBrush"
+                                                        Storyboard.TargetProperty="Color"
+                                                        To="{StaticResource ScrollBarDarkColor}"
+                                                        Duration="0:0:0.2" />
                                                     <DoubleAnimation
-                                Storyboard.TargetName="ThumbVisual"
-                                Storyboard.TargetProperty="Width"
-                                To="30"
-                                Duration="0:0:0.2">
+                                                        Storyboard.TargetName="ThumbVisual"
+                                                        Storyboard.TargetProperty="Width"
+                                                        To="30"
+                                                        Duration="0:0:0.2">
                                                         <DoubleAnimation.EasingFunction>
                                                             <CubicEase EasingMode="EaseOut" />
                                                         </DoubleAnimation.EasingFunction>
@@ -79,14 +81,73 @@
                                             </VisualState>
                                         </VisualStateGroup>
                                     </VisualStateManager.VisualStateGroups>
+                                    
                                     <Border x:Name="ThumbVisual" Width="3" HorizontalAlignment="Center">
                                         <Border.Background>
                                             <SolidColorBrush 
-                                x:Name="thumbBrush" Color="{StaticResource ScrollBarMediumColor}" />
+                                                x:Name="thumbBrush" Color="{StaticResource ScrollBarMediumColor}" />
                                         </Border.Background>
                                     </Border>
                                 </Grid>
                             </ControlTemplate>
+
+                            <ControlTemplate x:Key="HorizontalThumbTemplate" TargetType="Thumb">
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <Storyboard>
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="thumbBrush"
+                                                        Storyboard.TargetProperty="Color"
+                                                        To="{StaticResource ScrollBarMediumColor}"
+                                                        Duration="0:0:0.2" />
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="ThumbVisual"
+                                                        Storyboard.TargetProperty="Height"
+                                                        To="3"
+                                                        Duration="0:0:0.2">
+                                                        <DoubleAnimation.EasingFunction>
+                                                            <CubicEase EasingMode="EaseOut" />
+                                                        </DoubleAnimation.EasingFunction>
+                                                    </DoubleAnimation>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="thumbBrush"
+                                                        Storyboard.TargetProperty="Color"
+                                                        To="{StaticResource ScrollBarDarkColor}"
+                                                        Duration="0:0:0.2" />
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="ThumbVisual"
+                                                        Storyboard.TargetProperty="Height"
+                                                        To="30"
+                                                        Duration="0:0:0.2">
+                                                        <DoubleAnimation.EasingFunction>
+                                                            <CubicEase EasingMode="EaseOut" />
+                                                        </DoubleAnimation.EasingFunction>
+                                                    </DoubleAnimation>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ThumbVisual"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+
+                                    <Border x:Name="ThumbVisual" Height="3" VerticalAlignment="Center">
+                                        <Border.Background>
+                                            <SolidColorBrush 
+                                                x:Name="thumbBrush" Color="{StaticResource ScrollBarMediumColor}" />
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -100,9 +161,7 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
 
-                        <Border
-                            Width="1" HorizontalAlignment="Center"
-                            Background="{TemplateBinding Background}" />
+                        
                         <Grid x:Name="VerticalRoot" Visibility="Collapsed">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -111,12 +170,46 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
+                            
                             <Border
-                            Width="1" HorizontalAlignment="Center"
-                            Background="{TemplateBinding Background}" />
-                            <RepeatButton x:Name="VerticalLargeDecrease" Height="0" IsTabStop="False" Interval="50" Grid.Row="1" Template="{StaticResource RepeatButtonTemplate}"/>
-                                <Thumb x:Name="VerticalThumb" Height="18" MinHeight="18" Grid.Row="2" Template="{StaticResource VerticalThumbTemplate}"/>
-                            <RepeatButton x:Name="VerticalLargeIncrease" IsTabStop="False" Interval="50" Grid.Row="3" Template="{StaticResource RepeatButtonTemplate}"/>
+                                Grid.RowSpan="5"
+                                Width="1" HorizontalAlignment="Center"
+                                Background="{TemplateBinding Background}" />
+                            <RepeatButton 
+                                x:Name="VerticalLargeDecrease" Height="0" IsTabStop="False" Interval="50" 
+                                Grid.Row="1" Template="{StaticResource RepeatButtonTemplate}"/>
+                                <Thumb 
+                                    x:Name="VerticalThumb" Height="18" MinHeight="18" Grid.Row="2" 
+                                     HorizontalAlignment="Center"
+                                    Template="{StaticResource VerticalThumbTemplate}" />
+                           <RepeatButton 
+                                x:Name="VerticalLargeIncrease" IsTabStop="False" Interval="50"
+                                Grid.Row="3" Template="{StaticResource RepeatButtonTemplate}" />
+                        </Grid>
+
+
+                        <Grid x:Name="HorizontalRoot" Visibility="Collapsed">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border
+                                Grid.ColumnSpan="5"
+                                Height="1" VerticalAlignment="Center"
+                                Background="{TemplateBinding Background}" />
+                            <RepeatButton 
+                                x:Name="HorizontalLargeDecrease" Width="0" IsTabStop="False" Interval="50" 
+                                Grid.Column="1" Template="{StaticResource RepeatButtonTemplate}"/>
+                            <Thumb 
+                                x:Name="HorizontalThumb" Width="18" MinWidth="18" Grid.Column="2" 
+                                VerticalAlignment="Center"
+                                Template="{StaticResource HorizontalThumbTemplate}" />
+                            <RepeatButton 
+                                x:Name="HorizontalLargeIncrease" IsTabStop="False" Interval="50"
+                                Grid.Column="3" Template="{StaticResource RepeatButtonTemplate}" />
                         </Grid>
                     </Grid>
                 </ControlTemplate>
