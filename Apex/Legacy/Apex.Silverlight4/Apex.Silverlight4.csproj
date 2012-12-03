@@ -214,8 +214,17 @@
     <Compile Include="..\..\core\apex\mvvm\AsynchronousCommand.cs">
       <Link>MVVM\AsynchronousCommand.cs</Link>
     </Compile>
+    <Compile Include="..\..\Core\Apex\MVVM\CancelCommandEventArgs.cs">
+      <Link>MVVM\CancelCommandEventArgs.cs</Link>
+    </Compile>
     <Compile Include="..\..\core\apex\mvvm\Command.cs">
       <Link>MVVM\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Apex\MVVM\CommandEventArgs.cs">
+      <Link>MVVM\CommandEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Apex\MVVM\Delegates.cs">
+      <Link>MVVM\Delegates.cs</Link>
     </Compile>
     <Compile Include="..\..\core\apex\mvvm\IApplicationHost.cs">
       <Link>MVVM\IApplicationHost.cs</Link>
