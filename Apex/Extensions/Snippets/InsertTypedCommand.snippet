@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+          <Title>Insert Typed Command</Title>
+          <Description>Inserts an Apex Typed Command.</Description>
+          <Author>Dave Kerr</Author>
+          <Shortcut>apextc</Shortcut>
+          <HelpUrl>http://apex.codeplex.com</HelpUrl>
+          <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+          </SnippetTypes>          
+        </Header>
+        <Snippet>
+            <Declarations>
+              <Literal>
+                <ID>CommandName</ID>
+                <ToolTip>Enter the command name</ToolTip>
+                <Default>CommandName</Default>
+              </Literal>
+              <Literal>
+                <ID>ParameterType</ID>
+                <ToolTip>Enter the parameter type</ToolTip>
+                <Default>ParameterType</Default>
+              </Literal>
+            </Declarations>
+            <Code Language="CSharp" Kind="any">
+                <![CDATA[
+                
+                    // TODO: PASTE INTO CONSTRUCTOR OF VIEWMODEL
+                    //  //  Create the $CommandName$ Command.
+                    //  $CommandName$Command = new Command<$ParameterType$>(Do$CommandName$Command);
+                
+                    /// <summary>
+                    /// Performs the $CommandName$ command.
+                    /// </summary>
+                    /// <param name="parameter">The $CommandName$ command parameter.</param>
+                    private void Do$CommandName$Command($ParameterType$ parameter)
+                    {
+                    }
+                
+                    /// <summary>
+                    /// Gets the $CommandName$ command.
+                    /// </summary>
+                    /// <value>The value of $PropertyName$.</value>
+                    public Command<$ParameterType$> $CommandName$Command
+                    {
+                      get;
+                      private set;
+                    }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

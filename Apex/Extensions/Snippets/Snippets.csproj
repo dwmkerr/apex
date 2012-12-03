@@ -42,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include=".vscontent" />
+    <None Include="InsertTypedCommand.snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="InsertAsynchronousCommand.snippet" />
     <None Include="InsertRoutedEvent.snippet" />
     <None Include="InsertObservableCollection.snippet">
