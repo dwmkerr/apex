@@ -139,6 +139,9 @@
     <Compile Include="Interop\User32.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="Attributes\ModelAttribute.cs" />
+    <Compile Include="MVVM\CancelCommandEventArgs.cs" />
+    <Compile Include="MVVM\CommandEventArgs.cs" />
+    <Compile Include="MVVM\Delegates.cs" />
     <Compile Include="MVVM\IView.cs" />
     <Compile Include="MVVM\IModel.cs" />
     <Compile Include="MVVM\ModelTypedViewModel.cs" />
