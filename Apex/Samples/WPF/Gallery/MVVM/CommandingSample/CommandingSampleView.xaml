@@ -7,7 +7,8 @@
         xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
         xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
         xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex"
-             xmlns:CommandingSample="clr-namespace:Gallery.MVVM.CommandingSample" mc:Ignorable="d" 
+             xmlns:CommandingSample="clr-namespace:Gallery.MVVM.CommandingSample"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="500">
     
     <!-- The View creates its own ViewModel, so set the ViewModel 
@@ -132,6 +133,30 @@
                                 </apexCommands:EventBindings.EventBindings>
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Left Click on Me" FontSize="16" Foreground="White" />
                             </Border>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <StackPanel.Resources>
+                                <System:Int32 x:Key="IntValue">3</System:Int32>
+                            </StackPanel.Resources>
+                            <TextBlock TextWrapping="Wrap" Text="Typed Command (int)." />
+                            <Button Width="160" 
+                                    Content="Int Typed Command" Command="{Binding IntTypedCommand}"
+                                    CommandParameter="{StaticResource IntValue}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Typed Command (string)." />
+                            <Button Width="160" 
+                                    Content="String Typed Command" Command="{Binding StringTypedCommand}"
+                                    CommandParameter="Some String Value"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock TextWrapping="Wrap" Text="Invalid Typed Command (expecting int, receiving string)." />
+                            <Button Width="160" 
+                                    Content="String Typed Command" Command="{Binding IntTypedCommand}"
+                                    CommandParameter="Some String Value"/>
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
