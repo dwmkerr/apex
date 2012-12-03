@@ -10,11 +10,25 @@ namespace $rootnamespace$
     /// Interaction logic for $safeitemrootname$.xaml
     /// </summary>
     [View(typeof($ViewModelType$))]
-    public partial class $safeitemrootname$ : UserControl
+    public partial class $safeitemrootname$ : UserControl, IView
     {
         public $safeitemrootname$()
         {
             InitializeComponent();
+        }
+    
+        /// <summary>
+        /// Called when the view is activated.
+        /// </summary>
+        public void OnActivated()
+        {
+        }
+
+        /// <summary>
+        /// Called when the view is deactivated.
+        /// </summary>
+        public void OnDeactivated()
+        {
         }
 
         /// <summary>
