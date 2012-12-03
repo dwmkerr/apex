@@ -79,9 +79,9 @@
                                                   Path=ActualHeight}" />
                             </Grid.ColumnDefinitions>
                             <ScrollViewer Margin="2" x:Name="PART_ContentHost" Grid.Column="0" />
-                            <Label 
-                                x:Name="PART_CueLabel"  Margin="2" Grid.Column="0" 
-                                Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CueText}"
+                            <TextBlock 
+                                x:Name="PART_CueLabel"  Margin="6,2,2,2" Grid.Column="0" Cursor="IBeam"
+                                Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CueText}"
                                 Visibility="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, 
                                 Converter={StaticResource StringNullOrEmptyToVisibilityConverter}, ConverterParameter=Invert}"
                                    Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
@@ -104,64 +104,6 @@
                             </Border>
                         </Grid>
                     </Border>
-
-
-                    <ControlTemplate.Triggers>
-
-                        <!--
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource SearchTextBox_BorderMouseOver}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource SearchTextBox_BorderMouseOver}" />
-                        </Trigger>
-                        <Trigger Property="HasText" Value="True">
-                            <Setter Property="Visibility" TargetName="LabelText" Value="Hidden" />
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="HasText" Value="True" />
-                                <Condition Property="SearchMode" Value="Instant" />
-                            </MultiTrigger.Conditions>
-                            <Setter Property="Source"
-                      TargetName="SearchIcon"
-                      Value="pack://application:,,,/UIControls;component/Images/clear.png" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver"
-                           SourceName="PART_SearchIconBorder"
-                           Value="True" />
-                                <Condition Property="HasText" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush"
-                      TargetName="PART_SearchIconBorder"
-                      Value="{StaticResource SearchTextBox_SearchIconBorder_MouseOver}" />
-                            <Setter Property="Background"
-                      TargetName="PART_SearchIconBorder"
-                      Value="{StaticResource SearchTextBox_SearchIconBackground_MouseOver}" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver" SourceName="PART_SearchIconBorder" Value="True" />
-                                <Condition Property="IsMouseLeftButtonDown" Value="True" />
-                                <Condition Property="HasText" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter Property="Padding"
-                      TargetName="PART_SearchIconBorder"
-                      Value="2,0,0,0" />
-                            <Setter Property="BorderBrush"
-                      TargetName="PART_SearchIconBorder"
-                      Value="{StaticResource SearchTextBox_SearchIconBorder_MouseOver}" />
-                            <Setter Property="Background"
-                      TargetName="PART_SearchIconBorder"
-                      Value="{StaticResource SearchTextBox_SearchIconBackground_MouseOver}" />
-                        </MultiTrigger>
-                        
-                        
-                        -->
-
-                    </ControlTemplate.Triggers>
                 </ControlTemplate>
 
             </Setter.Value>

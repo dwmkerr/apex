@@ -4,14 +4,17 @@
     xmlns:controls="clr-namespace:Apex.Controls"
     xmlns:converters="clr-namespace:Apex.Converters">
 
+    <!-- Standard apex converter. -->
     <converters:StringNullOrEmptyToVisibilityConverter x:Key="StringNullOrEmptyToVisibilityConverter" />
 
+    <!-- Border for the cue text border. -->
     <LinearGradientBrush x:Key="CueTextBoxBorder" EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
         <GradientStop Color="#ABADB3" Offset="0.05"/>
         <GradientStop Color="#E2E3EA" Offset="0.07"/>
         <GradientStop Color="#E3E9EF" Offset="1"/>
     </LinearGradientBrush>
 
+    <!-- Style for the cue text box. -->
     <Style x:Key="{x:Type controls:CueTextBox}" TargetType="{x:Type controls:CueTextBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{StaticResource CueTextBoxBorder}" />
@@ -25,18 +28,18 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:CueTextBox}">
-                    <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
-                  BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border 
+                        x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid x:Name="LayoutGrid">
                             <ScrollViewer Margin="2" x:Name="PART_ContentHost" Grid.Column="0" />
                             <TextBlock 
-                                x:Name="PART_CueLabel"  Margin="2" Grid.Column="0" 
+                                x:Name="PART_CueLabel"  Margin="6,2,2,2" Grid.Column="0" Cursor="IBeam"
                                 Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CueText}"
                                 Visibility="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, 
                                 Converter={StaticResource StringNullOrEmptyToVisibilityConverter}, ConverterParameter=Invert}"
-                                   Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
-                     Padding="2,0,0,0"
-                     FontStyle="Italic" />
+                                Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
+                                Padding="2,0,0,0" FontStyle="Italic" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
