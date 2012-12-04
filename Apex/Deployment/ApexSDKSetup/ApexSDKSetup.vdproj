@@ -536,7 +536,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                "FrameworkVersion" = "8:ANY"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=131000"
                 }
@@ -1517,15 +1517,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Apex SDK"
-        "ProductCode" = "8:{F4CC53A8-2C2B-4D73-B4B6-954A58A036CD}"
-        "PackageCode" = "8:{2A089B53-3790-40E5-B612-6B431E99193D}"
+        "ProductCode" = "8:{A8F16CAE-3931-4926-87FD-48F838048BC6}"
+        "PackageCode" = "8:{69D66316-5291-4892-AC6C-AC656D2DBA57}"
         "UpgradeCode" = "8:{8B037F9F-0C3C-4EDE-B0A4-AADB8694B22D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.4.0"
+        "ProductVersion" = "8:1.5.0"
         "Manufacturer" = "8:Dave Kerr"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://apex.codeplex.com"
