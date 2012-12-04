@@ -10,6 +10,9 @@ namespace Apex.Adorners
     /// </summary>
     public partial class AdornerLayer : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdornerLayer"/> class.
+        /// </summary>
         public AdornerLayer()
         {
             InitializeComponent();
@@ -17,6 +20,9 @@ namespace Apex.Adorners
             IsHitTestVisible = false;
         }
 
+        /// <summary>
+        /// When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -29,6 +35,11 @@ namespace Apex.Adorners
                 adornerLayers.Add(tla, this);
         }
 
+        /// <summary>
+        /// Gets the adorner layer.
+        /// </summary>
+        /// <param name="obj">The obj.</param>
+        /// <returns></returns>
         public static AdornerLayer GetAdornerLayer(DependencyObject obj)
         {
             //  Get the top level ancestor.
@@ -38,9 +49,13 @@ namespace Apex.Adorners
             return null;
         }
 
-        private static Dictionary<DependencyObject, AdornerLayer> adornerLayers =
+        private static readonly Dictionary<DependencyObject, AdornerLayer> adornerLayers =
             new Dictionary<DependencyObject, AdornerLayer>();
 
+        /// <summary>
+        /// Adds the adorner.
+        /// </summary>
+        /// <param name="adorner">The adorner.</param>
         public void AddAdorner(Adorner adorner)
         {
             adorner.ParentAdornerLayer = this;
@@ -49,6 +64,10 @@ namespace Apex.Adorners
             adornerCanvas.Children.Add(adorner.UIElement);
         }
 
+        /// <summary>
+        /// Removes the adorner.
+        /// </summary>
+        /// <param name="adorner">The adorner.</param>
         public void RemoveAdorner(Adorner adorner)
         {
             adornerCanvas.Children.Remove(adorner.UIElement);

@@ -1,19 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Documents;
 using System.Windows;
-using System.Windows.Media;
-using System.Windows.Shapes;
-using Apex.Extensions;
 
 namespace Apex.Adorners 
 {
+    /// <summary>
+    /// Adorner for a UI element.
+    /// </summary>
     public class UIElementAdorner : Adorner
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UIElementAdorner"/> class.
+        /// </summary>
+        /// <param name="uiElement">The UI element.</param>
         public UIElementAdorner(UIElement uiElement)
         {
-            this.UIElement = uiElement;
+            UIElement = uiElement;
         }
     }
 }

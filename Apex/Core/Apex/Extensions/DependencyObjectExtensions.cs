@@ -37,6 +37,11 @@ namespace Apex.Extensions
                 return null;
         }
 
+        /// <summary>
+        /// Gets the top level parent.
+        /// </summary>
+        /// <param name="child">The child.</param>
+        /// <returns></returns>
         public static DependencyObject GetTopLevelParent(this DependencyObject child)
         {
             DependencyObject tmp = child;
@@ -173,28 +178,28 @@ namespace Apex.Extensions
         {
             //  Get appropriate properties.
             var properties = TypeDescriptor.GetProperties(me,
-                                                          new Attribute[]
-                                                              {new PropertyFilterAttribute(PropertyFilterOptions.All)});
+                                                          new Attribute[] {new PropertyFilterAttribute(PropertyFilterOptions.All)});
 
             //  Return all non null dependency properties.
-            return from PropertyDescriptor pd in properties 
-                   select DependencyPropertyDescriptor.FromProperty(pd) into dpd 
-                   where dpd != null 
+            return from PropertyDescriptor pd in properties
+                   select DependencyPropertyDescriptor.FromProperty(pd)
+                   into dpd
+                   where dpd != null
                    select dpd.DependencyProperty;
         }
 #endif
 
 #if SILVERLIGHT
 
-        /// <summary>
-        /// Retrieves all the logical children of a framework element using a 
-        /// depth-first search.  A visual element is assumed to be a logical 
-        /// child of another visual element if they are in the same namescope.
-        /// For performance reasons this method manually manages the stack 
-        /// instead of using recursion.
-        /// </summary>
-        /// <param name="parent">The parent framework element.</param>
-        /// <returns>The logical children of the framework element.</returns>
+    /// <summary>
+    /// Retrieves all the logical children of a framework element using a 
+    /// depth-first search.  A visual element is assumed to be a logical 
+    /// child of another visual element if they are in the same namescope.
+    /// For performance reasons this method manually manages the stack 
+    /// instead of using recursion.
+    /// </summary>
+    /// <param name="parent">The parent framework element.</param>
+    /// <returns>The logical children of the framework element.</returns>
         internal static IEnumerable<FrameworkElement> GetLogicalChildren(FrameworkElement parent)
         {
             EnsureName(parent);
@@ -228,5 +233,4 @@ namespace Apex.Extensions
 
 #endif
     }
-
 }

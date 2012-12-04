@@ -11,6 +11,9 @@ using Apex.Consistency;
 namespace Apex.Commands
 {
 
+    /// <summary>
+    /// Common event bindings.
+    /// </summary>
     public static class EventBindings
     {
       /// <summary>

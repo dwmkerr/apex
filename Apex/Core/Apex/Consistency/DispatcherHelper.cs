@@ -10,18 +10,21 @@
 namespace Apex.Consistency
 {
 
-  /// <summary>
-  /// Helper to make Dispatcher functions consistent in WPF/SL/WP7.
-  /// </summary>
-  public static class DispatcherHelper
-  {
-    public static Dispatcher CurrentDispatcher
+    /// <summary>
+    /// Helper to make Dispatcher functions consistent in WPF/SL/WP7.
+    /// </summary>
+    public static class DispatcherHelper
     {
-      get
-      {
-        //  Return the dispatcher.
+        /// <summary>
+        /// Gets the current dispatcher.
+        /// </summary>
+        public static Dispatcher CurrentDispatcher
+        {
+            get
+            {
+                //  Return the dispatcher.
 #if !SILVERLIGHT
-        return Dispatcher.CurrentDispatcher;
+                return Dispatcher.CurrentDispatcher;
 #else
           if (Application.Current.RootVisual != null)
               return Application.Current.RootVisual.Dispatcher;
@@ -32,7 +35,7 @@ namespace Apex.Consistency
               throw new InvalidOperationException("Cannot find a root element to get a dispatcher. Try including a Shell as a top level element.");
           }
 #endif
-      }
+            }
+        }
     }
-  }
 }

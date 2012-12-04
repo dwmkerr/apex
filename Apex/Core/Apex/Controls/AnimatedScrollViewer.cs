@@ -1,51 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows;
 
 namespace Apex.Controls
 {
-  public class AnimatedScrollViewer : ScrollViewer
-  {
-    public AnimatedScrollViewer()
+    /// <summary>
+    /// Scrollviewer with basic animation capabilities.
+    /// </summary>
+    public class AnimatedScrollViewer : ScrollViewer
     {
-      SizeChanged += new SizeChangedEventHandler(AnimatedScrollViewer_SizeChanged);
+        /// <summary>
+        /// Current Vertical Offset dependency property.
+        /// </summary>
+        public static DependencyProperty CurrentVerticalOffsetProperty = DependencyProperty.Register("CurrentVerticalOffset", typeof (double), typeof (AnimatedScrollViewer), new PropertyMetadata(new PropertyChangedCallback(OnVerticalChanged)));
+
+        /// <summary>
+        /// Current horizontal offset dependency property.
+        /// </summary>
+        public static DependencyProperty CurrentHorizontalOffsetProperty = DependencyProperty.Register("CurrentHorizontalOffsetOffset", typeof (double), typeof (AnimatedScrollViewer), new PropertyMetadata(new PropertyChangedCallback(OnHorizontalChanged)));
+
+        /// <summary>
+        /// Called when vertical changed.
+        /// </summary>
+        /// <param name="d">The d.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private static void OnVerticalChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var viewer = (AnimatedScrollViewer)d;
+            viewer.ScrollToVerticalOffset((double) e.NewValue);
+        }
+
+        /// <summary>
+        /// Called when horizontal changed.
+        /// </summary>
+        /// <param name="d">The d.</param>
+        /// <param name="e">The <see cref="System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private static void OnHorizontalChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var viewer = (AnimatedScrollViewer)d;
+            viewer.ScrollToHorizontalOffset((double) e.NewValue);
+        }
+
+        /// <summary>
+        /// Gets or sets the current horizontal offset.
+        /// </summary>
+        /// <value>
+        /// The current horizontal offset.
+        /// </value>
+        public double CurrentHorizontalOffset
+        {
+            get { return (double) GetValue(CurrentHorizontalOffsetProperty); }
+            set { SetValue(CurrentHorizontalOffsetProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the current vertical offset.
+        /// </summary>
+        /// <value>
+        /// The current vertical offset.
+        /// </value>
+        public double CurrentVerticalOffset
+        {
+            get { return (double) GetValue(CurrentVerticalOffsetProperty); }
+            set { SetValue(CurrentVerticalOffsetProperty, value); }
+        }
     }
-
-    void AnimatedScrollViewer_SizeChanged(object sender, SizeChangedEventArgs e)
-    {
-      double dX = e.PreviousSize.Width - e.NewSize.Width;
-      double dY = e.PreviousSize.Height - e.NewSize.Height;
-     }
-
-    public static DependencyProperty CurrentVerticalOffsetProperty = DependencyProperty.Register("CurrentVerticalOffset", typeof(double), typeof(AnimatedScrollViewer), new PropertyMetadata(new PropertyChangedCallback(OnVerticalChanged)));
-
-    public static DependencyProperty CurrentHorizontalOffsetProperty = DependencyProperty.Register("CurrentHorizontalOffsetOffset", typeof(double), typeof(AnimatedScrollViewer), new PropertyMetadata(new PropertyChangedCallback(OnHorizontalChanged)));
-
-    private static void OnVerticalChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-    {
-      AnimatedScrollViewer viewer = d as AnimatedScrollViewer;
-      viewer.ScrollToVerticalOffset((double)e.NewValue);
-    }
-
-    private static void OnHorizontalChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-    {
-      AnimatedScrollViewer viewer = d as AnimatedScrollViewer;
-      viewer.ScrollToHorizontalOffset((double)e.NewValue);
-    }
-
-    public double CurrentHorizontalOffset
-    {
-      get { return (double)this.GetValue(CurrentHorizontalOffsetProperty); }
-      set { this.SetValue(CurrentHorizontalOffsetProperty, value); }
-    }
-
-    public double CurrentVerticalOffset
-    {
-      get { return (double)this.GetValue(CurrentVerticalOffsetProperty); }
-      set { this.SetValue(CurrentVerticalOffsetProperty, value); }
-    }
-  }
 }

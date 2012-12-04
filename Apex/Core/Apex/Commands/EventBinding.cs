@@ -10,45 +10,82 @@ using Apex.Consistency;
 namespace Apex.Commands
 {
     /// <summary>
-    /// 
+    /// Provides a binding mechanism between a named event and a command.
     /// </summary>
     public class EventBinding : Freezable
     {
+        /// <summary>
+        /// When implemented in a derived class, creates a new instance of the <see cref="T:System.Windows.Freezable"/> derived class.
+        /// </summary>
+        /// <returns>
+        /// The new instance.
+        /// </returns>
         protected override Freezable CreateInstanceCore()
         {
             return new EventBinding();
         }
 
+        /// <summary>
+        /// The EventName Dependency Property.
+        /// </summary>
         private static readonly DependencyProperty EventNameProperty =
           DependencyProperty.Register("EventName", typeof(string), typeof(EventBinding),
           new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the name of the event.
+        /// </summary>
+        /// <value>
+        /// The name of the event.
+        /// </value>
         public string EventName
         {
             get { return (string)GetValue(EventNameProperty); }
             set { SetValue(EventNameProperty, value); }
         }
 
+        /// <summary>
+        /// The Command Dependency property.
+        /// </summary>
         public static readonly DependencyProperty CommandProperty =
           DependencyProperty.Register("Command", typeof(ICommand), typeof(EventBinding),
           new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the command.
+        /// </summary>
+        /// <value>
+        /// The command.
+        /// </value>
         public ICommand Command
         {
             get { return (ICommand)GetValue(CommandProperty); }
             set { SetValue(CommandProperty, value); }
         }
 
+        /// <summary>
+        /// The command parameter dependency property.
+        /// </summary>
         public static readonly DependencyProperty CommandParameterProperty =
           DependencyProperty.Register("CommandParameter", typeof(object), typeof(EventBinding),
           new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the command parameter.
+        /// </summary>
+        /// <value>
+        /// The command parameter.
+        /// </value>
         public object CommandParameter
         {
             get { return (object)GetValue(CommandParameterProperty); }
             set { SetValue(CommandParameterProperty, value); }
         }
 
+        /// <summary>
+        /// Binds the specified o.
+        /// </summary>
+        /// <param name="o">The o.</param>
         public void Bind(object o)
         {
             try

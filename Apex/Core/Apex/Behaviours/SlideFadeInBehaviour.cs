@@ -95,10 +95,19 @@ namespace Apex.Behaviours
 
         private const double SlideDistance = 40.0;
 
+        /// <summary>
+        /// The Duration Dependency property.
+        /// </summary>
         public static readonly DependencyProperty DurationProperty =
             DependencyProperty.Register("Duration", typeof(Duration), typeof(SlideFadeInBehaviour),
             new PropertyMetadata(new Duration(TimeSpan.FromMilliseconds(750))));
 
+        /// <summary>
+        /// Gets or sets the duration.
+        /// </summary>
+        /// <value>
+        /// The duration.
+        /// </value>
         public Duration Duration
         {
             get { return (Duration)GetValue(DurationProperty); }

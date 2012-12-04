@@ -6,8 +6,16 @@ using System.Globalization;
 
 namespace Apex.Extensions
 {
+    /// <summary>
+    /// Extensions for the datetime class.
+    /// </summary>
     public static class DateTimeExtensions
     {
+        /// <summary>
+        /// Gets the beginning of the week.
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <returns></returns>
         public static DateTime BeginningOfWeek(this DateTime me)
         {
             //difference in days
@@ -21,22 +29,43 @@ namespace Apex.Extensions
             return me.AddDays(-1 * diff).Date.BeginningOfDay();
         }
 
+        /// <summary>
+        /// Gets the beginning of the month.
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <returns></returns>
         public static DateTime BeginningOfMonth(this DateTime me)
         {
             return new DateTime(me.Year, me.Month, 1, 0, 0, 0);
         }
 
 
+        /// <summary>
+        /// Gets the beginning of the day.
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <returns></returns>
         public static DateTime BeginningOfDay(this DateTime me)
         {
             return new DateTime(me.Year, me.Month, me.Day, 0, 0, 0);
         }
 
+        /// <summary>
+        /// Gets the end of the day.
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <returns></returns>
         public static DateTime EndOfDay(this DateTime me)
         {
             return new DateTime(me.Year, me.Month, me.Day, 23, 59, 59);
         }
 
+        /// <summary>
+        /// Find workdays between.
+        /// </summary>
+        /// <param name="startD">The start D.</param>
+        /// <param name="endD">The end D.</param>
+        /// <returns></returns>
         public static int WorkDaysBetween(DateTime startD, DateTime endD)
         {
             double calcBusinessDays =

@@ -21,11 +21,6 @@ namespace Apex.Behaviours
     /// </summary>
     public class SmoothScrollingBehaviour : Behavior<ScrollViewer>
     {
-        protected override void OnAttached()
-        {
-            base.OnAttached();
-        }
-
         /// <summary>
         /// Smooth scroll to the specified position.
         /// </summary>

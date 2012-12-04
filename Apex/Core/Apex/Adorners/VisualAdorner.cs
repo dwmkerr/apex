@@ -9,15 +9,22 @@ using Apex.Extensions;
 
 namespace Apex.Adorners 
 {
+    /// <summary>
+    /// A Visual Adorner.
+    /// </summary>
     public class VisualAdorner : Adorner
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VisualAdorner"/> class.
+        /// </summary>
+        /// <param name="visual">The visual.</param>
         public VisualAdorner(FrameworkElement visual)
         {
             //  Create a brush that draws the visual.
 #if !SILVERLIGHT
             //VisualBrush _brush = new VisualBrush(visual);
 
-            ImageBrush _brush = new ImageBrush(visual.RenderBitmap());
+            var _brush = new ImageBrush(visual.RenderBitmap());
 #else
             SolidColorBrush _brush = new SolidColorBrush(Colors.Red);
 #endif
@@ -25,7 +32,7 @@ namespace Apex.Adorners
             
 
             //  Create a rectangle that will be painted with the visual.
-            Rectangle r = new Rectangle();
+            var r = new Rectangle();
 
             //  Set the rectangle dimensions to the be the same as the visual.
             r.Width = visual.ActualWidth;
@@ -33,7 +40,7 @@ namespace Apex.Adorners
             r.Fill = _brush;
             r.Opacity = 1;
             r.IsHitTestVisible = false;
-            this.UIElement = r;
+            UIElement = r;
         }
     }
 }

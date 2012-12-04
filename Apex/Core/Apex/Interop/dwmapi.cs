@@ -18,8 +18,10 @@ namespace Apex.Interop
         /// <summary>
         /// The actual method that makes API calls to drop the shadow to the window
         /// </summary>
-        /// <param name="window">Window to which the shadow will be applied</param>
-        /// <returns>True if the method succeeded, false if not</returns>
+        /// <param name="windowHandle">The window handle.</param>
+        /// <returns>
+        /// True if the method succeeded, false if not
+        /// </returns>
         public static bool DropShadow(IntPtr windowHandle)
         {
             try

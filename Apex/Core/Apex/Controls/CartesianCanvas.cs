@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows;
 
 namespace Apex.Controls
 {
+    /// <summary>
+    /// Canvas that uses cartesian coordinates.
+    /// </summary>
     public class CartesianCanvas : Canvas
     {
-        public CartesianCanvas()
-        {
-        }
-
         /// <summary>
         /// Adjusts the point to cartesian coordinates.
         /// </summary>
@@ -61,6 +56,9 @@ namespace Apex.Controls
             return arrangeSize;
         }
 
+        /// <summary>
+        /// The origin.
+        /// </summary>
         protected Point origin = new Point(0,0);
     }
 }
