@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 
 namespace Apex.Consistency
 {
+    /// <summary>
+    /// Consistent GridLengthConverter for Apex.
+    /// </summary>
     public class GridLengthConverter
     {
         /// <summary>
@@ -20,7 +20,7 @@ namespace Apex.Consistency
 #if !SILVERLIGHT
 
             //  Create the standard windows grid length converter.
-            System.Windows.GridLengthConverter gridLengthConverter = new System.Windows.GridLengthConverter();
+            var gridLengthConverter = new System.Windows.GridLengthConverter();
 
             //  Return the converted grid length.
             return (GridLength)gridLengthConverter.ConvertFromString(gridLength);

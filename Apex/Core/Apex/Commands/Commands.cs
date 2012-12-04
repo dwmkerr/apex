@@ -9,6 +9,9 @@ using Apex.Consistency;
 
 namespace Apex.Commands
 {
+    /// <summary>
+    /// Common Extended Commands.
+    /// </summary>
     public static class ExtendedCommands
     {
         //  Context menu operation are NOT available for silverlight.

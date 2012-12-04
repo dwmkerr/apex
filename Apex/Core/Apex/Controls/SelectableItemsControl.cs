@@ -20,8 +20,22 @@ namespace Apex.Controls
     /// </summary>
     public interface ISelectableItem
     {
+        /// <summary>
+        /// Called when selected.
+        /// </summary>
         void OnSelected();
+
+        /// <summary>
+        /// Called when deselected.
+        ///  </summary>
         void OnDeselected();
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is selected.
+        /// </summary>
+        /// <value>
+        /// 	<c>true</c> if this instance is selected; otherwise, <c>false</c>.
+        /// </value>
         bool IsSelected { get; set; }
     }
 
@@ -33,6 +47,9 @@ namespace Apex.Controls
     /// </summary>
     public class SelectableItemsControl : ItemsControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SelectableItemsControl"/> class.
+        /// </summary>
         public SelectableItemsControl()
         {
             //  Wire up commands.
@@ -43,6 +60,9 @@ namespace Apex.Controls
         }
 
 
+        /// <summary>
+        /// ItemsSourceProxy.
+        /// </summary>
         static readonly DependencyProperty dp = DependencyProperty.RegisterAttached("ItemsSourceProxy", typeof (IEnumerable),
                                                          typeof (SelectableItemsControl),
                                                          new PropertyMetadata(null,
@@ -57,6 +77,9 @@ namespace Apex.Controls
             me.DoFudge();
         }
 
+        /// <summary>
+        /// When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -84,6 +107,10 @@ namespace Apex.Controls
         }
 
 
+        /// <summary>
+        /// Invoked when the <see cref="P:System.Windows.Controls.ItemsControl.Items"/> property changes.
+        /// </summary>
+        /// <param name="e">Information about the change.</param>
         protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
         {
             base.OnItemsChanged(e);
@@ -167,6 +194,7 @@ namespace Apex.Controls
         /// </summary>
         /// <param name="itemToSelect">The item to select.</param>
         /// <param name="itemsSource">The items source.</param>
+        /// <param name="forceNotify">if set to <c>true</c> [force notify].</param>
         private void InternalSelectItem(object itemToSelect, IEnumerable itemsSource, bool forceNotify = false)
         {
             //  Handle the trivial case.

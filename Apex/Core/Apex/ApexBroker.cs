@@ -99,6 +99,7 @@ namespace Apex
         /// </summary>
         /// <param name="viewModelType">Type of the view model.</param>
         /// <param name="viewType">Type of the view.</param>
+        /// <param name="hint">The hint.</param>
         public static void RegisterViewForViewModel(Type viewModelType, Type viewType, string hint = null)
         {
             //  Register the mapping.
@@ -193,8 +194,11 @@ namespace Apex
         /// <summary>
         /// Gets the view for view model.
         /// </summary>
+        /// <param name="viewModelType">Type of the view model.</param>
         /// <param name="hint">The hint.</param>
-        /// <returns>The view type for the view model type.</returns>
+        /// <returns>
+        /// The view type for the view model type.
+        /// </returns>
         public static Type GetViewForViewModel(Type viewModelType, string hint = null)
         {
             //  We must be initialised for this to work.

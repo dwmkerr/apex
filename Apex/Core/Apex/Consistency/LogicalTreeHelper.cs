@@ -11,8 +11,16 @@ using Apex.Extensions;
 
 namespace Apex.Consistency
 {
+    /// <summary>
+    /// Helper class for the logical tree.
+    /// </summary>
     public static class LogicalTreeHelper
     {
+        /// <summary>
+        /// Gets the children.
+        /// </summary>
+        /// <param name="current">The current.</param>
+        /// <returns></returns>
         public static IEnumerable GetChildren(DependencyObject current)
         {
             var children = new List<DependencyObject>();
@@ -28,6 +36,11 @@ namespace Apex.Consistency
             return children;
         }
 
+        /// <summary>
+        /// Tries to get the content.
+        /// </summary>
+        /// <param name="dependencyObject">The dependency object.</param>
+        /// <returns></returns>
         public static object TryGetContent(DependencyObject dependencyObject)
         {
             var prop = dependencyObject.GetType().GetProperty("Content");
@@ -37,6 +50,11 @@ namespace Apex.Consistency
         }
 
 
+        /// <summary>
+        /// Tries to get the children.
+        /// </summary>
+        /// <param name="dependencyObject">The dependency object.</param>
+        /// <returns></returns>
         public static IEnumerable TryGetChildren(DependencyObject dependencyObject)
         {
             var prop = dependencyObject.GetType().GetProperty("Children");

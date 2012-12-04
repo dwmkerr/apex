@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections.ObjectModel;
-using System.Windows.Markup;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
+#if SILVERLIGHT
 using Apex.Consistency;
+#endif
 
 namespace Apex.Commands
 {
+    /// <summary>
+    /// Collection of event bindings.
+    /// </summary>
     public class EventBindingCollection : FreezableCollection<EventBinding>
     {
     }
