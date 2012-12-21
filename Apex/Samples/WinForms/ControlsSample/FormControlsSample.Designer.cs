@@ -32,19 +32,23 @@ namespace ControlsSample
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageColorMap = new System.Windows.Forms.TabPage();
+            this.colorMap = new Apex.Controls.ColorMap();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageExpandingPanel = new System.Windows.Forms.TabPage();
-            this.tabPagePathTextBox = new System.Windows.Forms.TabPage();
-            this.colorMap = new Apex.Controls.ColorMap();
             this.expandingPanelContainer1 = new Apex.Controls.ExpandingPanelContainer();
             this.expandingPanel2 = new Apex.Controls.ExpandingPanel();
             this.expandingPanel1 = new Apex.Controls.ExpandingPanel();
-            this.textBox1 = new PathTextBox();
+            this.tabPagePathTextBox = new System.Windows.Forms.TabPage();
+            this.textBox1 = new Apex.WinForms.Controls.PathTextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.shellTreeView1 = new Apex.WinForms.Controls.ShellTreeView();
+            this.shellListView1 = new Apex.WinForms.Controls.ShellListView();
             this.tabControl.SuspendLayout();
             this.tabPageColorMap.SuspendLayout();
             this.tabPageExpandingPanel.SuspendLayout();
-            this.tabPagePathTextBox.SuspendLayout();
             this.expandingPanelContainer1.SuspendLayout();
+            this.tabPagePathTextBox.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -55,10 +59,11 @@ namespace ControlsSample
             this.tabControl.Controls.Add(this.tabPageColorMap);
             this.tabControl.Controls.Add(this.tabPageExpandingPanel);
             this.tabControl.Controls.Add(this.tabPagePathTextBox);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(260, 238);
+            this.tabControl.Size = new System.Drawing.Size(696, 415);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageColorMap
@@ -68,10 +73,22 @@ namespace ControlsSample
             this.tabPageColorMap.Location = new System.Drawing.Point(4, 22);
             this.tabPageColorMap.Name = "tabPageColorMap";
             this.tabPageColorMap.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageColorMap.Size = new System.Drawing.Size(252, 212);
+            this.tabPageColorMap.Size = new System.Drawing.Size(688, 389);
             this.tabPageColorMap.TabIndex = 0;
             this.tabPageColorMap.Text = "Color Map";
             this.tabPageColorMap.UseVisualStyleBackColor = true;
+            // 
+            // colorMap
+            // 
+            this.colorMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.colorMap.BackColor = System.Drawing.Color.Red;
+            this.colorMap.CurrentColor = System.Drawing.Color.Red;
+            this.colorMap.Location = new System.Drawing.Point(18, 35);
+            this.colorMap.Name = "colorMap";
+            this.colorMap.ShowColorBorder = true;
+            this.colorMap.Size = new System.Drawing.Size(664, 94);
+            this.colorMap.TabIndex = 1;
             // 
             // label1
             // 
@@ -88,33 +105,10 @@ namespace ControlsSample
             this.tabPageExpandingPanel.Location = new System.Drawing.Point(4, 22);
             this.tabPageExpandingPanel.Name = "tabPageExpandingPanel";
             this.tabPageExpandingPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageExpandingPanel.Size = new System.Drawing.Size(252, 212);
+            this.tabPageExpandingPanel.Size = new System.Drawing.Size(688, 389);
             this.tabPageExpandingPanel.TabIndex = 1;
             this.tabPageExpandingPanel.Text = "Expanding Panel";
             this.tabPageExpandingPanel.UseVisualStyleBackColor = true;
-            // 
-            // tabPagePathTextBox
-            // 
-            this.tabPagePathTextBox.Controls.Add(this.textBox1);
-            this.tabPagePathTextBox.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePathTextBox.Name = "tabPagePathTextBox";
-            this.tabPagePathTextBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePathTextBox.Size = new System.Drawing.Size(252, 212);
-            this.tabPagePathTextBox.TabIndex = 2;
-            this.tabPagePathTextBox.Text = "Path Text Box";
-            this.tabPagePathTextBox.UseVisualStyleBackColor = true;
-            // 
-            // colorMap
-            // 
-            this.colorMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.colorMap.BackColor = System.Drawing.Color.Red;
-            this.colorMap.CurrentColor = System.Drawing.Color.Red;
-            this.colorMap.Location = new System.Drawing.Point(18, 35);
-            this.colorMap.Name = "colorMap";
-            this.colorMap.ShowColorBorder = true;
-            this.colorMap.Size = new System.Drawing.Size(228, 94);
-            this.colorMap.TabIndex = 1;
             // 
             // expandingPanelContainer1
             // 
@@ -152,6 +146,17 @@ namespace ControlsSample
             this.expandingPanel1.SizeWidthToContainer = true;
             this.expandingPanel1.TabIndex = 1;
             // 
+            // tabPagePathTextBox
+            // 
+            this.tabPagePathTextBox.Controls.Add(this.textBox1);
+            this.tabPagePathTextBox.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePathTextBox.Name = "tabPagePathTextBox";
+            this.tabPagePathTextBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePathTextBox.Size = new System.Drawing.Size(688, 389);
+            this.tabPagePathTextBox.TabIndex = 2;
+            this.tabPagePathTextBox.Text = "Path Text Box";
+            this.tabPagePathTextBox.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(40, 46);
@@ -159,11 +164,41 @@ namespace ControlsSample
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.shellListView1);
+            this.tabPage1.Controls.Add(this.shellTreeView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(688, 389);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Shell Tree View";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // shellTreeView1
+            // 
+            this.shellTreeView1.Location = new System.Drawing.Point(6, 6);
+            this.shellTreeView1.Name = "shellTreeView1";
+            this.shellTreeView1.ShowFiles = false;
+            this.shellTreeView1.ShowHiddenFilesAndFolders = false;
+            this.shellTreeView1.Size = new System.Drawing.Size(201, 377);
+            this.shellTreeView1.TabIndex = 0;
+            // 
+            // shellListView1
+            // 
+            this.shellListView1.AssociationTreeView = this.shellTreeView1;
+            this.shellListView1.Location = new System.Drawing.Point(213, 6);
+            this.shellListView1.Name = "shellListView1";
+            this.shellListView1.Size = new System.Drawing.Size(469, 377);
+            this.shellListView1.TabIndex = 1;
+            this.shellListView1.UseCompatibleStateImageBehavior = false;
+            // 
             // FormControlsSample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(720, 439);
             this.Controls.Add(this.tabControl);
             this.Name = "FormControlsSample";
             this.Text = "Controls Sample";
@@ -171,9 +206,10 @@ namespace ControlsSample
             this.tabPageColorMap.ResumeLayout(false);
             this.tabPageColorMap.PerformLayout();
             this.tabPageExpandingPanel.ResumeLayout(false);
+            this.expandingPanelContainer1.ResumeLayout(false);
             this.tabPagePathTextBox.ResumeLayout(false);
             this.tabPagePathTextBox.PerformLayout();
-            this.expandingPanelContainer1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -190,6 +226,9 @@ namespace ControlsSample
         private Apex.Controls.ExpandingPanel expandingPanel1;
         private System.Windows.Forms.TabPage tabPagePathTextBox;
         private PathTextBox textBox1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private ShellTreeView shellTreeView1;
+        private ShellListView shellListView1;
     }
 }
 

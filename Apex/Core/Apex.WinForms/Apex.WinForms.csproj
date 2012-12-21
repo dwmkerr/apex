@@ -66,7 +66,27 @@
     <Compile Include="Controls\PathTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ShellListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShellTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interop\CSIDL.cs" />
+    <Compile Include="Interop\IEnumIDList.cs" />
+    <Compile Include="Interop\IShellFolder.cs" />
+    <Compile Include="Interop\SFGAOF.cs" />
+    <Compile Include="Interop\SHCONTF.cs" />
+    <Compile Include="Interop\Shell32.cs" />
+    <Compile Include="Interop\SHFILEINFO.cs" />
+    <Compile Include="Interop\SHGFI.cs" />
+    <Compile Include="Interop\SHGNO.cs" />
+    <Compile Include="Interop\STRRET.cs" />
+    <Compile Include="Interop\User32.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shell\ChildTypes.cs" />
+    <Compile Include="Shell\ShellImageList.cs" />
+    <Compile Include="Shell\ShellFolder.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
