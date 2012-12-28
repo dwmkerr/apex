@@ -41,14 +41,19 @@ namespace ControlsSample
             this.tabPagePathTextBox = new System.Windows.Forms.TabPage();
             this.textBox1 = new Apex.WinForms.Controls.PathTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.shellTreeView1 = new Apex.WinForms.Controls.ShellTreeView();
             this.shellListView1 = new Apex.WinForms.Controls.ShellListView();
+            this.shellTreeView1 = new Apex.WinForms.Controls.ShellTreeView();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl.SuspendLayout();
             this.tabPageColorMap.SuspendLayout();
             this.tabPageExpandingPanel.SuspendLayout();
             this.expandingPanelContainer1.SuspendLayout();
             this.tabPagePathTextBox.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -166,8 +171,7 @@ namespace ControlsSample
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.shellListView1);
-            this.tabPage1.Controls.Add(this.shellTreeView1);
+            this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -176,23 +180,42 @@ namespace ControlsSample
             this.tabPage1.Text = "Shell Tree View";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // shellTreeView1
-            // 
-            this.shellTreeView1.Location = new System.Drawing.Point(6, 6);
-            this.shellTreeView1.Name = "shellTreeView1";
-            this.shellTreeView1.ShowFiles = false;
-            this.shellTreeView1.ShowHiddenFilesAndFolders = false;
-            this.shellTreeView1.Size = new System.Drawing.Size(201, 377);
-            this.shellTreeView1.TabIndex = 0;
-            // 
             // shellListView1
             // 
             this.shellListView1.AssociationTreeView = this.shellTreeView1;
-            this.shellListView1.Location = new System.Drawing.Point(213, 6);
+            this.shellListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shellListView1.Location = new System.Drawing.Point(0, 0);
             this.shellListView1.Name = "shellListView1";
-            this.shellListView1.Size = new System.Drawing.Size(469, 377);
+            this.shellListView1.Size = new System.Drawing.Size(451, 383);
             this.shellListView1.TabIndex = 1;
             this.shellListView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // shellTreeView1
+            // 
+            this.shellTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shellTreeView1.Location = new System.Drawing.Point(0, 0);
+            this.shellTreeView1.Name = "shellTreeView1";
+            this.shellTreeView1.ShowFiles = true;
+            this.shellTreeView1.ShowHiddenFilesAndFolders = false;
+            this.shellTreeView1.Size = new System.Drawing.Size(227, 383);
+            this.shellTreeView1.TabIndex = 0;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.shellTreeView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.shellListView1);
+            this.splitContainer1.Size = new System.Drawing.Size(682, 383);
+            this.splitContainer1.SplitterDistance = 227;
+            this.splitContainer1.TabIndex = 2;
             // 
             // FormControlsSample
             // 
@@ -210,6 +233,10 @@ namespace ControlsSample
             this.tabPagePathTextBox.ResumeLayout(false);
             this.tabPagePathTextBox.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -229,6 +256,7 @@ namespace ControlsSample
         private System.Windows.Forms.TabPage tabPage1;
         private ShellTreeView shellTreeView1;
         private ShellListView shellListView1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 
