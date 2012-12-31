@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Apex.WinForms.Interop;
 
@@ -10,74 +11,47 @@ namespace Apex.WinForms.Shell
     public static class ShellImageList
     {
         /// <summary>
-        /// The lazy small image list handle.
-        /// </summary>
-        private static readonly Lazy<IntPtr> smallImageListHandle;
-
-        /// <summary>
-        /// The lazy large image list handle.
-        /// </summary>
-        private static readonly Lazy<IntPtr> largeImageListHandle;
-
-        /// <summary>
         /// Initializes the <see cref="ShellImageList"/> class.
         /// </summary>
         static ShellImageList()
         {
-            //  Create the lazy handle.
-            smallImageListHandle = new Lazy<IntPtr>(CreateSmallImageListHandle);
-            largeImageListHandle = new Lazy<IntPtr>(CreateLargeImageListHandle);
-        }
-
-        private static IntPtr CreateSmallImageListHandle()
-        {
-            return CreateShellImageListHandle(true);
-        }
-
-        private static IntPtr CreateLargeImageListHandle()
-        {
-            return CreateShellImageListHandle(false);
         }
 
         /// <summary>
-        /// Creates the shell image list handle.
+        /// Gets the image list interface.
         /// </summary>
-        /// <returns>The shell image list handle.</returns>
-        private static IntPtr CreateShellImageListHandle(bool small)
+        /// <param name="imageListSize">Size of the image list.</param>
+        /// <returns>The IImageList for the shell image list of the given size.</returns>
+        public static IntPtr GetImageList(ShellImageListSize imageListSize)
         {
-            //  Create a shell file info.
-            var shellFileInfo = new SHFILEINFO();
+            //  Do we have the image list?
+            IImageList imageList;
+            if (imageLists.TryGetValue(imageListSize, out imageList))
+                return GetImageListHandle(imageList);
 
-            //  Create the flags.
-            var flags = SHGFI.SHGFI_USEFILEATTRIBUTES | SHGFI.SHGFI_SYSICONINDEX;
-            flags |= small ? SHGFI.SHGFI_SMALLICON : SHGFI.SHGFI_LARGEICON;
+            //  We don't have the image list, create it.
+            int result = Shell32.SHGetImageList((int) imageListSize, ref Shell32.IID_IImageList, ref imageList);
 
-            //  Get the file info for a dummy file, to get the shell image list handle.
-            var handle = Shell32.SHGetFileInfo(".txt", Shell32.FILE_ATTRIBUTE_NORMAL, out shellFileInfo,
-                (uint)Marshal.SizeOf(shellFileInfo), flags);
+            //  Add it to the dictionary.
+            imageLists.Add(imageListSize, imageList);
 
-            //  Validate the handle.
-            if(handle == IntPtr.Zero)
-                throw new InvalidOperationException("Failed to get the Shell Image List.");
-
-            //  Return the handle.
-            return handle;
+            //  Return it.
+            return GetImageListHandle(imageList);
         }
 
         /// <summary>
-        /// Gets the small image list handle.
+        /// Gets the image list handle.
         /// </summary>
-        public static IntPtr SmallImageListHandle
+        /// <param name="imageList">The image list.</param>
+        /// <returns>The image list handle for the image list.</returns>
+        private static IntPtr GetImageListHandle(IImageList imageList)
         {
-            get { return smallImageListHandle.Value; }
+            return Marshal.GetIUnknownForObject(imageList);
         }
 
         /// <summary>
-        /// Gets the large image list handle.
+        /// The shell image lists.
         /// </summary>
-        public static IntPtr LargeImageListHandle
-        {
-            get { return largeImageListHandle.Value; }
-        }
+        private readonly static Dictionary<ShellImageListSize, IImageList> imageLists = new Dictionary<ShellImageListSize, IImageList>();
     }
 }

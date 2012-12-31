@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Apex.WinForms.Interop;
@@ -9,7 +7,7 @@ using Apex.WinForms.Interop;
 namespace Apex.WinForms.Shell
 {
     /// <summary>
-    /// 
+    /// Represents a ShellFolder object.
     /// </summary>
     internal class ShellFolder : IDisposable
     {
@@ -69,7 +67,6 @@ namespace Apex.WinForms.Shell
                        {
                            DisplayName = fileInfo.szDisplayName,
                            IconIndex = fileInfo.iIcon,
-                           IsFolder = true,
                            HasChildren = true,
                            ShellFolderInterface = desktopShellFolderInterface
                        };
@@ -87,9 +84,9 @@ namespace Apex.WinForms.Shell
 
             //  Use the desktop folder to get attributes.
             var fullPidl = PIDL;
-            var flags = SFGAOF.SFGAO_FOLDER | SFGAOF.SFGAO_HASSUBFOLDER | SFGAOF.SFGAO_BROWSABLE;
-            parentFolder.ShellFolderInterface.GetAttributesOf(1, ref fullPidl, ref flags);
-            IsFolder = (flags & SFGAOF.SFGAO_FOLDER) != 0;
+            var flags = SFGAOF.SFGAO_FOLDER | SFGAOF.SFGAO_HASSUBFOLDER | SFGAOF.SFGAO_BROWSABLE | SFGAOF.SFGAO_FILESYSTEM;
+            parentFolder.ShellFolderInterface.GetAttributesOf(1, ref pidl, ref flags);
+            var isIShellFolder = (flags & SFGAOF.SFGAO_FOLDER) != 0;
             HasChildren = (flags & SFGAOF.SFGAO_HASSUBFOLDER) != 0;
 
             //  Get the file info.
@@ -102,7 +99,7 @@ namespace Apex.WinForms.Shell
             IconIndex = fileInfo.iIcon;
 
             //  Are we a folder?
-            if (IsFolder)
+            if (isIShellFolder)
             {
                 //  Bind the shell folder interface.
                 IShellFolder shellFolderInterface;
@@ -115,6 +112,10 @@ namespace Apex.WinForms.Shell
                     //  Throw the failure as an exception.
                     Marshal.ThrowExceptionForHR((int)result);
                 }
+            }
+            else
+            {
+                
             }
         }
         
@@ -142,7 +143,7 @@ namespace Apex.WinForms.Shell
             var children = new List<ShellFolder>();
 
             //  If we're not a folder, we're done.
-            if (IsFolder == false)
+            if (HasChildren == false)
                 return children;
             
             //  Create the enum flags from the childtypes.
@@ -246,7 +247,7 @@ namespace Apex.WinForms.Shell
         /// <summary>
         /// The lazy path.
         /// </summary>
-        private readonly Lazy<string> path; 
+        private readonly Lazy<string> path;
 
         /// <summary>
         /// Gets the display name.
@@ -276,14 +277,6 @@ namespace Apex.WinForms.Shell
         /// </summary>
         public IntPtr PIDL { get; private set; }
         
-        /// <summary>
-        /// Gets a value indicating whether this instance is folder.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is folder; otherwise, <c>false</c>.
-        /// </value>
-        public bool IsFolder { get; private set; }
-
         /// <summary>
         /// Gets a value indicating whether this instance has children.
         /// </summary>

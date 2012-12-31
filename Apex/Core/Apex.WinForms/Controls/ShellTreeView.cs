@@ -20,7 +20,7 @@ namespace Apex.WinForms.Controls
         public ShellTreeView()
         {
             //  Set the image list to the shell image list.
-            SetImageList(ShellImageList.SmallImageListHandle);
+            SetImageList(ShellImageList.GetImageList(ShellImageListSize.Small));// ShellImageList.SmallImageListHandle);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Apex.WinForms.Controls
             var shellFolder = nodesToFolders[node];
 
             //  Create the enum flags.
-            var childFlags = ChildTypes.Folders;
+            var childFlags = ChildTypes.Folders | ChildTypes.Files;
             if(ShowFiles)
                 childFlags |= ChildTypes.Files;
             if (ShowHiddenFilesAndFolders)
