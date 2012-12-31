@@ -74,7 +74,12 @@
     </Compile>
     <Compile Include="Interop\CSIDL.cs" />
     <Compile Include="Interop\IEnumIDList.cs" />
+    <Compile Include="Interop\IImageList.cs" />
+    <Compile Include="Interop\IMAGEINFO.cs" />
+    <Compile Include="Interop\IMAGELISTDRAWPARAMS.cs" />
     <Compile Include="Interop\IShellFolder.cs" />
+    <Compile Include="Interop\POINT.cs" />
+    <Compile Include="Interop\RECT.cs" />
     <Compile Include="Interop\SFGAOF.cs" />
     <Compile Include="Interop\SHCONTF.cs" />
     <Compile Include="Interop\Shell32.cs" />
@@ -87,6 +92,7 @@
     <Compile Include="Shell\ChildTypes.cs" />
     <Compile Include="Shell\ShellImageList.cs" />
     <Compile Include="Shell\ShellFolder.cs" />
+    <Compile Include="Shell\ShellImageListSize.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace Apex.WinForms.Controls
     {
         public ShellListView()
         {
-            SetImageList(ShellImageList.LargeImageListHandle);
+            SetImageList(ShellImageList.GetImageList(ShellImageListSize.Large));// ShellImageList.LargeImageListHandle);
         }
 
         /// <summary>
