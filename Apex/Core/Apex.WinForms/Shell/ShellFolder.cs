@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -96,7 +97,10 @@ namespace Apex.WinForms.Shell
 
             //  Set extended attributes.
             DisplayName = fileInfo.szDisplayName;
+            Attributes = fileInfo.dwAttributes;
+            TypeName = fileInfo.szTypeName;
             IconIndex = fileInfo.iIcon;
+            IsFolder = isIShellFolder;
 
             //  Are we a folder?
             if (isIShellFolder)
@@ -207,8 +211,12 @@ namespace Apex.WinForms.Shell
                 throw new InvalidOperationException("Failed to enumerate children." , exception);
             }
 
+            //  Sort the children.
+            var sortedChildren = children.Where(c => c.IsFolder).ToList();
+            sortedChildren.AddRange(children.Where(c => !c.IsFolder));
+
             //  Return the children.
-            return children;
+            return sortedChildren;
         }
 
         /// <summary>
@@ -250,9 +258,30 @@ namespace Apex.WinForms.Shell
         private readonly Lazy<string> path;
 
         /// <summary>
+        /// Gets a value indicating whether this instance is folder.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is folder; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsFolder { get; private set; }
+
+        /// <summary>
         /// Gets the display name.
         /// </summary>
         public string DisplayName { get; private set; }
+
+        /// <summary>
+        /// Gets the name of the type.
+        /// </summary>
+        /// <value>
+        /// The name of the type.
+        /// </value>
+        public string TypeName { get; private set; }
+
+        /// <summary>
+        /// Gets the attributes.
+        /// </summary>
+        public uint Attributes { get; private set; }
 
         /// <summary>
         /// Gets the index of the icon.
