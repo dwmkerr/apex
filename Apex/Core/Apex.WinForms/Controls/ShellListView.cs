@@ -77,8 +77,15 @@ namespace Apex.WinForms.Controls
             //  Clear the map.
             itemsToFolders.Clear();
 
+            //  Work out the types to show.
+            var childTypes = ChildTypes.Files;
+            if(ShowHiddenFilesAndFolders)
+                childTypes |= ChildTypes.Hidden;
+            if(ShowFolders)
+                childTypes |= ChildTypes.Folders;
+
             //  Go through the children.
-            foreach (var child in parentFolder.GetChildren(ChildTypes.Files))
+            foreach (var child in parentFolder.GetChildren(childTypes))
             {
                 //  Create an item.
                 var item = new ListViewItem
@@ -152,5 +159,25 @@ namespace Apex.WinForms.Controls
                 }
             }
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to show hidden files and folders.
+        /// </summary>
+        /// <value>
+        /// 	<c>true</c> if show hidden files and folders; otherwise, <c>false</c>.
+        /// </value>
+        [Category("Shell List View")]
+        [Description("If set to true, hidden files and folders will be shown.")]
+        public bool ShowHiddenFilesAndFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to show folders as well as files.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if show files; otherwise, <c>false</c>.
+        /// </value>
+        [Category("Shell List View")]
+        [Description("If set to true, folders will be shown as well as files.")]
+        public bool ShowFolders { get; set; }
     }
 }
