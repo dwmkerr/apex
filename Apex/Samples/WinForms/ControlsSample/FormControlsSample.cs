@@ -15,5 +15,18 @@ namespace ControlsSample
         {
             InitializeComponent();
         }
+
+        private void FormControlsSample_Load(object sender, EventArgs e)
+        {
+            UpdateShellTabToolbarStates();
+        }
+
+        private void UpdateShellTabToolbarStates()
+        {
+            toolStripButtonTreeShowFiles.Checked = shellTreeView1.ShowFiles;
+            toolStripButtonTreeShowHidden.Checked = shellTreeView1.ShowHiddenFilesAndFolders;
+            toolStripButtonListShowFolders.Checked = shellListView1.ShowFolders;
+            toolStripButtonListShowHidden.Checked = shellListView1.ShowHiddenFilesAndFolders;
+        }
     }
 }

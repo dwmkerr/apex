@@ -8,23 +8,23 @@ using Apex.WinForms.Interop;
 namespace Apex.WinForms.Shell
 {
     /// <summary>
-    /// Represents a ShellFolder object.
+    /// Represents a ShellItem object.
     /// </summary>
-    internal class ShellFolder : IDisposable
+    public class ShellItem : IDisposable
     {
         /// <summary>
-        /// Initializes the <see cref="ShellFolder"/> class.
+        /// Initializes the <see cref="ShellItem"/> class.
         /// </summary>
-        static ShellFolder()
+        static ShellItem()
         {
             //  Create the lazy desktop shell folder.
-            desktopShellFolder = new Lazy<ShellFolder>(CreateDesktopShellFolder);
+            desktopShellFolder = new Lazy<ShellItem>(CreateDesktopShellFolder);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ShellFolder"/> class.
+        /// Initializes a new instance of the <see cref="ShellItem"/> class.
         /// </summary>
-        public ShellFolder()
+        public ShellItem()
         {
             //  Create the lazy path.
             path = new Lazy<string>(CreatePath);
@@ -34,7 +34,7 @@ namespace Apex.WinForms.Shell
         /// Creates the desktop shell folder.
         /// </summary>
         /// <returns>The desktop shell folder.</returns>
-        private static ShellFolder CreateDesktopShellFolder()
+        private static ShellItem CreateDesktopShellFolder()
         {
             //  Get the desktop shell folder interface. 
             IShellFolder desktopShellFolderInterface = null;
@@ -64,7 +64,7 @@ namespace Apex.WinForms.Shell
                 SHGFI.SHGFI_DISPLAYNAME | SHGFI.SHGFI_PIDL | SHGFI.SHGFI_SMALLICON | SHGFI.SHGFI_SYSICONINDEX);
 
             //  Return the Shell Folder.
-            return new ShellFolder
+            return new ShellItem
                        {
                            DisplayName = fileInfo.szDisplayName,
                            IconIndex = fileInfo.iIcon,
@@ -74,20 +74,23 @@ namespace Apex.WinForms.Shell
         }
 
         /// <summary>
-        /// Initialises the ShellFolder, from its PIDL and parent.
+        /// Initialises the ShellItem, from its PIDL and parent.
         /// </summary>
         /// <param name="pidl">The pidl.</param>
         /// <param name="parentFolder">The parent folder.</param>
-        private void Initialise(IntPtr pidl, ShellFolder parentFolder)
+        private void Initialise(IntPtr pidl, ShellItem parentFolder)
         {
+            //  Set the parent item and relative pidl.
+            ParentItem = parentFolder;
+            RelativePIDL = pidl;
+
             //  Create the fully qualified PIDL.
             PIDL = Shell32.ILCombine(parentFolder.PIDL, pidl);
 
             //  Use the desktop folder to get attributes.
-            var fullPidl = PIDL;
             var flags = SFGAOF.SFGAO_FOLDER | SFGAOF.SFGAO_HASSUBFOLDER | SFGAOF.SFGAO_BROWSABLE | SFGAOF.SFGAO_FILESYSTEM;
             parentFolder.ShellFolderInterface.GetAttributesOf(1, ref pidl, ref flags);
-            var isIShellFolder = (flags & SFGAOF.SFGAO_FOLDER) != 0;
+            IsFolder = (flags & SFGAOF.SFGAO_FOLDER) != 0;
             HasChildren = (flags & SFGAOF.SFGAO_HASSUBFOLDER) != 0;
 
             //  Get the file info.
@@ -100,10 +103,9 @@ namespace Apex.WinForms.Shell
             Attributes = fileInfo.dwAttributes;
             TypeName = fileInfo.szTypeName;
             IconIndex = fileInfo.iIcon;
-            IsFolder = isIShellFolder;
 
             //  Are we a folder?
-            if (isIShellFolder)
+            if (IsFolder)
             {
                 //  Bind the shell folder interface.
                 IShellFolder shellFolderInterface;
@@ -116,10 +118,6 @@ namespace Apex.WinForms.Shell
                     //  Throw the failure as an exception.
                     Marshal.ThrowExceptionForHR((int)result);
                 }
-            }
-            else
-            {
-                
             }
         }
         
@@ -141,10 +139,10 @@ namespace Apex.WinForms.Shell
         /// <returns>
         /// The children.
         /// </returns>
-        public IEnumerable<ShellFolder> GetChildren(ChildTypes childTypes)
+        public IEnumerable<ShellItem> GetChildren(ChildTypes childTypes)
         {
             //  We'll return a list of children.
-            var children = new List<ShellFolder>();
+            var children = new List<ShellItem>();
 
             //  If we're not a folder, we're done.
             if (HasChildren == false)
@@ -173,7 +171,7 @@ namespace Apex.WinForms.Shell
                 }
 
                 //  Start going through children.
-                var childPIDL = IntPtr.Zero;
+                IntPtr childPIDL;
                 int enumResult;
                 pEnum.Next(1, out childPIDL, out enumResult);
 
@@ -181,7 +179,7 @@ namespace Apex.WinForms.Shell
                 while (childPIDL != IntPtr.Zero && enumResult == 1)
                 {
                     //  Create a new shell folder.
-                    var childShellFolder = new ShellFolder();
+                    var childShellFolder = new ShellItem();
 
                     //  Initialize it.
                     try
@@ -222,7 +220,7 @@ namespace Apex.WinForms.Shell
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
-        public void  Dispose()
+        public void Dispose()
         {
             //  Release the shell folder interface.
             if (ShellFolderInterface != null)
@@ -250,12 +248,17 @@ namespace Apex.WinForms.Shell
         /// <summary>
         /// The lazy desktop shell folder.
         /// </summary>
-        private static readonly Lazy<ShellFolder> desktopShellFolder;
+        private static readonly Lazy<ShellItem> desktopShellFolder;
 
         /// <summary>
         /// The lazy path.
         /// </summary>
         private readonly Lazy<string> path;
+
+        /// <summary>
+        /// Gets the parent item.
+        /// </summary>
+        public ShellItem ParentItem { get; private set; }
 
         /// <summary>
         /// Gets a value indicating whether this instance is folder.
@@ -294,7 +297,7 @@ namespace Apex.WinForms.Shell
         /// <summary>
         /// Gets the ShellFolder of the Desktop.
         /// </summary>
-        public static ShellFolder DesktopShellFolder { get { return desktopShellFolder.Value; } }
+        public static ShellItem DesktopShellFolder { get { return desktopShellFolder.Value; } }
 
         /// <summary>
         /// Gets the shell folder interface.
@@ -302,9 +305,14 @@ namespace Apex.WinForms.Shell
         public IShellFolder ShellFolderInterface { get; private set; }
 
         /// <summary>
-        /// Gets the PIDL.
+        /// Gets the Full PIDL.
         /// </summary>
         public IntPtr PIDL { get; private set; }
+
+        /// <summary>
+        /// Gets the relative PIDL.
+        /// </summary>
+        public IntPtr RelativePIDL { get; private set; }
         
         /// <summary>
         /// Gets a value indicating whether this instance has children.

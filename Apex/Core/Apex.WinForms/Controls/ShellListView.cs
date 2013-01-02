@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+using System.Drawing;
 using System.Windows.Forms;
 using Apex.WinForms.Interop;
 using Apex.WinForms.Shell;
@@ -15,9 +12,15 @@ namespace Apex.WinForms.Controls
     /// </summary>
     public class ShellListView : ListView
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShellListView"/> class.
+        /// </summary>
         public ShellListView()
         {
-            SetImageList(ShellImageList.GetImageList(ShellImageListSize.Large));// ShellImageList.LargeImageListHandle);
+
+            //  Create a small and normal image list.
+            LargeImageList = new ImageList { ImageSize = new Size(32, 32), ColorDepth = ColorDepth.Depth32Bit};
+            SmallImageList = new ImageList { ImageSize = new Size(16, 16), ColorDepth = ColorDepth.Depth32Bit };
         }
 
         /// <summary>
@@ -55,7 +58,7 @@ namespace Apex.WinForms.Controls
                 return;
 
             //  Get the selected folder.
-            var selectedFolder = associatedTreeView.GetNodeShellFolder(selectedNode);
+            var selectedFolder = associatedTreeView.GetShellItem(selectedNode);
 
             //  If there isn't one, we're done.
             if (selectedFolder == null)
@@ -69,8 +72,12 @@ namespace Apex.WinForms.Controls
         /// Initialises the specified parent folder.
         /// </summary>
         /// <param name="parentFolder">The parent folder.</param>
-        private void Initialise(ShellFolder parentFolder)
+        public void Initialise(ShellItem parentFolder)
         {
+            //  If we're not double buffered, we want to be.
+            if(!DoubleBuffered)
+                DoubleBuffered = true;
+
             //  Clear children.
             Items.Clear();
 
@@ -84,14 +91,33 @@ namespace Apex.WinForms.Controls
             if(ShowFolders)
                 childTypes |= ChildTypes.Folders;
 
+            //  Work out what images we're using.
+            bool smallImages = View == View.SmallIcon || View == View.Details || View == View.List;
+            var imageList = smallImages ? SmallImageList : LargeImageList;
+
             //  Go through the children.
             foreach (var child in parentFolder.GetChildren(childTypes))
             {
+                //  Do we need to create the icon for the item?
+                if (shellIconIndexesToCacheIconIndexes.ContainsKey(child.IconIndex) == false)
+                {
+                    //  Get the shell icon for the item.
+                    var shellIcon = Icon.FromHandle(ComCtl32.ImageList_GetIcon(
+                        smallImages
+                        ? ShellImageList.GetImageList(ShellImageListSize.Small) 
+                        : ShellImageList.GetImageList(ShellImageListSize.Large), child.IconIndex, 0));
+
+                    //  Create it and add it.
+                    var mappedIndex = imageList.Images.Count;
+                    imageList.Images.Add(shellIcon);
+                    shellIconIndexesToCacheIconIndexes[child.IconIndex] = mappedIndex;
+                }
+
                 //  Create an item.
                 var item = new ListViewItem
                                {
                                    Text = child.DisplayName,
-                                   ImageIndex = child.IconIndex
+                                   ImageIndex = shellIconIndexesToCacheIconIndexes[child.IconIndex]
                                };
 
                 //  Map it.
@@ -102,24 +128,27 @@ namespace Apex.WinForms.Controls
             }
         }
 
-        private void SetImageList(IntPtr imageListHandle)
+        /// <summary>
+        /// Gets the shell item for a list view item.
+        /// </summary>
+        /// <param name="listViewItem">The list view item.</param>
+        /// <returns>The shell item for the list view item.</returns>
+        public ShellItem GetShellItem(ListViewItem listViewItem)
         {
-            //  Set the image list.
-            var result = User32.SendMessage(Handle, LVM_SETIMAGELIST, LVSIL_NORMAL, imageListHandle);
-
-            //  Validate the result.
-            if (result != 0)
-                Marshal.ThrowExceptionForHR(result);
+            ShellItem item;
+            itemsToFolders.TryGetValue(listViewItem, out item);
+            return item;
         }
-
-        private const uint LVM_FIRST = 0x1000;
-        private const uint LVM_SETIMAGELIST = (LVM_FIRST + 3);
-        private const uint LVSIL_NORMAL = 0; 
 
         /// <summary>
         /// Map of list view items to shell folders.
         /// </summary>
-        private readonly Dictionary<ListViewItem, ShellFolder> itemsToFolders = new Dictionary<ListViewItem, ShellFolder>(); 
+        private readonly Dictionary<ListViewItem, ShellItem> itemsToFolders = new Dictionary<ListViewItem, ShellItem>();
+
+        /// <summary>
+        /// Map of shell image list icon indexes to shell icon indexes.
+        /// </summary>
+        private readonly Dictionary<int, int> shellIconIndexesToCacheIconIndexes = new Dictionary<int, int>(); 
 
         /// <summary>
         /// The associated tree view.

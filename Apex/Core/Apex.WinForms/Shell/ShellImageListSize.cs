@@ -1,3 +1,5 @@
+using System;
+
 namespace Apex.WinForms.Shell
 {
     /// <summary>

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Apex.WinForms.Interop;
 using Apex.WinForms.Shell;
+using Apex.WinForms.Extensions;
 
 namespace Apex.WinForms.Controls
 {
@@ -19,8 +17,10 @@ namespace Apex.WinForms.Controls
         /// </summary>
         public ShellTreeView()
         {
+            //  TODO: Shell tree views should be double buffered.
+
             //  Set the image list to the shell image list.
-            SetImageList(ShellImageList.GetImageList(ShellImageListSize.Small));// ShellImageList.SmallImageListHandle);
+            this.SetImageList(TreeViewExtensions.ImageListType.Normal, ShellImageList.GetImageList(ShellImageListSize.Small));
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Apex.WinForms.Controls
         private void AddDesktopNode()
         {
             //  Get the desktop folder.
-            var desktopFolder = ShellFolder.DesktopShellFolder;
+            var desktopFolder = ShellItem.DesktopShellFolder;
 
             //  Create the desktop node.
             var desktopNode = new TreeNode
@@ -110,27 +110,13 @@ namespace Apex.WinForms.Controls
         }
 
         /// <summary>
-        /// Sets the image list.
-        /// </summary>
-        /// <param name="imageListHandle">The image list handle.</param>
-        private void SetImageList(IntPtr imageListHandle)
-        {
-            //  Set the image list.
-            var result = User32.SendMessage(Handle, TVM_SETIMAGELIST, TVSIL_NORMAL, imageListHandle);
-            
-            //  Validate the result.
-            if(result != 0)
-                Marshal.ThrowExceptionForHR(result);
-        }
-
-        /// <summary>
-        /// Gets the node shell folder.
+        /// Gets the shell item for a tree node.
         /// </summary>
         /// <param name="node">The node.</param>
-        /// <returns>The node shell folder.</returns>
-        internal ShellFolder GetNodeShellFolder(TreeNode node)
+        /// <returns>The shell item for the tree node.</returns>
+        public ShellItem GetShellItem(TreeNode node)
         {
-            ShellFolder shellFolder;
+            ShellItem shellFolder;
             if(nodesToFolders.TryGetValue(node, out shellFolder))
                 return shellFolder;
             return null;
@@ -139,7 +125,7 @@ namespace Apex.WinForms.Controls
         /// <summary>
         /// A map of tree nodes to the Shell Folders.
         /// </summary>
-        private readonly Dictionary<TreeNode, ShellFolder> nodesToFolders = new Dictionary<TreeNode, ShellFolder>();
+        private readonly Dictionary<TreeNode, ShellItem> nodesToFolders = new Dictionary<TreeNode, ShellItem>();
 
         /// <summary>
         /// Gets or sets a value indicating whether to show hidden files and folders.
@@ -168,8 +154,5 @@ namespace Apex.WinForms.Controls
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new bool DesignMode { get { return (System.Diagnostics.Process.GetCurrentProcess().ProcessName == "devenv"); } }
-
-        private const UInt32 TVSIL_NORMAL = 0;
-        private const UInt32 TVM_SETIMAGELIST = 4361;
     }
 }
