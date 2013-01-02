@@ -30,7 +30,7 @@ namespace Apex.WinForms.Shell
                 return GetImageListHandle(imageList);
 
             //  We don't have the image list, create it.
-            int result = Shell32.SHGetImageList((int) imageListSize, ref Shell32.IID_IImageList, ref imageList);
+            Shell32.SHGetImageList((int) imageListSize, ref Shell32.IID_IImageList, ref imageList);
 
             //  Add it to the dictionary.
             imageLists.Add(imageListSize, imageList);
