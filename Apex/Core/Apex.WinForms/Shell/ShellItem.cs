@@ -100,7 +100,7 @@ namespace Apex.WinForms.Shell
 
             //  Set extended attributes.
             DisplayName = fileInfo.szDisplayName;
-            Attributes = fileInfo.dwAttributes;
+            Attributes = (SFGAOF)fileInfo.dwAttributes;
             TypeName = fileInfo.szTypeName;
             IconIndex = fileInfo.iIcon;
 
@@ -284,7 +284,7 @@ namespace Apex.WinForms.Shell
         /// <summary>
         /// Gets the attributes.
         /// </summary>
-        public uint Attributes { get; private set; }
+        public SFGAOF Attributes { get; private set; }
 
         /// <summary>
         /// Gets the index of the icon.
