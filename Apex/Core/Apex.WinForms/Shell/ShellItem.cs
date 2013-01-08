@@ -68,7 +68,7 @@ namespace Apex.WinForms.Shell
                        {
                            DisplayName = fileInfo.szDisplayName,
                            IconIndex = fileInfo.iIcon,
-                           HasChildren = true,
+                           HasSubFolders = true,
                            ShellFolderInterface = desktopShellFolderInterface
                        };
         }
@@ -91,19 +91,19 @@ namespace Apex.WinForms.Shell
             var flags = SFGAOF.SFGAO_FOLDER | SFGAOF.SFGAO_HASSUBFOLDER | SFGAOF.SFGAO_BROWSABLE | SFGAOF.SFGAO_FILESYSTEM;
             parentFolder.ShellFolderInterface.GetAttributesOf(1, ref pidl, ref flags);
             IsFolder = (flags & SFGAOF.SFGAO_FOLDER) != 0;
-            HasChildren = (flags & SFGAOF.SFGAO_HASSUBFOLDER) != 0;
+            HasSubFolders = (flags & SFGAOF.SFGAO_HASSUBFOLDER) != 0;
 
             //  Get the file info.
             var fileInfo= new SHFILEINFO();
             Shell32.SHGetFileInfo(PIDL, 0, out fileInfo, (uint) Marshal.SizeOf(fileInfo),  
-                SHGFI.SHGFI_SMALLICON | SHGFI.SHGFI_SYSICONINDEX | SHGFI.SHGFI_PIDL | SHGFI.SHGFI_DISPLAYNAME);
+                SHGFI.SHGFI_SMALLICON | SHGFI.SHGFI_SYSICONINDEX | SHGFI.SHGFI_PIDL | SHGFI.SHGFI_DISPLAYNAME | SHGFI.SHGFI_ATTRIBUTES);
 
             //  Set extended attributes.
             DisplayName = fileInfo.szDisplayName;
             Attributes = (SFGAOF)fileInfo.dwAttributes;
             TypeName = fileInfo.szTypeName;
             IconIndex = fileInfo.iIcon;
-
+            
             //  Are we a folder?
             if (IsFolder)
             {
@@ -143,10 +143,6 @@ namespace Apex.WinForms.Shell
         {
             //  We'll return a list of children.
             var children = new List<ShellItem>();
-
-            //  If we're not a folder, we're done.
-            if (HasChildren == false)
-                return children;
             
             //  Create the enum flags from the childtypes.
             SHCONTF enumFlags = SHCONTF.None;
@@ -320,7 +316,7 @@ namespace Apex.WinForms.Shell
         /// <value>
         /// 	<c>true</c> if this instance has children; otherwise, <c>false</c>.
         /// </value>
-        public bool HasChildren { get; private set; }
+        public bool HasSubFolders { get; private set; }
 
         /// <summary>
         /// Gets the path.
