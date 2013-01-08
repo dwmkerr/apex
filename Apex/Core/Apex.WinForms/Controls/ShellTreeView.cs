@@ -55,6 +55,9 @@ namespace Apex.WinForms.Controls
             //  Map it and add it.
             nodesToFolders[desktopNode] = desktopFolder;
             Nodes.Add(desktopNode);
+
+            //  Fire the event.
+            FireOnShellItemAdded(desktopNode);
             
             //  Expand it.
             OnBeforeExpand(new TreeViewCancelEventArgs(desktopNode, false, TreeViewAction.Expand));
@@ -83,6 +86,9 @@ namespace Apex.WinForms.Controls
             if (ShowHiddenFilesAndFolders)
                 childFlags |= ChildTypes.Hidden;
 
+            //  Disable update while adding children.
+            BeginUpdate();
+
             //  Go through each child.
             foreach (var child in shellFolder.GetChildren(childFlags))
             {
@@ -98,12 +104,18 @@ namespace Apex.WinForms.Controls
                 nodesToFolders[childNode] = child;
 
                 //  If this item has children, add a child node as a placeholder.
-                if (child.HasChildren)
+                if (child.HasSubFolders)
                     childNode.Nodes.Add(string.Empty);
 
                 //  Add the child node.
                 node.Nodes.Add(childNode);
+
+                //  Fire the shell item added event.
+                FireOnShellItemAdded(childNode);
             }
+            
+            //  Enable update now that we've added the children.
+            EndUpdate();
 
             //  Call the base.
             base.OnBeforeExpand(e);
@@ -120,6 +132,18 @@ namespace Apex.WinForms.Controls
             if(nodesToFolders.TryGetValue(node, out shellFolder))
                 return shellFolder;
             return null;
+        }
+
+        /// <summary>
+        /// Fires the on shell item added event.
+        /// </summary>
+        /// <param name="nodeAdded">The node added.</param>
+        private void FireOnShellItemAdded(TreeNode nodeAdded)
+        {
+            //  Fire the event if we have it.
+            var theEvent = OnShellItemAdded;
+            if(theEvent != null)
+                theEvent(this, new TreeViewEventArgs(nodeAdded));
         }
 
         /// <summary>
@@ -154,5 +178,12 @@ namespace Apex.WinForms.Controls
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new bool DesignMode { get { return (System.Diagnostics.Process.GetCurrentProcess().ProcessName == "devenv"); } }
+
+        /// <summary>
+        /// Occurs when a shell item is added.
+        /// </summary>
+        [Category("Shell Tree View")]
+        [Description("Called when a shell item is added.")]
+        public event TreeViewEventHandler OnShellItemAdded;
     }
 }

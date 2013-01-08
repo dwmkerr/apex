@@ -47,6 +47,9 @@ namespace Apex.WinForms.Interop
 
         [DllImport("shell32.dll")]
         public static extern IntPtr SHGetFileInfo(IntPtr pIDL, uint dwFileAttributes, out SHFILEINFO psfi, uint cbFileInfo, SHGFI uFlags);
+        
+        [DllImport("shell32.dll")]
+        public static extern IntPtr SHGetNameFromIDList(IntPtr pidl, SIGDN sigdnName, [MarshalAs(UnmanagedType.LPWStr)] out string ppszName);
 
         [DllImport("shell32.dll")]
         public static extern Int32 SHGetSpecialFolderLocation(IntPtr hwndOwner, CSIDL nFolder, ref IntPtr ppidl);
@@ -59,5 +62,19 @@ namespace Apex.WinForms.Interop
 
         [DllImport("shell32.dll", EntryPoint = "#727")]
         public extern static int SHGetImageList(int iImageList, ref Guid riid, ref IImageList ppv);
+    }
+
+    public enum SIGDN : uint
+    {
+        SIGDN_NORMALDISPLAY = 0x00000000,
+        SIGDN_PARENTRELATIVEPARSING = 0x80018001,
+        SIGDN_DESKTOPABSOLUTEPARSING = 0x80028000,
+        SIGDN_PARENTRELATIVEEDITING = 0x80031001,
+        SIGDN_DESKTOPABSOLUTEEDITING = 0x8004c000,
+        SIGDN_FILESYSPATH = 0x80058000,
+        SIGDN_URL = 0x80068000,
+        SIGDN_PARENTRELATIVEFORADDRESSBAR = 0x8007c001,
+        SIGDN_PARENTRELATIVE = 0x80080001,
+        SIGDN_PARENTRELATIVEFORUI = 0x80094001
     }
 }

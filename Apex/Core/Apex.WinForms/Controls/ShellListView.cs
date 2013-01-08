@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -17,7 +18,6 @@ namespace Apex.WinForms.Controls
         /// </summary>
         public ShellListView()
         {
-
             //  Create a small and normal image list.
             LargeImageList = new ImageList { ImageSize = new Size(32, 32), ColorDepth = ColorDepth.Depth32Bit};
             SmallImageList = new ImageList { ImageSize = new Size(16, 16), ColorDepth = ColorDepth.Depth32Bit };
@@ -125,6 +125,9 @@ namespace Apex.WinForms.Controls
 
                 //  Insert the item.
                 Items.Add(item);
+
+                //  Fire the event handler.
+                FireOnShellItemAdded(item);
             }
         }
 
@@ -138,6 +141,18 @@ namespace Apex.WinForms.Controls
             ShellItem item;
             itemsToFolders.TryGetValue(listViewItem, out item);
             return item;
+        }
+
+        /// <summary>
+        /// Fires the on shell item added event.
+        /// </summary>
+        /// <param name="itemAdded">The item added.</param>
+        private void FireOnShellItemAdded(ListViewItem itemAdded)
+        {
+            //  Fire the event if we have it.
+            var theEvent = OnShellItemAdded;
+            if(theEvent != null)
+                theEvent(this, new ListViewItemEventArgs(itemAdded));;
         }
 
         /// <summary>
@@ -208,5 +223,24 @@ namespace Apex.WinForms.Controls
         [Category("Shell List View")]
         [Description("If set to true, folders will be shown as well as files.")]
         public bool ShowFolders { get; set; }
+
+        /// <summary>
+        /// Occurs when a shell item is added.
+        /// </summary>
+        [Category("Shell List View")]
+        [Description("Called when a shell item is added.")]
+        public event ListViewItemEventHandler OnShellItemAdded;
     }
+
+    public class ListViewItemEventArgs : EventArgs
+    {
+        public ListViewItemEventArgs(ListViewItem item)
+        {
+            Item = item;
+        }
+
+        public ListViewItem Item { get; private set; }
+    }
+
+    public delegate void ListViewItemEventHandler(object sender, ListViewItemEventArgs args);
 }
