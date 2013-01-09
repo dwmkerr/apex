@@ -91,10 +91,6 @@ namespace Apex.WinForms.Controls
             if(ShowFolders)
                 childTypes |= ChildTypes.Folders;
 
-            //  Work out what images we're using.
-            bool smallImages = View == View.SmallIcon || View == View.Details || View == View.List;
-            var imageList = smallImages ? SmallImageList : LargeImageList;
-
             //  Go through the children.
             foreach (var child in parentFolder.GetChildren(childTypes))
             {
@@ -102,14 +98,13 @@ namespace Apex.WinForms.Controls
                 if (shellIconIndexesToCacheIconIndexes.ContainsKey(child.IconIndex) == false)
                 {
                     //  Get the shell icon for the item.
-                    var shellIcon = Icon.FromHandle(ComCtl32.ImageList_GetIcon(
-                        smallImages
-                        ? ShellImageList.GetImageList(ShellImageListSize.Small) 
-                        : ShellImageList.GetImageList(ShellImageListSize.Large), child.IconIndex, 0));
+                    var smallIcon = Icon.FromHandle(ComCtl32.ImageList_GetIcon(ShellImageList.GetImageList(ShellImageListSize.Small), child.IconIndex, 0));
+                    var largeIcon = Icon.FromHandle(ComCtl32.ImageList_GetIcon(ShellImageList.GetImageList(ShellImageListSize.Large), child.IconIndex, 0));
 
                     //  Create it and add it.
-                    var mappedIndex = imageList.Images.Count;
-                    imageList.Images.Add(shellIcon);
+                    var mappedIndex = SmallImageList.Images.Count;
+                    SmallImageList.Images.Add(smallIcon);
+                    LargeImageList.Images.Add(largeIcon);
                     shellIconIndexesToCacheIconIndexes[child.IconIndex] = mappedIndex;
                 }
 
