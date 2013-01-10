@@ -88,10 +88,10 @@ namespace Apex.WinForms.Shell
             PIDL = Shell32.ILCombine(parentFolder.PIDL, pidl);
 
             //  Use the desktop folder to get attributes.
-            var flags = SFGAOF.SFGAO_FOLDER | SFGAOF.SFGAO_HASSUBFOLDER | SFGAOF.SFGAO_BROWSABLE | SFGAOF.SFGAO_FILESYSTEM;
+            var flags = SFGAO.SFGAO_FOLDER | SFGAO.SFGAO_HASSUBFOLDER | SFGAO.SFGAO_BROWSABLE | SFGAO.SFGAO_FILESYSTEM;
             parentFolder.ShellFolderInterface.GetAttributesOf(1, ref pidl, ref flags);
-            IsFolder = (flags & SFGAOF.SFGAO_FOLDER) != 0;
-            HasSubFolders = (flags & SFGAOF.SFGAO_HASSUBFOLDER) != 0;
+            IsFolder = (flags & SFGAO.SFGAO_FOLDER) != 0;
+            HasSubFolders = (flags & SFGAO.SFGAO_HASSUBFOLDER) != 0;
 
             //  Get the file info.
             var fileInfo= new SHFILEINFO();
@@ -100,7 +100,7 @@ namespace Apex.WinForms.Shell
 
             //  Set extended attributes.
             DisplayName = fileInfo.szDisplayName;
-            Attributes = (SFGAOF)fileInfo.dwAttributes;
+            Attributes = (SFGAO)fileInfo.dwAttributes;
             TypeName = fileInfo.szTypeName;
             IconIndex = fileInfo.iIcon;
             
@@ -280,7 +280,7 @@ namespace Apex.WinForms.Shell
         /// <summary>
         /// Gets the attributes.
         /// </summary>
-        public SFGAOF Attributes { get; private set; }
+        public SFGAO Attributes { get; private set; }
 
         /// <summary>
         /// Gets the index of the icon.

@@ -76,7 +76,7 @@ namespace Apex.WinForms.Interop
         uint GetAttributesOf(
             int cidl,               // Number of file objects from which to retrieve attributes. 
             ref IntPtr apidl,           // Address of an array of pointers to ITEMIDLIST structures, each of which uniquely identifies a file object relative to the parent folder.
-            ref SFGAOF rgfInOut);       // Address of a single ULONG value that, on entry, contains the attributes that the caller is requesting. On exit, this value contains the requested attributes that are common to all of the specified objects. this value can be from the SFGAO enum
+            ref SFGAO rgfInOut);       // Address of a single ULONG value that, on entry, contains the attributes that the caller is requesting. On exit, this value contains the requested attributes that are common to all of the specified objects. this value can be from the SFGAO enum
 
         // Retrieves an OLE interface that can be used to carry out actions on the specified file objects or folders. 
         // Return value: error code, if any
