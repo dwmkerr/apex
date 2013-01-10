@@ -82,7 +82,7 @@
     <Compile Include="Interop\IShellFolder.cs" />
     <Compile Include="Interop\POINT.cs" />
     <Compile Include="Interop\RECT.cs" />
-    <Compile Include="Interop\SFGAOF.cs" />
+    <Compile Include="Interop\SFGAO.cs" />
     <Compile Include="Interop\SHCONTF.cs" />
     <Compile Include="Interop\Shell32.cs" />
     <Compile Include="Interop\SHFILEINFO.cs" />
