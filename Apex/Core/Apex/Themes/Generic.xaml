@@ -12,5 +12,6 @@
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/PivotControl.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/SearchTextBox.xaml" />
         <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/Shell.xaml" />
+        <ResourceDictionary Source="/Apex;component/Themes/ResourceDictionaries/TabbedDocumentInterface.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
