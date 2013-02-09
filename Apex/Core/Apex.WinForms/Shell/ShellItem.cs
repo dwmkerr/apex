@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -28,6 +29,20 @@ namespace Apex.WinForms.Shell
         {
             //  Create the lazy path.
             path = new Lazy<string>(CreatePath);
+            overlayIcon = new Lazy<Icon>(CreateOverlayIcon);
+        }
+
+        /// <summary>
+        /// Creates the icon.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        private Icon CreateOverlayIcon()
+        {
+            var fileInfo = new SHFILEINFO();
+            Shell32.SHGetFileInfo(PIDL, 0, out fileInfo, (uint)Marshal.SizeOf(fileInfo),
+                SHGFI.SHGFI_PIDL | SHGFI.SHGFI_ICON | SHGFI.SHGFI_ADDOVERLAYS);
+            return fileInfo.hIcon != IntPtr.Zero ? Icon.FromHandle(fileInfo.hIcon) : null;
         }
 
         /// <summary>
@@ -252,6 +267,11 @@ namespace Apex.WinForms.Shell
         private readonly Lazy<string> path;
 
         /// <summary>
+        /// The overlay icon.
+        /// </summary>
+        private readonly Lazy<Icon> overlayIcon; 
+
+        /// <summary>
         /// Gets the parent item.
         /// </summary>
         public ShellItem ParentItem { get; private set; }
@@ -322,5 +342,13 @@ namespace Apex.WinForms.Shell
         /// Gets the path.
         /// </summary>
         public string Path { get { return path.Value; } }
+
+        /// <summary>
+        /// Gets the overlay icon.
+        /// </summary>
+        /// <value>
+        /// The overlay icon.
+        /// </value>
+        public Icon OverlayIcon { get { return overlayIcon.Value; } }
     }
 }

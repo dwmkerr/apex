@@ -105,9 +105,12 @@
     <Compile Include="Controls\PivotControl.cs" />
     <Compile Include="Controls\PivotItem.cs" />
     <Compile Include="Controls\SelectableItemsControl.cs" />
+    <Compile Include="Controls\TabbedDocumentInterface.cs" />
     <Compile Include="Controls\VariableGrid.cs" />
     <Compile Include="Controls\ViewBroker.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\CollectionCountToBooleanConverter.cs" />
+    <Compile Include="Converters\CollectionCountToVisibilityConverter.cs" />
     <Compile Include="Converters\EnumIsToVisibilityConverter.cs" />
     <Compile Include="Converters\DateTimeToSensibleStringConverter.cs" />
     <Compile Include="Converters\DivideByTwoConverter.cs" />
@@ -190,6 +193,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionaries\TabbedDocumentInterface.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

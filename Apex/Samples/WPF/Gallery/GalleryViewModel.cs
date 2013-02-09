@@ -9,6 +9,7 @@ using Gallery.Controls.CrossButton;
 using Gallery.Controls.EnumComboBox;
 using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
+using Gallery.Controls.TabbedDocumentInterface;
 using Gallery.CueTextBox;
 using Gallery.MVVM.CommandingSample;
 using Gallery.MVVM.SimpleSample;
@@ -38,6 +39,7 @@ namespace Gallery
             controlItems.GalleryItems.Add(new PathTextBoxViewModel());
             controlItems.GalleryItems.Add(new PivotControlViewModel());
             controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
+            controlItems.GalleryItems.Add(new TabbedDocumentInterfaceViewModel());
             GalleryItems.Add(controlItems);
 
             var popupItems = new GalleryItemViewModel() { Title = "Popups" };

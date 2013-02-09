@@ -68,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\CrossButton\CrossButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -129,6 +133,10 @@
       <DependentUpon>ApexGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ApexGrid\ApexGridViewModel.cs" />
+    <Compile Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml.cs">
+      <DependentUpon>TabbedDocumentInterfaceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceViewModel.cs" />
     <Compile Include="Controls\CrossButton\CrossButton.xaml.cs">
       <DependentUpon>CrossButton.xaml</DependentUpon>
     </Compile>
