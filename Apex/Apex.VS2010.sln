@@ -99,7 +99,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexModelItemTemplate", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery", "Samples\WPF\Gallery\Gallery.csproj", "{B6DEAE4E-ACDF-43EE-BD7A-24863442F556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery", "Gallery\Gallery.csproj", "{A3D04E18-E4C4-448F-8EB6-0FCD570ED160}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery", "Samples\Silverlight\Gallery\Gallery.csproj", "{A3D04E18-E4C4-448F-8EB6-0FCD570ED160}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -231,10 +231,10 @@ Global
 		SccProjectTopLevelParentUniqueName31 = Apex.VS2010.sln
 		SccProjectName31 = Samples/WPF/Gallery
 		SccLocalPath31 = Samples\\WPF\\Gallery
-		SccProjectUniqueName32 = Gallery\\Gallery.csproj
+		SccProjectUniqueName32 = Samples\\Silverlight\\Gallery\\Gallery.csproj
 		SccProjectTopLevelParentUniqueName32 = Apex.VS2010.sln
-		SccProjectName32 = Gallery
-		SccLocalPath32 = Gallery
+		SccProjectName32 = Samples/Silverlight/Gallery
+		SccLocalPath32 = Samples\\Silverlight\\Gallery
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Apex.vsmdi
