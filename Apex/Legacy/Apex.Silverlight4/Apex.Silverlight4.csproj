@@ -247,6 +247,9 @@
     <Compile Include="..\..\core\apex\shells\IShell.cs">
       <Link>Shells\IShell.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

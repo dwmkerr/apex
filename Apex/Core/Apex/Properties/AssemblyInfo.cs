@@ -10,13 +10,8 @@ using System.Windows;
 [assembly: AssemblyTitle("Apex")]
 [assembly: AssemblyDescription("Apex for WPF .NET 4.0")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dave Kerr")]
-[assembly: AssemblyProduct("Apex")]
-[assembly: AssemblyCopyright("Copyright © 2013 Dave Kerr")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("1.6.0.0")]
-[assembly: AssemblyFileVersion("1.6.0.0")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

@@ -8,9 +8,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Apex.Silverlight4")]
 [assembly: AssemblyDescription("Apex for Silverlight 4")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dave Kerr")]
-[assembly: AssemblyProduct("Apex")]
-[assembly: AssemblyCopyright("Copyright © Dave Kerr  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,15 +18,3 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("c6e21c0f-8b19-4e03-aa55-67a7d9ed8df3")]
-
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-[assembly: AssemblyVersion("1.6.0")]
-[assembly: AssemblyFileVersion("1.6.0")]

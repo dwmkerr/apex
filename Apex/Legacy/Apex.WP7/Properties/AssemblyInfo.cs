@@ -8,9 +8,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Apex.WP7")]
 [assembly: AssemblyDescription("Apex for Windows Phone 7.0")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dave Kerr")]
-[assembly: AssemblyProduct("Apex")]
-[assembly: AssemblyCopyright("Copyright © 2013 Dave Kerr")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,15 +18,3 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("d42139b0-bb59-48e5-89c3-2284ec9e4e93")]
-
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-[assembly: AssemblyVersion("1.6.0")]
-[assembly: AssemblyFileVersion("1.6.0")]
