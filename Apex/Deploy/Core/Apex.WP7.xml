@@ -1,0 +1,2189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apex.WP7</name>
+    </assembly>
+    <members>
+        <member name="T:Apex.Extensions.DependencyObjectExtensions">
+            <summary>
+            A set of useful extensions for the DependencyObject class.
+            </summary>
+        </member>
+        <member name="M:Apex.Extensions.DependencyObjectExtensions.GetParent``1(System.Windows.DependencyObject)">
+            <summary>
+            Gets the first parent found of a specific type.
+            </summary>
+            <typeparam name="T">The type of parent to find.</typeparam>
+            <param name="child">The child.</param>
+            <returns>The first parent found of type 'T' or null if no parent of type 'T' is found.</returns>
+        </member>
+        <member name="M:Apex.Extensions.DependencyObjectExtensions.GetTopLevelParent(System.Windows.DependencyObject)">
+            <summary>
+            Gets the top level parent.
+            </summary>
+            <param name="child">The child.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Extensions.DependencyObjectExtensions.GetVisualChildren``1(System.Windows.DependencyObject)">
+            <summary>
+            Gets all children of a specified type, through the visual tree.
+            This function recurses.
+            </summary>
+            <typeparam name="T">The type of child to get.</typeparam>
+            <param name="me">The dependency object to get children of.</param>
+            <returns>All children of type T of the dependency object.</returns>
+        </member>
+        <member name="M:Apex.Extensions.DependencyObjectExtensions.GetLogicalChildren``1(System.Windows.DependencyObject)">
+            <summary>
+            Gets all children of a specified type, through the logical tree.
+            This function recurses.
+            </summary>
+            <typeparam name="T">The type of child to get.</typeparam>
+            <param name="me">The dependency object to get children of.</param>
+            <returns>All children of type T of the dependency object.</returns>
+        </member>
+        <member name="M:Apex.Extensions.DependencyObjectExtensions.FindChild``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Finds a child element of a specified type with a specified name.
+            </summary>
+            <typeparam name="T">The type of child element to find.</typeparam>
+            <param name="me">The dependency object.</param>
+            <param name="childName">Name of the child.</param>
+            <returns>The first child of type T with the specified name, or null of no
+            children are found.</returns>
+        </member>
+        <member name="M:Apex.Extensions.DependencyObjectExtensions.GetLogicalChildren(System.Windows.FrameworkElement)">
+            <summary>
+            Retrieves all the logical children of a framework element using a 
+            depth-first search.  A visual element is assumed to be a logical 
+            child of another visual element if they are in the same namescope.
+            For performance reasons this method manually manages the stack 
+            instead of using recursion.
+            </summary>
+            <param name="parent">The parent framework element.</param>
+            <returns>The logical children of the framework element.</returns>
+        </member>
+        <member name="T:Apex.Converters.StringCaseConverter">
+            <summary>
+            Converts a string's case.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.StringCaseConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.StringCaseConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Converters.EnumIsToVisibilityConverter">
+            <summary>
+            The EnumIsToVisibilityConverter returns Visibility.Visible if the provided
+            enumeration is equal to the parameter, otherwise it returns Visibility.Collapsed.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.EnumIsToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.EnumIsToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.MVVM.NotifyingPropertyChangedArgs">
+            <summary>
+            The notifying property changed event args.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.NotifyingPropertyChangedArgs.#ctor(System.Object,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.NotifyingPropertyChangedArgs"/> class.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="P:Apex.MVVM.NotifyingPropertyChangedArgs.OldValue">
+            <summary>
+            Gets the old value.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.NotifyingPropertyChangedArgs.NewValue">
+            <summary>
+            Gets the new value.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.NotifyingPropertyChangedEvent">
+            <summary>
+            Delegat for the notifying property changed event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="T:Apex.MVVM.NotifyingProperty">
+            <summary>
+            The NotifyingProperty class - represents a property of a viewmodel that
+            can be wired into the notification system.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.NotifyingProperty.#ctor(System.String,System.Type,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.NotifyingProperty"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="type">The type.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Apex.MVVM.NotifyingProperty.SetValue(System.Object)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Apex.MVVM.NotifyingProperty.SaveInitialState">
+            <summary>
+            Saves the initial state.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.NotifyingProperty.RestoreInitialState">
+            <summary>
+            Restores the initial state.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.NotifyingProperty.FireNotifyingPropertyChanged(System.Object,System.Object)">
+            <summary>
+            Fires the notifying property changed event.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="F:Apex.MVVM.NotifyingProperty.initialState">
+            <summary>
+            The initial state value.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.NotifyingProperty.NotifyingPropertyChanged">
+            <summary>
+            Occurs when a notifying property is changed.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.NotifyingProperty.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Apex.MVVM.NotifyingProperty.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:Apex.MVVM.NotifyingProperty.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Apex.MVVM.IModel">
+            <summary>
+            Models can implement this interface to be given handlers
+            to key life-cycle events.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.IModel.OnInitialised">
+            <summary>
+            Called to initialise a model.
+            </summary>
+        </member>
+        <member name="T:Apex.Converters.EnumToBooleanConverter">
+            <summary>
+            Converts an enum to a boolean, by seeing if the value equals the parameter.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.EnumToBooleanConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.EnumToBooleanConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Converters.DivideByTwoConverter">
+            <summary>
+            Converts by dividing a double by two.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.DivideByTwoConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.DivideByTwoConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Controls.ApexGrid">
+            <summary>
+            The ApexGrid control is a Grid that supports easy definition of rows and columns.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.ApexGrid.OnRowsChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the rows property is changed.
+            </summary>
+            <param name="dependencyObject">The dependency object.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.Controls.ApexGrid.OnColumnsChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the columns property is changed.
+            </summary>
+            <param name="dependencyObject">The dependency object.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.Controls.ApexGrid.StringLengthsToGridLengths(System.String)">
+            <summary>
+            Turns a string of lengths, such as "3*,Auto,2000" into a set of gridlength.
+            </summary>
+            <param name="lengths">The string of lengths, separated by commas.</param>
+            <returns>A list of GridLengths.</returns>
+        </member>
+        <member name="F:Apex.Controls.ApexGrid.rowsProperty">
+            <summary>
+            The rows dependency property.
+            </summary>
+        </member>
+        <member name="F:Apex.Controls.ApexGrid.columnsProperty">
+            <summary>
+            The columns dependency property.
+            </summary>
+        </member>
+        <member name="P:Apex.Controls.ApexGrid.Rows">
+            <summary>
+            Gets or sets the rows.
+            </summary>
+            <value>The rows.</value>
+        </member>
+        <member name="P:Apex.Controls.ApexGrid.Columns">
+            <summary>
+            Gets or sets the columns.
+            </summary>
+            <value>The columns.</value>
+        </member>
+        <member name="T:Apex.Consistency.LogicalTreeHelper">
+            <summary>
+            Helper class for the logical tree.
+            </summary>
+        </member>
+        <member name="M:Apex.Consistency.LogicalTreeHelper.GetChildren(System.Windows.DependencyObject)">
+            <summary>
+            Gets the children.
+            </summary>
+            <param name="current">The current.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Consistency.LogicalTreeHelper.TryGetContent(System.Windows.DependencyObject)">
+            <summary>
+            Tries to get the content.
+            </summary>
+            <param name="dependencyObject">The dependency object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Consistency.LogicalTreeHelper.TryGetChildren(System.Windows.DependencyObject)">
+            <summary>
+            Tries to get the children.
+            </summary>
+            <param name="dependencyObject">The dependency object.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Apex.MVVM.CommandEventArgs">
+            <summary>
+            CommandEventArgs, event arguments for a command event, which also stores the command
+            parameter.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.CommandEventArgs.Parameter">
+            <summary>
+            Gets or sets the parameter.
+            </summary>
+            <value>The parameter.</value>
+        </member>
+        <member name="T:Apex.MVVM.CommandEventArgs`1">
+            <summary>
+            Typed CommandEventArgs, event arguments for a command event, which also stores the command
+            parameter.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.CommandEventArgs`1.Parameter">
+            <summary>
+            Gets or sets the parameter.
+            </summary>
+            <value>The parameter.</value>
+        </member>
+        <member name="T:Apex.MVVM.Command">
+            <summary>
+            The ViewModelCommand class - an ICommand that can fire a function.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.Command.#ctor(System.Action,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.Command"/> class.
+            </summary>
+            <param name="action">The action.</param>
+            <param name="canExecute">if set to <c>true</c> the command can execute.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command.#ctor(System.Action{System.Object},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.Command"/> class.
+            </summary>
+            <param name="parameterizedAction">The parameterized action.</param>
+            <param name="canExecute">if set to <c>true</c> the command can execute.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command.DoExecute">
+            <summary>
+            Does the execute.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.Command.DoExecute(System.Object)">
+            <summary>
+            Executes the command.
+            </summary>
+            <param name="param">The param.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command.InvokeAction(System.Object)">
+            <summary>
+            Invokes the action.
+            </summary>
+            <param name="param">The param.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command.InvokeExecuted(Apex.MVVM.CommandEventArgs)">
+            <summary>
+            Invokes the executed event.
+            </summary>
+            <param name="args">The <see cref="T:Apex.MVVM.CommandEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command.InvokeExecuting(Apex.MVVM.CancelCommandEventArgs)">
+            <summary>
+            Invokes the executing event.
+            </summary>
+            <param name="args">The <see cref="T:Apex.MVVM.CancelCommandEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.MVVM.Command.action">
+            <summary>
+            The action that will be called when the command is invoked.
+            </summary>
+        </member>
+        <member name="F:Apex.MVVM.Command.parameterizedAction">
+            <summary>
+            The parameterised action that will be called when the command is invoked.
+            </summary>
+        </member>
+        <member name="F:Apex.MVVM.Command.canExecute">
+            <summary>
+            Bool indicating whether the command can execute.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.Command.System#Windows#Input#ICommand#CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current state.
+            </summary>
+            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+            <returns>
+            true if this command can be executed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Apex.MVVM.Command.System#Windows#Input#ICommand#Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+        </member>
+        <member name="P:Apex.MVVM.Command.CanExecute">
+            <summary>
+            Gets or sets a value indicating whether this instance can execute.
+            </summary>
+            <value>
+            	<c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:Apex.MVVM.Command.CanExecuteChanged">
+            <summary>
+            Occurs when can execute is changed.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.Command.Executing">
+            <summary>
+            Occurs when the command is about to execute.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.Command.Executed">
+            <summary>
+            Occurs when the command executed.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.Command`1">
+            <summary>
+            The Command class - an ICommand that can fire a function.
+            This version of the Command class invokes a function that takes TParameter as its parameter.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.Command`1.#ctor(System.Action{`0},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.Command"/> class.
+            </summary>
+            <param name="parameterizedAction">The parameterized action.</param>
+            <param name="canExecute">if set to <c>true</c> the command can execute.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command`1.DoExecute(`0)">
+            <summary>
+            Executes the command.
+            </summary>
+            <param name="param">The param.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command`1.InvokeAction(`0)">
+            <summary>
+            Invokes the action.
+            </summary>
+            <param name="param">The param.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command`1.InvokeExecuted(Apex.MVVM.CommandEventArgs{`0})">
+            <summary>
+            Invokes the executed event.
+            </summary>
+            <param name="args">The <see cref="T:Apex.MVVM.CommandEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.MVVM.Command`1.InvokeExecuting(Apex.MVVM.CancelCommandEventArgs{`0})">
+            <summary>
+            Invokes the executing event.
+            </summary>
+            <param name="args">The <see cref="T:Apex.MVVM.CancelCommandEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.MVVM.Command`1.parameterizedAction">
+            <summary>
+            The parameterised action that will be called when the command is invoked.
+            </summary>
+        </member>
+        <member name="F:Apex.MVVM.Command`1.canExecute">
+            <summary>
+            Bool indicating whether the command can execute.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.Command`1.System#Windows#Input#ICommand#CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current state.
+            </summary>
+            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+            <returns>
+            true if this command can be executed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Apex.MVVM.Command`1.System#Windows#Input#ICommand#Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+        </member>
+        <member name="P:Apex.MVVM.Command`1.CanExecute">
+            <summary>
+            Gets or sets a value indicating whether this instance can execute.
+            </summary>
+            <value>
+            	<c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:Apex.MVVM.Command`1.CanExecuteChanged">
+            <summary>
+            Occurs when can execute is changed.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.Command`1.Executing">
+            <summary>
+            Occurs when the command is about to execute.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.Command`1.Executed">
+            <summary>
+            Occurs when the command executed.
+            </summary>
+        </member>
+        <member name="T:Apex.Converters.StringNullOrEmptyToVisibilityConverter">
+            <summary>
+            The StringNullOrEmptyToVisibility converter takes a string as its input.
+            If the string is null or empty the converter will return Visibility.Collapsed, otherwise
+            it will return Visibility.Visible. You can invert this behaviour by setting the 
+            converter parameter to 'Invert'.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.StringNullOrEmptyToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.StringNullOrEmptyToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Commands.EventBinding">
+            <summary>
+            Provides a binding mechanism between a named event and a command.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.EventBinding.CreateInstanceCore">
+            <summary>
+            When implemented in a derived class, creates a new instance of the <see cref="T:System.Windows.Freezable"/> derived class.
+            </summary>
+            <returns>
+            The new instance.
+            </returns>
+        </member>
+        <member name="F:Apex.Commands.EventBinding.EventNameProperty">
+            <summary>
+            The EventName Dependency Property.
+            </summary>
+        </member>
+        <member name="F:Apex.Commands.EventBinding.CommandProperty">
+            <summary>
+            The Command Dependency property.
+            </summary>
+        </member>
+        <member name="F:Apex.Commands.EventBinding.CommandParameterProperty">
+            <summary>
+            The command parameter dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.EventBinding.Bind(System.Object)">
+            <summary>
+            Binds the specified o.
+            </summary>
+            <param name="o">The o.</param>
+        </member>
+        <member name="M:Apex.Commands.EventBinding.EventProxy(System.Object,System.EventArgs)">
+            <summary>
+            Proxy to actually fire the event.
+            </summary>
+            <param name="o">The object.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:Apex.Commands.EventBinding.EventName">
+            <summary>
+            Gets or sets the name of the event.
+            </summary>
+            <value>
+            The name of the event.
+            </value>
+        </member>
+        <member name="P:Apex.Commands.EventBinding.Command">
+            <summary>
+            Gets or sets the command.
+            </summary>
+            <value>
+            The command.
+            </value>
+        </member>
+        <member name="P:Apex.Commands.EventBinding.CommandParameter">
+            <summary>
+            Gets or sets the command parameter.
+            </summary>
+            <value>
+            The command parameter.
+            </value>
+        </member>
+        <member name="P:Apex.Commands.EventBinding.ParentElement">
+            <summary>
+            Gets or sets the parent element. Only needed as a helper property in Silverlight.
+            </summary>
+            <value>
+            The parent element.
+            </value>
+        </member>
+        <member name="T:Apex.MVVM.ViewModelAttribute">
+            <summary>
+            The ViewModel attribute marks a class as a ViewModel. This is used
+            to allow the Apex SDK to help build Views and ViewModels.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewModelAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.ViewModelAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewModelAttribute.#ctor(Apex.ExecutionContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.ViewModelAttribute"/> class.
+            </summary>
+            <param name="context">The execution context for the view model.</param>
+        </member>
+        <member name="P:Apex.MVVM.ViewModelAttribute.Context">
+            <summary>
+            Gets the execution context for the model.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.CancelCommandEventArgs">
+            <summary>
+            CancelCommandEventArgs is sent during the command process, just
+            before execution. It supplies the command parameter and can
+            indicate that the command should be cancelled.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.CancelCommandEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Apex.MVVM.CancelCommandEventArgs"/> command should be cancelled.
+            </summary>
+            <value><c>true</c> if cancel; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Apex.MVVM.CancelCommandEventArgs`1">
+            <summary>
+            Typed CancelCommandEventArgs is sent during the command process, just
+            before execution. It supplies the command parameter and can
+            indicate that the command should be cancelled.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.CancelCommandEventArgs`1.Cancel">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Apex.MVVM.CancelCommandEventArgs"/> command should be cancelled.
+            </summary>
+            <value><c>true</c> if cancel; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Apex.Converters.DateTimeToSensibleStringConverter">
+            <summary>
+            Converts a DateTime to a more sensible string.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.DateTimeToSensibleStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.DateTimeToSensibleStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Consistency.HitTest">
+            <summary>
+            Provides a Silverlight/WPF indenpendent way to hit-test a point on the screen.
+            </summary>
+        </member>
+        <member name="F:Apex.Consistency.HitTest.results">
+            <summary>
+            The set of hit test results.
+            </summary>
+        </member>
+        <member name="M:Apex.Consistency.HitTest.DoHitTest(System.Windows.UIElement,System.Windows.Point)">
+            <summary>
+            Performs the hit test.
+            </summary>
+            <param name="rootElement">The root element.</param>
+            <param name="point">The point, relative to the root element.</param>
+        </member>
+        <member name="P:Apex.Consistency.HitTest.Hits">
+            <summary>
+            Gets the hit-test hits.
+            </summary>
+        </member>
+        <member name="F:System.Windows.FrameworkPropertyMetadata.CoercionDataProperty">
+            <summary>
+            CoercionData Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:System.Windows.FrameworkPropertyMetadata.GetCoercionData(System.Windows.DependencyObject)">
+            <summary>
+            Gets the CoercionData property. This dependency property 
+            is attached to any dependency object that contains coerced property values.
+            </summary>
+        </member>
+        <member name="M:System.Windows.FrameworkPropertyMetadata.SetCoercionData(System.Windows.DependencyObject,System.Windows.FrameworkPropertyMetadata.CoercionData)">
+            <summary>
+            Sets the CoercionData property. This dependency property 
+            is attached to any dependency object that contains coerced property values.
+            </summary>
+        </member>
+        <member name="T:Apex.Commands.CommandReference">
+            <summary> 
+            Allows a command to bound via a static resource.
+            The inspiration from this class came from:
+            http://joshsmithonwpf.wordpress.com/
+            </summary> 
+        </member>
+        <member name="M:Apex.Commands.CommandReference.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.Commands.CommandReference"/> class.
+            </summary>
+        </member>
+        <member name="F:Apex.Commands.CommandReference.CommandProperty">
+            <summary>
+            The Command dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.CommandReference.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current state.
+            </summary>
+            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+            <returns>
+            true if this command can be executed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Apex.Commands.CommandReference.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+        </member>
+        <member name="M:Apex.Commands.CommandReference.OnCommandChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the command is changed..
+            </summary>
+            <param name="d">The dependency object.</param>
+            <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:Apex.Commands.CommandReference.Command">
+            <summary>
+            Gets or sets the command.
+            </summary>
+            <value>
+            The command.
+            </value>
+        </member>
+        <member name="E:Apex.Commands.CommandReference.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should execute.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.ViewAttribute">
+            <summary>
+            The View attribute marks a class as a View . This is used
+            to allow the Apex SDK to help build Views and ViewModels.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.ViewModelAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.ViewAttribute"/> class.
+            </summary>
+            <param name="viewModelType">Type of the associated ViewModel.</param>
+        </member>
+        <member name="M:Apex.MVVM.ViewAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.ViewAttribute"/> class.
+            </summary>
+            <param name="viewModelType">Type of the associated ViewModel.</param>
+            <param name="hint">The hint.</param>
+        </member>
+        <member name="P:Apex.MVVM.ViewAttribute.ViewModelType">
+            <summary>
+            Gets the type of the view model.
+            </summary>
+            <value>
+            The type of the view model.
+            </value>
+        </member>
+        <member name="P:Apex.MVVM.ViewAttribute.Hint">
+            <summary>
+            Gets the hint.
+            </summary>
+        </member>
+        <member name="T:Apex.Shells.IShell">
+            <summary>
+            An IShell interface represents a shell for an MVVM application.
+            This could be a top level element in a web page (silverlight)
+            a window (wpf) or a page in WP7.
+            </summary>
+        </member>
+        <member name="M:Apex.Shells.IShell.DoFullscreen">
+            <summary>
+            Fullscreens the shell, if supported.
+            </summary>
+        </member>
+        <member name="M:Apex.Shells.IShell.ShowPopup(System.Windows.UIElement,System.Action{System.Object})">
+            <summary>
+            Pushes a popup onto the popup stack and displays it.
+            Once the popup is closed, this onPopupClosed action will be called 
+            the value of IPopup.GetPopupResult();
+            </summary>
+            <param name="popup">The popup.</param>
+            <param name="onPopopClosed">The action to invoke when the popop is closed.</param>
+        </member>
+        <member name="M:Apex.Shells.IShell.ClosePopup(System.Windows.UIElement,System.Object)">
+            <summary>
+            Closes the popup.
+            </summary>
+            <param name="popup">The popup.</param>
+            <param name="result">The popup result, which will be provided to the caller of ShowPopup.</param>
+        </member>
+        <member name="P:Apex.Shells.IShell.PopupAnimationHelper">
+            <summary>
+            Gets or sets the popup animation helper.
+            </summary>
+            <value>
+            The popup animation helper.
+            </value>
+        </member>
+        <member name="T:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper">
+            <summary>
+            The popup animation helper provides the functionality to animate a popup
+            being shown in a popup host.
+            </summary>
+        </member>
+        <member name="T:Apex.Helpers.Popups.PopupAnimationHelper">
+            <summary>
+            Base class for popup animation helpers.
+            </summary>
+        </member>
+        <member name="F:Apex.Helpers.Popups.PopupAnimationHelper.popupsAndBackgrounds">
+            <summary>
+            A list that stores each popup and associated background.
+            </summary>
+        </member>
+        <member name="M:Apex.Helpers.Popups.PopupAnimationHelper.ShowPopup(System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Shows the popup in the popup host.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popup">The popup.</param>
+        </member>
+        <member name="M:Apex.Helpers.Popups.PopupAnimationHelper.ClosePopup(System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Closes the popup from the popup host.
+            IMPORTANT: The stame instance of the PopupTransitionHelper that was used to 
+            show the popup MUST be used to hide it.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popup">The popup.</param>
+        </member>
+        <member name="M:Apex.Helpers.Popups.PopupAnimationHelper.AnimatePopupShow(System.Windows.Controls.Grid,System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Animates the popup show.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popupBackground">The popup background.</param>
+            <param name="popupElement">The popup element.</param>
+        </member>
+        <member name="M:Apex.Helpers.Popups.PopupAnimationHelper.AnimatePopupHide(System.Windows.Controls.Grid,System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Animates the popup hide.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popupBackground">The popup background.</param>
+            <param name="popupElement">The popup element.</param>
+        </member>
+        <member name="P:Apex.Helpers.Popups.PopupAnimationHelper.OpenPopupsCount">
+            <summary>
+            Gets the open popups count.
+            </summary>
+        </member>
+        <member name="M:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper"/> class.
+            </summary>
+        </member>
+        <member name="M:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.AnimatePopupShow(System.Windows.Controls.Grid,System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Animates the popup show.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popupBackground">The popup background.</param>
+            <param name="popupElement">The popup element.</param>
+        </member>
+        <member name="M:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.AnimatePopupHide(System.Windows.Controls.Grid,System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Animates the popup hide.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popupBackground">The popup background.</param>
+            <param name="popupElement">The popup element.</param>
+        </member>
+        <member name="P:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.FadeInDuration">
+            <summary>
+            Gets or sets the duration of the fade in.
+            </summary>
+            <value>
+            The duration of the fade in.
+            </value>
+        </member>
+        <member name="P:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper.FadeOutDuration">
+            <summary>
+            Gets or sets the duration of the fade out.
+            </summary>
+            <value>
+            The duration of the fade out.
+            </value>
+        </member>
+        <member name="T:Apex.Extensions.StringExtensions">
+            <summary>
+            A set of useful extensions for the String class.
+            </summary>
+        </member>
+        <member name="M:Apex.Extensions.StringExtensions.ContainsCaseInsensitive(System.String,System.String)">
+            <summary>
+            Determines whether the source string contains the value string, in a case-insensitive fasion.
+            </summary>
+            <param name="source">The source string.</param>
+            <param name="value">The value string.</param>
+            <returns>
+              <c>true</c> if source contains value; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Apex.Controls.PaddedGrid">
+            <summary>
+            The PaddedGrid control is a Grid that supports padding.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.PaddedGrid.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.Controls.PaddedGrid"/> class.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.PaddedGrid.PaddedGrid_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Loaded event of the PaddedGrid control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.Controls.PaddedGrid.OnPaddingChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the padding changes.
+            </summary>
+            <param name="dependencyObject">The dependency object.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Controls.PaddedGrid.PaddingProperty">
+            <summary>
+            The internal dependency property object for the 'Padding' property.
+            </summary>
+        </member>
+        <member name="P:Apex.Controls.PaddedGrid.Padding">
+            <summary>
+            Gets or sets the padding.
+            </summary>
+            <value>The padding.</value>
+        </member>
+        <member name="T:Apex.Consistency.GridLengthConverter">
+            <summary>
+            Consistent GridLengthConverter for Apex.
+            </summary>
+        </member>
+        <member name="M:Apex.Consistency.GridLengthConverter.ConvertFromString(System.String)">
+            <summary>
+            Create a grid length from a string, consistently in WPF, WP7 and SL.
+            </summary>
+            <param name="gridLength">The grid length, e.g. 4*, Auto, 23 etc.</param>
+            <returns>A gridlength.</returns>
+        </member>
+        <member name="T:Apex.MVVM.ModelAttribute">
+            <summary>
+            The Model Attribute marks a class as a model.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ModelAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.ModelAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ModelAttribute.#ctor(Apex.ExecutionContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.ModelAttribute"/> class.
+            </summary>
+            <param name="context">The execution context for the model.</param>
+        </member>
+        <member name="P:Apex.MVVM.ModelAttribute.Context">
+            <summary>
+            Gets the execution context for the model.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.CommandEventHandler">
+            <summary>
+            The CommandEventHandler delegate.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.CommandEventHandler`1">
+            <summary>
+            The typed CommandEventHandler delegate.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.CancelCommandEventHandler">
+            <summary>
+            The CancelCommandEvent delegate.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.CancelCommandEventHandler`1">
+            <summary>
+            The typed CancelCommandEvent delegate.
+            </summary>
+        </member>
+        <member name="T:Apex.Converters.BooleanToVisibilityConverter">
+            <summary>
+            Standard boolean to visibility converter that supports inversion.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.BooleanToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.BooleanToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Helpers.AssembliesHelper">
+            <summary>
+            The AssembliesHelper helps gets assemblies and types used for brokering views and 
+            viewmodels etc, in a consistent way across platforms.
+            </summary>
+        </member>
+        <member name="M:Apex.Helpers.AssembliesHelper.GetDomainAssemblies">
+            <summary>
+            Gets the domain assemblies.
+            </summary>
+            <returns>Assemblies in the domain.</returns>
+        </member>
+        <member name="M:Apex.Helpers.AssembliesHelper.GetTypesInDomain">
+            <summary>
+            Gets the domain types.
+            </summary>
+            <returns>Domain types.</returns>
+        </member>
+        <member name="T:Apex.Extensions.ListExtensions">
+            <summary>
+            A set of useful extensions for the List interface.
+            </summary>
+        </member>
+        <member name="F:Apex.Extensions.ListExtensions.rng">
+            <summary>
+            Some of these functions need random numbers - so keep a single
+            Random instance.
+            </summary>
+        </member>
+        <member name="M:Apex.Extensions.ListExtensions.Shuffle``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Shuffles the specified list.
+            </summary>
+            <typeparam name="T">The list type.</typeparam>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:Apex.Extensions.ListExtensions.RandomElement``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Returns a random element from the list.
+            </summary>
+            <typeparam name="T">The list type.</typeparam>
+            <param name="list">The list.</param>
+            <returns>A random element from the list.</returns>
+        </member>
+        <member name="T:Apex.Extensions.DateTimeExtensions">
+            <summary>
+            Extensions for the datetime class.
+            </summary>
+        </member>
+        <member name="M:Apex.Extensions.DateTimeExtensions.BeginningOfWeek(System.DateTime)">
+            <summary>
+            Gets the beginning of the week.
+            </summary>
+            <param name="me">Me.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Extensions.DateTimeExtensions.BeginningOfMonth(System.DateTime)">
+            <summary>
+            Gets the beginning of the month.
+            </summary>
+            <param name="me">Me.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Extensions.DateTimeExtensions.BeginningOfDay(System.DateTime)">
+            <summary>
+            Gets the beginning of the day.
+            </summary>
+            <param name="me">Me.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Extensions.DateTimeExtensions.EndOfDay(System.DateTime)">
+            <summary>
+            Gets the end of the day.
+            </summary>
+            <param name="me">Me.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Extensions.DateTimeExtensions.WorkDaysBetween(System.DateTime,System.DateTime)">
+            <summary>
+            Find workdays between.
+            </summary>
+            <param name="startD">The start D.</param>
+            <param name="endD">The end D.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Apex.Converters.InvertedBooleanConverter">
+            <summary>
+            Inverts a bool.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.InvertedBooleanConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.InvertedBooleanConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Consistency.SystemParameters">
+            <summary>
+            Provides a Silverlight/WPF independent way to get system parameters
+            not in both platforms.
+            </summary>
+        </member>
+        <member name="P:Apex.Consistency.SystemParameters.MinimumHorizontalDragDistance">
+            <summary>
+            Gets the minimum horizontal drag distance.
+            </summary>
+        </member>
+        <member name="P:Apex.Consistency.SystemParameters.MinimumVerticalDragDistance">
+            <summary>
+            Gets the minimum vertical drag distance.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.ViewModel">
+            <summary>
+            Standard viewmodel class base, simply allows property change notifications to be sent.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.NotifyPropertyChanged(System.String)">
+            <summary>
+            Raises the property changed event.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.GetNotifyingProperties(System.Boolean)">
+            <summary>
+            Gets all the the notifying properties for the view model.
+            </summary>
+            <param name="declaredOnly">if set to <c>true</c> gets the notifying properties for the view model only,
+             not properties from superclasses..</param>
+            <returns>All notifying properties for the view model.</returns>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.SaveInitialState">
+            <summary>
+            Saves the initial state.
+            This stores all of the values of the notifying properties.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.RestoreInitialState">
+            <summary>
+            Restores the initial state.
+            This restores all of the values of the notifying properties.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.ResetHasChangesFlag">
+            <summary>
+            Resets the has changes flag.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.GetValue(Apex.MVVM.NotifyingProperty)">
+            <summary>
+            Gets the value of a notifying property.
+            </summary>
+            <param name="notifyingProperty">The notifying property.</param>
+            <returns>The value of the notifying property.</returns>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.SetValue(Apex.MVVM.NotifyingProperty,System.Object)">
+            <summary>
+            Sets the value of the notifying property.
+            </summary>
+            <param name="notifyingProperty">The notifying property.</param>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="M:Apex.MVVM.ViewModel.SetValue(Apex.MVVM.NotifyingProperty,System.Object,System.Boolean)">
+            <summary>
+            Sets the value of the notifying property.
+            </summary>
+            <param name="notifyingProperty">The notifying property.</param>
+            <param name="value">The value to set.</param>
+            <param name="forceUpdate">if set to <c>true</c> NotifyPropertyChanged will be called
+            regardless of whether the new value is different to the old one.</param>
+        </member>
+        <member name="F:Apex.MVVM.ViewModel.hasChanges">
+            <summary>
+            A flag used to sow whether a view model has changes.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.ViewModel.PropertyChanged">
+            <summary>
+            The property changed event.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.ViewModel.HasChanges">
+            <summary>
+            Gets or sets a value indicating whether this instance has changes.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has changes; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Apex.ApexBroker">
+            <summary>
+            The <see cref="T:Apex.ApexBroker"/> ApexBroker Singleton class.
+            </summary>
+        </member>
+        <member name="M:Apex.ApexBroker.Initialise">
+            <summary>
+            Initialises the ApexBroker, allowing it to be used.
+            </summary>
+        </member>
+        <member name="M:Apex.ApexBroker.GetModel``1">
+            <summary>
+            Gets the model.
+            </summary>
+            <typeparam name="TModel">The type of the model.</typeparam>
+            <returns>The model instance.</returns>
+        </member>
+        <member name="M:Apex.ApexBroker.RegisterViewForViewModel(System.Type,System.Type,System.String)">
+            <summary>
+            Registers the view for view model.
+            </summary>
+            <param name="viewModelType">Type of the view model.</param>
+            <param name="viewType">Type of the view.</param>
+            <param name="hint">The hint.</param>
+        </member>
+        <member name="M:Apex.ApexBroker.RegisterShell(Apex.Shells.IShell)">
+            <summary>
+            Registers the shell.
+            </summary>
+            <param name="shell">The shell.</param>
+        </member>
+        <member name="M:Apex.ApexBroker.RegisterService``1(System.Object)">
+            <summary>
+            Registers a service. Generally a Service is some kind of object that implements an interface,
+            for example 'ILogService' or 'IMessagingService'.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="serviceInstance">The service instance.</param>
+        </member>
+        <member name="M:Apex.ApexBroker.RegisterOrOverrideService``1(System.Object)">
+            <summary>
+            Registers a service. Generally a Service is some kind of object that implements an interface,
+            for example 'ILogService' or 'IMessagingService'.
+            If the service already exists it will be overriden.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="serviceInstance">The service instance.</param>
+        </member>
+        <member name="M:Apex.ApexBroker.GetService``1">
+            <summary>
+            Gets the service based on the service type, such as 'ILogService' or 'IMessagingService'.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <returns>The service instance.</returns>
+        </member>
+        <member name="M:Apex.ApexBroker.GetShell">
+            <summary>
+            Gets the shell host.
+            </summary>
+            <returns>The registered shell.</returns>
+        </member>
+        <member name="M:Apex.ApexBroker.GetViewForViewModel(System.Type,System.String)">
+            <summary>
+            Gets the view for view model.
+            </summary>
+            <param name="viewModelType">Type of the view model.</param>
+            <param name="hint">The hint.</param>
+            <returns>
+            The view type for the view model type.
+            </returns>
+        </member>
+        <member name="M:Apex.ApexBroker.EnsureInitialised">
+            <summary>
+            Ensures the broker is initialised.
+            </summary>
+        </member>
+        <member name="M:Apex.ApexBroker.DetermineExecutionContext">
+            <summary>
+            Determines the execution context.
+            </summary>
+            <returns>The current execution context.</returns>
+        </member>
+        <member name="F:Apex.ApexBroker.syncLock">
+            <summary>
+            A sync lock for thread safety.
+            </summary>
+        </member>
+        <member name="F:Apex.ApexBroker.isInitialised">
+            <summary>
+            A boolean to determine whether the broker is initialised.
+            </summary>
+        </member>
+        <member name="F:Apex.ApexBroker.currentExecutionContext">
+            <summary>
+            The current execution context.
+            </summary>
+        </member>
+        <member name="F:Apex.ApexBroker.viewModelViewMappings">
+            <summary>
+            A map of view model types to view types.
+            </summary>
+        </member>
+        <member name="F:Apex.ApexBroker.modelInstances">
+            <summary>
+            The model instances.
+            </summary>
+        </member>
+        <member name="F:Apex.ApexBroker.serviceTypesToInstances">
+            <summary>
+            Dictionary of service types to service instances.
+            </summary>
+        </member>
+        <member name="F:Apex.ApexBroker.shell">
+            <summary>
+            The shell.
+            </summary>
+        </member>
+        <member name="P:Apex.ApexBroker.CurrentExecutionContext">
+            <summary>
+            Gets the current execution context.
+            </summary>
+        </member>
+        <member name="T:Apex.ApexBroker.ViewModelViewMapping">
+            <summary>
+            The view-viewmodel mapping.
+            </summary>
+        </member>
+        <member name="P:Apex.ApexBroker.ViewModelViewMapping.ViewModelType">
+            <summary>
+            Gets or sets the type of the view model.
+            </summary>
+            <value>
+            The type of the view model.
+            </value>
+        </member>
+        <member name="P:Apex.ApexBroker.ViewModelViewMapping.ViewType">
+            <summary>
+            Gets or sets the type of the view.
+            </summary>
+            <value>
+            The type of the view.
+            </value>
+        </member>
+        <member name="P:Apex.ApexBroker.ViewModelViewMapping.Hint">
+            <summary>
+            Gets or sets the hint.
+            </summary>
+            <value>
+            The hint.
+            </value>
+        </member>
+        <member name="T:Apex.ExecutionContext">
+            <summary>
+            An ExecutionContext identifies how an assembly is running - whether it is standard,
+            in the visual studio designer, or as a unit test.
+            </summary>
+        </member>
+        <member name="F:Apex.ExecutionContext.Standard">
+            <summary>
+            The code is executing.
+            </summary>
+        </member>
+        <member name="F:Apex.ExecutionContext.Design">
+            <summary>
+            The code is executing, but in the context of the visual studio designer.
+            </summary>
+        </member>
+        <member name="F:Apex.ExecutionContext.Test">
+            <summary>
+            The code is executing, but in the context of a unit test.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.IView">
+            <summary>
+            Views can implement this interface to be given handlers
+            to key life-cycle events.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.IView.OnActivated">
+            <summary>
+            Called when the view is activated.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.IView.OnDeactivated">
+            <summary>
+            Called when the view is deactivated.
+            </summary>
+        </member>
+        <member name="T:Apex.MVVM.AsynchronousCommand">
+            <summary>
+            The AsynchronousCommand is a Command that runs on a thread from the thread pool.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.#ctor(System.Action,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.AsynchronousCommand"/> class.
+            </summary>
+            <param name="action">The action.</param>
+            <param name="canExecute">if set to <c>true</c> the command can execute.</param>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.#ctor(System.Action{System.Object},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.MVVM.AsynchronousCommand"/> class.
+            </summary>
+            <param name="parameterizedAction">The parameterized action.</param>
+            <param name="canExecute">if set to <c>true</c> [can execute].</param>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.Initialise">
+            <summary>
+            Initialises this instance.
+            </summary>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.DoExecute(System.Object)">
+            <summary>
+            Executes the command.
+            </summary>
+            <param name="param">The param.</param>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.NotifyPropertyChanged(System.String)">
+            <summary>
+            Raises the property changed event.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.ReportProgress(System.Action)">
+            <summary>
+            Reports progress on the thread which invoked the command.
+            </summary>
+            <param name="progressAction">The progress action.</param>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.CancelIfRequested">
+            <summary>
+            Cancels the command if requested.
+            </summary>
+            <returns>True if the command has been cancelled and we must return.</returns>
+        </member>
+        <member name="M:Apex.MVVM.AsynchronousCommand.InvokeCancelled(Apex.MVVM.CommandEventArgs)">
+            <summary>
+            Invokes the cancelled event.
+            </summary>
+            <param name="args">The <see cref="T:Apex.MVVM.CommandEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.MVVM.AsynchronousCommand.callingDispatcher">
+            <summary>
+            The calling dispatcher.
+            </summary>
+        </member>
+        <member name="F:Apex.MVVM.AsynchronousCommand.isExecuting">
+            <summary>
+            Flag indicating that the command is executing.
+            </summary>
+        </member>
+        <member name="F:Apex.MVVM.AsynchronousCommand.isCancellationRequested">
+            <summary>
+            Flag indicated that cancellation has been requested.
+            </summary>
+        </member>
+        <member name="F:Apex.MVVM.AsynchronousCommand.disableDuringExecuting">
+            <summary>
+            Flag indicating that a command must be disabled during its execution.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.AsynchronousCommand.PropertyChanged">
+            <summary>
+            The property changed event.
+            </summary>
+        </member>
+        <member name="E:Apex.MVVM.AsynchronousCommand.Cancelled">
+            <summary>
+            Occurs when the command is cancelled.
+            </summary>
+        </member>
+        <member name="P:Apex.MVVM.AsynchronousCommand.IsExecuting">
+            <summary>
+            Gets or sets a value indicating whether this instance is executing.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is executing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Apex.MVVM.AsynchronousCommand.IsCancellationRequested">
+            <summary>
+            Gets or sets a value indicating whether this instance is cancellation requested.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is cancellation requested; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Apex.MVVM.AsynchronousCommand.DisableDuringExecution">
+            <summary>
+            Gets or sets a value indicating whether to disable the command during execution.
+            </summary>
+            <value>
+            	<c>true</c> if the command should be disabled during execution; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Apex.MVVM.AsynchronousCommand.CancelCommand">
+            <summary>
+            Gets the cancel command.
+            </summary>
+        </member>
+        <member name="T:Apex.Extensions.EnumExtensions">
+            <summary>
+            Extensions for the enum class.
+            </summary>
+        </member>
+        <member name="M:Apex.Extensions.EnumExtensions.GetDescription(System.Enum)">
+            <summary>
+            Gets the description of an enumeration.
+            </summary>
+            <param name="me">The enumeration.</param>
+            <returns>The value of the [Description] attribute for the enum, or the name of
+            the enum value if there isn't one.</returns>
+        </member>
+        <member name="T:Apex.Commands.EventBindings">
+            <summary>
+            Common event bindings.
+            </summary>
+        </member>
+        <member name="F:Apex.Commands.EventBindings.EventBindingsProperty">
+            <summary>
+            The Event Bindings Property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.EventBindings.GetEventBindings(System.Windows.DependencyObject)">
+            <summary>
+            Gets the event bindings.
+            </summary>
+            <param name="o">The o.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.EventBindings.SetEventBindings(System.Windows.DependencyObject,Apex.Commands.EventBindingCollection)">
+            <summary>
+            Sets the event bindings.
+            </summary>
+            <param name="o">The o.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Apex.Commands.EventBindings.OnEventBindingsChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when event bindings changed.
+            </summary>
+            <param name="o">The o.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Apex.Helpers.EnumHelper">
+            <summary>
+            The enumeration helper class.
+            </summary>
+        </member>
+        <member name="M:Apex.Helpers.EnumHelper.GetValues(System.Type)">
+            <summary>
+            Gets the enumeration values.
+            </summary>
+            <param name="enumType">Type of the enum.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Apex.Consistency.MouseClickDetector">
+            <summary>
+            This extremely useful class can be used to check for double clicks in SL.
+            Code inpsired by Jim McCurdy:
+            http://yinyangme.com/blog/post/The-simplest-way-to-detect-DoubleClick-in-Silverlight.aspx
+            </summary>
+        </member>
+        <member name="T:Apex.Commands.EventBindingCollection">
+            <summary>
+            Collection of event bindings.
+            </summary>
+        </member>
+        <member name="T:Apex.Commands.ExtendedCommands">
+            <summary>
+            Common Extended Commands.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.Control_LeftClickMouseDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles the LeftClickMouseDown event of the Control object.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.Control_RightClickMouseDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles the RightClickMouseDown event of the Control object.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.Control_LeftDoubleClickMouseDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles the LeftDoubleClickMouseDown event of the Control object.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.Control_RightDoubleClickMouseDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles the RightDoubleClickMouseDown event of the Control object.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.LeftClickCommandProperty">
+            <summary>
+            The LeftClickCommand dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetLeftClickCommand(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the left click command.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetLeftClickCommand(System.Windows.FrameworkElement,System.Windows.Input.ICommand)">
+            <summary>
+            Sets the left click command.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.OnLeftClickCommandChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the left click command changes.
+            </summary>
+            <param name="d">The dependency object.</param>
+            <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.LeftClickCommandParameterProperty">
+            <summary>
+            The LeftClickCommandParameter dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetLeftClickCommandParameter(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the left click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetLeftClickCommandParameter(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Sets the left click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.LeftDoubleClickCommandProperty">
+            <summary>
+            The LeftDoubleClickCommand dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetLeftDoubleClickCommand(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the left double click command.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetLeftDoubleClickCommand(System.Windows.FrameworkElement,System.Windows.Input.ICommand)">
+            <summary>
+            Sets the left double click command.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.OnLeftDoubleClickCommandChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the left double click command changes.
+            </summary>
+            <param name="d">The dependency object.</param>
+            <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.LeftDoubleClickCommandParameterProperty">
+            <summary>
+            The LeftDoubleClickCommandParameter property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetLeftDoubleClickCommandParameter(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the left double click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetLeftDoubleClickCommandParameter(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Sets the left double click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.OnLeftDoubleClickCommandParameterChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the left double click command parameter changes.
+            </summary>
+            <param name="d">The dependency object.</param>
+            <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.RightClickCommandProperty">
+            <summary>
+            The RightClickCommand dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetRightClickCommand(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the right click command.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetRightClickCommand(System.Windows.FrameworkElement,System.Windows.Input.ICommand)">
+            <summary>
+            Sets the right click command.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.OnRightClickCommandChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the right click command changes.
+            </summary>
+            <param name="d">The dependency object.</param>
+            <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.RightClickCommandParameterProperty">
+            <summary>
+            The RightClickCommandParameter dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetRightClickCommandParameter(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the right click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetRightClickCommandParameter(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Sets the right click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.RightDoubleClickCommandProperty">
+            <summary>
+            The RightDoubleClickCommand dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetRightDoubleClickCommand(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the right double click command.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetRightDoubleClickCommand(System.Windows.FrameworkElement,System.Windows.Input.ICommand)">
+            <summary>
+            Sets the right double click command.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.OnRightDoubleClickCommandChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the right double click command changes.
+            </summary>
+            <param name="d">The dependency object.</param>
+            <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Commands.ExtendedCommands.RightDoubleClickCommandParameterProperty">
+            <summary>
+            The RightDoubleClickCommandParameter dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.GetRightDoubleClickCommandParameter(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the right double click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apex.Commands.ExtendedCommands.SetRightDoubleClickCommandParameter(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Sets the right double click command parameter.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Apex.Consistency.DispatcherHelper">
+            <summary>
+            Helper to make Dispatcher functions consistent in WPF/SL/WP7.
+            </summary>
+        </member>
+        <member name="P:Apex.Consistency.DispatcherHelper.CurrentDispatcher">
+            <summary>
+            Gets the current dispatcher.
+            </summary>
+        </member>
+        <member name="T:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper">
+            <summary>
+            The popup animation helper provides the functionality to animate a popup
+            being shown in a popup host.
+            </summary>
+        </member>
+        <member name="F:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.TransformationName">
+            <summary>
+            The transformation name.
+            </summary>
+        </member>
+        <member name="M:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.Helpers.Popups.FadeInOutPopupAnimationHelper"/> class.
+            </summary>
+        </member>
+        <member name="M:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.AnimatePopupShow(System.Windows.Controls.Grid,System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Animates the popup show.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popupBackground">The popup background.</param>
+            <param name="popupElement">The popup element.</param>
+        </member>
+        <member name="M:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.AnimatePopupHide(System.Windows.Controls.Grid,System.Windows.Controls.Grid,System.Windows.UIElement)">
+            <summary>
+            Animates the popup hide.
+            </summary>
+            <param name="popupHost">The popup host.</param>
+            <param name="popupBackground">The popup background.</param>
+            <param name="popupElement">The popup element.</param>
+        </member>
+        <member name="P:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.BounceInDuration">
+            <summary>
+            Gets or sets the duration of the bounce in.
+            </summary>
+            <value>
+            The duration of the bounce in.
+            </value>
+        </member>
+        <member name="P:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.BounceOutDuration">
+            <summary>
+            Gets or sets the duration of the bounce out.
+            </summary>
+            <value>
+            The duration of the bounce out.
+            </value>
+        </member>
+        <member name="P:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.BounceInDirection">
+            <summary>
+            Gets or sets the bounce in direction. This is the angle
+            from the top of the screen in degrees - i.e. 0 bounces in
+            from the top, 180 from the bottom, etc.
+            </summary>
+            <value>
+            The bounce in direction.
+            </value>
+        </member>
+        <member name="P:Apex.Helpers.Popups.BounceInOutPopupAnimationHelper.BounceOutDirection">
+            <summary>
+            Gets or sets the bounce out direction. This is the angle
+            from the top of the screen in degrees - i.e. 0 bounces out
+            to the top, 180 to the bottom, etc.
+            </summary>
+            <value>
+            The bounce out direction.
+            </value>
+        </member>
+        <member name="T:Apex.Converters.NullToVisibilityConverter">
+            <summary>
+            Converts null to collapsed. Can be inverted.
+            </summary>
+        </member>
+        <member name="M:Apex.Converters.NullToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Apex.Converters.NullToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Apex.Controls.VariableGrid">
+            <summary>
+            VariableGrid class - supports a grid with a variable number of rows or columns.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.VariableGrid.OnGridPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when [grid property changed].
+            </summary>
+            <param name="dependencyObject">The dependency object.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Controls.VariableGrid.rowsProperty">
+            <summary>
+            The rows dependency property.
+            </summary>
+        </member>
+        <member name="F:Apex.Controls.VariableGrid.columnsProperty">
+            <summary>
+            The columns dependency property.
+            </summary>
+        </member>
+        <member name="F:Apex.Controls.VariableGrid.rowHeightProperty">
+            <summary>
+            The rows dependency property.
+            </summary>
+        </member>
+        <member name="F:Apex.Controls.VariableGrid.columnsWidthProperty">
+            <summary>
+            The columns dependency property.
+            </summary>
+        </member>
+        <member name="P:Apex.Controls.VariableGrid.Rows">
+            <summary>
+            Gets or sets the rows.
+            </summary>
+            <value>The rows.</value>
+        </member>
+        <member name="P:Apex.Controls.VariableGrid.Columns">
+            <summary>
+            Gets or sets the columns.
+            </summary>
+            <value>The columns.</value>
+        </member>
+        <member name="P:Apex.Controls.VariableGrid.RowHeight">
+            <summary>
+            Gets or sets the height of the row.
+            </summary>
+            <value>
+            The height of the row.
+            </value>
+        </member>
+        <member name="P:Apex.Controls.VariableGrid.ColumnWidth">
+            <summary>
+            Gets or sets the width of the column.
+            </summary>
+            <value>
+            The width of the column.
+            </value>
+        </member>
+        <member name="T:Apex.Controls.EnumerationComboBox">
+            <summary>
+            A EnumerationComboBox shows a selected enumeration value from a set of all available enumeration values.
+            If the enumeration value has the 'Description' attribute, this is used.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.EnumerationComboBox.EnumerationComboBox_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the EnumerationComboBoxTemp control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Apex.Controls.EnumerationComboBox.PopulateItemsSource">
+            <summary>
+            Populates the items source.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.EnumerationComboBox.Initialise">
+            <summary>
+            Initialises this instance.
+            </summary>
+        </member>
+        <member name="F:Apex.Controls.EnumerationComboBox.SelectedEnumerationProperty">
+            <summary>
+            The SelectedEnumerationProperty dependency property.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.EnumerationComboBox.OnSelectedEnumerationChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the selected enumeration is changed.
+            </summary>
+            <param name="o">The o.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Apex.Controls.EnumerationComboBox.enumerations">
+            <summary>
+            Gets or sets the enumerations.
+            </summary>
+            <value>
+            The enumerations.
+            </value>
+        </member>
+        <member name="P:Apex.Controls.EnumerationComboBox.SelectedEnumeration">
+            <summary>
+            Gets or sets the selected enumeration.
+            </summary>
+            <value>
+            The selected enumeration.
+            </value>
+        </member>
+        <member name="T:Apex.Controls.NameValue">
+            <summary>
+            A name-value pair.
+            If we're in Silverlight, we must make this class public so that it can be reflected properly.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.NameValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.Controls.NameValue"/> class.
+            </summary>
+        </member>
+        <member name="M:Apex.Controls.NameValue.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Apex.Controls.NameValue"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:Apex.Controls.NameValue.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Apex.Controls.NameValue.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+    </members>
+</doc>
