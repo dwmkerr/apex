@@ -17,6 +17,12 @@ namespace Apex.Interop
         /// </summary>
         [DllImport("User32")]
         internal static extern IntPtr MonitorFromWindow(IntPtr handle, int flags);
+
+        [DllImport("user32.dll", PreserveSig = true)]
+        internal static extern IntPtr SendMessage(HandleRef hWnd, uint Msg, int wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern IntPtr SendMessage(HandleRef hWnd, int msg, int wParam, string lParam);
     }
 
     /// <summary>

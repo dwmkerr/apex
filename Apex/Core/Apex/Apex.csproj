@@ -93,6 +93,7 @@
     <Compile Include="Controls\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FolderTextBox.cs" />
     <Compile Include="Controls\PathTextBox.cs" />
     <Compile Include="Controls\SearchTextBox.cs" />
     <Compile Include="Controls\CrossButton.cs" />
@@ -138,7 +139,9 @@
     <Compile Include="Helpers\Popups\BounceInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\FadeInOutPopupAnimationHelper.cs" />
     <Compile Include="Helpers\Popups\PopupAnimationHelper.cs" />
+    <Compile Include="Helpers\SelectFolderDialog.cs" />
     <Compile Include="Interop\dwmapi.cs" />
+    <Compile Include="Interop\Shell32.cs" />
     <Compile Include="Interop\User32.cs" />
     <Compile Include="MVVM\AsynchronousCommand.cs" />
     <Compile Include="Attributes\ModelAttribute.cs" />
@@ -193,6 +196,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionaries\FolderTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
