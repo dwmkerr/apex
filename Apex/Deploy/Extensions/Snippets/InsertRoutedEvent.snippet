@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+
+      <!-- The header contains information describing the snippet. -->
+      <Header>
+
+        <!-- The Title of the snippet, this will be shown in the snippets manager. -->
+        <Title>Insert Routed Event</Title>
+
+        <!-- The description of the snippet. -->
+        <Description>Inserts a Routed Event.</Description>
+
+        <!-- The author of the snippet. -->
+        <Author>Dave Kerr</Author>
+
+        <!-- The set of characters that must be keyed in to insert the snippet. -->
+        <Shortcut>apexre</Shortcut>
+
+        <!-- A URL for more help. -->
+        <HelpUrl>http://apex.codeplex.com</HelpUrl>
+
+        <!-- The set of snippet types we're dealing with - either Expansion or -->
+        <SnippetTypes>
+          <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+
+      </Header>
+      
+        <Snippet>
+            <Declarations>
+              <Literal>
+                <ID>EventName</ID>
+                <ToolTip>Enter the event name</ToolTip>
+                <Default>PropertyName</Default>
+              </Literal>
+              <Literal>
+                <ID>EventHandlerType</ID>
+                <ToolTip>Provide an event handler type or use the default RoutedEventHandler</ToolTip>
+                <Default>RoutedEventHandler</Default>
+              </Literal>
+              <Literal>
+                <ID>ParentType</ID>
+                <ToolTip>Enter the parent type.</ToolTip>
+                <Default>ParentType</Default>
+              </Literal>
+            </Declarations>
+            <Code Language="CSharp" Kind="any">
+                <![CDATA[  
+                    /// <summary>
+                    /// The $EventName$ routed event.
+                    /// </summary>
+                    public static readonly RoutedEvent $EventName$Event = EventManager.RegisterRoutedEvent(
+                      "$EventName$", RoutingStrategy.Bubble, typeof($EventHandlerType$), typeof($ParentType$));
+        
+                    /// <summary>
+                    /// Occurs when $EventName$.
+                    /// </summary>
+                    public event $EventHandlerType$ $EventName$
+                    {
+                        add { AddHandler($EventName$Event, value); } 
+                        remove { RemoveHandler($EventName$Event, value); }
+                    }        
+    
+                    /// <summary>
+                    /// Raises the $EventName$ event.
+                    /// </summary>
+                    void Raise$EventName$Event()
+                    {
+                        //  Create the routed event args.
+                        RoutedEventArgs args = new RoutedEventArgs($ParentType$.$EventName$Event);
+                        
+                        //  Raise the event.
+                        RaiseEvent(args);
+                    }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
