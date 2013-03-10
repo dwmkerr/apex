@@ -66,6 +66,9 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\apex\adorners\Adorner.cs">
       <Link>Adorners\Adorner.cs</Link>
     </Compile>

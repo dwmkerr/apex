@@ -76,6 +76,9 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\..\WPF\CommandingExample\MainViewModel.cs">
       <Link>MainViewModel.cs</Link>
     </Compile>

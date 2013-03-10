@@ -209,6 +209,9 @@
     <Compile Include="..\..\Core\Apex\MVVM\ViewModel.cs">
       <Link>MVVM\ViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

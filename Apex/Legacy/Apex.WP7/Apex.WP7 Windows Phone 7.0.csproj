@@ -202,6 +202,9 @@
     <Compile Include="..\..\Core\Apex\Shells\IShell.cs">
       <Link>Shells\IShell.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Controls\CommandButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
