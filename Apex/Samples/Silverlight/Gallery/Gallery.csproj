@@ -70,6 +70,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Referenced Assemblies\Blend for Silverlight 5\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
@@ -98,6 +101,14 @@
       <DependentUpon>PaddedGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PaddedGrid\PaddedGridViewModel.cs" />
+    <Compile Include="DragAndDrop\CanvasSample\CanvasSampleView.xaml.cs">
+      <DependentUpon>CanvasSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragAndDrop\CanvasSample\CanvasSampleViewModel.cs" />
+    <Compile Include="DragAndDrop\ItemsControlSample\ItemsControlSampleView.xaml.cs">
+      <DependentUpon>ItemsControlSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragAndDrop\ItemsControlSample\ItemsControlSampleViewModel.cs" />
     <Compile Include="GalleryItemViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -111,6 +122,45 @@
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MVVM\CommandingSample\CommandingSampleView.xaml.cs">
+      <DependentUpon>CommandingSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\CommandingSample\CommandingSampleViewModel.cs" />
+    <Compile Include="MVVM\SimpleSample\SimpleExampleView.xaml.cs">
+      <DependentUpon>SimpleExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\SimpleSample\SimpleExampleViewModel.cs" />
+    <Compile Include="MVVM\ViewBrokerActivationSample\Page1View.xaml.cs">
+      <DependentUpon>Page1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewBrokerActivationSample\Page1ViewModel.cs" />
+    <Compile Include="MVVM\ViewBrokerActivationSample\Page2View.xaml.cs">
+      <DependentUpon>Page2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewBrokerActivationSample\Page2ViewModel.cs" />
+    <Compile Include="MVVM\ViewBrokerActivationSample\ViewBrokerActivationSampleView.xaml.cs">
+      <DependentUpon>ViewBrokerActivationSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewBrokerActivationSample\ViewBrokerActivationSampleViewModel.cs" />
+    <Compile Include="MVVM\ViewBrokerSample\FileView.xaml.cs">
+      <DependentUpon>FileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewBrokerSample\FileViewModel.cs" />
+    <Compile Include="MVVM\ViewBrokerSample\FolderView.xaml.cs">
+      <DependentUpon>FolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewBrokerSample\FolderViewModel.cs" />
+    <Compile Include="MVVM\ViewBrokerSample\ViewBrokerSampleView.xaml.cs">
+      <DependentUpon>ViewBrokerSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewBrokerSample\ViewBrokerSampleViewModel.cs" />
+    <Compile Include="Popups\PopupsView.xaml.cs">
+      <DependentUpon>PopupsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\PopupsViewModel.cs" />
+    <Compile Include="Popups\SimplePopupView.xaml.cs">
+      <DependentUpon>SimplePopupView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,6 +181,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <ApplicationDefinition Include="DragAndDrop\CanvasSample\CanvasSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="DragAndDrop\ItemsControlSample\ItemsControlSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +197,46 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <ApplicationDefinition Include="Popups\PopupsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Popups\SimplePopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\CommandingSample\CommandingSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\SimpleSample\SimpleExampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\ViewBrokerActivationSample\Page1View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\ViewBrokerActivationSample\Page2View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\ViewBrokerActivationSample\ViewBrokerActivationSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\ViewBrokerSample\FileView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\ViewBrokerSample\FolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="MVVM\ViewBrokerSample\ViewBrokerSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />

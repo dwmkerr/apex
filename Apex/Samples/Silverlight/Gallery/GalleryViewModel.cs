@@ -10,6 +10,14 @@ using Gallery.Controls.ApexGrid;
 //using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
 using Gallery.CueTextBox;
+using Gallery.DragAndDrop.CanvasSample;
+using Gallery.DragAndDrop.ItemsControlSample;
+using Gallery.MVVM.CommandingSample;
+using Gallery.MVVM.SimpleSample;
+using Gallery.MVVM.ViewBrokerActivationSample;
+using Gallery.MVVM.ViewBrokerSample;
+using Gallery.Popups;
+
 //using Gallery.PathTextBox;
 //using Gallery.PivotControl;
 //using Gallery.Popups;
@@ -36,18 +44,25 @@ namespace Gallery
             //controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
             GalleryItems.Add(controlItems);
 
-            //var popupItems = new GalleryItemViewModel() {Title = "Popups"};
-            //popupItems.GalleryItems.Add(new PopupsViewModel());
-            //GalleryItems.Add(popupItems);
+            var popupItems = new GalleryItemViewModel() {Title = "Popups"};
+            popupItems.GalleryItems.Add(new PopupsViewModel());
+            GalleryItems.Add(popupItems);
 
             //var behaviourItems = new GalleryItemViewModel() {Title = "Behaviours"};
             //behaviourItems.GalleryItems.Add(new ListViewItemContextMenuBehaviourViewModel());
             //GalleryItems.Add(behaviourItems);
 
-            //var dragAndDropItems = new GalleryItemViewModel() { Title = "Drag and Drop" };
-            //dragAndDropItems.GalleryItems.Add(new CanvasSampleViewModel());
-            //dragAndDropItems.GalleryItems.Add(new ItemsControlSampleViewModel());
-            //GalleryItems.Add(dragAndDropItems);
+            var dragAndDropItems = new GalleryItemViewModel() { Title = "Drag and Drop" };
+            dragAndDropItems.GalleryItems.Add(new CanvasSampleViewModel());
+            dragAndDropItems.GalleryItems.Add(new ItemsControlSampleViewModel());
+            GalleryItems.Add(dragAndDropItems);
+
+            var mvvmItems = new GalleryItemViewModel() { Title = "MVVM" };
+            mvvmItems.GalleryItems.Add(new SimpleExampleViewModel());
+            mvvmItems.GalleryItems.Add(new CommandingSampleViewModel());
+            mvvmItems.GalleryItems.Add(new ViewBrokerSampleViewModel());
+            mvvmItems.GalleryItems.Add(new ViewBrokerActivationSampleViewModel());
+            GalleryItems.Add(mvvmItems);
         }
 
         /// <summary>
