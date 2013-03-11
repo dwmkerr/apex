@@ -30,6 +30,7 @@ namespace ControlsSample
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormControlsSample));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageColorMap = new System.Windows.Forms.TabPage();
@@ -148,7 +149,7 @@ namespace ControlsSample
             this.expandingPanel2.Name = "expandingPanel2";
             this.expandingPanel2.PanelContainer = this.expandingPanelContainer1;
             this.expandingPanel2.PanelName = "Panel 2";
-            this.expandingPanel2.Size = new System.Drawing.Size(192, 100);
+            this.expandingPanel2.Size = new System.Drawing.Size(215, 100);
             this.expandingPanel2.SizeWidthToContainer = true;
             this.expandingPanel2.TabIndex = 2;
             // 
@@ -159,7 +160,7 @@ namespace ControlsSample
             this.expandingPanel1.Name = "expandingPanel1";
             this.expandingPanel1.PanelContainer = this.expandingPanelContainer1;
             this.expandingPanel1.PanelName = "Panel 1";
-            this.expandingPanel1.Size = new System.Drawing.Size(192, 100);
+            this.expandingPanel1.Size = new System.Drawing.Size(215, 100);
             this.expandingPanel1.SizeWidthToContainer = true;
             this.expandingPanel1.TabIndex = 1;
             // 
@@ -178,7 +179,9 @@ namespace ControlsSample
             // 
             this.textBox1.Location = new System.Drawing.Point(40, 46);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.OpenFileDialogFilter = null;
+            this.textBox1.OpenFileDialogTitle = null;
+            this.textBox1.Size = new System.Drawing.Size(185, 20);
             this.textBox1.TabIndex = 1;
             // 
             // tabPageShellTreeList
