@@ -23,6 +23,8 @@ namespace Apex.WinForms.Controls
 
             //  Create the button.
             CreateBrowseButton();
+
+            SizeChanged += (sender, args) => SetBrowseButtonLocation();
         }
 
         /// <summary>
@@ -35,13 +37,38 @@ namespace Apex.WinForms.Controls
             browseButton.Parent = this;
             browseButton.Text = "...";
             browseButton.Size = new Size(ButtonWidth, ClientRectangle.Height - (ButtonPadding * 2));
-            browseButton.Location = new Point(ClientRectangle.Right - (ButtonWidth + ButtonPadding), ButtonPadding);
+            browseButton.Click += new EventHandler(browseButton_Click);
+            SetBrowseButtonLocation();
             browseButton.CreateControl();
+        }
+
+        void browseButton_Click(object sender, EventArgs e)
+        {
+            //  Create a browse dialog.
+            var openFileDialog = new OpenFileDialog()
+                {
+                    Title = OpenFileDialogTitle,
+                    Filter = OpenFileDialogFilter
+                };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+                Text = openFileDialog.FileName;
+        }
+
+        /// <summary>
+        /// Sets the browse button location to the right of the control.
+        /// </summary>
+        private void SetBrowseButtonLocation()
+        {
+            browseButton.Location = new Point(ClientRectangle.Right - (ButtonWidth + ButtonPadding), ButtonPadding);
         }
 
         private const int ButtonWidth = 20;
         private const int ButtonPadding = 0;//1;
 
         private Button browseButton;
+
+        public string OpenFileDialogTitle { get; set; }
+
+        public string OpenFileDialogFilter { get; set; }
     }
 }
