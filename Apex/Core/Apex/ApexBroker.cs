@@ -117,10 +117,6 @@ namespace Apex
         /// <param name="shell">The shell.</param>
         public static void RegisterShell(IShell shell)
         {
-            //  Ensure we don't already have a shell registered.
-            if (ApexBroker.shell != null)
-                throw new InvalidOperationException("A shell has already been registered. Only shell can be registered.");
-
             //  Store the shell.
             ApexBroker.shell = shell;
         }
