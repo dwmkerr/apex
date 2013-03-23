@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Gallery.MVVM.ViewBrokerActivationSample.Page1View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+             xmlns:apexBehaviours="clr-namespace:Apex.Behaviours;assembly=Apex.Silverlight"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="40">
+            <TextBlock FontSize="50" Text="Heading 1" Opacity="0">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour Duration="0:0:0.2" />
+                </i:Interaction.Behaviors>
+            </TextBlock>
+            <TextBlock FontSize="30" Text="Heading 2" Opacity="0">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.2" Duration="0:0:1.2" />
+                </i:Interaction.Behaviors>
+            </TextBlock>
+            <TextBlock FontSize="14" Text="Text" Opacity="0">
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:SlideFadeInBehaviour BeginTime="0:0:0.4" Duration="0:0:3.2" />
+                </i:Interaction.Behaviors>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>
