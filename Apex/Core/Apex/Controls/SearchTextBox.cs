@@ -11,10 +11,19 @@ namespace Apex.Controls
         /// <summary>
         /// Initializes the <see cref="SearchTextBox"/> class.
         /// </summary>
+#if !SILVERLIGHT
         static SearchTextBox()
         {
             //  Override the default style. 
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchTextBox), new FrameworkPropertyMetadata(typeof(SearchTextBox)));
         }
+#else
+        public SearchTextBox()
+        {
+            //  Override the default style.
+            DefaultStyleKey = typeof(SearchTextBox);
+        }
+#endif
+
     }
 }
