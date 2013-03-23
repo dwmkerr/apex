@@ -1,0 +1,11 @@
+Solutions
+=========
+
+Apex.Core - This is the core Apex solution. It contains only the Apex, Apex.Silverlight, Apex.WinForms and Apex.WPF applications,
+            as well as the gallery for each.
+
+Apex.Legacy - This is a VS2010 solution used to build legacy versions of the code.
+
+Apex.Extensions.VS2010 - Extensions for Visual Studio 2010.
+
+Apex.Extensions.VS2012 - Extensions for Visual Studio 2012.
