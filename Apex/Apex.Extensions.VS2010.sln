@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Extensions", "3. Extensions", "{E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Extensions", "2. Extensions", "{E70E7B68-B67E-4A6B-AA43-5C8DD38686DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snippets", "Extensions\Snippets\Snippets.csproj", "{F8C6FFCD-C814-46D3-AC79-7D36C4D614DE}"
 EndProject
