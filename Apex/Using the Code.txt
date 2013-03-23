@@ -9,3 +9,5 @@ Apex.Legacy - This is a VS2010 solution used to build legacy versions of the cod
 Apex.Extensions.VS2010 - Extensions for Visual Studio 2010.
 
 Apex.Extensions.VS2012 - Extensions for Visual Studio 2012.
+
+Apex.Deployment - Builds the full installer.
