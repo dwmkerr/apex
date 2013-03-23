@@ -152,6 +152,9 @@
     <Compile Include="..\apex\controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Controls\SearchTextBox.cs">
+      <Link>Controls\SearchTextBox.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Controls\SelectableItemsControl.cs">
       <Link>Controls\SelectableItemsControl.cs</Link>
     </Compile>
@@ -269,6 +272,9 @@
     <Compile Include="..\apex\shells\Shell.cs">
       <Link>Shells\Shell.cs</Link>
     </Compile>
+    <Compile Include="Controls\CircularProgressBar.xaml.cs">
+      <DependentUpon>CircularProgressBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +285,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\CircularProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -295,6 +305,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\ResourceDictionaries\SearchTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\ResourceDictionaries\Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -5,7 +5,8 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/CueTextBox.xaml" />
         <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/DragAndDropHost.xaml" />
-            <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/Shell.xaml" />
+        <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/SearchTextBox.xaml" />
+        <ResourceDictionary Source="/Apex.Silverlight;component/Themes/ResourceDictionaries/Shell.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

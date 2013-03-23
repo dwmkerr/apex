@@ -139,6 +139,25 @@ namespace Apex.MVVM
         }
 
         /// <summary>
+        /// Performs an action on the UI thread.
+        /// </summary>
+        /// <param name="action">The action.</param>
+        protected void OnUI(Action action)
+        {
+#if SILVERLIGHT
+            var dispatcher = System.Windows.Deployment.Current.Dispatcher;
+#else
+            var dispatcher = Dispatcher.CurrentDispatcher;
+#endif
+
+            //  Use the dispatcher to invoke the action.
+            if (dispatcher.CheckAccess())
+                action();
+            else
+                dispatcher.BeginInvoke(action);
+        }
+
+        /// <summary>
         /// A flag used to sow whether a view model has changes.
         /// </summary>
         private bool hasChanges;

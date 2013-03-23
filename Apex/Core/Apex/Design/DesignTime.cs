@@ -12,8 +12,6 @@ namespace Apex.Design
   /// </summary>
     public static class DesignTime
     {
-        private static bool? isDesignTime;
-
         /// <summary>
         /// Gets a value indicating whether the control is in design mode (running in Blend
         /// or Visual Studio).
@@ -22,20 +20,13 @@ namespace Apex.Design
         {
             get
             {
-              if (!isDesignTime.HasValue)
-                {
+              
 #if SILVERLIGHT
-                    isDesignTime = DesignerProperties.IsInDesignTool;
+                    return DesignerProperties.IsInDesignTool;
 #else
-                    var prop = DesignerProperties.IsInDesignModeProperty;
-                    isDesignTime
-                        = (bool)DependencyPropertyDescriptor
-                        .FromProperty(prop, typeof(FrameworkElement))
-                        .Metadata.DefaultValue;
+                    return DesignerProperties.GetIsInDesignMode(new DependencyObject());
 #endif
-                }
-
-              return isDesignTime.Value;
+                
             }
         }
     }
