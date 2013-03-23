@@ -53,56 +53,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ItemTemplates\WPF\ApexModelItemTemplate\ApexModelItemTemplate.csproj">
-      <Project>{65E06D7C-F88B-45BE-8886-F9CFA514EC27}</Project>
-      <Name>ApexModelItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-    </ProjectReference>
-    <ProjectReference Include="..\ItemTemplates\WPF\ApexViewItemTemplate\ApexViewItemTemplate.csproj">
-      <Project>{BDE45320-0EDB-4AF6-8782-C3983DD285C7}</Project>
-      <Name>ApexViewItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-    </ProjectReference>
-    <ProjectReference Include="..\ItemTemplates\WPF\ApexViewModelItemTemplate\ApexViewModelItemTemplate.csproj">
-      <Project>{A2D2AA8F-A963-442D-AE52-F6543A375696}</Project>
-      <Name>ApexViewModelItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-    </ProjectReference>
-    <ProjectReference Include="..\ItemTemplates\WPF\SingletonItemTemplate\SingletonItemTemplate.csproj">
-      <Project>{CC481432-5733-4103-A7C7-CCDC4C7049BB}</Project>
-      <Name>SingletonItemTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Item</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-    </ProjectReference>
-    <ProjectReference Include="..\ProjectTemplates\Silverlight\ZuneStyleApplicationTemplate\SilverlightZuneStyleApplicationTemplate.csproj">
-      <Project>{7866F157-5838-4392-A2F5-1C5494B84086}</Project>
-      <Name>SilverlightZuneStyleApplicationTemplate</Name>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Project</TemplateType>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
-    </ProjectReference>
-    <ProjectReference Include="..\ProjectTemplates\WPF\ZuneStyleApplicationTemplate\WpfZuneStyleApplicationTemplate.csproj">
-      <Project>{9595B8A7-722F-4D54-8142-7F64E0AAA5A8}</Project>
-      <Name>WpfZuneStyleApplicationTemplate</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-      <TemplateType>Project</TemplateType>
-      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Apex.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
