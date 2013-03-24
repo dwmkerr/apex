@@ -6,6 +6,7 @@ using Apex.MVVM;
 using Gallery.Controls.ApexGrid;
 using Gallery.Controls.CrossButton;
 using Gallery.Controls.EnumComboBox;
+using Gallery.Controls.FolderTextBox;
 using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
 using Gallery.Controls.TabbedDocumentInterface;
@@ -27,6 +28,7 @@ namespace Gallery.Controls
             GalleryItems.Add(new CrossButtonViewModel());
             GalleryItems.Add(new CueTextBoxViewModel());
             GalleryItems.Add(new EnumComboBoxViewModel());
+            GalleryItems.Add(new FolderTextBoxViewModel());
             GalleryItems.Add(new MultiBorderViewModel());
             GalleryItems.Add(new PaddedGridViewModel());
             GalleryItems.Add(new PathTextBoxViewModel());
