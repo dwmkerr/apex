@@ -100,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Converters\ConvertersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DragAndDrop\CanvasSample\CanvasSampleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -170,6 +174,10 @@
       <DependentUpon>SearchTextBoxView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SearchTextBox\SearchTextBoxViewModel.cs" />
+    <Compile Include="Converters\ConvertersView.xaml.cs">
+      <DependentUpon>ConvertersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ConvertersViewModel.cs" />
     <Compile Include="DragAndDrop\CanvasSample\CanvasSampleView.xaml.cs">
       <DependentUpon>CanvasSampleView.xaml</DependentUpon>
     </Compile>

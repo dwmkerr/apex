@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Data;
 using System.Windows;
 
 namespace Apex.Converters
@@ -10,7 +6,7 @@ namespace Apex.Converters
     /// <summary>
     /// Standard boolean to visibility converter that supports inversion.
     /// </summary>
-    public class BooleanToVisibilityConverter : IValueConverter
+    public class BooleanToVisibilityConverter : InvertableConverter
     {
         #region IValueConverter Members
 
@@ -24,24 +20,26 @@ namespace Apex.Converters
         /// <returns>
         /// A converted value. If the method returns null, the valid null value is used.
         /// </returns>
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public override object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            //  If the data isn't a bool, bail.
-            if (value is bool == false)
-                return null;
-
-            //  Cast the data.
-            bool boolean = (bool) value;
-
-            //  If we have the invert string, return the inverted value.
-            if (parameter != null && parameter.ToString() == "Invert")
+            //  Cast the data to a bool.
+            bool booleanValue;
+            try
             {
-                return boolean ? Visibility.Collapsed : Visibility.Visible;
+                booleanValue = (bool) value;
             }
-            else
+            catch (Exception exception)
             {
-                return boolean ? Visibility.Visible : Visibility.Collapsed;
+                throw new InvalidOperationException("The value provided to a BooleanToVisibilityConverter could not be cast to a boolean.", exception);
             }
+
+            //  Are we inverting?
+            var invert = IsInverted(parameter);
+
+            //  Return the appropriate visibility.
+            if(invert)
+                return booleanValue ? Visibility.Collapsed : Visibility.Visible;
+            return booleanValue ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <summary>
@@ -54,9 +52,9 @@ namespace Apex.Converters
         /// <returns>
         /// A converted value. If the method returns null, the valid null value is used.
         /// </returns>
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public override object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("ConvertBack is NOT supported for the BooleanToVisibilityConverter.");
         }
 
         #endregion

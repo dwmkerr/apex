@@ -10,6 +10,7 @@ using Gallery.Controls.EnumComboBox;
 using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
 using Gallery.Controls.TabbedDocumentInterface;
+using Gallery.Converters;
 using Gallery.CueTextBox;
 using Gallery.MVVM.CommandingSample;
 using Gallery.MVVM.SimpleSample;
@@ -41,6 +42,9 @@ namespace Gallery
             controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
             controlItems.GalleryItems.Add(new TabbedDocumentInterfaceViewModel());
             GalleryItems.Add(controlItems);
+
+            var converters = new ConvertersViewModel();
+            GalleryItems.Add(converters);
 
             var popupItems = new GalleryItemViewModel() { Title = "Popups" };
             popupItems.GalleryItems.Add(new PopupsViewModel());
