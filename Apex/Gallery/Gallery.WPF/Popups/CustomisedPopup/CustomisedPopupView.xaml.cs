@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Apex;
+using Apex.Helpers.Popups;
 using Apex.MVVM;
 
 namespace Gallery.Popups.CustomisedPopup
@@ -18,19 +19,28 @@ namespace Gallery.Popups.CustomisedPopup
 
         public void OnActivated()
         {
-            ViewModel.ShowPopupCommand.Executing += ShowPopupCommandOnExecuting;
+            ViewModel.ShowBouncePopupCommand.Executing += ShowBouncePopupCommandOnExecuting;
+            ViewModel.ShowFadePopupCommand.Executing += ShowFadePopupCommandOnExecuting;
         }
 
         public void OnDeactivated()
         {
-            ViewModel.ShowPopupCommand.Executing -= ShowPopupCommandOnExecuting;
+            ViewModel.ShowBouncePopupCommand.Executing -= ShowBouncePopupCommandOnExecuting;
+            ViewModel.ShowFadePopupCommand.Executing -= ShowFadePopupCommandOnExecuting;
         }
 
-        private void ShowPopupCommandOnExecuting(object sender, CancelCommandEventArgs args)
+        private void ShowBouncePopupCommandOnExecuting(object sender, CancelCommandEventArgs args)
         {
             var shell = ApexBroker.GetShell();
-            ViewModel.PopupResult =
-                shell.ShowPopup(new CustomisedPopup());
+            shell.PopupAnimationHelper = new BounceInOutPopupAnimationHelper();
+            shell.ShowPopup(new CustomisedPopup());
+        }
+        
+        private void ShowFadePopupCommandOnExecuting(object sender, CancelCommandEventArgs args)
+        {
+            var shell = ApexBroker.GetShell();
+            shell.PopupAnimationHelper = new FadeInOutPopupAnimationHelper();
+            shell.ShowPopup(new CustomisedPopup());
         }
 
         public CustomisedPopupViewModel ViewModel { get { return (CustomisedPopupViewModel)DataContext; } }

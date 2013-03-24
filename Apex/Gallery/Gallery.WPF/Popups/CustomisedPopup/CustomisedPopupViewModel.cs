@@ -8,40 +8,42 @@ namespace Gallery.Popups.CustomisedPopup
         {
             Title = "Customised Popup";
 
-            //  Create the ShowPopup Command.
-            ShowPopupCommand = new Command(DoShowPopupCommand);
+            //  Create the commands.
+            ShowBouncePopupCommand = new Command(DoShowBouncePopupCommand);
+            ShowFadePopupCommand = new Command(DoShowFadePopupCommand);
         }
-
         
         /// <summary>
-        /// The NotifyingProperty for the PopupResult property.
+        /// Performs the ShowBouncePopup command.
         /// </summary>
-        private readonly NotifyingProperty PopupResultProperty =
-          new NotifyingProperty("PopupResult", typeof(object), default(object));
-
-        /// <summary>
-        /// Gets or sets PopupResult.
-        /// </summary>
-        /// <value>The value of PopupResult.</value>
-        public object PopupResult
-        {
-            get { return (object)GetValue(PopupResultProperty); }
-            set { SetValue(PopupResultProperty, value); }
-        }
-
-        /// <summary>
-        /// Performs the ShowPopup command.
-        /// </summary>
-        /// <param name="parameter">The ShowPopup command parameter.</param>
-        private void DoShowPopupCommand(object parameter)
+        /// <param name="parameter">The ShowBouncePopup command parameter.</param>
+        private void DoShowBouncePopupCommand(object parameter)
         {
         }
 
         /// <summary>
-        /// Gets the ShowPopup command.
+        /// Gets the ShowBouncePopup command.
         /// </summary>
         /// <value>The value of .</value>
-        public Command ShowPopupCommand
+        public Command ShowBouncePopupCommand
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// Performs the ShowFadePopup command.
+        /// </summary>
+        /// <param name="parameter">The ShowFadePopup command parameter.</param>
+        private void DoShowFadePopupCommand(object parameter)
+        {
+        }
+
+        /// <summary>
+        /// Gets the ShowFadePopup command.
+        /// </summary>
+        /// <value>The value of .</value>
+        public Command ShowFadePopupCommand
         {
             get;
             private set;

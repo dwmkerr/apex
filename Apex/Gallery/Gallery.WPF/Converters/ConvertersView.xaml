@@ -6,11 +6,8 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:Converters="clr-namespace:Gallery.Converters"
              xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex" mc:Ignorable="d" 
+             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
-    
-    <UserControl.DataContext>
-        <Converters:ConvertersViewModel />
-    </UserControl.DataContext>
     
     <UserControl.Resources>
         <Style TargetType="{x:Type TextBlock}" x:Key="Heading">
@@ -19,26 +16,40 @@
         </Style>
 
         <apexConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-        
+
     </UserControl.Resources>
-    
-    <ScrollViewer>
-        <StackPanel Orientation="Vertical">
-        
-            <!-- Boolean to visibilty. -->
-            <apexControls:PaddedGrid Rows="Auto,Auto,Auto" Padding="4">
-                <TextBlock Grid.Row="0" Style="{StaticResource Heading}" Text="BooleanToVisibilityConverter" />
-                <TextBlock Grid.Row="1" TextWrapping="Wrap">
+
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">CONVERTERS</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+            A number of Converters are provided by the Apex framework to deal with typical value conversion tasks.
+        </TextBlock>
+
+        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+
+                    <!-- Boolean to visibilty. -->
+                    <apexControls:PaddedGrid Rows="Auto,Auto,Auto" Padding="4" Margin="20">
+                        <TextBlock Grid.Row="0" Style="{StaticResource Heading}" Text="BooleanToVisibilityConverter" />
+                        <TextBlock Grid.Row="1" TextWrapping="Wrap">
                     The BooleanToVisibilityConverter converts a bool value into a System.Windows.Visibility value. A value of false converts to Visiblity.Collapsed,
                     unless the converter is inverted by providing 'Invert' as a parameter.
-                </TextBlock>
-                <apexControls:PaddedGrid Grid.Row="2" Columns="Auto,Auto" Padding="4">
-                    <CheckBox Grid.Column="0" Content="Boolean Value" IsChecked="{Binding ExampleBool1}" />
-                    <TextBlock Grid.Column="1" Text="This value is shown only when bool is true."
+                        </TextBlock>
+                        <apexControls:PaddedGrid Grid.Row="2" Columns="Auto,Auto" Padding="4">
+                            <CheckBox Grid.Column="0" Content="Boolean Value" IsChecked="{Binding ExampleBool1}" />
+                            <TextBlock Grid.Column="1" Text="This value is shown only when bool is true."
                                Visibility="{Binding ExampleBool1, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                </apexControls:PaddedGrid>
-            </apexControls:PaddedGrid>
-        
-        </StackPanel>
-    </ScrollViewer>
+                        </apexControls:PaddedGrid>
+                    </apexControls:PaddedGrid>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </apexControls:PaddedGrid>
+
+    
+    
 </UserControl>
