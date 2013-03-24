@@ -63,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Behaviours\BehavioursView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Behaviours\ListViewItemContextMenuBehaviour\ListViewItemContextMenuBehaviourView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="DragAndDrop\DragAndDropView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DragAndDrop\ItemsControlSample\ItemsControlSampleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -142,6 +150,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Behaviours\BehavioursView.xaml.cs">
+      <DependentUpon>BehavioursView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviours\BehavioursViewModel.cs" />
     <Compile Include="Behaviours\ListViewItemContextMenuBehaviour\ListViewItemContextMenuBehaviourView.xaml.cs">
       <DependentUpon>ListViewItemContextMenuBehaviourView.xaml</DependentUpon>
     </Compile>
@@ -197,6 +209,10 @@
       <DependentUpon>CanvasSampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DragAndDrop\CanvasSample\CanvasSampleViewModel.cs" />
+    <Compile Include="DragAndDrop\DragAndDropView.xaml.cs">
+      <DependentUpon>DragAndDropView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragAndDrop\DragAndDropViewModel.cs" />
     <Compile Include="DragAndDrop\ItemsControlSample\ItemsControlSampleView.xaml.cs">
       <DependentUpon>ItemsControlSampleView.xaml</DependentUpon>
     </Compile>
@@ -217,6 +233,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\MVVMView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MVVM\CommandingSample\CommandingSampleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -249,11 +269,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Popups\CustomisedPopup\CustomisedPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popups\CustomisedPopup\CustomisedPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Popups\PopupsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Popups\SimplePopupView.xaml">
+    <Page Include="Popups\SimplePopup\SimplePopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popups\SimplePopup\SimplePopup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -263,6 +295,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\MVVMView.xaml.cs">
+      <DependentUpon>MVVMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\MVVMViewModel.cs" />
     <Compile Include="MVVM\CommandingSample\CommandingSampleView.xaml.cs">
       <DependentUpon>CommandingSampleView.xaml</DependentUpon>
     </Compile>
@@ -295,12 +331,23 @@
       <DependentUpon>ViewBrokerSampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewBrokerSample\ViewBrokerSampleViewModel.cs" />
+    <Compile Include="Popups\CustomisedPopup\CustomisedPopup.xaml.cs">
+      <DependentUpon>CustomisedPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\CustomisedPopup\CustomisedPopupView.xaml.cs">
+      <DependentUpon>CustomisedPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\CustomisedPopup\CustomisedPopupViewModel.cs" />
     <Compile Include="Popups\PopupsView.xaml.cs">
       <DependentUpon>PopupsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Popups\PopupsViewModel.cs" />
-    <Compile Include="Popups\SimplePopupView.xaml.cs">
+    <Compile Include="Popups\SimplePopup\SimplePopupView.xaml.cs">
       <DependentUpon>SimplePopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\SimplePopup\SimplePopupViewModel.cs" />
+    <Compile Include="Popups\SimplePopup\SimplePopup.xaml.cs">
+      <DependentUpon>SimplePopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

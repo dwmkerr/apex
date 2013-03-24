@@ -13,15 +13,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Apex.MVVM;
 
-namespace Gallery.Popups
+namespace Gallery.Behaviours
 {
     /// <summary>
-    /// Interaction logic for PopupsView.xaml
+    /// Interaction logic for BehavioursView.xaml
     /// </summary>
-    [View(typeof(PopupsViewModel))]
-    public partial class PopupsView : UserControl
+    [View(typeof(BehavioursViewModel))]
+    public partial class BehavioursView : UserControl
     {
-        public PopupsView()
+        public BehavioursView()
         {
             InitializeComponent();
         }

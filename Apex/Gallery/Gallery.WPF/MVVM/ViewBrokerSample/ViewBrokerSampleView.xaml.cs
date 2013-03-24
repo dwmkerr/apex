@@ -19,10 +19,12 @@ namespace Gallery.MVVM.ViewBrokerSample
             InitializeComponent();
         }
 
+        public ViewBrokerSampleViewModel ViewModel { get { return (ViewBrokerSampleViewModel) DataContext; } }
+
         private void TreeView_SelectedItemChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<object> e)
         {
             //  Set the selected item.
-            viewModel.SelectedItem = treeView.SelectedItem;
+            ViewModel.SelectedItem = treeView.SelectedItem;
         }
     }
 }

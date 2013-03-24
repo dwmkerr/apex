@@ -10,21 +10,19 @@ using Gallery.DragAndDrop.CanvasSample;
 using Gallery.DragAndDrop.ItemsControlSample;
 using Gallery.PathTextBox;
 using Gallery.PivotControl;
-using Gallery.Popups.CustomisedPopup;
-using Gallery.Popups.SimplePopup;
 using Gallery.SearchTextBox;
 
-namespace Gallery.Popups
+namespace Gallery.DragAndDrop
 {
     [ViewModel]
-    public class PopupsViewModel : GalleryItemViewModel
+    public class DragAndDropViewModel : GalleryItemViewModel
     {
-        public PopupsViewModel()
+        public DragAndDropViewModel()
         {
-            Title = "Popups";
+            Title = "Drag & Drop";
 
-            GalleryItems.Add(new SimplePopupViewModel());
-            GalleryItems.Add(new CustomisedPopupViewModel());
+            GalleryItems.Add(new CanvasSampleViewModel());
+            GalleryItems.Add(new ItemsControlSampleViewModel());
         }
     }
 }
