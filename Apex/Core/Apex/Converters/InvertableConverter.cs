@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Data;
@@ -7,10 +8,29 @@ using System.Windows.Data;
 namespace Apex.Converters
 {
     /// <summary>
-    /// Inverts a bool.
+    /// An InvertableConverter is a base for all converters that can be inverted with the parameter 'Invert'.
     /// </summary>
-    public class InvertedBooleanConverter : IValueConverter
+    public abstract class InvertableConverter : IValueConverter
     {
+        /// <summary>
+        /// The invert string.
+        /// </summary>
+        private const string InvertString = @"Invert";
+
+        /// <summary>
+        /// Determines whether the converter is inverted based on the parameter.
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified parameter is inverted; otherwise, <c>false</c>.
+        /// </returns>
+        protected static bool IsInverted(object parameter)
+        {
+            //  We're inverted if we have a parameter, and it matches the string 'invert'.
+            return parameter != null &&
+                   string.Compare(parameter.ToString(), InvertString, StringComparison.InvariantCultureIgnoreCase) == 0;
+        }
+
         /// <summary>
         /// Converts a value.
         /// </summary>
@@ -21,13 +41,7 @@ namespace Apex.Converters
         /// <returns>
         /// A converted value. If the method returns null, the valid null value is used.
         /// </returns>
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is bool == false)
-                throw new Exception("An InvertedBooleanConverter must be passed a boolean value.");
-
-            return !((bool)value);
-        }
+        public abstract object Convert(object value, Type targetType, object parameter, CultureInfo culture);
 
         /// <summary>
         /// Converts a value.
@@ -39,12 +53,6 @@ namespace Apex.Converters
         /// <returns>
         /// A converted value. If the method returns null, the valid null value is used.
         /// </returns>
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            if (value is bool == false)
-                throw new Exception("An InvertedBooleanConverter must be passed a boolean value.");
-
-            return !((bool)value);
-        }
+        public abstract object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture);
     }
 }

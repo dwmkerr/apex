@@ -134,8 +134,8 @@
     <Compile Include="..\Apex\Converters\EnumToBooleanConverter.cs">
       <Link>Converters\EnumToBooleanConverter.cs</Link>
     </Compile>
-    <Compile Include="..\Apex\Converters\InvertedBooleanConverter.cs">
-      <Link>Converters\InvertedBooleanConverter.cs</Link>
+    <Compile Include="..\Apex\Converters\InvertableConverter.cs">
+      <Link>Converters\InvertableConverter.cs</Link>
     </Compile>
     <Compile Include="..\Apex\Converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
