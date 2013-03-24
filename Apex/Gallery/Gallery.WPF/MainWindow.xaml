@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Gallery"
         xmlns:apexShells="clr-namespace:Apex.Shells;assembly=Apex"
-        Title="Apex Gallery" Height="350" Width="525">
+        Title="Apex Gallery" Height="768" Width="1024" Icon="Apex.ico">
     <apexShells:Shell>
         <local:MainView />
     </apexShells:Shell>
