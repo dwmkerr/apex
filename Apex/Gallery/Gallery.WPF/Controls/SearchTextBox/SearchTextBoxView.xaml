@@ -5,23 +5,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <apexControls:ApexGrid Rows="Auto,*,Auto">
-        
-        <!-- First section, a description of the control. -->
-        <TextBlock Grid.Row="0" TextWrapping="Wrap">
-            The SearchTextBox is a text box that mimicks the behaviour of the Windows 7 search box in the top right of Windows Explorer, or the Start Menu.
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">SEARCHTEXTBOX</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+            The SearchTextBox is a textbox displays a search icon as well as optionally a cue, making functionality clear for
+            the user.
         </TextBlock>
-        
-        <!-- Second section, the search text box. -->
-        <apexControls:SearchTextBox 
-            x:Name="searchTextBox"
-            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" CueText="Search" CueDisplayMode="HideWhenHasText" />
-        
-        <!-- Third section, search options.-->
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label Content="SearchMode" />
-            <apexControls:EnumerationComboBox SelectedEnumeration="{Binding SearchMode, ElementName=searchTextBox}" />
-        </StackPanel>
-    </apexControls:ApexGrid>
+
+        <!-- Sample zone. -->
+        <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
+
+            <apexControls:PaddedGrid Rows="Auto,Auto" Columns="*,2*" VerticalAlignment="Center" Padding="12">
+
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Search Text Box" />
+
+                <apexControls:SearchTextBox 
+                    Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="Search Text Box with Cue" />
+                <apexControls:SearchTextBox 
+                    Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" CueText="Search" Width="200" />
+                
+            </apexControls:PaddedGrid>
+        </Grid>
+    </apexControls:PaddedGrid>
 </UserControl>

@@ -22,10 +22,10 @@
             <apexControls:PaddedGrid Rows="Auto" Columns="*,2*" VerticalAlignment="Center" Padding="12">
 
                 <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Path Text Box" />
-                <!-- Second section, the path text box. -->
+                
                 <apexControls:PathTextBox 
                     x:Name="searchTextBox"
-                    Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"/>
+                    Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" />
         </apexControls:PaddedGrid>
         </Grid>
     </apexControls:PaddedGrid>

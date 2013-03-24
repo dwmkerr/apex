@@ -5,28 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <apexControls:ApexGrid Rows="Auto,*,Auto">
-        
-        <!-- First section, a description of the control. -->
-        <TextBlock Grid.Row="0" TextWrapping="Wrap">
-            PivotControlView.
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">PIVOTCONTROL</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+            The PivotControl emulates a Windows Phone style Pivot.
+            These Pivots work in a similar way to tab controls.
+            Typically, Pivots take up a large area of user interface, in this a blue border is drawn around the element
+            showing how it works.
         </TextBlock>
-        
-        <!-- Second section, the pivot control. -->
-        <apexControls:PivotControl 
+
+        <!-- Sample zone. -->
+        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+            <Border BorderBrush="#3434ed" BorderThickness="1" Padding="4">
+
+            <!-- Second section, the pivot control. -->
+            <apexControls:PivotControl 
             x:Name="pivotControl"
-            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="300">
-            <apexControls:PivotItem Title="Item 1">
-                <TextBlock Text="This is the first item." />
-            </apexControls:PivotItem>
-            <apexControls:PivotItem Title="Item 2">
-                <TextBlock Text="This is the second item." />
-            </apexControls:PivotItem>
-        </apexControls:PivotControl>
-        
-        <!-- Third section, pivot options.-->
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-        </StackPanel>
-    </apexControls:ApexGrid>
+            Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="600">
+                <apexControls:PivotItem Title="Item 1" IsSelected="True">
+                    <TextBlock Text="This is the first item." />
+                </apexControls:PivotItem>
+                <apexControls:PivotItem Title="Item 2">
+                    <TextBlock Text="This is the second item." />
+                </apexControls:PivotItem>
+            </apexControls:PivotControl>
+
+            </Border>
+            
+        </Grid>
+              </apexControls:PaddedGrid>
 </UserControl>
