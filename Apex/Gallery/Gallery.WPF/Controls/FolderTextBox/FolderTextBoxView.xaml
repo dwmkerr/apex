@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Gallery.Controls.FolderTextBox.FolderTextBoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+             mc:Ignorable="d" 
+             Style="{StaticResource GalleryItemStyle}"
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">FOLDERTEXTBOX</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+            The FolderTextBox is a textbox that allows the user to press an elipses button to browse for a path to a folder
+            on the file system.
+        </TextBlock>
+
+        <!-- Sample zone. -->
+        <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
+
+            <apexControls:PaddedGrid Rows="Auto" Columns="*,2*" VerticalAlignment="Center" Padding="12">
+
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Folder Text Box" />
+                
+                <apexControls:FolderTextBox
+                    Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" />
+        </apexControls:PaddedGrid>
+        </Grid>
+    </apexControls:PaddedGrid>
+</UserControl>

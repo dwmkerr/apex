@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\FolderTextBox\FolderTextBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -167,6 +171,10 @@
       <DependentUpon>ControlsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ControlsViewModel.cs" />
+    <Compile Include="Controls\FolderTextBox\FolderTextBoxView.xaml.cs">
+      <DependentUpon>FolderTextBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FolderTextBox\FolderTextBoxViewModel.cs" />
     <Compile Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml.cs">
       <DependentUpon>TabbedDocumentInterfaceView.xaml</DependentUpon>
     </Compile>
