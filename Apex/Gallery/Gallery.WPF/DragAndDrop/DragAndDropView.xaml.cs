@@ -13,15 +13,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Apex.MVVM;
 
-namespace Gallery.Popups
+namespace Gallery.DragAndDrop
 {
     /// <summary>
-    /// Interaction logic for PopupsView.xaml
+    /// Interaction logic for DragAndDropView.xaml
     /// </summary>
-    [View(typeof(PopupsViewModel))]
-    public partial class PopupsView : UserControl
+    [View(typeof(DragAndDropViewModel))]
+    public partial class DragAndDropView : UserControl
     {
-        public PopupsView()
+        public DragAndDropView()
         {
             InitializeComponent();
         }

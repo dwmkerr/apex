@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Apex.MVVM;
+using Gallery.Behaviours;
 using Gallery.Controls;
 using Gallery.Controls.ApexGrid;
 using Gallery.Controls.CrossButton;
@@ -13,6 +14,8 @@ using Gallery.Controls.PaddedGrid;
 using Gallery.Controls.TabbedDocumentInterface;
 using Gallery.Converters;
 using Gallery.CueTextBox;
+using Gallery.DragAndDrop;
+using Gallery.MVVM;
 using Gallery.MVVM.CommandingSample;
 using Gallery.MVVM.SimpleSample;
 using Gallery.MVVM.ViewBrokerActivationSample;
@@ -40,24 +43,16 @@ namespace Gallery
             var converters = new ConvertersViewModel();
             GalleryItems.Add(converters);
 
-            var popupItems = new GalleryItemViewModel() { Title = "Popups" };
-            popupItems.GalleryItems.Add(new PopupsViewModel());
+            var popupItems = new PopupsViewModel();
             GalleryItems.Add(popupItems);
 
-            var behaviourItems = new GalleryItemViewModel() { Title = "Behaviours" };
-            behaviourItems.GalleryItems.Add(new ListViewItemContextMenuBehaviourViewModel());
+            var behaviourItems = new BehavioursViewModel();
             GalleryItems.Add(behaviourItems);
 
-            var dragAndDropItems = new GalleryItemViewModel() { Title = "Drag and Drop" };
-            dragAndDropItems.GalleryItems.Add(new CanvasSampleViewModel());
-            dragAndDropItems.GalleryItems.Add(new ItemsControlSampleViewModel());
+            var dragAndDropItems = new DragAndDropViewModel();
             GalleryItems.Add(dragAndDropItems);
 
-            var mvvmItems = new GalleryItemViewModel() {Title = "MVVM"};
-            mvvmItems.GalleryItems.Add(new SimpleExampleViewModel());
-            mvvmItems.GalleryItems.Add(new CommandingSampleViewModel());
-            mvvmItems.GalleryItems.Add(new ViewBrokerSampleViewModel());
-            mvvmItems.GalleryItems.Add(new ViewBrokerActivationSampleViewModel());
+            var mvvmItems = new MVVMViewModel();
             GalleryItems.Add(mvvmItems);
 
             SelectedGalleryItem = home;

@@ -11,24 +11,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Apex;
 using Apex.MVVM;
 
-namespace PopupSample
+namespace Gallery.MVVM
 {
     /// <summary>
-    /// Interaction logic for SimplePopupView.xaml
+    /// Interaction logic for MVVMView.xaml
     /// </summary>
-    public partial class SimplePopupView : UserControl
+    [View(typeof(MVVMViewModel))]
+    public partial class MVVMView : UserControl
     {
-        public SimplePopupView()
+        public MVVMView()
         {
             InitializeComponent();
-        }
-
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            ApexBroker.GetShell().ClosePopup(this, null);
         }
     }
 }

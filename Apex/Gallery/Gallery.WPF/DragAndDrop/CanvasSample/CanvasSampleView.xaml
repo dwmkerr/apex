@@ -8,15 +8,22 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop;assembly=Apex"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="600">
+             Style="{StaticResource GalleryItemStyle}"
+             d:DesignHeight="600" d:DesignWidth="800">
     
-    <!-- The View creates its own ViewModel, so set the ViewModel 
-    to a new instance of the ViewModel class. -->
-    <apexMVVM:View.ViewModel>
-        <local:CanvasSampleViewModel x:Name="viewModel" />
-    </apexMVVM:View.ViewModel>
     
-        <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost">
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">CANVAS SAMPLE</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+            In this sample, elements in a Canvas can be dragged and dropped.
+        </TextBlock>
+
+        <!-- Sample zone. -->
+        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+    
+        <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost" Background="White">
             <Canvas
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True">
@@ -29,4 +36,8 @@
                      dragAndDrop:DragAndDrop.IsDraggable="True" />
             </Canvas>
         </dragAndDrop:DragAndDropHost>
+        </Grid>
+    </apexControls:PaddedGrid>
 </UserControl>
+
+            

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:Controls="clr-namespace:Gallery.Controls" mc:Ignorable="d" 
+             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
     
     <UserControl.DataContext>
@@ -18,31 +19,5 @@
         <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">A variety of custom controls are provided as part of the Apex framework to 
             enable rapid development of applications.</TextBlock>
         
-        <!-- List of the controls. -->
-        <ListView Grid.Row="2" ItemsSource="{Binding GalleryItems}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border Width="220" Height="160" BorderBrush="Black" BorderThickness="1">
-                        <apexControls:ApexGrid Rows="Auto,*,Auto">
-                            <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{StaticResource Heading3}" Margin="4" />
-                        </apexControls:ApexGrid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Width="{Binding (FrameworkElement.ActualWidth),
-                               RelativeSource={RelativeSource 
-                                               AncestorType=ScrollContentPresenter}}"
-                               ItemWidth="{Binding (ListView.View).ItemWidth,
-                               RelativeSource={RelativeSource AncestorType=ListView}}"
-                               MinWidth="{Binding (ListView.View).ItemWidth,
-                               RelativeSource={RelativeSource AncestorType=ListView}}"
-                               ItemHeight="{Binding (ListView.View).ItemHeight,
-                               RelativeSource={RelativeSource AncestorType=ListView}}"/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-        </ListView>
-
     </apexControls:PaddedGrid>
 </UserControl>

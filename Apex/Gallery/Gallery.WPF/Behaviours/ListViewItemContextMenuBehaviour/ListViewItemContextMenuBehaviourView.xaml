@@ -7,49 +7,50 @@
              xmlns:apexBehaviours="clr-namespace:Apex.Behaviours;assembly=Apex"
              xmlns:local="clr-namespace:Gallery.Behaviours.ListViewItemContextMenuBehaviour"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    
-    <UserControl.DataContext>
-        <local:ListViewItemContextMenuBehaviourViewModel />
-    </UserControl.DataContext>
-    
-    <apexControls:ApexGrid Rows="Auto,*,Auto">
-        
-        <!-- First section, a description of the control. -->
-        <TextBlock Grid.Row="0" TextWrapping="Wrap">
+             Style="{StaticResource GalleryItemStyle}">
+
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">LIST VIEW ITEM CONTEXT MENU BEHAVIOUR</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             The ListViewItemContextMenuBehaviour allows a context menu to be set for an row for a ListView with a GridView display.
         </TextBlock>
-        
-        <!-- Second section, the list view . -->
-        <ListView
+
+        <!-- Sample zone. -->
+        <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
+
+            <!-- Second section, the list view . -->
+            <ListView
             x:Name="listView"
-            Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"
             ItemsSource="{Binding People}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" />
-                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}" />
-                </GridView>
-            </ListView.View>
-            <i:Interaction.Behaviors>
-                <apexBehaviours:ListViewItemContextMenuBehaviour>
-                    <apexBehaviours:ListViewItemContextMenuBehaviour.ContextMenu>
-                        <ContextMenu>
-                            <MenuItem>
-                                <MenuItem.Header>
-                                    <TextBlock FontWeight="Bold">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" Width="200" />
+                        <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}" Width="200" />
+                    </GridView>
+                </ListView.View>
+                <i:Interaction.Behaviors>
+                    <apexBehaviours:ListViewItemContextMenuBehaviour>
+                        <apexBehaviours:ListViewItemContextMenuBehaviour.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <TextBlock FontWeight="Bold">
                                         <Run Text="Say Hi to" />
                                         <Run Text="{Binding FirstName}" />
-                                    </TextBlock>
-                                </MenuItem.Header>
-                            </MenuItem>
-                            <MenuItem Header="Item 1" />
-                            <MenuItem Header="Item 2" />
-                        </ContextMenu>
-                    </apexBehaviours:ListViewItemContextMenuBehaviour.ContextMenu>
-                </apexBehaviours:ListViewItemContextMenuBehaviour>
-            </i:Interaction.Behaviors>
-        </ListView>
-    </apexControls:ApexGrid>
+                                        </TextBlock>
+                                    </MenuItem.Header>
+                                </MenuItem>
+                                <MenuItem Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                            </ContextMenu>
+                        </apexBehaviours:ListViewItemContextMenuBehaviour.ContextMenu>
+                    </apexBehaviours:ListViewItemContextMenuBehaviour>
+                </i:Interaction.Behaviors>
+            </ListView>
+        </Grid>
+    </apexControls:PaddedGrid>
 </UserControl>
+
+            
