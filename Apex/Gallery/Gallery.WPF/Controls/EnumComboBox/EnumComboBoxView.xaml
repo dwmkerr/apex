@@ -4,23 +4,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex" mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <apexControls:PaddedGrid 
-            Padding="6"
-            Rows="Auto,Auto,Auto,Auto,Auto" Columns="*,2*">
-            
-            <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Enum Combo Box" />
-            <apexControls:EnumerationComboBox x:Name="ecb" Grid.Row="0" Grid.Column="1" 
-                                       SelectedEnumeration="{Binding ExampleEnumeration}" />
-            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Selected Enumeration" />
-            <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedEnumeration}" />
-            <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Selected Item" />
-            <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem}" />
-            <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="Selected Item Name" />
-            <TextBlock Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem.Name}" />
-            
-        </apexControls:PaddedGrid>
+             d:DesignHeight="600" d:DesignWidth="800">
 
-    </Grid>
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">ENUMCOMBOBOX</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+            The EnumComboBox is a combo box that correctly supported binding to enumerations.
+        </TextBlock>
+
+        <!-- Sample zone. -->
+        <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
+
+            <apexControls:PaddedGrid Rows="Auto,Auto,Auto,Auto" Columns="*,2*" VerticalAlignment="Center" Padding="12">
+
+
+                <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Enum Combo Box" />
+                <apexControls:EnumerationComboBox x:Name="ecb" Grid.Row="0" Grid.Column="1" 
+                                       SelectedEnumeration="{Binding ExampleEnumeration}" />
+                <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Selected Enumeration" />
+                <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedEnumeration}" />
+                <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Selected Item" />
+                <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem}" />
+                <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="Selected Item Name" />
+                <TextBlock Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ElementName=ecb, Path=SelectedItem.Name}" />
+
+            </apexControls:PaddedGrid>
+
+        </Grid>
+    </apexControls:PaddedGrid>
 </UserControl>

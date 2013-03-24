@@ -71,6 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\ControlsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Home\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,6 +151,10 @@
       <DependentUpon>ApexGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ApexGrid\ApexGridViewModel.cs" />
+    <Compile Include="Controls\ControlsView.xaml.cs">
+      <DependentUpon>ControlsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlsViewModel.cs" />
     <Compile Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml.cs">
       <DependentUpon>TabbedDocumentInterfaceView.xaml</DependentUpon>
     </Compile>
@@ -191,6 +203,10 @@
     <Compile Include="DragAndDrop\ItemsControlSample\ItemsControlSampleViewModel.cs" />
     <Compile Include="GalleryItemViewModel.cs" />
     <Compile Include="GalleryViewModel.cs" />
+    <Compile Include="Home\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home\HomeViewModel.cs" />
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -240,6 +256,10 @@
     <Page Include="Popups\SimplePopupView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\GalleryResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

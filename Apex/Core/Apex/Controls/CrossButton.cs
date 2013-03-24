@@ -38,5 +38,107 @@ namespace Apex.Controls
             this.DefaultStyleKey = typeof(CrossButton);
         }
 #endif
+
+        /// <summary>
+        /// The DependencyProperty for the NormalBackgroundBrush property.
+        /// </summary>
+        public static readonly DependencyProperty NormalBackgroundBrushProperty =
+          DependencyProperty.Register("NormalBackgroundBrush", typeof(Brush), typeof(CrossButton),
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00000000"))));
+
+        /// <summary>
+        /// Gets or sets NormalBackgroundBrush.
+        /// </summary>
+        /// <value>The value of NormalBackgroundBrush.</value>
+        public Brush NormalBackgroundBrush
+        {
+            get { return (Brush)GetValue(NormalBackgroundBrushProperty); }
+            set { SetValue(NormalBackgroundBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// The DependencyProperty for the NormalCrossBrush property.
+        /// </summary>
+        public static readonly DependencyProperty NormalCrossBrushProperty =
+          DependencyProperty.Register("NormalCrossBrush", typeof(Brush), typeof(CrossButton),
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8f949b"))));
+
+        /// <summary>
+        /// Gets or sets NormalCrossBrush.
+        /// </summary>
+        /// <value>The value of NormalCrossBrush.</value>
+        public Brush NormalCrossBrush
+        {
+            get { return (Brush)GetValue(NormalCrossBrushProperty); }
+            set { SetValue(NormalCrossBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// The DependencyProperty for the HoverBackgroundBrush property.
+        /// </summary>
+        public static readonly DependencyProperty HoverBackgroundBrushProperty =
+          DependencyProperty.Register("HoverBackgroundBrush", typeof(Brush), typeof(CrossButton),
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFc13535"))));
+
+        /// <summary>
+        /// Gets or sets HoverBackgroundBrush.
+        /// </summary>
+        /// <value>The value of HoverBackgroundBrush.</value>
+        public Brush HoverBackgroundBrush
+        {
+            get { return (Brush)GetValue(HoverBackgroundBrushProperty); }
+            set { SetValue(HoverBackgroundBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// The DependencyProperty for the HoverCrossBrush property.
+        /// </summary>
+        public static readonly DependencyProperty HoverCrossBrushProperty =
+          DependencyProperty.Register("HoverCrossBrush", typeof(Brush), typeof(CrossButton),
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFf9ebeb"))));
+
+        /// <summary>
+        /// Gets or sets HoverCrossBrush.
+        /// </summary>
+        /// <value>The value of HoverCrossBrush.</value>
+        public Brush HoverCrossBrush
+        {
+            get { return (Brush)GetValue(HoverCrossBrushProperty); }
+            set { SetValue(HoverCrossBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// The DependencyProperty for the PressedBackgroundBrush property.
+        /// </summary>
+        public static readonly DependencyProperty PressedBackgroundBrushProperty =
+          DependencyProperty.Register("PressedBackgroundBrush", typeof(Brush), typeof(CrossButton),
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF431e20"))));
+
+        /// <summary>
+        /// Gets or sets PressedBackgroundBrush.
+        /// </summary>
+        /// <value>The value of PressedBackgroundBrush.</value>
+        public Brush PressedBackgroundBrush
+        {
+            get { return (Brush)GetValue(PressedBackgroundBrushProperty); }
+            set { SetValue(PressedBackgroundBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// The DependencyProperty for the PressedCrossBrush property.
+        /// </summary>
+        public static readonly DependencyProperty PressedCrossBrushProperty =
+          DependencyProperty.Register("PressedCrossBrush", typeof(Brush), typeof(CrossButton),
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFf9ebeb"))));
+
+        /// <summary>
+        /// Gets or sets PressedCrossBrush.
+        /// </summary>
+        /// <value>The value of PressedCrossBrush.</value>
+        public Brush PressedCrossBrush
+        {
+            get { return (Brush)GetValue(PressedCrossBrushProperty); }
+            set { SetValue(PressedCrossBrushProperty, value); }
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Apex.MVVM;
+using Gallery.Controls;
 using Gallery.Controls.ApexGrid;
 using Gallery.Controls.CrossButton;
 using Gallery.Controls.EnumComboBox;
@@ -30,17 +31,10 @@ namespace Gallery
     {
         public GalleryViewModel()
         {
-            var controlItems = new GalleryItemViewModel() {Title = "Controls"};
-            controlItems.GalleryItems.Add(new ApexGridViewModel());
-            controlItems.GalleryItems.Add(new CueTextBoxViewModel());
-            controlItems.GalleryItems.Add(new CrossButtonViewModel());
-            controlItems.GalleryItems.Add(new EnumComboBoxViewModel());
-            controlItems.GalleryItems.Add(new MultiBorderViewModel());
-            controlItems.GalleryItems.Add(new PaddedGridViewModel());
-            controlItems.GalleryItems.Add(new PathTextBoxViewModel());
-            controlItems.GalleryItems.Add(new PivotControlViewModel());
-            controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
-            controlItems.GalleryItems.Add(new TabbedDocumentInterfaceViewModel());
+            var home = new Home.HomeViewModel();
+            GalleryItems.Add(home);
+
+            var controlItems = new ControlsViewModel();
             GalleryItems.Add(controlItems);
 
             var converters = new ConvertersViewModel();
@@ -65,6 +59,8 @@ namespace Gallery
             mvvmItems.GalleryItems.Add(new ViewBrokerSampleViewModel());
             mvvmItems.GalleryItems.Add(new ViewBrokerActivationSampleViewModel());
             GalleryItems.Add(mvvmItems);
+
+            SelectedGalleryItem = home;
         }
 
         /// <summary>
