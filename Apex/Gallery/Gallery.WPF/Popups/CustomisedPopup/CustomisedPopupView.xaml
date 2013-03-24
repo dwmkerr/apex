@@ -25,8 +25,8 @@
         <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
 
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <Button Grid.Row="2" Width="120" Height="30" Content="Show Popup" Command="{Binding ShowPopupCommand}"/>
-                <TextBlock Text="{Binding PopupResult}" HorizontalAlignment="Center" Margin="20" />
+                <Button Width="200" Height="30" Margin="4" Content="Show Bounce Popup" Command="{Binding ShowBouncePopupCommand}"/>
+                <Button Width="200" Height="30" Margin="4" Content="Show Fade Popup" Command="{Binding ShowFadePopupCommand}"/>
             </StackPanel>
 
         </Grid>
