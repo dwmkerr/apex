@@ -5,21 +5,35 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <apexControls:PaddedGrid 
-            Padding="6"
-            Rows="Auto,Auto,Auto,Auto" Columns="5*,*">
-            
-            <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" 
-                       Text="The cross button is a small and simple button with a cross, useful in certain circumstances." />
-            <apexControls:CrossButton Grid.Row="0" Grid.Column="1" Width="12" Height="12" />
+             d:DesignHeight="600" d:DesignWidth="800">
 
-            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" 
-                       Text="Paths are used rather than bitmaps so it can be scaled to any size." />
-            <apexControls:CrossButton Grid.Row="1" Grid.Column="1" Width="20" Height="20" />
-            
-        </apexControls:PaddedGrid>
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
 
-    </Grid>
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">CROSSBUTTON</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">Often it is useful to offer the facility to close or delete an element. The 
+            Cross Button gives you a clean and simple control to do this.</TextBlock>
+
+        <!-- Sample zone. -->
+        <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
+            
+            <apexControls:PaddedGrid Rows="Auto,Auto,Auto,Auto" Columns="*,2*" VerticalAlignment="Center" Padding="12">
+
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Simple example" />
+                <apexControls:CrossButton Grid.Row="0" Grid.Column="1" Width="12" Height="12" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="Larger example" />
+                <apexControls:CrossButton Grid.Row="1" Grid.Column="1" Width="16" Height="16" />
+
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="Custom Brushes" />
+                <apexControls:CrossButton Grid.Row="2" Grid.Column="1" Width="12" Height="12" 
+                                          NormalBackgroundBrush="#0000FF" NormalCrossBrush="#9999FF"
+                                          HoverBackgroundBrush="#6565FF" HoverCrossBrush="#FFFFFF" />
+
+            </apexControls:PaddedGrid>
+
+        </Grid>
+    </apexControls:PaddedGrid>
+
+
 </UserControl>

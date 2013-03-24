@@ -23,13 +23,14 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid Background="Transparent">
-                        <Ellipse x:Name="backgroundEllipse" />
-                        <!-- The Path below will render the button's X. -->
+                <ControlTemplate TargetType="{x:Type apexControls:CrossButton}">
+                     <Grid Background="Transparent">
+                        <Ellipse x:Name="backgroundEllipse" Fill="{TemplateBinding NormalBackgroundBrush}" />
+                        
+                         <!-- The Path below will render the button's X. -->
                         <Path x:Name="ButtonPath"
                               Margin="3"
-                              Stroke="{StaticResource TabItemCloseButtonNormalForegroundBrush}"
+                              Stroke="{TemplateBinding NormalCrossBrush}"
                               StrokeThickness="1.5"
                               StrokeStartLineCap="Square"
                               StrokeEndLineCap="Square"
@@ -52,30 +53,19 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="backgroundEllipse"
-                          Property="Fill"
-                          Value="{StaticResource
-                             TabItemCloseButtonHoverBackgroundBrush}" />
-                            <Setter TargetName="ButtonPath"
-                          Property="Stroke"
-                          Value="{StaticResource
-                             TabItemCloseButtonHoverForegroundBrush}"/>
+                            <Setter 
+                                TargetName="backgroundEllipse" Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HoverBackgroundBrush}" />
+                            <Setter 
+                                TargetName="ButtonPath" Property="Stroke" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HoverCrossBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="backgroundEllipse"
-                                Property="Fill"
-                                Value="{StaticResource
-                                   TabItemCloseButtonPressedBackgroundBrush}" />
-                            <Setter TargetName="backgroundEllipse"
-                                Property="Stroke"
-                                Value="{StaticResource
-                                   TabItemCloseButtonPressedBorderBrush}" />
-                            <Setter TargetName="ButtonPath" Property="Stroke"
-                                Value="{StaticResource
-                                   TabItemCloseButtonPressedForegroundBrush}"/>
+                            <Setter 
+                                TargetName="backgroundEllipse" Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=PressedBackgroundBrush}" />
+                            <Setter 
+                                TargetName="ButtonPath" Property="Stroke" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=PressedCrossBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

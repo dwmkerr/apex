@@ -5,25 +5,35 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <apexControls:ApexGrid Rows="Auto,Auto,*,55,2*">
-            <Border Grid.Row="0" Background="#220000ff">
-                <TextBlock Text="Row 1 - Keep your XAML clean." />
-            </Border>
-            <Border Grid.Row="1" Background="#440000ff">
-                <TextBlock Text="Row 2 - WPF, Silverlight &amp; WP7." />
-            </Border>
-            <Border Grid.Row="2" Background="#220000ff">
-                <TextBlock Text="Row 3 - Works on Columns too!" />
-            </Border>
-            <Border Grid.Row="3" Background="#440000ff">
-                <TextBlock Text="Row 4 - Makes markup easier to follow." />
-            </Border>
-            <Border Grid.Row="4" Background="#220000ff">
-                <TextBlock Text="Row 5 - Easily adapted for your own purposes." />
-            </Border>
-        </apexControls:ApexGrid>
+             d:DesignHeight="600" d:DesignWidth="800">
 
-    </Grid>
+    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+        <!-- Title section. -->
+        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">APEXGRID</TextBlock>
+        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">The ApexGrid is functionally equivalent to the standard grid, but allows
+        rows and columns to be defined in a much quicker way, by using a syntax like 'Rows="Auto,Auto,*"'. </TextBlock>
+
+        <!-- Demo section. -->
+        <Grid Grid.Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
+            <apexControls:ApexGrid Rows="Auto,Auto,*,55,2*">
+                <Border Grid.Row="0" Background="#220000ff">
+                    <TextBlock Text="Row 1 - Keep your XAML clean." />
+                </Border>
+                <Border Grid.Row="1" Background="#440000ff">
+                    <TextBlock Text="Row 2 - WPF, Silverlight &amp; WP7." />
+                </Border>
+                <Border Grid.Row="2" Background="#220000ff">
+                    <TextBlock Text="Row 3 - Works on Columns too!" />
+                </Border>
+                <Border Grid.Row="3" Background="#440000ff">
+                    <TextBlock Text="Row 4 - Makes markup easier to follow." />
+                </Border>
+                <Border Grid.Row="4" Background="#220000ff">
+                    <TextBlock Text="Row 5 - Easily adapted for your own purposes." />
+                </Border>
+            </apexControls:ApexGrid>
+
+        </Grid>
+    </apexControls:PaddedGrid>
 </UserControl>
