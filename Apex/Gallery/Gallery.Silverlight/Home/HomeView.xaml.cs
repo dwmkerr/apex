@@ -12,17 +12,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Apex.MVVM;
-using Gallery.Controls.ApexGrid;
 
-namespace ControlsSample.Samples
+namespace Gallery.Home
 {
     /// <summary>
-    /// Interaction logic for ApexGrid.xaml
+    /// Interaction logic for HomeView.xaml
     /// </summary>
-    [View(typeof(ApexGridViewModel))]
-    public partial class ApexGrid : UserControl
+    [View(typeof(HomeViewModel))]
+    public partial class HomeView : UserControl
     {
-        public ApexGrid()
+        public HomeView()
         {
             InitializeComponent();
         }

@@ -8,13 +8,21 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex.Silverlight"
             xmlns:cueTextBox="clr-namespace:Gallery.CueTextBox"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="768" d:DesignWidth="1024">
     
     <UserControl.DataContext>
         <local:GalleryViewModel />
     </UserControl.DataContext>
     
-    <apexControls:ApexGrid Columns="200,Auto,*">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Gallery.Silverlight;component/Resources/ResourceDictionaries/GalleryResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <apexControls:ApexGrid Columns="*,Auto,3*">
         
         <!-- The main tree view of samples. -->
         <sdk:TreeView 
@@ -28,9 +36,7 @@
         </sdk:TreeView>
         
         <!-- The splitter. -->
-        <sdk:GridSplitter 
-            Grid.Column="1" Width="5"  Grid.RowSpan="2"
-            HorizontalAlignment="Left" VerticalAlignment="Stretch" />
+        <sdk:GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
         
         <!-- The view broker. -->        
         <apexControls:ViewBroker 

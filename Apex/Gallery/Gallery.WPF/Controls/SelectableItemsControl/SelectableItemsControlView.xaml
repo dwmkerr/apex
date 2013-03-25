@@ -32,8 +32,11 @@
             <apexControls:ApexGrid Rows="Auto,*">
             
             <!-- The top row, a set of selectable items. -->
-                <apexControls:SelectableItemsControl ItemsSource="{Binding SelectableItems}"
-                                                     ClickToSelectItem="True">
+                <apexControls:SelectableItemsControl 
+                    ItemsSource="{Binding SelectableItems}"
+                    SelectedItem="{Binding SelectedItem}"
+                    ClickToSelectItem="True"
+                    Background="#E9E9E9">
                     <apexControls:SelectableItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"></StackPanel>
@@ -41,10 +44,10 @@
                     </apexControls:SelectableItemsControl.ItemsPanel>
                     <apexControls:SelectableItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}" FontWeight="Bold"
+                            <Grid MinWidth="80" Background="Transparent" Cursor="Hand">
+                                <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}" FontWeight="Bold" HorizontalAlignment="Center"
                                       Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}}"  />
-                                <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}"
+                                <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}" HorizontalAlignment="Center" Foreground="#787878"
                                       Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}"  />
                             </Grid>
                         </DataTemplate>

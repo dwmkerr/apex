@@ -84,23 +84,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\ApexGrid\ApexGrid.xaml.cs">
-      <DependentUpon>ApexGrid.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ApexGrid\ApexGridViewModel.cs" />
-    <Compile Include="Controls\CueTextBox\CueTextBoxView.xaml.cs">
-      <DependentUpon>CueTextBoxView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\CueTextBox\CueTextBoxViewModel.cs" />
-    <Compile Include="Controls\EnumComboBox\EnumComboBoxView.xaml.cs">
-      <DependentUpon>EnumComboBoxView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\EnumComboBox\EnumComboBoxViewModel.cs" />
-    <Compile Include="Controls\EnumComboBox\ExampleEnumeration.cs" />
-    <Compile Include="Controls\PaddedGrid\PaddedGrid.xaml.cs">
-      <DependentUpon>PaddedGrid.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PaddedGrid\PaddedGridViewModel.cs" />
     <Compile Include="DragAndDrop\CanvasSample\CanvasSampleView.xaml.cs">
       <DependentUpon>CanvasSampleView.xaml</DependentUpon>
     </Compile>
@@ -115,6 +98,10 @@
     <Compile Include="GalleryViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Home\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home\HomeViewModel.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -165,27 +152,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\ApexGrid\ApexGrid.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\CueTextBox\CueTextBoxView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\EnumComboBox\EnumComboBoxView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\PaddedGrid\PaddedGrid.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <ApplicationDefinition Include="DragAndDrop\CanvasSample\CanvasSampleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <ApplicationDefinition Include="DragAndDrop\ItemsControlSample\ItemsControlSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Home\HomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
@@ -237,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <ApplicationDefinition Include="Resources\ResourceDictionaries\GalleryResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
@@ -252,6 +231,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

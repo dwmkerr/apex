@@ -6,7 +6,7 @@
     mc:Ignorable="d"
     xmlns:local="clr-namespace:Gallery"
     xmlns:apexShells="clr-namespace:Apex.Shells;assembly=Apex.Silverlight"
-    d:DesignHeight="300" d:DesignWidth="400">
+             d:DesignHeight="768" d:DesignWidth="1024">
 
     <apexShells:Shell>
         <local:MainView />

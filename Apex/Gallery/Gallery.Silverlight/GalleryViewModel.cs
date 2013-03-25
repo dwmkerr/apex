@@ -32,6 +32,9 @@ namespace Gallery
     {
         public GalleryViewModel()
         {
+            var homeItem = new Home.HomeViewModel();
+            GalleryItems.Add(homeItem);
+
             var controlItems = new GalleryItemViewModel() {Title = "Controls"};
             controlItems.GalleryItems.Add(new ApexGridViewModel());
             controlItems.GalleryItems.Add(new CueTextBoxViewModel());
