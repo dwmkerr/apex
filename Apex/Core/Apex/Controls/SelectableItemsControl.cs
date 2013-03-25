@@ -39,6 +39,41 @@ namespace Apex.Controls
         bool IsSelected { get; set; }
     }
 
+    internal class SelectableItemsControlItem : ContentControl
+    {
+        /// <summary>
+        /// The DependencyProperty for the IsSelected property.
+        /// </summary>
+        public static readonly DependencyProperty IsSelectedProperty =
+          DependencyProperty.Register("IsSelected", typeof(bool), typeof(SelectableItemsControlItem),
+          new PropertyMetadata(default(bool), new PropertyChangedCallback(OnIsSelectedChanged)));
+
+        /// <summary>
+        /// Gets or sets IsSelected.
+        /// </summary>
+        /// <value>The value of IsSelected.</value>
+        public bool IsSelected
+        {
+            get { return (bool)GetValue(IsSelectedProperty); }
+            set { SetValue(IsSelectedProperty, value); }
+        }
+
+        /// <summary>
+        /// Called when IsSelected is changed.
+        /// </summary>
+        /// <param name="o">The dependency object.</param>
+        /// <param name="args">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private static void OnIsSelectedChanged(DependencyObject o, DependencyPropertyChangedEventArgs args)
+        {
+            SelectableItemsControlItem me = o as SelectableItemsControlItem;
+
+#if SILVERLIGHT
+            if(args.OldValue != args.NewValue)
+            VisualStateManager.GoToState(me, ((bool)args.NewValue) ? "Selected" : "Unselected", true);
+#endif
+        }
+    }
+
     /// <summary>
     /// A SelectableItemsControl is a standard ItemsControl that
     /// can flag an item as selected.
@@ -59,6 +94,25 @@ namespace Apex.Controls
             SetBinding(dp, binding);
         }
 
+        protected override bool IsItemItsOwnContainerOverride(object item)
+        {
+            return (item is SelectableItemsControlItem);
+        }
+
+        protected override DependencyObject GetContainerForItemOverride()
+        {
+            return new SelectableItemsControlItem();
+        }
+
+        protected override void PrepareContainerForItemOverride(DependencyObject element, object item)
+        {
+            base.PrepareContainerForItemOverride(element, item);
+            ((SelectableItemsControlItem)element).ContentTemplate = ItemTemplate;
+            ((SelectableItemsControlItem)element).Content = item;
+
+            if (ClickToSelectItem && item is ISelectableItem)
+                ((SelectableItemsControlItem) element).MouseLeftButtonDown += (sender, args) => DoSelectItemCommand(item);
+        }
 
         /// <summary>
         /// ItemsSourceProxy.
@@ -212,6 +266,9 @@ namespace Apex.Controls
             {
                 oldItem.IsSelected = false;
                 oldItem.OnDeselected();
+                var oldItemContainer = GetItemContainerFromItem(oldItem);
+                if (oldItemContainer != null)
+                    oldItemContainer.IsSelected = false;
             }
 
             //  Activate the new item.
@@ -220,7 +277,15 @@ namespace Apex.Controls
             {
                 ((ISelectableItem)itemToSelect).IsSelected = true;
                 ((ISelectableItem)itemToSelect).OnSelected();
+                var itemContainer = GetItemContainerFromItem(itemToSelect);
+                if (itemContainer != null)
+                    itemContainer.IsSelected = true;
             }
+        }
+
+        private SelectableItemsControlItem GetItemContainerFromItem(object item)
+        {
+            return Items.OfType<SelectableItemsControlItem>().FirstOrDefault(sici => sici.Content == item);
         }
 
         /// <summary>
@@ -232,6 +297,23 @@ namespace Apex.Controls
             get;
             private set;
         }
-                
+
+        
+        /// <summary>
+        /// The DependencyProperty for the ClickToSelectItem property.
+        /// </summary>
+        public static readonly DependencyProperty ClickToSelectItemProperty =
+          DependencyProperty.Register("ClickToSelectItem", typeof(bool), typeof(SelectableItemsControl),
+          new PropertyMetadata(default(bool)));
+
+        /// <summary>
+        /// Gets or sets ClickToSelectItem.
+        /// </summary>
+        /// <value>The value of ClickToSelectItem.</value>
+        public bool ClickToSelectItem
+        {
+            get { return (bool)GetValue(ClickToSelectItemProperty); }
+            set { SetValue(ClickToSelectItemProperty, value); }
+        }
     }
 }

@@ -9,6 +9,7 @@ using Gallery.Controls.EnumComboBox;
 using Gallery.Controls.FolderTextBox;
 using Gallery.Controls.MultiBorder;
 using Gallery.Controls.PaddedGrid;
+using Gallery.Controls.SelectableItemsControl;
 using Gallery.Controls.TabbedDocumentInterface;
 using Gallery.CueTextBox;
 using Gallery.PathTextBox;
@@ -34,6 +35,7 @@ namespace Gallery.Controls
             GalleryItems.Add(new PathTextBoxViewModel());
             GalleryItems.Add(new PivotControlViewModel());
             GalleryItems.Add(new SearchTextBoxViewModel());
+            GalleryItems.Add(new SelectableItemsControlViewModel());
             GalleryItems.Add(new TabbedDocumentInterfaceViewModel());
         }
     }
