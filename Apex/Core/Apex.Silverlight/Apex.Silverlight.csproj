@@ -131,6 +131,9 @@
     <Compile Include="..\apex\consistency\HitTest.cs">
       <Link>Consistency\HitTest.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Consistency\ItemsControl.cs">
+      <Link>Consistency\ItemsControl.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Consistency\LogicalTreeHelper.cs">
       <Link>Consistency\LogicalTreeHelper.cs</Link>
     </Compile>

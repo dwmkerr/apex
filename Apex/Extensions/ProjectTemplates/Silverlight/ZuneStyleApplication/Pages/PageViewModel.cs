@@ -8,14 +8,6 @@ namespace ZuneStyleApplication.Pages
     [ViewModel]
     public class PageViewModel : ViewModel, ISelectableItem
     {
-        public void OnSelected()
-        {
-        }
-
-        public void OnDeselected()
-        {
-        }
-
         /// <summary>
         /// The NotifyingProperty for the Title property.
         /// </summary>

@@ -8,7 +8,6 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop;assembly=Apex"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
 
     <UserControl.Resources>
@@ -22,31 +21,33 @@
             </Border>
         </DataTemplate>
     </UserControl.Resources>
-    
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">ITEMSCONTROL SAMPLE</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+    <Grid Style="{StaticResource GalleryItemStyle}">
+
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">ITEMSCONTROL SAMPLE</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             In this sample, elements in ItemsControls can be dragged and dropped. This also changes the state of the collections in the view model.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
 
-            <!-- The View creates its own ViewModel, so set the ViewModel 
+                <!-- The View creates its own ViewModel, so set the ViewModel 
     to a new instance of the ViewModel class. -->
-    <apexMVVM:View.ViewModel>
-        <local:ItemsControlSampleViewModel x:Name="viewModel" />
-    </apexMVVM:View.ViewModel>
+                <apexMVVM:View.ViewModel>
+                    <local:ItemsControlSampleViewModel x:Name="viewModel" />
+                </apexMVVM:View.ViewModel>
 
 
 
-        <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost">
-            <apexControls:ApexGrid Rows="*,*" Columns="*,*">
+                <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost">
+                    <apexControls:ApexGrid Rows="*,*" Columns="*,*">
 
-                <ItemsControl 
+                        <ItemsControl 
                 Background="#D7ECFF"
             x:Name="listTopLeft"
             Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Group1}"
@@ -54,7 +55,7 @@
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
 
-                <ItemsControl
+                        <ItemsControl
                 Background="#ECF6FF"
             x:Name="listTopRight"
             Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Group2}"
@@ -62,7 +63,7 @@
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
 
-                <ItemsControl 
+                        <ItemsControl 
                 Background="#ECF6FF"
             x:Name="listBottomLeft"
             Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Group3}"
@@ -70,17 +71,18 @@
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
 
-                <ItemsControl
+                        <ItemsControl
                 Background="#D7ECFF"
             x:Name="listBottomRight"
             Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Group4}"
             ItemTemplate="{StaticResource draggableItemTemplate}"
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True" />
-            </apexControls:ApexGrid>
-        </dragAndDrop:DragAndDropHost>
-        </Grid>
-    </apexControls:PaddedGrid>
+                    </apexControls:ApexGrid>
+                </dragAndDrop:DragAndDropHost>
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>
 
             

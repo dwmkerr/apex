@@ -6,29 +6,31 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:CustomisedPopup="clr-namespace:Gallery.Popups.CustomisedPopup"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
     
     <UserControl.DataContext>
         <CustomisedPopup:CustomisedPopupViewModel />
     </UserControl.DataContext>
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">CUSTOMISED POPUP SAMPLE</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">CUSTOMISED POPUP SAMPLE</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             This sample shows how a customised popup can be used in your application.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
 
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <Button Width="200" Height="30" Margin="4" Content="Show Bounce Popup" Command="{Binding ShowBouncePopupCommand}"/>
-                <Button Width="200" Height="30" Margin="4" Content="Show Fade Popup" Command="{Binding ShowFadePopupCommand}"/>
-            </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Button Width="200" Height="30" Margin="4" Content="Show Bounce Popup" Command="{Binding ShowBouncePopupCommand}"/>
+                    <Button Width="200" Height="30" Margin="4" Content="Show Fade Popup" Command="{Binding ShowFadePopupCommand}"/>
+                </StackPanel>
 
-        </Grid>
-    </apexControls:PaddedGrid>
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

@@ -31,8 +31,8 @@
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
     
-    <Style x:Key="GalleryItemStyle" TargetType="{x:Type UserControl}">
+    <Style x:Key="GalleryItemStyle" TargetType="{x:Type Grid}">
         <Setter Property="Background" Value="#F4F4F4" />
     </Style>
-    
+
 </ResourceDictionary>

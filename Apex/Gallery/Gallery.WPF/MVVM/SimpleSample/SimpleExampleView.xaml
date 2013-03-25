@@ -7,32 +7,34 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
              xmlns:SimpleSample="clr-namespace:Gallery.MVVM.SimpleSample" mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">SIMPLE SAMPLE</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">SIMPLE SAMPLE</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             This simple sample shows how basic bindings work.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
 
-            <!-- The data entry grid. -->
-            <apexControls:PaddedGrid Grid.Row="1" Grid.Column="2" Rows="Auto,Auto,Auto,Auto,Auto" Columns="150,*" Padding="4">
+                <!-- The data entry grid. -->
+                <apexControls:PaddedGrid Grid.Row="1" Grid.Column="2" Rows="Auto,Auto,Auto,Auto,Auto" Columns="150,*" Padding="4">
 
-                <!-- The first name. -->
-                <Label Grid.Row="0" Grid.Column="0" Content="First Name" />
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
-                <Label Grid.Row="1" Grid.Column="0" Content="Second Name" />
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}" />
-                <Label Grid.Row="2" Grid.Column="0" Content="Full Name" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FullName}" IsReadOnly="True" />
-                <Button Grid.Row="3" Grid.Column="1" Width="80" Content="Build Name" Command="{Binding BuildNameCommand}" />
-            </apexControls:PaddedGrid>
-        </Grid>
-    </apexControls:PaddedGrid>
+                    <!-- The first name. -->
+                    <Label Grid.Row="0" Grid.Column="0" Content="First Name" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Grid.Row="1" Grid.Column="0" Content="Second Name" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Grid.Row="2" Grid.Column="0" Content="Full Name" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FullName}" IsReadOnly="True" />
+                    <Button Grid.Row="3" Grid.Column="1" Width="80" Content="Build Name" Command="{Binding BuildNameCommand}" />
+                </apexControls:PaddedGrid>
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

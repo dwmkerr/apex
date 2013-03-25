@@ -21,16 +21,6 @@ namespace Apex.Controls
     public interface ISelectableItem
     {
         /// <summary>
-        /// Called when selected.
-        /// </summary>
-        void OnSelected();
-
-        /// <summary>
-        /// Called when deselected.
-        ///  </summary>
-        void OnDeselected();
-
-        /// <summary>
         /// Gets or sets a value indicating whether this instance is selected.
         /// </summary>
         /// <value>
@@ -69,7 +59,7 @@ namespace Apex.Controls
 
 #if SILVERLIGHT
             if(args.OldValue != args.NewValue)
-            VisualStateManager.GoToState(me, ((bool)args.NewValue) ? "Selected" : "Unselected", true);
+                VisualStateManager.GoToState(me, ((bool)args.NewValue) ? "Selected" : "Unselected", true);
 #endif
         }
     }
@@ -80,7 +70,7 @@ namespace Apex.Controls
     /// TODO: Should this be limited to ISelectableItem items? 
     /// With ISelectable.IsSelected, ISelectable.Activate, ISelectable.Deactivate?
     /// </summary>
-    public class SelectableItemsControl : ItemsControl
+    public class SelectableItemsControl : Consistency.ItemsControl
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectableItemsControl"/> class.
@@ -89,9 +79,6 @@ namespace Apex.Controls
         {
             //  Wire up commands.
             SelectItemCommand = new Command(DoSelectItemCommand);
-
-            Binding binding = new Binding("ItemsSource") {Source = this};
-            SetBinding(dp, binding);
         }
 
         protected override bool IsItemItsOwnContainerOverride(object item)
@@ -113,77 +100,46 @@ namespace Apex.Controls
             if (ClickToSelectItem && item is ISelectableItem)
                 ((SelectableItemsControlItem) element).MouseLeftButtonDown += (sender, args) => DoSelectItemCommand(item);
         }
-
-        /// <summary>
-        /// ItemsSourceProxy.
-        /// </summary>
-        static readonly DependencyProperty dp = DependencyProperty.RegisterAttached("ItemsSourceProxy", typeof (IEnumerable),
-                                                         typeof (SelectableItemsControl),
-                                                         new PropertyMetadata(null,
-                                                                              new PropertyChangedCallback(
-                                                                                  OnItemsSourceProxyChanged)));
-
-        private static void OnItemsSourceProxyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var me = d as SelectableItemsControl;
-            me.CheckNewItemsSourceForSelectedItem(e.NewValue as IEnumerable, true);
-
-            me.DoFudge();
-        }
-
+        
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
         /// </summary>
         public override void OnApplyTemplate()
         {
+            //  Call the base.
             base.OnApplyTemplate();
 
-            //  If we have an items source source, we should set the selected value (if there is one).
-            CheckNewItemsSourceForSelectedItem(ItemsSource, true);
+            //  Set the Selected state of the items.
+            SetItemsSelectedState();
 
-            DoFudge();
-
+            //  The template has now been applied.
+            isTemplateApplied = true;
         }
-
-        private void CheckNewItemsSourceForSelectedItem(IEnumerable newItemsSource, bool forceNotify)
-        {
-            if (newItemsSource == null)
-                return;
-            //  Do we have an item to select?
-            var itemToSelect = (from object i in newItemsSource
-                                where i is ISelectableItem && ((ISelectableItem)i).IsSelected
-                                select i as ISelectableItem).FirstOrDefault();
-
-
-            //  Select the item to select (if there is one).
-            if (itemToSelect != null)
-                InternalSelectItem(itemToSelect, newItemsSource, forceNotify);
-        }
-
 
         /// <summary>
-        /// Invoked when the <see cref="P:System.Windows.Controls.ItemsControl.Items"/> property changes.
+        /// Sets the selected state of the items correctly.
         /// </summary>
-        /// <param name="e">Information about the change.</param>
-        protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
+        private void SetItemsSelectedState()
         {
-            base.OnItemsChanged(e);
+            //  If we have no items, we cannot set their state.
+            if (ItemsSource == null)
+                return;
 
-            //  Do we have an item to select?
-            var selectedItem = (from object i in ItemsSource
-                                where i is ISelectableItem && ((ISelectableItem)i).IsSelected
-                                select i as ISelectableItem).FirstOrDefault();
+            //  Go through every item.
+            foreach (var item in ItemsSource)
+            {
+                //  If the item is selectable, we can set it's selectable state.
+                var selectableItem = item as ISelectableItem;
+                if (selectableItem != null)
+                    selectableItem.IsSelected = selectableItem == SelectedItem;
 
-            System.Diagnostics.Debug.WriteLine(Name + ": ItemsChanged, " + (SelectedItem == null ? "null" : SelectedItem.GetType().Name) +
-                " -> " + (selectedItem == null ? "null" : selectedItem.GetType().Name));
-
-            //  Select the item to select (if there is one).
-            if (selectedItem != null)
-                InternalSelectItem(selectedItem, ItemsSource);
-
-            DoFudge();
+                //  If the item has a selectable items control item container, we can set the selectable state.
+                var itemContainer = ItemContainerGenerator.ContainerFromItem(item) as SelectableItemsControlItem;
+                if (itemContainer != null)
+                    itemContainer.IsSelected = selectableItem == SelectedItem;
+            }
         }
-
+        
         /// <summary>
         /// The DependencyProperty for the SelectedItem property.
         /// </summary>
@@ -196,21 +152,33 @@ namespace Apex.Controls
  FrameworkPropertyMetadataOptions.None, new PropertyChangedCallback(SelectedItemChanged)));
 #endif
 
+        /// <summary>
+        /// Called when the selected item is changed.
+        /// </summary>
+        /// <param name="d">The dependency object.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void SelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if(e.NewValue == null)
-                System.Diagnostics.Debug.WriteLine("NULL");
-            var me = d as SelectableItemsControl;
-            System.Diagnostics.Debug.WriteLine(me.Name + ": " + (e.OldValue == null ? "null" : e.OldValue.GetType().Name) +
-                " -> " + (e.NewValue == null ? "null" : e.NewValue.GetType().Name));
+            //  Get the control, call the OnChanged function.
+            var selectableItemsControl = (SelectableItemsControl) d;
+            selectableItemsControl.OnSelectedItemChanged(e.OldValue, e.NewValue);        
+        }
 
+        /// <summary>
+        /// Called when the selected item is changed.
+        /// </summary>
+        /// <param name="oldValue">The old value.</param>
+        /// <param name="newValue">The new value.</param>
+        protected virtual void OnSelectedItemChanged(object oldValue, object newValue)
+        {
+            //  We don't need to set state if we have no template.
+            if (!isTemplateApplied)
+                return;
 
-
-            me.DoFudge();
+            //  Set the Selected state of the items.
+            SetItemsSelectedState();
         }
        
-
-
         /// <summary>
         /// Gets or sets SelectedItem.
         /// </summary>
@@ -227,66 +195,18 @@ namespace Apex.Controls
         /// <param name="itemToSelect">The item to select.</param>
         private void DoSelectItemCommand(object itemToSelect)
         {
-            //  Use the internal function for this for consistency.
-            InternalSelectItem(itemToSelect, ItemsSource);
-
-            DoFudge();
-        }
-
-        private IEnumerable fudgeFactor = null;
-        private void DoFudge()
-        {
-            if (ItemsSource != fudgeFactor && fudgeFactor != null)
-                CheckNewItemsSourceForSelectedItem(ItemsSource, true);
-            fudgeFactor = ItemsSource;
-        }
-
-        /// <summary>
-        /// Used internally to select the item, even if it is not in the current itemsource.
-        /// This tidies things up because in the Silverlight version we have to do a bit more
-        /// manual work and call this function.
-        /// </summary>
-        /// <param name="itemToSelect">The item to select.</param>
-        /// <param name="itemsSource">The items source.</param>
-        /// <param name="forceNotify">if set to <c>true</c> [force notify].</param>
-        private void InternalSelectItem(object itemToSelect, IEnumerable itemsSource, bool forceNotify = false)
-        {
-            //  Handle the trivial case.
-            if (SelectedItem == itemToSelect && !forceNotify)
-                return;
-
-            System.Diagnostics.Debug.WriteLine(Name + ": InternalSelectItem, " + (SelectedItem == null ? "null" : SelectedItem.GetType().Name) +
-                " -> " + (itemToSelect == null ? "null" : itemToSelect.GetType().Name));
-
-            //  Deactivate the old item.
-            var oldItem = (from object i in itemsSource
-                          where i is ISelectableItem && ((ISelectableItem) i).IsSelected
-                          select i as ISelectableItem).FirstOrDefault();
-            if(oldItem != null)
-            {
-                oldItem.IsSelected = false;
-                oldItem.OnDeselected();
-                var oldItemContainer = GetItemContainerFromItem(oldItem);
-                if (oldItemContainer != null)
-                    oldItemContainer.IsSelected = false;
-            }
-
-            //  Activate the new item.
             SelectedItem = itemToSelect;
-            if(itemToSelect is ISelectableItem)
-            {
-                ((ISelectableItem)itemToSelect).IsSelected = true;
-                ((ISelectableItem)itemToSelect).OnSelected();
-                var itemContainer = GetItemContainerFromItem(itemToSelect);
-                if (itemContainer != null)
-                    itemContainer.IsSelected = true;
-            }
         }
-
+        
         private SelectableItemsControlItem GetItemContainerFromItem(object item)
         {
             return Items.OfType<SelectableItemsControlItem>().FirstOrDefault(sici => sici.Content == item);
         }
+
+        /// <summary>
+        /// A flag that is set if the template has been applied.
+        /// </summary>
+        private bool isTemplateApplied;
 
         /// <summary>
         /// Gets the SelectItem command.
@@ -297,7 +217,6 @@ namespace Apex.Controls
             get;
             private set;
         }
-
         
         /// <summary>
         /// The DependencyProperty for the ClickToSelectItem property.

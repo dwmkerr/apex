@@ -5,22 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">MULTIBORDER</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">MULTIBORDER</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             The MutiBorder is a standard border that allows different brushes and thicknesses to be set for each edge.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
 
-        <!-- Second section, the multiborder. -->
-        <apexControls:MultiBorder 
+                <!-- Second section, the multiborder. -->
+                <apexControls:MultiBorder 
             x:Name="multiBorder"
             BorderThicknessLeft="3" BorderBrushLeft="Red"
             BorderThicknessTop="2" BorderBrushTop="Green"
@@ -28,7 +29,8 @@
             BorderThicknessBottom="20" BorderBrushBottom="Black"
             Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"
             Width="200" Height="200" />
-        
-      </Grid>
-    </apexControls:PaddedGrid>
+
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

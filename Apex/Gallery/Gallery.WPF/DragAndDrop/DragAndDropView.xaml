@@ -6,15 +6,17 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:DragAndDrop="clr-namespace:Gallery.DragAndDrop"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
-    
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">DRAG &amp; DROP</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">Drag and drop is a complicated area to work with. Fortunately, Apex makes 
+
+    <Grid Style="{StaticResource GalleryItemStyle}">
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">DRAG &amp; DROP</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">Drag and drop is a complicated area to work with. Fortunately, Apex makes 
             adding drag and drop functionality to applications more straightforward.</TextBlock>
-        
-    </apexControls:PaddedGrid>
+
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

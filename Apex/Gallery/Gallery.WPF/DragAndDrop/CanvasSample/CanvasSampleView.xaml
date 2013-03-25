@@ -8,36 +8,38 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:dragAndDrop="clr-namespace:Apex.DragAndDrop;assembly=Apex"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
-    
-    
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">CANVAS SAMPLE</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+
+    <Grid Style="{StaticResource GalleryItemStyle}">
+
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">CANVAS SAMPLE</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             In this sample, elements in a Canvas can be dragged and dropped.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
-    
-        <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost" Background="White">
-            <Canvas
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+
+                <dragAndDrop:DragAndDropHost x:Name="dragAndDropHost" Background="White">
+                    <Canvas
             dragAndDrop:DragAndDrop.IsDragSource="True"
             dragAndDrop:DragAndDrop.IsDropTarget="True">
-                <Ellipse Width="50" Height="50" Fill="Red" Stroke="Black" StrokeThickness="2"
+                        <Ellipse Width="50" Height="50" Fill="Red" Stroke="Black" StrokeThickness="2"
                      dragAndDrop:DragAndDrop.IsDraggable="True" />
-                <Ellipse Width="50" Height="50" Canvas.Left="100" Canvas.Top="60" Fill="Green" Stroke="Black" StrokeThickness="2"
+                        <Ellipse Width="50" Height="50" Canvas.Left="100" Canvas.Top="60" Fill="Green" Stroke="Black" StrokeThickness="2"
                      dragAndDrop:DragAndDrop.IsDraggable="True" />
 
-                <Rectangle Width="100" Height="20" Canvas.Left="20" Canvas.Top="160" Fill="Yellow" Stroke="Black" StrokeThickness="2"
+                        <Rectangle Width="100" Height="20" Canvas.Left="20" Canvas.Top="160" Fill="Yellow" Stroke="Black" StrokeThickness="2"
                      dragAndDrop:DragAndDrop.IsDraggable="True" />
-            </Canvas>
-        </dragAndDrop:DragAndDropHost>
-        </Grid>
-    </apexControls:PaddedGrid>
+                    </Canvas>
+                </dragAndDrop:DragAndDropHost>
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>
 
             

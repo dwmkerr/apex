@@ -7,56 +7,58 @@
              xmlns:selectableItemsControl="clr-namespace:Gallery.Controls.SelectableItemsControl"
              xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
-    
-    <UserControl.DataContext>
-        <selectableItemsControl:SelectableItemsControlViewModel />
-    </UserControl.DataContext>
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+        <UserControl.DataContext>
+            <selectableItemsControl:SelectableItemsControlViewModel />
+        </UserControl.DataContext>
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">SELECTABLEITEMSCONTROL</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+    <Grid Style="{StaticResource GalleryItemStyle}">
+
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">SELECTABLEITEMSCONTROL</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             The SelectableItemsControl is essentially an ItemsControl that supports selection of items.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
-            
-            <Grid.Resources>
-                <apexConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-            </Grid.Resources>
-        
-            <apexControls:ApexGrid Rows="Auto,*">
-            
-            <!-- The top row, a set of selectable items. -->
-                <apexControls:SelectableItemsControl 
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+
+                <Grid.Resources>
+                    <apexConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                </Grid.Resources>
+
+                <apexControls:ApexGrid Rows="Auto,*">
+
+                    <!-- The top row, a set of selectable items. -->
+                    <apexControls:SelectableItemsControl 
                     ItemsSource="{Binding SelectableItems}"
                     SelectedItem="{Binding SelectedItem}"
                     ClickToSelectItem="True"
                     Background="#E9E9E9">
-                    <apexControls:SelectableItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"></StackPanel>
-                        </ItemsPanelTemplate>
-                    </apexControls:SelectableItemsControl.ItemsPanel>
-                    <apexControls:SelectableItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Grid MinWidth="80" Background="Transparent" Cursor="Hand">
-                                <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}" FontWeight="Bold" HorizontalAlignment="Center"
+                        <apexControls:SelectableItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </apexControls:SelectableItemsControl.ItemsPanel>
+                        <apexControls:SelectableItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid MinWidth="80" Background="Transparent" Cursor="Hand">
+                                    <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}" FontWeight="Bold" HorizontalAlignment="Center"
                                       Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}}"  />
-                                <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}" HorizontalAlignment="Center" Foreground="#787878"
+                                    <TextBlock Style="{StaticResource Heading3}" Margin="4" Text="{Binding Title}" HorizontalAlignment="Center" Foreground="#787878"
                                       Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}"  />
-                            </Grid>
-                        </DataTemplate>
-                    </apexControls:SelectableItemsControl.ItemTemplate>
-                </apexControls:SelectableItemsControl>
-                <TextBlock Grid.Row="2" TextWrapping="Wrap" Padding="10" Background="White" Text="{Binding SelectedItem.Details}">
-                    
-                </TextBlock>
-            </apexControls:ApexGrid>
-        </Grid>
-    </apexControls:PaddedGrid>
+                                </Grid>
+                            </DataTemplate>
+                        </apexControls:SelectableItemsControl.ItemTemplate>
+                    </apexControls:SelectableItemsControl>
+                    <TextBlock Grid.Row="2" TextWrapping="Wrap" Padding="10" Background="White" Text="{Binding SelectedItem.Details}">
+
+                    </TextBlock>
+                </apexControls:ApexGrid>
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

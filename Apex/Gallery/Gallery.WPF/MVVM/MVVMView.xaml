@@ -5,17 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
-    
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">MVVM</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+    <Grid Style="{StaticResource GalleryItemStyle}">
+
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">MVVM</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             Apex has a powerful set of classes and attributes to allow applications to be built using the 
             Model-View-ViewModel pattern.
-        </TextBlock>
-        
-    </apexControls:PaddedGrid>
+            </TextBlock>
+
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>
