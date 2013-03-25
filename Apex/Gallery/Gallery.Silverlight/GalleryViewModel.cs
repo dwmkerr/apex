@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Apex.MVVM;
+using Gallery.Controls;
 using Gallery.DragAndDrop.CanvasSample;
 using Gallery.DragAndDrop.ItemsControlSample;
 using Gallery.MVVM.CommandingSample;
@@ -28,19 +29,10 @@ namespace Gallery
         {
             var homeItem = new Home.HomeViewModel();
             GalleryItems.Add(homeItem);
-            /*
-            var controlItems = new GalleryItemViewModel() {Title = "Controls"};
-            controlItems.GalleryItems.Add(new ApexGridViewModel());
-            controlItems.GalleryItems.Add(new CueTextBoxViewModel());
-            //controlItems.GalleryItems.Add(new CrossButtonViewModel());
-            //controlItems.GalleryItems.Add(new EnumComboBoxViewModel());
-            //controlItems.GalleryItems.Add(new MultiBorderViewModel());
-            controlItems.GalleryItems.Add(new PaddedGridViewModel());
-            //controlItems.GalleryItems.Add(new PathTextBoxViewModel());
-            //controlItems.GalleryItems.Add(new PivotControlViewModel());
-            //controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
+            
+            var controlItems = new ControlsViewModel();
             GalleryItems.Add(controlItems);
-            */
+            
             var popupItems = new GalleryItemViewModel() {Title = "Popups"};
             popupItems.GalleryItems.Add(new PopupsViewModel());
             GalleryItems.Add(popupItems);

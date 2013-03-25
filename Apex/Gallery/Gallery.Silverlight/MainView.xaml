@@ -26,8 +26,7 @@
         
         <!-- The main tree view of samples. -->
         <sdk:TreeView 
-            ItemsSource="{Binding GalleryItems}" SelectedItemChanged="TreeView_SelectedItemChanged"
-            Margin="4">
+            ItemsSource="{Binding GalleryItems}" SelectedItemChanged="TreeView_SelectedItemChanged">
             <sdk:TreeView.ItemTemplate>
                 <sdk:HierarchicalDataTemplate ItemsSource="{Binding GalleryItems}">
                     <TextBlock Text="{Binding Title}" />
@@ -41,8 +40,7 @@
         <!-- The view broker. -->        
         <apexControls:ViewBroker 
             Grid.Column="2" ViewModel="{Binding SelectedGalleryItem}" AllowUnknownViewModels="True" 
-            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
-            Margin="4" />
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
         
     </apexControls:ApexGrid>
 </UserControl>

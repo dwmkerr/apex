@@ -84,6 +84,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\ApexGrid\ApexGrid.xaml.cs">
+      <DependentUpon>ApexGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ApexGrid\ApexGridViewModel.cs" />
+    <Compile Include="Controls\ControlsView.xaml.cs">
+      <DependentUpon>ControlsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlsViewModel.cs" />
+    <Compile Include="Controls\CueTextBox\CueTextBoxView.xaml.cs">
+      <DependentUpon>CueTextBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CueTextBox\CueTextBoxViewModel.cs" />
+    <Compile Include="Controls\EnumComboBox\EnumComboBoxView.xaml.cs">
+      <DependentUpon>EnumComboBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EnumComboBox\EnumComboBoxViewModel.cs" />
+    <Compile Include="Controls\EnumComboBox\ExampleEnumeration.cs" />
+    <Compile Include="Controls\PaddedGrid\PaddedGrid.xaml.cs">
+      <DependentUpon>PaddedGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PaddedGrid\PaddedGridViewModel.cs" />
+    <Compile Include="Controls\SearchTextBox\SearchTextBoxView.xaml.cs">
+      <DependentUpon>SearchTextBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchTextBox\SearchTextBoxViewModel.cs" />
+    <Compile Include="Controls\SelectableItemsControl\SelectableItemsControlView.xaml.cs">
+      <DependentUpon>SelectableItemsControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectableItemsControl\SelectableItemsControlViewModel.cs" />
+    <Compile Include="Controls\SelectableItemsControl\SelectableItemViewModel.cs" />
     <Compile Include="DragAndDrop\CanvasSample\CanvasSampleView.xaml.cs">
       <DependentUpon>CanvasSampleView.xaml</DependentUpon>
     </Compile>
@@ -164,6 +194,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <ApplicationDefinition Include="Controls\ApexGrid\ApexGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Controls\CueTextBox\CueTextBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Controls\EnumComboBox\EnumComboBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Controls\PaddedGrid\PaddedGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Controls\SearchTextBox\SearchTextBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Controls\SelectableItemsControl\SelectableItemsControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="Controls\ControlsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,9 +290,7 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
