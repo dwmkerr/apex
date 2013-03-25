@@ -114,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\SelectableItemsControl\SelectableItemsControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -206,6 +210,11 @@
       <DependentUpon>FolderTextBoxView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\FolderTextBox\FolderTextBoxViewModel.cs" />
+    <Compile Include="Controls\SelectableItemsControl\SelectableItemsControlView.xaml.cs">
+      <DependentUpon>SelectableItemsControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectableItemsControl\SelectableItemsControlViewModel.cs" />
+    <Compile Include="Controls\SelectableItemsControl\SelectableItemViewModel.cs" />
     <Compile Include="Controls\TabbedDocumentInterface\TabbedDocumentInterfaceView.xaml.cs">
       <DependentUpon>TabbedDocumentInterfaceView.xaml</DependentUpon>
     </Compile>
