@@ -4,12 +4,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Apex.MVVM;
-using Gallery.Controls.ApexGrid;
-//using Gallery.Controls.CrossButton;
-//using Gallery.Controls.EnumComboBox;
-//using Gallery.Controls.MultiBorder;
-using Gallery.Controls.PaddedGrid;
-using Gallery.CueTextBox;
 using Gallery.DragAndDrop.CanvasSample;
 using Gallery.DragAndDrop.ItemsControlSample;
 using Gallery.MVVM.CommandingSample;
@@ -34,7 +28,7 @@ namespace Gallery
         {
             var homeItem = new Home.HomeViewModel();
             GalleryItems.Add(homeItem);
-
+            /*
             var controlItems = new GalleryItemViewModel() {Title = "Controls"};
             controlItems.GalleryItems.Add(new ApexGridViewModel());
             controlItems.GalleryItems.Add(new CueTextBoxViewModel());
@@ -46,7 +40,7 @@ namespace Gallery
             //controlItems.GalleryItems.Add(new PivotControlViewModel());
             //controlItems.GalleryItems.Add(new SearchTextBoxViewModel());
             GalleryItems.Add(controlItems);
-
+            */
             var popupItems = new GalleryItemViewModel() {Title = "Popups"};
             popupItems.GalleryItems.Add(new PopupsViewModel());
             GalleryItems.Add(popupItems);

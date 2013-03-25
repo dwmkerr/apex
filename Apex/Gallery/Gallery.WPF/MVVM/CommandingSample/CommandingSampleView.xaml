@@ -9,153 +9,155 @@
         xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex"
              xmlns:CommandingSample="clr-namespace:Gallery.MVVM.CommandingSample"
              xmlns:System="clr-namespace:System;assembly=mscorlib" mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
     
     <UserControl.DataContext>
         <CommandingSample:CommandingSampleViewModel />
     </UserControl.DataContext>
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">COMMANDING SAMPLE</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">COMMANDING SAMPLE</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             This sample demonstrates how Commands can be used.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
-    
-        <!-- The data entry grid. -->
-        <apexControls:ApexGrid Columns="*,*">
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
 
-            <!-- Left hand column, the messages. -->
-            <apexControls:ApexGrid Grid.Column="1" Margin="4" Rows="Auto,*">
+                <!-- The data entry grid. -->
+                <apexControls:ApexGrid Columns="*,*">
 
-                <TextBlock Grid.Row="0" Text="Output" FontSize="24" />
-                <ScrollViewer Grid.Row="1">
-                    <ItemsControl ItemsSource="{Binding Messages}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding}" TextWrapping="Wrap" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
+                    <!-- Left hand column, the messages. -->
+                    <apexControls:ApexGrid Grid.Column="1" Margin="4" Rows="Auto,*">
 
-            </apexControls:ApexGrid>
+                        <TextBlock Grid.Row="0" Text="Output" FontSize="24" />
+                        <ScrollViewer Grid.Row="1">
+                            <ItemsControl ItemsSource="{Binding Messages}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" TextWrapping="Wrap" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
 
-            <!-- Right hand column, the commands. -->
-            <apexControls:ApexGrid Margin="4" Rows="Auto,*">
-                
-                <apexControls:ApexGrid.Resources>
-                        <apexConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-                </apexControls:ApexGrid.Resources>
+                    </apexControls:ApexGrid>
 
-                <TextBlock Grid.Row="0" Text="Command" FontSize="24"  />
+                    <!-- Right hand column, the commands. -->
+                    <apexControls:ApexGrid Margin="4" Rows="Auto,*">
 
-                <ScrollViewer Grid.Row="1" >
+                        <apexControls:ApexGrid.Resources>
+                            <apexConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                        </apexControls:ApexGrid.Resources>
 
-                    <StackPanel Orientation="Vertical">
+                        <TextBlock Grid.Row="0" Text="Command" FontSize="24"  />
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="A simple command example." />
-                            <Button Width="160" Content="Simple Command" Command="{Binding SimpleCommand}" />
-                        </StackPanel>
+                        <ScrollViewer Grid.Row="1" >
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="A lamba command example." />
-                            <Button Width="160" Content="Lambda Command" Command="{Binding LambdaCommand}" />
-                        </StackPanel>
+                            <StackPanel Orientation="Vertical">
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="A parameterised command example." />
-                            <Button Width="160" Content="Parameterised Command" Command="{Binding ParameterisedCommand}" CommandParameter="Apples" />
-                        </StackPanel>
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="A simple command example." />
+                                    <Button Width="160" Content="Simple Command" Command="{Binding SimpleCommand}" />
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="Enabling and disabling a command example." />
-                            <CheckBox IsChecked="{Binding EnableDisableCommand.CanExecute, Mode=TwoWay}" Content="Enabled" />
-                            <Button Width="160" Content="Enable/Disable Command" Command="{Binding EnableDisableCommand}" />
-                        </StackPanel>
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="A lamba command example." />
+                                    <Button Width="160" Content="Lambda Command" Command="{Binding LambdaCommand}" />
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="A command with events." />
-                            <Button Width="160" Content="Events Command" Command="{Binding EventsCommand}" />
-                        </StackPanel>
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="A parameterised command example." />
+                                    <Button Width="160" Content="Parameterised Command" Command="{Binding ParameterisedCommand}" CommandParameter="Apples" />
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="An asynchronous command." />
-                            <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand1}" />
-                        </StackPanel>
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="Enabling and disabling a command example." />
+                                    <CheckBox IsChecked="{Binding EnableDisableCommand.CanExecute, Mode=TwoWay}" Content="Enabled" />
+                                    <Button Width="160" Content="Enable/Disable Command" Command="{Binding EnableDisableCommand}" />
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="Another asynchronous command." />
-                            <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand2}" 
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="A command with events." />
+                                    <Button Width="160" Content="Events Command" Command="{Binding EventsCommand}" />
+                                </StackPanel>
+
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="An asynchronous command." />
+                                    <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand1}" />
+                                </StackPanel>
+
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="Another asynchronous command." />
+                                    <Button Width="160" Content="Asynchronous Command" Command="{Binding AsyncCommand2}" 
                                 Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
-                            <StackPanel Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                <TextBlock Margin="4" Text="The command is running!" />
-                                <ProgressBar Margin="4" Height="20" Width="120" IsIndeterminate="True" />
-                            </StackPanel>
-                        </StackPanel>
+                                    <StackPanel Visibility="{Binding AsyncCommand2.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <TextBlock Margin="4" Text="The command is running!" />
+                                        <ProgressBar Margin="4" Height="20" Width="120" IsIndeterminate="True" />
+                                    </StackPanel>
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="Cancellable Asynchronous Command." />
-                            <Button Width="160" Content="Cancellable Async Command" Command="{Binding CancellableAsyncCommand}" 
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="Cancellable Asynchronous Command." />
+                                    <Button Width="160" Content="Cancellable Async Command" Command="{Binding CancellableAsyncCommand}" 
                                 Visibility="{Binding CancellableAsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}" />
-                            <StackPanel Visibility="{Binding CancellableAsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                <TextBlock Margin="4" Text="The command is running!" />
-                                <ProgressBar Margin="4" Height="20" Width="120" IsIndeterminate="True" />
-                                <Button Margin="4" Width="100" Content="Cancel" Command="{Binding CancellableAsyncCommand.CancelCommand}" />
-                            </StackPanel>
-                        </StackPanel>
+                                    <StackPanel Visibility="{Binding CancellableAsyncCommand.IsExecuting, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <TextBlock Margin="4" Text="The command is running!" />
+                                        <ProgressBar Margin="4" Height="20" Width="120" IsIndeterminate="True" />
+                                        <Button Margin="4" Width="100" Content="Cancel" Command="{Binding CancellableAsyncCommand.CancelCommand}" />
+                                    </StackPanel>
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="Disable During Execution Asynchronous Command." />
-                            <Button Width="160" Content="DDE Asynchronous Command" Command="{Binding DisabledDuringExecutionAsyncCommand}" />
-                        </StackPanel>
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="Disable During Execution Asynchronous Command." />
+                                    <Button Width="160" Content="DDE Asynchronous Command" Command="{Binding DisabledDuringExecutionAsyncCommand}" />
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="Binding a command to an event example." />
-                            <Border Margin="20" Background="Red">
-                                <apexCommands:EventBindings.EventBindings>
-                                    <apexCommands:EventBindingCollection>
-                                        <apexCommands:EventBinding EventName="MouseLeftButtonDown" Command="{Binding EventBindingCommand}" />
-                                    </apexCommands:EventBindingCollection>
-                                </apexCommands:EventBindings.EventBindings>
-                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Left Click on Me" FontSize="16" Foreground="White" />
-                            </Border>
-                        </StackPanel>
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="Binding a command to an event example." />
+                                    <Border Margin="20" Background="Red">
+                                        <apexCommands:EventBindings.EventBindings>
+                                            <apexCommands:EventBindingCollection>
+                                                <apexCommands:EventBinding EventName="MouseLeftButtonDown" Command="{Binding EventBindingCommand}" />
+                                            </apexCommands:EventBindingCollection>
+                                        </apexCommands:EventBindings.EventBindings>
+                                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Left Click on Me" FontSize="16" Foreground="White" />
+                                    </Border>
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <StackPanel.Resources>
-                                <System:Int32 x:Key="IntValue">3</System:Int32>
-                            </StackPanel.Resources>
-                            <TextBlock TextWrapping="Wrap" Text="Typed Command (int)." />
-                            <Button Width="160" 
+                                <StackPanel Margin="10">
+                                    <StackPanel.Resources>
+                                        <System:Int32 x:Key="IntValue">3</System:Int32>
+                                    </StackPanel.Resources>
+                                    <TextBlock TextWrapping="Wrap" Text="Typed Command (int)." />
+                                    <Button Width="160" 
                                     Content="Int Typed Command" Command="{Binding IntTypedCommand}"
                                     CommandParameter="{StaticResource IntValue}" />
-                        </StackPanel>
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="Typed Command (string)." />
-                            <Button Width="160" 
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="Typed Command (string)." />
+                                    <Button Width="160" 
                                     Content="String Typed Command" Command="{Binding StringTypedCommand}"
                                     CommandParameter="Some String Value"/>
-                        </StackPanel>
+                                </StackPanel>
 
-                        <StackPanel Margin="10">
-                            <TextBlock TextWrapping="Wrap" Text="Invalid Typed Command (expecting int, receiving string)." />
-                            <Button Width="160" 
+                                <StackPanel Margin="10">
+                                    <TextBlock TextWrapping="Wrap" Text="Invalid Typed Command (expecting int, receiving string)." />
+                                    <Button Width="160" 
                                     Content="String Typed Command" Command="{Binding IntTypedCommand}"
                                     CommandParameter="Some String Value"/>
-                        </StackPanel>
-                    </StackPanel>
-                </ScrollViewer>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
 
+                    </apexControls:ApexGrid>
                 </apexControls:ApexGrid>
-        </apexControls:ApexGrid>
-        </Grid>
-    </apexControls:PaddedGrid>
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using Apex.MVVM;
+﻿using System.Linq;
+using Apex.MVVM;
 using ZuneStyleApplication.Pages;
 using ZuneStyleApplication.Pages.Apex;
 using ZuneStyleApplication.Pages.TheModel;
@@ -32,44 +33,23 @@ namespace ZuneStyleApplication
         private void CreatePages()
         {
             //  Create the 'home' section.
-            var homeViewModel = new PageViewModel()
-            {
-                IsSelected = true, Title = "Home"
-            };
+            var homeViewModel = new PageViewModel { Title = "Home" };
+            Pages.Add(homeViewModel);
+            ActivePage = Pages.FirstOrDefault();
 
             //  Add home pages.
-            homeViewModel.Pages.Add(new ApexViewModel() { IsSelected = true });
+            homeViewModel.Pages.Add(new ApexViewModel());
             homeViewModel.Pages.Add(new TheShellViewModel());
             homeViewModel.Pages.Add(new TheModelViewModel());
             homeViewModel.Pages.Add(new ThePagesViewModel());
+            homeViewModel.ActivePage = homeViewModel.Pages.FirstOrDefault();
 
             //  Create the 'collection' section.
-            var collectionViewModel = new PageViewModel() {Title = "Collection"};
-
-            //  Add the collection pages.
+            var collectionViewModel = new PageViewModel() { Title = "Collection" };
             collectionViewModel.Pages.Add(new MusicViewModel() { IsSelected = true });
             collectionViewModel.Pages.Add(new PicturesViewModel());
-
-            //  Add the page groups to the view model.
-            Pages.Add(homeViewModel);
+            collectionViewModel.ActivePage = collectionViewModel.Pages.FirstOrDefault();
             Pages.Add(collectionViewModel);
-        }
-
-        /// <summary>
-        /// The active sub page notifying property.
-        /// </summary>
-        private readonly NotifyingProperty ActiveSubPageProperty = new NotifyingProperty("ActiveSubPage", typeof(PageViewModel), null);
-
-        /// <summary>
-        /// Gets or sets the active sub page.
-        /// </summary>
-        /// <value>
-        /// The active sub page.
-        /// </value>
-        public PageViewModel ActiveSubPage
-        {
-            get { return (PageViewModel) GetValue(ActiveSubPageProperty); }
-            set { SetValue(ActiveSubPageProperty, value); }
         }
     }
 }

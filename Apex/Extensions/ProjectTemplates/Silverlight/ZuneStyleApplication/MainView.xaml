@@ -116,7 +116,7 @@
                         Grid.Row="1"
                         Margin="0,0,0,0"
                         ItemsSource="{Binding ActivePage.Pages}"
-                        SelectedItem="{Binding ActiveSubPage, Mode=TwoWay}">
+                        SelectedItem="{Binding ActivePage.ActivePage, Mode=TwoWay}">
                         <apexControls:SelectableItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" />
@@ -149,7 +149,7 @@
             </apexControls:ApexGrid>
 
             <!-- A View Broker for the main view. -->
-            <apexControls:ViewBroker ViewModel="{Binding ActiveSubPage}" Margin="6,94,6,6"
+            <apexControls:ViewBroker ViewModel="{Binding ActivePage.ActivePage}" Margin="6,94,6,6"
                                      HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
                                      VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
             </apexControls:ViewBroker>

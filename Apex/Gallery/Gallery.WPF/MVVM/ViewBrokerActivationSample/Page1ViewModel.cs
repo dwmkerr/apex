@@ -11,14 +11,6 @@ namespace Gallery.MVVM.ViewBrokerActivationSample
             get { return "Page 1"; }
         }
 
-        public void OnSelected()
-        {
-        }
-
-        public void OnDeselected()
-        {
-        }
-
         private readonly NotifyingProperty isSelectedProperty = new NotifyingProperty("IsSelected", typeof(bool), default(bool));
 
         public bool IsSelected

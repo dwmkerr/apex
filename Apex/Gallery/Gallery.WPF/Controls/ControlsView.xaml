@@ -5,19 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:Controls="clr-namespace:Gallery.Controls" mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
-    
+
     <UserControl.DataContext>
         <Controls:ControlsViewModel />
     </UserControl.DataContext>
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">APEX CONTROLS</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">A variety of custom controls are provided as part of the Apex framework to 
+
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">APEX CONTROLS</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">A variety of custom controls are provided as part of the Apex framework to 
             enable rapid development of applications.</TextBlock>
-        
-    </apexControls:PaddedGrid>
+
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

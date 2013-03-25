@@ -6,14 +6,16 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:DragAndDrop="clr-namespace:Gallery.DragAndDrop"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">POPUPS</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">Apex provides functionality to handle popups in WPF, Silverlight or WP7 applications.</TextBlock>
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
 
-    </apexControls:PaddedGrid>
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">POPUPS</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">Apex provides functionality to handle popups in WPF, Silverlight or WP7 applications.</TextBlock>
+
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

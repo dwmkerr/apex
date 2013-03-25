@@ -47,15 +47,6 @@ namespace Gallery.Controls.SelectableItemsControl
             set { SetValue(DetailsProperty, value); }
         }
 
-        public void OnSelected()
-        {
-        }
-
-        public void OnDeselected()
-        {
-        }
-
-        
         /// <summary>
         /// The NotifyingProperty for the IsSelected property.
         /// </summary>

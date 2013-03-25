@@ -5,48 +5,50 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">TABBEDDOCUMENTINTERFACE</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">TABBEDDOCUMENTINTERFACE</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             The TabbedDocumentInterface control presents a set of objects as tabbed documents.
             A DataTemplate can be used to define the style of the tab content and the tab header content.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
-        
-            <apexControls:ApexGrid Rows="*,Auto">
-            
-        <apexControls:TabbedDocumentInterface 
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+
+                <apexControls:ApexGrid Rows="*,Auto">
+
+                    <apexControls:TabbedDocumentInterface 
             x:Name="tabbedDocumentInterface"
             Grid.Row="0" Documents="{Binding Documents}">
-            
-            <apexControls:TabbedDocumentInterface.TabHeaderTemplate>
-                <DataTemplate>
-                    <TextBlock FontWeight="Bold" Text="{Binding}" />
-                </DataTemplate>
-            </apexControls:TabbedDocumentInterface.TabHeaderTemplate>
 
-            <apexControls:TabbedDocumentInterface.TabContentTemplate>
-                <DataTemplate>
-                    <TextBlock FontSize="14" Text="{Binding}" />
-                </DataTemplate>
-            </apexControls:TabbedDocumentInterface.TabContentTemplate>
-            
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">When there are no documents in the tabbed document interface, the content is shown.</TextBlock>
-        </apexControls:TabbedDocumentInterface>
-        
-        <!-- Third section, cue options.-->
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Width="120" Content="Add Document" Command="{Binding AddDocumentCommand}" />
-        </StackPanel>
-                
-            </apexControls:ApexGrid>
-        </Grid>
-    </apexControls:PaddedGrid>
+                        <apexControls:TabbedDocumentInterface.TabHeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock FontWeight="Bold" Text="{Binding}" />
+                            </DataTemplate>
+                        </apexControls:TabbedDocumentInterface.TabHeaderTemplate>
+
+                        <apexControls:TabbedDocumentInterface.TabContentTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="14" Text="{Binding}" />
+                            </DataTemplate>
+                        </apexControls:TabbedDocumentInterface.TabContentTemplate>
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">When there are no documents in the tabbed document interface, the content is shown.</TextBlock>
+                    </apexControls:TabbedDocumentInterface>
+
+                    <!-- Third section, cue options.-->
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Button Width="120" Content="Add Document" Command="{Binding AddDocumentCommand}" />
+                    </StackPanel>
+
+                </apexControls:ApexGrid>
+            </Grid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

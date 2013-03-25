@@ -87,6 +87,7 @@
     <Compile Include="Consistency\Freezable.cs" />
     <Compile Include="Consistency\GridLengthConverter.cs" />
     <Compile Include="Consistency\HitTest.cs" />
+    <Compile Include="Consistency\ItemsControl.cs" />
     <Compile Include="Consistency\LogicalTreeHelper.cs" />
     <Compile Include="Consistency\MouseClickDetector.cs" />
     <Compile Include="Consistency\SystemParameters.cs" />

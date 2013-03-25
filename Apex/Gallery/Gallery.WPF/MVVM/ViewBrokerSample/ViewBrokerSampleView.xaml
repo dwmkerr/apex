@@ -6,39 +6,41 @@
              xmlns:apexMVVM="clr-namespace:Apex.MVVM;assembly=Apex"
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:ViewBrokerSample="clr-namespace:Gallery.MVVM.ViewBrokerSample" mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
 
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+    <Grid Style="{StaticResource GalleryItemStyle}">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">VIEWBROKER SAMPLE</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">VIEWBROKER SAMPLE</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             A ViewBroker is a core control for MVVM applications. It automatically presents the correct
             view for a given view-model.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample grid. -->
-        <apexControls:ApexGrid Grid.Row="2" Grid.Column="2" Columns="200,*">
+            <!-- Sample grid. -->
+            <apexControls:ApexGrid Grid.Row="2" Grid.Column="2" Columns="200,*">
 
-            <!-- Files and folders tree. -->
-            <TreeView x:Name="treeView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Folders}" SelectedItemChanged="TreeView_SelectedItemChanged"
+                <!-- Files and folders tree. -->
+                <TreeView x:Name="treeView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Folders}" SelectedItemChanged="TreeView_SelectedItemChanged"
                       Margin="4">
-                <TreeView.Resources>
-                    <HierarchicalDataTemplate DataType="{x:Type ViewBrokerSample:FolderViewModel}" ItemsSource="{Binding Files}">
-                        <TextBlock Text="{Binding Name}" />
-                    </HierarchicalDataTemplate>
-                    <HierarchicalDataTemplate DataType="{x:Type ViewBrokerSample:FileViewModel}">
-                        <TextBlock Text="{Binding Name}" />
-                    </HierarchicalDataTemplate>
-                </TreeView.Resources>
-            </TreeView>
+                    <TreeView.Resources>
+                        <HierarchicalDataTemplate DataType="{x:Type ViewBrokerSample:FolderViewModel}" ItemsSource="{Binding Files}">
+                            <TextBlock Text="{Binding Name}" />
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type ViewBrokerSample:FileViewModel}">
+                            <TextBlock Text="{Binding Name}" />
+                        </HierarchicalDataTemplate>
+                    </TreeView.Resources>
+                </TreeView>
 
-            <!-- View broker. -->
-            <apexControls:ViewBroker Grid.Row="1" Grid.Column="1" ViewModel="{Binding SelectedItem}" Margin="4">
-                <TextBlock>If there is nothing in the view model, then this will be shown.</TextBlock>
-            </apexControls:ViewBroker>
+                <!-- View broker. -->
+                <apexControls:ViewBroker Grid.Row="1" Grid.Column="1" ViewModel="{Binding SelectedItem}" Margin="4">
+                    <TextBlock>If there is nothing in the view model, then this will be shown.</TextBlock>
+                </apexControls:ViewBroker>
 
-        </apexControls:ApexGrid>
-    </apexControls:PaddedGrid>
+            </apexControls:ApexGrid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>

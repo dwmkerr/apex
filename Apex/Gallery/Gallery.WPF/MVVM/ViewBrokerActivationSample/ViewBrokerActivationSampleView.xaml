@@ -7,7 +7,6 @@
              xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
              xmlns:apexCommands="clr-namespace:Apex.Commands;assembly=Apex"
              xmlns:ViewBrokerActivationSample="clr-namespace:Gallery.MVVM.ViewBrokerActivationSample" mc:Ignorable="d" 
-             Style="{StaticResource GalleryItemStyle}"
              d:DesignHeight="600" d:DesignWidth="800">
     
     <UserControl.DataContext>
@@ -28,49 +27,52 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    
-    <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
 
-        <!-- Title section. -->
-        <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">VIEWBROKER ACTIVATION</TextBlock>
-        <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
+    <Grid Style="{StaticResource GalleryItemStyle}">
+
+        <apexControls:PaddedGrid Rows="Auto,Auto,*,Auto" Padding="4">
+
+            <!-- Title section. -->
+            <TextBlock Grid.Row="0" Style="{StaticResource Heading1}">VIEWBROKER ACTIVATION</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource Subtitle}">
             This sample demonstrates how Commands can be used.
-        </TextBlock>
+            </TextBlock>
 
-        <!-- Sample zone. -->
-        <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
-        
-        <!-- Sample grid. -->
-        <apexControls:ApexGrid Grid.Row="1" Grid.Column="2" Rows="Auto,*">
-            
-            <!-- View selector. -->
-            <apexControls:SelectableItemsControl 
+            <!-- Sample zone. -->
+            <Grid Row="2" Margin="16" MaxWidth="600" MaxHeight="800">
+
+                <!-- Sample grid. -->
+                <apexControls:ApexGrid Grid.Row="1" Grid.Column="2" Rows="Auto,*">
+
+                    <!-- View selector. -->
+                    <apexControls:SelectableItemsControl 
                 x:Name="selectableItemsControl_Pages"
                 Grid.Row="0" ItemsSource="{Binding PageViewModels}" SelectedItem="{Binding SelectedPageViewModel}">
-                <apexControls:SelectableItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" />
-                    </ItemsPanelTemplate>
-                </apexControls:SelectableItemsControl.ItemsPanel>
-                <apexControls:SelectableItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock 
+                        <apexControls:SelectableItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </apexControls:SelectableItemsControl.ItemsPanel>
+                        <apexControls:SelectableItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock 
                             Margin="10,2,10,2"
                             Text="{Binding Title}"
                             Style="{StaticResource MenuItemStyle}"
                             apexCommands:ExtendedCommands.LeftClickCommand="{Binding ElementName=selectableItemsControl_Pages, Path=SelectItemCommand}"
                             apexCommands:ExtendedCommands.LeftClickCommandParameter="{Binding}"
                             />
-                    </DataTemplate>
-                </apexControls:SelectableItemsControl.ItemTemplate>
-            </apexControls:SelectableItemsControl>
-            
-            <!-- View broker. -->
-            <apexControls:ViewBroker Grid.Row="1" ViewModel="{Binding SelectedPageViewModel}">
-                <TextBlock>This text is only shown if we cannot find a view for the viewmodel or the viewmodel is null.</TextBlock>
-            </apexControls:ViewBroker>
+                            </DataTemplate>
+                        </apexControls:SelectableItemsControl.ItemTemplate>
+                    </apexControls:SelectableItemsControl>
 
-        </apexControls:ApexGrid>
+                    <!-- View broker. -->
+                    <apexControls:ViewBroker Grid.Row="1" ViewModel="{Binding SelectedPageViewModel}">
+                        <TextBlock>This text is only shown if we cannot find a view for the viewmodel or the viewmodel is null.</TextBlock>
+                    </apexControls:ViewBroker>
+
+                </apexControls:ApexGrid>
             </Grid>
-    </apexControls:PaddedGrid>
+        </apexControls:PaddedGrid>
+    </Grid>
 </UserControl>
