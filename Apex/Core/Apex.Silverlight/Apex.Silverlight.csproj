@@ -61,10 +61,7 @@
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Silverlight\v4.0\Libraries\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
@@ -116,6 +113,9 @@
     <Compile Include="..\apex\commands\EventBindings.cs">
       <Link>Commands\EventBindings.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Consistency\ColorConverter.cs">
+      <Link>Consistency\ColorConverter.cs</Link>
+    </Compile>
     <Compile Include="..\apex\consistency\DispatcherHelper.cs">
       <Link>Consistency\DispatcherHelper.cs</Link>
     </Compile>
@@ -146,11 +146,17 @@
     <Compile Include="..\apex\controls\ApexGrid.cs">
       <Link>Controls\ApexGrid.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Controls\CrossButton.cs">
+      <Link>Controls\CrossButton.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Controls\CueTextBox.cs">
       <Link>Controls\CueTextBox.cs</Link>
     </Compile>
     <Compile Include="..\apex\controls\EnumerationComboBox.cs">
       <Link>Controls\EnumerationComboBox.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Controls\ImageCheckBox.cs">
+      <Link>Controls\ImageCheckBox.cs</Link>
     </Compile>
     <Compile Include="..\apex\controls\PaddedGrid.cs">
       <Link>Controls\PaddedGrid.cs</Link>
@@ -184,6 +190,9 @@
     </Compile>
     <Compile Include="..\Apex\Converters\InvertableConverter.cs">
       <Link>Converters\InvertableConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Converters\InvertedBooleanConverter.cs">
+      <Link>Converters\InvertedBooleanConverter.cs</Link>
     </Compile>
     <Compile Include="..\apex\converters\NullToVisibilityConverter.cs">
       <Link>Converters\NullToVisibilityConverter.cs</Link>
@@ -298,6 +307,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\ResourceDictionaries\CrossButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\ResourceDictionaries\CueTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -308,6 +321,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\ResourceDictionaries\ImageCheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\ResourceDictionaries\SearchTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
