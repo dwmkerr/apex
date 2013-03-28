@@ -110,6 +110,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\ImageButton\ImageButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ImageCheckBox\ImageCheckBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\FolderTextBox\FolderTextBoxView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -206,6 +214,14 @@
       <DependentUpon>ControlsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ControlsViewModel.cs" />
+    <Compile Include="Controls\ImageButton\ImageButtonView.xaml.cs">
+      <DependentUpon>ImageButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageButton\ImageButtonViewModel.cs" />
+    <Compile Include="Controls\ImageCheckBox\ImageCheckBoxView.xaml.cs">
+      <DependentUpon>ImageCheckBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageCheckBox\ImageCheckBoxViewModel.cs" />
     <Compile Include="Controls\FolderTextBox\FolderTextBoxView.xaml.cs">
       <DependentUpon>FolderTextBoxView.xaml</DependentUpon>
     </Compile>
@@ -451,6 +467,18 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageCheckBox\Down.png" />
+    <Resource Include="Controls\ImageCheckBox\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageButton\LightbulbNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageButton\LightbulbDisabled.png" />
+    <Resource Include="Controls\ImageButton\LightbulbMouesOver.png" />
+    <Resource Include="Controls\ImageButton\LightbulbPressed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

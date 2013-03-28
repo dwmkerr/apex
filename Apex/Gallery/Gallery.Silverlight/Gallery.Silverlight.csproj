@@ -64,15 +64,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="mscorlib" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Referenced Assemblies\Blend for Silverlight 5\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
@@ -92,6 +91,10 @@
       <DependentUpon>ControlsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ControlsViewModel.cs" />
+    <Compile Include="Controls\CrossButton\CrossButton.xaml.cs">
+      <DependentUpon>CrossButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CrossButton\CrossButtonViewModel.cs" />
     <Compile Include="Controls\CueTextBox\CueTextBoxView.xaml.cs">
       <DependentUpon>CueTextBoxView.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
     </Compile>
     <Compile Include="Controls\EnumComboBox\EnumComboBoxViewModel.cs" />
     <Compile Include="Controls\EnumComboBox\ExampleEnumeration.cs" />
+    <Compile Include="Controls\ImageCheckBox\ImageCheckBoxView.xaml.cs">
+      <DependentUpon>ImageCheckBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageCheckBox\ImageCheckBoxViewModel.cs" />
     <Compile Include="Controls\PaddedGrid\PaddedGrid.xaml.cs">
       <DependentUpon>PaddedGrid.xaml</DependentUpon>
     </Compile>
@@ -222,6 +229,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\CrossButton\CrossButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ImageCheckBox\ImageCheckBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -290,7 +305,12 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Controls\ImageCheckBox\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageCheckBox\Up.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -29,7 +29,7 @@ namespace Apex.Controls
         bool IsSelected { get; set; }
     }
 
-    internal class SelectableItemsControlItem : ContentControl
+    public class SelectableItemsControlItem : ContentControl
     {
         /// <summary>
         /// The DependencyProperty for the IsSelected property.
