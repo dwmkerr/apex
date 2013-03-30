@@ -21,12 +21,23 @@
                             <Image 
                                 Source="{TemplateBinding NormalImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
                                 Margin="{TemplateBinding Padding}" />
+
+                            <Image 
+                                Source="{TemplateBinding DisabledImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
+                                Margin="{TemplateBinding Padding}"
+                                Visibility="{TemplateBinding IsEnabled, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}"/>
                         
                             <!-- The image for the normal state. -->
                             <Image 
                                 Source="{TemplateBinding MouseOverImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
                                 Margin="{TemplateBinding Padding}"
                                 Visibility="{TemplateBinding IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                            <Image 
+                                Source="{TemplateBinding PressedImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
+                                Margin="{TemplateBinding Padding}"
+                                Visibility="{TemplateBinding IsPressed, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}"/>
+
 
                         </Grid>                        
                     </Border>

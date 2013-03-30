@@ -9,10 +9,22 @@ namespace Apex.Controls
     /// </summary>
     public class ImageButton : Button
     {
+        /// <summary>
+        /// Initializes the <see cref="ImageButton"/> class.
+        /// </summary>
+#if !SILVERLIGHT
         static ImageButton()
         {
+            //  Override the default style. 
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ImageButton), new FrameworkPropertyMetadata(typeof(ImageButton)));
         }
+#else
+        public ImageButton()
+        {
+            //  Override the default style.
+            DefaultStyleKey = typeof(ImageButton);
+        }
+#endif
 
         /// <summary>
         /// The DependencyProperty for the NormalImageSource property.

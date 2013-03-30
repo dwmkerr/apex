@@ -104,6 +104,10 @@
     </Compile>
     <Compile Include="Controls\EnumComboBox\EnumComboBoxViewModel.cs" />
     <Compile Include="Controls\EnumComboBox\ExampleEnumeration.cs" />
+    <Compile Include="Controls\ImageButton\ImageButtonView.xaml.cs">
+      <DependentUpon>ImageButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageButton\ImageButtonViewModel.cs" />
     <Compile Include="Controls\ImageCheckBox\ImageCheckBoxView.xaml.cs">
       <DependentUpon>ImageCheckBoxView.xaml</DependentUpon>
     </Compile>
@@ -233,6 +237,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\ImageButton\ImageButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\ImageCheckBox\ImageCheckBoxView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -310,6 +318,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Controls\ImageCheckBox\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageButton\LightbulbDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageButton\LightbulbMouesOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageButton\LightbulbNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\ImageButton\LightbulbPressed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
