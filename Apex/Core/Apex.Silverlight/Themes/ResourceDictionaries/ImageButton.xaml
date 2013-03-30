@@ -1,0 +1,35 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Apex.Controls"
+    xmlns:converters="clr-namespace:Apex.Converters">
+    <Style TargetType="controls:ImageButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:ImageButton">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.Resources>
+                                <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                            </Grid.Resources>
+
+                            <!-- The image for the normal state. -->
+                            <Image 
+                                Source="{TemplateBinding NormalImageSource}" Stretch="None" 
+                                Margin="{TemplateBinding Padding}" />
+                        
+                            <!-- The image for the normal state. -->
+                            <Image 
+                                Source="{TemplateBinding MouseOverImageSource}" Stretch="None" 
+                                Margin="{TemplateBinding Padding}"
+                                Visibility="{Binding RelativeSource={RelativeSource TemplatedParent},Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                        </Grid>                        
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

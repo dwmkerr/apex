@@ -155,6 +155,9 @@
     <Compile Include="..\apex\controls\EnumerationComboBox.cs">
       <Link>Controls\EnumerationComboBox.cs</Link>
     </Compile>
+    <Compile Include="..\Apex\Controls\ImageButton.cs">
+      <Link>Controls\ImageButton.cs</Link>
+    </Compile>
     <Compile Include="..\Apex\Controls\ImageCheckBox.cs">
       <Link>Controls\ImageCheckBox.cs</Link>
     </Compile>
@@ -220,6 +223,9 @@
     </Compile>
     <Compile Include="..\apex\extensions\DependencyObjectExtensions.cs">
       <Link>Extensions\DependencyObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Apex\Extensions\EnumerableExtensions.cs">
+      <Link>Extensions\EnumerableExtensions.cs</Link>
     </Compile>
     <Compile Include="..\apex\extensions\EnumExtensions.cs">
       <Link>Extensions\EnumExtensions.cs</Link>
@@ -321,6 +327,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\ResourceDictionaries\ImageButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\ResourceDictionaries\ImageCheckBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

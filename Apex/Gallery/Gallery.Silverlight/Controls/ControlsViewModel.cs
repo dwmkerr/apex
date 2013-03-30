@@ -6,6 +6,7 @@ using Apex.MVVM;
 using Gallery.Controls.ApexGrid;
 using Gallery.Controls.CrossButton;
 using Gallery.Controls.EnumComboBox;
+using Gallery.Controls.ImageButton;
 using Gallery.Controls.ImageCheckBox;
 using Gallery.Controls.PaddedGrid;
 using Gallery.Controls.SelectableItemsControl;
@@ -25,6 +26,7 @@ namespace Gallery.Controls
             GalleryItems.Add(new CrossButtonViewModel());
             GalleryItems.Add(new CueTextBoxViewModel());
             GalleryItems.Add(new EnumComboBoxViewModel());
+            GalleryItems.Add(new ImageButtonViewModel());
             GalleryItems.Add(new ImageCheckBoxViewModel());
             GalleryItems.Add(new PaddedGridViewModel());
             GalleryItems.Add(new SearchTextBoxViewModel());
