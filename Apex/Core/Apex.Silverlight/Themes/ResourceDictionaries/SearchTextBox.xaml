@@ -52,11 +52,6 @@
     </LinearGradientBrush>
     <SolidColorBrush x:Key="SearchTextBox_LabelTextColor" Color="Gray" />
 
-
-
-
-
-
     <Style x:Key="controls:SearchTextBox" TargetType="controls:SearchTextBox">
         <!-- <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" /> -->
         <Setter Property="BorderBrush" Value="{StaticResource SearchTextBoxBorder}" />

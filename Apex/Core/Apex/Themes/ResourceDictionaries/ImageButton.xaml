@@ -9,9 +9,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ImageButton}">
-                    <ControlTemplate.Resources>
-                        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-                    </ControlTemplate.Resources>
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
@@ -19,28 +16,23 @@
 
                             <!-- The image for the normal state. -->
                             <Image 
+                                x:Name="image"
                                 Source="{TemplateBinding NormalImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
                                 Margin="{TemplateBinding Padding}" />
-
-                            <Image 
-                                Source="{TemplateBinding DisabledImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
-                                Margin="{TemplateBinding Padding}"
-                                Visibility="{TemplateBinding IsEnabled, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}"/>
-                        
-                            <!-- The image for the normal state. -->
-                            <Image 
-                                Source="{TemplateBinding MouseOverImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
-                                Margin="{TemplateBinding Padding}"
-                                Visibility="{TemplateBinding IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-
-                            <Image 
-                                Source="{TemplateBinding PressedImageSource}" Stretch="None" RenderOptions.BitmapScalingMode="Linear" 
-                                Margin="{TemplateBinding Padding}"
-                                Visibility="{TemplateBinding IsPressed, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Invert}"/>
-
-
                         </Grid>                        
                     </Border>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="image" Property="Source" Value="{Binding  RelativeSource={RelativeSource TemplatedParent},Path=PressedImageSource}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="image" Property="Source" Value="{Binding RelativeSource={RelativeSource TemplatedParent},Path=DisabledImageSource}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="image" Property="Source" Value="{Binding RelativeSource={RelativeSource TemplatedParent},Path=MouseOverImageSource}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
