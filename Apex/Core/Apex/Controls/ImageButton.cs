@@ -27,6 +27,23 @@ namespace Apex.Controls
 #endif
 
         /// <summary>
+        /// When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate" />.
+        /// </summary>
+        public override void OnApplyTemplate()
+        {
+            //  Call the base.
+            base.OnApplyTemplate();
+
+            //  If we're missing any images, use the normal one.
+            if(MouseOverImageSource == null)
+                MouseOverImageSource = NormalImageSource;
+            if(PressedImageSource == null)
+                PressedImageSource = NormalImageSource;
+            if(DisabledImageSource == null)
+                DisabledImageSource = NormalImageSource;
+        }
+
+        /// <summary>
         /// The DependencyProperty for the NormalImageSource property.
         /// </summary>
         public static readonly DependencyProperty NormalImageSourceProperty =

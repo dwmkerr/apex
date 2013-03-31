@@ -21,10 +21,9 @@
             <!-- Sample zone. -->
             <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
 
-                <apexControls:PaddedGrid Rows="Auto,Auto" Columns="*,2*" VerticalAlignment="Center" Padding="12">
+                <apexControls:PaddedGrid Rows="Auto,Auto,Auto" Columns="2*,*" VerticalAlignment="Center" Padding="12">
 
                     <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Image Button" />
-
                     <apexControls:ImageButton
                     Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"
                         NormalImageSource="LightbulbNormal.png"
@@ -33,13 +32,19 @@
                         DisabledImageSource="LightbulbDisabled.png"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="Disabled Image Button" />
-
                     <apexControls:ImageButton
                     Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="False"
                         NormalImageSource="LightbulbNormal.png"
                         PressedImageSource="LightbulbPressed.png"
                         MouseOverImageSource="LightbulbMouesOver.png"
                         DisabledImageSource="LightbulbDisabled.png"/>
+
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="Image button without all the images" />
+                    <apexControls:ImageButton
+                    Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="False"
+                        NormalImageSource="LightbulbNormal.png" />
+                    
                 </apexControls:PaddedGrid>
             </Grid>
         </apexControls:PaddedGrid>

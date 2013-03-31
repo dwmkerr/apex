@@ -25,11 +25,11 @@
             <!-- Sample zone. -->
             <Grid Row="2" Margin="16" MaxWidth="400" MaxHeight="300">
 
-                <apexControls:PaddedGrid Rows="Auto,Auto" Columns="*,2*" VerticalAlignment="Center" Padding="12">
+                <apexControls:PaddedGrid Rows="Auto,Auto" Columns="*,*" VerticalAlignment="Center" Padding="12">
 
                     <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Search Text Box" />
 
-                    <apexControls:SearchTextBox 
+                    <apexControls:SearchTextBox
                     Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" />
 
                     <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="Search Text Box with Cue" />
