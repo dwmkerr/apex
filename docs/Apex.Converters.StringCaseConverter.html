@@ -1,0 +1,27 @@
+<div class="wikidoc">
+<p><strong>Apex.Converters.StringCaseConverter</strong></p>
+<p>Supported In:</p>
+<p>WPF .NET 3.5, WPF .NET 4.0, Silverlight 3, Silverlight 4, Windows Phone 7, Windows Phone 7.1</p>
+<p>Description:</p>
+<p>The StringCaseConverter takes a string as its input and returns the string, with the case transformed. If the converter parameter is 'Upper' the string is returned in uppercase. If the converter parameter is 'Lower' the string is returned in lowercase.</p>
+<p>Example:</p>
+<p>&nbsp;</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:green">&lt;!-- Create the converter. --&gt;</span>
+<span style="color:blue">&lt;</span><span style="color:#a31515">apexConverters</span><span style="color:blue">:</span><span style="color:#a31515">StringCaseConverter</span>
+    <span style="color:red">x:Key</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">StringCaseConverter</span><span style="color:black">&quot;</span> <span style="color:blue">/&gt;</span>
+       
+<span style="color:green">&lt;!-- Shows the string in upper-case. --&gt;</span>
+&lt;TextBlock
+    Text=&quot;{Binding Name,
+    Converter={DynamicResource StringCaseConverter},
+    ConverterParameter=Upper}&quot; /&gt;
+       
+<span style="color:green">&lt;!-- Shows the string in lower-case. --&gt;</span>
+&lt;TextBlock
+    Text=&quot;{Binding Name,
+    Converter={DynamicResource StringCaseConverter},
+    ConverterParameter=Lower}&quot; /&gt;
+</pre>
+</div>
+</div><div class="ClearBoth"></div>
