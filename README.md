@@ -1,5 +1,7 @@
 # apex
 
+[![GuardRails badge](https://badges.production.guardrails.io/dwmkerr/apex.svg)](https://www.guardrails.io)
+
 Introducing Apex
 
 Apex lets you build powerful MVVM applications for WPF, Silverlight and Windows Phone 7 fast. Get the Apex SDK and accelerate your development now!
